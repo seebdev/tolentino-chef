@@ -33,16 +33,26 @@ export async function api<T>(url: string, init?: RequestInit): Promise<T> {
         : { "Content-Type": "application/json" }),
       ...init?.headers,
     },
+  }).catch((error: unknown) => {
+    if (error instanceof Error && error.name === "AbortError") throw error;
+    throw new Error(
+      "No se pudo conectar con el servidor. Revisa tu conexión y vuelve a intentarlo.",
+    );
   });
   const data = await res.json().catch(() => ({}));
-  if (!res.ok)
+  if (!res.ok || data.pending === true || data.ok === false)
     throw Object.assign(
       new Error(
         data.error ||
           data.message ||
           "No se pudo completar la solicitud. Inténtalo de nuevo.",
       ),
-      { status: res.status },
+      {
+        status: res.status,
+        code: data.code,
+        fields: data.fields,
+        pending: data.pending,
+      },
     );
   return data as T;
 }
@@ -77,6 +87,7 @@ export function Button({
     <button
       {...props}
       disabled={props.disabled || busy}
+      aria-busy={busy || undefined}
       className={"button " + variant + " " + (props.className || "")}
     >
       {busy ? <LoaderCircle size={17} className="spin" /> : null}
@@ -183,12 +194,14 @@ export function Modal({
   onClose,
   wide = false,
   closeLabel = "Cerrar",
+  preventClose = false,
 }: {
   title: string;
   children: ReactNode;
   onClose: () => void;
   wide?: boolean;
   closeLabel?: string;
+  preventClose?: boolean;
 }) {
   const ref = useRef<HTMLDialogElement>(null);
   const id = useId();
@@ -201,7 +214,10 @@ export function Modal({
     <dialog
       className={"modal " + (wide ? "modal-wide" : "")}
       ref={ref}
-      onCancel={onClose}
+      onCancel={(event) => {
+        event.preventDefault();
+        if (!preventClose) onClose();
+      }}
       aria-labelledby={id}
     >
       <div className="modal-heading">
@@ -210,6 +226,8 @@ export function Modal({
           className="icon-button"
           onClick={onClose}
           aria-label={closeLabel}
+          disabled={preventClose}
+          type="button"
         >
           <X size={20} />
         </button>

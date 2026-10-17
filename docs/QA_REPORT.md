@@ -1,3 +1,5 @@
+> Reporte histórico de la entrega anterior. Para el estado del 17 de octubre de 2026, consultar [la auditoría final](../AUDITORIA_FINAL_TOLENTINO_RESTAURANTES.md).
+
 # Informe de QA
 
 Fecha de trabajo: 16 de octubre de 2026, America/Bogota. Las evidencias guardan marcas UTC, algunas del 17 de octubre.

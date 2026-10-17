@@ -1,0 +1,310 @@
+{
+  "startedAt": "2026-10-17T17:55:05.923Z",
+  "phase": "owners",
+  "base": "http://localhost:3000",
+  "applicationScope": "local",
+  "serverMode": "production",
+  "traffic": "Real Next.js application, Supabase Auth and persisted data. No API mocks or route interception.",
+  "mutations": "Only login/logout sessions, rate-limit/visit counters and local browser favorites; no menu edits, emails, reset or domain changes.",
+  "physicalDevices": false,
+  "physicalQrScanning": false,
+  "browsers": [
+    {
+      "name": "chrome",
+      "available": true,
+      "version": "155.0.8059.80",
+      "headless": true
+    },
+    {
+      "name": "WebKit/Safari",
+      "installed": false,
+      "status": "NOT RUN",
+      "reason": "No installed WebKit executable; no browser was installed for this audit."
+    }
+  ],
+  "publicMenus": [],
+  "owners": [
+    {
+      "browser": "chrome",
+      "restaurant": "marea",
+      "status": "PASS",
+      "errors": {
+        "pageErrors": [],
+        "consoleErrors": [
+          {
+            "message": "Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+            "location": "http://localhost:3000/api/session",
+            "expected": true
+          },
+          {
+            "message": "Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+            "location": "http://localhost:3000/api/session",
+            "expected": true
+          },
+          {
+            "message": "Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+            "location": "http://localhost:3000/api/session",
+            "expected": true
+          },
+          {
+            "message": "Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+            "location": "http://localhost:3000/api/session",
+            "expected": true
+          }
+        ],
+        "failedRequests": [],
+        "httpErrors": [
+          {
+            "url": "http://localhost:3000/api/session",
+            "status": 401,
+            "expected": true
+          },
+          {
+            "url": "http://localhost:3000/api/session",
+            "status": 401,
+            "expected": true
+          },
+          {
+            "url": "http://localhost:3000/api/session",
+            "status": 401,
+            "expected": true
+          },
+          {
+            "url": "http://localhost:3000/api/session",
+            "status": 401,
+            "expected": true
+          }
+        ]
+      },
+      "visitedTabs": [
+        "Productos",
+        "Categorías",
+        "Promociones",
+        "Apariencia",
+        "Horarios",
+        "Idiomas",
+        "Mi código QR",
+        "Importar productos",
+        "Cuenta y acceso"
+      ],
+      "downloads": [
+        {
+          "kind": "catalog-csv",
+          "filename": "catalogo-productos.csv",
+          "bytes": 2757,
+          "rows": 24,
+          "sha256": "78e6f0bc1b0095b4bbb62754636a223575a80f7cf4b675c67c3ec87ec69beba4"
+        },
+        {
+          "kind": "qr-png",
+          "filename": "qr-bento-marea-demo.png",
+          "bytes": 45289,
+          "sha256": "315527a1f7d27b5b37541bd49aa8815b0e77e0edf18d183e699b1754631258c3",
+          "decodedUrl": "http://localhost:3000/q/199258db-b193-4055-9f26-b1f3ea9ee1eb",
+          "targetScope": "local"
+        },
+        {
+          "kind": "qr-svg",
+          "filename": "qr-bento-marea-demo.svg",
+          "bytes": 49361,
+          "sha256": "677d2809d13c7b91e0f33e97057a58d4d12a09d43152313118da66cb3fe8b9e0"
+        },
+        {
+          "kind": "qr-pdf",
+          "filename": "qr-bento-marea-demo.pdf",
+          "bytes": 43540,
+          "sha256": "79a524da2dd21f7489223dfb91093e18ef855a3430e9571d3dc72e56a219687b"
+        }
+      ],
+      "loginDiagnostics": [
+        {
+          "at": "2026-10-17T17:55:06.639Z",
+          "phase": "opening-login"
+        },
+        {
+          "at": "2026-10-17T17:55:07.289Z",
+          "phase": "hydration-health-response",
+          "status": 200
+        },
+        {
+          "at": "2026-10-17T17:55:07.793Z",
+          "phase": "network-idle"
+        },
+        {
+          "at": "2026-10-17T17:55:08.011Z",
+          "phase": "filled-valid-form",
+          "emailMatches": true,
+          "passwordMatches": true,
+          "valid": true
+        },
+        {
+          "at": "2026-10-17T17:55:09.917Z",
+          "phase": "auth-response",
+          "status": 200
+        },
+        {
+          "at": "2026-10-17T17:55:15.636Z",
+          "phase": "workspace-rendered"
+        },
+        {
+          "at": "2026-10-17T17:55:38.464Z",
+          "phase": "opening-login"
+        },
+        {
+          "at": "2026-10-17T17:55:38.801Z",
+          "phase": "hydration-health-response",
+          "status": 200
+        },
+        {
+          "at": "2026-10-17T17:55:39.309Z",
+          "phase": "network-idle"
+        },
+        {
+          "at": "2026-10-17T17:55:39.432Z",
+          "phase": "filled-valid-form",
+          "emailMatches": true,
+          "passwordMatches": true,
+          "valid": true
+        },
+        {
+          "at": "2026-10-17T17:55:41.095Z",
+          "phase": "auth-response",
+          "status": 200
+        },
+        {
+          "at": "2026-10-17T17:55:47.209Z",
+          "phase": "workspace-rendered"
+        }
+      ],
+      "productCount": 24,
+      "tabLabels": [
+        {
+          "tab": "Productos",
+          "missingLabels": []
+        },
+        {
+          "tab": "Categorías",
+          "missingLabels": []
+        },
+        {
+          "tab": "Promociones",
+          "missingLabels": []
+        },
+        {
+          "tab": "Apariencia",
+          "missingLabels": []
+        },
+        {
+          "tab": "Horarios",
+          "missingLabels": []
+        },
+        {
+          "tab": "Idiomas",
+          "missingLabels": []
+        },
+        {
+          "tab": "Mi código QR",
+          "missingLabels": []
+        },
+        {
+          "tab": "Importar productos",
+          "missingLabels": []
+        },
+        {
+          "tab": "Cuenta y acceso",
+          "missingLabels": []
+        }
+      ],
+      "persistedSnapshotSha256": "052a4adc8210cfd932766ca2a43ac509d0a9f7baff4ffbd80f019f01526b0507",
+      "reloadAndReLoginPreserved": true
+    }
+  ],
+  "results": [
+    {
+      "scope": "chrome/marea/owner",
+      "name": "Real owner login and restaurant-bound session",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/marea/owner",
+      "name": "Visible controls have labels in Productos",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/marea/owner",
+      "name": "Visible controls have labels in Categorías",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/marea/owner",
+      "name": "Visible controls have labels in Promociones",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/marea/owner",
+      "name": "Visible controls have labels in Apariencia",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/marea/owner",
+      "name": "Visible controls have labels in Horarios",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/marea/owner",
+      "name": "Visible controls have labels in Idiomas",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/marea/owner",
+      "name": "Visible controls have labels in Mi código QR",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/marea/owner",
+      "name": "Visible controls have labels in Importar productos",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/marea/owner",
+      "name": "Visible controls have labels in Cuenta y acceso",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/marea/owner",
+      "name": "All owner tabs and appearance preview open without editing records",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/marea/owner",
+      "name": "Owner downloads real persisted catalog CSV with24 products",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/marea/owner",
+      "name": "Real owner PNG/SVG/PDF downloads; PNG independently decoded to stable route",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/marea/owner",
+      "name": "Owner menu preview opens the correct real public menu",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/marea/owner",
+      "name": "Reload, logout, anonymous rejection and real re-login preserve catalog data",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/marea/owner",
+      "name": "No runtime errors or unexpected failed requests",
+      "status": "PASS"
+    }
+  ],
+  "updatedAt": "2026-10-17T17:55:50.758Z",
+  "counts": {
+    "passed": 16,
+    "failed": 0
+  },
+  "completedAt": "2026-10-17T17:55:50.758Z"
+}

@@ -1,0 +1,71 @@
+{
+  "at": "2026-10-17T18:06:07.678Z",
+  "repository": "https://github.com/tolentinosftw-dotcom/tolentino-chef",
+  "branch": "main",
+  "restaurants": 3,
+  "products": 72,
+  "distinctDemoOwners": 3,
+  "publicInternetUrlsVerified": 0,
+  "localMenus": [
+    "http://localhost:3000/menu/pizzeria-aurora-demo",
+    "http://localhost:3000/menu/cafe-bruma-demo",
+    "http://localhost:3000/menu/bento-marea-demo"
+  ],
+  "qr": {
+    "identities": 3,
+    "files": 9,
+    "formats": [
+      "PNG",
+      "SVG",
+      "PDF"
+    ],
+    "automaticallyDecoded": 9,
+    "scope": "local-validation-only",
+    "physicalScans": 0
+  },
+  "checks": {
+    "unitSqlHandlers": 201,
+    "unitFailures": 0,
+    "fixtureBrowserCases": 95,
+    "realApi": 84,
+    "realAdmin": 10,
+    "realSupplemental": 19,
+    "realBrowserScenarios": 24,
+    "realBrowserChecks": 372,
+    "finalScreenshots": 18
+  },
+  "build": "PASS",
+  "typecheck": "PASS",
+  "lint": "PASS",
+  "restartPersistence": "PASS",
+  "productionLocalSmoke": "PASS",
+  "corrected": [
+    "Misclassified409 and same-tick double submit",
+    "Durable idempotent restaurant creation and Auth compensation",
+    "Appearance validation before writes",
+    "Missing-resource404 and foreign-media400",
+    "Authenticated CSV/QR downloads and paginated CSV export",
+    "Local-only session logout",
+    "Appearance file-input overflow and text contrast",
+    "Missing global favicon",
+    "Render commit trigger and Next route types before typecheck"
+  ],
+  "pending": [
+    "Render account/deployment and canonical HTTPS origin",
+    "Public QR regeneration and public HTTP/device checks",
+    "Disable hosted public signup and verify Auth policy",
+    "SMTP delivery and recovery with authorized recipient",
+    "Supabase Advisors Management permission",
+    "Real custom DNS/TLS; Safari and physical devices; backup restore and sustained remote load"
+  ],
+  "deployment": {
+    "local": "Running production build at http://localhost:3000/login",
+    "staging": "NOT DEPLOYED",
+    "productionInternet": "NOT DEPLOYED"
+  },
+  "reports": [
+    "AUDITORIA_FINAL_TOLENTINO_RESTAURANTES.md",
+    "RESTAURANTES_DEMO.md"
+  ],
+  "referenceOriginal": "1803 files checked; zero changed/missing/added"
+}

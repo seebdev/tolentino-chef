@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState, type FormEvent } from "react";
+import { useEffect, useState, useRef, type FormEvent } from "react";
 import {
   ArrowRight,
   ArrowLeft,
@@ -27,6 +27,7 @@ export function Login({
   const [password, setPassword] = useState("");
   const [confirm, setConfirm] = useState("");
   const [busy, setBusy] = useState(false);
+  const submitting = useRef(false);
   const [show, setShow] = useState(false);
   const [message, setMessage] = useState("");
   const [error, setError] = useState(initialError);
@@ -49,12 +50,14 @@ export function Login({
   }, [initialMode]);
   async function submit(e: FormEvent) {
     e.preventDefault();
+    if (submitting.current) return;
     setError("");
     setMessage("");
     if (mode === "password" && password !== confirm) {
       setError("Las contraseñas no coinciden.");
       return;
     }
+    submitting.current = true;
     setBusy(true);
     try {
       const result = await post<{ role?: string; message?: string }>(
@@ -78,6 +81,7 @@ export function Login({
     } catch (e) {
       setError((e as Error).message);
     } finally {
+      submitting.current = false;
       setBusy(false);
     }
   }

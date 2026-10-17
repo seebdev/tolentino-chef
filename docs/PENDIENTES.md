@@ -1,40 +1,36 @@
 # Pendientes y límites de entrega
 
-Estado: implementación local y esquema Supabase remoto verificados; **no desplegada en Render ni aceptada en producción**. No se reutilizó infraestructura de otros proyectos. No se introdujeron datos de demostración en la aplicación.
+Actualización: 17 de octubre de 2026. Ver el [informe final](../AUDITORIA_FINAL_TOLENTINO_RESTAURANTES.md) para las pruebas y evidencia completas.
 
-## Estado de Supabase y dependencias para operar
+## Estado comprobado
 
-La migración `20261017021301_initial_tenant_security` está aplicada y vigente en el proyecto autorizado `ylcnrfzosjzuljufwups`. La evidencia `evidence/db-migration-verification.json` (16 de octubre de 2026, 22:49 (America/Bogota)) verifica 15 tablas públicas y una privada con RLS, permisos anónimos restringidos, ocho RPC de negocio y sus permisos, y el bucket privado `restaurant-media` con límite de 5 MiB y cuatro políticas de tenant. Se comprobó la ejecución de estadísticas de servicio y que un rol autenticado sin membresía no ve restaurantes ni productos. Esto no equivale al recorrido remoto A/B con sesiones reales.
+- Supabase real conectado, dos migraciones aplicadas, RLS y permisos verificados.
+- Superadministrador configurado; tres propietarios DEMO distintos y 72 productos persistentes.
+- Creación desde interfaz/API, reintentos idempotentes, conflictos auténticos, CRUD, aislamiento A/B/C, Storage, suspensión, reactivación y CSV hasta 1.000 filas probados contra el servicio alojado.
+- Las cuentas DEMO terminan en .test y no envían invitaciones ni recuperación por correo.
+- QR PNG/SVG/PDF decodificados automáticamente. Sus archivos actuales son exclusivamente de validación local.
+- Código y evidencias en el repositorio autorizado. El proyecto original de referencia no se modificó.
 
-URL, clave publicable y clave de servicio ya están configuradas en `.env.local`, ignorado por Git. La migración no creó usuarios Auth, restaurantes ni objetos Storage, ni envió correos. La comprobación conectada de las 22:51 (America/Bogota) del 16 de octubre de 2026 está en `evidence/connected-supabase-smoke.json`: estadísticas REST correctas con cero restaurantes, bucket privado accesible, primera página de Auth sin usuarios, health local 200 y APIs privadas 401 sin sesión. No acredita acceso de un propietario ni correo real.
+## Bloqueos externos para producción
 
-1. Desactivar el registro público: la última lectura de Auth devuelve `disable_signup: false`. Revisar también acceso anónimo, política de contraseña, duración de sesión, Site URL y redirecciones antes de habilitar clientes.
-2. Configurar SMTP y la plantilla de recuperación. Elegir el correo real de la primera cuenta Tolentino y ejecutar `scripts/bootstrap-admin.mjs`; comprobar entrega, definición de contraseña, sesión y recuperación con Auth real. Estas operaciones aún no se ejecutaron.
-3. El repositorio autorizado `tolentinosftw-dotcom/tolentino-chef` ya está publicado. Conectarlo a Render y desplegar `render.yaml` con sus variables de servidor, `APP_URL` y `PLATFORM_HOSTNAMES`. Render sigue pendiente. Elegir disponibilidad y costos antes de publicar comercialmente.
-4. Para dominios personalizados, configurar además `RENDER_API_KEY`, `RENDER_SERVICE_ID` y `RENDER_SERVICE_HOSTNAME`, y los TXT/CNAME mostrados para cada dominio. No se modificó DNS ni se registraron dominios externos.
+1. **Render y URL HTTPS:** el usuario confirmó que aún no existe despliegue; no hay credenciales Render configuradas. Conectar el repositorio, aplicar render.yaml, configurar APP_URL y PLATFORM_HOSTNAMES y comprobar health, cookies, logs y persistencia en el servicio público.
+2. **QR públicos:** requieren el dominio canónico HTTPS de la plataforma. Descargar de nuevo los tres QR tras desplegar y verificar sus destinos por HTTP público. El token soporta cambios de slug y dominio propio del restaurante; el dominio canónico de la plataforma debe mantenerse.
+3. **Supabase Auth:** la lectura real de settings aún indica registro público habilitado. Desactivarlo desde la cuenta administradora del proyecto y comprobar Site URL, redirecciones, política de contraseñas, duración de sesión y acceso anónimo. Una interfaz sin registro no deshabilita la API de registro.
+4. **SMTP y recuperación real:** configurar proveedor y plantilla de recuperación, después verificar entrega con una cuenta autorizada. No se enviaron correos a las demos. Los endpoints y el tratamiento de errores se probaron; la entrega externa no está acreditada.
+5. **Supabase Advisors:** la conexión MCP devolvió falta de permisos al consultar el proyecto correcto. Requiere acceso Management de ese proyecto; la clave de servicio no lo reemplaza. Evidencia: `evidence/advisors-access.json`.
+6. **Dominios personalizados:** falta validar DNS/TLS/Render reales con un hostname controlado. Las pruebas de integración de dominios usan respuestas simuladas y no acreditan DNS publicado.
+7. **Dispositivos físicos y aceptación operativa:** no se realizaron escaneos impresos Android/iPhone, prueba Safari real, carga remota sostenida ni restauración de respaldos en un entorno aislado. No equivalen a las pruebas de escritorio con viewports móviles.
 
-Los comandos y el orden preciso están en [DEPLOY_RENDER_SUPABASE.md](DEPLOY_RENDER_SUPABASE.md). Los resultados de login/health sin credenciales pertenecen a la etapa local anterior; no deben interpretarse como un fallo actual de configuración. No hay acceso ficticio que sustituya Supabase.
+## Límites funcionales conocidos
 
-## Aceptación pendiente contra infraestructura real
+- Una imagen principal por producto; variantes y extras informativos, sin pedidos ni pagos.
+- Un intervalo de apertura por día, sin turnos partidos ni calendario de festivos.
+- Traducciones manuales en siete idiomas; no hay traducción automática.
+- Borrador/publicación de apariencia. Nombre, descripción, catálogo y precios se guardan al confirmar cada formulario.
+- Copiar diseño conserva el catálogo del destino y excluye imágenes de otro restaurante; no clona propietarios ni ventas.
+- Exportación CSV básica de nombre, precio, categoría, descripción y SKU. No exporta imágenes, variantes, extras o traducciones y no es un respaldo integral. Importación limitada a 1.000 filas por archivo.
+- Verificación de dominio con CNAME directo, sin apex ALIAS/flattening ni comodines.
+- El cambio de identidad/correo del propietario requiere un procedimiento administrativo verificado; el panel restablece su acceso.
+- Métricas agregadas de solicitudes, no personas únicas ni acreditación de escaneos físicos.
 
-- Ejecutar el recorrido A–R con dos propietarios reales en un proyecto aislado: correo, acceso, CRUD, imagen, precio público, permisos cruzados, soporte, suspensión y reactivación. Las pruebas SQL locales ya ejercitan políticas, constraints y transacciones; no sustituyen Auth, PostgREST y Storage alojados.
-- Ejecutar advisors de Supabase y revisar Auth. RLS, grants, RPC y configuración del bucket ya se verificaron en remoto; faltan intentos directos de lectura/escritura entre A y B con tokens Auth reales y objetos Storage reales.
-- Verificar Render, dominio permanente, HTTPS, envío de cookies, refresco de sesiones, health, logs y persistencia después de reiniciar el servicio.
-- Registrar y verificar un dominio real, comprobar que el menú se limita al restaurante asociado y que la URL por slug permanece disponible.
-- Imprimir QR en varios tamaños y escanear con teléfonos reales, distintas cámaras e iluminación. La decodificación automática de PNG/SVG/PDF ya está probada; no acredita una prueba física.
-- Probar backup y restauración de base y objetos Storage en un proyecto aislado.
-- Medir carga concurrente, latencias remotas y consumo de recursos bajo el plan contratado. El benchmark local de importación no prueba capacidad comercial ni miles de usuarios concurrentes.
-
-## Límites funcionales explícitos
-
-- Una fotografía principal por producto; variantes y extras informativos en JSONB. No hay galería de múltiples fotografías ni pedidos.
-- Un intervalo de apertura por día. No hay turnos partidos ni calendario de festivos.
-- Edición manual de traducciones en siete idiomas. No se traducen automáticamente los catálogos ni se promete contenido completo; campos ausentes usan el texto principal.
-- El borrador y publicación abarcan apariencia. Nombre, descripción, catálogo y precios se guardan inmediatamente; no hay borrador integral del negocio.
-- Copiar diseño conserva el catálogo y los idiomas del destino, y excluye imágenes de otro restaurante. No clona propietarios, ventas ni productos.
-- Verificación automática de dominios exige CNAME directo al servicio configurado. No admite apex con ALIAS/flattening ni comodines de subdominios; cada hostname debe registrarse y verificarse individualmente.
-- No hay cambio automático del correo/identidad de propietario; requiere un procedimiento administrativo verificado. El panel permite restablecer su acceso.
-- Visitas y escaneos son conteos agregados de solicitudes con limitación de frecuencia, no personas únicas ni prueba de escaneos físicos.
-- No se ejecutó una auditoría formal de accesibilidad ni pruebas Safari/Firefox/dispositivos físicos. La suite visual usa Chrome en dos tamaños.
-
-No se implementaron suscripciones, empleados, carrito, checkout, pagos, facturación, cocina ni delivery, conforme al alcance solicitado.
+No se incorporaron suscripciones, empleados, carrito, checkout, pagos, facturación, cocina ni delivery.

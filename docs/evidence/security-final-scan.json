@@ -1,0 +1,19 @@
+{
+  "at": "2026-10-17T18:09:39.040Z",
+  "scope": "Exact server key, supplied administrator/database password, 3 DEMO passwords, private-key markers; candidate files, public browser bundle, all reachable Git history and optional index",
+  "filesScanned": 251,
+  "clientBundleFiles": 44,
+  "historyBlobs": 110,
+  "stagedFiles": 251,
+  "ignored": [
+    {
+      "path": ".env.local",
+      "ignored": true
+    },
+    {
+      "path": ".runtime/demo-accounts.json",
+      "ignored": true
+    }
+  ],
+  "findings": []
+}

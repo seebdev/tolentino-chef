@@ -1,0 +1,9 @@
+{
+  "at": "2026-10-17T17:25:13.933Z",
+  "project": "ylcnrfzosjzuljufwups",
+  "tool": "supabase_get_advisors",
+  "type": "security",
+  "status": "BLOCKED",
+  "error": "You do not have permission to perform this action",
+  "source": "Connected Supabase MCP; service-role access to Auth/REST does not provide management access"
+}

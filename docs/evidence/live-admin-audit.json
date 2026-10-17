@@ -1,0 +1,47 @@
+{
+  "at": "2026-10-17T17:25:49.402Z",
+  "results": [
+    {
+      "name": "admin list, search, metrics and real support context",
+      "pass": true
+    },
+    {
+      "name": "copy appearance excludes foreign images and preserves catalogue",
+      "pass": true
+    },
+    {
+      "name": "commercial note editing persists without changing owner",
+      "pass": true
+    },
+    {
+      "name": "demo reset access blocks external email",
+      "pass": true
+    },
+    {
+      "name": "demo public recovery remains generic without email",
+      "pass": true
+    },
+    {
+      "name": "nonexistent restaurant returns 404",
+      "pass": true
+    },
+    {
+      "name": "invalid media type rejected before upload",
+      "pass": true
+    },
+    {
+      "name": "forged raster file rejected before upload",
+      "pass": true
+    },
+    {
+      "name": "cross-origin mutation rejected",
+      "pass": true
+    },
+    {
+      "name": "superadmin can edit published image and restore it",
+      "pass": true
+    }
+  ],
+  "passed": 10,
+  "failed": 0
+}

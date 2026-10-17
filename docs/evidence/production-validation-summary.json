@@ -1,0 +1,31 @@
+{
+  "at": "2026-10-17T17:54:56.943Z",
+  "environment": "Node22.23.3 Windows; local production build",
+  "checks": [
+    {
+      "command": "npm run typecheck",
+      "exitCode": 0,
+      "detail": "next typegen and tsc --noEmit; final callback type corrected"
+    },
+    {
+      "command": "npm run lint",
+      "exitCode": 0
+    },
+    {
+      "command": "npm run test -- --reporter=json --outputFile=docs/evidence/unit-tests-final-20261017.json",
+      "exitCode": 0,
+      "passed": 201,
+      "failed": 0
+    },
+    {
+      "command": "npm run build",
+      "exitCode": 0,
+      "log": "production-build-20261017.txt"
+    },
+    {
+      "command": "npm run start -- --hostname 127.0.0.1 --port 3000",
+      "detail": "Production server ready; health200 and favicon200"
+    }
+  ],
+  "publicDeployment": false
+}

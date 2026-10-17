@@ -1,0 +1,33 @@
+{
+  "project": "ylcnrfzosjzuljufwups",
+  "functions": [
+    {
+      "anon": false,
+      "name": "claim_restaurant_creation",
+      "definer": false,
+      "service": true,
+      "authenticated": false
+    },
+    {
+      "anon": false,
+      "name": "complete_restaurant_creation",
+      "definer": false,
+      "service": true,
+      "authenticated": false
+    },
+    {
+      "anon": false,
+      "name": "settle_restaurant_creation",
+      "definer": false,
+      "service": true,
+      "authenticated": false
+    }
+  ],
+  "migration": "20261017165549",
+  "requests_rls": true,
+  "bucket_public": false,
+  "anon_requests_read": false,
+  "owner_requests_read": false,
+  "owner_can_update_demo": false,
+  "verified_at": "2026-10-17T17:06:18.1845625Z"
+}

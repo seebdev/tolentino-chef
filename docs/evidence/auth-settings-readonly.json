@@ -1,0 +1,14 @@
+{
+  "checked_at": "2026-10-17T17:11:21.733Z",
+  "project": "ylcnrfzosjzuljufwups",
+  "method": "GET /auth/v1/settings (read-only public settings)",
+  "http_status": 200,
+  "public_signup_enabled": true,
+  "email_provider_enabled": true,
+  "email_autoconfirm": false,
+  "smtp_configuration": {
+    "status": "not_verifiable_with_current_access",
+    "reason": "Public Auth settings do not expose SMTP provider or sender configuration. No Management API access authorized for this project was available. No real email was sent."
+  },
+  "mutation_performed": false
+}

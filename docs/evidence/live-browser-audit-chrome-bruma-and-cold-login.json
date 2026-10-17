@@ -1,0 +1,309 @@
+{
+  "startedAt": "2026-10-17T17:44:12.815Z",
+  "phase": "owners",
+  "base": "http://localhost:3000",
+  "applicationScope": "local",
+  "traffic": "Real Next.js application, Supabase Auth and persisted data. No API mocks or route interception.",
+  "mutations": "Only login/logout sessions, rate-limit/visit counters and local browser favorites; no menu edits, emails, reset or domain changes.",
+  "physicalDevices": false,
+  "physicalQrScanning": false,
+  "browsers": [
+    {
+      "name": "chrome",
+      "available": true,
+      "version": "155.0.8059.80",
+      "headless": true
+    }
+  ],
+  "publicMenus": [],
+  "owners": [
+    {
+      "browser": "chrome",
+      "restaurant": "aurora",
+      "status": "FAIL",
+      "errors": {
+        "pageErrors": [],
+        "consoleErrors": [
+          {
+            "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+            "location": "http://localhost:3000/favicon.ico",
+            "expected": true
+          },
+          {
+            "message": "Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+            "location": "http://localhost:3000/api/session",
+            "expected": true
+          },
+          {
+            "message": "Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+            "location": "http://localhost:3000/api/session",
+            "expected": true
+          },
+          {
+            "message": "Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+            "location": "http://localhost:3000/api/session",
+            "expected": true
+          },
+          {
+            "message": "Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+            "location": "http://localhost:3000/api/session",
+            "expected": true
+          }
+        ],
+        "failedRequests": [],
+        "httpErrors": [
+          {
+            "url": "http://localhost:3000/api/session",
+            "status": 401,
+            "expected": true
+          },
+          {
+            "url": "http://localhost:3000/api/session",
+            "status": 401,
+            "expected": true
+          },
+          {
+            "url": "http://localhost:3000/api/session",
+            "status": 401,
+            "expected": true
+          },
+          {
+            "url": "http://localhost:3000/api/session",
+            "status": 401,
+            "expected": true
+          }
+        ]
+      },
+      "visitedTabs": [],
+      "downloads": [],
+      "error": "page.waitForResponse: Timeout 30000ms exceeded while waiting for event \"response\""
+    },
+    {
+      "browser": "chrome",
+      "restaurant": "bruma",
+      "status": "PASS",
+      "errors": {
+        "pageErrors": [],
+        "consoleErrors": [
+          {
+            "message": "Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+            "location": "http://localhost:3000/api/session",
+            "expected": true
+          },
+          {
+            "message": "Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+            "location": "http://localhost:3000/api/session",
+            "expected": true
+          },
+          {
+            "message": "Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+            "location": "http://localhost:3000/api/session",
+            "expected": true
+          },
+          {
+            "message": "Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+            "location": "http://localhost:3000/api/session",
+            "expected": true
+          }
+        ],
+        "failedRequests": [],
+        "httpErrors": [
+          {
+            "url": "http://localhost:3000/api/session",
+            "status": 401,
+            "expected": true
+          },
+          {
+            "url": "http://localhost:3000/api/session",
+            "status": 401,
+            "expected": true
+          },
+          {
+            "url": "http://localhost:3000/api/session",
+            "status": 401,
+            "expected": true
+          },
+          {
+            "url": "http://localhost:3000/api/session",
+            "status": 401,
+            "expected": true
+          }
+        ]
+      },
+      "visitedTabs": [
+        "Productos",
+        "Categorías",
+        "Promociones",
+        "Apariencia",
+        "Horarios",
+        "Idiomas",
+        "Mi código QR",
+        "Importar productos",
+        "Cuenta y acceso"
+      ],
+      "downloads": [
+        {
+          "kind": "catalog-csv",
+          "filename": "catalogo-productos.csv",
+          "bytes": 2853,
+          "rows": 24,
+          "sha256": "09fe54351fd04f755163ab86dcd252ee757d65eefe6f9fdbcad2c0eaafbdca64"
+        },
+        {
+          "kind": "qr-png",
+          "filename": "qr-cafe-bruma-demo.png",
+          "bytes": 45800,
+          "sha256": "77552cd7ee072681664dc7a036a34270fcadb38bd33dfba5beccd407d737611d",
+          "decodedUrl": "http://localhost:3000/q/5d236a67-793a-4a72-92f4-63abe20e8d95",
+          "targetScope": "local"
+        },
+        {
+          "kind": "qr-svg",
+          "filename": "qr-cafe-bruma-demo.svg",
+          "bytes": 47721,
+          "sha256": "b6f2a69b253f86e49b557c5830cbe9db50c515893c723f43695ee936d45985a5"
+        },
+        {
+          "kind": "qr-pdf",
+          "filename": "qr-cafe-bruma-demo.pdf",
+          "bytes": 43765,
+          "sha256": "9d56de3cef5ec52a784f52667fc4308bc9c7d7c12d6227eccff07e93b38b3b0d"
+        }
+      ],
+      "productCount": 24,
+      "tabLabels": [
+        {
+          "tab": "Productos",
+          "missingLabels": []
+        },
+        {
+          "tab": "Categorías",
+          "missingLabels": []
+        },
+        {
+          "tab": "Promociones",
+          "missingLabels": []
+        },
+        {
+          "tab": "Apariencia",
+          "missingLabels": []
+        },
+        {
+          "tab": "Horarios",
+          "missingLabels": []
+        },
+        {
+          "tab": "Idiomas",
+          "missingLabels": []
+        },
+        {
+          "tab": "Mi código QR",
+          "missingLabels": []
+        },
+        {
+          "tab": "Importar productos",
+          "missingLabels": []
+        },
+        {
+          "tab": "Cuenta y acceso",
+          "missingLabels": []
+        }
+      ],
+      "persistedSnapshotSha256": "908f90a97f02f229c0d28c36ea416dc839b07c6bfcd6cf2845baeb39891a5fab",
+      "reloadAndReLoginPreserved": true
+    }
+  ],
+  "results": [
+    {
+      "scope": "chrome/aurora/owner",
+      "name": "Scenario completion",
+      "status": "FAIL",
+      "detail": "page.waitForResponse: Timeout 30000ms exceeded while waiting for event \"response\""
+    },
+    {
+      "scope": "chrome/bruma/owner",
+      "name": "Real owner login and restaurant-bound session",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/bruma/owner",
+      "name": "Visible controls have labels in Productos",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/bruma/owner",
+      "name": "Visible controls have labels in Categorías",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/bruma/owner",
+      "name": "Visible controls have labels in Promociones",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/bruma/owner",
+      "name": "Visible controls have labels in Apariencia",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/bruma/owner",
+      "name": "Visible controls have labels in Horarios",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/bruma/owner",
+      "name": "Visible controls have labels in Idiomas",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/bruma/owner",
+      "name": "Visible controls have labels in Mi código QR",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/bruma/owner",
+      "name": "Visible controls have labels in Importar productos",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/bruma/owner",
+      "name": "Visible controls have labels in Cuenta y acceso",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/bruma/owner",
+      "name": "All owner tabs and appearance preview open without editing records",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/bruma/owner",
+      "name": "Owner downloads real persisted catalog CSV with24 products",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/bruma/owner",
+      "name": "Real owner PNG/SVG/PDF downloads; PNG independently decoded to stable route",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/bruma/owner",
+      "name": "Owner menu preview opens the correct real public menu",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/bruma/owner",
+      "name": "Reload, logout, anonymous rejection and real re-login preserve catalog data",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/bruma/owner",
+      "name": "No runtime errors or unexpected failed requests",
+      "status": "PASS"
+    }
+  ],
+  "updatedAt": "2026-10-17T17:46:09.633Z",
+  "counts": {
+    "passed": 16,
+    "failed": 1
+  }
+}

@@ -1,0 +1,560 @@
+{
+  "at": "2026-10-17T17:24:20.941Z",
+  "environment": "http://localhost:3000",
+  "database": "Supabase real",
+  "checks": [
+    {
+      "name": "aurora owner login and assignment",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "bruma owner login and assignment",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "marea owner login and assignment",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "anonymous administrative API is protected",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "aurora real public menu, images and tenant identity",
+      "pass": true,
+      "detail": {
+        "products": 24,
+        "categories": 8,
+        "images": 6
+      }
+    },
+    {
+      "name": "aurora owner cannot use superadmin endpoint",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "aurora owner cannot change QR administration",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "aurora nonexistent product returns 404",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "aurora invalid price is rejected",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "aurora invalid appearance has no partial write",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "aurora CRUD product, public price, availability, delete",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "aurora category/subcategory and promotion CRUD",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "aurora -> bruma cross-tenant API read/write blocked",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "aurora -> bruma direct PostgREST RLS read/write blocked",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "aurora -> bruma private Storage cannot download",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "aurora -> bruma foreign media reference rejected",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "aurora -> marea cross-tenant API read/write blocked",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "aurora -> marea direct PostgREST RLS read/write blocked",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "aurora -> marea private Storage cannot download",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "aurora -> marea foreign media reference rejected",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "aurora cannot escalate role through database",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "aurora logout/relogin persistence",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "aurora superadmin suspension/reactivation with same QR",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "aurora owner access suspension/reactivation",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "aurora real QR PNG SVG PDF decoding and stable slug resolution",
+      "pass": true,
+      "detail": {
+        "expected": "http://localhost:3000/q/5820b231-3a31-43aa-a1ec-4f6f79ef2bb6",
+        "publicReady": false,
+        "physicalScan": false
+      }
+    },
+    {
+      "name": "bruma real public menu, images and tenant identity",
+      "pass": true,
+      "detail": {
+        "products": 24,
+        "categories": 8,
+        "images": 6
+      }
+    },
+    {
+      "name": "bruma owner cannot use superadmin endpoint",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "bruma owner cannot change QR administration",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "bruma nonexistent product returns 404",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "bruma invalid price is rejected",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "bruma invalid appearance has no partial write",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "bruma CRUD product, public price, availability, delete",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "bruma category/subcategory and promotion CRUD",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "bruma -> aurora cross-tenant API read/write blocked",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "bruma -> aurora direct PostgREST RLS read/write blocked",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "bruma -> aurora private Storage cannot download",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "bruma -> aurora foreign media reference rejected",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "bruma -> marea cross-tenant API read/write blocked",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "bruma -> marea direct PostgREST RLS read/write blocked",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "bruma -> marea private Storage cannot download",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "bruma -> marea foreign media reference rejected",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "bruma cannot escalate role through database",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "bruma logout/relogin persistence",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "bruma superadmin suspension/reactivation with same QR",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "bruma owner access suspension/reactivation",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "bruma real QR PNG SVG PDF decoding and stable slug resolution",
+      "pass": true,
+      "detail": {
+        "expected": "http://localhost:3000/q/5d236a67-793a-4a72-92f4-63abe20e8d95",
+        "publicReady": false,
+        "physicalScan": false
+      }
+    },
+    {
+      "name": "marea real public menu, images and tenant identity",
+      "pass": true,
+      "detail": {
+        "products": 24,
+        "categories": 8,
+        "images": 6
+      }
+    },
+    {
+      "name": "marea owner cannot use superadmin endpoint",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "marea owner cannot change QR administration",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "marea nonexistent product returns 404",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "marea invalid price is rejected",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "marea invalid appearance has no partial write",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "marea CRUD product, public price, availability, delete",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "marea category/subcategory and promotion CRUD",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "marea -> aurora cross-tenant API read/write blocked",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "marea -> aurora direct PostgREST RLS read/write blocked",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "marea -> aurora private Storage cannot download",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "marea -> aurora foreign media reference rejected",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "marea -> bruma cross-tenant API read/write blocked",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "marea -> bruma direct PostgREST RLS read/write blocked",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "marea -> bruma private Storage cannot download",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "marea -> bruma foreign media reference rejected",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "marea cannot escalate role through database",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "marea logout/relogin persistence",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "marea superadmin suspension/reactivation with same QR",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "marea owner access suspension/reactivation",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "marea real QR PNG SVG PDF decoding and stable slug resolution",
+      "pass": true,
+      "detail": {
+        "expected": "http://localhost:3000/q/199258db-b193-4055-9f26-b1f3ea9ee1eb",
+        "publicReady": false,
+        "physicalScan": false
+      }
+    },
+    {
+      "name": "real creation replay, concurrent replay and genuine email/slug conflicts",
+      "pass": true,
+      "detail": {
+        "replayedRequests": 2,
+        "restaurantCount": 3,
+        "orphanAccounts": 0,
+        "emailConflict": 409,
+        "slugConflict": 409
+      }
+    },
+    {
+      "name": "real CSV 1 rows transactional import and duplicate skip",
+      "pass": true,
+      "detail": {
+        "rows": 1,
+        "milliseconds": 8883,
+        "duplicatesCreated": 0
+      }
+    },
+    {
+      "name": "real CSV 10 rows transactional import and duplicate skip",
+      "pass": true,
+      "detail": {
+        "rows": 10,
+        "milliseconds": 4224,
+        "duplicatesCreated": 0
+      }
+    },
+    {
+      "name": "real CSV 100 rows transactional import and duplicate skip",
+      "pass": true,
+      "detail": {
+        "rows": 100,
+        "milliseconds": 4683,
+        "duplicatesCreated": 0
+      }
+    },
+    {
+      "name": "real CSV 500 rows transactional import and duplicate skip",
+      "pass": true,
+      "detail": {
+        "rows": 500,
+        "milliseconds": 8194,
+        "duplicatesCreated": 0
+      }
+    },
+    {
+      "name": "real CSV 1000 rows transactional import and duplicate skip",
+      "pass": true,
+      "detail": {
+        "rows": 1000,
+        "milliseconds": 8663,
+        "duplicatesCreated": 0
+      }
+    },
+    {
+      "name": "real CSV rejects empty",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "real CSV rejects wrong headers",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "real CSV rejects missing price",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "real CSV rejects invalid price",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "real CSV rejects unknown category",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "real CSV rejects duplicate rows",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "real CSV rejects corrupt quotes",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "real CSV rejects bad UTF8",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "real CSV rejects 1001 rows",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "catalog CSV exports beyond 1000 records without private fields",
+      "pass": true,
+      "detail": {
+        "bytes": 244269
+      }
+    },
+    {
+      "name": "no QA records remain and all demos retain 24 products",
+      "pass": true,
+      "detail": null
+    }
+  ],
+  "passed": 84,
+  "failed": 0,
+  "qr": [
+    {
+      "restaurant": "aurora",
+      "format": "png",
+      "path": "artifacts/qr/local-validation/aurora.png",
+      "decodedUrl": "http://localhost:3000/q/5820b231-3a31-43aa-a1ec-4f6f79ef2bb6",
+      "status": "decoded locally",
+      "publicReady": false
+    },
+    {
+      "restaurant": "aurora",
+      "format": "svg",
+      "path": "artifacts/qr/local-validation/aurora.svg",
+      "decodedUrl": "http://localhost:3000/q/5820b231-3a31-43aa-a1ec-4f6f79ef2bb6",
+      "status": "decoded locally",
+      "publicReady": false
+    },
+    {
+      "restaurant": "aurora",
+      "format": "pdf",
+      "path": "artifacts/qr/local-validation/aurora.pdf",
+      "decodedUrl": null,
+      "status": "exported; PNG raster source independently decoded",
+      "publicReady": false
+    },
+    {
+      "restaurant": "bruma",
+      "format": "png",
+      "path": "artifacts/qr/local-validation/bruma.png",
+      "decodedUrl": "http://localhost:3000/q/5d236a67-793a-4a72-92f4-63abe20e8d95",
+      "status": "decoded locally",
+      "publicReady": false
+    },
+    {
+      "restaurant": "bruma",
+      "format": "svg",
+      "path": "artifacts/qr/local-validation/bruma.svg",
+      "decodedUrl": "http://localhost:3000/q/5d236a67-793a-4a72-92f4-63abe20e8d95",
+      "status": "decoded locally",
+      "publicReady": false
+    },
+    {
+      "restaurant": "bruma",
+      "format": "pdf",
+      "path": "artifacts/qr/local-validation/bruma.pdf",
+      "decodedUrl": null,
+      "status": "exported; PNG raster source independently decoded",
+      "publicReady": false
+    },
+    {
+      "restaurant": "marea",
+      "format": "png",
+      "path": "artifacts/qr/local-validation/marea.png",
+      "decodedUrl": "http://localhost:3000/q/199258db-b193-4055-9f26-b1f3ea9ee1eb",
+      "status": "decoded locally",
+      "publicReady": false
+    },
+    {
+      "restaurant": "marea",
+      "format": "svg",
+      "path": "artifacts/qr/local-validation/marea.svg",
+      "decodedUrl": "http://localhost:3000/q/199258db-b193-4055-9f26-b1f3ea9ee1eb",
+      "status": "decoded locally",
+      "publicReady": false
+    },
+    {
+      "restaurant": "marea",
+      "format": "pdf",
+      "path": "artifacts/qr/local-validation/marea.pdf",
+      "decodedUrl": null,
+      "status": "exported; PNG raster source independently decoded",
+      "publicReady": false
+    }
+  ],
+  "limitations": [
+    "No public deployment",
+    "No physical QR scan",
+    "No SMTP email delivery test; demo recipients are reserved .test addresses"
+  ]
+}

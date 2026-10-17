@@ -1,28 +1,36 @@
 # Despliegue en Render y Supabase
 
-## Estado actual
+## Estado actual — 17 de octubre de 2026
 
-Render sigue pendiente. Supabase `ylcnrfzosjzuljufwups` es el destino autorizado y el repositorio ya publicado es `https://github.com/tolentinosftw-dotcom/tolentino-chef.git`. URL, clave publicable y clave de servicio están configuradas en `.env.local`, ignorado por Git. La migración `20261017021301_initial_tenant_security` ya está aplicada y verificada mediante conexión PostgreSQL al proyecto elegido.
+**Supabase está conectado y probado; Render todavía no está publicado.** El destino autorizado es `ylcnrfzosjzuljufwups` y el repositorio es [tolentinosftw-dotcom/tolentino-chef](https://github.com/tolentinosftw-dotcom/tolentino-chef). URL y claves están en `.env.local`, ignorado por Git; esta guía no contiene sus valores.
 
-La evidencia `evidence/db-migration-verification.json` registra el 16 de octubre de 2026 a las 22:49 (America/Bogota): 15 tablas públicas y una privada con RLS, grants y ocho RPC de negocio comprobados, bucket privado `restaurant-media` de 5 MiB y cuatro políticas de tenant. No se crearon usuarios, restaurantes ni objetos Storage, ni se enviaron correos. SMTP, primer administrador y recorridos remotos con Auth/Storage siguen pendientes; la última lectura de Auth indica `disable_signup: false`.
+Existen **tres restaurantes DEMO y cuatro cuentas Auth**: el administrador ya configurado y un propietario por DEMO. Aurora, Bruma y Marea tienen 24 productos y ocho categorías cada uno, imágenes propias, horarios y traducciones al inglés. Sus cuentas reservadas `.test` no reciben invitaciones ni recuperación por correo. Véanse [provisión de las DEMO](evidence/demo-provisioning.json) y [traducciones verificadas](evidence/demo-english-translations.json).
 
-La comprobación posterior `evidence/connected-supabase-smoke.json` confirmó REST, lectura de la configuración del bucket y acceso administrativo a Auth; no hay restaurantes ni usuarios en la primera página consultada. El servidor local de producción respondió health 200 (`status:ok`, `configured:true`), login 200 y APIs privadas 401 sin sesión. Esto confirma conexión y rechazo de acceso anónimo, no una sesión real de propietario.
+Están aplicadas las migraciones `20261017021301_initial_tenant_security` y `20261017165549_restaurant_creation_requests`. La primera estableció RLS y Storage privado; la segunda añadió solicitudes de creación idempotentes y su acceso exclusivo de servidor. Las verificaciones están en [esquema inicial](evidence/db-migration-verification.json) y [migración de creación](evidence/creation-migration-verification.json).
 
-La compilación es local y reproducible. `render.yaml` describe una aplicación Node única; no crea un servicio por restaurante. No ejecutar la migración contra el proyecto de referencia ni contra el proyecto existente de otra aplicación.
+La aceptación remota registra **84/84 comprobaciones de API, Auth, RLS, Storage, CSV y aislamiento entre los seis pares dirigidos de propietarios**, más **10/10 comprobaciones administrativas** y **19/19 complementarias**, todas aprobadas. Son pruebas contra Supabase real a través del servidor local; no acreditan un despliegue público. La prueba inicial administrativa con un selector incorrecto se conserva y su repetición corregida pasó. Véanse [auditoría real](evidence/live-audit.json) y [auditoría administrativa](evidence/live-admin-audit.json) y [recorridos complementarios](evidence/live-gap-audit.json).
 
-## 1. Proyecto y migración verificados
+Los nueve archivos QR se decodificaron correctamente, pero contienen URLs locales. No hay URL de Render confirmada, dominio público validado ni escaneo físico. No imprimirlos para clientes. [Validación local de QR](evidence/demo-qr-decoding.json).
 
-El destino autorizado ya es `ylcnrfzosjzuljufwups`; no crear otro proyecto ni volver a aplicar la migración inicial. La verificación remota confirmó que la migración está vigente, que no existen grants de SELECT anónimo sobre las tablas de negocio y que un rol autenticado sin membresía no puede ver restaurantes ni productos. Esta comprobación SQL no sustituye dos sesiones reales de propietarios.
+El recorrido real de navegador pasó 24/24 escenarios y 372/372 comprobaciones en Chrome/Edge. Después de las portadas finales y del reinicio, pasaron 18 capturas/54 comprobaciones; la revisión visual de esas capturas por dos agentes de IA tampoco encontró defectos. Los hashes privados y públicos de las tres DEMO permanecieron iguales tras arrancar un proceso nuevo. Evidencias: [navegador real](evidence/live-browser-audit.json), [capturas finales](evidence/live-browser-screenshots.json), [revisión visual](evidence/live-browser-visual-review.json), [reinicio](evidence/restart-persistence.json) y [smoke final local](evidence/production-local-smoke.json).
 
-Para futuras migraciones, revisar primero destino, cambios y copia de seguridad, y usar el SQL Editor o una CLI autorizada para este proyecto. No ejecutar reset contra un proyecto alojado. Mantener URL y claves únicamente en `.env.local` y en las variables secretas de Render; no copiarlas en mensajes, capturas ni el repositorio. El bucket ya es privado: no convertirlo en público para facilitar las pruebas.
+El build de producción local, typecheck (next typegen y tsc) y lint pasaron. El servidor next start local responde health 200 y sirve el favicon de plataforma. El escaneo revisó 251 archivos candidatos, 251 archivos del índice Git, 44 archivos del bundle cliente y 110 blobs del historial alcanzable, sin encontrar los secretos buscados; los archivos locales de credenciales permanecen ignorados. Estas comprobaciones no equivalen a un despliegue en Render. Evidencias: [build actual](evidence/production-build-20261017.txt) y [escaneo de secretos](evidence/security-final-scan.json).
 
-Quedan pendientes los advisors de Supabase y la aceptación con dos usuarios reales A y B antes de habilitar clientes.
+## 1. Proyecto y migraciones
 
-## 2. Configurar Auth y correo
+No crear otro proyecto, repetir el bootstrap del administrador ni volver a aplicar las migraciones existentes para publicar esta instalación. Tampoco ejecutar un reset ni operar sobre los proyectos de referencia. La aplicación utiliza un servicio web para todos los restaurantes y conserva sus datos en Supabase.
 
-La última lectura remota indica `disable_signup: false`: deshabilitar Sign up antes de operar y comprobar que el acceso anónimo también esté desactivado. Establecer longitud mínima de contraseña de 12 caracteres y tokens de acceso breves (la configuración local usa 15 minutos). Configurar un proveedor SMTP válido y probar entrega real; no asumir que el envío de pruebas de Supabase sirve para todos los clientes.
+Para futuras migraciones, comprobar primero destino y estado del historial, revisar el SQL y ejecutarlo en un entorno de prueba antes del proyecto autorizado. La CLI o conexión PostgreSQL debe señalar explícitamente el destino correcto. Mantener las credenciales solo en variables secretas o archivos locales ignorados. El bucket `restaurant-media` permanece privado: no cambiarlo a público.
 
-**Site URL** debe coincidir con `APP_URL`. Autorizar la ruta exacta `APP_URL/auth/callback` para el flujo PKCE. En la plantilla **Reset password**, usar un enlace a:
+Las pruebas reales de aislamiento entre propietarios ya están realizadas. La consulta de advisors de seguridad sigue bloqueada por falta de permiso de la integración de Supabase; no fue un rechazo de aprobación automática y no se presenta como una auditoría aprobada. [Evidencia del bloqueo](evidence/advisors-access.json).
+
+## 2. Auth, correo y administrador existente
+
+El administrador **ya existe y funciona**. No ejecutar de nuevo `scripts/bootstrap-admin.mjs` para este proyecto. El bootstrap queda reservado para una instalación nueva y separada que lo necesite explícitamente.
+
+La lectura remota de Auth confirmó `public_signup_enabled: true`, proveedor de correo habilitado y autoconfirmación de correo desactivada. La interfaz no ofrece registro público, pero el ajuste alojado todavía debe cerrarse antes de operar con clientes. SMTP, acceso anónimo, política alojada de contraseñas y duración de sesiones requieren verificación en el Dashboard o Management API con permiso suficiente; el endpoint público no expone toda esa configuración. No se enviaron correos reales durante estas pruebas. [Lectura de Auth y sus límites](evidence/auth-settings-readonly.json).
+
+Al configurar el entorno público, establecer **Site URL** igual a `APP_URL` y autorizar la ruta exacta `APP_URL/auth/callback` para PKCE. En la plantilla **Reset password**, usar:
 
 ```html
 <a
@@ -31,43 +39,62 @@ La última lectura remota indica `disable_signup: false`: deshabilitar Sign up a
 >
 ```
 
-Esta plantilla es necesaria también para el alta de clientes: el servidor crea una cuenta con contraseña aleatoria desconocida y solicita recuperación después de confirmar restaurante y membresía. No usa la plantilla Invite. El enlace estándar con un token en el fragmento no puede ser procesado por un endpoint de servidor. `verifyOtp` permite establecer la sesión y lleva a `/login?mode=password`. Callback y confirmación no se cachean y usan política de referencia restrictiva. Los enlaces de un solo uso pueden ser consumidos por sistemas de análisis de correo; probar el proveedor real y solicitar otro enlace si se consume antes de abrirlo. [Guía oficial de plantillas y endpoints de servidor](https://supabase.com/docs/guides/auth/auth-email-templates#redirecting-the-user-to-a-server-side-endpoint).
+La creación de un cliente confirma primero restaurante y membresía, y después solicita recuperación para definir la contraseña. No utiliza la plantilla Invite. El endpoint de servidor procesa `token_hash` mediante `verifyOtp` y redirige a `/login?mode=password`. Configurar y comprobar esa plantilla con el SMTP y dominio definitivos; una DEMO `.test` no sirve para validar entrega de correo. [Plantillas de Supabase con endpoint de servidor](https://supabase.com/docs/guides/auth/auth-email-templates#redirecting-the-user-to-a-server-side-endpoint).
 
-Después de configurar Auth, SMTP y la plantilla, elegir el correo real del primer administrador y ejecutar el bootstrap (aún pendiente; la migración ya está aplicada):
+## 3. Variables del servicio
 
-```powershell
-node --env-file=.env.local scripts/bootstrap-admin.mjs TU_CORREO_REAL
-```
+| Variable | Uso |
+| --- | --- |
+| `NEXT_PUBLIC_SUPABASE_URL` | URL del proyecto Supabase autorizado |
+| `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY` | Clave publicable del mismo proyecto |
+| `SUPABASE_SERVICE_ROLE_KEY` | Secreto exclusivo del servidor; nunca variable pública |
+| `APP_URL` | Origen HTTPS permanente de Tolentino; localhost solo para trabajo local |
+| `PLATFORM_HOSTNAMES` | Hostnames exactos confiables, sin protocolo ni comodines |
+| `RENDER_API_KEY` | Opcional, solo servidor, para registro y validación de dominios |
+| `RENDER_SERVICE_ID` | Identificador real del servicio Tolentino, cuando exista |
+| `RENDER_SERVICE_HOSTNAME` | Host real `onrender.com`; no inventarlo |
 
-El script crea exclusivamente una cuenta nueva y una asignación global persistida. No eleva una cuenta existente por email. No imprime contraseñas ni claves.
+Cargar los valores en Render antes del arranque. No subir `.env.local`, `.runtime`, contraseñas DEMO, `node_modules` ni `.next`. Las imágenes y datos comerciales viven en Supabase; el disco del servicio web no es su almacenamiento persistente. Las DEMO actuales están identificadas mediante `is_demo` y cuentas `.test`; las futuras pruebas destructivas deben usar un entorno aislado.
 
-## 3. Variables
+## 4. Publicar en Render
 
-| Variable                             | Necesidad                                                               |
-| ------------------------------------ | ----------------------------------------------------------------------- |
-| NEXT_PUBLIC_SUPABASE_URL             | URL del nuevo proyecto                                                  |
-| NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY | Clave publicable del nuevo proyecto                                     |
-| SUPABASE_SERVICE_ROLE_KEY            | Secreto de servidor; nunca cliente                                      |
-| APP_URL                              | Origen HTTPS permanente de Tolentino; localhost solo para trabajo local |
-| PLATFORM_HOSTNAMES                   | Hostnames exactos confiables de plataforma, sin protocolo ni comodines  |
-| RENDER_API_KEY                       | Opcional, solo servidor, para registro/validación de dominios           |
-| RENDER_SERVICE_ID                    | ID real del servicio Tolentino, normalmente srv-…                       |
-| RENDER_SERVICE_HOSTNAME              | Host real del servicio terminado en onrender.com; no inventarlo         |
+El blueprint usa **`autoDeployTrigger: commit`**. La consulta de GitHub encontró cero check runs y cero statuses en la rama principal; con `checksPass`, Render no dispara un despliegue cuando no detecta checks. El modo por commit evita ese bloqueo, y el comando de build sigue ejecutando los controles del repositorio. Para los despliegues automáticos hay que conectar el proveedor Git; pegar solo una URL pública requiere despliegues manuales. [Preflight del repositorio](evidence/render-preflight.json), [integración oficial de Render con CI](https://render.com/docs/deploys#integrating-with-ci).
 
-Mantener proyectos distintos para pruebas y producción. No cargar datos ficticios de las pruebas en producción. Las imágenes viven en Storage; el disco de Render no contiene datos comerciales persistentes.
+1. Conectar el repositorio `tolentinosftw-dotcom/tolentino-chef` mediante la integración Git de Render y seleccionar la rama que se va a publicar.
+2. Crear un único Web Service con `render.yaml`: Node 22.23.3, inicio `npm run start` y health `/api/health`.
+3. Configurar las variables anteriores con los valores reales del entorno y revisar el origen público antes de generar QR definitivos.
+4. Ejecutar el build y esperar un despliegue saludable. Su comando es:
 
-## 4. Publicar Render
+   ```sh
+   npm ci --include=dev && npm run typecheck && npm run lint && npm run test && npm run build
+   ```
 
-1. Conectar con Render el repositorio ya publicado `tolentinosftw-dotcom/tolentino-chef`. No subir `.env.local`, `.runtime`, `node_modules` ni `.next`.
-2. Crear un Web Service desde `render.yaml`, o usar Node 22.23.3, build `npm ci --include=dev && npm run typecheck && npm run lint && npm run test && npm run build`, inicio `npm run start` y health `/api/health`.
-3. Completar las variables antes de arrancar. Render proporciona PORT; Next lo respeta y escucha en 0.0.0.0.
-4. Esperar build/deploy y comprobar health 200 con `status:ok`, login real, persistencia, carga/lectura de imagen, cambio de precio y QR escaneable.
-5. Configurar un dominio permanente controlado por Tolentino antes de imprimir códigos. Registrar/verificar dominios de clientes según `QR_Y_DOMINIOS.md`.
+   `typecheck` ejecuta `next typegen && tsc --noEmit` para generar los tipos de rutas antes de comprobar TypeScript en una instalación limpia. [Referencia oficial de `next typegen`](https://nextjs.org/docs/app/api-reference/cli/next#next-typegen-options).
+5. Comprobar desde el origen HTTPS publicado: health, login de los roles previstos, rechazo anónimo de APIs privadas, persistencia, carga y lectura de imágenes, cambios de precio, suspensión/reactivación y QR. Render proporciona `PORT`; Next escucha en la interfaz del servicio.
+6. Configurar un dominio permanente controlado por Tolentino, actualizar `APP_URL`, callbacks y hostnames confiables, regenerar las descargas QR para ese origen y realizar un escaneo físico. Seguir [QR y dominios](QR_Y_DOMINIOS.md) para dominios de clientes.
 
-El blueprint propone **free para validación inicial**, no una disponibilidad comercial garantizada. Render indica que Free duerme tras inactividad y no debe usarse para producción. Elegir y aprobar un servicio siempre activo antes de vender disponibilidad del QR; revisar límites de transferencia, dominios y Supabase. No se contrató ningún plan de pago. [Límites oficiales de Render Free](https://render.com/docs/free). La forma de desplegar Next como servicio Node y el blueprint se contrastaron con [Next.js en Render](https://render.com/docs/deploy-nextjs-app) y [Blueprint specification](https://render.com/docs/blueprint-spec).
+Un fallo en cualquier comando del build impide completar el despliegue. Este procedimiento todavía no se ejecutó en Render; la comprobación de un build local no lo sustituye. [Proceso de despliegue de Render](https://render.com/docs/deploys#deploy-steps).
+
+El blueprint propone el plan gratuito para validación inicial. Render documenta que sus servicios gratuitos se suspenden por inactividad y no los recomienda para producción. La elección de disponibilidad y plan comercial sigue pendiente; no se contrató ningún plan de pago. [Límites oficiales de Render Free](https://render.com/docs/free).
 
 ## 5. Backup y recuperación
 
-Definir la retención según el plan real de Supabase, hacer exportaciones cifradas fuera del servicio y mantener copia de objetos Storage además de Postgres. Un backup SQL no conserva por sí solo los archivos de imágenes. Guardar migraciones y configuración sin secretos en el repositorio.
+Definir retención y exportaciones cifradas según el plan real de Supabase. Respaldar los objetos de Storage además de PostgreSQL: una copia SQL no contiene por sí sola los archivos de imágenes. Conservar migraciones y configuración sin secretos en Git.
 
-Ensayar restauración primero en un proyecto de recuperación aislado: esquema, datos, objetos, membresías y tokens QR. Verificar aislamiento y checksums antes de cambiar configuración de producción. Nunca recrear tokens públicos al restaurar; mantener APP_URL y el dominio anterior para conservar material impreso. No se ejecutó restauración remota en esta entrega.
+Ensayar la restauración en un proyecto aislado: esquema, datos, objetos, membresías y tokens QR. Comprobar aislamiento y contenido antes de cambiar configuración de operación. Conservar los tokens públicos, `APP_URL` y el dominio permanente para mantener el material impreso. No se ejecutó un ensayo completo de restauración en esta entrega.
+
+## 6. Pendientes externos antes de operar
+
+| Pendiente | Evidencia o límite actual |
+| --- | --- |
+| Publicar Render y comprobar su health y reinicio | No hay servicio público confirmado; solo ejecución local |
+| Dominio, DNS, HTTPS y callbacks finales | Faltan valores y verificación sobre el dominio real |
+| QR comercial y escaneo físico | Nueve archivos válidos, todos con URL local |
+| Cerrar registro público en Auth | La última lectura alojada indica que sigue habilitado |
+| SMTP y entrega de recuperación real | Sin acceso de configuración suficiente ni prueba de entrega; DEMO sin comunicaciones |
+| Políticas alojadas de contraseña, sesión y acceso anónimo | La configuración local no prueba la del proyecto alojado |
+| Advisors de Supabase | Integración sin permiso para ejecutar la consulta |
+| Backup y restauración aislada | Procedimiento documentado, ensayo completo no realizado |
+| Capacidad y disponibilidad comercial | CSV de hasta 1.000 filas probado; no es una prueba de carga concurrente |
+
+Estas tareas no se consideran completadas por las pruebas locales o por las comprobaciones reales de API. El detalle de alcance y resultados está en [AUDITORIA_FINAL_TOLENTINO_RESTAURANTES.md](../AUDITORIA_FINAL_TOLENTINO_RESTAURANTES.md).

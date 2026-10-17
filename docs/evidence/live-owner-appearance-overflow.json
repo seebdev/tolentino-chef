@@ -1,0 +1,15 @@
+{
+    "at":  "2026-10-17T17:37:46.731Z",
+    "browser":  "chrome",
+    "restaurant":  "aurora",
+    "layout":  {
+                   "viewport":  1440,
+                   "scroll":  1440,
+                   "offenders":  [
+
+                                 ]
+               },
+    "screenshot":  "artifacts/screenshots/real-owner-appearance-overflow.png",
+    "evidenceApplicable":  false,
+    "limitation":  "This diagnostic screenshot captured the loading shell before appearance controls rendered. It cannot substantiate absence of overflow or validate the fix. See live-browser-audit-owner-appearance-before-fix.json for the actual failing measurements."
+}

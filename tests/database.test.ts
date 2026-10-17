@@ -989,3 +989,122 @@ describe.sequential(
       }));
   },
 );
+
+
+describe.sequential("Durable restaurant-creation transactions", () => {
+  const requestId = "dddddddd-dddd-4ddd-8ddd-dddddddddddd";
+  const hash = "a".repeat(64);
+  const data = { name: "Created DEMO", slug: "created-demo", owner_name: "Demo Owner",
+    owner_email: "demo@tolentino.test", currency: "COP", sale_currency: "COP",
+    default_language: "es", amount: 125000, demo: true };
+  async function claim(value = hash) {
+    return await scalar("select public.claim_restaurant_creation($1,$2,$3)", [ADMIN,requestId,value]) as {
+      state: string; owner_id: string; restaurant_id: string; lease_token: string;
+      response?: Record<string,unknown>; http_status?: number;
+    };
+  }
+  async function authStub(id: string) {
+    await db.exec("reset role");
+    await db.query("insert into auth.users(id) values($1)",[id]);
+    await db.exec("set local role service_role");
+  }
+  async function settle(token: string, outcome: string, response: unknown = null, status: number | null = null) {
+    return await scalar("select public.settle_restaurant_creation($1,$2,$3,$4,$5,$6)",
+      [ADMIN,requestId,token,outcome,response ? JSON.stringify(response) : null,status]) as Record<string,unknown>;
+  }
+  async function complete(token: string, input: unknown = data) {
+    return await scalar("select public.complete_restaurant_creation($1,$2,$3,$4)",
+      [ADMIN,requestId,token,JSON.stringify(input)]) as Record<string,unknown>;
+  }
+  it("denies owner/anonymous access to requests and every creation RPC", async () => {
+    for (const role of ["anon","authenticated"] as const)
+      await asRole(role,UA,async()=>{
+        await denied("select * from private.restaurant_creation_requests");
+        await denied("select public.claim_restaurant_creation($1,$2,$3)",[ADMIN,requestId,hash]);
+        await denied("select public.complete_restaurant_creation($1,$2,$3,$4)",[ADMIN,requestId,A,"{}"]);
+        await denied("select public.settle_restaurant_creation($1,$2,$3,'retry')",[ADMIN,requestId,A]);
+      });
+  });
+  it("only reserves attempts for an active platform administrator",()=>asRole("service_role",null,async()=>{
+    await denied("select public.claim_restaurant_creation($1,$2,$3)",[UA,requestId,hash]);
+    await db.query("update public.platform_admins set is_active=false where user_id=$1",[ADMIN]);
+    await denied("select public.claim_restaurant_creation($1,$2,$3)",[ADMIN,requestId,hash]);
+  }));
+  it("reserves once, rejects payload changes, and fences stale workers after retry",()=>asRole("service_role",null,async()=>{
+    const first=await claim();
+    expect(first.state).toBe("processing");
+    expect((await claim()).state).toBe("pending");
+    expect((await claim("b".repeat(64))).state).toBe("mismatch");
+    expect(await scalar("select count(*)::int from private.restaurant_creation_requests")).toBe(1);
+    await settle(first.lease_token,"retry");
+    const resumed=await claim();
+    expect(resumed.owner_id).toBe(first.owner_id);
+    expect(resumed.restaurant_id).toBe(first.restaurant_id);
+    expect(resumed.lease_token).not.toBe(first.lease_token);
+    expect(await settle(first.lease_token,"cleanup",{error:"stale"},400)).toEqual({state:"pending"});
+    await denied("select public.complete_restaurant_creation($1,$2,$3,$4)",[ADMIN,requestId,first.lease_token,JSON.stringify(data)]);
+  }));
+  it("atomically creates the tenant, membership, settings, QR, hours, sale, audit and replay result",()=>asRole("service_role",null,async()=>{
+    const attempt=await claim();
+    await authStub(attempt.owner_id);
+    const result=await complete(attempt.lease_token);
+    expect(result).toMatchObject({committed:true,response:{ok:true,restaurantId:attempt.restaurant_id,demo:true,invitationSent:false}});
+    for (const table of ["restaurant_memberships","restaurant_settings","restaurant_qr_configs","commercial_sales"])
+      expect(await scalar("select count(*)::int from public."+table+" where restaurant_id=$1",[attempt.restaurant_id])).toBe(1);
+    expect(await scalar("select count(*)::int from public.restaurant_hours where restaurant_id=$1",[attempt.restaurant_id])).toBe(7);
+    expect(await scalar("select count(*)::int from public.security_audit_events where restaurant_id=$1 and action='restaurant_created'",[attempt.restaurant_id])).toBe(1);
+    expect(await scalar("select is_demo from public.restaurants where id=$1",[attempt.restaurant_id])).toBe(true);
+    expect(await claim()).toMatchObject({state:"completed",http_status:201,response:{restaurantId:attempt.restaurant_id}});
+    expect(await complete(attempt.lease_token)).toMatchObject({committed:false});
+    await settle(attempt.lease_token,"invited");
+    expect((await claim()).response?.invitationSent).toBe(false);
+    expect(await scalar("select count(*)::int from public.security_audit_events where restaurant_id=$1",[attempt.restaurant_id])).toBe(1);
+  }));
+  it("rolls all business rows and audit back on a late sale constraint failure",()=>asRole("service_role",null,async()=>{
+    const attempt=await claim();
+    await authStub(attempt.owner_id);
+    await denied("select public.complete_restaurant_creation($1,$2,$3,$4)",
+      [ADMIN,requestId,attempt.lease_token,JSON.stringify({...data,amount:-1})]);
+    expect(await scalar("select count(*)::int from public.restaurants where id=$1",[attempt.restaurant_id])).toBe(0);
+    for (const table of ["restaurant_memberships","restaurant_settings","restaurant_qr_configs","restaurant_hours","commercial_sales","security_audit_events"])
+      expect(await scalar("select count(*)::int from public."+table+" where restaurant_id=$1",[attempt.restaurant_id])).toBe(0);
+    expect(await scalar("select state from private.restaurant_creation_requests")).toBe("processing");
+  }));
+  it("keeps cleanup durable after a slug conflict and never allows cleanup to re-enter provisioning",()=>asRole("service_role",null,async()=>{
+    const attempt=await claim();
+    await authStub(attempt.owner_id);
+    await denied("select public.complete_restaurant_creation($1,$2,$3,$4)",
+      [ADMIN,requestId,attempt.lease_token,JSON.stringify({...data,slug:"restaurant-a"})]);
+    await settle(attempt.lease_token,"cleanup",{error:"Slug exists",code:"SLUG_TAKEN"},409);
+    expect((await claim()).state).toBe("pending");
+    await db.exec("update private.restaurant_creation_requests set lease_until=clock_timestamp()-interval '1 second'");
+    const resumed=await claim();
+    expect(resumed.state).toBe("cleanup");
+    expect(resumed.owner_id).toBe(attempt.owner_id);
+    await denied("select public.complete_restaurant_creation($1,$2,$3,$4)",
+      [ADMIN,requestId,resumed.lease_token,JSON.stringify(data)]);
+    expect(await settle(attempt.lease_token,"failed",{error:"stale"},409)).toEqual({state:"pending"});
+    await settle(resumed.lease_token,"failed",resumed.response,409);
+    expect(await claim()).toMatchObject({state:"failed",http_status:409,response:{code:"SLUG_TAKEN"}});
+    expect(await scalar("select count(*)::int from public.restaurants where id=$1",[attempt.restaurant_id])).toBe(0);
+  }));
+  it("recovers the committed result instead of allowing a late cleanup decision",()=>asRole("service_role",null,async()=>{
+    const attempt=await claim();
+    await authStub(attempt.owner_id);
+    await complete(attempt.lease_token);
+    expect(await settle(attempt.lease_token,"cleanup",{error:"timeout"},503)).toMatchObject({
+      state:"completed",response:{restaurantId:attempt.restaurant_id},
+    });
+    expect(await scalar("select count(*)::int from public.restaurant_memberships where user_id=$1",[attempt.owner_id])).toBe(1);
+  }));
+  it("enforces DEMO reserved addresses in SQL and keeps the flag unavailable to owner updates",async()=>{
+    await asRole("service_role",null,async()=>{
+      const attempt=await claim();
+      await authStub(attempt.owner_id);
+      await denied("select public.complete_restaurant_creation($1,$2,$3,$4)",
+        [ADMIN,requestId,attempt.lease_token,JSON.stringify({...data,owner_email:"real@example.com"})]);
+      expect(await scalar("select count(*)::int from public.restaurants where id=$1",[attempt.restaurant_id])).toBe(0);
+    });
+    await asRole("authenticated",UA,async()=>{await denied("update public.restaurants set is_demo=true where id=$1",[A]);});
+  });
+});

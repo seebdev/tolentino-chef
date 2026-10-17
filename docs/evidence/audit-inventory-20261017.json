@@ -1,0 +1,2795 @@
+{
+  "generatedAtUtc": "2026-10-17T17:05:00.188699+00:00",
+  "kind": "Subauditoría local de arquitectura, seguridad, CSV, QR y despliegue; insumo para reporte final del agente principal.",
+  "scope": {
+    "project": "tolentino-restaurantes-admin",
+    "originalProjectTouched": false,
+    "remoteProjectActions": false,
+    "productionBuildExecuted": false,
+    "physicalQrScanExecuted": false,
+    "safariExecuted": false,
+    "codeChanges": [
+      "src/app/api/workspace/[restaurantId]/import/route.ts",
+      "tests/import_export.test.ts"
+    ]
+  },
+  "architecture": {
+    "framework": "Next.js App Router",
+    "frontend": "React con CSS propio responsive",
+    "backend": "Route Handlers Node",
+    "runtimeExecuted": "Node v22.23.3",
+    "dependencies": {
+      "@supabase/ssr": "0.12.7",
+      "@supabase/supabase-js": "2.118.0",
+      "lucide-react": "1.58.0",
+      "next": "16.4.2",
+      "papaparse": "5.7.0",
+      "pdf-lib": "1.17.1",
+      "qrcode": "1.5.4",
+      "react": "19.3.1",
+      "react-dom": "19.3.1",
+      "server-only": "0.0.1",
+      "sharp": "0.35.5",
+      "zod": "4.6.7"
+    },
+    "devDependencies": {
+      "@electric-sql/pglite": "0.5.10",
+      "@eslint/js": "10.0.1",
+      "@playwright/test": "1.64.1",
+      "@types/node": "26.6.5",
+      "@types/papaparse": "5.5.2",
+      "@types/pngjs": "6.0.5",
+      "@types/qrcode": "1.5.6",
+      "@types/react": "19.3.0",
+      "@types/react-dom": "19.3.0",
+      "eslint": "10.13.0",
+      "eslint-plugin-react-hooks": "7.1.1",
+      "jsqr": "1.4.0",
+      "pngjs": "7.0.0",
+      "prettier": "3.9.10",
+      "typescript": "6.0.3",
+      "typescript-eslint": "8.71.2",
+      "vitest": "4.1.12"
+    },
+    "persistence": "Supabase PostgreSQL/Auth/Storage; SDK y SQL/RPC, sin ORM adicional",
+    "authorization": "getUser + platform_admins/membership fresca + contexto tenant + RLS",
+    "languages": [
+      "es",
+      "en",
+      "fr",
+      "it",
+      "zh",
+      "ja",
+      "hi"
+    ],
+    "businessModel": "Venta única informativa; un propietario y entidad restaurante, sin sucursales múltiples/pagos/pedidos.",
+    "routes": [
+      "src/app/api/admin/restaurants/route.ts",
+      "src/app/api/auth/route.ts",
+      "src/app/api/health/route.ts",
+      "src/app/api/media/[restaurantId]/[...path]/route.ts",
+      "src/app/api/public/menu/[slug]/route.ts",
+      "src/app/api/session/route.ts",
+      "src/app/api/workspace/[restaurantId]/import/route.ts",
+      "src/app/api/workspace/[restaurantId]/media/route.ts",
+      "src/app/api/workspace/[restaurantId]/qr/route.ts",
+      "src/app/api/workspace/[restaurantId]/route.ts",
+      "src/app/auth/callback/route.ts",
+      "src/app/auth/confirm/route.ts",
+      "src/app/q/[token]/route.ts"
+    ],
+    "migrations": [
+      "supabase/migrations/20261017021301_initial_tenant_security.sql",
+      "supabase/migrations/20261017165549_restaurant_creation_requests.sql"
+    ]
+  },
+  "configuration": {
+    "environmentNamesAndPresenceOnly": {
+      "NEXT_PUBLIC_SUPABASE_URL": true,
+      "NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY": true,
+      "SUPABASE_SERVICE_ROLE_KEY": true,
+      "APP_URL": true,
+      "PLATFORM_HOSTNAMES": true,
+      "RENDER_API_KEY": false,
+      "RENDER_SERVICE_ID": false,
+      "RENDER_SERVICE_HOSTNAME": false,
+      "RENDER_EXTERNAL_URL": false
+    },
+    "appUrlKind": "loopback",
+    "renderCredentialsInCurrentProcessObserved": false,
+    "publicApplicationUrlVerified": false,
+    "gitIgnored": [
+      ".env.local",
+      ".runtime/",
+      "node_modules/",
+      ".next/",
+      "test-results/",
+      "playwright-report/"
+    ],
+    "renderBlueprint": {
+      "service": "tolentino-restaurantes-admin",
+      "plan": "free",
+      "region": "oregon",
+      "runtime": "node",
+      "buildCommand": "npm ci --include=dev && npm run typecheck && npm run lint && npm run test && npm run build",
+      "startCommand": "npm run start",
+      "health": "/api/health"
+    }
+  },
+  "currentTests": {
+    "command": "node .\\node_modules\\vitest\\vitest.mjs run tests/csv.test.ts tests/qr.test.ts tests/domains.test.ts tests/api_security.test.ts tests/public_security.test.ts tests/q_resolver.test.ts tests/proxy_session.test.ts tests/import_export.test.ts --reporter=json --outputFile=<reporte-local>",
+    "startedAtUtc": "2026-10-17T16:57:57.606000+00:00",
+    "total": 128,
+    "passed": 128,
+    "failed": 0,
+    "success": true,
+    "files": [
+      {
+        "file": "tests/api_security.test.ts",
+        "status": "passed",
+        "total": 14,
+        "passed": 14,
+        "durationMs": 74.531005859375,
+        "cases": [
+          {
+            "name": "server authentication and tenant authorization denies an absent or rejected Supabase user before any privileged client is used",
+            "status": "passed"
+          },
+          {
+            "name": "server authentication and tenant authorization ignores self-editable role metadata and denies owner access to the platform admin",
+            "status": "passed"
+          },
+          {
+            "name": "server authentication and tenant authorization denies an owner addressing another tenant before querying that restaurant",
+            "status": "passed"
+          },
+          {
+            "name": "server authentication and tenant authorization uses the user-scoped client and exact tenant filter for an allowed owner",
+            "status": "passed"
+          },
+          {
+            "name": "server authentication and tenant authorization blocks disabled memberships, unassigned users and suspended restaurants",
+            "status": "passed"
+          },
+          {
+            "name": "server authentication and tenant authorization permits a DB-authorized superadmin to support a suspended tenant",
+            "status": "passed"
+          },
+          {
+            "name": "server authentication and tenant authorization rejects invalid IDs before performing auth calls and returns 404 for missing tenants",
+            "status": "passed"
+          },
+          {
+            "name": "request boundary security requires the official origin and rejects explicit cross-site requests",
+            "status": "passed"
+          },
+          {
+            "name": "request boundary security limits actual streamed bytes even when Content-Length is absent or incorrect",
+            "status": "passed"
+          },
+          {
+            "name": "request boundary security cancels a real multipart upload stream once actual bytes exceed the limit despite a forged or absent length",
+            "status": "passed"
+          },
+          {
+            "name": "request boundary security preserves binary upload bytes exactly at the accepted boundary",
+            "status": "passed"
+          },
+          {
+            "name": "request boundary security rejects malformed JSON, arrays and null payloads",
+            "status": "passed"
+          },
+          {
+            "name": "request boundary security hashes rate-limit identities and fails closed when the database denies a request",
+            "status": "passed"
+          },
+          {
+            "name": "request boundary security returns safe errors and no-store responses without leaking database secrets",
+            "status": "passed"
+          }
+        ]
+      },
+      {
+        "file": "tests/csv.test.ts",
+        "status": "passed",
+        "total": 21,
+        "passed": 21,
+        "durationMs": 50.294921875,
+        "cases": [
+          {
+            "name": "CSV real parsing and limits accepts 1 products with UTF-8",
+            "status": "passed"
+          },
+          {
+            "name": "CSV real parsing and limits accepts 100 products with UTF-8",
+            "status": "passed"
+          },
+          {
+            "name": "CSV real parsing and limits accepts 999 products with UTF-8",
+            "status": "passed"
+          },
+          {
+            "name": "CSV real parsing and limits accepts 1000 products with UTF-8",
+            "status": "passed"
+          },
+          {
+            "name": "CSV real parsing and limits rejects 1001 products without partially returning rows",
+            "status": "passed"
+          },
+          {
+            "name": "CSV real parsing and limits supports mapping, quoted commas and newlines",
+            "status": "passed"
+          },
+          {
+            "name": "CSV real parsing and limits rejects invalid or ambiguous price -1",
+            "status": "passed"
+          },
+          {
+            "name": "CSV real parsing and limits rejects invalid or ambiguous price NaN",
+            "status": "passed"
+          },
+          {
+            "name": "CSV real parsing and limits rejects invalid or ambiguous price Infinity",
+            "status": "passed"
+          },
+          {
+            "name": "CSV real parsing and limits rejects invalid or ambiguous price 1e4",
+            "status": "passed"
+          },
+          {
+            "name": "CSV real parsing and limits rejects invalid or ambiguous price 10.000",
+            "status": "passed"
+          },
+          {
+            "name": "CSV real parsing and limits rejects invalid or ambiguous price 1,000.00",
+            "status": "passed"
+          },
+          {
+            "name": "CSV real parsing and limits rejects invalid or ambiguous price 0xFF",
+            "status": "passed"
+          },
+          {
+            "name": "CSV real parsing and limits rejects invalid or ambiguous price ",
+            "status": "passed"
+          },
+          {
+            "name": "CSV real parsing and limits rejects invalid or ambiguous price   ",
+            "status": "passed"
+          },
+          {
+            "name": "CSV real parsing and limits rejects invalid or ambiguous price 1.234",
+            "status": "passed"
+          },
+          {
+            "name": "CSV real parsing and limits rejects invalid or ambiguous price 9999999999",
+            "status": "passed"
+          },
+          {
+            "name": "CSV real parsing and limits validates row and category references",
+            "status": "passed"
+          },
+          {
+            "name": "CSV real parsing and limits detects repeated CSV identities instead of overwriting",
+            "status": "passed"
+          },
+          {
+            "name": "CSV real parsing and limits neutralizes CSV formulas on export",
+            "status": "passed"
+          },
+          {
+            "name": "CSV real parsing and limits rejects duplicated headers, bad UTF-8 and malformed quotes",
+            "status": "passed"
+          }
+        ]
+      },
+      {
+        "file": "tests/domains.test.ts",
+        "status": "passed",
+        "total": 12,
+        "passed": 12,
+        "durationMs": 76.0859375,
+        "cases": [
+          {
+            "name": "Render registration with mocked DNS and HTTP checks ownership before reading Render and adds only the named domain to the configured service",
+            "status": "passed"
+          },
+          {
+            "name": "Render registration with mocked DNS and HTTP does not create an already registered domain or promote it to locally verified",
+            "status": "passed"
+          },
+          {
+            "name": "Render registration with mocked DNS and HTTP never activates a newly added domain even if the provider POST says verified",
+            "status": "passed"
+          },
+          {
+            "name": "Render registration with mocked DNS and HTTP handles a concurrent registration idempotently by rereading a 409 conflict",
+            "status": "passed"
+          },
+          {
+            "name": "Render registration with mocked DNS and HTTP fails closed when a 409 belongs elsewhere rather than this service",
+            "status": "passed"
+          },
+          {
+            "name": "Render registration with mocked DNS and HTTP refuses unproven or wrong ownership without contacting Render",
+            "status": "passed"
+          },
+          {
+            "name": "Render registration with mocked DNS and HTTP rejects non-hostnames, local addresses and malformed proof tokens before DNS or HTTP",
+            "status": "passed"
+          },
+          {
+            "name": "Render registration with mocked DNS and HTTP requires complete, fixed Render service configuration after proving ownership",
+            "status": "passed"
+          },
+          {
+            "name": "Render registration with mocked DNS and HTTP sanitizes provider, billing and network errors without leaking response details",
+            "status": "passed"
+          },
+          {
+            "name": "Render registration with mocked DNS and HTTP rejects HTTP redirects and malformed provider data without following another host",
+            "status": "passed"
+          },
+          {
+            "name": "separate domain activation checks requires TXT, the configured CNAME and Render verified state before returning true",
+            "status": "passed"
+          },
+          {
+            "name": "separate domain activation checks refuses a wrong CNAME or an unverified provider domain",
+            "status": "passed"
+          }
+        ]
+      },
+      {
+        "file": "tests/import_export.test.ts",
+        "status": "passed",
+        "total": 9,
+        "passed": 9,
+        "durationMs": 86.650390625,
+        "cases": [
+          {
+            "name": "CSV download handler with mocked authorized context and database preserves the default import template without reading catalog tables",
+            "status": "passed"
+          },
+          {
+            "name": "CSV download handler with mocked authorized context and database denies 401 authorization before reading or exporting data",
+            "status": "passed"
+          },
+          {
+            "name": "CSV download handler with mocked authorized context and database denies 403 authorization before reading or exporting data",
+            "status": "passed"
+          },
+          {
+            "name": "CSV download handler with mocked authorized context and database exports all 2505 authorized products across pages without tenant or internal-field leakage",
+            "status": "passed"
+          },
+          {
+            "name": "CSV download handler with mocked authorized context and database escapes formulas while preserving quotes, commas, newlines, UTF-8 and decimal values",
+            "status": "passed"
+          },
+          {
+            "name": "CSV download handler with mocked authorized context and database returns usable headers and no invented products for an empty catalog",
+            "status": "passed"
+          },
+          {
+            "name": "CSV download handler with mocked authorized context and database rejects unknown download modes without reading the catalog",
+            "status": "passed"
+          },
+          {
+            "name": "CSV download handler with mocked authorized context and database fails closed on database errors without returning a partial CSV or internal message",
+            "status": "passed"
+          },
+          {
+            "name": "CSV download handler with mocked authorized context and database limits repeated exports before querying catalog tables",
+            "status": "passed"
+          }
+        ]
+      },
+      {
+        "file": "tests/proxy_session.test.ts",
+        "status": "passed",
+        "total": 43,
+        "passed": 43,
+        "durationMs": 102.8740234375,
+        "cases": [
+          {
+            "name": "SSR session refresh validates with Auth and forwards rotated chunks to both the route and browser",
+            "status": "passed"
+          },
+          {
+            "name": "SSR session refresh retains cookies and anti-cache headers across multiple SDK writes",
+            "status": "passed"
+          },
+          {
+            "name": "SSR session refresh keeps unauthenticated requests available for the route's own authorization",
+            "status": "passed"
+          },
+          {
+            "name": "SSR session refresh propagates invalid-session cleanup even when Auth rejects the session",
+            "status": "passed"
+          },
+          {
+            "name": "SSR session refresh isolates clients, cookies and headers between independent requests",
+            "status": "passed"
+          },
+          {
+            "name": "SSR session refresh allows setup pages when credentials are absent without constructing a client",
+            "status": "passed"
+          },
+          {
+            "name": "SSR session refresh does not silently turn unexpected Auth failures into a successful refresh",
+            "status": "passed"
+          },
+          {
+            "name": "SSR session refresh refreshes session routes on a platform host: /login",
+            "status": "passed"
+          },
+          {
+            "name": "SSR session refresh refreshes session routes on a platform host: /login?mode=password",
+            "status": "passed"
+          },
+          {
+            "name": "SSR session refresh refreshes session routes on a platform host: /admin",
+            "status": "passed"
+          },
+          {
+            "name": "SSR session refresh refreshes session routes on a platform host: /admin/restaurants/tenant-a",
+            "status": "passed"
+          },
+          {
+            "name": "SSR session refresh refreshes session routes on a platform host: /dashboard",
+            "status": "passed"
+          },
+          {
+            "name": "SSR session refresh refreshes session routes on a platform host: /auth/callback?code=fixture",
+            "status": "passed"
+          },
+          {
+            "name": "SSR session refresh refreshes session routes on a platform host: /auth/confirm",
+            "status": "passed"
+          },
+          {
+            "name": "SSR session refresh refreshes session routes on a platform host: /api/session",
+            "status": "passed"
+          },
+          {
+            "name": "SSR session refresh refreshes session routes on a platform host: /api/auth",
+            "status": "passed"
+          },
+          {
+            "name": "SSR session refresh refreshes session routes on a platform host: /api/admin/restaurants",
+            "status": "passed"
+          },
+          {
+            "name": "SSR session refresh refreshes session routes on a platform host: /api/workspace/tenant-a/products",
+            "status": "passed"
+          },
+          {
+            "name": "SSR session refresh refreshes session routes on a platform host: /api/media/tenant-a/image.webp",
+            "status": "passed"
+          },
+          {
+            "name": "proxy hostname boundaries does not attach session cookies to a public or unrelated route: /",
+            "status": "passed"
+          },
+          {
+            "name": "proxy hostname boundaries does not attach session cookies to a public or unrelated route: /menu/restaurant-a",
+            "status": "passed"
+          },
+          {
+            "name": "proxy hostname boundaries does not attach session cookies to a public or unrelated route: /api/public/menu/restaurant-a",
+            "status": "passed"
+          },
+          {
+            "name": "proxy hostname boundaries does not attach session cookies to a public or unrelated route: /q/fixture",
+            "status": "passed"
+          },
+          {
+            "name": "proxy hostname boundaries does not attach session cookies to a public or unrelated route: /_next/static/chunk.js",
+            "status": "passed"
+          },
+          {
+            "name": "proxy hostname boundaries does not attach session cookies to a public or unrelated route: /administrator",
+            "status": "passed"
+          },
+          {
+            "name": "proxy hostname boundaries does not attach session cookies to a public or unrelated route: /api/authentication",
+            "status": "passed"
+          },
+          {
+            "name": "proxy hostname boundaries does not attach session cookies to a public or unrelated route: /dashboard-other",
+            "status": "passed"
+          },
+          {
+            "name": "proxy hostname boundaries rejects an unknown host even with a forged forwarded platform host",
+            "status": "passed"
+          },
+          {
+            "name": "proxy hostname boundaries preserves a verified restaurant's root rewrite without refreshing a session",
+            "status": "passed"
+          },
+          {
+            "name": "proxy hostname boundaries retains only the verified restaurant's public route: /menu/restaurant-a",
+            "status": "passed"
+          },
+          {
+            "name": "proxy hostname boundaries retains only the verified restaurant's public route: /api/public/menu/restaurant-a",
+            "status": "passed"
+          },
+          {
+            "name": "proxy hostname boundaries retains only the verified restaurant's public route: /api/media/tenant-a/image.webp",
+            "status": "passed"
+          },
+          {
+            "name": "proxy hostname boundaries denies private and other-tenant routes on a custom domain: /login",
+            "status": "passed"
+          },
+          {
+            "name": "proxy hostname boundaries denies private and other-tenant routes on a custom domain: /admin",
+            "status": "passed"
+          },
+          {
+            "name": "proxy hostname boundaries denies private and other-tenant routes on a custom domain: /dashboard",
+            "status": "passed"
+          },
+          {
+            "name": "proxy hostname boundaries denies private and other-tenant routes on a custom domain: /auth/callback",
+            "status": "passed"
+          },
+          {
+            "name": "proxy hostname boundaries denies private and other-tenant routes on a custom domain: /api/session",
+            "status": "passed"
+          },
+          {
+            "name": "proxy hostname boundaries denies private and other-tenant routes on a custom domain: /api/auth",
+            "status": "passed"
+          },
+          {
+            "name": "proxy hostname boundaries denies private and other-tenant routes on a custom domain: /api/workspace/tenant-a",
+            "status": "passed"
+          },
+          {
+            "name": "proxy hostname boundaries denies private and other-tenant routes on a custom domain: /menu/restaurant-b",
+            "status": "passed"
+          },
+          {
+            "name": "proxy hostname boundaries denies private and other-tenant routes on a custom domain: /api/public/menu/restaurant-b",
+            "status": "passed"
+          },
+          {
+            "name": "proxy hostname boundaries denies private and other-tenant routes on a custom domain: /api/media/tenant-b/image.webp",
+            "status": "passed"
+          },
+          {
+            "name": "proxy hostname boundaries preserves health checks on any host without Auth or database calls",
+            "status": "passed"
+          }
+        ]
+      },
+      {
+        "file": "tests/public_security.test.ts",
+        "status": "passed",
+        "total": 8,
+        "passed": 8,
+        "durationMs": 36.34423828125,
+        "cases": [
+          {
+            "name": "public menu data boundaries exposes only published content under visible ancestors, current promotions and related translations",
+            "status": "passed"
+          },
+          {
+            "name": "public menu data boundaries enforces suspension immediately even when an active menu is cached",
+            "status": "passed"
+          },
+          {
+            "name": "public menu data boundaries uses the publication version to invalidate cached menu content",
+            "status": "passed"
+          },
+          {
+            "name": "public and private image authorization serves a referenced public image without authentication and disables sniffing/cache",
+            "status": "passed"
+          },
+          {
+            "name": "public and private image authorization denies anonymous access to a draft or unreferenced media path before storage download",
+            "status": "passed"
+          },
+          {
+            "name": "public and private image authorization denies another tenant and permits the authorized owner to preview drafts",
+            "status": "passed"
+          },
+          {
+            "name": "public and private image authorization stops public image serving when the restaurant is suspended",
+            "status": "passed"
+          },
+          {
+            "name": "public and private image authorization rejects path traversal, foreign tenant prefixes and unsupported formats",
+            "status": "passed"
+          }
+        ]
+      },
+      {
+        "file": "tests/qr.test.ts",
+        "status": "passed",
+        "total": 14,
+        "passed": 14,
+        "durationMs": 6050.98779296875,
+        "cases": [
+          {
+            "name": "QR exports independently decoded preserves the exact URL at 256px without logo",
+            "status": "passed"
+          },
+          {
+            "name": "QR exports independently decoded preserves the exact URL at 256px with logo",
+            "status": "passed"
+          },
+          {
+            "name": "QR exports independently decoded preserves the exact URL at 512px without logo",
+            "status": "passed"
+          },
+          {
+            "name": "QR exports independently decoded preserves the exact URL at 512px with logo",
+            "status": "passed"
+          },
+          {
+            "name": "QR exports independently decoded preserves the exact URL at 1024px without logo",
+            "status": "passed"
+          },
+          {
+            "name": "QR exports independently decoded preserves the exact URL at 1024px with logo",
+            "status": "passed"
+          },
+          {
+            "name": "QR exports independently decoded keeps the public token unchanged after colors, frame, label and logo change",
+            "status": "passed"
+          },
+          {
+            "name": "QR exports independently decoded embeds an escaped label and sanitized raster logo in a decodable SVG",
+            "status": "passed"
+          },
+          {
+            "name": "QR exports independently decoded PDF contains the same complete decodable QR image with label, frame and logo",
+            "status": "passed"
+          },
+          {
+            "name": "QR exports independently decoded reserves at least four empty modules and ECC H",
+            "status": "passed"
+          },
+          {
+            "name": "QR validation calculates contrast and rejects weak or inverted colors",
+            "status": "passed"
+          },
+          {
+            "name": "QR validation rejects unsafe destinations, oversized label and invalid dimensions",
+            "status": "passed"
+          },
+          {
+            "name": "QR validation rejects SVG or non-image logos and bounds bytes",
+            "status": "passed"
+          },
+          {
+            "name": "QR validation accepts the maximum label at the minimum size while retaining a decodable symbol",
+            "status": "passed"
+          }
+        ]
+      },
+      {
+        "file": "tests/q_resolver.test.ts",
+        "status": "passed",
+        "total": 7,
+        "passed": 7,
+        "durationMs": 27.63623046875,
+        "cases": [
+          {
+            "name": "permanent QR resolver — handler with mocked database resolves the same printed token to the current slug after a rename",
+            "status": "passed"
+          },
+          {
+            "name": "permanent QR resolver — handler with mocked database redirects only to APP_URL regardless of request host, redirect parameters or a custom domain",
+            "status": "passed"
+          },
+          {
+            "name": "permanent QR resolver — handler with mocked database encodes unexpected slug characters without creating an external redirect",
+            "status": "passed"
+          },
+          {
+            "name": "permanent QR resolver — handler with mocked database rejects malformed UUIDs before contacting the database",
+            "status": "passed"
+          },
+          {
+            "name": "permanent QR resolver — handler with mocked database returns a safe 404 for unknown tokens and records no metrics",
+            "status": "passed"
+          },
+          {
+            "name": "permanent QR resolver — handler with mocked database keeps suspended restaurants resolvable to their current state page without metrics",
+            "status": "passed"
+          },
+          {
+            "name": "permanent QR resolver — handler with mocked database records an allowed active scan, but metrics failures never break the menu redirect",
+            "status": "passed"
+          }
+        ]
+      }
+    ],
+    "limitations": "CSV/QR son lógica y render reales; Auth/DB/Render/DNS/cache se simulan donde indican los tests. No son E2E remoto.",
+    "warning": "Vite advierte compatibilidad futura de configLoader native/ESM; no falló la suite."
+  },
+  "lint": {
+    "command": "node node_modules/eslint/bin/eslint.js \"src/app/api/workspace/[restaurantId]/import/route.ts\" tests/import_export.test.ts",
+    "exitCode": 0
+  },
+  "typecheck": {
+    "command": "node node_modules/typescript/bin/tsc --noEmit --incremental false",
+    "exitCode": 0,
+    "scope": "Código disponible al ejecutar la comprobación; otros agentes pueden modificarlo después."
+  },
+  "historicalEvidence": [
+    {
+      "file": "docs/evidence/db-migration-verification.json",
+      "scope": "Migración/DDL/RLS/grants/RPC/bucket remoto verificados anteriormente; sin creación de usuarios/restaurantes/objetos."
+    },
+    {
+      "file": "docs/evidence/connected-supabase-smoke.json",
+      "scope": "Conexión anterior REST/Auth admin/Storage, health local200, APIs privadas401 sin login; disable_signup:false en aquella lectura."
+    },
+    {
+      "file": "docs/evidence/unit-tests.json",
+      "scope": "Suite local anterior; no sustituye resultados actuales ni flujos remotos."
+    },
+    {
+      "file": "docs/evidence/playwright-results.json",
+      "scope": "22 casos históricos Chrome con fixtures para negocio, dos viewports; no A/B/C remoto."
+    },
+    {
+      "file": "docs/evidence/production-smoke.json",
+      "scope": "Arranque anterior sin credenciales; no describe el estado actual de conexión."
+    },
+    {
+      "file": "docs/evidence/reference-verification.json",
+      "scope": "1803 archivos del original coincidentes en comparación histórica; excluye caches/dependencias/builds."
+    }
+  ],
+  "findings": [
+    {
+      "id": "CSV-EXPORT",
+      "status": "CORREGIDO Y VERIFICADO",
+      "detail": "Faltaba exportar catálogo actual; se añadió descarga paginada segura de cinco columnas sin alterar plantilla. Nueve pruebas nuevas de handler pasaron."
+    },
+    {
+      "id": "MISSING-RECORD",
+      "status": "EN COORDINACIÓN",
+      "detail": "single() puede entregar PGRST116 antes del if(!data), produciendo500 en registros inexistentes. Enviado al agente de base para api.ts y regresión; no afirmar corregido sin su evidencia."
+    },
+    {
+      "id": "APPEARANCE-PARTIAL",
+      "status": "EN COORDINACIÓN",
+      "detail": "save_appearance guardaba draft antes de validar nombre/descripcion. Enviado al agente principal, dueño del archivo; no modificado aquí."
+    },
+    {
+      "id": "PUBLIC-URL",
+      "status": "NO VERIFICADO",
+      "detail": "APP_URL loopback y sin configuración Render visible; falta URL pública comprobada para QR de los tres DEMO."
+    }
+  ],
+  "matrix": [
+    {
+      "id": "F001",
+      "group": "Superadministración",
+      "feature": "Inicio de sesión superadministrador",
+      "status": "NO VERIFICADO",
+      "implementation": [
+        "src/app/api/auth/route.ts",
+        "src/lib/access.ts"
+      ],
+      "evidence": [],
+      "verifiedScope": "Código inspeccionado; no se ejecutó el recorrido real en este subtrabajo.",
+      "remaining": "Repetir con cuenta real autorizada; el smoke histórico solo comprobó /login 200 y API sin sesión 401."
+    },
+    {
+      "id": "F002",
+      "group": "Superadministración",
+      "feature": "Cierre de sesión",
+      "status": "NO VERIFICADO",
+      "implementation": [
+        "src/app/api/auth/route.ts"
+      ],
+      "evidence": [],
+      "verifiedScope": "Código inspeccionado; no se ejecutó el recorrido real en este subtrabajo.",
+      "remaining": "Comprobar cookies y acceso posterior con sesión real."
+    },
+    {
+      "id": "F003",
+      "group": "Superadministración",
+      "feature": "Panel, listado, búsqueda, paginación y métricas",
+      "status": "NO VERIFICADO",
+      "implementation": [
+        "src/app/api/admin/restaurants/route.ts",
+        "src/components/admin-app.tsx"
+      ],
+      "evidence": [],
+      "verifiedScope": "Código inspeccionado; no se ejecutó el recorrido real en este subtrabajo.",
+      "remaining": "Hay evidencia UI histórica con fixtures; verificar datos actuales y persistencia."
+    },
+    {
+      "id": "F004",
+      "group": "Superadministración",
+      "feature": "Crear restaurante desde interfaz y API / diagnóstico 409",
+      "status": "NO VERIFICADO",
+      "implementation": [
+        "src/app/api/admin/restaurants/route.ts",
+        "src/components/admin-app.tsx",
+        "supabase/migrations/20261017021301_initial_tenant_security.sql"
+      ],
+      "evidence": [],
+      "verifiedScope": "Código inspeccionado; no se ejecutó el recorrido real en este subtrabajo.",
+      "remaining": "Investigación/corrección y regresiones del agente principal; no atribuir causa exacta solo leyendo el 409 genérico."
+    },
+    {
+      "id": "F005",
+      "group": "Superadministración",
+      "feature": "Doble envío e idempotencia de creación",
+      "status": "NO VERIFICADO",
+      "implementation": [
+        "src/app/api/admin/restaurants/route.ts",
+        "src/components/admin-app.tsx"
+      ],
+      "evidence": [],
+      "verifiedScope": "Código inspeccionado; no se ejecutó el recorrido real en este subtrabajo.",
+      "remaining": "Trabajo concurrente de frontend/base; integrar su evidencia final antes de marcar aprobado."
+    },
+    {
+      "id": "F006",
+      "group": "Superadministración",
+      "feature": "Consultar y editar restaurante",
+      "status": "NO VERIFICADO",
+      "implementation": [
+        "src/app/api/admin/restaurants/route.ts"
+      ],
+      "evidence": [],
+      "verifiedScope": "Código inspeccionado; no se ejecutó el recorrido real en este subtrabajo.",
+      "remaining": "Ejecutar con registros reales, preservar venta y propietario."
+    },
+    {
+      "id": "F007",
+      "group": "Superadministración",
+      "feature": "Suspender restaurante",
+      "status": "NO VERIFICADO",
+      "implementation": [
+        "src/app/api/admin/restaurants/route.ts",
+        "src/lib/public-menu.ts"
+      ],
+      "evidence": [],
+      "verifiedScope": "Código inspeccionado; no se ejecutó el recorrido real en este subtrabajo.",
+      "remaining": "Pruebas locales de suspensión existen; falta recorrido administrativo real en este subtrabajo."
+    },
+    {
+      "id": "F008",
+      "group": "Superadministración",
+      "feature": "Reactivar restaurante",
+      "status": "NO VERIFICADO",
+      "implementation": [
+        "src/app/api/admin/restaurants/route.ts",
+        "supabase/migrations/20261017021301_initial_tenant_security.sql"
+      ],
+      "evidence": [],
+      "verifiedScope": "Código inspeccionado; no se ejecutó el recorrido real en este subtrabajo.",
+      "remaining": "Confirmar que datos, token e imágenes se conservan con sesión real."
+    },
+    {
+      "id": "F009",
+      "group": "Superadministración",
+      "feature": "Crear propietario distinto por restaurante",
+      "status": "NO VERIFICADO",
+      "implementation": [
+        "src/app/api/admin/restaurants/route.ts",
+        "supabase/migrations/20261017021301_initial_tenant_security.sql"
+      ],
+      "evidence": [],
+      "verifiedScope": "Código inspeccionado; no se ejecutó el recorrido real en este subtrabajo.",
+      "remaining": "Provisionamiento transaccional SQL; Auth es una operación separada con compensación."
+    },
+    {
+      "id": "F010",
+      "group": "Superadministración",
+      "feature": "Suspender/reactivar acceso de propietario",
+      "status": "NO VERIFICADO",
+      "implementation": [
+        "src/app/api/admin/restaurants/route.ts",
+        "src/lib/access.ts"
+      ],
+      "evidence": [],
+      "verifiedScope": "Código inspeccionado; no se ejecutó el recorrido real en este subtrabajo.",
+      "remaining": "Validar revocación efectiva de acceso en navegador con sesión existente."
+    },
+    {
+      "id": "F011",
+      "group": "Superadministración",
+      "feature": "Restablecer acceso y entrega de correo",
+      "status": "NO VERIFICADO",
+      "implementation": [
+        "src/app/api/admin/restaurants/route.ts",
+        "src/app/api/auth/route.ts"
+      ],
+      "evidence": [],
+      "verifiedScope": "Código inspeccionado; no se ejecutó el recorrido real en este subtrabajo.",
+      "remaining": "Requiere SMTP/plantilla reales; no enviar comunicaciones a los propietarios DEMO."
+    },
+    {
+      "id": "F012",
+      "group": "Superadministración",
+      "feature": "Edición integral en modo soporte",
+      "status": "NO VERIFICADO",
+      "implementation": [
+        "src/app/api/workspace/[restaurantId]/route.ts",
+        "src/components/workspace.tsx"
+      ],
+      "evidence": [],
+      "verifiedScope": "Código inspeccionado; no se ejecutó el recorrido real en este subtrabajo.",
+      "remaining": "Ejecutar menú real con superadmin, contexto visible y auditoría."
+    },
+    {
+      "id": "F013",
+      "group": "Superadministración",
+      "feature": "Salida del modo soporte",
+      "status": "NO VERIFICADO",
+      "implementation": [
+        "src/components/workspace.tsx"
+      ],
+      "evidence": [],
+      "verifiedScope": "Código inspeccionado; no se ejecutó el recorrido real en este subtrabajo.",
+      "remaining": "Comprobar navegación y ausencia de cambio de identidad del propietario."
+    },
+    {
+      "id": "F014",
+      "group": "Superadministración",
+      "feature": "Contacto comercial y mensaje de suspensión",
+      "status": "NO VERIFICADO",
+      "implementation": [
+        "src/app/api/admin/restaurants/route.ts",
+        "src/lib/public-menu.ts"
+      ],
+      "evidence": [],
+      "verifiedScope": "Código inspeccionado; no se ejecutó el recorrido real en este subtrabajo.",
+      "remaining": "Guardado implementado y proyección pública explícita; comprobar UI real."
+    },
+    {
+      "id": "F015",
+      "group": "Superadministración",
+      "feature": "Copiar diseño entre restaurantes",
+      "status": "NO VERIFICADO",
+      "implementation": [
+        "src/app/api/admin/restaurants/route.ts"
+      ],
+      "evidence": [],
+      "verifiedScope": "Código inspeccionado; no se ejecutó el recorrido real en este subtrabajo.",
+      "remaining": "No copia catálogo/identidad; excluye rutas de imágenes de origen. Verificación real pendiente."
+    },
+    {
+      "id": "F016",
+      "group": "Superadministración",
+      "feature": "Persistencia después de recarga y reingreso",
+      "status": "NO VERIFICADO",
+      "implementation": [
+        "src/app/api/admin/restaurants/route.ts",
+        "src/app/api/workspace/[restaurantId]/route.ts"
+      ],
+      "evidence": [],
+      "verifiedScope": "Código inspeccionado; no se ejecutó el recorrido real en este subtrabajo.",
+      "remaining": "Debe acreditarse con DB real y dos sesiones, no fixtures."
+    },
+    {
+      "id": "F017",
+      "group": "Superadministración",
+      "feature": "Protección de funciones exclusivas",
+      "status": "FUNCIONA",
+      "implementation": [
+        "src/lib/access.ts"
+      ],
+      "evidence": [
+        "tests/api_security.test.ts"
+      ],
+      "verifiedScope": "Handler/actor con Auth y DB simulados rechaza rol de propietario; no confía en user_metadata.",
+      "remaining": "El resultado se limita a las pruebas citadas; no acredita por sí solo el recorrido remoto con usuarios reales."
+    },
+    {
+      "id": "F018",
+      "group": "Propietario y catálogo",
+      "feature": "Inicio y panel del propietario",
+      "status": "NO VERIFICADO",
+      "implementation": [
+        "src/app/api/auth/route.ts",
+        "src/components/workspace.tsx"
+      ],
+      "evidence": [],
+      "verifiedScope": "Código inspeccionado; no se ejecutó el recorrido real en este subtrabajo.",
+      "remaining": "Verificar credenciales y sesión reales para cada DEMO."
+    },
+    {
+      "id": "F019",
+      "group": "Propietario y catálogo",
+      "feature": "Editar nombre y descripción",
+      "status": "NO VERIFICADO",
+      "implementation": [
+        "src/app/api/workspace/[restaurantId]/route.ts",
+        "src/components/workspace-settings.tsx"
+      ],
+      "evidence": [],
+      "verifiedScope": "Código inspeccionado; no se ejecutó el recorrido real en este subtrabajo.",
+      "remaining": "Hallazgo inicial: validar nombre/descripción antes de guardar apariencia; corrección reservada al agente principal."
+    },
+    {
+      "id": "F020",
+      "group": "Propietario y catálogo",
+      "feature": "Logo, portada y favicon",
+      "status": "NO VERIFICADO",
+      "implementation": [
+        "src/components/workspace-settings.tsx",
+        "src/app/api/workspace/[restaurantId]/media/route.ts"
+      ],
+      "evidence": [],
+      "verifiedScope": "Código inspeccionado; no se ejecutó el recorrido real en este subtrabajo.",
+      "remaining": "Rutas privadas y carga raster implementadas; falta recorrido real de carga en este subtrabajo."
+    },
+    {
+      "id": "F021",
+      "group": "Propietario y catálogo",
+      "feature": "Colores y fuentes",
+      "status": "NO VERIFICADO",
+      "implementation": [
+        "src/components/workspace-settings.tsx",
+        "src/app/api/workspace/[restaurantId]/route.ts"
+      ],
+      "evidence": [],
+      "verifiedScope": "Código inspeccionado; no se ejecutó el recorrido real en este subtrabajo.",
+      "remaining": "Lista cerrada de fuentes y colores hex; probar resultado visual y persistencia."
+    },
+    {
+      "id": "F022",
+      "group": "Propietario y catálogo",
+      "feature": "Borrador, vista previa y publicación",
+      "status": "NO VERIFICADO",
+      "implementation": [
+        "src/components/workspace-settings.tsx",
+        "src/app/api/workspace/[restaurantId]/route.ts"
+      ],
+      "evidence": [],
+      "verifiedScope": "Código inspeccionado; no se ejecutó el recorrido real en este subtrabajo.",
+      "remaining": "Solo apariencia tiene borrador; nombre/descripción/precios no constituyen un borrador integral."
+    },
+    {
+      "id": "F023",
+      "group": "Propietario y catálogo",
+      "feature": "Horarios semanales",
+      "status": "NO VERIFICADO",
+      "implementation": [
+        "src/components/workspace-settings.tsx",
+        "src/app/api/workspace/[restaurantId]/route.ts"
+      ],
+      "evidence": [],
+      "verifiedScope": "Código inspeccionado; no se ejecutó el recorrido real en este subtrabajo.",
+      "remaining": "Un intervalo por día; validación de siete días sin repetidos."
+    },
+    {
+      "id": "F024",
+      "group": "Propietario y catálogo",
+      "feature": "Categorías y subcategorías",
+      "status": "NO VERIFICADO",
+      "implementation": [
+        "src/app/api/workspace/[restaurantId]/route.ts",
+        "supabase/migrations/20261017021301_initial_tenant_security.sql"
+      ],
+      "evidence": [],
+      "verifiedScope": "Código inspeccionado; no se ejecutó el recorrido real en este subtrabajo.",
+      "remaining": "SQL contiene FK compuesta y prevención de ciclos; confirmar CRUD desde la UI."
+    },
+    {
+      "id": "F025",
+      "group": "Propietario y catálogo",
+      "feature": "Crear, consultar y editar productos",
+      "status": "NO VERIFICADO",
+      "implementation": [
+        "src/app/api/workspace/[restaurantId]/route.ts",
+        "src/components/workspace.tsx"
+      ],
+      "evidence": [],
+      "verifiedScope": "Código inspeccionado; no se ejecutó el recorrido real en este subtrabajo.",
+      "remaining": "Validación y filtro tenant implementados; recorrido remoto pendiente en este subtrabajo."
+    },
+    {
+      "id": "F026",
+      "group": "Propietario y catálogo",
+      "feature": "Eliminar productos y categorías",
+      "status": "NO VERIFICADO",
+      "implementation": [
+        "src/app/api/workspace/[restaurantId]/route.ts"
+      ],
+      "evidence": [],
+      "verifiedScope": "Código inspeccionado; no se ejecutó el recorrido real en este subtrabajo.",
+      "remaining": "Revisar registros inexistentes y FK; hallazgo PGRST116 enviado al agente de base."
+    },
+    {
+      "id": "F027",
+      "group": "Propietario y catálogo",
+      "feature": "Duplicar producto",
+      "status": "NO VERIFICADO",
+      "implementation": [
+        "src/app/api/workspace/[restaurantId]/route.ts"
+      ],
+      "evidence": [],
+      "verifiedScope": "Código inspeccionado; no se ejecutó el recorrido real en este subtrabajo.",
+      "remaining": "Copia privada, sin SKU; comprobar duplicación real."
+    },
+    {
+      "id": "F028",
+      "group": "Propietario y catálogo",
+      "feature": "Precios y moneda",
+      "status": "NO VERIFICADO",
+      "implementation": [
+        "src/app/api/workspace/[restaurantId]/route.ts",
+        "src/lib/validation.ts"
+      ],
+      "evidence": [],
+      "verifiedScope": "Código inspeccionado; no se ejecutó el recorrido real en este subtrabajo.",
+      "remaining": "Dinero finito no negativo con hasta dos decimales; verificar cambio público real."
+    },
+    {
+      "id": "F029",
+      "group": "Propietario y catálogo",
+      "feature": "Variantes, tamaños y extras",
+      "status": "NO VERIFICADO",
+      "implementation": [
+        "src/app/api/workspace/[restaurantId]/route.ts",
+        "src/components/public-menu.tsx"
+      ],
+      "evidence": [],
+      "verifiedScope": "Código inspeccionado; no se ejecutó el recorrido real en este subtrabajo.",
+      "remaining": "Arrays informativos con nombre/precio; no generan pedidos."
+    },
+    {
+      "id": "F030",
+      "group": "Propietario y catálogo",
+      "feature": "Ingredientes y etiquetas",
+      "status": "NO VERIFICADO",
+      "implementation": [
+        "src/app/api/workspace/[restaurantId]/route.ts",
+        "src/components/public-menu.tsx"
+      ],
+      "evidence": [],
+      "verifiedScope": "Código inspeccionado; no se ejecutó el recorrido real en este subtrabajo.",
+      "remaining": "Campos implementados; comprobar detalle público real."
+    },
+    {
+      "id": "F031",
+      "group": "Propietario y catálogo",
+      "feature": "Disponibilidad y agotados",
+      "status": "NO VERIFICADO",
+      "implementation": [
+        "src/app/api/workspace/[restaurantId]/route.ts",
+        "src/components/public-menu.tsx"
+      ],
+      "evidence": [],
+      "verifiedScope": "Código inspeccionado; no se ejecutó el recorrido real en este subtrabajo.",
+      "remaining": "Estado publicado y disponible separados; comprobar UI real."
+    },
+    {
+      "id": "F032",
+      "group": "Propietario y catálogo",
+      "feature": "Reordenar productos/categorías",
+      "status": "NO VERIFICADO",
+      "implementation": [
+        "src/app/api/workspace/[restaurantId]/route.ts",
+        "src/components/workspace.tsx"
+      ],
+      "evidence": [],
+      "verifiedScope": "Código inspeccionado; no se ejecutó el recorrido real en este subtrabajo.",
+      "remaining": "Orden explícito; falta recorrido persistente real en este subtrabajo."
+    },
+    {
+      "id": "F033",
+      "group": "Propietario y catálogo",
+      "feature": "Promociones y fechas",
+      "status": "NO VERIFICADO",
+      "implementation": [
+        "src/app/api/workspace/[restaurantId]/route.ts",
+        "src/lib/public-menu.ts",
+        "src/components/public-menu.tsx"
+      ],
+      "evidence": [],
+      "verifiedScope": "Código inspeccionado; no se ejecutó el recorrido real en este subtrabajo.",
+      "remaining": "Promociones informativas; filtro temporal comprobado con mocks, CRUD real pendiente."
+    },
+    {
+      "id": "F034",
+      "group": "Propietario y catálogo",
+      "feature": "Idiomas y traducciones manuales",
+      "status": "NO VERIFICADO",
+      "implementation": [
+        "src/components/workspace-settings.tsx",
+        "src/lib/i18n.ts",
+        "src/app/api/workspace/[restaurantId]/route.ts"
+      ],
+      "evidence": [],
+      "verifiedScope": "Código inspeccionado; no se ejecutó el recorrido real en este subtrabajo.",
+      "remaining": "es/en/fr/it/zh/ja/hi; no traducción automática del catálogo."
+    },
+    {
+      "id": "F035",
+      "group": "Propietario y catálogo",
+      "feature": "Descargas QR del propietario",
+      "status": "NO VERIFICADO",
+      "implementation": [
+        "src/app/api/workspace/[restaurantId]/qr/route.ts",
+        "src/components/workspace-settings.tsx"
+      ],
+      "evidence": [],
+      "verifiedScope": "Código inspeccionado; no se ejecutó el recorrido real en este subtrabajo.",
+      "remaining": "Propietario puede descargar; personalización QR/dominos reservada al superadmin en el diseño actual."
+    },
+    {
+      "id": "F036",
+      "group": "Propietario y catálogo",
+      "feature": "Denegación de contexto ajeno y cuentas suspendidas",
+      "status": "FUNCIONA",
+      "implementation": [
+        "src/lib/access.ts"
+      ],
+      "evidence": [
+        "tests/api_security.test.ts"
+      ],
+      "verifiedScope": "Actor/context con DB simulada verifica pertenencia antes de usar servicio y bloquea membresía/restaurante suspendidos.",
+      "remaining": "El resultado se limita a las pruebas citadas; no acredita por sí solo el recorrido remoto con usuarios reales."
+    },
+    {
+      "id": "F037",
+      "group": "CSV",
+      "feature": "Parsear 1 productos UTF-8",
+      "status": "FUNCIONA",
+      "implementation": [
+        "src/lib/csv.ts"
+      ],
+      "evidence": [
+        "tests/csv.test.ts"
+      ],
+      "verifiedScope": "Parser real ejecutado con 1 filas. No es una escritura remota.",
+      "remaining": "El resultado se limita a las pruebas citadas; no acredita por sí solo el recorrido remoto con usuarios reales."
+    },
+    {
+      "id": "F038",
+      "group": "CSV",
+      "feature": "Parsear 100 productos UTF-8",
+      "status": "FUNCIONA",
+      "implementation": [
+        "src/lib/csv.ts"
+      ],
+      "evidence": [
+        "tests/csv.test.ts"
+      ],
+      "verifiedScope": "Parser real ejecutado con 100 filas. No es una escritura remota.",
+      "remaining": "El resultado se limita a las pruebas citadas; no acredita por sí solo el recorrido remoto con usuarios reales."
+    },
+    {
+      "id": "F039",
+      "group": "CSV",
+      "feature": "Parsear 999 productos UTF-8",
+      "status": "FUNCIONA",
+      "implementation": [
+        "src/lib/csv.ts"
+      ],
+      "evidence": [
+        "tests/csv.test.ts"
+      ],
+      "verifiedScope": "Parser real ejecutado con 999 filas. No es una escritura remota.",
+      "remaining": "El resultado se limita a las pruebas citadas; no acredita por sí solo el recorrido remoto con usuarios reales."
+    },
+    {
+      "id": "F040",
+      "group": "CSV",
+      "feature": "Parsear 1000 productos UTF-8",
+      "status": "FUNCIONA",
+      "implementation": [
+        "src/lib/csv.ts"
+      ],
+      "evidence": [
+        "tests/csv.test.ts"
+      ],
+      "verifiedScope": "Parser real ejecutado con 1000 filas. No es una escritura remota.",
+      "remaining": "El resultado se limita a las pruebas citadas; no acredita por sí solo el recorrido remoto con usuarios reales."
+    },
+    {
+      "id": "F041",
+      "group": "CSV",
+      "feature": "Importar 10 productos en DB real",
+      "status": "NO VERIFICADO",
+      "implementation": [
+        "src/app/api/workspace/[restaurantId]/import/route.ts",
+        "supabase/migrations/20261017021301_initial_tenant_security.sql"
+      ],
+      "evidence": [],
+      "verifiedScope": "Código inspeccionado; no se ejecutó el recorrido real en este subtrabajo.",
+      "remaining": "El caso exacto requerido no está en la suite CSV inicial seleccionada; corresponde integrarlo a la prueba real del agente principal."
+    },
+    {
+      "id": "F042",
+      "group": "CSV",
+      "feature": "Importar 500 productos en DB real",
+      "status": "NO VERIFICADO",
+      "implementation": [
+        "src/app/api/workspace/[restaurantId]/import/route.ts",
+        "supabase/migrations/20261017021301_initial_tenant_security.sql"
+      ],
+      "evidence": [],
+      "verifiedScope": "Código inspeccionado; no se ejecutó el recorrido real en este subtrabajo.",
+      "remaining": "El caso exacto requerido no está en la suite CSV inicial seleccionada; corresponde integrarlo a la prueba real del agente principal."
+    },
+    {
+      "id": "F043",
+      "group": "CSV",
+      "feature": "Importación real de 1/100/1.000 productos",
+      "status": "NO VERIFICADO",
+      "implementation": [
+        "src/app/api/workspace/[restaurantId]/import/route.ts",
+        "supabase/migrations/20261017021301_initial_tenant_security.sql"
+      ],
+      "evidence": [
+        "tests/database.test.ts"
+      ],
+      "verifiedScope": "Código inspeccionado; no se ejecutó el recorrido real en este subtrabajo.",
+      "remaining": "Parser probado; RPC transaccional tiene evidencia PGlite histórica. Ejecución alojada pendiente de integrar."
+    },
+    {
+      "id": "F044",
+      "group": "CSV",
+      "feature": "Previsualizar, mapear columnas y confirmar",
+      "status": "NO VERIFICADO",
+      "implementation": [
+        "src/app/api/workspace/[restaurantId]/import/route.ts",
+        "supabase/migrations/20261017021301_initial_tenant_security.sql"
+      ],
+      "evidence": [
+        "tests/database.test.ts"
+      ],
+      "verifiedScope": "Código inspeccionado; no se ejecutó el recorrido real en este subtrabajo.",
+      "remaining": "Frontend y handler implementados; validar petición real y resumen persistente."
+    },
+    {
+      "id": "F045",
+      "group": "CSV",
+      "feature": "Omitir o actualizar existentes sin duplicados",
+      "status": "NO VERIFICADO",
+      "implementation": [
+        "src/app/api/workspace/[restaurantId]/import/route.ts",
+        "supabase/migrations/20261017021301_initial_tenant_security.sql"
+      ],
+      "evidence": [
+        "tests/database.test.ts"
+      ],
+      "verifiedScope": "Código inspeccionado; no se ejecutó el recorrido real en este subtrabajo.",
+      "remaining": "Identidad SKU exacta o nombre/categoría; evidencia SQL histórica, repetición remota pendiente."
+    },
+    {
+      "id": "F046",
+      "group": "CSV",
+      "feature": "Rollback completo de lote inválido",
+      "status": "NO VERIFICADO",
+      "implementation": [
+        "src/app/api/workspace/[restaurantId]/import/route.ts",
+        "supabase/migrations/20261017021301_initial_tenant_security.sql"
+      ],
+      "evidence": [
+        "tests/database.test.ts"
+      ],
+      "verifiedScope": "Código inspeccionado; no se ejecutó el recorrido real en este subtrabajo.",
+      "remaining": "RPC SQL transaccional con evidencia PGlite histórica; verificar remoto antes de declararlo E2E."
+    },
+    {
+      "id": "F047",
+      "group": "CSV",
+      "feature": "Rechazo de 1.001 filas",
+      "status": "FUNCIONA",
+      "implementation": [
+        "src/lib/csv.ts"
+      ],
+      "evidence": [
+        "tests/csv.test.ts"
+      ],
+      "verifiedScope": "Validación mediante parser real; fallos de entrada no se presentan como importaciones correctas.",
+      "remaining": "El resultado se limita a las pruebas citadas; no acredita por sí solo el recorrido remoto con usuarios reales."
+    },
+    {
+      "id": "F048",
+      "group": "CSV",
+      "feature": "Precios inválidos y ambiguos",
+      "status": "FUNCIONA",
+      "implementation": [
+        "src/lib/csv.ts"
+      ],
+      "evidence": [
+        "tests/csv.test.ts"
+      ],
+      "verifiedScope": "Validación mediante parser real; fallos de entrada no se presentan como importaciones correctas.",
+      "remaining": "El resultado se limita a las pruebas citadas; no acredita por sí solo el recorrido remoto con usuarios reales."
+    },
+    {
+      "id": "F049",
+      "group": "CSV",
+      "feature": "Categoría inexistente sin autocreación",
+      "status": "FUNCIONA",
+      "implementation": [
+        "src/lib/csv.ts"
+      ],
+      "evidence": [
+        "tests/csv.test.ts"
+      ],
+      "verifiedScope": "Validación mediante parser real; fallos de entrada no se presentan como importaciones correctas.",
+      "remaining": "El resultado se limita a las pruebas citadas; no acredita por sí solo el recorrido remoto con usuarios reales."
+    },
+    {
+      "id": "F050",
+      "group": "CSV",
+      "feature": "Duplicados dentro del archivo",
+      "status": "FUNCIONA",
+      "implementation": [
+        "src/lib/csv.ts"
+      ],
+      "evidence": [
+        "tests/csv.test.ts"
+      ],
+      "verifiedScope": "Validación mediante parser real; fallos de entrada no se presentan como importaciones correctas.",
+      "remaining": "El resultado se limita a las pruebas citadas; no acredita por sí solo el recorrido remoto con usuarios reales."
+    },
+    {
+      "id": "F051",
+      "group": "CSV",
+      "feature": "Encabezados repetidos o faltantes",
+      "status": "FUNCIONA",
+      "implementation": [
+        "src/lib/csv.ts"
+      ],
+      "evidence": [
+        "tests/csv.test.ts"
+      ],
+      "verifiedScope": "Validación mediante parser real; fallos de entrada no se presentan como importaciones correctas.",
+      "remaining": "El resultado se limita a las pruebas citadas; no acredita por sí solo el recorrido remoto con usuarios reales."
+    },
+    {
+      "id": "F052",
+      "group": "CSV",
+      "feature": "UTF-8 inválido y comillas corruptas",
+      "status": "FUNCIONA",
+      "implementation": [
+        "src/lib/csv.ts"
+      ],
+      "evidence": [
+        "tests/csv.test.ts"
+      ],
+      "verifiedScope": "Validación mediante parser real; fallos de entrada no se presentan como importaciones correctas.",
+      "remaining": "El resultado se limita a las pruebas citadas; no acredita por sí solo el recorrido remoto con usuarios reales."
+    },
+    {
+      "id": "F053",
+      "group": "CSV",
+      "feature": "Comas, saltos de línea y caracteres especiales",
+      "status": "FUNCIONA",
+      "implementation": [
+        "src/lib/csv.ts"
+      ],
+      "evidence": [
+        "tests/csv.test.ts"
+      ],
+      "verifiedScope": "Validación mediante parser real; fallos de entrada no se presentan como importaciones correctas.",
+      "remaining": "El resultado se limita a las pruebas citadas; no acredita por sí solo el recorrido remoto con usuarios reales."
+    },
+    {
+      "id": "F054",
+      "group": "CSV",
+      "feature": "CSV completamente vacío",
+      "status": "NO VERIFICADO",
+      "implementation": [
+        "src/lib/csv.ts"
+      ],
+      "evidence": [],
+      "verifiedScope": "Código inspeccionado; no se ejecutó el recorrido real en este subtrabajo.",
+      "remaining": "Código lo rechaza; no hay caso explícito dedicado en la suite inicial de 21 pruebas seleccionadas."
+    },
+    {
+      "id": "F055",
+      "group": "CSV",
+      "feature": "Plantilla compatible conservada",
+      "status": "FUNCIONA",
+      "implementation": [
+        "src/app/api/workspace/[restaurantId]/import/route.ts"
+      ],
+      "evidence": [
+        "tests/import_export.test.ts"
+      ],
+      "verifiedScope": "GET sin query devuelve plantilla-productos.csv sin consultar catálogo. Contexto de acceso simulado.",
+      "remaining": "El resultado se limita a las pruebas citadas; no acredita por sí solo el recorrido remoto con usuarios reales."
+    },
+    {
+      "id": "F056",
+      "group": "CSV",
+      "feature": "Exportar catálogo completo de su restaurante",
+      "status": "CORREGIDO Y VERIFICADO",
+      "implementation": [
+        "src/app/api/workspace/[restaurantId]/import/route.ts",
+        "src/lib/queries.ts"
+      ],
+      "evidence": [
+        "tests/import_export.test.ts"
+      ],
+      "verifiedScope": "GET ?download=catalog probado con 2.505 filas, paginación y exclusión de otro tenant; contexto y DB simulados.",
+      "remaining": "El resultado se limita a las pruebas citadas; no acredita por sí solo el recorrido remoto con usuarios reales."
+    },
+    {
+      "id": "F057",
+      "group": "CSV",
+      "feature": "Exportación vacía, privada y sin fórmulas ejecutables",
+      "status": "CORREGIDO Y VERIFICADO",
+      "implementation": [
+        "src/app/api/workspace/[restaurantId]/import/route.ts",
+        "src/lib/csv.ts"
+      ],
+      "evidence": [
+        "tests/import_export.test.ts"
+      ],
+      "verifiedScope": "Conserva encabezados; UTF-8, comillas, nueva línea, neutralización de fórmulas, no-store, nosniff, 401/403/429 y errores seguros.",
+      "remaining": "El resultado se limita a las pruebas citadas; no acredita por sí solo el recorrido remoto con usuarios reales."
+    },
+    {
+      "id": "F058",
+      "group": "CSV",
+      "feature": "Backup integral en CSV de imágenes/variantes/traducciones",
+      "status": "NO IMPLEMENTADO",
+      "implementation": [
+        "src/app/api/workspace/[restaurantId]/import/route.ts"
+      ],
+      "evidence": [],
+      "verifiedScope": "La exportación básica contiene nombre, precio, categoría, descripción y SKU.",
+      "remaining": "El CSV no sustituye un backup de base y Storage; un catálogo mayor de 1.000 filas debe dividirse para reimportarlo."
+    },
+    {
+      "id": "F059",
+      "group": "Menú público e interfaz",
+      "feature": "Acceso sin login a un menú activo",
+      "status": "NO VERIFICADO",
+      "implementation": [
+        "src/components/public-menu.tsx",
+        "src/lib/public-menu.ts"
+      ],
+      "evidence": [],
+      "verifiedScope": "Código inspeccionado; no se ejecutó el recorrido real en este subtrabajo.",
+      "remaining": "Proyección pública y API implementadas; navegador con DB real pendiente en este subtrabajo."
+    },
+    {
+      "id": "F060",
+      "group": "Menú público e interfaz",
+      "feature": "Categorías/subcategorías y búsqueda",
+      "status": "NO VERIFICADO",
+      "implementation": [
+        "src/components/public-menu.tsx",
+        "src/lib/public-menu.ts"
+      ],
+      "evidence": [],
+      "verifiedScope": "Código inspeccionado; no se ejecutó el recorrido real en este subtrabajo.",
+      "remaining": "Evidencia Chrome histórica con fixtures; confirmar datos DEMO reales."
+    },
+    {
+      "id": "F061",
+      "group": "Menú público e interfaz",
+      "feature": "Fotografías, descripciones y precios",
+      "status": "NO VERIFICADO",
+      "implementation": [
+        "src/components/public-menu.tsx",
+        "src/lib/public-menu.ts"
+      ],
+      "evidence": [],
+      "verifiedScope": "Código inspeccionado; no se ejecutó el recorrido real en este subtrabajo.",
+      "remaining": "Proyección explícita; verificar objetos y referencias reales."
+    },
+    {
+      "id": "F062",
+      "group": "Menú público e interfaz",
+      "feature": "Variantes/extras visibles",
+      "status": "NO VERIFICADO",
+      "implementation": [
+        "src/components/public-menu.tsx",
+        "src/lib/public-menu.ts"
+      ],
+      "evidence": [],
+      "verifiedScope": "Código inspeccionado; no se ejecutó el recorrido real en este subtrabajo.",
+      "remaining": "Render del detalle implementado; validar contenido y lectura."
+    },
+    {
+      "id": "F063",
+      "group": "Menú público e interfaz",
+      "feature": "Productos agotados",
+      "status": "NO VERIFICADO",
+      "implementation": [
+        "src/components/public-menu.tsx",
+        "src/lib/public-menu.ts"
+      ],
+      "evidence": [],
+      "verifiedScope": "Código inspeccionado; no se ejecutó el recorrido real en este subtrabajo.",
+      "remaining": "Se muestra sin convertir el menú en sistema de pedidos."
+    },
+    {
+      "id": "F064",
+      "group": "Menú público e interfaz",
+      "feature": "Promociones vigentes",
+      "status": "NO VERIFICADO",
+      "implementation": [
+        "src/components/public-menu.tsx",
+        "src/lib/public-menu.ts"
+      ],
+      "evidence": [],
+      "verifiedScope": "Código inspeccionado; no se ejecutó el recorrido real en este subtrabajo.",
+      "remaining": "Filtrado temporal local comprobado; apariencia final real pendiente."
+    },
+    {
+      "id": "F065",
+      "group": "Menú público e interfaz",
+      "feature": "Cambio de los siete idiomas",
+      "status": "NO VERIFICADO",
+      "implementation": [
+        "src/components/public-menu.tsx",
+        "src/lib/public-menu.ts"
+      ],
+      "evidence": [],
+      "verifiedScope": "Código inspeccionado; no se ejecutó el recorrido real en este subtrabajo.",
+      "remaining": "Interfaz y fallback histórico con fixtures; no certifica traducciones completas."
+    },
+    {
+      "id": "F066",
+      "group": "Menú público e interfaz",
+      "feature": "Identidad visual independiente",
+      "status": "NO VERIFICADO",
+      "implementation": [
+        "src/components/public-menu.tsx",
+        "src/lib/public-menu.ts"
+      ],
+      "evidence": [],
+      "verifiedScope": "Código inspeccionado; no se ejecutó el recorrido real en este subtrabajo.",
+      "remaining": "Colores/logo/portada por restaurante; los tres DEMO son trabajo del agente principal."
+    },
+    {
+      "id": "F067",
+      "group": "Menú público e interfaz",
+      "feature": "Favoritos locales",
+      "status": "NO VERIFICADO",
+      "implementation": [
+        "src/components/public-menu.tsx",
+        "src/lib/public-menu.ts"
+      ],
+      "evidence": [],
+      "verifiedScope": "Código inspeccionado; no se ejecutó el recorrido real en este subtrabajo.",
+      "remaining": "Preferencia por navegador; no es persistencia comercial ni sesión Supabase."
+    },
+    {
+      "id": "F068",
+      "group": "Menú público e interfaz",
+      "feature": "Enlace comercial/footer",
+      "status": "NO VERIFICADO",
+      "implementation": [
+        "src/components/public-menu.tsx",
+        "src/lib/public-menu.ts"
+      ],
+      "evidence": [],
+      "verifiedScope": "Código inspeccionado; no se ejecutó el recorrido real en este subtrabajo.",
+      "remaining": "Proyección de platform_settings y enlaces HTTPS; comprobar destino configurado."
+    },
+    {
+      "id": "F069",
+      "group": "Menú público e interfaz",
+      "feature": "Estados vacíos, error y menú suspendido",
+      "status": "NO VERIFICADO",
+      "implementation": [
+        "src/components/public-menu.tsx",
+        "src/lib/public-menu.ts"
+      ],
+      "evidence": [],
+      "verifiedScope": "Código inspeccionado; no se ejecutó el recorrido real en este subtrabajo.",
+      "remaining": "Implementados; evidencia visual histórica con fixtures no sustituye recorrido actual."
+    },
+    {
+      "id": "F070",
+      "group": "Menú público e interfaz",
+      "feature": "Móvil y escritorio",
+      "status": "NO VERIFICADO",
+      "implementation": [
+        "src/components/public-menu.tsx",
+        "src/lib/public-menu.ts"
+      ],
+      "evidence": [],
+      "verifiedScope": "Código inspeccionado; no se ejecutó el recorrido real en este subtrabajo.",
+      "remaining": "22 E2E históricos Chrome en 390x844/1440x1000 con fixtures; agente frontend verifica ahora."
+    },
+    {
+      "id": "F071",
+      "group": "Menú público e interfaz",
+      "feature": "Tableta, Edge y Safari",
+      "status": "NO VERIFICADO",
+      "implementation": [
+        "src/components/public-menu.tsx",
+        "src/lib/public-menu.ts"
+      ],
+      "evidence": [],
+      "verifiedScope": "Código inspeccionado; no se ejecutó el recorrido real en este subtrabajo.",
+      "remaining": "No se ejecutaron aquí; no inferir compatibilidad por usar Chromium."
+    },
+    {
+      "id": "F072",
+      "group": "Menú público e interfaz",
+      "feature": "Accesibilidad básica",
+      "status": "NO VERIFICADO",
+      "implementation": [
+        "src/components/public-menu.tsx",
+        "src/lib/public-menu.ts"
+      ],
+      "evidence": [],
+      "verifiedScope": "Código inspeccionado; no se ejecutó el recorrido real en este subtrabajo.",
+      "remaining": "No se ejecutó auditoría automatizada/manual completa aquí."
+    },
+    {
+      "id": "F073",
+      "group": "Menú público e interfaz",
+      "feature": "Excluir borradores/categorías ocultas y traducciones privadas",
+      "status": "FUNCIONA",
+      "implementation": [
+        "src/lib/public-menu.ts"
+      ],
+      "evidence": [
+        "tests/public_security.test.ts"
+      ],
+      "verifiedScope": "Proyección real con DB/cache simuladas; comprueba ancestros ocultos, ciclos y traducciones asociadas.",
+      "remaining": "El resultado se limita a las pruebas citadas; no acredita por sí solo el recorrido remoto con usuarios reales."
+    },
+    {
+      "id": "F074",
+      "group": "Menú público e interfaz",
+      "feature": "Suspensión prevalece sobre caché y versión invalida contenido",
+      "status": "FUNCIONA",
+      "implementation": [
+        "src/lib/public-menu.ts"
+      ],
+      "evidence": [
+        "tests/public_security.test.ts"
+      ],
+      "verifiedScope": "Estado consultado fuera de caché; simulación con contenido anterior y nueva menu_version.",
+      "remaining": "El resultado se limita a las pruebas citadas; no acredita por sí solo el recorrido remoto con usuarios reales."
+    },
+    {
+      "id": "F075",
+      "group": "Menú público e interfaz",
+      "feature": "Pedidos, carrito, checkout o pagos",
+      "status": "NO IMPLEMENTADO",
+      "implementation": [
+        "src/components/public-menu.tsx"
+      ],
+      "evidence": [],
+      "verifiedScope": "Fuera del alcance solicitado: menú de consulta.",
+      "remaining": "No añadir estas funciones para completar la auditoría."
+    },
+    {
+      "id": "F076",
+      "group": "Seguridad",
+      "feature": "Actor validado en servidor y rol persistido",
+      "status": "FUNCIONA",
+      "implementation": [
+        "src/lib/access.ts",
+        "src/lib/api.ts",
+        "src/proxy.ts",
+        "src/lib/session-refresh.ts"
+      ],
+      "evidence": [
+        "tests/api_security.test.ts"
+      ],
+      "verifiedScope": "getUser y membresía/rol DB; rechaza metadata falsificada en pruebas con mocks.",
+      "remaining": "El resultado se limita a las pruebas citadas; no acredita por sí solo el recorrido remoto con usuarios reales."
+    },
+    {
+      "id": "F077",
+      "group": "Seguridad",
+      "feature": "Acceso cruzado por identificador",
+      "status": "FUNCIONA",
+      "implementation": [
+        "src/lib/access.ts",
+        "src/lib/api.ts",
+        "src/proxy.ts",
+        "src/lib/session-refresh.ts"
+      ],
+      "evidence": [
+        "tests/api_security.test.ts"
+      ],
+      "verifiedScope": "Rechazo antes de lectura privilegiada de restaurante ajeno.",
+      "remaining": "El resultado se limita a las pruebas citadas; no acredita por sí solo el recorrido remoto con usuarios reales."
+    },
+    {
+      "id": "F078",
+      "group": "Seguridad",
+      "feature": "CSRF y origen oficial exacto",
+      "status": "FUNCIONA",
+      "implementation": [
+        "src/lib/access.ts",
+        "src/lib/api.ts",
+        "src/proxy.ts",
+        "src/lib/session-refresh.ts"
+      ],
+      "evidence": [
+        "tests/api_security.test.ts"
+      ],
+      "verifiedScope": "Origin debe coincidir con APP_URL; cross-site rechazado.",
+      "remaining": "El resultado se limita a las pruebas citadas; no acredita por sí solo el recorrido remoto con usuarios reales."
+    },
+    {
+      "id": "F079",
+      "group": "Seguridad",
+      "feature": "Límite real de upload y body",
+      "status": "FUNCIONA",
+      "implementation": [
+        "src/lib/access.ts",
+        "src/lib/api.ts",
+        "src/proxy.ts",
+        "src/lib/session-refresh.ts"
+      ],
+      "evidence": [
+        "tests/api_security.test.ts"
+      ],
+      "verifiedScope": "Stream con Content-Length ausente/falso cancela al superar bytes permitidos.",
+      "remaining": "El resultado se limita a las pruebas citadas; no acredita por sí solo el recorrido remoto con usuarios reales."
+    },
+    {
+      "id": "F080",
+      "group": "Seguridad",
+      "feature": "Rate limiting compartido y claves hash",
+      "status": "FUNCIONA",
+      "implementation": [
+        "src/lib/access.ts",
+        "src/lib/api.ts",
+        "src/proxy.ts",
+        "src/lib/session-refresh.ts"
+      ],
+      "evidence": [
+        "tests/api_security.test.ts"
+      ],
+      "verifiedScope": "Contratos RPC probados; falla cerrado y no envía identificador en claro.",
+      "remaining": "El resultado se limita a las pruebas citadas; no acredita por sí solo el recorrido remoto con usuarios reales."
+    },
+    {
+      "id": "F081",
+      "group": "Seguridad",
+      "feature": "Errores sin secretos y respuestas privadas",
+      "status": "FUNCIONA",
+      "implementation": [
+        "src/lib/access.ts",
+        "src/lib/api.ts",
+        "src/proxy.ts",
+        "src/lib/session-refresh.ts"
+      ],
+      "evidence": [
+        "tests/api_security.test.ts"
+      ],
+      "verifiedScope": "Mensajes saneados y no-store comprobados.",
+      "remaining": "El resultado se limita a las pruebas citadas; no acredita por sí solo el recorrido remoto con usuarios reales."
+    },
+    {
+      "id": "F082",
+      "group": "Seguridad",
+      "feature": "Imágenes públicas solo si están referenciadas",
+      "status": "FUNCIONA",
+      "implementation": [
+        "src/lib/access.ts",
+        "src/lib/api.ts",
+        "src/proxy.ts",
+        "src/lib/session-refresh.ts"
+      ],
+      "evidence": [
+        "tests/public_security.test.ts"
+      ],
+      "verifiedScope": "Sin sesión para imagen publicada; rechaza borrador y tenant ajeno antes de descargar.",
+      "remaining": "El resultado se limita a las pruebas citadas; no acredita por sí solo el recorrido remoto con usuarios reales."
+    },
+    {
+      "id": "F083",
+      "group": "Seguridad",
+      "feature": "Paths de medios, traversal y suspensión",
+      "status": "FUNCIONA",
+      "implementation": [
+        "src/lib/access.ts",
+        "src/lib/api.ts",
+        "src/proxy.ts",
+        "src/lib/session-refresh.ts"
+      ],
+      "evidence": [
+        "tests/public_security.test.ts"
+      ],
+      "verifiedScope": "Regex/prefijo tenant, formato y estado verificados con mocks.",
+      "remaining": "El resultado se limita a las pruebas citadas; no acredita por sí solo el recorrido remoto con usuarios reales."
+    },
+    {
+      "id": "F084",
+      "group": "Seguridad",
+      "feature": "Refresco de sesión y cookies por petición",
+      "status": "FUNCIONA",
+      "implementation": [
+        "src/lib/access.ts",
+        "src/lib/api.ts",
+        "src/proxy.ts",
+        "src/lib/session-refresh.ts"
+      ],
+      "evidence": [
+        "tests/proxy_session.test.ts"
+      ],
+      "verifiedScope": "43 casos incluyen rotación, chunks, cabeceras, aislamiento y host; SDK/Auth simulados.",
+      "remaining": "El resultado se limita a las pruebas citadas; no acredita por sí solo el recorrido remoto con usuarios reales."
+    },
+    {
+      "id": "F085",
+      "group": "Seguridad",
+      "feature": "Host no confiable y X-Forwarded-Host falsificado",
+      "status": "FUNCIONA",
+      "implementation": [
+        "src/lib/access.ts",
+        "src/lib/api.ts",
+        "src/proxy.ts",
+        "src/lib/session-refresh.ts"
+      ],
+      "evidence": [
+        "tests/proxy_session.test.ts"
+      ],
+      "verifiedScope": "No concede administración ni refresca sesión en dominios ajenos.",
+      "remaining": "El resultado se limita a las pruebas citadas; no acredita por sí solo el recorrido remoto con usuarios reales."
+    },
+    {
+      "id": "F086",
+      "group": "Seguridad",
+      "feature": "Dominio personalizado restringido a su menú",
+      "status": "FUNCIONA",
+      "implementation": [
+        "src/lib/access.ts",
+        "src/lib/api.ts",
+        "src/proxy.ts",
+        "src/lib/session-refresh.ts"
+      ],
+      "evidence": [
+        "tests/proxy_session.test.ts"
+      ],
+      "verifiedScope": "Host verificado resuelve solo el restaurante asignado; sin rutas admin.",
+      "remaining": "El resultado se limita a las pruebas citadas; no acredita por sí solo el recorrido remoto con usuarios reales."
+    },
+    {
+      "id": "F087",
+      "group": "Seguridad",
+      "feature": "RLS, grants, FK y triggers alojados",
+      "status": "NO VERIFICADO",
+      "implementation": [
+        "supabase/migrations/20261017021301_initial_tenant_security.sql",
+        "src/lib/supabase.ts",
+        "src/app/api/auth/route.ts"
+      ],
+      "evidence": [],
+      "verifiedScope": "Código inspeccionado; no se ejecutó el recorrido real en este subtrabajo.",
+      "remaining": "Evidencia remota histórica db-migration-verification.json leída; no se consultó nuevamente el proyecto en este subtrabajo."
+    },
+    {
+      "id": "F088",
+      "group": "Seguridad",
+      "feature": "Aislamiento con tres propietarios Auth reales",
+      "status": "NO VERIFICADO",
+      "implementation": [
+        "supabase/migrations/20261017021301_initial_tenant_security.sql",
+        "src/lib/supabase.ts",
+        "src/app/api/auth/route.ts"
+      ],
+      "evidence": [],
+      "verifiedScope": "Código inspeccionado; no se ejecutó el recorrido real en este subtrabajo.",
+      "remaining": "Debe ejecutarse con A/B/C y tokens/cookies reales; mocks y PGlite no equivalen."
+    },
+    {
+      "id": "F089",
+      "group": "Seguridad",
+      "feature": "Secretos fuera del cliente y Git",
+      "status": "NO VERIFICADO",
+      "implementation": [
+        "supabase/migrations/20261017021301_initial_tenant_security.sql",
+        "src/lib/supabase.ts",
+        "src/app/api/auth/route.ts"
+      ],
+      "evidence": [],
+      "verifiedScope": "Código inspeccionado; no se ejecutó el recorrido real en este subtrabajo.",
+      "remaining": "server-only y .gitignore inspeccionados; se inventariaron nombres/presencia sin valores. No es un escaneo criptográfico del bundle actual."
+    },
+    {
+      "id": "F090",
+      "group": "Seguridad",
+      "feature": "Configuración de registro público alojado",
+      "status": "NO VERIFICADO",
+      "implementation": [
+        "supabase/migrations/20261017021301_initial_tenant_security.sql",
+        "src/lib/supabase.ts",
+        "src/app/api/auth/route.ts"
+      ],
+      "evidence": [],
+      "verifiedScope": "Código inspeccionado; no se ejecutó el recorrido real en este subtrabajo.",
+      "remaining": "Evidencia histórica muestra disable_signup:false; comprobar estado actual antes de producción."
+    },
+    {
+      "id": "F091",
+      "group": "Seguridad",
+      "feature": "Política de sesión y contraseña en Auth alojado",
+      "status": "NO VERIFICADO",
+      "implementation": [
+        "supabase/migrations/20261017021301_initial_tenant_security.sql",
+        "src/lib/supabase.ts",
+        "src/app/api/auth/route.ts"
+      ],
+      "evidence": [],
+      "verifiedScope": "Código inspeccionado; no se ejecutó el recorrido real en este subtrabajo.",
+      "remaining": "config.toml no prueba que esos ajustes estén aplicados al proyecto remoto."
+    },
+    {
+      "id": "F092",
+      "group": "Seguridad",
+      "feature": "SMTP, recuperación e invitación reales",
+      "status": "NO VERIFICADO",
+      "implementation": [
+        "supabase/migrations/20261017021301_initial_tenant_security.sql",
+        "src/lib/supabase.ts",
+        "src/app/api/auth/route.ts"
+      ],
+      "evidence": [],
+      "verifiedScope": "Código inspeccionado; no se ejecutó el recorrido real en este subtrabajo.",
+      "remaining": "Plantilla token_hash documentada; no se enviaron correos en este subtrabajo."
+    },
+    {
+      "id": "F093",
+      "group": "Seguridad",
+      "feature": "Advisors de Supabase y auditoría formal",
+      "status": "NO VERIFICADO",
+      "implementation": [
+        "supabase/migrations/20261017021301_initial_tenant_security.sql",
+        "src/lib/supabase.ts",
+        "src/app/api/auth/route.ts"
+      ],
+      "evidence": [],
+      "verifiedScope": "Código inspeccionado; no se ejecutó el recorrido real en este subtrabajo.",
+      "remaining": "Pendiente de evidencia ejecutada por el agente responsable."
+    },
+    {
+      "id": "F094",
+      "group": "QR",
+      "feature": "PNG 256/512/1024 con y sin logo",
+      "status": "FUNCIONA",
+      "implementation": [
+        "src/lib/qr.ts"
+      ],
+      "evidence": [
+        "tests/qr.test.ts"
+      ],
+      "verifiedScope": "Generación y decodificación jsQR real de seis combinaciones.",
+      "remaining": "El resultado se limita a las pruebas citadas; no acredita por sí solo el recorrido remoto con usuarios reales."
+    },
+    {
+      "id": "F095",
+      "group": "QR",
+      "feature": "SVG con texto y logo saneado",
+      "status": "FUNCIONA",
+      "implementation": [
+        "src/lib/qr.ts"
+      ],
+      "evidence": [
+        "tests/qr.test.ts"
+      ],
+      "verifiedScope": "SVG rasterizado y decodificado; escape XML y logo raster sin recursos externos.",
+      "remaining": "El resultado se limita a las pruebas citadas; no acredita por sí solo el recorrido remoto con usuarios reales."
+    },
+    {
+      "id": "F096",
+      "group": "QR",
+      "feature": "PDF con marco, texto y logo",
+      "status": "FUNCIONA",
+      "implementation": [
+        "src/lib/qr.ts"
+      ],
+      "evidence": [
+        "tests/qr.test.ts"
+      ],
+      "verifiedScope": "Extrae píxeles del PDF y comprueba identidad con PNG y decodificación.",
+      "remaining": "El resultado se limita a las pruebas citadas; no acredita por sí solo el recorrido remoto con usuarios reales."
+    },
+    {
+      "id": "F097",
+      "group": "QR",
+      "feature": "Contraste mínimo 7 y colores oscuros sobre claro",
+      "status": "FUNCIONA",
+      "implementation": [
+        "src/lib/qr.ts"
+      ],
+      "evidence": [
+        "tests/qr.test.ts"
+      ],
+      "verifiedScope": "Validador real rechaza colores insuficientes o invertidos.",
+      "remaining": "El resultado se limita a las pruebas citadas; no acredita por sí solo el recorrido remoto con usuarios reales."
+    },
+    {
+      "id": "F098",
+      "group": "QR",
+      "feature": "Zona de silencio y corrección H",
+      "status": "FUNCIONA",
+      "implementation": [
+        "src/lib/qr.ts"
+      ],
+      "evidence": [
+        "tests/qr.test.ts"
+      ],
+      "verifiedScope": "Cuatro módulos de quiet zone y ECC H comprobados en datos y píxeles.",
+      "remaining": "El resultado se limita a las pruebas citadas; no acredita por sí solo el recorrido remoto con usuarios reales."
+    },
+    {
+      "id": "F099",
+      "group": "QR",
+      "feature": "Límites de logo, texto y dimensiones",
+      "status": "FUNCIONA",
+      "implementation": [
+        "src/lib/qr.ts"
+      ],
+      "evidence": [
+        "tests/qr.test.ts"
+      ],
+      "verifiedScope": "Hasta 5 MiB/16MP logo raster, texto80, tamaño256–2048; fronteras y rechazos probados.",
+      "remaining": "El resultado se limita a las pruebas citadas; no acredita por sí solo el recorrido remoto con usuarios reales."
+    },
+    {
+      "id": "F100",
+      "group": "QR",
+      "feature": "Personalización conserva el destino",
+      "status": "FUNCIONA",
+      "implementation": [
+        "src/lib/qr.ts"
+      ],
+      "evidence": [
+        "tests/qr.test.ts"
+      ],
+      "verifiedScope": "Cambios de color/marco/logo/texto decodifican la misma URL.",
+      "remaining": "El resultado se limita a las pruebas citadas; no acredita por sí solo el recorrido remoto con usuarios reales."
+    },
+    {
+      "id": "F101",
+      "group": "QR",
+      "feature": "Token estable resuelve slug nuevo",
+      "status": "FUNCIONA",
+      "implementation": [
+        "src/app/q/[token]/route.ts"
+      ],
+      "evidence": [
+        "tests/q_resolver.test.ts"
+      ],
+      "verifiedScope": "Handler real con DB simulada; mismo UUID cambia destino al slug actual.",
+      "remaining": "El resultado se limita a las pruebas citadas; no acredita por sí solo el recorrido remoto con usuarios reales."
+    },
+    {
+      "id": "F102",
+      "group": "QR",
+      "feature": "Destino controlado sin redirección externa",
+      "status": "FUNCIONA",
+      "implementation": [
+        "src/app/q/[token]/route.ts"
+      ],
+      "evidence": [
+        "tests/q_resolver.test.ts"
+      ],
+      "verifiedScope": "Host/query/domino arbitrarios no alteran APP_URL; slug se codifica.",
+      "remaining": "El resultado se limita a las pruebas citadas; no acredita por sí solo el recorrido remoto con usuarios reales."
+    },
+    {
+      "id": "F103",
+      "group": "QR",
+      "feature": "Token inexistente o inválido y menú suspendido",
+      "status": "FUNCIONA",
+      "implementation": [
+        "src/app/q/[token]/route.ts"
+      ],
+      "evidence": [
+        "tests/q_resolver.test.ts"
+      ],
+      "verifiedScope": "400/404 o resolución a página de estado; métricas no bloquean acceso.",
+      "remaining": "El resultado se limita a las pruebas citadas; no acredita por sí solo el recorrido remoto con usuarios reales."
+    },
+    {
+      "id": "F104",
+      "group": "QR",
+      "feature": "Tres QR DEMO con URL pública verificable",
+      "status": "NO VERIFICADO",
+      "implementation": [
+        "src/lib/qr.ts",
+        "src/app/q/[token]/route.ts"
+      ],
+      "evidence": [],
+      "verifiedScope": "Código inspeccionado; no se ejecutó el recorrido real en este subtrabajo.",
+      "remaining": "APP_URL actual es loopback; no hay URL pública de aplicación acreditada en las evidencias leídas. No sustituirla con un dominio inventado."
+    },
+    {
+      "id": "F105",
+      "group": "QR",
+      "feature": "Persistencia de QR después de cambiar dominio real",
+      "status": "NO VERIFICADO",
+      "implementation": [
+        "src/app/q/[token]/route.ts",
+        "src/lib/domains.ts"
+      ],
+      "evidence": [],
+      "verifiedScope": "Código inspeccionado; no se ejecutó el recorrido real en este subtrabajo.",
+      "remaining": "Token inmutable por SQL y resolver probado localmente; falta cambio DNS/slug real y solicitud HTTP pública de cada DEMO."
+    },
+    {
+      "id": "F106",
+      "group": "QR",
+      "feature": "Escaneo Android/iPhone e impresión",
+      "status": "NO VERIFICADO",
+      "implementation": [
+        "src/lib/qr.ts"
+      ],
+      "evidence": [],
+      "verifiedScope": "Código inspeccionado; no se ejecutó el recorrido real en este subtrabajo.",
+      "remaining": "No hubo dispositivos físicos; decodificación automática no acredita escaneo con cámara."
+    },
+    {
+      "id": "F107",
+      "group": "Dominios y Render",
+      "feature": "Validar TXT de propiedad antes de registrar",
+      "status": "FUNCIONA",
+      "implementation": [
+        "src/lib/domains.ts"
+      ],
+      "evidence": [
+        "tests/domains.test.ts"
+      ],
+      "verifiedScope": "DNS y fetch simulados; no envía petición Render sin prueba correcta.",
+      "remaining": "El resultado se limita a las pruebas citadas; no acredita por sí solo el recorrido remoto con usuarios reales."
+    },
+    {
+      "id": "F108",
+      "group": "Dominios y Render",
+      "feature": "Registro explícito e idempotente en Render",
+      "status": "FUNCIONA",
+      "implementation": [
+        "src/lib/domains.ts"
+      ],
+      "evidence": [
+        "tests/domains.test.ts"
+      ],
+      "verifiedScope": "POST fijo al servicio configurado, relee conflictos409 y nunca activa dominio por el POST.",
+      "remaining": "El resultado se limita a las pruebas citadas; no acredita por sí solo el recorrido remoto con usuarios reales."
+    },
+    {
+      "id": "F109",
+      "group": "Dominios y Render",
+      "feature": "Activación separada TXT+CNAME+verified",
+      "status": "FUNCIONA",
+      "implementation": [
+        "src/lib/domains.ts"
+      ],
+      "evidence": [
+        "tests/domains.test.ts"
+      ],
+      "verifiedScope": "Requiere tres comprobaciones y rechaza CNAME ajeno/proveedor pendiente.",
+      "remaining": "El resultado se limita a las pruebas citadas; no acredita por sí solo el recorrido remoto con usuarios reales."
+    },
+    {
+      "id": "F110",
+      "group": "Dominios y Render",
+      "feature": "Sin SSRF por host o redirección",
+      "status": "FUNCIONA",
+      "implementation": [
+        "src/lib/domains.ts"
+      ],
+      "evidence": [
+        "tests/domains.test.ts"
+      ],
+      "verifiedScope": "Endpoint api.render.com fijo, hostname restringido, redirect:error, mensajes saneados.",
+      "remaining": "El resultado se limita a las pruebas citadas; no acredita por sí solo el recorrido remoto con usuarios reales."
+    },
+    {
+      "id": "F111",
+      "group": "Dominios y Render",
+      "feature": "Build/start/health Render",
+      "status": "NO VERIFICADO",
+      "implementation": [
+        "render.yaml",
+        "src/lib/config.ts",
+        "src/lib/domains.ts"
+      ],
+      "evidence": [],
+      "verifiedScope": "Código inspeccionado; no se ejecutó el recorrido real en este subtrabajo.",
+      "remaining": "render.yaml inspeccionado: npm ci/typecheck/lint/test/build; npm run start y /api/health. No se ejecutó build aquí para preservar dev."
+    },
+    {
+      "id": "F112",
+      "group": "Dominios y Render",
+      "feature": "Variables de entorno Render",
+      "status": "NO VERIFICADO",
+      "implementation": [
+        "render.yaml",
+        "src/lib/config.ts",
+        "src/lib/domains.ts"
+      ],
+      "evidence": [],
+      "verifiedScope": "Código inspeccionado; no se ejecutó el recorrido real en este subtrabajo.",
+      "remaining": "No aparecen RENDER_API_KEY/SERVICE_ID/SERVICE_HOSTNAME/EXTERNAL_URL en .env.local ni proceso observado."
+    },
+    {
+      "id": "F113",
+      "group": "Dominios y Render",
+      "feature": "URL pública de aplicación y HTTPS",
+      "status": "NO VERIFICADO",
+      "implementation": [
+        "render.yaml",
+        "src/lib/config.ts",
+        "src/lib/domains.ts"
+      ],
+      "evidence": [],
+      "verifiedScope": "Código inspeccionado; no se ejecutó el recorrido real en este subtrabajo.",
+      "remaining": "APP_URL clasificado loopback; repositorio GitHub público no equivale a aplicación desplegada."
+    },
+    {
+      "id": "F114",
+      "group": "Dominios y Render",
+      "feature": "Logs y despliegue de un servicio existente",
+      "status": "NO VERIFICADO",
+      "implementation": [
+        "render.yaml",
+        "src/lib/config.ts",
+        "src/lib/domains.ts"
+      ],
+      "evidence": [],
+      "verifiedScope": "Código inspeccionado; no se ejecutó el recorrido real en este subtrabajo.",
+      "remaining": "No se accedió a cuentas Render ni se crearon servicios en este subtrabajo."
+    },
+    {
+      "id": "F115",
+      "group": "Dominios y Render",
+      "feature": "DNS real y dominio personalizado",
+      "status": "NO VERIFICADO",
+      "implementation": [
+        "render.yaml",
+        "src/lib/config.ts",
+        "src/lib/domains.ts"
+      ],
+      "evidence": [],
+      "verifiedScope": "Código inspeccionado; no se ejecutó el recorrido real en este subtrabajo.",
+      "remaining": "No se modificó DNS ni se probó un proveedor real."
+    },
+    {
+      "id": "F116",
+      "group": "Dominios y Render",
+      "feature": "Persistencia tras reiniciar servicio",
+      "status": "NO VERIFICADO",
+      "implementation": [
+        "render.yaml",
+        "src/lib/config.ts",
+        "src/lib/domains.ts"
+      ],
+      "evidence": [],
+      "verifiedScope": "Código inspeccionado; no se ejecutó el recorrido real en este subtrabajo.",
+      "remaining": "Datos diseñados para Postgres/Storage; requiere comprobación real de antes/después."
+    },
+    {
+      "id": "F117",
+      "group": "Dominios y Render",
+      "feature": "Backup y restauración",
+      "status": "NO VERIFICADO",
+      "implementation": [
+        "render.yaml",
+        "src/lib/config.ts",
+        "src/lib/domains.ts"
+      ],
+      "evidence": [],
+      "verifiedScope": "Código inspeccionado; no se ejecutó el recorrido real en este subtrabajo.",
+      "remaining": "No ejecutado; SQL no respalda objetos Storage por sí solo."
+    },
+    {
+      "id": "F118",
+      "group": "Dominios y Render",
+      "feature": "Carga concurrente y disponibilidad comercial",
+      "status": "NO VERIFICADO",
+      "implementation": [
+        "render.yaml",
+        "src/lib/config.ts",
+        "src/lib/domains.ts"
+      ],
+      "evidence": [],
+      "verifiedScope": "Código inspeccionado; no se ejecutó el recorrido real en este subtrabajo.",
+      "remaining": "Benchmark PGlite histórico no prueba límites ni latencias de Render/Supabase alojados."
+    },
+    {
+      "id": "F119",
+      "group": "Dominios y Render",
+      "feature": "Apex con ALIAS/flattening o comodines",
+      "status": "NO IMPLEMENTADO",
+      "implementation": [
+        "src/lib/domains.ts"
+      ],
+      "evidence": [],
+      "verifiedScope": "La verificación actual exige CNAME directo; cada hostname se registra individualmente.",
+      "remaining": "Usar subdominio con CNAME o ampliar el mecanismo con alcance y pruebas explícitos."
+    }
+  ],
+  "snapshot": [
+    {
+      "path": ".env.example",
+      "bytes": 523,
+      "sha256": "bde7713083ebdce7fa94b550df19fb102e94f30addc751bba908fba8cd4460b0"
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 292,
+      "sha256": "bff8c1abf2db881270db4c606dce9813c42c7de25a3ccbe0bc24017056291edd"
+    },
+    {
+      "path": "next.config.ts",
+      "bytes": 987,
+      "sha256": "a3fce6d2cc113959b34ca2f25ba88f10781965050b3a46211170fc231317c52d"
+    },
+    {
+      "path": "package-lock.json",
+      "bytes": 157662,
+      "sha256": "f98e75a866e8ae5525405577398ecf493a2a202f94355d1706d1aa8d9049fb69"
+    },
+    {
+      "path": "package.json",
+      "bytes": 1422,
+      "sha256": "fbfd420d47cb3368da2b9c49a4c00152448539542bae6691fcb155a6af4216d6"
+    },
+    {
+      "path": "playwright.config.ts",
+      "bytes": 898,
+      "sha256": "a841d5bb1c44c12eb99b69842049449434a06354f1808d08e6a4959bcc5c48de"
+    },
+    {
+      "path": "render.yaml",
+      "bytes": 770,
+      "sha256": "1d1f64074ac7a513e4dd55500918a0946af2c4f7f45691dfad66d2316fbb1eb2"
+    },
+    {
+      "path": "scripts/bootstrap-admin.mjs",
+      "bytes": 1667,
+      "sha256": "a224413fc8c29778bce8f9365c918d16f2c02dd4902318cf5c88c76080d1e044"
+    },
+    {
+      "path": "scripts/demo-catalog.mjs",
+      "bytes": 10853,
+      "sha256": "948b65f801e31b44317f1726a905ec5c5e630f4dd3a7be7561070c86fe7e72a2"
+    },
+    {
+      "path": "scripts/live-client.mjs",
+      "bytes": 1389,
+      "sha256": "fde94e966d2fc35d39df1fb01c0e79b2b00639b67f9f54cd1c5eaf5576b61a67"
+    },
+    {
+      "path": "scripts/provision-demos.mjs",
+      "bytes": 9404,
+      "sha256": "b0c7def2f3dce008cbd3d15b8c7e95fe292ce57defb66c16e237192cecd453a6"
+    },
+    {
+      "path": "scripts/run-live-audit.mjs",
+      "bytes": 13980,
+      "sha256": "d24b96902c59bbd0f260598ccc8907333a1bd8bdde6b6611f5c9a6c40e6c0caf"
+    },
+    {
+      "path": "src/app/admin/page.tsx",
+      "bytes": 114,
+      "sha256": "1fe7f6f22e9fdc4d3f2124d914e922f2a6e6b54faf6e038ecc818808e3fb657a"
+    },
+    {
+      "path": "src/app/admin/restaurants/[id]/page.tsx",
+      "bytes": 246,
+      "sha256": "f3804f9e8d5481794b450b9646e771029b244da28c7cb0f4b21da7008c78ac41"
+    },
+    {
+      "path": "src/app/api/admin/restaurants/route.ts",
+      "bytes": 7108,
+      "sha256": "bc14761443c7a262e130e945af9e01ed8686cc7fa72a8a3375acde4aac60f9d2"
+    },
+    {
+      "path": "src/app/api/auth/route.ts",
+      "bytes": 2666,
+      "sha256": "be7437db6d0ad275f8c8357b7323b73e7f98d980def023178f4c83f83f05d2cd"
+    },
+    {
+      "path": "src/app/api/health/route.ts",
+      "bytes": 555,
+      "sha256": "9413f9362c5cb6e9ae7746247610cdc3170d0717bbf5b73e7e9241cc569f80f3"
+    },
+    {
+      "path": "src/app/api/media/[restaurantId]/[...path]/route.ts",
+      "bytes": 1953,
+      "sha256": "21d3ffb11e841b50252d85b4219dc9b3691af1241c8f83e64292feba2daae16d"
+    },
+    {
+      "path": "src/app/api/public/menu/[slug]/route.ts",
+      "bytes": 779,
+      "sha256": "7aff739514764cd7aba7c31acdd2e9b4289c171ca0a83362fdec165539497937"
+    },
+    {
+      "path": "src/app/api/session/route.ts",
+      "bytes": 459,
+      "sha256": "d8ad3aa84c3c0f793034606344024a0cf515a1c03d88cde13a6c5993741c1aa5"
+    },
+    {
+      "path": "src/app/api/workspace/[restaurantId]/import/route.ts",
+      "bytes": 6403,
+      "sha256": "f70d327858932ddad99f8e147fd5f264a662867001de1274f95a55dcdb80174b"
+    },
+    {
+      "path": "src/app/api/workspace/[restaurantId]/media/route.ts",
+      "bytes": 2195,
+      "sha256": "751f1da655fef5bdaf0c9b146ecc2499c988154a9b06f8e59cbb0fec27877786"
+    },
+    {
+      "path": "src/app/api/workspace/[restaurantId]/qr/route.ts",
+      "bytes": 2020,
+      "sha256": "38e859acade6391b6233d5a0ecf52e32d8c6a11233e4932b3b77aa5050e5feef"
+    },
+    {
+      "path": "src/app/api/workspace/[restaurantId]/route.ts",
+      "bytes": 14601,
+      "sha256": "65db0f4bd3d708a840fa8d8d26127f9c44502865b92fc4e15a30678d65a850d6"
+    },
+    {
+      "path": "src/app/auth/callback/route.ts",
+      "bytes": 744,
+      "sha256": "a723d29fc6eff8b7f6c147857043c860d476b4123d0511f49a4f46c6bb9d3f2e"
+    },
+    {
+      "path": "src/app/auth/confirm/route.ts",
+      "bytes": 853,
+      "sha256": "56bd6bf3b9fb6d8e43b0bbe2a3e5aed557cb6b269797a55c5a4005b5b80d1438"
+    },
+    {
+      "path": "src/app/dashboard/page.tsx",
+      "bytes": 120,
+      "sha256": "0de89b529c6b985809ce3f001409de118688cfda071b629b51ec9bab995e688f"
+    },
+    {
+      "path": "src/app/globals.css",
+      "bytes": 62857,
+      "sha256": "98061188ab572edc3e65b32b61f16543b8b97b61642c191f153b352cd5ab9109"
+    },
+    {
+      "path": "src/app/layout.tsx",
+      "bytes": 466,
+      "sha256": "4f4ee9e4fdebd47a79bae27d6ea72e5e43e6b01e5a3b61381458ca8cb88fd9f7"
+    },
+    {
+      "path": "src/app/login/page.tsx",
+      "bytes": 498,
+      "sha256": "59bf79891ef15fd037954161bc047ffb7a0d8deaa1267acf6444a23f4a68ca4e"
+    },
+    {
+      "path": "src/app/menu/[slug]/page.tsx",
+      "bytes": 236,
+      "sha256": "48733bf9b6de461acbc04d7d3e0ec739af9aa246b9108d14a3c6a46a12fc9b85"
+    },
+    {
+      "path": "src/app/not-found.tsx",
+      "bytes": 379,
+      "sha256": "c5f93d7ae5a352370e1f5a09a40e181dc4c1660d03dfe9298ef5621607caa9db"
+    },
+    {
+      "path": "src/app/page.tsx",
+      "bytes": 101,
+      "sha256": "486e2f7c23105e3d1f38180fe33e47a9dc5f0f1148081ce57c7caac3454558b2"
+    },
+    {
+      "path": "src/app/q/[token]/route.ts",
+      "bytes": 1307,
+      "sha256": "c0ebedf7b2c1747dfb6a6835a3a73b70f2c9995336bdb011fd455bf3ef114760"
+    },
+    {
+      "path": "src/components/admin-app.tsx",
+      "bytes": 33547,
+      "sha256": "70c639f5337c78dcf9fd4512364c10a461c81dc9ca99be836659c6f6171cb547"
+    },
+    {
+      "path": "src/components/login.tsx",
+      "bytes": 9099,
+      "sha256": "35de8c9a80a8f64b3f58cfbbbca7d6ce6dcacb106f9bb1e9c504898b17a4eecb"
+    },
+    {
+      "path": "src/components/public-menu.tsx",
+      "bytes": 22921,
+      "sha256": "768d688990887483f3ec236509f9e4dc03929f05ae3757e8789dd17ba775590f"
+    },
+    {
+      "path": "src/components/ui.tsx",
+      "bytes": 11409,
+      "sha256": "dde662d8eca287630353a5705d70e4b6a372c039da43586061903fcb7b0362a5"
+    },
+    {
+      "path": "src/components/workspace-settings.tsx",
+      "bytes": 50523,
+      "sha256": "93c3bbf53a784711f20a919e065bc03f1034621b1c07ae8de06decf105d32854"
+    },
+    {
+      "path": "src/components/workspace.tsx",
+      "bytes": 44832,
+      "sha256": "6db200531635a7d436fa1b703b3fb85e9be238304d8bd67e642981d7911e67da"
+    },
+    {
+      "path": "src/lib/access.ts",
+      "bytes": 2636,
+      "sha256": "7b18c5b00a50a0832bfe7686bd59f1765cc36ebf7ec1def79c88c4d141d5ae38"
+    },
+    {
+      "path": "src/lib/api.ts",
+      "bytes": 4982,
+      "sha256": "c68731207657a7c44cdad1a3fcfa37851affb1c836e7b1ec31ab4682935860bb"
+    },
+    {
+      "path": "src/lib/config.ts",
+      "bytes": 773,
+      "sha256": "3818195d0cd49bc6f63f00be9865a5d88d20adb7e95a6684f5ee099d04ce09c3"
+    },
+    {
+      "path": "src/lib/create-restaurant.ts",
+      "bytes": 10861,
+      "sha256": "24037d51beb363ffdbd8aee628f42e73e060a0b04dc7df869fe96231d6a7f11b"
+    },
+    {
+      "path": "src/lib/csv.ts",
+      "bytes": 6526,
+      "sha256": "e2641ef14e4d896c240d0831d1cad00ad06932cfc99ff8cdee2949bddd293065"
+    },
+    {
+      "path": "src/lib/domains.ts",
+      "bytes": 7937,
+      "sha256": "3e639cd6766327b19fc961697a2a7db228c26ef746b91807e8def77fc3ef0985"
+    },
+    {
+      "path": "src/lib/i18n.ts",
+      "bytes": 5876,
+      "sha256": "0a55aafd316b16ac29587c767c3927600d7940c0eeed8cc1e28e91da0d36bf6b"
+    },
+    {
+      "path": "src/lib/public-menu.ts",
+      "bytes": 4566,
+      "sha256": "1a15694e209952c543c2364ae4c72e43182d3240e65b24f91726f3223df45417"
+    },
+    {
+      "path": "src/lib/qr.ts",
+      "bytes": 9825,
+      "sha256": "32c22f7e6e437397b5efa8d19566c057cd8c50e44e39d7ad6f8d93ef7a0fe4ec"
+    },
+    {
+      "path": "src/lib/queries.ts",
+      "bytes": 772,
+      "sha256": "c49232213320e97ffb6cf1a8218757f82c6d17c7e54637ab45f629ec4eaf7dc6"
+    },
+    {
+      "path": "src/lib/session-refresh.ts",
+      "bytes": 2628,
+      "sha256": "a9b2107e2755e45684a9a51d8371e5af8d274ca7ef47ee4db3bb5fd89867bd04"
+    },
+    {
+      "path": "src/lib/supabase.ts",
+      "bytes": 1122,
+      "sha256": "eb6a0fef92fe4a7e270817b2d31a60bdaceb322ab4daf6214924c072c0e73a4e"
+    },
+    {
+      "path": "src/lib/types.ts",
+      "bytes": 3652,
+      "sha256": "d101ac0ff20560641dfd04006acd194503d0dfb952c61633a58ac9c40f1c6e9d"
+    },
+    {
+      "path": "src/lib/validation.ts",
+      "bytes": 4184,
+      "sha256": "859fdd0af225ce81b84ccd64818b9fe17dbdf702403b238f2935a6dc901c54b5"
+    },
+    {
+      "path": "src/proxy.ts",
+      "bytes": 1838,
+      "sha256": "c8ef442afd8cd5805867a1fed32798b67f5d2f1131f9d2ff74e65e78942c8c3d"
+    },
+    {
+      "path": "supabase/migrations/20261017021301_initial_tenant_security.sql",
+      "bytes": 38189,
+      "sha256": "2078be5d018e543469cde0babb9b2c551929048e5a245e4dac4d6740ffd12545"
+    },
+    {
+      "path": "supabase/migrations/20261017165549_restaurant_creation_requests.sql",
+      "bytes": 8352,
+      "sha256": "96041c808620896553fe68a7435b83dc63535da65cdc7e1fd591e8bef0d0fb57"
+    },
+    {
+      "path": "tests/admin_routes.test.ts",
+      "bytes": 17665,
+      "sha256": "0cfd11b66fa5108cc178b56a9d28764d16d26eae4e588c93539ecb2d498ad191"
+    },
+    {
+      "path": "tests/api_security.test.ts",
+      "bytes": 11891,
+      "sha256": "b03d54d0a6d18a2b9437cde1cfc56982c9e4aa7e3be3ff5b6016c1f97e7fd7c1"
+    },
+    {
+      "path": "tests/csv.test.ts",
+      "bytes": 2848,
+      "sha256": "c6264e5cecb11bbab2b486ab751502cd66d7ec0eda9c68be7a532e9ac373bd19"
+    },
+    {
+      "path": "tests/database.test.ts",
+      "bytes": 44315,
+      "sha256": "78e696e0446862677dca6bfe5b10bf4d0214ca8ab013fc95ccf771477b892e75"
+    },
+    {
+      "path": "tests/domains.test.ts",
+      "bytes": 9476,
+      "sha256": "87a02dfd58fcc1ac315efcde4f0717b0391e9b50883521b68847c751686b9e71"
+    },
+    {
+      "path": "tests/e2e/audit-fixtures.ts",
+      "bytes": 5166,
+      "sha256": "25e736fc1015a6866b070755a9d11eb41e5e1f17ef527c793b35bcab1790d282"
+    },
+    {
+      "path": "tests/e2e/audit-flows.spec.ts",
+      "bytes": 5708,
+      "sha256": "161c757c62fc09b739afb95b6df0801d391439a4e600c66d54abf854d3324c9c"
+    },
+    {
+      "path": "tests/e2e/audit-ui.spec.ts",
+      "bytes": 7511,
+      "sha256": "825ce87fc20aa4c89d9979b0f82cce8c1b5b550db7231f5945662362aa8d22f5"
+    },
+    {
+      "path": "tests/e2e/ui.spec.ts",
+      "bytes": 18607,
+      "sha256": "dd7f7252ea106db0bb5af2b4c6fd6769b44cf0da90dac067d1050a3795008cfa"
+    },
+    {
+      "path": "tests/import_export.test.ts",
+      "bytes": 8187,
+      "sha256": "1b848ba9fd73491b78298e66508a6d8b9a7f3866013ced85c683e67698182c26"
+    },
+    {
+      "path": "tests/proxy_session.test.ts",
+      "bytes": 12938,
+      "sha256": "36428086ec1aba65e9f47a42deae5607f82c6eb4a50fc439b16f71761bbf82f7"
+    },
+    {
+      "path": "tests/public_security.test.ts",
+      "bytes": 13165,
+      "sha256": "d2a3d7bf34423d52ab400d39e32c9de8a8915450afbcc7bc5d4849e5b743ab95"
+    },
+    {
+      "path": "tests/q_resolver.test.ts",
+      "bytes": 6570,
+      "sha256": "f71fe5f7b451a602479d648c9f36c3307740617dc5e57898ed3d7aa6948da278"
+    },
+    {
+      "path": "tests/qr.test.ts",
+      "bytes": 8265,
+      "sha256": "d086918fb2f22167ddf04cdc276ffde8266bcc522888c028eb214da8b28df894"
+    },
+    {
+      "path": "tests/server-only.ts",
+      "bytes": 11,
+      "sha256": "8e609bb71c20b858c77f0e9f90bb1319db8477b13f9f965f1a1e18524bf50881"
+    },
+    {
+      "path": "tests/workspace_validation.test.ts",
+      "bytes": 2252,
+      "sha256": "fcefe71569d7b2c32fdd920aea0aef83b729acc7605e304cbc00a0a9acd62bdb"
+    },
+    {
+      "path": "tsconfig.json",
+      "bytes": 618,
+      "sha256": "956aeb3fe5b2e716d09f6f770417a2dbed200a8566d169987f9c6e2f3f35b6b4"
+    },
+    {
+      "path": "vitest.config.ts",
+      "bytes": 411,
+      "sha256": "1a77a87e4fe084e3d65d94f80fd8a78bd168e87f6eaa412959cf0552ab6bb94d"
+    }
+  ],
+  "sources": [
+    "https://supabase.com/docs/reference/javascript/range",
+    "node_modules/next/dist/docs/01-app/01-getting-started/15-route-handlers.md"
+  ]
+}

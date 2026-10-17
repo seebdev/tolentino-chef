@@ -1,0 +1,499 @@
+{
+    "startedAt":  "2026-10-17T17:39:30.685Z",
+    "phase":  "owners",
+    "base":  "http://localhost:3000",
+    "applicationScope":  "local",
+    "traffic":  "Real Next.js application, Supabase Auth and persisted data. No API mocks or route interception.",
+    "mutations":  "Only login/logout sessions, rate-limit/visit counters and local browser favorites; no menu edits, emails, reset or domain changes.",
+    "physicalDevices":  false,
+    "physicalQrScanning":  false,
+    "browsers":  [
+                     {
+                         "name":  "chrome",
+                         "available":  true,
+                         "version":  "155.0.8059.80",
+                         "headless":  true
+                     },
+                     {
+                         "name":  "WebKit/Safari",
+                         "installed":  false,
+                         "status":  "NOT RUN",
+                         "reason":  "No installed WebKit executable; no browser was installed for this audit."
+                     }
+                 ],
+    "publicMenus":  [
+
+                    ],
+    "owners":  [
+                   {
+                       "browser":  "chrome",
+                       "restaurant":  "aurora",
+                       "status":  "FAIL",
+                       "errors":  {
+                                      "pageErrors":  [
+
+                                                     ],
+                                      "consoleErrors":  [
+                                                            {
+                                                                "message":  "Failed to load resource: the server responded with a status of 404 (Not Found)",
+                                                                "location":  "http://localhost:3000/favicon.ico",
+                                                                "expected":  true,
+                                                                "occurrences":  1
+                                                            },
+                                                            {
+                                                                "message":  "Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+                                                                "location":  "http://localhost:3000/api/session",
+                                                                "expected":  true,
+                                                                "occurrences":  2
+                                                            }
+                                                        ],
+                                      "failedRequests":  [
+
+                                                         ],
+                                      "httpErrors":  [
+                                                         {
+                                                             "url":  "http://localhost:3000/api/session",
+                                                             "status":  401,
+                                                             "expected":  true
+                                                         },
+                                                         {
+                                                             "url":  "http://localhost:3000/api/session",
+                                                             "status":  401,
+                                                             "expected":  true
+                                                         }
+                                                     ]
+                                  },
+                       "visitedTabs":  [
+                                           "Productos",
+                                           "Categorías",
+                                           "Promociones",
+                                           "Apariencia",
+                                           "Horarios",
+                                           "Idiomas",
+                                           "Mi código QR",
+                                           "Importar productos",
+                                           "Cuenta y acceso"
+                                       ],
+                       "downloads":  [
+
+                                     ],
+                       "productCount":  24,
+                       "tabLabels":  [
+                                         {
+                                             "tab":  "Productos",
+                                             "missingLabels":  [
+
+                                                               ]
+                                         },
+                                         {
+                                             "tab":  "Categorías",
+                                             "missingLabels":  [
+
+                                                               ]
+                                         },
+                                         {
+                                             "tab":  "Promociones",
+                                             "missingLabels":  [
+
+                                                               ]
+                                         },
+                                         {
+                                             "tab":  "Apariencia",
+                                             "missingLabels":  [
+
+                                                               ]
+                                         },
+                                         {
+                                             "tab":  "Horarios",
+                                             "missingLabels":  [
+
+                                                               ]
+                                         },
+                                         {
+                                             "tab":  "Idiomas",
+                                             "missingLabels":  [
+
+                                                               ]
+                                         },
+                                         {
+                                             "tab":  "Mi código QR",
+                                             "missingLabels":  [
+
+                                                               ]
+                                         },
+                                         {
+                                             "tab":  "Importar productos",
+                                             "missingLabels":  [
+
+                                                               ]
+                                         },
+                                         {
+                                             "tab":  "Cuenta y acceso",
+                                             "missingLabels":  [
+
+                                                               ]
+                                         }
+                                     ],
+                       "error":  "page.waitForEvent: Timeout 30000ms exceeded while waiting for event \"download\"\n=========================== logs ===========================\nwaiting for event \"download\"\n============================================================"
+                   },
+                   {
+                       "browser":  "chrome",
+                       "restaurant":  "bruma",
+                       "status":  "FAIL",
+                       "errors":  {
+                                      "pageErrors":  [
+
+                                                     ],
+                                      "consoleErrors":  [
+                                                            {
+                                                                "message":  "Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+                                                                "location":  "http://localhost:3000/api/session",
+                                                                "expected":  true,
+                                                                "occurrences":  2
+                                                            }
+                                                        ],
+                                      "failedRequests":  [
+
+                                                         ],
+                                      "httpErrors":  [
+                                                         {
+                                                             "url":  "http://localhost:3000/api/session",
+                                                             "status":  401,
+                                                             "expected":  true
+                                                         },
+                                                         {
+                                                             "url":  "http://localhost:3000/api/session",
+                                                             "status":  401,
+                                                             "expected":  true
+                                                         }
+                                                     ]
+                                  },
+                       "visitedTabs":  [
+                                           "Productos",
+                                           "Categorías",
+                                           "Promociones",
+                                           "Apariencia",
+                                           "Horarios",
+                                           "Idiomas",
+                                           "Mi código QR",
+                                           "Importar productos",
+                                           "Cuenta y acceso"
+                                       ],
+                       "downloads":  [
+
+                                     ],
+                       "productCount":  24,
+                       "tabLabels":  [
+                                         {
+                                             "tab":  "Productos",
+                                             "missingLabels":  [
+
+                                                               ]
+                                         },
+                                         {
+                                             "tab":  "Categorías",
+                                             "missingLabels":  [
+
+                                                               ]
+                                         },
+                                         {
+                                             "tab":  "Promociones",
+                                             "missingLabels":  [
+
+                                                               ]
+                                         },
+                                         {
+                                             "tab":  "Apariencia",
+                                             "missingLabels":  [
+
+                                                               ]
+                                         },
+                                         {
+                                             "tab":  "Horarios",
+                                             "missingLabels":  [
+
+                                                               ]
+                                         },
+                                         {
+                                             "tab":  "Idiomas",
+                                             "missingLabels":  [
+
+                                                               ]
+                                         },
+                                         {
+                                             "tab":  "Mi código QR",
+                                             "missingLabels":  [
+
+                                                               ]
+                                         },
+                                         {
+                                             "tab":  "Importar productos",
+                                             "missingLabels":  [
+
+                                                               ]
+                                         },
+                                         {
+                                             "tab":  "Cuenta y acceso",
+                                             "missingLabels":  [
+
+                                                               ]
+                                         }
+                                     ],
+                       "error":  "page.waitForEvent: Timeout 30000ms exceeded while waiting for event \"download\"\n=========================== logs ===========================\nwaiting for event \"download\"\n============================================================"
+                   },
+                   {
+                       "browser":  "chrome",
+                       "restaurant":  "marea",
+                       "status":  "FAIL",
+                       "errors":  {
+                                      "pageErrors":  [
+
+                                                     ],
+                                      "consoleErrors":  [
+                                                            {
+                                                                "message":  "Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+                                                                "location":  "http://localhost:3000/api/session",
+                                                                "expected":  true,
+                                                                "occurrences":  2
+                                                            },
+                                                            {
+                                                                "message":  "Module not found: SyntaxError: [PROJECT_ROOT]\\package.json (directory description file): SyntaxError: [PROJECT_ROOT]\\package.json (directory description file): SyntaxError: [PROJECT_ROOT]\\package.json (directory description file): SyntaxError: [PROJECT_ROOT]\\package.json (directory description file): SyntaxError: [PROJECT_ROOT]\\package.json (directory description file): SyntaxError: [PROJECT_ROOT]\\package.json (directory description file): SyntaxError: Unexpected token \u0027﻿\u0027, \"﻿{\n  \"name\"... is not valid JSON",
+                                                                "location":  "null/(app-pages-browser)/node_modules/next/dist/next-devtools/userspace/app/errors/intercept-console-error.js",
+                                                                "expected":  false,
+                                                                "occurrences":  58
+                                                            },
+                                                            {
+                                                                "message":  "Module not found: SyntaxError: [PROJECT_ROOT]\\package.json (directory description file): SyntaxError: [PROJECT_ROOT]\\package.json (directory description file): SyntaxError: Unexpected token \u0027﻿\u0027, \"﻿{\n  \"name\"... is not valid JSON",
+                                                                "location":  "null/(app-pages-browser)/node_modules/next/dist/next-devtools/userspace/app/errors/intercept-console-error.js",
+                                                                "expected":  false,
+                                                                "occurrences":  3
+                                                            },
+                                                            {
+                                                                "message":  "Module not found: SyntaxError: [PROJECT_ROOT]\\package.json (directory description file): SyntaxError: [PROJECT_ROOT]\\package.json (directory description file): SyntaxError: [PROJECT_ROOT]\\package.json (directory description file): SyntaxError: [PROJECT_ROOT]\\package.json (directory description file): SyntaxError: [PROJECT_ROOT]\\package.json (directory description file): SyntaxError: [PROJECT_ROOT]\\package.json (directory description file): SyntaxError: [PROJECT_ROOT]\\package.json (directory description file): SyntaxError: Unexpected token \u0027﻿\u0027, \"﻿{\n  \"name\"... is not valid JSON",
+                                                                "location":  "null/(app-pages-browser)/node_modules/next/dist/next-devtools/userspace/app/errors/intercept-console-error.js",
+                                                                "expected":  false,
+                                                                "occurrences":  8
+                                                            },
+                                                            {
+                                                                "message":  "Module not found: SyntaxError: [PROJECT_ROOT]\\package.json (directory description file): SyntaxError: [PROJECT_ROOT]\\package.json (directory description file): SyntaxError: [PROJECT_ROOT]\\package.json (directory description file): SyntaxError: Unexpected token \u0027﻿\u0027, \"﻿{\n  \"name\"... is not valid JSON",
+                                                                "location":  "null/(app-pages-browser)/node_modules/next/dist/next-devtools/userspace/app/errors/intercept-console-error.js",
+                                                                "expected":  false,
+                                                                "occurrences":  11
+                                                            },
+                                                            {
+                                                                "message":  "Module not found: SyntaxError: [PROJECT_ROOT]\\package.json (directory description file): SyntaxError: [PROJECT_ROOT]\\package.json (directory description file): SyntaxError: [PROJECT_ROOT]\\package.json (directory description file): SyntaxError: [PROJECT_ROOT]\\package.json (directory description file): SyntaxError: [PROJECT_ROOT]\\package.json (directory description file): SyntaxError: [PROJECT_ROOT]\\package.json (directory description file): SyntaxError: [PROJECT_ROOT]\\package.json (directory description file): SyntaxError: [PROJECT_ROOT]\\package.json (directory description file): SyntaxError: Unexpected token \u0027﻿\u0027, \"﻿{\n  \"name\"... is not valid JSON",
+                                                                "location":  "null/(app-pages-browser)/node_modules/next/dist/next-devtools/userspace/app/errors/intercept-console-error.js",
+                                                                "expected":  false,
+                                                                "occurrences":  3
+                                                            },
+                                                            {
+                                                                "message":  "Module not found: SyntaxError: [PROJECT_ROOT]\\package.json (directory description file): SyntaxError: [PROJECT_ROOT]\\package.json (directory description file): SyntaxError: [PROJECT_ROOT]\\package.json (directory description file): SyntaxError: [PROJECT_ROOT]\\package.json (directory description file): SyntaxError: Unexpected token \u0027﻿\u0027, \"﻿{\n  \"name\"... is not valid JSON",
+                                                                "location":  "null/(app-pages-browser)/node_modules/next/dist/next-devtools/userspace/app/errors/intercept-console-error.js",
+                                                                "expected":  false,
+                                                                "occurrences":  7
+                                                            },
+                                                            {
+                                                                "message":  "Module not found: SyntaxError: [PROJECT_ROOT]\\package.json (directory description file): SyntaxError: [PROJECT_ROOT]\\package.json (directory description file): SyntaxError: [PROJECT_ROOT]\\package.json (directory description file): SyntaxError: [PROJECT_ROOT]\\package.json (directory description file): SyntaxError: [PROJECT_ROOT]\\package.json (directory description file): SyntaxError: [PROJECT_ROOT]\\package.json (directory description file): SyntaxError: [PROJECT_ROOT]\\package.json (directory description file): SyntaxError: [PROJECT_ROOT]\\package.json (directory description file): SyntaxError: [PROJECT_ROOT]\\package.json (directory description file): SyntaxError: [PROJECT_ROOT]\\package.json (directory description file): SyntaxError: [PROJECT_ROOT]\\package.json (directory description file): SyntaxError: [PROJECT_ROOT]\\package.json (directory description file): SyntaxError: [PROJECT_ROOT]\\package.json (directory description file): SyntaxError: [PROJECT_ROOT]\\package.json (directory description file): SyntaxError: [PROJECT_ROOT]\\package.json (directory d",
+                                                                "location":  "null/(app-pages-browser)/node_modules/next/dist/next-devtools/userspace/app/errors/intercept-console-error.js",
+                                                                "expected":  false,
+                                                                "occurrences":  85
+                                                            },
+                                                            {
+                                                                "message":  "Module not found: SyntaxError: [PROJECT_ROOT]\\package.json (directory description file): SyntaxError: [PROJECT_ROOT]\\package.json (directory description file): SyntaxError: [PROJECT_ROOT]\\package.json (directory description file): SyntaxError: [PROJECT_ROOT]\\package.json (directory description file): SyntaxError: [PROJECT_ROOT]\\package.json (directory description file): SyntaxError: [PROJECT_ROOT]\\package.json (directory description file): SyntaxError: [PROJECT_ROOT]\\package.json (directory description file): SyntaxError: [PROJECT_ROOT]\\package.json (directory description file): SyntaxError: [PROJECT_ROOT]\\package.json (directory description file): SyntaxError: Unexpected token \u0027﻿\u0027, \"﻿{\n  \"name\"... is not valid JSON",
+                                                                "location":  "null/(app-pages-browser)/node_modules/next/dist/next-devtools/userspace/app/errors/intercept-console-error.js",
+                                                                "expected":  false,
+                                                                "occurrences":  19
+                                                            },
+                                                            {
+                                                                "message":  "Module not found: SyntaxError: [PROJECT_ROOT]\\package.json (directory description file): SyntaxError: [PROJECT_ROOT]\\package.json (directory description file): SyntaxError: [PROJECT_ROOT]\\package.json (directory description file): SyntaxError: [PROJECT_ROOT]\\package.json (directory description file): SyntaxError: [PROJECT_ROOT]\\package.json (directory description file): SyntaxError: Unexpected token \u0027﻿\u0027, \"﻿{\n  \"name\"... is not valid JSON",
+                                                                "location":  "null/(app-pages-browser)/node_modules/next/dist/next-devtools/userspace/app/errors/intercept-console-error.js",
+                                                                "expected":  false,
+                                                                "occurrences":  1
+                                                            },
+                                                            {
+                                                                "message":  "Module not found: SyntaxError: [PROJECT_ROOT]\\package.json (directory description file): SyntaxError: [PROJECT_ROOT]\\package.json (directory description file): SyntaxError: [PROJECT_ROOT]\\package.json (directory description file): SyntaxError: [PROJECT_ROOT]\\package.json (directory description file): SyntaxError: [PROJECT_ROOT]\\package.json (directory description file): SyntaxError: [PROJECT_ROOT]\\package.json (directory description file): SyntaxError: [PROJECT_ROOT]\\package.json (directory description file): SyntaxError: [PROJECT_ROOT]\\package.json (directory description file): SyntaxError: [PROJECT_ROOT]\\package.json (directory description file): SyntaxError: [PROJECT_ROOT]\\package.json (directory description file): SyntaxError: Unexpected token \u0027﻿\u0027, \"﻿{\n  \"name\"... is not valid JSON",
+                                                                "location":  "null/(app-pages-browser)/node_modules/next/dist/next-devtools/userspace/app/errors/intercept-console-error.js",
+                                                                "expected":  false,
+                                                                "occurrences":  2
+                                                            },
+                                                            {
+                                                                "message":  "Module not found: SyntaxError: [PROJECT_ROOT]\\package.json (directory description file): SyntaxError: [PROJECT_ROOT]\\package.json (directory description file): SyntaxError: [PROJECT_ROOT]\\package.json (directory description file): SyntaxError: [PROJECT_ROOT]\\package.json (directory description file): SyntaxError: [PROJECT_ROOT]\\package.json (directory description file): SyntaxError: [PROJECT_ROOT]\\package.json (directory description file): SyntaxError: [PROJECT_ROOT]\\package.json (directory description file): SyntaxError: [PROJECT_ROOT]\\package.json (directory description file): SyntaxError: [PROJECT_ROOT]\\package.json (directory description file): SyntaxError: [PROJECT_ROOT]\\package.json (directory description file): SyntaxError: [PROJECT_ROOT]\\package.json (directory description file): SyntaxError: Unexpected token \u0027﻿\u0027, \"﻿{\n  \"name\"... is not valid JSON",
+                                                                "location":  "null/(app-pages-browser)/node_modules/next/dist/next-devtools/userspace/app/errors/intercept-console-error.js",
+                                                                "expected":  false,
+                                                                "occurrences":  1
+                                                            },
+                                                            {
+                                                                "message":  "Failed to load resource: the server responded with a status of 500 (Internal Server Error)",
+                                                                "location":  "http://localhost:3000/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/73fd4d95-22f5-44f1-af75-f623ba6f68d8.webp",
+                                                                "expected":  false,
+                                                                "occurrences":  1
+                                                            }
+                                                        ],
+                                      "failedRequests":  [
+
+                                                         ],
+                                      "httpErrors":  [
+                                                         {
+                                                             "url":  "http://localhost:3000/api/session",
+                                                             "status":  401,
+                                                             "expected":  true
+                                                         },
+                                                         {
+                                                             "url":  "http://localhost:3000/api/session",
+                                                             "status":  401,
+                                                             "expected":  true
+                                                         },
+                                                         {
+                                                             "url":  "http://localhost:3000/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/73fd4d95-22f5-44f1-af75-f623ba6f68d8.webp",
+                                                             "status":  500,
+                                                             "expected":  false
+                                                         }
+                                                     ]
+                                  },
+                       "visitedTabs":  [
+
+                                       ],
+                       "downloads":  [
+
+                                     ],
+                       "error":  "Unexpected token \u0027I\u0027, \"Internal S\"... is not valid JSON"
+                   }
+               ],
+    "results":  [
+                    {
+                        "scope":  "chrome/aurora/owner",
+                        "name":  "Real owner login and restaurant-bound session",
+                        "status":  "PASS"
+                    },
+                    {
+                        "scope":  "chrome/aurora/owner",
+                        "name":  "Visible controls have labels in Productos",
+                        "status":  "PASS"
+                    },
+                    {
+                        "scope":  "chrome/aurora/owner",
+                        "name":  "Visible controls have labels in Categorías",
+                        "status":  "PASS"
+                    },
+                    {
+                        "scope":  "chrome/aurora/owner",
+                        "name":  "Visible controls have labels in Promociones",
+                        "status":  "PASS"
+                    },
+                    {
+                        "scope":  "chrome/aurora/owner",
+                        "name":  "Visible controls have labels in Apariencia",
+                        "status":  "PASS"
+                    },
+                    {
+                        "scope":  "chrome/aurora/owner",
+                        "name":  "Visible controls have labels in Horarios",
+                        "status":  "PASS"
+                    },
+                    {
+                        "scope":  "chrome/aurora/owner",
+                        "name":  "Visible controls have labels in Idiomas",
+                        "status":  "PASS"
+                    },
+                    {
+                        "scope":  "chrome/aurora/owner",
+                        "name":  "Visible controls have labels in Mi código QR",
+                        "status":  "PASS"
+                    },
+                    {
+                        "scope":  "chrome/aurora/owner",
+                        "name":  "Visible controls have labels in Importar productos",
+                        "status":  "PASS"
+                    },
+                    {
+                        "scope":  "chrome/aurora/owner",
+                        "name":  "Visible controls have labels in Cuenta y acceso",
+                        "status":  "PASS"
+                    },
+                    {
+                        "scope":  "chrome/aurora/owner",
+                        "name":  "All owner tabs and appearance preview open without editing records",
+                        "status":  "PASS"
+                    },
+                    {
+                        "scope":  "chrome/aurora/owner",
+                        "name":  "Scenario completion",
+                        "status":  "FAIL",
+                        "detail":  "page.waitForEvent: Timeout 30000ms exceeded while waiting for event \"download\"\n=========================== logs ===========================\nwaiting for event \"download\"\n============================================================"
+                    },
+                    {
+                        "scope":  "chrome/bruma/owner",
+                        "name":  "Real owner login and restaurant-bound session",
+                        "status":  "PASS"
+                    },
+                    {
+                        "scope":  "chrome/bruma/owner",
+                        "name":  "Visible controls have labels in Productos",
+                        "status":  "PASS"
+                    },
+                    {
+                        "scope":  "chrome/bruma/owner",
+                        "name":  "Visible controls have labels in Categorías",
+                        "status":  "PASS"
+                    },
+                    {
+                        "scope":  "chrome/bruma/owner",
+                        "name":  "Visible controls have labels in Promociones",
+                        "status":  "PASS"
+                    },
+                    {
+                        "scope":  "chrome/bruma/owner",
+                        "name":  "Visible controls have labels in Apariencia",
+                        "status":  "PASS"
+                    },
+                    {
+                        "scope":  "chrome/bruma/owner",
+                        "name":  "Visible controls have labels in Horarios",
+                        "status":  "PASS"
+                    },
+                    {
+                        "scope":  "chrome/bruma/owner",
+                        "name":  "Visible controls have labels in Idiomas",
+                        "status":  "PASS"
+                    },
+                    {
+                        "scope":  "chrome/bruma/owner",
+                        "name":  "Visible controls have labels in Mi código QR",
+                        "status":  "PASS"
+                    },
+                    {
+                        "scope":  "chrome/bruma/owner",
+                        "name":  "Visible controls have labels in Importar productos",
+                        "status":  "PASS"
+                    },
+                    {
+                        "scope":  "chrome/bruma/owner",
+                        "name":  "Visible controls have labels in Cuenta y acceso",
+                        "status":  "PASS"
+                    },
+                    {
+                        "scope":  "chrome/bruma/owner",
+                        "name":  "All owner tabs and appearance preview open without editing records",
+                        "status":  "PASS"
+                    },
+                    {
+                        "scope":  "chrome/bruma/owner",
+                        "name":  "Scenario completion",
+                        "status":  "FAIL",
+                        "detail":  "page.waitForEvent: Timeout 30000ms exceeded while waiting for event \"download\"\n=========================== logs ===========================\nwaiting for event \"download\"\n============================================================"
+                    },
+                    {
+                        "scope":  "chrome/marea/owner",
+                        "name":  "Scenario completion",
+                        "status":  "FAIL",
+                        "detail":  "Unexpected token \u0027I\u0027, \"Internal S\"... is not valid JSON"
+                    }
+                ],
+    "updatedAt":  "2026-10-17T17:41:32.900Z",
+    "counts":  {
+                   "passed":  22,
+                   "failed":  3
+               },
+    "completedAt":  "2026-10-17T17:41:32.900Z",
+    "runAssessment":  "Aurora/Bruma appearance and nine tabs passed after CSS fix. CSV download was not requested because the test searched the Products tab instead of Import products; this harness navigation is corrected. Marea was interrupted by an unrelated development environment package.json UTF8BOM compilation error. This run is historical, not final functional results."
+}

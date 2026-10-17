@@ -6,15 +6,17 @@ Una aplicación Next.js para administrar múltiples restaurantes con Supabase Au
 
 ## Estado de esta entrega
 
-El código y las pruebas se encuentran en este proyecto independiente. El proyecto Supabase autorizado `ylcnrfzosjzuljufwups` ya tiene aplicada y verificada la migración `20261017021301_initial_tenant_security`. Las variables públicas y la clave de servicio están configuradas exclusivamente en `.env.local`, ignorado por Git. La comprobación remota del 16 de octubre de 2026 a las 22:49 (America/Bogota) verificó esquema, RLS, grants, RPC y configuración del bucket privado; su evidencia es `docs/evidence/db-migration-verification.json`.
+Actualizado el 17 de octubre de 2026. La aplicación funciona localmente con Auth, PostgreSQL y Storage reales del proyecto Supabase autorizado `ylcnrfzosjzuljufwups`. Hay un superadministrador configurado y tres restaurantes DEMO independientes con 24 productos cada uno. Las credenciales permanecen fuera de Git.
 
-**Aún no está aceptado para producción.** Faltan elegir el correo del primer administrador, configurar SMTP y recuperación, desactivar el registro público (la última lectura devuelve `disable_signup: false`), ejecutar el bootstrap y validar los recorridos con Auth y Storage reales de dos propietarios. La publicación en Render está pendiente. No se crearon usuarios, restaurantes ni objetos de prueba en el proyecto remoto durante la verificación de la migración. Consultar `docs/QA_REPORT.md` y `docs/PENDIENTES.md`.
+Se corrigieron la clasificación de errores 409, el doble envío de formularios, la creación idempotente, validaciones de apariencia e imágenes y descargas. Las dos migraciones están aplicadas y verificadas. La evidencia actual incluye 201 pruebas unitarias/SQL, 95 casos UI con fixtures en Chrome/Edge, 113 comprobaciones reales de API y administración, y 24 recorridos reales de navegador (372 comprobaciones). Las suites y sus límites se detallan en el informe; no son una prueba de carga concurrente de producción.
 
-La comprobación conectada posterior (`docs/evidence/connected-supabase-smoke.json`) obtuvo health 200 en el servidor local de producción, acceso de servicio a REST/Auth/Storage y 401 en las APIs privadas sin sesión. No prueba un login de usuario ni envío de correo.
+**No está desplegada en Render ni aceptada para producción.** Faltan acceso a Render, URL HTTPS canónica, QR públicos, configuración y prueba de SMTP, desactivar el registro público de Supabase y completar las verificaciones externas indicadas en los pendientes. El usuario confirmó que todavía no hay publicación pública.
 
-La aplicación requiere Supabase y no contiene una base simulada ni un acceso de demostración. Los resultados históricos sin credenciales describen una ejecución anterior; no representan el estado actual de conexión.
+- [Auditoría final y evidencia](AUDITORIA_FINAL_TOLENTINO_RESTAURANTES.md)
+- [Acceder a los tres restaurantes DEMO](RESTAURANTES_DEMO.md)
+- [Pendientes para producción](docs/PENDIENTES.md)
 
-El proyecto original `crepes menu` se inspeccionó exclusivamente en lectura. No se copiaron sus credenciales, fotografías, logos, catálogo comercial ni repositorio Git. Evidencia de integridad y alcance: `docs/evidence/reference-verification.json`.
+Los datos DEMO están guardados en Supabase; no sustituyen el backend por memoria ni respuestas simuladas. Las pruebas con fixtures se identifican separadamente. El proyecto original de Crepes & Waffles permanece intacto: 1.803 archivos comparados, cero cambios (`docs/evidence/reference-verification-20261017.json`).
 
 ## Ejecutar en Windows
 
@@ -30,7 +32,7 @@ if (!(Test-Path .env.local)) { Copy-Item .env.example .env.local }
 npm run dev
 ```
 
-Abrir `http://localhost:3000`. La primera cuenta de Tolentino se crea desde el servidor después de aplicar la migración, sin mostrar ni almacenar una contraseña en la aplicación:
+Abrir `http://localhost:3000/login`. El proyecto actual ya tiene superadministrador; no repetir el bootstrap para esa cuenta. En una instalación nueva, la primera cuenta se crea desde el servidor después de aplicar las migraciones:
 
 ```powershell
 node --env-file=.env.local scripts/bootstrap-admin.mjs TU_CORREO_REAL

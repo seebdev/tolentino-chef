@@ -8,12 +8,16 @@ export class ApiError extends Error {
   constructor(
     public status: number,
     message: string,
+    public code?: string,
+    public fields?: { field: string; message: string }[],
   ) {
     super(message);
   }
 }
 export function dbError(error: { code?: string; message?: string } | null) {
   if (!error) return;
+  if (error.code === "PGRST116")
+    throw new ApiError(404, "No se encontró el recurso solicitado.", "NOT_FOUND");
   if (error.code === "23505")
     throw new ApiError(
       409,
@@ -48,7 +52,7 @@ export async function route(fn: () => Promise<Response>) {
     return await fn();
   } catch (error) {
     if (error instanceof ApiError)
-      return json({ error: error.message }, error.status);
+      return json({ error: error.message, ...(error.code ? { code: error.code } : {}), ...(error.fields ? { fields: error.fields } : {}) }, error.status);
     if (error instanceof ZodError)
       return json(
         {

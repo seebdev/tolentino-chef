@@ -24,6 +24,13 @@ import { dnsInstructions, verifyDomain, registerDomain } from "@/lib/domains";
 import { platformHosts } from "@/lib/config";
 import { allRows } from "@/lib/queries";
 type Params = { params: Promise<{ restaurantId: string }> };
+function checkMedia(path: string | null | undefined, restaurantId: string) {
+  try {
+    assertMediaTenant(path, restaurantId);
+  } catch {
+    throw new ApiError(400, "La imagen debe pertenecer a este restaurante.");
+  }
+}
 export async function GET(request: Request, { params }: Params) {
   return route(async () => {
     const { restaurantId } = await params;
@@ -171,7 +178,7 @@ export async function POST(request: Request, { params }: Params) {
         image_path: data.image_path || null,
         sku: data.sku || null,
       });
-      assertMediaTenant(value.image_path, restaurantId);
+      checkMedia(value.image_path, restaurantId);
       result = await save("products", value);
     } else if (action === "delete_product") {
       await remove("products", data.id);
@@ -229,22 +236,26 @@ export async function POST(request: Request, { params }: Params) {
         appearance.cover_path,
         appearance.favicon_path,
       ])
-        assertMediaTenant(path, restaurantId);
+        checkMedia(path, restaurantId);
+      // Validate every field before the first write, including the optional public details.
+      const info =
+        data.name !== undefined || data.description !== undefined
+          ? z
+              .object({
+                name: z.string().trim().min(2).max(100),
+                description: z.string().max(1200),
+              })
+              .parse({
+                name: data.name ?? c.restaurant.name,
+                description: data.description ?? c.restaurant.description,
+              })
+          : null;
       const r = await db
         .from("restaurant_settings")
         .update({ draft_appearance: appearance })
         .eq("restaurant_id", restaurantId);
       dbError(r.error);
-      if (data.name || data.description !== undefined) {
-        const info = z
-          .object({
-            name: z.string().min(2).max(100),
-            description: z.string().max(1200),
-          })
-          .parse({
-            name: data.name || c.restaurant.name,
-            description: data.description ?? c.restaurant.description,
-          });
+      if (info) {
         dbError(
           (await db.from("restaurants").update(info).eq("id", restaurantId))
             .error,

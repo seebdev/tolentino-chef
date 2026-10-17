@@ -1,0 +1,48 @@
+{
+  "at": "2026-10-17T18:02:09.401Z",
+  "base": "http://localhost:3000",
+  "mode": "after",
+  "realDatabase": true,
+  "restaurants": [
+    {
+      "key": "aurora",
+      "id": "1932e721-78ab-4320-9f84-f186a80fba48",
+      "products": 24,
+      "categories": 8,
+      "translations": 32,
+      "ownerLogin": true,
+      "persistedSha256": "6565174d94142913350e6b06be066b5b8ac3b345c9f698cd7cd5aae78c5dc1b7",
+      "publicSha256": "cff4af645c35bf2ef5aca8804d9cb94970b87541c97ce900c5e0e928784e9b1c"
+    },
+    {
+      "key": "bruma",
+      "id": "eca7481c-fc27-479c-b364-76274b0b4230",
+      "products": 24,
+      "categories": 8,
+      "translations": 32,
+      "ownerLogin": true,
+      "persistedSha256": "fb915cce12f98537365aa6b3899d94b1c8d069b077088016ffa3863ead8f7086",
+      "publicSha256": "255f081b7a2891a29baee9d358d2351a36c408cb402595a53bba0630411cd868"
+    },
+    {
+      "key": "marea",
+      "id": "e2cda10d-2771-4056-8cf0-13e00f4b1bd8",
+      "products": 24,
+      "categories": 8,
+      "translations": 32,
+      "ownerLogin": true,
+      "persistedSha256": "5784edb15d9fd907c2ee862edd417e7b4ca397bbeedc858b172b5918dd6bf84f",
+      "publicSha256": "522a186862a031f22741ad5781474c0b32f03a5193bab1938c91c36aed01aa71"
+    }
+  ],
+  "health": {
+    "status": 200,
+    "body": {
+      "status": "ok",
+      "configured": true
+    }
+  },
+  "baselineAt": "2026-10-17T18:01:04.753Z",
+  "result": "PASS",
+  "checks": "Fresh server process; fresh owner logins; exact SHA256 equality of private records and public API payloads for all 3 demos; health200"
+}

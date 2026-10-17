@@ -70,7 +70,7 @@ small {
   font-size: 12px;
   color: var(--muted);
 }
-input:not([type="checkbox"]):not([type="color"]),
+input:not([type="checkbox"]):not([type="color"]):not([type="file"]),
 textarea,
 select {
   width: 100%;
@@ -118,6 +118,10 @@ input[type="file"] {
   position: absolute;
   width: 1px;
   height: 1px;
+  min-width: 0;
+  min-height: 0;
+  padding: 0;
+  border: 0;
   clip-path: inset(100%);
   overflow: hidden;
 }
@@ -3391,15 +3395,15 @@ td small,
 .import-steps,
 .csv-drop p,
 .import-summary > span {
-  color: #758266;
+  color: #596a4c;
 }
 .page-heading .eyebrow,
 .eyebrow {
-  color: #6d825a;
+  color: #596a4c;
 }
 .welcome-strip .eyebrow,
 .welcome-strip p {
-  color: #7b9067;
+  color: #596a4c;
 }
 .welcome-strip h2 {
   color: #50683c;
@@ -3456,7 +3460,7 @@ td small,
 .detail-block > p,
 .option-price,
 .public-empty p {
-  color: #6f7d60;
+  color: #596a4c;
 }
 .public-product-main p,
 .featured-product p {
@@ -3467,7 +3471,7 @@ td small,
 }
 .public-categories > button {
   font-size: 12px;
-  color: #6e805c;
+  color: #596a4c;
 }
 .public-categories > button.active {
   color: #fff;
@@ -3480,7 +3484,7 @@ td small,
 }
 .favorite-nav,
 .language-selector {
-  color: #6f7e60;
+  color: #596a4c;
 }
 .public-topbar select {
   font-size: 12px;
@@ -3490,7 +3494,7 @@ td small,
 .login-footer,
 .private-access,
 .login-form-wrap .field > label {
-  color: #78876a;
+  color: #596a4c;
 }
 .login-description {
   font-size: 12px;
@@ -3518,7 +3522,7 @@ td small,
   color: #936b30;
 }
 .badge.gray {
-  color: #71815e;
+  color: #596a4c;
 }
 .check {
   color: #62774e;
@@ -3561,7 +3565,7 @@ td small,
   margin: -7px 0 26px;
   padding: 3px 3px 1px;
   font-size: 11px;
-  color: #71815f;
+  color: #596a4c;
 }
 .metrics-strip > span {
   display: flex;
@@ -3597,4 +3601,57 @@ td small,
   .metrics-strip > .text-button {
     margin-left: 0;
   }
+}
+
+.form-fields {
+  border: 0;
+  padding: 0;
+  margin: 0;
+  min-width: 0;
+}
+.form-fields:disabled {
+  opacity: 0.8;
+}
+
+.subcategory-section {
+  padding-left: 18px;
+  border-left: 2px solid
+    color-mix(in srgb, var(--menu-primary) 22%, transparent);
+}
+
+.qr-downloads {
+  flex-wrap: wrap;
+}
+.qr-downloads > .notice {
+  flex-basis: 100%;
+  margin: 0;
+}
+
+/* Secondary copy remains readable on the light administrative and menu surfaces. */
+input::placeholder,
+textarea::placeholder,
+.login-form-wrap input::placeholder {
+  color: #667659;
+}
+.icon-button,
+.brand-caption,
+.category-count,
+.public-section-heading > .eyebrow,
+.product-tags > span,
+.public-empty h3 {
+  color: #596a4c;
+}
+.nav-item.active,
+.notice {
+  color: #4f683b;
+}
+.notice-error {
+  color: #934b3e;
+}
+.sold-out,
+.unavailable {
+  color: #855b2c;
+}
+.available {
+  color: #496132;
 }

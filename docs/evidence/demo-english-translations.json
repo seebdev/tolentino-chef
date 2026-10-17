@@ -1,0 +1,45 @@
+{
+  "startedAt": "2026-10-17T17:25:41.474Z",
+  "target": "ylcnrfzosjzuljufwups.supabase.co",
+  "base": "http://localhost:3000",
+  "maxConcurrentWrites": 3,
+  "scope": "English product names/descriptions and category names for manifested DEMOs only",
+  "externalEmailSent": false,
+  "credentialsPrinted": false,
+  "restaurants": [
+    {
+      "key": "aurora",
+      "restaurantId": "1932e721-78ab-4320-9f84-f186a80fba48",
+      "verifiedDemo": true,
+      "productTranslations": 24,
+      "categoryTranslations": 8,
+      "verified": true,
+      "ownerApiVerified": true,
+      "publicApiVerified": true
+    },
+    {
+      "key": "bruma",
+      "restaurantId": "eca7481c-fc27-479c-b364-76274b0b4230",
+      "verifiedDemo": true,
+      "productTranslations": 24,
+      "categoryTranslations": 8,
+      "verified": true,
+      "ownerApiVerified": true,
+      "publicApiVerified": true
+    },
+    {
+      "key": "marea",
+      "restaurantId": "e2cda10d-2771-4056-8cf0-13e00f4b1bd8",
+      "verifiedDemo": true,
+      "productTranslations": 24,
+      "categoryTranslations": 8,
+      "verified": true,
+      "ownerApiVerified": true,
+      "publicApiVerified": true
+    }
+  ],
+  "status": "passed",
+  "productTranslations": 72,
+  "categoryTranslations": 24,
+  "completedAt": "2026-10-17T17:26:48.002Z"
+}

@@ -1,0 +1,17 @@
+[
+  {
+    "restaurant": "aurora",
+    "updated": 8,
+    "positiveVariantPrices": true
+  },
+  {
+    "restaurant": "bruma",
+    "updated": 8,
+    "positiveVariantPrices": true
+  },
+  {
+    "restaurant": "marea",
+    "updated": 8,
+    "positiveVariantPrices": true
+  }
+]

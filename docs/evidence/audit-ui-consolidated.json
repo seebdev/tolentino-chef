@@ -1,0 +1,1031 @@
+{
+  "at": "2026-10-17T17:40:34.950Z",
+  "scope": "Automated frontend fixtures; not proof of Supabase persistence. The setup/login shell is the live local application.",
+  "browsers": {
+    "chrome": {
+      "uniqueCases": 48,
+      "passed": 48,
+      "failed": 0,
+      "desktop": 24,
+      "mobile": 23,
+      "tablet": 1,
+      "sourceReports": [
+        "audit-ui-chrome-final.json",
+        "audit-ui-chrome-regressions-final.json",
+        "audit-ui-chrome-downloads-desktop-tablet.json",
+        "audit-ui-chrome-downloads-mobile.json",
+        "audit-appearance-after.json",
+        "audit-file-controls-after.json"
+      ],
+      "cases": [
+        {
+          "file": "audit-flows.spec.ts",
+          "title": "audit UI keeps a pending creation open and retries the same operation",
+          "project": "desktop",
+          "status": "expected",
+          "results": [
+            "passed"
+          ],
+          "report": "audit-ui-chrome-regressions-final.json"
+        },
+        {
+          "file": "audit-flows.spec.ts",
+          "title": "audit UI DEMO creation requires a reserved email and sends the explicit flag",
+          "project": "desktop",
+          "status": "expected",
+          "results": [
+            "passed"
+          ],
+          "report": "audit-ui-chrome-regressions-final.json"
+        },
+        {
+          "file": "audit-flows.spec.ts",
+          "title": "audit UI export downloads from the authenticated catalog route",
+          "project": "desktop",
+          "status": "expected",
+          "results": [
+            "passed"
+          ],
+          "report": "audit-ui-chrome-regressions-final.json"
+        },
+        {
+          "file": "audit-flows.spec.ts",
+          "title": "audit UI cannot submit a product until its image upload completes",
+          "project": "desktop",
+          "status": "expected",
+          "results": [
+            "passed"
+          ],
+          "report": "audit-ui-chrome-regressions-final.json"
+        },
+        {
+          "file": "audit-flows.spec.ts",
+          "title": "audit UI keeps a pending creation open and retries the same operation",
+          "project": "mobile",
+          "status": "expected",
+          "results": [
+            "passed"
+          ],
+          "report": "audit-ui-chrome-regressions-final.json"
+        },
+        {
+          "file": "audit-flows.spec.ts",
+          "title": "audit UI DEMO creation requires a reserved email and sends the explicit flag",
+          "project": "mobile",
+          "status": "expected",
+          "results": [
+            "passed"
+          ],
+          "report": "audit-ui-chrome-regressions-final.json"
+        },
+        {
+          "file": "audit-flows.spec.ts",
+          "title": "audit UI export downloads from the authenticated catalog route",
+          "project": "mobile",
+          "status": "expected",
+          "results": [
+            "passed"
+          ],
+          "report": "audit-ui-chrome-regressions-final.json"
+        },
+        {
+          "file": "audit-flows.spec.ts",
+          "title": "audit UI cannot submit a product until its image upload completes",
+          "project": "mobile",
+          "status": "expected",
+          "results": [
+            "passed"
+          ],
+          "report": "audit-ui-chrome-regressions-final.json"
+        },
+        {
+          "file": "audit-ui.spec.ts",
+          "title": "audit UI create prevents synchronous double submission",
+          "project": "desktop",
+          "status": "expected",
+          "results": [
+            "passed"
+          ],
+          "report": "audit-ui-chrome-regressions-final.json"
+        },
+        {
+          "file": "audit-ui.spec.ts",
+          "title": "audit UI create reuses a request ID after uncertain failures and changes it for corrected data",
+          "project": "desktop",
+          "status": "expected",
+          "results": [
+            "passed"
+          ],
+          "report": "audit-ui-chrome-regressions-final.json"
+        },
+        {
+          "file": "audit-ui.spec.ts",
+          "title": "audit UI appearance publication respects required fields",
+          "project": "desktop",
+          "status": "expected",
+          "results": [
+            "passed"
+          ],
+          "report": "audit-ui-chrome-regressions-final.json"
+        },
+        {
+          "file": "audit-ui.spec.ts",
+          "title": "audit UI validates variant prices before submitting and preserves the form",
+          "project": "desktop",
+          "status": "expected",
+          "results": [
+            "passed"
+          ],
+          "report": "audit-ui-chrome-regressions-final.json"
+        },
+        {
+          "file": "audit-ui.spec.ts",
+          "title": "audit UI public menu groups subcategories and shows read-only options",
+          "project": "desktop",
+          "status": "expected",
+          "results": [
+            "passed"
+          ],
+          "report": "audit-ui-chrome-regressions-final.json"
+        },
+        {
+          "file": "audit-ui.spec.ts",
+          "title": "audit UI upload errors are visible and a valid retry updates preview",
+          "project": "desktop",
+          "status": "expected",
+          "results": [
+            "passed"
+          ],
+          "report": "audit-file-controls-after.json"
+        },
+        {
+          "file": "audit-ui.spec.ts",
+          "title": "audit UI create prevents synchronous double submission",
+          "project": "mobile",
+          "status": "expected",
+          "results": [
+            "passed"
+          ],
+          "report": "audit-ui-chrome-regressions-final.json"
+        },
+        {
+          "file": "audit-ui.spec.ts",
+          "title": "audit UI create reuses a request ID after uncertain failures and changes it for corrected data",
+          "project": "mobile",
+          "status": "expected",
+          "results": [
+            "passed"
+          ],
+          "report": "audit-ui-chrome-regressions-final.json"
+        },
+        {
+          "file": "audit-ui.spec.ts",
+          "title": "audit UI appearance publication respects required fields",
+          "project": "mobile",
+          "status": "expected",
+          "results": [
+            "passed"
+          ],
+          "report": "audit-ui-chrome-regressions-final.json"
+        },
+        {
+          "file": "audit-ui.spec.ts",
+          "title": "audit UI validates variant prices before submitting and preserves the form",
+          "project": "mobile",
+          "status": "expected",
+          "results": [
+            "passed"
+          ],
+          "report": "audit-ui-chrome-regressions-final.json"
+        },
+        {
+          "file": "audit-ui.spec.ts",
+          "title": "audit UI public menu groups subcategories and shows read-only options",
+          "project": "mobile",
+          "status": "expected",
+          "results": [
+            "passed"
+          ],
+          "report": "audit-ui-chrome-regressions-final.json"
+        },
+        {
+          "file": "audit-ui.spec.ts",
+          "title": "audit UI upload errors are visible and a valid retry updates preview",
+          "project": "mobile",
+          "status": "expected",
+          "results": [
+            "passed"
+          ],
+          "report": "audit-ui-chrome-regressions-final.json"
+        },
+        {
+          "file": "ui.spec.ts",
+          "title": "real setup login and recovery have no public signup",
+          "project": "desktop",
+          "status": "expected",
+          "results": [
+            "passed"
+          ],
+          "report": "audit-ui-chrome-final.json"
+        },
+        {
+          "file": "ui.spec.ts",
+          "title": "admin fixture dashboard and create restaurant form",
+          "project": "desktop",
+          "status": "expected",
+          "results": [
+            "passed"
+          ],
+          "report": "audit-ui-chrome-final.json"
+        },
+        {
+          "file": "ui.spec.ts",
+          "title": "owner fixture product form persists to intercepted API and confirms delete",
+          "project": "desktop",
+          "status": "expected",
+          "results": [
+            "passed"
+          ],
+          "report": "audit-ui-chrome-final.json"
+        },
+        {
+          "file": "ui.spec.ts",
+          "title": "CSV fixture maps columns and previews before committing",
+          "project": "desktop",
+          "status": "expected",
+          "results": [
+            "passed"
+          ],
+          "report": "audit-file-controls-after.json"
+        },
+        {
+          "file": "ui.spec.ts",
+          "title": "public fixture supports all seven languages and fallback product text",
+          "project": "desktop",
+          "status": "expected",
+          "results": [
+            "passed"
+          ],
+          "report": "audit-ui-chrome-final.json"
+        },
+        {
+          "file": "ui.spec.ts",
+          "title": "public fixture search, favorites, detail and hours are usable",
+          "project": "desktop",
+          "status": "expected",
+          "results": [
+            "passed"
+          ],
+          "report": "audit-ui-chrome-final.json"
+        },
+        {
+          "file": "ui.spec.ts",
+          "title": "public fixture favorites are partitioned by restaurant",
+          "project": "desktop",
+          "status": "expected",
+          "results": [
+            "passed"
+          ],
+          "report": "audit-ui-chrome-final.json"
+        },
+        {
+          "file": "ui.spec.ts",
+          "title": "public suspended fixture exposes only restaurant message",
+          "project": "desktop",
+          "status": "expected",
+          "results": [
+            "passed"
+          ],
+          "report": "audit-ui-chrome-final.json"
+        },
+        {
+          "file": "ui.spec.ts",
+          "title": "fixture layouts do not overflow the viewport",
+          "project": "desktop",
+          "status": "expected",
+          "results": [
+            "passed"
+          ],
+          "report": "audit-ui-chrome-final.json"
+        },
+        {
+          "file": "ui.spec.ts",
+          "title": "support fixture registers a domain only after confirmation",
+          "project": "desktop",
+          "status": "expected",
+          "results": [
+            "passed"
+          ],
+          "report": "audit-ui-chrome-final.json"
+        },
+        {
+          "file": "ui.spec.ts",
+          "title": "admin fixture copies design only to an explicitly selected restaurant",
+          "project": "desktop",
+          "status": "expected",
+          "results": [
+            "passed"
+          ],
+          "report": "audit-ui-chrome-final.json"
+        },
+        {
+          "file": "ui.spec.ts",
+          "title": "real setup login and recovery have no public signup",
+          "project": "mobile",
+          "status": "expected",
+          "results": [
+            "passed"
+          ],
+          "report": "audit-ui-chrome-final.json"
+        },
+        {
+          "file": "ui.spec.ts",
+          "title": "admin fixture dashboard and create restaurant form",
+          "project": "mobile",
+          "status": "expected",
+          "results": [
+            "passed"
+          ],
+          "report": "audit-ui-chrome-final.json"
+        },
+        {
+          "file": "ui.spec.ts",
+          "title": "owner fixture product form persists to intercepted API and confirms delete",
+          "project": "mobile",
+          "status": "expected",
+          "results": [
+            "passed"
+          ],
+          "report": "audit-ui-chrome-final.json"
+        },
+        {
+          "file": "ui.spec.ts",
+          "title": "CSV fixture maps columns and previews before committing",
+          "project": "mobile",
+          "status": "expected",
+          "results": [
+            "passed"
+          ],
+          "report": "audit-ui-chrome-final.json"
+        },
+        {
+          "file": "ui.spec.ts",
+          "title": "public fixture supports all seven languages and fallback product text",
+          "project": "mobile",
+          "status": "expected",
+          "results": [
+            "passed"
+          ],
+          "report": "audit-ui-chrome-final.json"
+        },
+        {
+          "file": "ui.spec.ts",
+          "title": "public fixture search, favorites, detail and hours are usable",
+          "project": "mobile",
+          "status": "expected",
+          "results": [
+            "passed"
+          ],
+          "report": "audit-ui-chrome-final.json"
+        },
+        {
+          "file": "ui.spec.ts",
+          "title": "public fixture favorites are partitioned by restaurant",
+          "project": "mobile",
+          "status": "expected",
+          "results": [
+            "passed"
+          ],
+          "report": "audit-ui-chrome-final.json"
+        },
+        {
+          "file": "ui.spec.ts",
+          "title": "public suspended fixture exposes only restaurant message",
+          "project": "mobile",
+          "status": "expected",
+          "results": [
+            "passed"
+          ],
+          "report": "audit-ui-chrome-final.json"
+        },
+        {
+          "file": "ui.spec.ts",
+          "title": "fixture layouts do not overflow the viewport",
+          "project": "mobile",
+          "status": "expected",
+          "results": [
+            "passed"
+          ],
+          "report": "audit-ui-chrome-final.json"
+        },
+        {
+          "file": "ui.spec.ts",
+          "title": "support fixture registers a domain only after confirmation",
+          "project": "mobile",
+          "status": "expected",
+          "results": [
+            "passed"
+          ],
+          "report": "audit-ui-chrome-final.json"
+        },
+        {
+          "file": "ui.spec.ts",
+          "title": "admin fixture copies design only to an explicitly selected restaurant",
+          "project": "mobile",
+          "status": "expected",
+          "results": [
+            "passed"
+          ],
+          "report": "audit-ui-chrome-final.json"
+        },
+        {
+          "file": "audit-downloads.spec.ts",
+          "title": "audit UI failed CSV download shows its error instead of saving an error file",
+          "project": "desktop",
+          "status": "expected",
+          "results": [
+            "passed"
+          ],
+          "report": "audit-ui-chrome-downloads-desktop-tablet.json"
+        },
+        {
+          "file": "audit-downloads.spec.ts",
+          "title": "audit UI QR download checks HTTP errors and names a successful file",
+          "project": "desktop",
+          "status": "expected",
+          "results": [
+            "passed"
+          ],
+          "report": "audit-ui-chrome-downloads-desktop-tablet.json"
+        },
+        {
+          "file": "audit-downloads.spec.ts",
+          "title": "audit UI failed CSV download shows its error instead of saving an error file",
+          "project": "mobile",
+          "status": "expected",
+          "results": [
+            "passed"
+          ],
+          "report": "audit-ui-chrome-downloads-mobile.json"
+        },
+        {
+          "file": "audit-downloads.spec.ts",
+          "title": "audit UI QR download checks HTTP errors and names a successful file",
+          "project": "mobile",
+          "status": "expected",
+          "results": [
+            "passed"
+          ],
+          "report": "audit-ui-chrome-downloads-mobile.json"
+        },
+        {
+          "file": "audit-tablet.spec.ts",
+          "title": "audit UI tablet layouts keep administration and public menu usable",
+          "project": "desktop",
+          "status": "expected",
+          "results": [
+            "passed"
+          ],
+          "report": "audit-ui-chrome-downloads-desktop-tablet.json"
+        },
+        {
+          "file": "audit-appearance.spec.ts",
+          "title": "appearance with persisted brand images fits desktop, tablet and mobile",
+          "project": "desktop",
+          "status": "expected",
+          "results": [
+            "passed"
+          ],
+          "report": "audit-appearance-after.json"
+        }
+      ]
+    },
+    "edge": {
+      "uniqueCases": 47,
+      "passed": 47,
+      "failed": 0,
+      "desktop": 23,
+      "mobile": 23,
+      "tablet": 1,
+      "sourceReports": [
+        "audit-ui-edge-final.json",
+        "audit-ui-edge-tablet.json"
+      ],
+      "cases": [
+        {
+          "file": "audit-downloads.spec.ts",
+          "title": "audit UI failed CSV download shows its error instead of saving an error file",
+          "project": "desktop",
+          "status": "expected",
+          "results": [
+            "passed"
+          ],
+          "report": "audit-ui-edge-final.json"
+        },
+        {
+          "file": "audit-downloads.spec.ts",
+          "title": "audit UI QR download checks HTTP errors and names a successful file",
+          "project": "desktop",
+          "status": "expected",
+          "results": [
+            "passed"
+          ],
+          "report": "audit-ui-edge-final.json"
+        },
+        {
+          "file": "audit-downloads.spec.ts",
+          "title": "audit UI failed CSV download shows its error instead of saving an error file",
+          "project": "mobile",
+          "status": "expected",
+          "results": [
+            "passed"
+          ],
+          "report": "audit-ui-edge-final.json"
+        },
+        {
+          "file": "audit-downloads.spec.ts",
+          "title": "audit UI QR download checks HTTP errors and names a successful file",
+          "project": "mobile",
+          "status": "expected",
+          "results": [
+            "passed"
+          ],
+          "report": "audit-ui-edge-final.json"
+        },
+        {
+          "file": "audit-flows.spec.ts",
+          "title": "audit UI keeps a pending creation open and retries the same operation",
+          "project": "desktop",
+          "status": "expected",
+          "results": [
+            "passed"
+          ],
+          "report": "audit-ui-edge-final.json"
+        },
+        {
+          "file": "audit-flows.spec.ts",
+          "title": "audit UI DEMO creation requires a reserved email and sends the explicit flag",
+          "project": "desktop",
+          "status": "expected",
+          "results": [
+            "passed"
+          ],
+          "report": "audit-ui-edge-final.json"
+        },
+        {
+          "file": "audit-flows.spec.ts",
+          "title": "audit UI export downloads from the authenticated catalog route",
+          "project": "desktop",
+          "status": "expected",
+          "results": [
+            "passed"
+          ],
+          "report": "audit-ui-edge-final.json"
+        },
+        {
+          "file": "audit-flows.spec.ts",
+          "title": "audit UI cannot submit a product until its image upload completes",
+          "project": "desktop",
+          "status": "expected",
+          "results": [
+            "passed"
+          ],
+          "report": "audit-ui-edge-final.json"
+        },
+        {
+          "file": "audit-flows.spec.ts",
+          "title": "audit UI keeps a pending creation open and retries the same operation",
+          "project": "mobile",
+          "status": "expected",
+          "results": [
+            "passed"
+          ],
+          "report": "audit-ui-edge-final.json"
+        },
+        {
+          "file": "audit-flows.spec.ts",
+          "title": "audit UI DEMO creation requires a reserved email and sends the explicit flag",
+          "project": "mobile",
+          "status": "expected",
+          "results": [
+            "passed"
+          ],
+          "report": "audit-ui-edge-final.json"
+        },
+        {
+          "file": "audit-flows.spec.ts",
+          "title": "audit UI export downloads from the authenticated catalog route",
+          "project": "mobile",
+          "status": "expected",
+          "results": [
+            "passed"
+          ],
+          "report": "audit-ui-edge-final.json"
+        },
+        {
+          "file": "audit-flows.spec.ts",
+          "title": "audit UI cannot submit a product until its image upload completes",
+          "project": "mobile",
+          "status": "expected",
+          "results": [
+            "passed"
+          ],
+          "report": "audit-ui-edge-final.json"
+        },
+        {
+          "file": "audit-ui.spec.ts",
+          "title": "audit UI create prevents synchronous double submission",
+          "project": "desktop",
+          "status": "expected",
+          "results": [
+            "passed"
+          ],
+          "report": "audit-ui-edge-final.json"
+        },
+        {
+          "file": "audit-ui.spec.ts",
+          "title": "audit UI create reuses a request ID after uncertain failures and changes it for corrected data",
+          "project": "desktop",
+          "status": "expected",
+          "results": [
+            "passed"
+          ],
+          "report": "audit-ui-edge-final.json"
+        },
+        {
+          "file": "audit-ui.spec.ts",
+          "title": "audit UI appearance publication respects required fields",
+          "project": "desktop",
+          "status": "expected",
+          "results": [
+            "passed"
+          ],
+          "report": "audit-ui-edge-final.json"
+        },
+        {
+          "file": "audit-ui.spec.ts",
+          "title": "audit UI validates variant prices before submitting and preserves the form",
+          "project": "desktop",
+          "status": "expected",
+          "results": [
+            "passed"
+          ],
+          "report": "audit-ui-edge-final.json"
+        },
+        {
+          "file": "audit-ui.spec.ts",
+          "title": "audit UI public menu groups subcategories and shows read-only options",
+          "project": "desktop",
+          "status": "expected",
+          "results": [
+            "passed"
+          ],
+          "report": "audit-ui-edge-final.json"
+        },
+        {
+          "file": "audit-ui.spec.ts",
+          "title": "audit UI upload errors are visible and a valid retry updates preview",
+          "project": "desktop",
+          "status": "expected",
+          "results": [
+            "passed"
+          ],
+          "report": "audit-ui-edge-final.json"
+        },
+        {
+          "file": "audit-ui.spec.ts",
+          "title": "audit UI create prevents synchronous double submission",
+          "project": "mobile",
+          "status": "expected",
+          "results": [
+            "passed"
+          ],
+          "report": "audit-ui-edge-final.json"
+        },
+        {
+          "file": "audit-ui.spec.ts",
+          "title": "audit UI create reuses a request ID after uncertain failures and changes it for corrected data",
+          "project": "mobile",
+          "status": "expected",
+          "results": [
+            "passed"
+          ],
+          "report": "audit-ui-edge-final.json"
+        },
+        {
+          "file": "audit-ui.spec.ts",
+          "title": "audit UI appearance publication respects required fields",
+          "project": "mobile",
+          "status": "expected",
+          "results": [
+            "passed"
+          ],
+          "report": "audit-ui-edge-final.json"
+        },
+        {
+          "file": "audit-ui.spec.ts",
+          "title": "audit UI validates variant prices before submitting and preserves the form",
+          "project": "mobile",
+          "status": "expected",
+          "results": [
+            "passed"
+          ],
+          "report": "audit-ui-edge-final.json"
+        },
+        {
+          "file": "audit-ui.spec.ts",
+          "title": "audit UI public menu groups subcategories and shows read-only options",
+          "project": "mobile",
+          "status": "expected",
+          "results": [
+            "passed"
+          ],
+          "report": "audit-ui-edge-final.json"
+        },
+        {
+          "file": "audit-ui.spec.ts",
+          "title": "audit UI upload errors are visible and a valid retry updates preview",
+          "project": "mobile",
+          "status": "expected",
+          "results": [
+            "passed"
+          ],
+          "report": "audit-ui-edge-final.json"
+        },
+        {
+          "file": "ui.spec.ts",
+          "title": "real setup login and recovery have no public signup",
+          "project": "desktop",
+          "status": "expected",
+          "results": [
+            "passed"
+          ],
+          "report": "audit-ui-edge-final.json"
+        },
+        {
+          "file": "ui.spec.ts",
+          "title": "admin fixture dashboard and create restaurant form",
+          "project": "desktop",
+          "status": "expected",
+          "results": [
+            "passed"
+          ],
+          "report": "audit-ui-edge-final.json"
+        },
+        {
+          "file": "ui.spec.ts",
+          "title": "owner fixture product form persists to intercepted API and confirms delete",
+          "project": "desktop",
+          "status": "expected",
+          "results": [
+            "passed"
+          ],
+          "report": "audit-ui-edge-final.json"
+        },
+        {
+          "file": "ui.spec.ts",
+          "title": "CSV fixture maps columns and previews before committing",
+          "project": "desktop",
+          "status": "expected",
+          "results": [
+            "passed"
+          ],
+          "report": "audit-ui-edge-final.json"
+        },
+        {
+          "file": "ui.spec.ts",
+          "title": "public fixture supports all seven languages and fallback product text",
+          "project": "desktop",
+          "status": "expected",
+          "results": [
+            "passed"
+          ],
+          "report": "audit-ui-edge-final.json"
+        },
+        {
+          "file": "ui.spec.ts",
+          "title": "public fixture search, favorites, detail and hours are usable",
+          "project": "desktop",
+          "status": "expected",
+          "results": [
+            "passed"
+          ],
+          "report": "audit-ui-edge-final.json"
+        },
+        {
+          "file": "ui.spec.ts",
+          "title": "public fixture favorites are partitioned by restaurant",
+          "project": "desktop",
+          "status": "expected",
+          "results": [
+            "passed"
+          ],
+          "report": "audit-ui-edge-final.json"
+        },
+        {
+          "file": "ui.spec.ts",
+          "title": "public suspended fixture exposes only restaurant message",
+          "project": "desktop",
+          "status": "expected",
+          "results": [
+            "passed"
+          ],
+          "report": "audit-ui-edge-final.json"
+        },
+        {
+          "file": "ui.spec.ts",
+          "title": "fixture layouts do not overflow the viewport",
+          "project": "desktop",
+          "status": "expected",
+          "results": [
+            "passed"
+          ],
+          "report": "audit-ui-edge-final.json"
+        },
+        {
+          "file": "ui.spec.ts",
+          "title": "support fixture registers a domain only after confirmation",
+          "project": "desktop",
+          "status": "expected",
+          "results": [
+            "passed"
+          ],
+          "report": "audit-ui-edge-final.json"
+        },
+        {
+          "file": "ui.spec.ts",
+          "title": "admin fixture copies design only to an explicitly selected restaurant",
+          "project": "desktop",
+          "status": "expected",
+          "results": [
+            "passed"
+          ],
+          "report": "audit-ui-edge-final.json"
+        },
+        {
+          "file": "ui.spec.ts",
+          "title": "real setup login and recovery have no public signup",
+          "project": "mobile",
+          "status": "expected",
+          "results": [
+            "passed"
+          ],
+          "report": "audit-ui-edge-final.json"
+        },
+        {
+          "file": "ui.spec.ts",
+          "title": "admin fixture dashboard and create restaurant form",
+          "project": "mobile",
+          "status": "expected",
+          "results": [
+            "passed"
+          ],
+          "report": "audit-ui-edge-final.json"
+        },
+        {
+          "file": "ui.spec.ts",
+          "title": "owner fixture product form persists to intercepted API and confirms delete",
+          "project": "mobile",
+          "status": "expected",
+          "results": [
+            "passed"
+          ],
+          "report": "audit-ui-edge-final.json"
+        },
+        {
+          "file": "ui.spec.ts",
+          "title": "CSV fixture maps columns and previews before committing",
+          "project": "mobile",
+          "status": "expected",
+          "results": [
+            "passed"
+          ],
+          "report": "audit-ui-edge-final.json"
+        },
+        {
+          "file": "ui.spec.ts",
+          "title": "public fixture supports all seven languages and fallback product text",
+          "project": "mobile",
+          "status": "expected",
+          "results": [
+            "passed"
+          ],
+          "report": "audit-ui-edge-final.json"
+        },
+        {
+          "file": "ui.spec.ts",
+          "title": "public fixture search, favorites, detail and hours are usable",
+          "project": "mobile",
+          "status": "expected",
+          "results": [
+            "passed"
+          ],
+          "report": "audit-ui-edge-final.json"
+        },
+        {
+          "file": "ui.spec.ts",
+          "title": "public fixture favorites are partitioned by restaurant",
+          "project": "mobile",
+          "status": "expected",
+          "results": [
+            "passed"
+          ],
+          "report": "audit-ui-edge-final.json"
+        },
+        {
+          "file": "ui.spec.ts",
+          "title": "public suspended fixture exposes only restaurant message",
+          "project": "mobile",
+          "status": "expected",
+          "results": [
+            "passed"
+          ],
+          "report": "audit-ui-edge-final.json"
+        },
+        {
+          "file": "ui.spec.ts",
+          "title": "fixture layouts do not overflow the viewport",
+          "project": "mobile",
+          "status": "expected",
+          "results": [
+            "passed"
+          ],
+          "report": "audit-ui-edge-final.json"
+        },
+        {
+          "file": "ui.spec.ts",
+          "title": "support fixture registers a domain only after confirmation",
+          "project": "mobile",
+          "status": "expected",
+          "results": [
+            "passed"
+          ],
+          "report": "audit-ui-edge-final.json"
+        },
+        {
+          "file": "ui.spec.ts",
+          "title": "admin fixture copies design only to an explicitly selected restaurant",
+          "project": "mobile",
+          "status": "expected",
+          "results": [
+            "passed"
+          ],
+          "report": "audit-ui-edge-final.json"
+        },
+        {
+          "file": "audit-tablet.spec.ts",
+          "title": "audit UI tablet layouts keep administration and public menu usable",
+          "project": "desktop",
+          "status": "expected",
+          "results": [
+            "passed"
+          ],
+          "report": "audit-ui-edge-tablet.json"
+        }
+      ]
+    }
+  },
+  "totalUniqueBrowserCases": 95,
+  "resolvedFindings": [
+    {
+      "finding": "Synchronous duplicate create submissions",
+      "resolution": "Synchronous ref guard and retained requestId until confirmed success"
+    },
+    {
+      "finding": "Appearance publish bypassed native required-field checks",
+      "resolution": "Publish uses native submit validation"
+    },
+    {
+      "finding": "Direct file links downloaded JSON error responses as files",
+      "resolution": "Authenticated download helper validates status and displays errors before creating file"
+    },
+    {
+      "finding": "Four intermediate download assertions matched both the app alert and Next route announcer",
+      "resolution": "Test selectors narrowed to the app notice; all four passed on rerun"
+    },
+    {
+      "finding": "Hidden file input inherited width:100% from a more specific generic input selector; appearance document grew from1440to1557px",
+      "resolution": "Exclude file inputs from generic text-input styling and reset hidden input box padding/border; reproduced before and passed at1440/820/390 after"
+    }
+  ],
+  "limits": [
+    "No Safari execution",
+    "No physical QR scan",
+    "Fixture data does not establish database persistence",
+    "Chrome consolidated latest result per test across runs; Edge 46-case full run plus 1 tablet"
+  ],
+  "commands": {
+    "full": "E2E_BROWSER_CHANNEL=chrome|msedge E2E_BASE_URL=http://127.0.0.1:3000 node node_modules/@playwright/test/cli.js test tests/e2e/ui.spec.ts tests/e2e/audit-ui.spec.ts tests/e2e/audit-flows.spec.ts tests/e2e/audit-downloads.spec.ts",
+    "tablet": "E2E_BROWSER_CHANNEL=chrome|msedge node node_modules/@playwright/test/cli.js test tests/e2e/audit-tablet.spec.ts --project=desktop"
+  },
+  "finalCssValidation": {
+    "appearanceCase": "audit-appearance-after.json",
+    "viewports": [
+      1440,
+      820,
+      390
+    ],
+    "uploadAndCsv": "audit-file-controls-after.json",
+    "note": "Final file-input CSS validated by the new responsive appearance case and two repeated upload/CSV cases; full suites were not rerun for this focused CSS fix."
+  }
+}

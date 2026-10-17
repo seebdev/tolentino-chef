@@ -1,0 +1,106 @@
+{
+  "at": "2026-10-17T17:25:42.595Z",
+  "status": "LOCAL_VALIDATION_ONLY",
+  "reason": "No public deployment or permanent platform host supplied",
+  "results": [
+    {
+      "restaurant": "aurora",
+      "format": "png",
+      "path": "artifacts/qr/local-validation/aurora.png",
+      "width": 1024,
+      "height": 1024,
+      "decodedUrl": "http://localhost:3000/q/5820b231-3a31-43aa-a1ec-4f6f79ef2bb6",
+      "decoded": true,
+      "publicReady": false,
+      "physicalScan": false
+    },
+    {
+      "restaurant": "aurora",
+      "format": "svg",
+      "path": "artifacts/qr/local-validation/aurora.svg",
+      "width": 1024,
+      "height": 1024,
+      "decodedUrl": "http://localhost:3000/q/5820b231-3a31-43aa-a1ec-4f6f79ef2bb6",
+      "decoded": true,
+      "publicReady": false,
+      "physicalScan": false
+    },
+    {
+      "restaurant": "aurora",
+      "format": "pdf",
+      "path": "artifacts/qr/local-validation/aurora.pdf",
+      "width": 1024,
+      "height": 1024,
+      "decodedUrl": "http://localhost:3000/q/5820b231-3a31-43aa-a1ec-4f6f79ef2bb6",
+      "decoded": true,
+      "publicReady": false,
+      "physicalScan": false
+    },
+    {
+      "restaurant": "bruma",
+      "format": "png",
+      "path": "artifacts/qr/local-validation/bruma.png",
+      "width": 1024,
+      "height": 1024,
+      "decodedUrl": "http://localhost:3000/q/5d236a67-793a-4a72-92f4-63abe20e8d95",
+      "decoded": true,
+      "publicReady": false,
+      "physicalScan": false
+    },
+    {
+      "restaurant": "bruma",
+      "format": "svg",
+      "path": "artifacts/qr/local-validation/bruma.svg",
+      "width": 1024,
+      "height": 1024,
+      "decodedUrl": "http://localhost:3000/q/5d236a67-793a-4a72-92f4-63abe20e8d95",
+      "decoded": true,
+      "publicReady": false,
+      "physicalScan": false
+    },
+    {
+      "restaurant": "bruma",
+      "format": "pdf",
+      "path": "artifacts/qr/local-validation/bruma.pdf",
+      "width": 1024,
+      "height": 1024,
+      "decodedUrl": "http://localhost:3000/q/5d236a67-793a-4a72-92f4-63abe20e8d95",
+      "decoded": true,
+      "publicReady": false,
+      "physicalScan": false
+    },
+    {
+      "restaurant": "marea",
+      "format": "png",
+      "path": "artifacts/qr/local-validation/marea.png",
+      "width": 1024,
+      "height": 1024,
+      "decodedUrl": "http://localhost:3000/q/199258db-b193-4055-9f26-b1f3ea9ee1eb",
+      "decoded": true,
+      "publicReady": false,
+      "physicalScan": false
+    },
+    {
+      "restaurant": "marea",
+      "format": "svg",
+      "path": "artifacts/qr/local-validation/marea.svg",
+      "width": 1024,
+      "height": 1024,
+      "decodedUrl": "http://localhost:3000/q/199258db-b193-4055-9f26-b1f3ea9ee1eb",
+      "decoded": true,
+      "publicReady": false,
+      "physicalScan": false
+    },
+    {
+      "restaurant": "marea",
+      "format": "pdf",
+      "path": "artifacts/qr/local-validation/marea.pdf",
+      "width": 1024,
+      "height": 1024,
+      "decodedUrl": "http://localhost:3000/q/199258db-b193-4055-9f26-b1f3ea9ee1eb",
+      "decoded": true,
+      "publicReady": false,
+      "physicalScan": false
+    }
+  ]
+}

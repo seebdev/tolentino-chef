@@ -1,0 +1,174 @@
+{
+  "startedAt": "2026-10-17T17:57:14.743Z",
+  "base": "http://localhost:3000",
+  "database": "Supabase real",
+  "scope": "Restorable live checks on manifested DEMOs only",
+  "credentialsPrinted": false,
+  "externalEmailSent": false,
+  "externalLinksOpened": false,
+  "checks": [
+    {
+      "id": "F027",
+      "name": "aurora duplicate is draft, has no SKU, preserves options and original",
+      "pass": true,
+      "detail": {
+        "copiedOptions": true,
+        "originalIntact": true,
+        "temporaryCopyDeleted": true
+      }
+    },
+    {
+      "id": "F032",
+      "name": "aurora product order persists and changes public order",
+      "pass": true,
+      "detail": {
+        "publicOrderChanged": true,
+        "restored": true
+      }
+    },
+    {
+      "id": "F032-category",
+      "name": "aurora parent category order persists without changing subcategory relations",
+      "pass": true,
+      "detail": {
+        "parentOrderChanged": true,
+        "hierarchyPreserved": true,
+        "restored": true
+      }
+    },
+    {
+      "id": "RESTORE-owner",
+      "name": "aurora final catalogue and order equal the original snapshot",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "F027",
+      "name": "bruma duplicate is draft, has no SKU, preserves options and original",
+      "pass": true,
+      "detail": {
+        "copiedOptions": true,
+        "originalIntact": true,
+        "temporaryCopyDeleted": true
+      }
+    },
+    {
+      "id": "F032",
+      "name": "bruma product order persists and changes public order",
+      "pass": true,
+      "detail": {
+        "publicOrderChanged": true,
+        "restored": true
+      }
+    },
+    {
+      "id": "F032-category",
+      "name": "bruma parent category order persists without changing subcategory relations",
+      "pass": true,
+      "detail": {
+        "parentOrderChanged": true,
+        "hierarchyPreserved": true,
+        "restored": true
+      }
+    },
+    {
+      "id": "RESTORE-owner",
+      "name": "bruma final catalogue and order equal the original snapshot",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "F027",
+      "name": "marea duplicate is draft, has no SKU, preserves options and original",
+      "pass": true,
+      "detail": {
+        "copiedOptions": true,
+        "originalIntact": true,
+        "temporaryCopyDeleted": true
+      }
+    },
+    {
+      "id": "F032",
+      "name": "marea product order persists and changes public order",
+      "pass": true,
+      "detail": {
+        "publicOrderChanged": true,
+        "restored": true
+      }
+    },
+    {
+      "id": "F032-category",
+      "name": "marea parent category order persists without changing subcategory relations",
+      "pass": true,
+      "detail": {
+        "parentOrderChanged": true,
+        "hierarchyPreserved": true,
+        "restored": true
+      }
+    },
+    {
+      "id": "RESTORE-owner",
+      "name": "marea final catalogue and order equal the original snapshot",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "F013",
+      "name": "desktop leaves support for administration without changing authenticated identity",
+      "pass": true,
+      "detail": {
+        "identityUnchanged": true,
+        "role": "superadmin",
+        "supportBannerRemoved": true
+      }
+    },
+    {
+      "id": "F013",
+      "name": "mobile leaves support for administration without changing authenticated identity",
+      "pass": true,
+      "detail": {
+        "identityUnchanged": true,
+        "role": "superadmin",
+        "supportBannerRemoved": true
+      }
+    },
+    {
+      "id": "F014",
+      "name": "platform contact and suspension message save through the real admin form",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "F068",
+      "name": "configured commercial contact is projected and rendered in all three public footers",
+      "pass": true,
+      "detail": {
+        "menus": 3,
+        "externalNavigationPerformed": false
+      }
+    },
+    {
+      "id": "F014-message",
+      "name": "temporary suspension uses the saved platform message in public API and UI",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "F068-clear",
+      "name": "clearing the commercial URL hides the public footer link",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "RESTORE-admin",
+      "name": "platform contact, message, all statuses and public menus match original configuration",
+      "pass": true,
+      "detail": null
+    }
+  ],
+  "cleanupErrors": [],
+  "completedAt": "2026-10-17T17:59:25.947Z",
+  "passed": 19,
+  "failed": 0,
+  "restoreSnapshot": ".runtime/gap-audit-restore.json (ignored, no credentials)"
+}

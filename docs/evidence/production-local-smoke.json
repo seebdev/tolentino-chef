@@ -1,0 +1,33 @@
+{
+  "at": "2026-10-17T18:02:32.834Z",
+  "base": "http://localhost:3000",
+  "mode": "next start (production build served locally)",
+  "browser": "155.0.8059.80",
+  "menus": [
+    {
+      "key": "aurora",
+      "http": 200,
+      "products": 24,
+      "cspProduction": true
+    },
+    {
+      "key": "bruma",
+      "http": 200,
+      "products": 24,
+      "cspProduction": true
+    },
+    {
+      "key": "marea",
+      "http": 200,
+      "products": 24,
+      "cspProduction": true
+    }
+  ],
+  "health": {
+    "status": "ok",
+    "configured": true
+  },
+  "ownerLoginLogout": "PASS",
+  "runtimeErrors": [],
+  "result": "PASS"
+}

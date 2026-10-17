@@ -132,6 +132,19 @@ export function PublicMenu({
       /* Favorites remain available for this visit when storage is disabled. */
     }
   }
+  const orderedCategories = useMemo(() => {
+    const categories = data?.categories || [];
+    const visible = categories.filter((category) => category.is_visible);
+    const roots = visible
+      .filter((category) => !category.parent_id)
+      .sort((a, b) => a.sort_order - b.sort_order);
+    return roots.flatMap((root) => [
+      root,
+      ...visible
+        .filter((child) => child.parent_id === root.id)
+        .sort((a, b) => a.sort_order - b.sort_order),
+    ]);
+  }, [data]);
   const visibleProducts = useMemo(() => {
     if (!data) return [];
     const term = search
@@ -147,6 +160,10 @@ export function PublicMenu({
     return data.products.filter(
       (p) =>
         p.is_published &&
+        (!p.category_id ||
+          orderedCategories.some(
+            (category) => category.id === p.category_id,
+          )) &&
         (category === "all" || categoryIds.includes(p.category_id || "")) &&
         (!onlyFavorites || favorites.includes(p.id)) &&
         (!term ||
@@ -165,7 +182,15 @@ export function PublicMenu({
             .toLowerCase()
             .includes(term)),
     );
-  }, [data, search, category, onlyFavorites, favorites, language]);
+  }, [
+    data,
+    search,
+    category,
+    onlyFavorites,
+    favorites,
+    language,
+    orderedCategories,
+  ]);
   if (loading)
     return (
       <main className="public-loading">
@@ -197,8 +222,7 @@ export function PublicMenu({
     );
   const r = data.restaurant;
   const featured = visibleProducts.filter((p) => p.is_featured);
-  const groups = data.categories
-    .filter((c) => c.is_visible)
+  const groups = orderedCategories
     .map((c) => ({
       category: c,
       products: visibleProducts.filter((p) => p.category_id === c.id),
@@ -304,23 +328,35 @@ export function PublicMenu({
           <button
             onClick={() => setCategory("all")}
             className={category === "all" ? "active" : ""}
+            aria-pressed={category === "all"}
           >
             {t.all}
           </button>
-          {data.categories
-            .filter((c) => c.is_visible)
-            .map((c) => (
-              <button
-                className={
-                  (category === c.id ? "active " : "") +
-                  (c.parent_id ? "subcategory" : "")
-                }
-                key={c.id}
-                onClick={() => setCategory(c.id)}
-              >
-                {text("category", c.id, "name", c.name)}
-              </button>
-            ))}
+          {orderedCategories.map((c) => (
+            <button
+              className={
+                (category === c.id ? "active " : "") +
+                (c.parent_id ? "subcategory" : "")
+              }
+              key={c.id}
+              aria-pressed={category === c.id}
+              title={
+                c.parent_id
+                  ? text(
+                      "category",
+                      c.parent_id,
+                      "name",
+                      data.categories.find(
+                        (parent) => parent.id === c.parent_id,
+                      )?.name || "",
+                    )
+                  : undefined
+              }
+              onClick={() => setCategory(c.id)}
+            >
+              {text("category", c.id, "name", c.name)}
+            </button>
+          ))}
         </nav>
         {data.promotions
           .filter(
@@ -417,7 +453,10 @@ export function PublicMenu({
           <>
             {groups.map((group) => (
               <section
-                className="menu-category-section"
+                className={
+                  "menu-category-section" +
+                  (group.category.parent_id ? " subcategory-section" : "")
+                }
                 key={group.category.id}
               >
                 <div className="public-section-heading">

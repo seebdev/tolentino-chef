@@ -1,0 +1,23 @@
+{
+  "at": "2026-10-17T18:00:28.660Z",
+  "result": [
+    {
+      "restaurant": "aurora",
+      "result": "PASS",
+      "change": "Cover uses original vector illustration without embedded text; identity remains accessible DOM text",
+      "path": "1932e721-78ab-4320-9f84-f186a80fba48/dbffcfd0-fa1d-466f-a4b3-bd0b7f4b9ebe.webp"
+    },
+    {
+      "restaurant": "bruma",
+      "result": "PASS",
+      "change": "Cover uses original vector illustration without embedded text; identity remains accessible DOM text",
+      "path": "eca7481c-fc27-479c-b364-76274b0b4230/ed0d2eff-bcaf-4aa7-892d-520e986ce25c.webp"
+    },
+    {
+      "restaurant": "marea",
+      "result": "PASS",
+      "change": "Cover uses original vector illustration without embedded text; identity remains accessible DOM text",
+      "path": "e2cda10d-2771-4056-8cf0-13e00f4b1bd8/17a67719-5bd6-4f3a-8237-311f79605d47.webp"
+    }
+  ]
+}

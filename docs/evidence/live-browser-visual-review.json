@@ -1,0 +1,342 @@
+{
+  "reviewedAt": "2026-10-17T18:05:46.459Z",
+  "status": "PASS",
+  "serverMode": "production",
+  "base": "http://localhost:3000",
+  "scope": "Final full-page screenshots after demo cover cleanup, restored duplicate/reorder tests and production server restart. Real anonymous requests; no mocks or authentication actions in this capture pass.",
+  "reviewMethod": "Two AI agents visually inspected all eighteen saved screenshots; this is not a human certification.",
+  "reviewerCoverage": [
+    {
+      "agent": "/root/audit_reference",
+      "browser": "chrome",
+      "screenshots": 9
+    },
+    {
+      "agent": "/root/frontend",
+      "browser": "msedge",
+      "screenshots": 9
+    }
+  ],
+  "captureEvidence": {
+    "file": "docs/evidence/live-browser-screenshots.json",
+    "sha256": "a7c9234832e5bdcbc4d7acf918055ae39c7d98cf75f758ffc32b44324a20e918",
+    "completedAt": "2026-10-17T18:03:47.610Z",
+    "automatedChecks": {
+      "passed": 54,
+      "failed": 0
+    },
+    "unexpectedErrors": 0
+  },
+  "functionalEvidence": {
+    "file": "docs/evidence/live-browser-audit.json",
+    "sha256": "a93135d5d34fa9b5d65406aee686ea563c94cd0d616a7d99fc1400d25a04fa32",
+    "separateScope": "24 functional scenarios and372 checks; screenshot refresh does not duplicate those counts."
+  },
+  "observations": [
+    "Aurora, Bruma and Marea retain distinct logos, accent colors, typography and cuisine illustrations.",
+    "Hero covers contain no embedded restaurant wordmark; live names, descriptions and opening-hours controls remain legible.",
+    "Main product cards and footer remain complete at390,768 and1440 pixels; no overlapping titles or hidden prices were observed.",
+    "Mobile featured cards and category navigation intentionally scroll horizontally; part of the next card or tab is visible without page-level overflow.",
+    "Tablet featured descriptions may use ellipsis as designed; complete descriptions are available in the independently tested product dialog.",
+    "All29 image elements per menu screenshot loaded; images are original demo illustrations, not documentary food photography."
+  ],
+  "physicalDevices": false,
+  "physicalQrScanning": false,
+  "safariTested": false,
+  "formalAccessibilityCertification": false,
+  "limitations": [
+    "Headless desktop browser installations with responsive viewport emulation.",
+    "Localhost screenshots do not demonstrate Internet deployment or public QR reachability.",
+    "Interaction, persistence and basic accessibility results are documented separately in live-browser-audit.json."
+  ],
+  "screenshots": [
+    {
+      "file": "artifacts/screenshots/real-aurora-mobile.png",
+      "browser": "chrome",
+      "restaurant": "aurora",
+      "device": "mobile",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "width": 390,
+      "height": 5521,
+      "bytes": 403817,
+      "sha256": "2a788424f4a639fdc22bfe2ce3b55ace266b61dd5350204eb59a3338efd3b4ae",
+      "visualReviewer": "/root/audit_reference",
+      "visualStatus": "PASS"
+    },
+    {
+      "file": "artifacts/screenshots/real-aurora-tablet.png",
+      "browser": "chrome",
+      "restaurant": "aurora",
+      "device": "tablet",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "width": 768,
+      "height": 3842,
+      "bytes": 357576,
+      "sha256": "186a7a512f9f6a7a3c3c08fb2d1c775faa7db6d19610ea45cc03370d9fd67f7b",
+      "visualReviewer": "/root/audit_reference",
+      "visualStatus": "PASS"
+    },
+    {
+      "file": "artifacts/screenshots/real-aurora-desktop.png",
+      "browser": "chrome",
+      "restaurant": "aurora",
+      "device": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "width": 1440,
+      "height": 3937,
+      "bytes": 484974,
+      "sha256": "8ec2303fcd35c61f4dd5502a50470ddc5129f44380f804e3f3d57a66dbe8ef2f",
+      "visualReviewer": "/root/audit_reference",
+      "visualStatus": "PASS"
+    },
+    {
+      "file": "artifacts/screenshots/real-bruma-mobile.png",
+      "browser": "chrome",
+      "restaurant": "bruma",
+      "device": "mobile",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "width": 390,
+      "height": 5461,
+      "bytes": 352684,
+      "sha256": "2b9ed6b816444a76a12b4bed61cd94814d0dc2dee6733745fbfea80b041929b0",
+      "visualReviewer": "/root/audit_reference",
+      "visualStatus": "PASS"
+    },
+    {
+      "file": "artifacts/screenshots/real-bruma-tablet.png",
+      "browser": "chrome",
+      "restaurant": "bruma",
+      "device": "tablet",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "width": 768,
+      "height": 3847,
+      "bytes": 317157,
+      "sha256": "274a52a1c04a7a3678b021b1b6049bd82a42b4481890c0df74f3eb5cc58a2551",
+      "visualReviewer": "/root/audit_reference",
+      "visualStatus": "PASS"
+    },
+    {
+      "file": "artifacts/screenshots/real-bruma-desktop.png",
+      "browser": "chrome",
+      "restaurant": "bruma",
+      "device": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "width": 1440,
+      "height": 3942,
+      "bytes": 406654,
+      "sha256": "e64b0de3d3cc237e4e341e57fef59a0dbbb78213d1179d92128c91e81cd5a1d6",
+      "visualReviewer": "/root/audit_reference",
+      "visualStatus": "PASS"
+    },
+    {
+      "file": "artifacts/screenshots/real-marea-mobile.png",
+      "browser": "chrome",
+      "restaurant": "marea",
+      "device": "mobile",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "width": 390,
+      "height": 5482,
+      "bytes": 392578,
+      "sha256": "ba0154dbe09a613d3055597f46a5d43f7710f2165620172cf7263d56b1f24fc7",
+      "visualReviewer": "/root/audit_reference",
+      "visualStatus": "PASS"
+    },
+    {
+      "file": "artifacts/screenshots/real-marea-tablet.png",
+      "browser": "chrome",
+      "restaurant": "marea",
+      "device": "tablet",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "width": 768,
+      "height": 3847,
+      "bytes": 357621,
+      "sha256": "c483eb96fb8966521d43da1b6d50f0044a3d5125ae507fa51704de44609e03ad",
+      "visualReviewer": "/root/audit_reference",
+      "visualStatus": "PASS"
+    },
+    {
+      "file": "artifacts/screenshots/real-marea-desktop.png",
+      "browser": "chrome",
+      "restaurant": "marea",
+      "device": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "width": 1440,
+      "height": 3942,
+      "bytes": 486206,
+      "sha256": "5c4ada4837629e74ff5b0bb44a02296525137a7366031aa2680df20e3a301a2d",
+      "visualReviewer": "/root/audit_reference",
+      "visualStatus": "PASS"
+    },
+    {
+      "file": "artifacts/screenshots/real-aurora-mobile-msedge.png",
+      "browser": "msedge",
+      "restaurant": "aurora",
+      "device": "mobile",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "width": 390,
+      "height": 5521,
+      "bytes": 403827,
+      "sha256": "05cb84bdd5226e8bb2017fc4ca2aa1538f646c993f6f4f160457b300cb172a3c",
+      "visualReviewer": "/root/frontend",
+      "visualStatus": "PASS"
+    },
+    {
+      "file": "artifacts/screenshots/real-aurora-tablet-msedge.png",
+      "browser": "msedge",
+      "restaurant": "aurora",
+      "device": "tablet",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "width": 768,
+      "height": 3842,
+      "bytes": 357599,
+      "sha256": "17f0750c4bf1a9e7700bb0e92f22178bc2deabe62f296d87feaf2d4ca60b385c",
+      "visualReviewer": "/root/frontend",
+      "visualStatus": "PASS"
+    },
+    {
+      "file": "artifacts/screenshots/real-aurora-desktop-msedge.png",
+      "browser": "msedge",
+      "restaurant": "aurora",
+      "device": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "width": 1440,
+      "height": 3937,
+      "bytes": 484974,
+      "sha256": "8ec2303fcd35c61f4dd5502a50470ddc5129f44380f804e3f3d57a66dbe8ef2f",
+      "visualReviewer": "/root/frontend",
+      "visualStatus": "PASS"
+    },
+    {
+      "file": "artifacts/screenshots/real-bruma-mobile-msedge.png",
+      "browser": "msedge",
+      "restaurant": "bruma",
+      "device": "mobile",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "width": 390,
+      "height": 5461,
+      "bytes": 352693,
+      "sha256": "fb2293e3e49b64a5678f72374d40de9cc6e68246417899f9af58fbe461eaa3b9",
+      "visualReviewer": "/root/frontend",
+      "visualStatus": "PASS"
+    },
+    {
+      "file": "artifacts/screenshots/real-bruma-tablet-msedge.png",
+      "browser": "msedge",
+      "restaurant": "bruma",
+      "device": "tablet",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "width": 768,
+      "height": 3847,
+      "bytes": 317203,
+      "sha256": "340e7e68e394cec81cd13aebd058ef8820fa1e34a986d17c5f08466c406b9efe",
+      "visualReviewer": "/root/frontend",
+      "visualStatus": "PASS"
+    },
+    {
+      "file": "artifacts/screenshots/real-bruma-desktop-msedge.png",
+      "browser": "msedge",
+      "restaurant": "bruma",
+      "device": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "width": 1440,
+      "height": 3942,
+      "bytes": 406654,
+      "sha256": "e64b0de3d3cc237e4e341e57fef59a0dbbb78213d1179d92128c91e81cd5a1d6",
+      "visualReviewer": "/root/frontend",
+      "visualStatus": "PASS"
+    },
+    {
+      "file": "artifacts/screenshots/real-marea-mobile-msedge.png",
+      "browser": "msedge",
+      "restaurant": "marea",
+      "device": "mobile",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "width": 390,
+      "height": 5482,
+      "bytes": 392593,
+      "sha256": "1219db7a4be2ec7aed5ba80a22a5c8c22ad135d1a9bb46534c36f5c64b6e7510",
+      "visualReviewer": "/root/frontend",
+      "visualStatus": "PASS"
+    },
+    {
+      "file": "artifacts/screenshots/real-marea-tablet-msedge.png",
+      "browser": "msedge",
+      "restaurant": "marea",
+      "device": "tablet",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "width": 768,
+      "height": 3847,
+      "bytes": 357670,
+      "sha256": "4722b6b456bd817a0fa17c182c7c25656912fe700aac006959033643a40a6915",
+      "visualReviewer": "/root/frontend",
+      "visualStatus": "PASS"
+    },
+    {
+      "file": "artifacts/screenshots/real-marea-desktop-msedge.png",
+      "browser": "msedge",
+      "restaurant": "marea",
+      "device": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "width": 1440,
+      "height": 3942,
+      "bytes": 486206,
+      "sha256": "5c4ada4837629e74ff5b0bb44a02296525137a7366031aa2680df20e3a301a2d",
+      "visualReviewer": "/root/frontend",
+      "visualStatus": "PASS"
+    }
+  ]
+}

@@ -1,5 +1,11 @@
 "use client";
-import { useEffect, useState, useCallback, type FormEvent } from "react";
+import {
+  useEffect,
+  useState,
+  useCallback,
+  useRef,
+  type FormEvent,
+} from "react";
 import {
   LayoutDashboard,
   Store,
@@ -84,6 +90,16 @@ export function AdminApp() {
   const [page, setPage] = useState(1);
   const [editor, setEditor] = useState<Restaurant | "new" | null>(null);
   const [busy, setBusy] = useState(false);
+  const mutationInFlight = useRef(false);
+  const createAttempt = useRef<{ signature: string; requestId: string } | null>(
+    null,
+  );
+  const [demo, setDemo] = useState(false);
+  function openEditor(value: Restaurant | "new") {
+    setError("");
+    setDemo(false);
+    setEditor(value);
+  }
   const [health, setHealth] = useState<Record<string, unknown> | null>(null);
   const [targetId, setTargetId] = useState("");
   const [targetQuery, setTargetQuery] = useState("");
@@ -140,6 +156,8 @@ export function AdminApp() {
     return () => clearTimeout(timer);
   }, [confirm, targetQuery]);
   async function action(name: string, r: Restaurant) {
+    if (mutationInFlight.current) return;
+    mutationInFlight.current = true;
     setBusy(true);
     setError("");
     try {
@@ -160,27 +178,46 @@ export function AdminApp() {
     } catch (e) {
       setError((e as Error).message);
     } finally {
+      mutationInFlight.current = false;
       setBusy(false);
     }
   }
   async function save(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    if (mutationInFlight.current) return;
+    const form = e.currentTarget;
+    if (!form.reportValidity()) return;
+    const raw = Object.fromEntries(new FormData(form));
+    const payload = {
+      ...raw,
+      demo: editor === "new" ? raw.demo === "on" : undefined,
+      sale_amount:
+        raw.sale_amount === undefined || raw.sale_amount === ""
+          ? undefined
+          : Number(raw.sale_amount),
+    };
+    const creating = editor === "new";
+    let requestId: string | undefined;
+    if (creating) {
+      const signature = JSON.stringify(payload);
+      if (createAttempt.current?.signature !== signature)
+        createAttempt.current = { signature, requestId: crypto.randomUUID() };
+      requestId = createAttempt.current.requestId;
+    }
+    mutationInFlight.current = true;
     setBusy(true);
     setError("");
-    const raw = Object.fromEntries(new FormData(e.currentTarget));
     try {
       const result = await post<{ message?: string }>(
         "/api/admin/restaurants",
         {
-          action: editor === "new" ? "create" : "update",
+          action: creating ? "create" : "update",
+          ...(requestId ? { requestId } : {}),
           restaurantId: editor && editor !== "new" ? editor.id : undefined,
-          data: {
-            ...raw,
-            sale_amount:
-              raw.sale_amount === "" ? undefined : Number(raw.sale_amount),
-          },
+          data: payload,
         },
       );
+      if (creating) createAttempt.current = null;
       setEditor(null);
       setMessage(
         result.message ||
@@ -192,11 +229,14 @@ export function AdminApp() {
     } catch (e) {
       setError((e as Error).message);
     } finally {
+      mutationInFlight.current = false;
       setBusy(false);
     }
   }
   async function settings(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    if (mutationInFlight.current) return;
+    mutationInFlight.current = true;
     setBusy(true);
     try {
       await post("/api/admin/restaurants", {
@@ -208,6 +248,7 @@ export function AdminApp() {
     } catch (e) {
       setError((e as Error).message);
     } finally {
+      mutationInFlight.current = false;
       setBusy(false);
     }
   }
@@ -263,7 +304,7 @@ export function AdminApp() {
         }
         action={
           (active === "overview" || active === "restaurants") && (
-            <Button onClick={() => setEditor("new")}>
+            <Button onClick={() => openEditor("new")}>
               <Plus size={18} />
               Nuevo restaurante
             </Button>
@@ -340,7 +381,7 @@ export function AdminApp() {
                 </div>
                 <button
                   className="text-button"
-                  onClick={() => setEditor("new")}
+                  onClick={() => openEditor("new")}
                 >
                   Empezar <ArrowRight size={18} />
                 </button>
@@ -404,7 +445,7 @@ export function AdminApp() {
                 action={
                   !q &&
                   !status && (
-                    <Button onClick={() => setEditor("new")}>
+                    <Button onClick={() => openEditor("new")}>
                       <Plus size={17} />
                       Crear primer restaurante
                     </Button>
@@ -495,7 +536,7 @@ export function AdminApp() {
                             </a>
                             <button
                               className="icon-button"
-                              onClick={() => setEditor(rest)}
+                              onClick={() => openEditor(rest)}
                               aria-label={"Editar " + rest.name}
                               title="Editar datos"
                             >
@@ -688,147 +729,173 @@ export function AdminApp() {
       {editor && (
         <Modal
           title={r ? "Editar restaurante" : "Un nuevo restaurante"}
+          preventClose={busy}
           onClose={() => setEditor(null)}
           wide
         >
           {error && <Notice error message={error} />}
           <form className="form-stack" onSubmit={save}>
-            <div className="form-grid">
-              <Field label="Nombre del restaurante">
-                <input
-                  name="name"
-                  required
-                  defaultValue={r?.name || ""}
-                  maxLength={120}
-                  aria-label="Nombre del restaurante"
-                />
-              </Field>
-              <Field
-                label="Dirección del menú"
-                hint="Solo letras minúsculas, números y guiones."
-              >
-                <input
-                  name="slug"
-                  required
-                  pattern="[a-z0-9]+(-[a-z0-9]+)*"
-                  minLength={3}
-                  maxLength={64}
-                  defaultValue={r?.slug || ""}
-                  placeholder="mi-restaurante"
-                  aria-label="Dirección del menú"
-                />
-              </Field>
-              <Field label="Nombre del propietario">
-                <input
-                  name="owner_name"
-                  required
-                  defaultValue={r?.owner_name || ""}
-                  aria-label="Nombre del propietario"
-                />
-              </Field>
-              <Field label="Correo del propietario">
-                <input
-                  name="owner_email"
-                  type="email"
-                  required
-                  defaultValue={r?.owner_email || ""}
-                  aria-label="Correo del propietario"
-                  readOnly={!!r}
-                />
-              </Field>
-              <Field label="Teléfono">
-                <input
-                  name="phone"
-                  type="tel"
-                  defaultValue={r?.phone || ""}
-                  aria-label="Teléfono"
-                />
-              </Field>
-              <Field label="Moneda">
-                <select
-                  name="currency"
-                  defaultValue={r?.currency || "COP"}
-                  aria-label="Moneda"
-                >
-                  {["COP", "USD", "EUR", "MXN", "PEN", "CLP", "ARS", "BRL"].map(
-                    (c) => (
-                      <option key={c}>{c}</option>
-                    ),
-                  )}
-                </select>
-              </Field>
-            </div>
-            <Field label="Descripción">
-              <textarea
-                name="description"
-                rows={3}
-                defaultValue={r?.description || ""}
-                aria-label="Descripción"
-              />
-            </Field>
-            <Field label="Idioma principal">
-              <select
-                name="default_language"
-                defaultValue={r?.default_language || "es"}
-                aria-label="Idioma principal"
-              >
-                {languageOptions.map(([code, label]) => (
-                  <option value={code} key={code}>
-                    {label}
-                  </option>
-                ))}
-              </select>
-            </Field>
-            {!r && (
-              <>
-                <div className="section-divider">
-                  REGISTRO DE VENTA · PAGO ÚNICO
-                </div>
-                <div className="form-grid">
-                  <Field label="Fecha de venta">
-                    <input
-                      type="date"
-                      name="sale_date"
-                      defaultValue={new Date().toLocaleDateString("en-CA")}
-                      aria-label="Fecha de venta"
-                    />
-                  </Field>
-                  <Field label="Precio cobrado">
-                    <input
-                      type="number"
-                      name="sale_amount"
-                      min={0}
-                      step=".01"
-                      aria-label="Precio cobrado"
-                    />
-                  </Field>
-                </div>
-                <Field label="Observaciones internas">
-                  <textarea
-                    name="sale_notes"
-                    rows={2}
-                    aria-label="Observaciones internas"
+            <fieldset className="form-stack form-fields" disabled={busy}>
+              <div className="form-grid">
+                <Field label="Nombre del restaurante">
+                  <input
+                    name="name"
+                    required
+                    defaultValue={r?.name || ""}
+                    maxLength={120}
+                    aria-label="Nombre del restaurante"
                   />
                 </Field>
-                <p className="helper-text">
-                  <KeyRound size={15} />
-                  El propietario recibirá una invitación segura para establecer
-                  su contraseña.
-                </p>
-              </>
-            )}
-            <div className="form-footer">
-              <Button
-                type="button"
-                variant="secondary"
-                onClick={() => setEditor(null)}
-              >
-                Cancelar
-              </Button>
-              <Button type="submit" busy={busy}>
-                {r ? "Guardar cambios" : "Crear restaurante"}
-              </Button>
-            </div>
+                <Field
+                  label="Dirección del menú"
+                  hint="Solo letras minúsculas, números y guiones."
+                >
+                  <input
+                    name="slug"
+                    required
+                    pattern="[a-z0-9]+(-[a-z0-9]+)*"
+                    minLength={3}
+                    maxLength={64}
+                    defaultValue={r?.slug || ""}
+                    placeholder="mi-restaurante"
+                    aria-label="Dirección del menú"
+                  />
+                </Field>
+                <Field label="Nombre del propietario">
+                  <input
+                    name="owner_name"
+                    required
+                    defaultValue={r?.owner_name || ""}
+                    aria-label="Nombre del propietario"
+                  />
+                </Field>
+                <Field label="Correo del propietario">
+                  <input
+                    name="owner_email"
+                    type="email"
+                    required
+                    defaultValue={r?.owner_email || ""}
+                    aria-label="Correo del propietario"
+                    readOnly={!!r}
+                    pattern={!r && demo ? "[^@]+@[^@]+\\.test" : undefined}
+                    title={
+                      !r && demo
+                        ? "Usa un correo de demostración terminado en .test"
+                        : undefined
+                    }
+                  />
+                </Field>
+                <Field label="Teléfono">
+                  <input
+                    name="phone"
+                    type="tel"
+                    defaultValue={r?.phone || ""}
+                    aria-label="Teléfono"
+                  />
+                </Field>
+                <Field label="Moneda">
+                  <select
+                    name="currency"
+                    defaultValue={r?.currency || "COP"}
+                    aria-label="Moneda"
+                  >
+                    {[
+                      "COP",
+                      "USD",
+                      "EUR",
+                      "MXN",
+                      "PEN",
+                      "CLP",
+                      "ARS",
+                      "BRL",
+                    ].map((c) => (
+                      <option key={c}>{c}</option>
+                    ))}
+                  </select>
+                </Field>
+              </div>
+              <Field label="Descripción">
+                <textarea
+                  name="description"
+                  rows={3}
+                  defaultValue={r?.description || ""}
+                  aria-label="Descripción"
+                />
+              </Field>
+              <Field label="Idioma principal">
+                <select
+                  name="default_language"
+                  defaultValue={r?.default_language || "es"}
+                  aria-label="Idioma principal"
+                >
+                  {languageOptions.map(([code, label]) => (
+                    <option value={code} key={code}>
+                      {label}
+                    </option>
+                  ))}
+                </select>
+              </Field>
+              {!r && (
+                <>
+                  <div className="section-divider">
+                    REGISTRO DE VENTA · PAGO ÚNICO
+                  </div>
+                  <div className="form-grid">
+                    <Field label="Fecha de venta">
+                      <input
+                        type="date"
+                        name="sale_date"
+                        defaultValue={new Date().toLocaleDateString("en-CA")}
+                        aria-label="Fecha de venta"
+                      />
+                    </Field>
+                    <Field label="Precio cobrado">
+                      <input
+                        type="number"
+                        name="sale_amount"
+                        min={0}
+                        step=".01"
+                        aria-label="Precio cobrado"
+                      />
+                    </Field>
+                  </div>
+                  <Field label="Observaciones internas">
+                    <textarea
+                      name="sale_notes"
+                      rows={2}
+                      aria-label="Observaciones internas"
+                    />
+                  </Field>
+                  <label className="check">
+                    <input
+                      type="checkbox"
+                      name="demo"
+                      checked={demo}
+                      onChange={(event) => setDemo(event.target.checked)}
+                    />
+                    Crear restaurante DEMO
+                  </label>
+                  <p className="helper-text">
+                    <KeyRound size={15} />
+                    {demo
+                      ? "Usa un correo terminado en .test. Este modo no envía invitaciones ni comunicaciones externas."
+                      : "El propietario recibirá una invitación segura para establecer su contraseña."}
+                  </p>
+                </>
+              )}
+              <div className="form-footer">
+                <Button
+                  type="button"
+                  variant="secondary"
+                  onClick={() => setEditor(null)}
+                >
+                  Cancelar
+                </Button>
+                <Button type="submit" busy={busy}>
+                  {r ? "Guardar cambios" : "Crear restaurante"}
+                </Button>
+              </div>
+            </fieldset>
           </form>
         </Modal>
       )}

@@ -1,0 +1,3912 @@
+{
+  "startedAt": "2026-10-17T18:02:34.316Z",
+  "phase": "screenshots",
+  "base": "http://localhost:3000",
+  "applicationScope": "local",
+  "serverMode": "production",
+  "traffic": "Real Next.js application, Supabase Auth and persisted data. No API mocks or route interception.",
+  "mutations": "Only login/logout sessions, rate-limit/visit counters and local browser favorites; no menu edits, emails, reset or domain changes.",
+  "physicalDevices": false,
+  "physicalQrScanning": false,
+  "browsers": [
+    {
+      "name": "chrome",
+      "available": true,
+      "version": "155.0.8059.80",
+      "headless": true
+    },
+    {
+      "name": "msedge",
+      "available": true,
+      "version": "155.0.4283.45",
+      "headless": true
+    },
+    {
+      "name": "WebKit/Safari",
+      "installed": false,
+      "status": "NOT RUN",
+      "reason": "No installed WebKit executable; no browser was installed for this audit."
+    }
+  ],
+  "publicMenus": [
+    {
+      "browser": "chrome",
+      "restaurant": "aurora",
+      "device": "mobile",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "status": "PASS",
+      "errors": {
+        "pageErrors": [],
+        "consoleErrors": [],
+        "failedRequests": [],
+        "httpErrors": []
+      },
+      "productCount": 24,
+      "categoryCount": 8,
+      "images": [
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/dbffcfd0-fa1d-466f-a4b3-bd0b7f4b9ebe.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/7f4be855-ef8f-4c6c-b917-8a8f39a5f2ee.webp",
+          "complete": true,
+          "width": 512,
+          "height": 512
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/47181239-605c-4b5a-b50e-551ecdc702ef.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/47181239-605c-4b5a-b50e-551ecdc702ef.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/47181239-605c-4b5a-b50e-551ecdc702ef.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/47181239-605c-4b5a-b50e-551ecdc702ef.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/47181239-605c-4b5a-b50e-551ecdc702ef.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/47181239-605c-4b5a-b50e-551ecdc702ef.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/47181239-605c-4b5a-b50e-551ecdc702ef.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/91ac2c0b-970c-4e97-a72e-6d30bcea863f.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/91ac2c0b-970c-4e97-a72e-6d30bcea863f.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/91ac2c0b-970c-4e97-a72e-6d30bcea863f.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/91ac2c0b-970c-4e97-a72e-6d30bcea863f.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/18f7db60-fda8-4d5e-a141-6d7d9df0a216.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/18f7db60-fda8-4d5e-a141-6d7d9df0a216.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/18f7db60-fda8-4d5e-a141-6d7d9df0a216.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/18f7db60-fda8-4d5e-a141-6d7d9df0a216.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/26964c89-1e04-4e5d-878e-c2e11cab466d.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/26964c89-1e04-4e5d-878e-c2e11cab466d.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/26964c89-1e04-4e5d-878e-c2e11cab466d.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/26964c89-1e04-4e5d-878e-c2e11cab466d.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/11400c11-2393-4a0b-98f3-38ab21f768a2.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/11400c11-2393-4a0b-98f3-38ab21f768a2.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/11400c11-2393-4a0b-98f3-38ab21f768a2.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/11400c11-2393-4a0b-98f3-38ab21f768a2.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/8b821373-8efa-4b95-af3b-6a95692caa1d.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/8b821373-8efa-4b95-af3b-6a95692caa1d.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/8b821373-8efa-4b95-af3b-6a95692caa1d.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/8b821373-8efa-4b95-af3b-6a95692caa1d.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        }
+      ],
+      "dimensions": {
+        "viewport": 390,
+        "document": 390,
+        "body": 390
+      },
+      "screenshot": "artifacts/screenshots/real-aurora-mobile.png"
+    },
+    {
+      "browser": "chrome",
+      "restaurant": "aurora",
+      "device": "tablet",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "status": "PASS",
+      "errors": {
+        "pageErrors": [],
+        "consoleErrors": [],
+        "failedRequests": [],
+        "httpErrors": []
+      },
+      "productCount": 24,
+      "categoryCount": 8,
+      "images": [
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/dbffcfd0-fa1d-466f-a4b3-bd0b7f4b9ebe.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/7f4be855-ef8f-4c6c-b917-8a8f39a5f2ee.webp",
+          "complete": true,
+          "width": 512,
+          "height": 512
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/47181239-605c-4b5a-b50e-551ecdc702ef.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/47181239-605c-4b5a-b50e-551ecdc702ef.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/47181239-605c-4b5a-b50e-551ecdc702ef.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/47181239-605c-4b5a-b50e-551ecdc702ef.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/47181239-605c-4b5a-b50e-551ecdc702ef.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/47181239-605c-4b5a-b50e-551ecdc702ef.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/47181239-605c-4b5a-b50e-551ecdc702ef.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/91ac2c0b-970c-4e97-a72e-6d30bcea863f.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/91ac2c0b-970c-4e97-a72e-6d30bcea863f.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/91ac2c0b-970c-4e97-a72e-6d30bcea863f.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/91ac2c0b-970c-4e97-a72e-6d30bcea863f.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/18f7db60-fda8-4d5e-a141-6d7d9df0a216.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/18f7db60-fda8-4d5e-a141-6d7d9df0a216.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/18f7db60-fda8-4d5e-a141-6d7d9df0a216.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/18f7db60-fda8-4d5e-a141-6d7d9df0a216.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/26964c89-1e04-4e5d-878e-c2e11cab466d.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/26964c89-1e04-4e5d-878e-c2e11cab466d.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/26964c89-1e04-4e5d-878e-c2e11cab466d.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/26964c89-1e04-4e5d-878e-c2e11cab466d.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/11400c11-2393-4a0b-98f3-38ab21f768a2.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/11400c11-2393-4a0b-98f3-38ab21f768a2.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/11400c11-2393-4a0b-98f3-38ab21f768a2.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/11400c11-2393-4a0b-98f3-38ab21f768a2.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/8b821373-8efa-4b95-af3b-6a95692caa1d.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/8b821373-8efa-4b95-af3b-6a95692caa1d.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/8b821373-8efa-4b95-af3b-6a95692caa1d.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/8b821373-8efa-4b95-af3b-6a95692caa1d.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        }
+      ],
+      "dimensions": {
+        "viewport": 768,
+        "document": 768,
+        "body": 768
+      },
+      "screenshot": "artifacts/screenshots/real-aurora-tablet.png"
+    },
+    {
+      "browser": "chrome",
+      "restaurant": "aurora",
+      "device": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "status": "PASS",
+      "errors": {
+        "pageErrors": [],
+        "consoleErrors": [],
+        "failedRequests": [],
+        "httpErrors": []
+      },
+      "productCount": 24,
+      "categoryCount": 8,
+      "images": [
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/dbffcfd0-fa1d-466f-a4b3-bd0b7f4b9ebe.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/7f4be855-ef8f-4c6c-b917-8a8f39a5f2ee.webp",
+          "complete": true,
+          "width": 512,
+          "height": 512
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/47181239-605c-4b5a-b50e-551ecdc702ef.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/47181239-605c-4b5a-b50e-551ecdc702ef.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/47181239-605c-4b5a-b50e-551ecdc702ef.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/47181239-605c-4b5a-b50e-551ecdc702ef.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/47181239-605c-4b5a-b50e-551ecdc702ef.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/47181239-605c-4b5a-b50e-551ecdc702ef.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/47181239-605c-4b5a-b50e-551ecdc702ef.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/91ac2c0b-970c-4e97-a72e-6d30bcea863f.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/91ac2c0b-970c-4e97-a72e-6d30bcea863f.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/91ac2c0b-970c-4e97-a72e-6d30bcea863f.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/91ac2c0b-970c-4e97-a72e-6d30bcea863f.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/18f7db60-fda8-4d5e-a141-6d7d9df0a216.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/18f7db60-fda8-4d5e-a141-6d7d9df0a216.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/18f7db60-fda8-4d5e-a141-6d7d9df0a216.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/18f7db60-fda8-4d5e-a141-6d7d9df0a216.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/26964c89-1e04-4e5d-878e-c2e11cab466d.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/26964c89-1e04-4e5d-878e-c2e11cab466d.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/26964c89-1e04-4e5d-878e-c2e11cab466d.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/26964c89-1e04-4e5d-878e-c2e11cab466d.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/11400c11-2393-4a0b-98f3-38ab21f768a2.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/11400c11-2393-4a0b-98f3-38ab21f768a2.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/11400c11-2393-4a0b-98f3-38ab21f768a2.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/11400c11-2393-4a0b-98f3-38ab21f768a2.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/8b821373-8efa-4b95-af3b-6a95692caa1d.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/8b821373-8efa-4b95-af3b-6a95692caa1d.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/8b821373-8efa-4b95-af3b-6a95692caa1d.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/8b821373-8efa-4b95-af3b-6a95692caa1d.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        }
+      ],
+      "dimensions": {
+        "viewport": 1440,
+        "document": 1440,
+        "body": 1440
+      },
+      "screenshot": "artifacts/screenshots/real-aurora-desktop.png"
+    },
+    {
+      "browser": "chrome",
+      "restaurant": "bruma",
+      "device": "mobile",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "status": "PASS",
+      "errors": {
+        "pageErrors": [],
+        "consoleErrors": [],
+        "failedRequests": [],
+        "httpErrors": []
+      },
+      "productCount": 24,
+      "categoryCount": 8,
+      "images": [
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/ed0d2eff-bcaf-4aa7-892d-520e986ce25c.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/deef7b63-d8c9-4b6c-a54f-e5b93bd3cbc1.webp",
+          "complete": true,
+          "width": 512,
+          "height": 512
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/649e3c5e-ee76-4edf-8dbc-59fdbc3aa008.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/649e3c5e-ee76-4edf-8dbc-59fdbc3aa008.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/649e3c5e-ee76-4edf-8dbc-59fdbc3aa008.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/649e3c5e-ee76-4edf-8dbc-59fdbc3aa008.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/649e3c5e-ee76-4edf-8dbc-59fdbc3aa008.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/649e3c5e-ee76-4edf-8dbc-59fdbc3aa008.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/649e3c5e-ee76-4edf-8dbc-59fdbc3aa008.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/b96c9983-48a8-4032-bfa8-bf6fd137380d.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/b96c9983-48a8-4032-bfa8-bf6fd137380d.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/b96c9983-48a8-4032-bfa8-bf6fd137380d.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/b96c9983-48a8-4032-bfa8-bf6fd137380d.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/1a830bb4-59b5-4484-8ac9-9eb662012e6b.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/1a830bb4-59b5-4484-8ac9-9eb662012e6b.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/1a830bb4-59b5-4484-8ac9-9eb662012e6b.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/1a830bb4-59b5-4484-8ac9-9eb662012e6b.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/0cafb786-ec28-4f15-88c2-d0be1f829f94.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/0cafb786-ec28-4f15-88c2-d0be1f829f94.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/0cafb786-ec28-4f15-88c2-d0be1f829f94.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/0cafb786-ec28-4f15-88c2-d0be1f829f94.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/37896fa3-ef39-491c-8e38-26d1bf00aaff.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/37896fa3-ef39-491c-8e38-26d1bf00aaff.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/37896fa3-ef39-491c-8e38-26d1bf00aaff.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/37896fa3-ef39-491c-8e38-26d1bf00aaff.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/42a98381-4002-4e9b-8991-b28f2c4cd702.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/42a98381-4002-4e9b-8991-b28f2c4cd702.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/42a98381-4002-4e9b-8991-b28f2c4cd702.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/42a98381-4002-4e9b-8991-b28f2c4cd702.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        }
+      ],
+      "dimensions": {
+        "viewport": 390,
+        "document": 390,
+        "body": 390
+      },
+      "screenshot": "artifacts/screenshots/real-bruma-mobile.png"
+    },
+    {
+      "browser": "chrome",
+      "restaurant": "bruma",
+      "device": "tablet",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "status": "PASS",
+      "errors": {
+        "pageErrors": [],
+        "consoleErrors": [],
+        "failedRequests": [],
+        "httpErrors": []
+      },
+      "productCount": 24,
+      "categoryCount": 8,
+      "images": [
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/ed0d2eff-bcaf-4aa7-892d-520e986ce25c.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/deef7b63-d8c9-4b6c-a54f-e5b93bd3cbc1.webp",
+          "complete": true,
+          "width": 512,
+          "height": 512
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/649e3c5e-ee76-4edf-8dbc-59fdbc3aa008.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/649e3c5e-ee76-4edf-8dbc-59fdbc3aa008.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/649e3c5e-ee76-4edf-8dbc-59fdbc3aa008.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/649e3c5e-ee76-4edf-8dbc-59fdbc3aa008.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/649e3c5e-ee76-4edf-8dbc-59fdbc3aa008.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/649e3c5e-ee76-4edf-8dbc-59fdbc3aa008.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/649e3c5e-ee76-4edf-8dbc-59fdbc3aa008.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/b96c9983-48a8-4032-bfa8-bf6fd137380d.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/b96c9983-48a8-4032-bfa8-bf6fd137380d.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/b96c9983-48a8-4032-bfa8-bf6fd137380d.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/b96c9983-48a8-4032-bfa8-bf6fd137380d.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/1a830bb4-59b5-4484-8ac9-9eb662012e6b.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/1a830bb4-59b5-4484-8ac9-9eb662012e6b.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/1a830bb4-59b5-4484-8ac9-9eb662012e6b.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/1a830bb4-59b5-4484-8ac9-9eb662012e6b.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/0cafb786-ec28-4f15-88c2-d0be1f829f94.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/0cafb786-ec28-4f15-88c2-d0be1f829f94.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/0cafb786-ec28-4f15-88c2-d0be1f829f94.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/0cafb786-ec28-4f15-88c2-d0be1f829f94.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/37896fa3-ef39-491c-8e38-26d1bf00aaff.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/37896fa3-ef39-491c-8e38-26d1bf00aaff.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/37896fa3-ef39-491c-8e38-26d1bf00aaff.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/37896fa3-ef39-491c-8e38-26d1bf00aaff.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/42a98381-4002-4e9b-8991-b28f2c4cd702.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/42a98381-4002-4e9b-8991-b28f2c4cd702.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/42a98381-4002-4e9b-8991-b28f2c4cd702.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/42a98381-4002-4e9b-8991-b28f2c4cd702.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        }
+      ],
+      "dimensions": {
+        "viewport": 768,
+        "document": 768,
+        "body": 768
+      },
+      "screenshot": "artifacts/screenshots/real-bruma-tablet.png"
+    },
+    {
+      "browser": "chrome",
+      "restaurant": "bruma",
+      "device": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "status": "PASS",
+      "errors": {
+        "pageErrors": [],
+        "consoleErrors": [],
+        "failedRequests": [],
+        "httpErrors": []
+      },
+      "productCount": 24,
+      "categoryCount": 8,
+      "images": [
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/ed0d2eff-bcaf-4aa7-892d-520e986ce25c.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/deef7b63-d8c9-4b6c-a54f-e5b93bd3cbc1.webp",
+          "complete": true,
+          "width": 512,
+          "height": 512
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/649e3c5e-ee76-4edf-8dbc-59fdbc3aa008.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/649e3c5e-ee76-4edf-8dbc-59fdbc3aa008.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/649e3c5e-ee76-4edf-8dbc-59fdbc3aa008.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/649e3c5e-ee76-4edf-8dbc-59fdbc3aa008.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/649e3c5e-ee76-4edf-8dbc-59fdbc3aa008.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/649e3c5e-ee76-4edf-8dbc-59fdbc3aa008.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/649e3c5e-ee76-4edf-8dbc-59fdbc3aa008.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/b96c9983-48a8-4032-bfa8-bf6fd137380d.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/b96c9983-48a8-4032-bfa8-bf6fd137380d.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/b96c9983-48a8-4032-bfa8-bf6fd137380d.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/b96c9983-48a8-4032-bfa8-bf6fd137380d.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/1a830bb4-59b5-4484-8ac9-9eb662012e6b.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/1a830bb4-59b5-4484-8ac9-9eb662012e6b.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/1a830bb4-59b5-4484-8ac9-9eb662012e6b.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/1a830bb4-59b5-4484-8ac9-9eb662012e6b.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/0cafb786-ec28-4f15-88c2-d0be1f829f94.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/0cafb786-ec28-4f15-88c2-d0be1f829f94.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/0cafb786-ec28-4f15-88c2-d0be1f829f94.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/0cafb786-ec28-4f15-88c2-d0be1f829f94.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/37896fa3-ef39-491c-8e38-26d1bf00aaff.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/37896fa3-ef39-491c-8e38-26d1bf00aaff.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/37896fa3-ef39-491c-8e38-26d1bf00aaff.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/37896fa3-ef39-491c-8e38-26d1bf00aaff.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/42a98381-4002-4e9b-8991-b28f2c4cd702.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/42a98381-4002-4e9b-8991-b28f2c4cd702.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/42a98381-4002-4e9b-8991-b28f2c4cd702.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/42a98381-4002-4e9b-8991-b28f2c4cd702.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        }
+      ],
+      "dimensions": {
+        "viewport": 1440,
+        "document": 1440,
+        "body": 1440
+      },
+      "screenshot": "artifacts/screenshots/real-bruma-desktop.png"
+    },
+    {
+      "browser": "chrome",
+      "restaurant": "marea",
+      "device": "mobile",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "status": "PASS",
+      "errors": {
+        "pageErrors": [],
+        "consoleErrors": [],
+        "failedRequests": [],
+        "httpErrors": []
+      },
+      "productCount": 24,
+      "categoryCount": 8,
+      "images": [
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/17a67719-5bd6-4f3a-8237-311f79605d47.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/73fd4d95-22f5-44f1-af75-f623ba6f68d8.webp",
+          "complete": true,
+          "width": 512,
+          "height": 512
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/1e4c3d7f-912b-4553-8936-2091209a0386.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/1e4c3d7f-912b-4553-8936-2091209a0386.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/1e4c3d7f-912b-4553-8936-2091209a0386.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/1e4c3d7f-912b-4553-8936-2091209a0386.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/1e4c3d7f-912b-4553-8936-2091209a0386.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/1e4c3d7f-912b-4553-8936-2091209a0386.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/1e4c3d7f-912b-4553-8936-2091209a0386.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/74b98daf-726d-4c54-a057-b76f0768a92f.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/74b98daf-726d-4c54-a057-b76f0768a92f.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/74b98daf-726d-4c54-a057-b76f0768a92f.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/74b98daf-726d-4c54-a057-b76f0768a92f.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/d12bc26c-58a9-42a3-9abf-f21462585931.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/d12bc26c-58a9-42a3-9abf-f21462585931.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/d12bc26c-58a9-42a3-9abf-f21462585931.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/d12bc26c-58a9-42a3-9abf-f21462585931.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/01915e2e-e15e-4a1a-aec2-5b17903819df.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/01915e2e-e15e-4a1a-aec2-5b17903819df.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/01915e2e-e15e-4a1a-aec2-5b17903819df.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/01915e2e-e15e-4a1a-aec2-5b17903819df.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/9c3ae933-3a8e-4f19-871d-8672e5ef27f1.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/9c3ae933-3a8e-4f19-871d-8672e5ef27f1.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/9c3ae933-3a8e-4f19-871d-8672e5ef27f1.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/9c3ae933-3a8e-4f19-871d-8672e5ef27f1.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/aea33ce2-f804-4750-905d-3bf64eea4a85.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/aea33ce2-f804-4750-905d-3bf64eea4a85.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/aea33ce2-f804-4750-905d-3bf64eea4a85.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/aea33ce2-f804-4750-905d-3bf64eea4a85.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        }
+      ],
+      "dimensions": {
+        "viewport": 390,
+        "document": 390,
+        "body": 390
+      },
+      "screenshot": "artifacts/screenshots/real-marea-mobile.png"
+    },
+    {
+      "browser": "chrome",
+      "restaurant": "marea",
+      "device": "tablet",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "status": "PASS",
+      "errors": {
+        "pageErrors": [],
+        "consoleErrors": [],
+        "failedRequests": [],
+        "httpErrors": []
+      },
+      "productCount": 24,
+      "categoryCount": 8,
+      "images": [
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/17a67719-5bd6-4f3a-8237-311f79605d47.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/73fd4d95-22f5-44f1-af75-f623ba6f68d8.webp",
+          "complete": true,
+          "width": 512,
+          "height": 512
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/1e4c3d7f-912b-4553-8936-2091209a0386.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/1e4c3d7f-912b-4553-8936-2091209a0386.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/1e4c3d7f-912b-4553-8936-2091209a0386.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/1e4c3d7f-912b-4553-8936-2091209a0386.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/1e4c3d7f-912b-4553-8936-2091209a0386.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/1e4c3d7f-912b-4553-8936-2091209a0386.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/1e4c3d7f-912b-4553-8936-2091209a0386.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/74b98daf-726d-4c54-a057-b76f0768a92f.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/74b98daf-726d-4c54-a057-b76f0768a92f.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/74b98daf-726d-4c54-a057-b76f0768a92f.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/74b98daf-726d-4c54-a057-b76f0768a92f.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/d12bc26c-58a9-42a3-9abf-f21462585931.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/d12bc26c-58a9-42a3-9abf-f21462585931.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/d12bc26c-58a9-42a3-9abf-f21462585931.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/d12bc26c-58a9-42a3-9abf-f21462585931.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/01915e2e-e15e-4a1a-aec2-5b17903819df.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/01915e2e-e15e-4a1a-aec2-5b17903819df.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/01915e2e-e15e-4a1a-aec2-5b17903819df.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/01915e2e-e15e-4a1a-aec2-5b17903819df.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/9c3ae933-3a8e-4f19-871d-8672e5ef27f1.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/9c3ae933-3a8e-4f19-871d-8672e5ef27f1.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/9c3ae933-3a8e-4f19-871d-8672e5ef27f1.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/9c3ae933-3a8e-4f19-871d-8672e5ef27f1.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/aea33ce2-f804-4750-905d-3bf64eea4a85.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/aea33ce2-f804-4750-905d-3bf64eea4a85.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/aea33ce2-f804-4750-905d-3bf64eea4a85.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/aea33ce2-f804-4750-905d-3bf64eea4a85.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        }
+      ],
+      "dimensions": {
+        "viewport": 768,
+        "document": 768,
+        "body": 768
+      },
+      "screenshot": "artifacts/screenshots/real-marea-tablet.png"
+    },
+    {
+      "browser": "chrome",
+      "restaurant": "marea",
+      "device": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "status": "PASS",
+      "errors": {
+        "pageErrors": [],
+        "consoleErrors": [],
+        "failedRequests": [],
+        "httpErrors": []
+      },
+      "productCount": 24,
+      "categoryCount": 8,
+      "images": [
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/17a67719-5bd6-4f3a-8237-311f79605d47.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/73fd4d95-22f5-44f1-af75-f623ba6f68d8.webp",
+          "complete": true,
+          "width": 512,
+          "height": 512
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/1e4c3d7f-912b-4553-8936-2091209a0386.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/1e4c3d7f-912b-4553-8936-2091209a0386.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/1e4c3d7f-912b-4553-8936-2091209a0386.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/1e4c3d7f-912b-4553-8936-2091209a0386.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/1e4c3d7f-912b-4553-8936-2091209a0386.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/1e4c3d7f-912b-4553-8936-2091209a0386.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/1e4c3d7f-912b-4553-8936-2091209a0386.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/74b98daf-726d-4c54-a057-b76f0768a92f.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/74b98daf-726d-4c54-a057-b76f0768a92f.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/74b98daf-726d-4c54-a057-b76f0768a92f.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/74b98daf-726d-4c54-a057-b76f0768a92f.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/d12bc26c-58a9-42a3-9abf-f21462585931.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/d12bc26c-58a9-42a3-9abf-f21462585931.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/d12bc26c-58a9-42a3-9abf-f21462585931.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/d12bc26c-58a9-42a3-9abf-f21462585931.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/01915e2e-e15e-4a1a-aec2-5b17903819df.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/01915e2e-e15e-4a1a-aec2-5b17903819df.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/01915e2e-e15e-4a1a-aec2-5b17903819df.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/01915e2e-e15e-4a1a-aec2-5b17903819df.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/9c3ae933-3a8e-4f19-871d-8672e5ef27f1.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/9c3ae933-3a8e-4f19-871d-8672e5ef27f1.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/9c3ae933-3a8e-4f19-871d-8672e5ef27f1.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/9c3ae933-3a8e-4f19-871d-8672e5ef27f1.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/aea33ce2-f804-4750-905d-3bf64eea4a85.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/aea33ce2-f804-4750-905d-3bf64eea4a85.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/aea33ce2-f804-4750-905d-3bf64eea4a85.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/aea33ce2-f804-4750-905d-3bf64eea4a85.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        }
+      ],
+      "dimensions": {
+        "viewport": 1440,
+        "document": 1440,
+        "body": 1440
+      },
+      "screenshot": "artifacts/screenshots/real-marea-desktop.png"
+    },
+    {
+      "browser": "msedge",
+      "restaurant": "aurora",
+      "device": "mobile",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "status": "PASS",
+      "errors": {
+        "pageErrors": [],
+        "consoleErrors": [],
+        "failedRequests": [],
+        "httpErrors": []
+      },
+      "productCount": 24,
+      "categoryCount": 8,
+      "images": [
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/dbffcfd0-fa1d-466f-a4b3-bd0b7f4b9ebe.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/7f4be855-ef8f-4c6c-b917-8a8f39a5f2ee.webp",
+          "complete": true,
+          "width": 512,
+          "height": 512
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/47181239-605c-4b5a-b50e-551ecdc702ef.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/47181239-605c-4b5a-b50e-551ecdc702ef.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/47181239-605c-4b5a-b50e-551ecdc702ef.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/47181239-605c-4b5a-b50e-551ecdc702ef.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/47181239-605c-4b5a-b50e-551ecdc702ef.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/47181239-605c-4b5a-b50e-551ecdc702ef.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/47181239-605c-4b5a-b50e-551ecdc702ef.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/91ac2c0b-970c-4e97-a72e-6d30bcea863f.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/91ac2c0b-970c-4e97-a72e-6d30bcea863f.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/91ac2c0b-970c-4e97-a72e-6d30bcea863f.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/91ac2c0b-970c-4e97-a72e-6d30bcea863f.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/18f7db60-fda8-4d5e-a141-6d7d9df0a216.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/18f7db60-fda8-4d5e-a141-6d7d9df0a216.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/18f7db60-fda8-4d5e-a141-6d7d9df0a216.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/18f7db60-fda8-4d5e-a141-6d7d9df0a216.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/26964c89-1e04-4e5d-878e-c2e11cab466d.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/26964c89-1e04-4e5d-878e-c2e11cab466d.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/26964c89-1e04-4e5d-878e-c2e11cab466d.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/26964c89-1e04-4e5d-878e-c2e11cab466d.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/11400c11-2393-4a0b-98f3-38ab21f768a2.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/11400c11-2393-4a0b-98f3-38ab21f768a2.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/11400c11-2393-4a0b-98f3-38ab21f768a2.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/11400c11-2393-4a0b-98f3-38ab21f768a2.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/8b821373-8efa-4b95-af3b-6a95692caa1d.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/8b821373-8efa-4b95-af3b-6a95692caa1d.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/8b821373-8efa-4b95-af3b-6a95692caa1d.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/8b821373-8efa-4b95-af3b-6a95692caa1d.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        }
+      ],
+      "dimensions": {
+        "viewport": 390,
+        "document": 390,
+        "body": 390
+      },
+      "screenshot": "artifacts/screenshots/real-aurora-mobile-msedge.png"
+    },
+    {
+      "browser": "msedge",
+      "restaurant": "aurora",
+      "device": "tablet",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "status": "PASS",
+      "errors": {
+        "pageErrors": [],
+        "consoleErrors": [],
+        "failedRequests": [],
+        "httpErrors": []
+      },
+      "productCount": 24,
+      "categoryCount": 8,
+      "images": [
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/dbffcfd0-fa1d-466f-a4b3-bd0b7f4b9ebe.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/7f4be855-ef8f-4c6c-b917-8a8f39a5f2ee.webp",
+          "complete": true,
+          "width": 512,
+          "height": 512
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/47181239-605c-4b5a-b50e-551ecdc702ef.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/47181239-605c-4b5a-b50e-551ecdc702ef.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/47181239-605c-4b5a-b50e-551ecdc702ef.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/47181239-605c-4b5a-b50e-551ecdc702ef.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/47181239-605c-4b5a-b50e-551ecdc702ef.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/47181239-605c-4b5a-b50e-551ecdc702ef.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/47181239-605c-4b5a-b50e-551ecdc702ef.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/91ac2c0b-970c-4e97-a72e-6d30bcea863f.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/91ac2c0b-970c-4e97-a72e-6d30bcea863f.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/91ac2c0b-970c-4e97-a72e-6d30bcea863f.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/91ac2c0b-970c-4e97-a72e-6d30bcea863f.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/18f7db60-fda8-4d5e-a141-6d7d9df0a216.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/18f7db60-fda8-4d5e-a141-6d7d9df0a216.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/18f7db60-fda8-4d5e-a141-6d7d9df0a216.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/18f7db60-fda8-4d5e-a141-6d7d9df0a216.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/26964c89-1e04-4e5d-878e-c2e11cab466d.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/26964c89-1e04-4e5d-878e-c2e11cab466d.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/26964c89-1e04-4e5d-878e-c2e11cab466d.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/26964c89-1e04-4e5d-878e-c2e11cab466d.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/11400c11-2393-4a0b-98f3-38ab21f768a2.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/11400c11-2393-4a0b-98f3-38ab21f768a2.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/11400c11-2393-4a0b-98f3-38ab21f768a2.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/11400c11-2393-4a0b-98f3-38ab21f768a2.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/8b821373-8efa-4b95-af3b-6a95692caa1d.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/8b821373-8efa-4b95-af3b-6a95692caa1d.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/8b821373-8efa-4b95-af3b-6a95692caa1d.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/8b821373-8efa-4b95-af3b-6a95692caa1d.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        }
+      ],
+      "dimensions": {
+        "viewport": 768,
+        "document": 768,
+        "body": 768
+      },
+      "screenshot": "artifacts/screenshots/real-aurora-tablet-msedge.png"
+    },
+    {
+      "browser": "msedge",
+      "restaurant": "aurora",
+      "device": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "status": "PASS",
+      "errors": {
+        "pageErrors": [],
+        "consoleErrors": [],
+        "failedRequests": [],
+        "httpErrors": []
+      },
+      "productCount": 24,
+      "categoryCount": 8,
+      "images": [
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/dbffcfd0-fa1d-466f-a4b3-bd0b7f4b9ebe.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/7f4be855-ef8f-4c6c-b917-8a8f39a5f2ee.webp",
+          "complete": true,
+          "width": 512,
+          "height": 512
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/47181239-605c-4b5a-b50e-551ecdc702ef.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/47181239-605c-4b5a-b50e-551ecdc702ef.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/47181239-605c-4b5a-b50e-551ecdc702ef.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/47181239-605c-4b5a-b50e-551ecdc702ef.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/47181239-605c-4b5a-b50e-551ecdc702ef.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/47181239-605c-4b5a-b50e-551ecdc702ef.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/47181239-605c-4b5a-b50e-551ecdc702ef.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/91ac2c0b-970c-4e97-a72e-6d30bcea863f.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/91ac2c0b-970c-4e97-a72e-6d30bcea863f.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/91ac2c0b-970c-4e97-a72e-6d30bcea863f.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/91ac2c0b-970c-4e97-a72e-6d30bcea863f.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/18f7db60-fda8-4d5e-a141-6d7d9df0a216.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/18f7db60-fda8-4d5e-a141-6d7d9df0a216.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/18f7db60-fda8-4d5e-a141-6d7d9df0a216.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/18f7db60-fda8-4d5e-a141-6d7d9df0a216.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/26964c89-1e04-4e5d-878e-c2e11cab466d.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/26964c89-1e04-4e5d-878e-c2e11cab466d.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/26964c89-1e04-4e5d-878e-c2e11cab466d.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/26964c89-1e04-4e5d-878e-c2e11cab466d.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/11400c11-2393-4a0b-98f3-38ab21f768a2.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/11400c11-2393-4a0b-98f3-38ab21f768a2.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/11400c11-2393-4a0b-98f3-38ab21f768a2.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/11400c11-2393-4a0b-98f3-38ab21f768a2.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/8b821373-8efa-4b95-af3b-6a95692caa1d.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/8b821373-8efa-4b95-af3b-6a95692caa1d.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/8b821373-8efa-4b95-af3b-6a95692caa1d.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/8b821373-8efa-4b95-af3b-6a95692caa1d.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        }
+      ],
+      "dimensions": {
+        "viewport": 1440,
+        "document": 1440,
+        "body": 1440
+      },
+      "screenshot": "artifacts/screenshots/real-aurora-desktop-msedge.png"
+    },
+    {
+      "browser": "msedge",
+      "restaurant": "bruma",
+      "device": "mobile",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "status": "PASS",
+      "errors": {
+        "pageErrors": [],
+        "consoleErrors": [],
+        "failedRequests": [],
+        "httpErrors": []
+      },
+      "productCount": 24,
+      "categoryCount": 8,
+      "images": [
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/ed0d2eff-bcaf-4aa7-892d-520e986ce25c.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/deef7b63-d8c9-4b6c-a54f-e5b93bd3cbc1.webp",
+          "complete": true,
+          "width": 512,
+          "height": 512
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/649e3c5e-ee76-4edf-8dbc-59fdbc3aa008.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/649e3c5e-ee76-4edf-8dbc-59fdbc3aa008.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/649e3c5e-ee76-4edf-8dbc-59fdbc3aa008.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/649e3c5e-ee76-4edf-8dbc-59fdbc3aa008.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/649e3c5e-ee76-4edf-8dbc-59fdbc3aa008.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/649e3c5e-ee76-4edf-8dbc-59fdbc3aa008.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/649e3c5e-ee76-4edf-8dbc-59fdbc3aa008.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/b96c9983-48a8-4032-bfa8-bf6fd137380d.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/b96c9983-48a8-4032-bfa8-bf6fd137380d.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/b96c9983-48a8-4032-bfa8-bf6fd137380d.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/b96c9983-48a8-4032-bfa8-bf6fd137380d.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/1a830bb4-59b5-4484-8ac9-9eb662012e6b.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/1a830bb4-59b5-4484-8ac9-9eb662012e6b.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/1a830bb4-59b5-4484-8ac9-9eb662012e6b.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/1a830bb4-59b5-4484-8ac9-9eb662012e6b.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/0cafb786-ec28-4f15-88c2-d0be1f829f94.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/0cafb786-ec28-4f15-88c2-d0be1f829f94.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/0cafb786-ec28-4f15-88c2-d0be1f829f94.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/0cafb786-ec28-4f15-88c2-d0be1f829f94.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/37896fa3-ef39-491c-8e38-26d1bf00aaff.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/37896fa3-ef39-491c-8e38-26d1bf00aaff.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/37896fa3-ef39-491c-8e38-26d1bf00aaff.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/37896fa3-ef39-491c-8e38-26d1bf00aaff.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/42a98381-4002-4e9b-8991-b28f2c4cd702.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/42a98381-4002-4e9b-8991-b28f2c4cd702.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/42a98381-4002-4e9b-8991-b28f2c4cd702.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/42a98381-4002-4e9b-8991-b28f2c4cd702.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        }
+      ],
+      "dimensions": {
+        "viewport": 390,
+        "document": 390,
+        "body": 390
+      },
+      "screenshot": "artifacts/screenshots/real-bruma-mobile-msedge.png"
+    },
+    {
+      "browser": "msedge",
+      "restaurant": "bruma",
+      "device": "tablet",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "status": "PASS",
+      "errors": {
+        "pageErrors": [],
+        "consoleErrors": [],
+        "failedRequests": [],
+        "httpErrors": []
+      },
+      "productCount": 24,
+      "categoryCount": 8,
+      "images": [
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/ed0d2eff-bcaf-4aa7-892d-520e986ce25c.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/deef7b63-d8c9-4b6c-a54f-e5b93bd3cbc1.webp",
+          "complete": true,
+          "width": 512,
+          "height": 512
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/649e3c5e-ee76-4edf-8dbc-59fdbc3aa008.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/649e3c5e-ee76-4edf-8dbc-59fdbc3aa008.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/649e3c5e-ee76-4edf-8dbc-59fdbc3aa008.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/649e3c5e-ee76-4edf-8dbc-59fdbc3aa008.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/649e3c5e-ee76-4edf-8dbc-59fdbc3aa008.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/649e3c5e-ee76-4edf-8dbc-59fdbc3aa008.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/649e3c5e-ee76-4edf-8dbc-59fdbc3aa008.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/b96c9983-48a8-4032-bfa8-bf6fd137380d.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/b96c9983-48a8-4032-bfa8-bf6fd137380d.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/b96c9983-48a8-4032-bfa8-bf6fd137380d.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/b96c9983-48a8-4032-bfa8-bf6fd137380d.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/1a830bb4-59b5-4484-8ac9-9eb662012e6b.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/1a830bb4-59b5-4484-8ac9-9eb662012e6b.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/1a830bb4-59b5-4484-8ac9-9eb662012e6b.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/1a830bb4-59b5-4484-8ac9-9eb662012e6b.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/0cafb786-ec28-4f15-88c2-d0be1f829f94.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/0cafb786-ec28-4f15-88c2-d0be1f829f94.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/0cafb786-ec28-4f15-88c2-d0be1f829f94.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/0cafb786-ec28-4f15-88c2-d0be1f829f94.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/37896fa3-ef39-491c-8e38-26d1bf00aaff.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/37896fa3-ef39-491c-8e38-26d1bf00aaff.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/37896fa3-ef39-491c-8e38-26d1bf00aaff.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/37896fa3-ef39-491c-8e38-26d1bf00aaff.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/42a98381-4002-4e9b-8991-b28f2c4cd702.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/42a98381-4002-4e9b-8991-b28f2c4cd702.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/42a98381-4002-4e9b-8991-b28f2c4cd702.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/42a98381-4002-4e9b-8991-b28f2c4cd702.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        }
+      ],
+      "dimensions": {
+        "viewport": 768,
+        "document": 768,
+        "body": 768
+      },
+      "screenshot": "artifacts/screenshots/real-bruma-tablet-msedge.png"
+    },
+    {
+      "browser": "msedge",
+      "restaurant": "bruma",
+      "device": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "status": "PASS",
+      "errors": {
+        "pageErrors": [],
+        "consoleErrors": [],
+        "failedRequests": [],
+        "httpErrors": []
+      },
+      "productCount": 24,
+      "categoryCount": 8,
+      "images": [
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/ed0d2eff-bcaf-4aa7-892d-520e986ce25c.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/deef7b63-d8c9-4b6c-a54f-e5b93bd3cbc1.webp",
+          "complete": true,
+          "width": 512,
+          "height": 512
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/649e3c5e-ee76-4edf-8dbc-59fdbc3aa008.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/649e3c5e-ee76-4edf-8dbc-59fdbc3aa008.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/649e3c5e-ee76-4edf-8dbc-59fdbc3aa008.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/649e3c5e-ee76-4edf-8dbc-59fdbc3aa008.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/649e3c5e-ee76-4edf-8dbc-59fdbc3aa008.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/649e3c5e-ee76-4edf-8dbc-59fdbc3aa008.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/649e3c5e-ee76-4edf-8dbc-59fdbc3aa008.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/b96c9983-48a8-4032-bfa8-bf6fd137380d.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/b96c9983-48a8-4032-bfa8-bf6fd137380d.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/b96c9983-48a8-4032-bfa8-bf6fd137380d.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/b96c9983-48a8-4032-bfa8-bf6fd137380d.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/1a830bb4-59b5-4484-8ac9-9eb662012e6b.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/1a830bb4-59b5-4484-8ac9-9eb662012e6b.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/1a830bb4-59b5-4484-8ac9-9eb662012e6b.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/1a830bb4-59b5-4484-8ac9-9eb662012e6b.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/0cafb786-ec28-4f15-88c2-d0be1f829f94.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/0cafb786-ec28-4f15-88c2-d0be1f829f94.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/0cafb786-ec28-4f15-88c2-d0be1f829f94.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/0cafb786-ec28-4f15-88c2-d0be1f829f94.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/37896fa3-ef39-491c-8e38-26d1bf00aaff.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/37896fa3-ef39-491c-8e38-26d1bf00aaff.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/37896fa3-ef39-491c-8e38-26d1bf00aaff.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/37896fa3-ef39-491c-8e38-26d1bf00aaff.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/42a98381-4002-4e9b-8991-b28f2c4cd702.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/42a98381-4002-4e9b-8991-b28f2c4cd702.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/42a98381-4002-4e9b-8991-b28f2c4cd702.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/42a98381-4002-4e9b-8991-b28f2c4cd702.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        }
+      ],
+      "dimensions": {
+        "viewport": 1440,
+        "document": 1440,
+        "body": 1440
+      },
+      "screenshot": "artifacts/screenshots/real-bruma-desktop-msedge.png"
+    },
+    {
+      "browser": "msedge",
+      "restaurant": "marea",
+      "device": "mobile",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "status": "PASS",
+      "errors": {
+        "pageErrors": [],
+        "consoleErrors": [],
+        "failedRequests": [],
+        "httpErrors": []
+      },
+      "productCount": 24,
+      "categoryCount": 8,
+      "images": [
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/17a67719-5bd6-4f3a-8237-311f79605d47.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/73fd4d95-22f5-44f1-af75-f623ba6f68d8.webp",
+          "complete": true,
+          "width": 512,
+          "height": 512
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/1e4c3d7f-912b-4553-8936-2091209a0386.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/1e4c3d7f-912b-4553-8936-2091209a0386.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/1e4c3d7f-912b-4553-8936-2091209a0386.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/1e4c3d7f-912b-4553-8936-2091209a0386.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/1e4c3d7f-912b-4553-8936-2091209a0386.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/1e4c3d7f-912b-4553-8936-2091209a0386.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/1e4c3d7f-912b-4553-8936-2091209a0386.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/74b98daf-726d-4c54-a057-b76f0768a92f.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/74b98daf-726d-4c54-a057-b76f0768a92f.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/74b98daf-726d-4c54-a057-b76f0768a92f.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/74b98daf-726d-4c54-a057-b76f0768a92f.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/d12bc26c-58a9-42a3-9abf-f21462585931.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/d12bc26c-58a9-42a3-9abf-f21462585931.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/d12bc26c-58a9-42a3-9abf-f21462585931.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/d12bc26c-58a9-42a3-9abf-f21462585931.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/01915e2e-e15e-4a1a-aec2-5b17903819df.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/01915e2e-e15e-4a1a-aec2-5b17903819df.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/01915e2e-e15e-4a1a-aec2-5b17903819df.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/01915e2e-e15e-4a1a-aec2-5b17903819df.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/9c3ae933-3a8e-4f19-871d-8672e5ef27f1.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/9c3ae933-3a8e-4f19-871d-8672e5ef27f1.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/9c3ae933-3a8e-4f19-871d-8672e5ef27f1.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/9c3ae933-3a8e-4f19-871d-8672e5ef27f1.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/aea33ce2-f804-4750-905d-3bf64eea4a85.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/aea33ce2-f804-4750-905d-3bf64eea4a85.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/aea33ce2-f804-4750-905d-3bf64eea4a85.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/aea33ce2-f804-4750-905d-3bf64eea4a85.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        }
+      ],
+      "dimensions": {
+        "viewport": 390,
+        "document": 390,
+        "body": 390
+      },
+      "screenshot": "artifacts/screenshots/real-marea-mobile-msedge.png"
+    },
+    {
+      "browser": "msedge",
+      "restaurant": "marea",
+      "device": "tablet",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "status": "PASS",
+      "errors": {
+        "pageErrors": [],
+        "consoleErrors": [],
+        "failedRequests": [],
+        "httpErrors": []
+      },
+      "productCount": 24,
+      "categoryCount": 8,
+      "images": [
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/17a67719-5bd6-4f3a-8237-311f79605d47.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/73fd4d95-22f5-44f1-af75-f623ba6f68d8.webp",
+          "complete": true,
+          "width": 512,
+          "height": 512
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/1e4c3d7f-912b-4553-8936-2091209a0386.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/1e4c3d7f-912b-4553-8936-2091209a0386.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/1e4c3d7f-912b-4553-8936-2091209a0386.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/1e4c3d7f-912b-4553-8936-2091209a0386.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/1e4c3d7f-912b-4553-8936-2091209a0386.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/1e4c3d7f-912b-4553-8936-2091209a0386.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/1e4c3d7f-912b-4553-8936-2091209a0386.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/74b98daf-726d-4c54-a057-b76f0768a92f.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/74b98daf-726d-4c54-a057-b76f0768a92f.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/74b98daf-726d-4c54-a057-b76f0768a92f.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/74b98daf-726d-4c54-a057-b76f0768a92f.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/d12bc26c-58a9-42a3-9abf-f21462585931.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/d12bc26c-58a9-42a3-9abf-f21462585931.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/d12bc26c-58a9-42a3-9abf-f21462585931.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/d12bc26c-58a9-42a3-9abf-f21462585931.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/01915e2e-e15e-4a1a-aec2-5b17903819df.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/01915e2e-e15e-4a1a-aec2-5b17903819df.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/01915e2e-e15e-4a1a-aec2-5b17903819df.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/01915e2e-e15e-4a1a-aec2-5b17903819df.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/9c3ae933-3a8e-4f19-871d-8672e5ef27f1.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/9c3ae933-3a8e-4f19-871d-8672e5ef27f1.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/9c3ae933-3a8e-4f19-871d-8672e5ef27f1.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/9c3ae933-3a8e-4f19-871d-8672e5ef27f1.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/aea33ce2-f804-4750-905d-3bf64eea4a85.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/aea33ce2-f804-4750-905d-3bf64eea4a85.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/aea33ce2-f804-4750-905d-3bf64eea4a85.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/aea33ce2-f804-4750-905d-3bf64eea4a85.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        }
+      ],
+      "dimensions": {
+        "viewport": 768,
+        "document": 768,
+        "body": 768
+      },
+      "screenshot": "artifacts/screenshots/real-marea-tablet-msedge.png"
+    },
+    {
+      "browser": "msedge",
+      "restaurant": "marea",
+      "device": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "status": "PASS",
+      "errors": {
+        "pageErrors": [],
+        "consoleErrors": [],
+        "failedRequests": [],
+        "httpErrors": []
+      },
+      "productCount": 24,
+      "categoryCount": 8,
+      "images": [
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/17a67719-5bd6-4f3a-8237-311f79605d47.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/73fd4d95-22f5-44f1-af75-f623ba6f68d8.webp",
+          "complete": true,
+          "width": 512,
+          "height": 512
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/1e4c3d7f-912b-4553-8936-2091209a0386.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/1e4c3d7f-912b-4553-8936-2091209a0386.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/1e4c3d7f-912b-4553-8936-2091209a0386.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/1e4c3d7f-912b-4553-8936-2091209a0386.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/1e4c3d7f-912b-4553-8936-2091209a0386.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/1e4c3d7f-912b-4553-8936-2091209a0386.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/1e4c3d7f-912b-4553-8936-2091209a0386.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/74b98daf-726d-4c54-a057-b76f0768a92f.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/74b98daf-726d-4c54-a057-b76f0768a92f.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/74b98daf-726d-4c54-a057-b76f0768a92f.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/74b98daf-726d-4c54-a057-b76f0768a92f.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/d12bc26c-58a9-42a3-9abf-f21462585931.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/d12bc26c-58a9-42a3-9abf-f21462585931.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/d12bc26c-58a9-42a3-9abf-f21462585931.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/d12bc26c-58a9-42a3-9abf-f21462585931.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/01915e2e-e15e-4a1a-aec2-5b17903819df.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/01915e2e-e15e-4a1a-aec2-5b17903819df.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/01915e2e-e15e-4a1a-aec2-5b17903819df.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/01915e2e-e15e-4a1a-aec2-5b17903819df.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/9c3ae933-3a8e-4f19-871d-8672e5ef27f1.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/9c3ae933-3a8e-4f19-871d-8672e5ef27f1.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/9c3ae933-3a8e-4f19-871d-8672e5ef27f1.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/9c3ae933-3a8e-4f19-871d-8672e5ef27f1.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/aea33ce2-f804-4750-905d-3bf64eea4a85.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/aea33ce2-f804-4750-905d-3bf64eea4a85.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/aea33ce2-f804-4750-905d-3bf64eea4a85.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/aea33ce2-f804-4750-905d-3bf64eea4a85.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        }
+      ],
+      "dimensions": {
+        "viewport": 1440,
+        "document": 1440,
+        "body": 1440
+      },
+      "screenshot": "artifacts/screenshots/real-marea-desktop-msedge.png"
+    }
+  ],
+  "owners": [],
+  "results": [
+    {
+      "scope": "chrome/aurora/mobile/public",
+      "name": "Real anonymous API and UI show the correct restaurant and 24 products",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/aurora/mobile/public",
+      "name": "All menu images load from actual media routes",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/aurora/mobile/public",
+      "name": "No page-level horizontal overflow",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/aurora/tablet/public",
+      "name": "Real anonymous API and UI show the correct restaurant and 24 products",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/aurora/tablet/public",
+      "name": "All menu images load from actual media routes",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/aurora/tablet/public",
+      "name": "No page-level horizontal overflow",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/aurora/desktop/public",
+      "name": "Real anonymous API and UI show the correct restaurant and 24 products",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/aurora/desktop/public",
+      "name": "All menu images load from actual media routes",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/aurora/desktop/public",
+      "name": "No page-level horizontal overflow",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/bruma/mobile/public",
+      "name": "Real anonymous API and UI show the correct restaurant and 24 products",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/bruma/mobile/public",
+      "name": "All menu images load from actual media routes",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/bruma/mobile/public",
+      "name": "No page-level horizontal overflow",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/bruma/tablet/public",
+      "name": "Real anonymous API and UI show the correct restaurant and 24 products",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/bruma/tablet/public",
+      "name": "All menu images load from actual media routes",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/bruma/tablet/public",
+      "name": "No page-level horizontal overflow",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/bruma/desktop/public",
+      "name": "Real anonymous API and UI show the correct restaurant and 24 products",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/bruma/desktop/public",
+      "name": "All menu images load from actual media routes",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/bruma/desktop/public",
+      "name": "No page-level horizontal overflow",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/marea/mobile/public",
+      "name": "Real anonymous API and UI show the correct restaurant and 24 products",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/marea/mobile/public",
+      "name": "All menu images load from actual media routes",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/marea/mobile/public",
+      "name": "No page-level horizontal overflow",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/marea/tablet/public",
+      "name": "Real anonymous API and UI show the correct restaurant and 24 products",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/marea/tablet/public",
+      "name": "All menu images load from actual media routes",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/marea/tablet/public",
+      "name": "No page-level horizontal overflow",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/marea/desktop/public",
+      "name": "Real anonymous API and UI show the correct restaurant and 24 products",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/marea/desktop/public",
+      "name": "All menu images load from actual media routes",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/marea/desktop/public",
+      "name": "No page-level horizontal overflow",
+      "status": "PASS"
+    },
+    {
+      "scope": "msedge/aurora/mobile/public",
+      "name": "Real anonymous API and UI show the correct restaurant and 24 products",
+      "status": "PASS"
+    },
+    {
+      "scope": "msedge/aurora/mobile/public",
+      "name": "All menu images load from actual media routes",
+      "status": "PASS"
+    },
+    {
+      "scope": "msedge/aurora/mobile/public",
+      "name": "No page-level horizontal overflow",
+      "status": "PASS"
+    },
+    {
+      "scope": "msedge/aurora/tablet/public",
+      "name": "Real anonymous API and UI show the correct restaurant and 24 products",
+      "status": "PASS"
+    },
+    {
+      "scope": "msedge/aurora/tablet/public",
+      "name": "All menu images load from actual media routes",
+      "status": "PASS"
+    },
+    {
+      "scope": "msedge/aurora/tablet/public",
+      "name": "No page-level horizontal overflow",
+      "status": "PASS"
+    },
+    {
+      "scope": "msedge/aurora/desktop/public",
+      "name": "Real anonymous API and UI show the correct restaurant and 24 products",
+      "status": "PASS"
+    },
+    {
+      "scope": "msedge/aurora/desktop/public",
+      "name": "All menu images load from actual media routes",
+      "status": "PASS"
+    },
+    {
+      "scope": "msedge/aurora/desktop/public",
+      "name": "No page-level horizontal overflow",
+      "status": "PASS"
+    },
+    {
+      "scope": "msedge/bruma/mobile/public",
+      "name": "Real anonymous API and UI show the correct restaurant and 24 products",
+      "status": "PASS"
+    },
+    {
+      "scope": "msedge/bruma/mobile/public",
+      "name": "All menu images load from actual media routes",
+      "status": "PASS"
+    },
+    {
+      "scope": "msedge/bruma/mobile/public",
+      "name": "No page-level horizontal overflow",
+      "status": "PASS"
+    },
+    {
+      "scope": "msedge/bruma/tablet/public",
+      "name": "Real anonymous API and UI show the correct restaurant and 24 products",
+      "status": "PASS"
+    },
+    {
+      "scope": "msedge/bruma/tablet/public",
+      "name": "All menu images load from actual media routes",
+      "status": "PASS"
+    },
+    {
+      "scope": "msedge/bruma/tablet/public",
+      "name": "No page-level horizontal overflow",
+      "status": "PASS"
+    },
+    {
+      "scope": "msedge/bruma/desktop/public",
+      "name": "Real anonymous API and UI show the correct restaurant and 24 products",
+      "status": "PASS"
+    },
+    {
+      "scope": "msedge/bruma/desktop/public",
+      "name": "All menu images load from actual media routes",
+      "status": "PASS"
+    },
+    {
+      "scope": "msedge/bruma/desktop/public",
+      "name": "No page-level horizontal overflow",
+      "status": "PASS"
+    },
+    {
+      "scope": "msedge/marea/mobile/public",
+      "name": "Real anonymous API and UI show the correct restaurant and 24 products",
+      "status": "PASS"
+    },
+    {
+      "scope": "msedge/marea/mobile/public",
+      "name": "All menu images load from actual media routes",
+      "status": "PASS"
+    },
+    {
+      "scope": "msedge/marea/mobile/public",
+      "name": "No page-level horizontal overflow",
+      "status": "PASS"
+    },
+    {
+      "scope": "msedge/marea/tablet/public",
+      "name": "Real anonymous API and UI show the correct restaurant and 24 products",
+      "status": "PASS"
+    },
+    {
+      "scope": "msedge/marea/tablet/public",
+      "name": "All menu images load from actual media routes",
+      "status": "PASS"
+    },
+    {
+      "scope": "msedge/marea/tablet/public",
+      "name": "No page-level horizontal overflow",
+      "status": "PASS"
+    },
+    {
+      "scope": "msedge/marea/desktop/public",
+      "name": "Real anonymous API and UI show the correct restaurant and 24 products",
+      "status": "PASS"
+    },
+    {
+      "scope": "msedge/marea/desktop/public",
+      "name": "All menu images load from actual media routes",
+      "status": "PASS"
+    },
+    {
+      "scope": "msedge/marea/desktop/public",
+      "name": "No page-level horizontal overflow",
+      "status": "PASS"
+    }
+  ],
+  "updatedAt": "2026-10-17T18:03:47.610Z",
+  "counts": {
+    "passed": 54,
+    "failed": 0
+  },
+  "completedAt": "2026-10-17T18:03:47.610Z"
+}

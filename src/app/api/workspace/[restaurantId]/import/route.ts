@@ -12,9 +12,46 @@ import {
 import { parseProductsCsv, exportCsv } from "@/lib/csv";
 import { allRows } from "@/lib/queries";
 type Params = { params: Promise<{ restaurantId: string }> };
-export async function GET(_request: Request, { params }: Params) {
+export async function GET(request: Request, { params }: Params) {
   return route(async () => {
-    await context((await params).restaurantId);
+    const c = await context((await params).restaurantId);
+    const download = z
+      .enum(["template", "catalog"])
+      .parse(new URL(request.url).searchParams.get("download") || "template");
+    if (download === "catalog") {
+      await rateLimit(`csv-export:${c.user.id}`, 12, 60);
+      const [products, categories] = await Promise.all([
+        allRows(
+          c.db,
+          "products",
+          c.restaurantId,
+          "name,price,category_id,description,sku",
+        ),
+        allRows(c.db, "categories", c.restaurantId, "id,name"),
+      ]);
+      const names = new Map(categories.data.map((row) => [row.id, row.name]));
+      const rows = products.data.map((product) => ({
+        nombre: product.name,
+        precio: product.price,
+        categoria: names.get(product.category_id) ?? "",
+        descripcion: product.description,
+        sku: product.sku,
+      }));
+      return new Response(
+        rows.length
+          ? exportCsv(rows)
+          : "\uFEFFnombre,precio,categoria,descripcion,sku\r\n",
+        {
+          headers: {
+            "Content-Type": "text/csv; charset=utf-8",
+            "Content-Disposition":
+              'attachment; filename="catalogo-productos.csv"',
+            "Cache-Control": "private, no-store",
+            "X-Content-Type-Options": "nosniff",
+          },
+        },
+      );
+    }
     return new Response(
       exportCsv([
         {

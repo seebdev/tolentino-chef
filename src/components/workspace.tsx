@@ -1,5 +1,11 @@
 "use client";
-import { useCallback, useEffect, useState, type FormEvent } from "react";
+import {
+  useCallback,
+  useEffect,
+  useState,
+  useRef,
+  type FormEvent,
+} from "react";
 import {
   LayoutDashboard,
   UtensilsCrossed,
@@ -174,6 +180,7 @@ export function Workspace({
   const [message, setMessage] = useState("");
   const [loading, setLoading] = useState(true);
   const [busy, setBusy] = useState(false);
+  const mutationInFlight = useRef(false);
   const [q, setQ] = useState("");
   const [category, setCategory] = useState("");
   const [page, setPage] = useState(1);
@@ -242,6 +249,8 @@ export function Workspace({
     return () => clearTimeout(t);
   }, [load]);
   const mutate: Mutate = async (action, payload) => {
+    if (mutationInFlight.current) return false;
+    mutationInFlight.current = true;
     setBusy(true);
     setError("");
     try {
@@ -256,6 +265,7 @@ export function Workspace({
       setError((e as Error).message);
       return false;
     } finally {
+      mutationInFlight.current = false;
       setBusy(false);
     }
   };
@@ -264,6 +274,8 @@ export function Workspace({
     if (await mutate("save_" + editor.type, payload)) setEditor(null);
   }
   async function adminAction(action: string, payload: Record<string, unknown>) {
+    if (mutationInFlight.current) return;
+    mutationInFlight.current = true;
     setBusy(true);
     try {
       const res = await post<{ message?: string }>("/api/admin/restaurants", {
@@ -276,6 +288,7 @@ export function Workspace({
     } catch (e) {
       setError((e as Error).message);
     } finally {
+      mutationInFlight.current = false;
       setBusy(false);
     }
   }
@@ -858,6 +871,7 @@ export function Workspace({
                   : "Nueva promoción"
           }
           onClose={() => setEditor(null)}
+          preventClose={busy}
         >
           {error && <Notice error message={error} />}
           <EntityEditor
@@ -932,7 +946,16 @@ function EntityEditor({
   const [image, setImage] = useState(p?.image_path || "");
   const [uploading, setUploading] = useState(false);
   const [uploadError, setUploadError] = useState("");
+  const [validationError, setValidationError] = useState("");
+  const submitting = useRef(false);
+  const uploadInFlight = useRef(false);
   async function upload(file: File) {
+    if (uploadInFlight.current || submitting.current) return;
+    if (file.size > 5 * 1024 * 1024) {
+      setUploadError("La imagen supera el límite de 5 MB.");
+      return;
+    }
+    uploadInFlight.current = true;
     setUploading(true);
     setUploadError("");
     try {
@@ -946,11 +969,15 @@ function EntityEditor({
     } catch (e) {
       setUploadError((e as Error).message);
     } finally {
+      uploadInFlight.current = false;
       setUploading(false);
     }
   }
   async function submit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    if (busy || submitting.current || uploadInFlight.current) return;
+    if (!e.currentTarget.reportValidity()) return;
+    setValidationError("");
     const f = new FormData(e.currentTarget);
     const raw = Object.fromEntries(f);
     const payload: Record<string, unknown> = { ...raw, id: editor.value?.id };
@@ -967,8 +994,8 @@ function EntityEditor({
         is_published: f.has("is_published"),
         is_available: f.has("is_available"),
         is_featured: f.has("is_featured"),
-        variants: parseOptions(String(raw.variants)),
-        extras: parseOptions(String(raw.extras)),
+        variants: [],
+        extras: [],
       });
     } else if (editor.type === "category") {
       Object.assign(payload, {
@@ -986,295 +1013,341 @@ function EntityEditor({
           ? new Date(String(raw.ends_at)).toISOString()
           : null,
       });
-    await onSave(payload);
+    try {
+      if (editor.type === "product") {
+        payload.variants = parseOptions(String(raw.variants), "Presentaciones");
+        payload.extras = parseOptions(String(raw.extras), "Extras");
+      }
+      if (
+        editor.type === "promotion" &&
+        payload.starts_at &&
+        payload.ends_at &&
+        Date.parse(String(payload.ends_at)) <=
+          Date.parse(String(payload.starts_at))
+      )
+        throw new Error("El fin de la promoción debe ser posterior al inicio.");
+      submitting.current = true;
+      await onSave(payload);
+    } catch (error) {
+      setValidationError((error as Error).message);
+    } finally {
+      submitting.current = false;
+    }
   }
-  function parseOptions(value: string) {
+  function parseOptions(value: string, label: string) {
     return value
       .split("\n")
       .filter((l) => l.trim())
-      .map((l) => {
-        const parts = l.split("|");
-        return { name: parts[0].trim(), price: Number(parts[1] || 0) };
+      .map((line, index) => {
+        const parts = line.split("|");
+        const name = parts[0]?.trim();
+        const priceText = parts[1]?.trim();
+        const price = Number(priceText);
+        if (
+          parts.length !== 2 ||
+          !name ||
+          !priceText ||
+          !Number.isFinite(price) ||
+          price < 0
+        )
+          throw new Error(
+            label +
+              ", línea " +
+              (index + 1) +
+              ": usa nombre | precio, con un precio numérico mayor o igual a cero.",
+          );
+        return { name, price };
       });
   }
   return (
     <form className="form-stack" onSubmit={submit}>
-      {editor.type === "product" ? (
-        <>
-          <div className="product-editor-top">
-            <div className="upload-box">
-              {image ? (
-                <img
-                  src={mediaUrl(data.restaurant.id, image)}
-                  alt="Imagen del producto"
-                />
-              ) : (
-                <ImagePlus size={32} />
-              )}
-              <label className="button secondary small">
-                {uploading
-                  ? "Subiendo…"
-                  : image
-                    ? "Cambiar foto"
-                    : "Añadir fotografía"}
-                <input
-                  type="file"
-                  accept="image/jpeg,image/png,image/webp"
-                  disabled={uploading}
-                  onChange={(e) =>
-                    e.target.files?.[0] && upload(e.target.files[0])
-                  }
-                />
-              </label>
-              <small>JPG, PNG o WebP · hasta 5 MB</small>
-              {image && (
-                <button
-                  className="text-button danger-text"
-                  type="button"
-                  onClick={() => setImage("")}
-                >
-                  Quitar imagen
-                </button>
-              )}
+      {validationError && <Notice error message={validationError} />}
+      <fieldset className="form-stack form-fields" disabled={busy}>
+        {editor.type === "product" ? (
+          <>
+            <div className="product-editor-top">
+              <div className="upload-box">
+                {image ? (
+                  <img
+                    src={mediaUrl(data.restaurant.id, image)}
+                    alt="Imagen del producto"
+                  />
+                ) : (
+                  <ImagePlus size={32} />
+                )}
+                <label className="button secondary small">
+                  {uploading
+                    ? "Subiendo…"
+                    : image
+                      ? "Cambiar foto"
+                      : "Añadir fotografía"}
+                  <input
+                    type="file"
+                    accept="image/jpeg,image/png,image/webp"
+                    disabled={uploading || busy}
+                    onChange={(e) => {
+                      const file = e.target.files?.[0];
+                      e.target.value = "";
+                      if (file) void upload(file);
+                    }}
+                  />
+                </label>
+                <small>JPG, PNG o WebP · hasta 5 MB</small>
+                {image && (
+                  <button
+                    className="text-button danger-text"
+                    type="button"
+                    onClick={() => setImage("")}
+                  >
+                    Quitar imagen
+                  </button>
+                )}
+              </div>
+              <div className="form-stack">
+                <Field label="Nombre del producto">
+                  <input
+                    name="name"
+                    required
+                    maxLength={160}
+                    defaultValue={p?.name || ""}
+                    aria-label="Nombre del producto"
+                  />
+                </Field>
+                <Field label="Categoría">
+                  <select
+                    name="category_id"
+                    required
+                    defaultValue={p?.category_id || ""}
+                    aria-label="Categoría"
+                  >
+                    <option value="">Seleccionar categoría</option>
+                    {data.categories.map((x) => (
+                      <option value={x.id} key={x.id}>
+                        {x.name}
+                      </option>
+                    ))}
+                  </select>
+                </Field>
+                <div className="form-grid">
+                  <Field label={"Precio (" + data.restaurant.currency + ")"}>
+                    <input
+                      name="price"
+                      type="number"
+                      min="0"
+                      step=".01"
+                      required
+                      defaultValue={p?.price ?? ""}
+                      aria-label="Precio"
+                    />
+                  </Field>
+                  <Field label="Código / SKU">
+                    <input
+                      name="sku"
+                      defaultValue={p?.sku || ""}
+                      maxLength={80}
+                      aria-label="Código SKU"
+                    />
+                  </Field>
+                </div>
+              </div>
             </div>
-            <div className="form-stack">
-              <Field label="Nombre del producto">
-                <input
-                  name="name"
-                  required
-                  maxLength={160}
-                  defaultValue={p?.name || ""}
-                  aria-label="Nombre del producto"
+            {uploadError && <Notice error message={uploadError} />}
+            <Field label="Descripción">
+              <textarea
+                name="description"
+                rows={3}
+                defaultValue={p?.description || ""}
+                maxLength={4000}
+                aria-label="Descripción"
+              />
+            </Field>
+            <div className="form-grid">
+              <Field label="Ingredientes">
+                <textarea
+                  name="ingredients"
+                  rows={2}
+                  defaultValue={p?.ingredients || ""}
+                  aria-label="Ingredientes"
                 />
               </Field>
-              <Field label="Categoría">
-                <select
-                  name="category_id"
-                  required
-                  defaultValue={p?.category_id || ""}
-                  aria-label="Categoría"
-                >
-                  <option value="">Seleccionar categoría</option>
-                  {data.categories.map((x) => (
+              <Field
+                label="Etiquetas"
+                hint="Separadas por comas; por ejemplo, vegetariano, picante."
+              >
+                <input
+                  name="tags"
+                  defaultValue={p?.tags?.join(", ") || ""}
+                  aria-label="Etiquetas"
+                />
+              </Field>
+            </div>
+            <div className="form-grid">
+              <Field
+                label="Presentaciones / variantes"
+                hint="Una por línea: nombre | precio. Ejemplo: Grande | 25000"
+              >
+                <textarea
+                  name="variants"
+                  rows={3}
+                  defaultValue={
+                    p?.variants
+                      ?.map((o) => o.name + " | " + o.price)
+                      .join("\n") || ""
+                  }
+                  aria-label="Presentaciones y precios"
+                />
+              </Field>
+              <Field
+                label="Extras"
+                hint="Uno por línea: nombre | precio adicional."
+              >
+                <textarea
+                  name="extras"
+                  rows={3}
+                  defaultValue={
+                    p?.extras
+                      ?.map((o) => o.name + " | " + o.price)
+                      .join("\n") || ""
+                  }
+                  aria-label="Extras y precios"
+                />
+              </Field>
+            </div>
+            <Field label="Orden en el menú">
+              <input
+                className="input-short"
+                name="sort_order"
+                type="number"
+                min={0}
+                step={1}
+                defaultValue={p?.sort_order || 0}
+                aria-label="Orden en el menú"
+              />
+            </Field>
+            <div className="checks-row">
+              <Checkbox
+                name="is_published"
+                label="Publicado"
+                defaultChecked={p?.is_published ?? true}
+              />
+              <Checkbox
+                name="is_available"
+                label="Disponible"
+                defaultChecked={p?.is_available ?? true}
+              />
+              <Checkbox
+                name="is_featured"
+                label="Destacado"
+                defaultChecked={p?.is_featured ?? false}
+              />
+            </div>
+          </>
+        ) : editor.type === "category" ? (
+          <>
+            <Field label="Nombre de la categoría">
+              <input
+                name="name"
+                required
+                maxLength={120}
+                defaultValue={c?.name || ""}
+                aria-label="Nombre de la categoría"
+              />
+            </Field>
+            <Field label="Categoría principal">
+              <select
+                name="parent_id"
+                defaultValue={c?.parent_id || ""}
+                aria-label="Categoría principal"
+              >
+                <option value="">Ninguna · categoría principal</option>
+                {data.categories
+                  .filter((x) => x.id !== c?.id && !x.parent_id)
+                  .map((x) => (
                     <option value={x.id} key={x.id}>
                       {x.name}
                     </option>
                   ))}
-                </select>
+              </select>
+            </Field>
+            <Field label="Orden">
+              <input
+                type="number"
+                name="sort_order"
+                min={0}
+                step={1}
+                defaultValue={c?.sort_order || 0}
+                aria-label="Orden"
+              />
+            </Field>
+            <Checkbox
+              name="is_visible"
+              label="Visible en el menú"
+              defaultChecked={c?.is_visible ?? true}
+            />
+          </>
+        ) : (
+          <>
+            <Field label="Título">
+              <input
+                name="title"
+                required
+                defaultValue={promo?.title || ""}
+                maxLength={160}
+                aria-label="Título"
+              />
+            </Field>
+            <Field label="Descripción">
+              <textarea
+                name="description"
+                rows={3}
+                defaultValue={promo?.description || ""}
+                aria-label="Descripción"
+              />
+            </Field>
+            <div className="form-grid">
+              <Field label="Inicio (opcional)">
+                <input
+                  type="datetime-local"
+                  name="starts_at"
+                  defaultValue={localDateTime(promo?.starts_at)}
+                  aria-label="Inicio de promoción"
+                />
               </Field>
-              <div className="form-grid">
-                <Field label={"Precio (" + data.restaurant.currency + ")"}>
-                  <input
-                    name="price"
-                    type="number"
-                    min="0"
-                    step=".01"
-                    required
-                    defaultValue={p?.price ?? ""}
-                    aria-label="Precio"
-                  />
-                </Field>
-                <Field label="Código / SKU">
-                  <input
-                    name="sku"
-                    defaultValue={p?.sku || ""}
-                    maxLength={80}
-                    aria-label="Código SKU"
-                  />
-                </Field>
-              </div>
+              <Field label="Fin (opcional)">
+                <input
+                  type="datetime-local"
+                  name="ends_at"
+                  defaultValue={localDateTime(promo?.ends_at)}
+                  aria-label="Fin de promoción"
+                />
+              </Field>
             </div>
-          </div>
-          {uploadError && <Notice error message={uploadError} />}
-          <Field label="Descripción">
-            <textarea
-              name="description"
-              rows={3}
-              defaultValue={p?.description || ""}
-              maxLength={4000}
-              aria-label="Descripción"
-            />
-          </Field>
-          <div className="form-grid">
-            <Field label="Ingredientes">
-              <textarea
-                name="ingredients"
-                rows={2}
-                defaultValue={p?.ingredients || ""}
-                aria-label="Ingredientes"
-              />
-            </Field>
-            <Field
-              label="Etiquetas"
-              hint="Separadas por comas; por ejemplo, vegetariano, picante."
-            >
-              <input
-                name="tags"
-                defaultValue={p?.tags?.join(", ") || ""}
-                aria-label="Etiquetas"
-              />
-            </Field>
-          </div>
-          <div className="form-grid">
-            <Field
-              label="Presentaciones / variantes"
-              hint="Una por línea: nombre | precio. Ejemplo: Grande | 25000"
-            >
-              <textarea
-                name="variants"
-                rows={3}
-                defaultValue={
-                  p?.variants
-                    ?.map((o) => o.name + " | " + o.price)
-                    .join("\n") || ""
-                }
-                aria-label="Presentaciones y precios"
-              />
-            </Field>
-            <Field
-              label="Extras"
-              hint="Uno por línea: nombre | precio adicional."
-            >
-              <textarea
-                name="extras"
-                rows={3}
-                defaultValue={
-                  p?.extras?.map((o) => o.name + " | " + o.price).join("\n") ||
-                  ""
-                }
-                aria-label="Extras y precios"
-              />
-            </Field>
-          </div>
-          <Field label="Orden en el menú">
-            <input
-              className="input-short"
-              name="sort_order"
-              type="number"
-              min={0}
-              step={1}
-              defaultValue={p?.sort_order || 0}
-              aria-label="Orden en el menú"
-            />
-          </Field>
-          <div className="checks-row">
             <Checkbox
-              name="is_published"
-              label="Publicado"
-              defaultChecked={p?.is_published ?? true}
+              label="Promoción activada"
+              name="is_active"
+              defaultChecked={promo?.is_active ?? true}
             />
-            <Checkbox
-              name="is_available"
-              label="Disponible"
-              defaultChecked={p?.is_available ?? true}
-            />
-            <Checkbox
-              name="is_featured"
-              label="Destacado"
-              defaultChecked={p?.is_featured ?? false}
-            />
-          </div>
-        </>
-      ) : editor.type === "category" ? (
-        <>
-          <Field label="Nombre de la categoría">
-            <input
-              name="name"
-              required
-              maxLength={120}
-              defaultValue={c?.name || ""}
-              aria-label="Nombre de la categoría"
-            />
-          </Field>
-          <Field label="Categoría principal">
-            <select
-              name="parent_id"
-              defaultValue={c?.parent_id || ""}
-              aria-label="Categoría principal"
-            >
-              <option value="">Ninguna · categoría principal</option>
-              {data.categories
-                .filter((x) => x.id !== c?.id && !x.parent_id)
-                .map((x) => (
-                  <option value={x.id} key={x.id}>
-                    {x.name}
-                  </option>
-                ))}
-            </select>
-          </Field>
-          <Field label="Orden">
-            <input
-              type="number"
-              name="sort_order"
-              min={0}
-              step={1}
-              defaultValue={c?.sort_order || 0}
-              aria-label="Orden"
-            />
-          </Field>
-          <Checkbox
-            name="is_visible"
-            label="Visible en el menú"
-            defaultChecked={c?.is_visible ?? true}
-          />
-        </>
-      ) : (
-        <>
-          <Field label="Título">
-            <input
-              name="title"
-              required
-              defaultValue={promo?.title || ""}
-              maxLength={160}
-              aria-label="Título"
-            />
-          </Field>
-          <Field label="Descripción">
-            <textarea
-              name="description"
-              rows={3}
-              defaultValue={promo?.description || ""}
-              aria-label="Descripción"
-            />
-          </Field>
-          <div className="form-grid">
-            <Field label="Inicio (opcional)">
-              <input
-                type="datetime-local"
-                name="starts_at"
-                defaultValue={localDateTime(promo?.starts_at)}
-                aria-label="Inicio de promoción"
-              />
-            </Field>
-            <Field label="Fin (opcional)">
-              <input
-                type="datetime-local"
-                name="ends_at"
-                defaultValue={localDateTime(promo?.ends_at)}
-                aria-label="Fin de promoción"
-              />
-            </Field>
-          </div>
-          <Checkbox
-            label="Promoción activada"
-            name="is_active"
-            defaultChecked={promo?.is_active ?? true}
-          />
-        </>
-      )}
-      <div className="form-footer">
-        <Button type="button" variant="secondary" onClick={onCancel}>
-          Cancelar
-        </Button>
-        <Button type="submit" busy={busy || uploading}>
-          Guardar{" "}
-          {editor.type === "product"
-            ? "producto"
-            : editor.type === "category"
-              ? "categoría"
-              : "promoción"}
-        </Button>
-      </div>
+          </>
+        )}
+        <div className="form-footer">
+          <Button
+            type="button"
+            variant="secondary"
+            onClick={onCancel}
+            disabled={uploading}
+          >
+            Cancelar
+          </Button>
+          <Button type="submit" busy={busy || uploading}>
+            Guardar{" "}
+            {editor.type === "product"
+              ? "producto"
+              : editor.type === "category"
+                ? "categoría"
+                : "promoción"}
+          </Button>
+        </div>
+      </fieldset>
     </form>
   );
 }

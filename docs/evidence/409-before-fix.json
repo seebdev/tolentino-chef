@@ -1,0 +1,22 @@
+{
+  "time": "2026-10-17T16:54:30.559Z",
+  "scenario": "Creation with the already existing platform administrator email; email redacted",
+  "requests": [
+    {
+      "attempt": 1,
+      "status": 409,
+      "body": {
+        "error": "No se pudo crear el acceso. Comprueba que el correo no pertenezca a otra cuenta."
+      }
+    },
+    {
+      "attempt": 2,
+      "status": 409,
+      "body": {
+        "error": "No se pudo crear el acceso. Comprueba que el correo no pertenezca a otra cuenta."
+      }
+    }
+  ],
+  "restaurantsAfter": 0,
+  "limitation": "Original screenshot has no request body or response body; it cannot prove this was the submitted email."
+}

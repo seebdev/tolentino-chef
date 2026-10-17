@@ -26,7 +26,7 @@ export async function POST(request: Request) {
       .parse(await body(request, 10000));
     const db = await sessionDb();
     if (input.action === "logout") {
-      await db.auth.signOut();
+      await db.auth.signOut({ scope: "local" });
       return json({ ok: true });
     }
     await rateLimit(`auth-ip:${clientKey(request)}`, 30, 300);
@@ -50,16 +50,19 @@ export async function POST(request: Request) {
           redirect: current.role === "superadmin" ? "/admin" : "/dashboard",
         });
       } catch (e) {
-        await db.auth.signOut();
+        await db.auth.signOut({ scope: "local" });
         throw e;
       }
     }
     if (input.action === "recover") {
       const email = z.email().parse(input.email);
       await rateLimit(`recovery:${email.toLowerCase()}`, 3, 900);
-      await db.auth.resetPasswordForEmail(email, {
-        redirectTo: `${appUrl()}/auth/callback`,
-      });
+      // Reserved DEMO addresses never invoke the email service. Keep the same
+      // generic response and rate limits to avoid account enumeration.
+      if (!/@[^@]+\.test$/i.test(email))
+        await db.auth.resetPasswordForEmail(email, {
+          redirectTo: appUrl() + "/auth/callback",
+        });
       return json({
         ok: true,
         message:

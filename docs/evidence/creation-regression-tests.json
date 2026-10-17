@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "recorded_at": "2026-10-17T17:12:00Z",
+  "runtime": "Node.js 22.23.3",
+  "verification": [
+    {
+      "command": "node node_modules/vitest/vitest.mjs run tests/admin_routes.test.ts tests/auth_routes.test.ts tests/database.test.ts",
+      "result": "PASS",
+      "files": 3,
+      "tests": 70,
+      "duration_seconds": 21.67,
+      "suites": {
+        "admin_handler": 23,
+        "auth_handler": 4,
+        "postgresql_pglite": 43
+      }
+    },
+    {
+      "command": "node node_modules/typescript/bin/tsc --noEmit",
+      "result": "PASS"
+    },
+    {
+      "command": "node node_modules/eslint/bin/eslint.js src/lib/api.ts src/lib/create-restaurant.ts src/app/api/admin/restaurants/route.ts src/app/api/auth/route.ts tests/admin_routes.test.ts tests/auth_routes.test.ts tests/database.test.ts",
+      "result": "PASS"
+    }
+  ],
+  "coverage": [
+    "True Auth email conflicts -> 409 with owner_email field; unknown Auth/permission/service failures -> 503; invalid address -> 400; rate limit -> 429",
+    "Concurrent identical requests produce one account and one tenant; concurrent duplicate receives HTTP 202; replay returns the same restaurant without a second email",
+    "Reused attempt ID with changed payload -> 409; request identity is durable in PostgreSQL and scoped to active superadmin",
+    "Fixed reserved Auth ID plus server-owned app_metadata recover lost Auth responses without adopting or deleting existing users",
+    "SQL provisioning, tenant dependencies, initial sale, audit and completed result commit together; late sale failure rolls every business row back",
+    "Lease fencing rejects stale workers; persisted cleanup cannot re-enter provisioning; late cleanup cannot delete committed ownership",
+    "SQL transient failure reuses the same Auth account; post-commit response loss returns the persisted completion",
+    "Failed compensation is recorded for safe reconciliation; unrelated Auth users are never deleted",
+    "Invitation errors preserve HTTP 201 and existing tenant; replay never resends automatically",
+    "DEMO creation requires .test; creation, admin reset and public recovery never invoke email for .test",
+    "Public password recovery retains generic response and rate limiting; logout and denied-login cleanup use scope local",
+    "Protected owner email and partial commercial-sale updates remain intact; missing restaurant returns 404",
+    "New private table has RLS, owner/anon cannot read it or execute any creation RPC; owners cannot update is_demo"
+  ],
+  "limits": [
+    "Auth boundaries in unit tests are mocked; PGlite runs PostgreSQL SQL with minimal Auth/Storage schemas, not GoTrue or Storage HTTP.",
+    "Remote migration history, ACLs, RLS and a claim RPC inside a rolled-back transaction were separately verified; restaurant/demo end-to-end evidence is produced by the parent task.",
+    "A worker crash can leave a durable attempt pending for up to two minutes before the same request can reclaim its lease. Cleanup and retries never rely on process memory.",
+    "SMTP provider configuration is not exposed by the read-only public Auth settings endpoint. See auth-settings-readonly.json."
+  ],
+  "review": {
+    "helper_review": "PASS",
+    "checked": [
+      "No cleanup before a definitive rolled-back SQL error and a fenced cleanup transition",
+      "Cleanup rechecks reserved user ID, email and server-owned attempt/actor markers",
+      "Uncertain commits are read from the persisted request; they never trigger blind deletion",
+      "No secrets or real email addresses in error logging",
+      "No authenticated or anonymous grants on service-only RPCs"
+    ],
+    "critical_open_configuration": "Public Supabase signup remains enabled in the read-only settings check; no Management API change was made."
+  }
+}

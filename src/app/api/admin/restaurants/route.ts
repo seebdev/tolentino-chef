@@ -1,4 +1,4 @@
-import { randomUUID, randomBytes } from "node:crypto";
+import { createRestaurant } from "@/lib/create-restaurant";
 import { z } from "zod";
 import { superadmin, audit } from "@/lib/access";
 import {
@@ -98,68 +98,7 @@ export async function POST(request: Request) {
       await audit(user.id, "platform_updated");
       return json({ ok: true });
     }
-    if (action === "create") {
-      const data = restaurantInput.parse({
-        ...raw,
-        sold_at: raw.sale_date || raw.sold_at || null,
-        amount: raw.sale_amount ?? raw.amount ?? 0,
-        notes: raw.sale_notes ?? raw.notes ?? "",
-      });
-      const { data: auth, error } = await db.auth.admin.createUser({
-        email: data.owner_email,
-        password: randomBytes(48).toString("base64url"),
-        email_confirm: true,
-      });
-      if (error || !auth.user)
-        throw new ApiError(
-          409,
-          "No se pudo crear el acceso. Comprueba que el correo no pertenezca a otra cuenta.",
-        );
-      const id = randomUUID();
-      const created = await db.rpc("provision_restaurant", {
-        p_id: id,
-        p_owner_id: auth.user.id,
-        p_name: data.name,
-        p_slug: data.slug,
-        p_owner_name: data.owner_name,
-        p_owner_email: data.owner_email,
-        p_phone: data.phone,
-        p_currency: data.currency,
-        p_default_language: data.default_language,
-        p_sale_amount: data.amount ?? 0,
-        p_sale_currency: data.sale_currency,
-        p_sale_notes: data.notes,
-        p_description: data.description,
-        p_status: data.status,
-        p_sold_at: data.sold_at
-          ? `${data.sold_at}T12:00:00Z`
-          : new Date().toISOString(),
-      });
-      if (created.error) {
-        const cleanup = await db.auth.admin.deleteUser(auth.user.id);
-        if (cleanup.error) {
-          await audit(user.id, "provision_compensation_failed", undefined, {
-            orphan_user_id: auth.user.id,
-          });
-        }
-        dbError(created.error);
-      }
-      await audit(user.id, "restaurant_created", id);
-      const invite = await db.auth.resetPasswordForEmail(data.owner_email, {
-        redirectTo: `${appUrl()}/auth/callback`,
-      });
-      return json(
-        {
-          ok: true,
-          restaurantId: id,
-          invitationSent: !invite.error,
-          message: invite.error
-            ? "Restaurante creado. El correo de activación no se envió; usa Restablecer acceso para reintentarlo."
-            : "Restaurante creado. El propietario recibirá un enlace para definir su contraseña.",
-        },
-        201,
-      );
-    }
+    if (action === "create") return createRestaurant(db, user.id, input.requestId, raw);
     const id = uuid.parse(input.restaurantId);
     const existing = await db
       .from("restaurants")
@@ -214,6 +153,8 @@ export async function POST(request: Request) {
         .eq("restaurant_id", id);
       dbError(r.error);
     } else if (action === "reset_access") {
+      if (existing.data.is_demo || /@[^@]+\.test$/i.test(existing.data.owner_email))
+        throw new ApiError(400, "Las cuentas DEMO no reciben correos de acceso.", "DEMO_EMAIL_DISABLED");
       await rateLimit(`reset:${id}`, 3, 900);
       const r = await db.auth.resetPasswordForEmail(existing.data.owner_email, {
         redirectTo: `${appUrl()}/auth/callback`,

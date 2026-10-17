@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect, type FormEvent } from "react";
+import { useState, useEffect, useRef, type FormEvent } from "react";
 import {
   Eye,
   ExternalLink,
@@ -38,6 +38,7 @@ import {
 } from "@/lib/types";
 import { languages } from "@/lib/i18n";
 import type { Mutate } from "./workspace";
+import { DownloadLink } from "./download-link";
 type Props = { data: WorkspaceData; mutate: Mutate; busy: boolean };
 export function AppearancePanel({ data, mutate, busy }: Props) {
   const [appearance, setAppearance] = useState<Appearance>({
@@ -46,6 +47,8 @@ export function AppearancePanel({ data, mutate, busy }: Props) {
     ...data.settings.draft_appearance,
   });
   const [uploading, setUploading] = useState("");
+  const operationInFlight = useRef(false);
+  const [saving, setSaving] = useState(false);
   const [error, setError] = useState("");
   const [name, setName] = useState(data.restaurant.name);
   const [description, setDescription] = useState(
@@ -57,6 +60,12 @@ export function AppearancePanel({ data, mutate, busy }: Props) {
     key: "logo_path" | "cover_path" | "favicon_path",
     file: File,
   ) {
+    if (operationInFlight.current || busy) return;
+    if (file.size > 5 * 1024 * 1024) {
+      setError("La imagen supera el límite de 5 MB.");
+      return;
+    }
+    operationInFlight.current = true;
     setUploading(key);
     setError("");
     try {
@@ -70,23 +79,37 @@ export function AppearancePanel({ data, mutate, busy }: Props) {
     } catch (e) {
       setError((e as Error).message);
     } finally {
+      operationInFlight.current = false;
       setUploading("");
     }
   }
-  async function save(e: FormEvent) {
+  async function save(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    await mutate("save_appearance", { appearance, name, description });
-  }
-  async function publish() {
-    if (await mutate("save_appearance", { appearance, name, description }))
-      await mutate("publish_appearance", {});
+    if (operationInFlight.current || busy || !e.currentTarget.reportValidity())
+      return;
+    const publishing =
+      (e.nativeEvent as SubmitEvent).submitter?.getAttribute("value") ===
+      "publish";
+    operationInFlight.current = true;
+    setSaving(true);
+    try {
+      if (await mutate("save_appearance", { appearance, name, description })) {
+        if (publishing) await mutate("publish_appearance", {});
+      }
+    } finally {
+      operationInFlight.current = false;
+      setSaving(false);
+    }
   }
   return (
     <div className="settings-two-column">
       <form className="panel form-panel" onSubmit={save}>
         <div className="section-heading">
           <h2>Identidad de tu restaurante</h2>
-          <p>Guarda un borrador y publica cuando todo está listo.</p>
+          <p>
+            Colores, tipografía e imágenes se guardan como borrador. El nombre y
+            la descripción se actualizan al guardar.
+          </p>
         </div>
         {error && <Notice message={error} error />}
         <div className="form-grid">
@@ -169,10 +192,12 @@ export function AppearancePanel({ data, mutate, busy }: Props) {
                 <input
                   type="file"
                   accept="image/jpeg,image/png,image/webp"
-                  disabled={!!uploading}
-                  onChange={(e) =>
-                    e.target.files?.[0] && upload(item.key, e.target.files[0])
-                  }
+                  disabled={!!uploading || busy || saving}
+                  onChange={(e) => {
+                    const file = e.target.files?.[0];
+                    e.target.value = "";
+                    if (file) void upload(item.key, file);
+                  }}
                 />
               </label>
               {appearance[item.key] && (
@@ -191,10 +216,18 @@ export function AppearancePanel({ data, mutate, busy }: Props) {
           JPG, PNG y WebP · hasta 5 MB por archivo.
         </small>
         <div className="form-footer">
-          <Button type="submit" variant="secondary" busy={busy || !!uploading}>
+          <Button
+            type="submit"
+            variant="secondary"
+            busy={busy || saving || !!uploading}
+          >
             Guardar borrador
           </Button>
-          <Button type="button" busy={busy || !!uploading} onClick={publish}>
+          <Button
+            type="submit"
+            value="publish"
+            busy={busy || saving || !!uploading}
+          >
             Publicar cambios <ArrowRight size={16} />
           </Button>
         </div>
@@ -750,15 +783,15 @@ export function QrPanel({
         <p>Descárgalo y compártelo en tus mesas.</p>
         <div className="qr-downloads">
           {["png", "svg", "pdf"].map((format) => (
-            <a
+            <DownloadLink
               className="button secondary small"
               key={format}
               href={url + "?format=" + format}
-              download
+              filename={"qr-" + data.restaurant.slug + "." + format}
             >
               <Download size={15} />
               {format.toUpperCase()}
-            </a>
+            </DownloadLink>
           ))}
         </div>
         <small>Haz una prueba de escaneo antes de imprimir.</small>
@@ -985,15 +1018,21 @@ export function ImportPanel({
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState("");
   const [message, setMessage] = useState("");
+  const importInFlight = useRef(false);
   const endpoint = "/api/workspace/" + data.restaurant.id + "/import";
   async function select(file: File) {
+    if (importInFlight.current) return;
     setError("");
+    setHeaders([]);
+    setCsv("");
+    setFilename("");
     setMessage("");
     setPreview(null);
     if (file.size > 5 * 1024 * 1024) {
       setError("El archivo supera el límite de 5 MB.");
       return;
     }
+    importInFlight.current = true;
     setBusy(true);
     try {
       const text = await file.text();
@@ -1026,10 +1065,13 @@ export function ImportPanel({
     } catch (e) {
       setError((e as Error).message);
     } finally {
+      importInFlight.current = false;
       setBusy(false);
     }
   }
   async function run(action: "preview" | "commit") {
+    if (importInFlight.current || !csv) return;
+    importInFlight.current = true;
     setBusy(true);
     setError("");
     setMessage("");
@@ -1054,6 +1096,7 @@ export function ImportPanel({
     } catch (e) {
       setError((e as Error).message);
     } finally {
+      importInFlight.current = false;
       setBusy(false);
     }
   }
@@ -1089,13 +1132,27 @@ export function ImportPanel({
             type="file"
             accept=".csv,text/csv"
             disabled={busy}
-            onChange={(e) => e.target.files?.[0] && select(e.target.files[0])}
+            onChange={(e) => {
+              const file = e.target.files?.[0];
+              e.target.value = "";
+              if (file) void select(file);
+            }}
           />
         </label>
-        <a href={endpoint} download className="text-button">
+        <DownloadLink href={endpoint} filename="plantilla-productos.csv">
           <Download size={15} />
           Descargar plantilla CSV
-        </a>
+        </DownloadLink>
+        <DownloadLink
+          href={endpoint + "?download=catalog"}
+          filename="catalogo-productos.csv"
+        >
+          <Download size={15} /> Exportar catálogo CSV
+        </DownloadLink>
+        <small>
+          Exporta nombre, precio, categoría, descripción y SKU. Las imágenes,
+          variantes y extras se administran desde Productos.
+        </small>
       </div>
       {headers.length > 0 && (
         <>
@@ -1264,6 +1321,7 @@ export function AccountPanel({
   const [password, setPassword] = useState("");
   const [confirm, setConfirm] = useState("");
   const [pending, setPending] = useState(false);
+  const passwordInFlight = useRef(false);
   const [error, setError] = useState("");
   const [message, setMessage] = useState("");
   const [confirmation, setConfirmation] = useState<
@@ -1271,12 +1329,14 @@ export function AccountPanel({
   >(null);
   async function changePassword(e: FormEvent) {
     e.preventDefault();
+    if (passwordInFlight.current) return;
     setError("");
     setMessage("");
     if (password !== confirm) {
       setError("Las contraseñas no coinciden.");
       return;
     }
+    passwordInFlight.current = true;
     setPending(true);
     try {
       await post("/api/auth", { action: "password", password });
@@ -1286,6 +1346,7 @@ export function AccountPanel({
     } catch (e) {
       setError((e as Error).message);
     } finally {
+      passwordInFlight.current = false;
       setPending(false);
     }
   }
