@@ -1,5 +1,15 @@
+import {
+  loadTargetDemos,
+  auditBase,
+  assertAppTarget,
+  evidencePath,
+  artifactPath,
+  relativePath,
+  projectRef,
+  runId,
+} from "./audit-target.mjs";
 import { chromium, webkit, expect } from "@playwright/test";
-import { readFile, writeFile, mkdir, access } from "node:fs/promises";
+import { writeFile, access } from "node:fs/promises";
 import { fileURLToPath } from "node:url";
 import path from "node:path";
 import { createHash } from "node:crypto";
@@ -11,17 +21,7 @@ import { PNG } from "pngjs";
 // Demo credentials are read in memory and never persisted in evidence or console.
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const check = expect.configure({ timeout: 30000 });
-const manifest = JSON.parse(
-  await readFile(path.join(root, "artifacts/demo/restaurants.json"), "utf8"),
-);
-if (!Array.isArray(manifest.restaurants) || manifest.restaurants.length !== 3) {
-  throw new Error(
-    "DEMO_NOT_READY: the manifest must contain exactly three seeded restaurants.",
-  );
-}
-const accounts = JSON.parse(
-  await readFile(path.join(root, ".runtime/demo-accounts.json"), "utf8"),
-);
+const { manifest, accounts } = loadTargetDemos();
 const secretStrings = Object.values(accounts)
   .flatMap((account) => [account.email, account.password])
   .filter(Boolean);
@@ -37,14 +37,8 @@ const sanitize = (value) => {
     .replace(/[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}/gi, "[REDACTED_EMAIL]")
     .slice(0, 1800);
 };
-const base = new URL(
-  process.env.LIVE_AUDIT_BASE_URL || manifest.base || "http://localhost:3000",
-).origin;
-if (process.env.APP_URL && base !== new URL(process.env.APP_URL).origin) {
-  throw new Error(
-    "AUDIT_ORIGIN_MISMATCH: browser login must use the configured application origin.",
-  );
-}
+const base = auditBase();
+await assertAppTarget(base, { fresh: true });
 const originType = ["localhost", "127.0.0.1", "::1"].includes(
   new URL(base).hostname,
 )
@@ -98,6 +92,8 @@ const selectedBrowsers = (
 const phase = process.env.LIVE_AUDIT_PHASE || "all";
 const evidence = {
   startedAt: new Date().toISOString(),
+  projectRef,
+  runId,
   phase,
   base,
   applicationScope: originType,
@@ -113,8 +109,7 @@ const evidence = {
   owners: [],
   results: [],
 };
-await mkdir(path.join(root, "artifacts/screenshots"), { recursive: true });
-await mkdir(path.join(root, "docs/evidence"), { recursive: true });
+artifactPath("screenshots");
 const reportName =
   process.env.LIVE_AUDIT_REPORT ||
   (phase === "screenshots"
@@ -122,7 +117,7 @@ const reportName =
     : "live-browser-audit.json");
 if (!/^[a-z0-9.-]+\.json$/.test(reportName))
   throw new Error("INVALID_AUDIT_REPORT_FILENAME");
-const reportFile = path.join(root, "docs/evidence", reportName);
+const reportFile = evidencePath(reportName);
 async function persist() {
   evidence.updatedAt = new Date().toISOString();
   evidence.counts = {
@@ -559,7 +554,12 @@ async function publicScenario(browser, browserKey, restaurant, device) {
     item.dimensions = await noOverflow(page);
     record(scope, "No page-level horizontal overflow", "PASS");
     const imageSuffix = browserKey === "chrome" ? "" : `-${browserKey}`;
-    item.screenshot = `artifacts/screenshots/real-${restaurant.key}-${device.key}${imageSuffix}.png`;
+    item.screenshot = relativePath(
+      artifactPath(
+        "screenshots",
+        `real-${restaurant.key}-${device.key}${imageSuffix}.png`,
+      ),
+    );
     await page.screenshot({
       path: path.join(root, item.screenshot),
       fullPage: true,
@@ -748,6 +748,7 @@ async function navigate(page, label) {
     .click();
 }
 async function login(page, account, diagnostics = []) {
+  await assertAppTarget(base, { fresh: true });
   const step = (phase, detail = {}) =>
     diagnostics.push({ at: new Date().toISOString(), phase, ...detail });
   step("opening-login");

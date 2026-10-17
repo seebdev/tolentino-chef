@@ -1,16 +1,20 @@
 # Tolentino Restaurantes Admin
 
-Repositorio: [tolentinosftw-dotcom/tolentino-chef](https://github.com/tolentinosftw-dotcom/tolentino-chef).
+Repositorio: [seebdev/tolentino-chef](https://github.com/seebdev/tolentino-chef).
 
 Una aplicación Next.js para administrar múltiples restaurantes con Supabase Auth, Postgres y Storage. Una venta única por restaurante; no incluye suscripciones, empleados, pedidos, carrito ni pagos.
 
-## Estado de esta entrega
+## Migración en curso
+
+Destino autorizado: Supabase `hgntppemxwcxaxritnfq` y una cuenta nueva de Render. GitHub ya conserva el historial completo. La nueva base todavía debe migrarse y verificarse: las cifras siguientes corresponden al entorno anterior. Sigue el [plan de migración](docs/MIGRATION_PLAN.md); no ejecutes bootstrap ni provisión sobre el origen. Usa `.env.migration.local` para credenciales nuevas y conserva `.env.local` hasta el corte validado.
+
+## Base auditada antes de migrar
 
 Actualizado el 17 de octubre de 2026. La aplicación funciona localmente con Auth, PostgreSQL y Storage reales del proyecto Supabase autorizado `ylcnrfzosjzuljufwups`. Hay un superadministrador configurado y tres restaurantes DEMO independientes con 24 productos cada uno. Las credenciales permanecen fuera de Git.
 
 Se corrigieron la clasificación de errores 409, el doble envío de formularios, la creación idempotente, validaciones de apariencia e imágenes y descargas. Las dos migraciones están aplicadas y verificadas. La evidencia actual incluye 201 pruebas unitarias/SQL, 95 casos UI con fixtures en Chrome/Edge, 113 comprobaciones reales de API y administración, y 24 recorridos reales de navegador (372 comprobaciones). Las suites y sus límites se detallan en el informe; no son una prueba de carga concurrente de producción.
 
-**No está desplegada en Render ni aceptada para producción.** Faltan acceso a Render, URL HTTPS canónica, QR públicos, configuración y prueba de SMTP, desactivar el registro público de Supabase y completar las verificaciones externas indicadas en los pendientes. El usuario confirmó que todavía no hay publicación pública.
+**No está desplegada en Render ni aceptada para producción.** Faltan acceso a Render, URL HTTPS canónica, QR públicos, configuración y prueba de SMTP, verificar el registro público deshabilitado en el Supabase nuevo y completar las verificaciones externas indicadas en los pendientes. El usuario confirmó que todavía no hay publicación pública.
 
 - [Auditoría final y evidencia](AUDITORIA_FINAL_TOLENTINO_RESTAURANTES.md)
 - [Acceder a los tres restaurantes DEMO](RESTAURANTES_DEMO.md)
@@ -32,13 +36,7 @@ if (!(Test-Path .env.local)) { Copy-Item .env.example .env.local }
 npm run dev
 ```
 
-Abrir `http://localhost:3000/login`. El proyecto actual ya tiene superadministrador; no repetir el bootstrap para esa cuenta. En una instalación nueva, la primera cuenta se crea desde el servidor después de aplicar las migraciones:
-
-```powershell
-node --env-file=.env.local scripts/bootstrap-admin.mjs TU_CORREO_REAL
-```
-
-Este comando crea una cuenta nueva, le asigna el rol y solicita un correo de recuperación; no reutiliza cuentas por coincidencia de email. Configurar primero el proveedor de correo y la plantilla descrita en `docs/DEPLOY_RENDER_SUPABASE.md`.
+Abrir `http://localhost:3000/login`. Durante la migración, conservar los UUID de las cuatro cuentas con el procedimiento de datos y contraseñas nuevas protegidas. No ejecutar `bootstrap-admin.mjs` ni `provision-demos.mjs` sobre ninguno de los entornos como parte de este traslado. Ver [migración](docs/MIGRATION_PLAN.md) y [despliegue](docs/DEPLOY_RENDER_SUPABASE.md).
 
 ## Comprobar
 

@@ -1,0 +1,63 @@
+{
+  "startedAt": "2026-10-17T19:28:49.363Z",
+  "completedAt": "2026-10-17T19:29:44.626Z",
+  "node": "v22.23.3",
+  "mode": "local automated checks; active production server not stopped; build deferred to root",
+  "results": [
+    {
+      "name": "typecheck",
+      "startedAt": "2026-10-17T19:28:49.366Z",
+      "completedAt": "2026-10-17T19:29:43.750Z",
+      "pass": true,
+      "steps": [
+        {
+          "command": "node node_modules/next/dist/bin/next typegen",
+          "exitCode": 0
+        },
+        {
+          "command": "node node_modules/typescript/bin/tsc --noEmit --incremental false",
+          "exitCode": 0
+        }
+      ],
+      "log": "docs/evidence/production-readiness-typecheck-20261017.txt"
+    },
+    {
+      "name": "lint",
+      "startedAt": "2026-10-17T19:28:49.384Z",
+      "completedAt": "2026-10-17T19:29:17.289Z",
+      "pass": true,
+      "steps": [
+        {
+          "command": "node node_modules/eslint/bin/eslint.js .",
+          "exitCode": 0
+        }
+      ],
+      "log": "docs/evidence/production-readiness-lint-20261017.txt"
+    },
+    {
+      "name": "test",
+      "startedAt": "2026-10-17T19:28:49.401Z",
+      "completedAt": "2026-10-17T19:29:44.626Z",
+      "pass": true,
+      "steps": [
+        {
+          "command": "node node_modules/vitest/vitest.mjs run --reporter=default --reporter=json --outputFile.json=docs/evidence/production-readiness-unit-tests-20261017.json",
+          "exitCode": 0
+        }
+      ],
+      "log": "docs/evidence/production-readiness-test-20261017.txt"
+    }
+  ],
+  "unitSummary": {
+    "testFiles": 12,
+    "tests": 201,
+    "passed": 201,
+    "failed": 0,
+    "note": "Unit, handler mocks and PGlite SQL; not all are live hosted Supabase tests"
+  },
+  "runnerValidation": {
+    "nodeSyntax": "PASS",
+    "eslint": "PASS",
+    "guards": "docs/evidence/production-isolation-runner-guards-20261017.json"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "checkedAt": "2026-10-17T20:10:11.944Z",
+  "targetProjectRef": "hgntppemxwcxaxritnfq",
+  "scope": "Offline unit/SQL fixtures and migration guards; not new Supabase acceptance",
+  "externalMutations": false,
+  "unit": {
+    "passed": 226,
+    "failed": 0,
+    "total": 226,
+    "files": 14
+  },
+  "typecheck": {
+    "command": "npm run typecheck",
+    "exitCode": 0
+  },
+  "lint": {
+    "command": "npm run lint",
+    "exitCode": 0
+  },
+  "newEnvironmentBuild": "NOT_RUN_NEW_CREDENTIALS_REQUIRED",
+  "newEnvironmentLiveTests": "NOT_RUN_NEW_CREDENTIALS_REQUIRED",
+  "publicDeploymentVerified": false
+}

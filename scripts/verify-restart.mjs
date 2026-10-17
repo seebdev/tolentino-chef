@@ -1,14 +1,23 @@
+import {
+  loadTargetDemos,
+  evidencePath,
+  privateDirectory,
+  projectRef,
+  runId,
+} from "./audit-target.mjs";
+import path from "node:path";
 import assert from "node:assert/strict";
 import { createHash } from "node:crypto";
 import { readFileSync, writeFileSync } from "node:fs";
 import { Session, base } from "./live-client.mjs";
 const mode = process.argv[2];
 assert(["before", "after"].includes(mode), "Use before or after");
-const manifest = JSON.parse(
-  readFileSync("artifacts/demo/restaurants.json", "utf8"),
-);
-const accounts = JSON.parse(
-  readFileSync(".runtime/demo-accounts.json", "utf8"),
+const { manifest, accounts } = loadTargetDemos();
+if (!process.env.AUDIT_RUN_ID)
+  throw Error("RESTART_REQUIRES_EXPLICIT_AUDIT_RUN_ID");
+const baselinePath = path.join(
+  privateDirectory,
+  "restart-before-" + runId + ".json",
 );
 function canonical(value) {
   if (Array.isArray(value)) return value.map(canonical);
@@ -26,6 +35,8 @@ const hash = (value) =>
     .digest("hex");
 const evidence = {
   at: new Date().toISOString(),
+  projectRef,
+  runId,
   base,
   mode,
   realDatabase: true,
@@ -77,15 +88,13 @@ for (const item of manifest.restaurants) {
 const health = await new Session().request("/api/health");
 evidence.health = { status: health.status, body: health.data };
 if (mode === "before") {
-  writeFileSync(
-    ".runtime/restart-before.json",
-    JSON.stringify(evidence, null, 2),
-  );
+  writeFileSync(baselinePath, JSON.stringify(evidence, null, 2));
   console.log("PASS baseline: 3 persisted DEMO menus, owner logins and health");
 } else {
-  const before = JSON.parse(
-    readFileSync(".runtime/restart-before.json", "utf8"),
-  );
+  const before = JSON.parse(readFileSync(baselinePath, "utf8"));
+  assert.equal(before.projectRef, projectRef);
+  assert.equal(before.runId, runId);
+  assert.equal(before.base, base);
   for (const item of evidence.restaurants) {
     const prior = before.restaurants.find((r) => r.id === item.id);
     assert.equal(
@@ -104,7 +113,7 @@ if (mode === "before") {
   evidence.checks =
     "Fresh server process; fresh owner logins; exact SHA256 equality of private records and public API payloads for all 3 demos; health200";
   writeFileSync(
-    "docs/evidence/restart-persistence.json",
+    evidencePath("restart-persistence.json"),
     JSON.stringify(evidence, null, 2),
   );
   console.log(

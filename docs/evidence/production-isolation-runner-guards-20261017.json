@@ -1,0 +1,29 @@
+{
+  "at": "2026-10-17T19:35:24.776Z",
+  "results": [
+    {
+      "name": "HTTP rejected outside loopback",
+      "pass": true,
+      "exitCode": 1,
+      "errorCode": "HTTPS_REQUIRED_OUTSIDE_LOOPBACK",
+      "networkCalls": 0,
+      "scope": "precondition rejection before any fetch/login"
+    },
+    {
+      "name": "URL credentials rejected",
+      "pass": true,
+      "exitCode": 1,
+      "errorCode": "BASE_ORIGIN_REQUIRED",
+      "networkCalls": 0,
+      "scope": "precondition rejection before any fetch/login"
+    },
+    {
+      "name": "Different Supabase project rejected before login",
+      "pass": true,
+      "exitCode": 1,
+      "errorCode": "WRONG_SUPABASE_TARGET",
+      "networkCalls": 0,
+      "scope": "precondition rejection before any fetch/login"
+    }
+  ]
+}

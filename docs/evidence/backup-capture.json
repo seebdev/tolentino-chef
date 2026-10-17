@@ -1,0 +1,53 @@
+{
+  "at": "2026-10-17T19:34:16.322Z",
+  "result": "PASS",
+  "operation": "Read-only remote application backup",
+  "projectRef": "ylcnrfzosjzuljufwups",
+  "archive": ".runtime/backups/application-20261017193357263.json.enc",
+  "archiveBytes": 460840,
+  "encryptedArchiveSha256": "79be105c5b3828056209dcab47c3e887dccac158e0121a8416f848b267e73207",
+  "cipher": "AES-256-GCM",
+  "keyProtection": "windows-dpapi-current-user",
+  "acl": {
+    "inheritedAccessDisabled": true,
+    "allowedPrincipals": "current Windows user and SYSTEM",
+    "ignoredByGit": true
+  },
+  "tables": {
+    "platform_admins": 1,
+    "restaurants": 3,
+    "restaurant_memberships": 3,
+    "restaurant_settings": 3,
+    "categories": 24,
+    "products": 72,
+    "promotions": 3,
+    "restaurant_hours": 21,
+    "translations": 96,
+    "restaurant_qr_configs": 3,
+    "restaurant_domains": 0,
+    "commercial_sales": 3,
+    "security_audit_events": 122,
+    "visit_events": 3,
+    "platform_settings": 1
+  },
+  "authProfiles": 4,
+  "objectCount": 27,
+  "objectBytes": 314126,
+  "migrationCount": 2,
+  "consistency": {
+    "beforeAfterEqual": true,
+    "method": "Full row hashes and Auth profiles plus Storage inventory before/after downloads",
+    "transactionSnapshot": false
+  },
+  "remoteMutations": 0,
+  "plaintextBackupFilesWritten": 0,
+  "completePostgresAuthBackup": false,
+  "exclusions": [
+    "Auth password hashes, sessions, refresh tokens and MFA secrets",
+    "private.rate_limits",
+    "private.restaurant_creation_requests",
+    "Supabase managed schemas, roles, extension binaries and full PostgreSQL snapshot",
+    "Auth/SMTP/JWT/provider settings and secret keys",
+    "Storage managed DB metadata not exposed by list/getBucket"
+  ]
+}

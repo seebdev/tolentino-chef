@@ -1,0 +1,67 @@
+{
+  "checkedAt": "2026-10-17T19:41:05.493Z",
+  "externalMutations": false,
+  "blockers": [
+    "APP_URL_NOT_PUBLIC_HTTPS_ORIGIN",
+    "RENDER_ACCESS_MISSING"
+  ],
+  "variables": {
+    "NEXT_PUBLIC_SUPABASE_URL": {
+      "present": true
+    },
+    "NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY": {
+      "present": true
+    },
+    "SUPABASE_SERVICE_ROLE_KEY": {
+      "present": true
+    },
+    "APP_URL": {
+      "present": true
+    },
+    "PLATFORM_HOSTNAMES": {
+      "present": true
+    },
+    "RENDER_API_KEY": {
+      "present": false
+    },
+    "RENDER_SERVICE_ID": {
+      "present": false
+    },
+    "RENDER_SERVICE_HOSTNAME": {
+      "present": false
+    },
+    "SUPABASE_ACCESS_TOKEN": {
+      "present": false
+    }
+  },
+  "git": {
+    "branch": "main",
+    "commit": "67a99778196584521c9ec048ac7d6de8496e72de",
+    "expectedRepository": "https://github.com/tolentinosftw-dotcom/tolentino-chef",
+    "remoteMatches": true,
+    "remoteMain": "67a99778196584521c9ec048ac7d6de8496e72de",
+    "mainSynchronized": true
+  },
+  "origin": {
+    "value": "http://localhost:3000",
+    "https": false,
+    "loopback": true,
+    "exactOrigin": true
+  },
+  "auth": {
+    "projectRef": "ylcnrfzosjzuljufwups",
+    "signupDisabled": true,
+    "anonymousEnabled": false,
+    "emailEnabled": true,
+    "emailAutoconfirm": false,
+    "smtpVerified": false,
+    "managementSettingsVerified": false
+  },
+  "render": {
+    "status": "access_missing",
+    "inventoryVerified": false,
+    "matchingServices": []
+  },
+  "readyToDeploy": false,
+  "publicDeploymentVerified": false
+}

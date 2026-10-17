@@ -1,0 +1,61 @@
+{
+  "checkedAt": "2026-10-17T20:03:01.829Z",
+  "externalMutations": false,
+  "blockers": [
+    "MISSING_NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY",
+    "MISSING_SUPABASE_SERVICE_ROLE_KEY",
+    "APP_URL_NOT_PUBLIC_HTTPS_ORIGIN",
+    "RENDER_ACCESS_MISSING"
+  ],
+  "variables": {
+    "NEXT_PUBLIC_SUPABASE_URL": {
+      "present": true
+    },
+    "NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY": {
+      "present": false
+    },
+    "SUPABASE_SERVICE_ROLE_KEY": {
+      "present": false
+    },
+    "APP_URL": {
+      "present": true
+    },
+    "PLATFORM_HOSTNAMES": {
+      "present": true
+    },
+    "RENDER_API_KEY": {
+      "present": false
+    },
+    "RENDER_SERVICE_ID": {
+      "present": false
+    },
+    "RENDER_SERVICE_HOSTNAME": {
+      "present": false
+    },
+    "SUPABASE_ACCESS_TOKEN": {
+      "present": false
+    }
+  },
+  "git": {
+    "branch": "main",
+    "commit": "67a99778196584521c9ec048ac7d6de8496e72de",
+    "expectedRepository": "https://github.com/seebdev/tolentino-chef",
+    "remoteMatches": true,
+    "remoteMain": "67a99778196584521c9ec048ac7d6de8496e72de",
+    "mainSynchronized": true
+  },
+  "origin": {
+    "value": "http://localhost:3000",
+    "https": false,
+    "loopback": true,
+    "exactOrigin": true
+  },
+  "render": {
+    "status": "access_missing",
+    "inventoryVerified": false,
+    "accountVerified": false,
+    "matchingServices": []
+  },
+  "readyToDeploy": false,
+  "publicDeploymentVerified": false
+}

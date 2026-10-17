@@ -1,0 +1,48 @@
+{
+  "at": "2026-10-17T19:41:01.334Z",
+  "result": "PASS",
+  "node": "22.23.3",
+  "commands": [
+    {
+      "command": "node --test scripts/backup-selftest.mjs",
+      "exitCode": 0,
+      "passed": 7,
+      "failed": 0
+    },
+    {
+      "command": "node node_modules/eslint/bin/eslint.js scripts/backup-common.mjs scripts/backup-application.mjs scripts/backup-restore-local.mjs scripts/backup-selftest.mjs",
+      "exitCode": 0
+    }
+  ],
+  "tests": [
+    "2051 rows exported despite server cap of37 per page",
+    "1007 storage-style records exported across short pages",
+    "Changed counts and incomplete pagination abort",
+    "AES-GCM round trip; wrong key and modified ciphertext rejected",
+    "Remote write methods and foreign destinations blocked before fetch",
+    "All six timestamp microsecond digits preserved",
+    "Repeated private ACL validation and DPAPI key round trip; path escape rejected"
+  ],
+  "regressionResolved": "Repeated ACL setup initially attempted Set-Acl and required SeSecurityPrivilege. Existing protected ACL is now verified before any update; repeat selftest and actual capture/restore pass.",
+  "remoteRequests": 0,
+  "realCustomerRowsInTests": false,
+  "independentReview": {
+    "reviewer": "frontend agent",
+    "method": "Static read-only review of four scripts",
+    "blockingFindings": 0,
+    "executedScripts": false,
+    "accessedBackupOrKeys": false,
+    "limits": [
+      "DPAPI is bound to Windows user/profile",
+      "Double-read stability is not a transaction snapshot",
+      "No restored GoTrue/Storage HTTP runtime tested"
+    ]
+  },
+  "toolInventory": {
+    "supabaseCLI": "2.75.0",
+    "postgresTools": "16.11",
+    "pglite": "0.5.10",
+    "dockerDaemonAvailable": false,
+    "fullRemoteDumpAttempted": false
+  }
+}

@@ -1,36 +1,42 @@
+import {
+  targetConfig,
+  loadTargetDemos,
+  loadTargetAdmin,
+  requireDemoMutations,
+  evidencePath,
+  artifactPath,
+  projectRef,
+  runId,
+} from "./audit-target.mjs";
 import assert from "node:assert/strict";
 import { createClient } from "@supabase/supabase-js";
-import { readFileSync, writeFileSync, mkdirSync } from "node:fs";
+import { writeFileSync } from "node:fs";
 import { randomUUID } from "node:crypto";
 import sharp from "sharp";
 import jsQR from "jsqr";
 import { Session, base } from "./live-client.mjs";
 import { demos } from "./demo-catalog.mjs";
-const manifest = JSON.parse(
-  readFileSync("artifacts/demo/restaurants.json", "utf8"),
-);
-const accounts = JSON.parse(
-  readFileSync(".runtime/demo-accounts.json", "utf8"),
-);
-const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
-assert.equal(new URL(url).hostname, "ylcnrfzosjzuljufwups.supabase.co");
+const { manifest, accounts } = loadTargetDemos();
+requireDemoMutations();
+const config = targetConfig(process.env, { service: true });
+const adminAccount = loadTargetAdmin();
+const url = config.url;
 const opts = { auth: { persistSession: false, autoRefreshToken: false } };
-const service = createClient(url, process.env.SUPABASE_SERVICE_ROLE_KEY, opts);
+const service = createClient(url, config.serviceKey, opts);
 const admin = new Session();
-await admin.login(
-  process.env.AUDIT_ADMIN_EMAIL,
-  process.env.AUDIT_ADMIN_PASSWORD,
-);
+await admin.login(adminAccount.email, adminAccount.password);
 const checks = [];
 const owners = [];
 const qrResults = [];
-mkdirSync("artifacts/qr/local-validation", { recursive: true });
+artifactPath("qr");
 function persist() {
   writeFileSync(
-    "docs/evidence/live-audit.json",
+    evidencePath("live-audit.json"),
     JSON.stringify(
       {
         at: new Date().toISOString(),
+        projectRef,
+        runId,
         environment: base,
         database: "Supabase real",
         checks,
@@ -70,11 +76,7 @@ try {
     const s = new Session();
     const a = accounts[item.key];
     const login = await s.login(a.email, a.password);
-    const client = createClient(
-      url,
-      process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY,
-      opts,
-    );
+    const client = createClient(url, config.publicKey, opts);
     const auth = await client.auth.signInWithPassword({
       email: a.email,
       password: a.password,
@@ -477,8 +479,7 @@ try {
           const r = await s.request(
             "/api/workspace/" + item.id + "/qr?format=" + format,
           );
-          const path =
-            "artifacts/qr/local-validation/" + item.key + "." + format;
+          const path = artifactPath("qr", item.key + "." + format);
           writeFileSync(path, r.data);
           let decoded = null;
           if (format !== "pdf") {

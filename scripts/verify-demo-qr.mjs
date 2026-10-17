@@ -1,3 +1,11 @@
+import {
+  loadTargetDemos,
+  auditBase,
+  artifactPath,
+  evidencePath,
+  projectRef,
+  runId,
+} from "./audit-target.mjs";
 import { readFileSync, writeFileSync } from "node:fs";
 import assert from "node:assert/strict";
 import sharp from "sharp";
@@ -10,13 +18,13 @@ import {
   PDFRawStream,
 } from "pdf-lib";
 import { inflateSync } from "node:zlib";
-const manifest = JSON.parse(
-  readFileSync("artifacts/demo/restaurants.json", "utf8"),
-);
+const { manifest } = loadTargetDemos({ accounts: false });
+const base = auditBase();
+if (!process.env.AUDIT_RUN_ID) throw Error("QR_REQUIRES_EXPLICIT_AUDIT_RUN_ID");
 const results = [];
 for (const item of manifest.restaurants) {
   for (const format of ["png", "svg", "pdf"]) {
-    const path = "artifacts/qr/local-validation/" + item.key + "." + format;
+    const path = artifactPath("qr", item.key + "." + format);
     const input = readFileSync(path);
     let rgba, width, height;
     if (format === "pdf") {
@@ -52,7 +60,7 @@ for (const item of manifest.restaurants) {
       rgba = new Uint8ClampedArray(img.data);
     }
     const decoded = jsQR(rgba, width, height)?.data;
-    assert.equal(decoded, manifest.base + item.stableRoute);
+    assert.equal(decoded, base + item.stableRoute);
     results.push({
       restaurant: item.key,
       format,
@@ -67,12 +75,16 @@ for (const item of manifest.restaurants) {
   }
 }
 writeFileSync(
-  "docs/evidence/demo-qr-decoding.json",
+  evidencePath("demo-qr-decoding.json"),
   JSON.stringify(
     {
       at: new Date().toISOString(),
-      status: "LOCAL_VALIDATION_ONLY",
-      reason: "No public deployment or permanent platform host supplied",
+      projectRef,
+      runId,
+      base,
+      status: "ARTIFACT_DECODING_ONLY",
+      reason:
+        "Decoding proves payload only; public HTTP resolution and physical scans require separate evidence",
       results,
     },
     null,

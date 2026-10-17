@@ -1,0 +1,13 @@
+{
+  "checkedAt": "2026-10-17T19:29:42.661820+00:00",
+  "schemaSource": "https://render.com/schema/render.yaml.json",
+  "blueprintSha256": "3361321c0c867ffac86ba00a3bc52e7241bfb30b0c0c302b5ba27c85193a88b5",
+  "schemaValidationPassed": true,
+  "errors": [],
+  "singleWebService": true,
+  "createsDatabase": false,
+  "secretsEmbedded": false,
+  "plan": "free",
+  "providerInventoryVerified": false,
+  "deployed": false
+}

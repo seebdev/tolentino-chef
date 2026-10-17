@@ -1,18 +1,23 @@
+import {
+  loadTargetDemos,
+  loadTargetAdmin,
+  requireDemoMutations,
+  evidencePath,
+  projectRef,
+  runId,
+} from "./audit-target.mjs";
 import assert from "node:assert/strict";
 import { readFileSync, writeFileSync } from "node:fs";
 import { Session, base } from "./live-client.mjs";
-const manifest = JSON.parse(
-  readFileSync("artifacts/demo/restaurants.json", "utf8"),
-);
+const { manifest } = loadTargetDemos({ accounts: false });
+requireDemoMutations();
+const adminAccount = loadTargetAdmin();
 const [a, b] = manifest.restaurants;
 const admin = new Session();
-await admin.login(
-  process.env.AUDIT_ADMIN_EMAIL,
-  process.env.AUDIT_ADMIN_PASSWORD,
-);
+await admin.login(adminAccount.email, adminAccount.password);
 const results = process.env.AUDIT_ONLY
   ? JSON.parse(
-      readFileSync("docs/evidence/live-admin-audit.json", "utf8"),
+      readFileSync(evidencePath("live-admin-audit.json"), "utf8"),
     ).results.filter((x) => x.name !== process.env.AUDIT_ONLY)
   : [];
 async function check(name, run) {
@@ -198,10 +203,13 @@ try {
 } finally {
   await admin.logout();
   writeFileSync(
-    "docs/evidence/live-admin-audit.json",
+    evidencePath("live-admin-audit.json"),
     JSON.stringify(
       {
         at: new Date().toISOString(),
+        projectRef,
+        runId,
+        base,
         results,
         passed: results.filter((x) => x.pass).length,
         failed: results.filter((x) => !x.pass).length,

@@ -1,0 +1,26 @@
+{
+  "at": "2026-10-17T20:08:11.733Z",
+  "projectRef": "hgntppemxwcxaxritnfq",
+  "scope": "Offline migration guard tests with simulated fetch; syntax and lint only. No hosted destination/source login or write.",
+  "remoteExecuted": false,
+  "scriptSyntax": {
+    "passed": 11,
+    "failed": 0
+  },
+  "tests": {
+    "passed": 19,
+    "failed": 0
+  },
+  "checks": [
+    {
+      "name": "guards",
+      "command": "node node_modules/vitest/vitest.mjs run tests/migration_target.test.ts --reporter=json --outputFile=docs/evidence/migrations/hgntppemxwcxaxritnfq/local-guards-20261017/unit-guards.json",
+      "exitCode": 0
+    },
+    {
+      "name": "lint",
+      "command": "node node_modules/eslint/bin/eslint.js scripts/audit-target.mjs scripts/live-client.mjs scripts/verify-production-isolation.mjs scripts/verify-restart.mjs scripts/verify-production-local.mjs scripts/verify-demo-qr.mjs scripts/run-live-audit.mjs scripts/run-admin-live-audit.mjs scripts/run-live-gap-audit.mjs scripts/visual-live-audit.mjs scripts/consolidate-live-browser-audit.mjs tests/migration_target.test.ts",
+      "exitCode": 0
+    }
+  ]
+}

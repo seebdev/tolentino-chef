@@ -1,0 +1,17 @@
+{
+  "checkedAt": "2026-10-17T20:03:15.995115+00:00",
+  "targetProjectRef": "hgntppemxwcxaxritnfq",
+  "schemaSource": "https://render.com/schema/render.yaml.json",
+  "blueprintSha256": "340a7b9ee2b475ae4cc081020d760f1fe8b4030addf6f0daf84889e3ff9ec7c2",
+  "schemaValidationPassed": true,
+  "errors": [],
+  "singleWebService": true,
+  "createsDatabase": false,
+  "repository": "https://github.com/seebdev/tolentino-chef",
+  "branch": "main",
+  "plan": "free",
+  "region": "virginia",
+  "secretsEmbedded": false,
+  "providerInventoryVerified": false,
+  "deployed": false
+}

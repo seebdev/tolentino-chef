@@ -1,0 +1,81 @@
+(!) Your Vite config uses features that are unsupported by `configLoader: 'native'`, which is planned to become the default in a future major version of Vite:
+  - ESM syntax in a file loaded as CommonJS (vitest.config.ts:1:1). Use a `.mjs` extension or set `"type": "module"` in the closest package.json
+Set `VITE_CONFIG_NATIVE_IGNORE_WARNING=true` to suppress this warning.
+
+ RUN  v4.1.12 C:/Users/sebas/OneDrive/Escritorio/tolentino-restaurantes-admin
+
+ ✓ tests/qr.test.ts (14 tests) 13700ms
+     ✓ preserves the exact URL at 256px without logo  491ms
+     ✓ preserves the exact URL at 1024px without logo  384ms
+     ✓ preserves the exact URL at 1024px with logo  801ms
+     ✓ keeps the public token unchanged after colors, frame, label and logo change  421ms
+     ✓ PDF contains the same complete decodable QR image with label, frame and logo  10471ms
+     ✓ reserves at least four empty modules and ECC H  306ms
+stdout | tests/database.test.ts > PostgreSQL tenant isolation, constraints and transactional operations > imports 1 products atomically within the supported batch size
+{"benchmark":"import_products","rows":1,"milliseconds":7,"engine":"PostgreSQL PGlite"}
+
+stdout | tests/database.test.ts > PostgreSQL tenant isolation, constraints and transactional operations > imports 100 products atomically within the supported batch size
+{"benchmark":"import_products","rows":100,"milliseconds":198,"engine":"PostgreSQL PGlite"}
+
+stdout | tests/database.test.ts > PostgreSQL tenant isolation, constraints and transactional operations > imports 999 products atomically within the supported batch size
+{"benchmark":"import_products","rows":999,"milliseconds":2379,"engine":"PostgreSQL PGlite"}
+
+stdout | tests/database.test.ts > PostgreSQL tenant isolation, constraints and transactional operations > imports 1000 products atomically within the supported batch size
+{"benchmark":"import_products","rows":1000,"milliseconds":2084,"engine":"PostgreSQL PGlite"}
+
+stdout | tests/database.test.ts > PostgreSQL tenant isolation, constraints and transactional operations > rejects empty and 1001-row imports before creating any product
+{"benchmark":"import_products_rejected","rows":1001,"milliseconds":7,"engine":"PostgreSQL PGlite"}
+
+ ✓ tests/database.test.ts (43 tests) 10879ms
+     ✓ imports 999 products atomically within the supported batch size  2441ms
+     ✓ imports 1000 products atomically within the supported batch size  2152ms
+ ✓ tests/proxy_session.test.ts (43 tests) 95ms
+stderr | tests/admin_routes.test.ts > admin creation, idempotency and commercial-data regressions > maps a genuine email conflict to 409 and never deletes the pre-existing account
+{"event":"restaurant_create_failed","requestId":"dddddddd-dddd-4ddd-8ddd-dddddddddddd","phase":"auth_create","code":"email_exists","status":422}
+
+stderr | tests/admin_routes.test.ts > admin creation, idempotency and commercial-data regressions > does not mislabel Auth failure {"code":"unexpected_failure","status":500} as a conflict
+{"event":"restaurant_create_failed","requestId":"dddddddd-dddd-4ddd-8ddd-dddddddddddd","phase":"auth_create","code":"unexpected_failure","status":500}
+
+stderr | tests/admin_routes.test.ts > admin creation, idempotency and commercial-data regressions > does not mislabel Auth failure {"code":"not_admin","status":403} as a conflict
+{"event":"restaurant_create_failed","requestId":"dddddddd-dddd-4ddd-8ddd-dddddddddddd","phase":"auth_create","code":"not_admin","status":403}
+
+stderr | tests/admin_routes.test.ts > admin creation, idempotency and commercial-data regressions > does not mislabel Auth failure {"code":"over_request_rate_limit","status":429} as a conflict
+{"event":"restaurant_create_failed","requestId":"dddddddd-dddd-4ddd-8ddd-dddddddddddd","phase":"auth_create","code":"over_request_rate_limit","status":429}
+
+stderr | tests/admin_routes.test.ts > admin creation, idempotency and commercial-data regressions > does not mislabel Auth failure {"code":"email_address_invalid","status":422} as a conflict
+{"event":"restaurant_create_failed","requestId":"dddddddd-dddd-4ddd-8ddd-dddddddddddd","phase":"auth_create","code":"email_address_invalid","status":422}
+
+stderr | tests/admin_routes.test.ts > admin creation, idempotency and commercial-data regressions > does not mislabel Auth failure {"message":"some unclassified internal error"} as a conflict
+{"event":"restaurant_create_failed","requestId":"dddddddd-dddd-4ddd-8ddd-dddddddddddd","phase":"auth_create","code":"unknown","status":null}
+
+stderr | tests/admin_routes.test.ts > admin creation, idempotency and commercial-data regressions > never adopts or deletes a pre-existing Auth user without the server-owned attempt marker
+{"event":"restaurant_create_failed","requestId":"dddddddd-dddd-4ddd-8ddd-dddddddddddd","phase":"auth_identity","code":"reserved_identity_mismatch","status":null}
+
+stderr | tests/admin_routes.test.ts > admin creation, idempotency and commercial-data regressions > recovers a committed SQL result after a lost response without deleting the owner
+{"event":"restaurant_create_failed","requestId":"dddddddd-dddd-4ddd-8ddd-dddddddddddd","phase":"provision","code":"PGRST000","status":null}
+
+stderr | tests/admin_routes.test.ts > admin creation, idempotency and commercial-data regressions > resumes a transient SQL failure using the same Auth account and IDs
+{"event":"restaurant_create_failed","requestId":"dddddddd-dddd-4ddd-8ddd-dddddddddddd","phase":"provision","code":"PGRST000","status":null}
+
+stderr | tests/admin_routes.test.ts > admin creation, idempotency and commercial-data regressions > records and resumes a failed cleanup, leaving all unrelated accounts untouched
+{"event":"restaurant_create_failed","requestId":"dddddddd-dddd-4ddd-8ddd-dddddddddddd","phase":"compensation","code":"unexpected_failure","status":503}
+
+stderr | tests/admin_routes.test.ts > admin creation, idempotency and commercial-data regressions > keeps successful creation when invitation fails and never sends again on replay
+{"event":"restaurant_create_failed","requestId":"dddddddd-dddd-4ddd-8ddd-dddddddddddd","phase":"invitation","code":"email_address_not_authorized","status":null}
+
+ ✓ tests/admin_routes.test.ts (23 tests) 184ms
+ ✓ tests/api_security.test.ts (14 tests) 82ms
+ ✓ tests/import_export.test.ts (9 tests) 129ms
+ ✓ tests/domains.test.ts (12 tests) 106ms
+ ✓ tests/auth_routes.test.ts (4 tests) 58ms
+ ✓ tests/csv.test.ts (21 tests) 92ms
+ ✓ tests/workspace_validation.test.ts (3 tests) 63ms
+ ✓ tests/public_security.test.ts (8 tests) 60ms
+ ✓ tests/q_resolver.test.ts (7 tests) 43ms
+
+ Test Files  12 passed (12)
+      Tests  201 passed (201)
+   Start at  14:28:50
+   Duration  53.82s (transform 1.57s, setup 0ms, import 22.51s, tests 25.49s, environment 5ms)
+
+JSON report written to C:/Users/sebas/OneDrive/Escritorio/tolentino-restaurantes-admin/docs/evidence/production-readiness-unit-tests-20261017.json

@@ -1,0 +1,274 @@
+{
+  "at": "2026-10-17T19:36:21.753Z",
+  "result": "PASS",
+  "scope": "Application logical restore in memory-only PostgreSQL PGlite; not complete Supabase/Auth restore",
+  "archiveSha256": "79be105c5b3828056209dcab47c3e887dccac158e0121a8416f848b267e73207",
+  "engine": "PGlite 0.5.10",
+  "node": "v22.23.3",
+  "tables": {
+    "platform_admins": 1,
+    "restaurants": 3,
+    "restaurant_memberships": 3,
+    "restaurant_settings": 3,
+    "categories": 24,
+    "products": 72,
+    "promotions": 3,
+    "restaurant_hours": 21,
+    "translations": 96,
+    "restaurant_qr_configs": 3,
+    "restaurant_domains": 0,
+    "commercial_sales": 3,
+    "security_audit_events": 122,
+    "visit_events": 3,
+    "platform_settings": 1
+  },
+  "authIdentityProfiles": 4,
+  "storageObjects": 27,
+  "storageBytes": 314126,
+  "migrations": 2,
+  "policies": 35,
+  "preserved": [
+    "All exported application fields including generated values",
+    "Restaurant/user/membership IDs",
+    "Permanent QR tokens",
+    "Storage paths, listed IDs, metadata and exact bytes"
+  ],
+  "applicationRowsEqual": true,
+  "objectHashesEqual": true,
+  "directedTenantPairs": 6,
+  "passedChecks": 53,
+  "failedChecks": 0,
+  "checks": [
+    {
+      "name": "Source double-read manifest is consistent",
+      "pass": true
+    },
+    {
+      "name": "Manifest hash: platform_admins",
+      "pass": true
+    },
+    {
+      "name": "Manifest hash: restaurants",
+      "pass": true
+    },
+    {
+      "name": "Manifest hash: restaurant_memberships",
+      "pass": true
+    },
+    {
+      "name": "Manifest hash: restaurant_settings",
+      "pass": true
+    },
+    {
+      "name": "Manifest hash: categories",
+      "pass": true
+    },
+    {
+      "name": "Manifest hash: products",
+      "pass": true
+    },
+    {
+      "name": "Manifest hash: promotions",
+      "pass": true
+    },
+    {
+      "name": "Manifest hash: restaurant_hours",
+      "pass": true
+    },
+    {
+      "name": "Manifest hash: translations",
+      "pass": true
+    },
+    {
+      "name": "Manifest hash: restaurant_qr_configs",
+      "pass": true
+    },
+    {
+      "name": "Manifest hash: restaurant_domains",
+      "pass": true
+    },
+    {
+      "name": "Manifest hash: commercial_sales",
+      "pass": true
+    },
+    {
+      "name": "Manifest hash: security_audit_events",
+      "pass": true
+    },
+    {
+      "name": "Manifest hash: visit_events",
+      "pass": true
+    },
+    {
+      "name": "Manifest hash: platform_settings",
+      "pass": true
+    },
+    {
+      "name": "Auth profile manifest hash",
+      "pass": true
+    },
+    {
+      "name": "Bucket manifest hash",
+      "pass": true
+    },
+    {
+      "name": "Storage object manifest hash",
+      "pass": true
+    },
+    {
+      "name": "Object count",
+      "pass": true
+    },
+    {
+      "name": "All object bytes match SHA256",
+      "pass": true
+    },
+    {
+      "name": "Archived migrations match local reviewed files",
+      "pass": true
+    },
+    {
+      "name": "Migrations apply in isolated PostgreSQL",
+      "pass": true
+    },
+    {
+      "name": "One transaction restores all application rows and objects with FK/check constraints",
+      "pass": true
+    },
+    {
+      "name": "Restored equality: platform_admins",
+      "pass": true
+    },
+    {
+      "name": "Restored equality: restaurants",
+      "pass": true
+    },
+    {
+      "name": "Restored equality: restaurant_memberships",
+      "pass": true
+    },
+    {
+      "name": "Restored equality: restaurant_settings",
+      "pass": true
+    },
+    {
+      "name": "Restored equality: categories",
+      "pass": true
+    },
+    {
+      "name": "Restored equality: products",
+      "pass": true
+    },
+    {
+      "name": "Restored equality: promotions",
+      "pass": true
+    },
+    {
+      "name": "Restored equality: restaurant_hours",
+      "pass": true
+    },
+    {
+      "name": "Restored equality: translations",
+      "pass": true
+    },
+    {
+      "name": "Restored equality: restaurant_qr_configs",
+      "pass": true
+    },
+    {
+      "name": "Restored equality: restaurant_domains",
+      "pass": true
+    },
+    {
+      "name": "Restored equality: commercial_sales",
+      "pass": true
+    },
+    {
+      "name": "Restored equality: security_audit_events",
+      "pass": true
+    },
+    {
+      "name": "Restored equality: visit_events",
+      "pass": true
+    },
+    {
+      "name": "Restored equality: platform_settings",
+      "pass": true
+    },
+    {
+      "name": "Auth IDs and selected profiles preserved",
+      "pass": true
+    },
+    {
+      "name": "Every storage object restored",
+      "pass": true
+    },
+    {
+      "name": "Storage object identities and bytes preserved",
+      "pass": true
+    },
+    {
+      "name": "All owner memberships reference preserved identities",
+      "pass": true
+    },
+    {
+      "name": "Permanent QR tokens remain unchanged",
+      "pass": true
+    },
+    {
+      "name": "All fifteen public tables retain RLS",
+      "pass": true
+    },
+    {
+      "name": "All application triggers re-enabled after restore",
+      "pass": true
+    },
+    {
+      "name": "Excluded private operational tables are explicitly empty",
+      "pass": true
+    },
+    {
+      "name": "Restored owner RLS denies cross-tenant reads/writes and private storage metadata",
+      "pass": true
+    },
+    {
+      "name": "Composite tenant FK rejects cross-tenant category",
+      "pass": true
+    },
+    {
+      "name": "Permanent QR identity remains immutable",
+      "pass": true
+    },
+    {
+      "name": "Owner can edit own restored product with menu triggers active (rolled back)",
+      "pass": true
+    },
+    {
+      "name": "Security probes leave restored data unchanged",
+      "pass": true
+    },
+    {
+      "name": "Tampered encrypted archive rejected before restore",
+      "pass": true
+    }
+  ],
+  "remoteRequests": 0,
+  "remoteMutations": 0,
+  "plaintextFilesWritten": 0,
+  "persistentLocalDatabase": false,
+  "authRuntimeTested": false,
+  "storageHttpServiceTested": false,
+  "completePostgresAuthRestore": false,
+  "excludedPrivateTables": {
+    "rate_limits": 0,
+    "creation_requests": 0
+  },
+  "limits": [
+    "Auth password hashes, sessions, refresh tokens and MFA secrets",
+    "private.rate_limits",
+    "private.restaurant_creation_requests",
+    "Supabase managed schemas, roles, extension binaries and full PostgreSQL snapshot",
+    "Auth/SMTP/JWT/provider settings and secret keys",
+    "Storage managed DB metadata not exposed by list/getBucket"
+  ]
+}

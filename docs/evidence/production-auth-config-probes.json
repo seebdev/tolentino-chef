@@ -1,0 +1,45 @@
+{
+  "checkedAt": "2026-10-17T19:31:40.896Z",
+  "scope": "Local isolated execution of src/lib/config.ts with synthetic environment values only",
+  "remoteCalls": false,
+  "sourceUnchanged": true,
+  "tests": [
+    {
+      "name": "missing APP_URL in production",
+      "origin": "http://localhost:3000",
+      "error": false,
+      "alias": false,
+      "passed": true
+    },
+    {
+      "name": "explicit loopback production",
+      "origin": "http://127.0.0.1:3000",
+      "error": false,
+      "alias": false,
+      "passed": true
+    },
+    {
+      "name": "public HTTP rejected",
+      "origin": null,
+      "error": true,
+      "alias": false,
+      "passed": true
+    },
+    {
+      "name": "canonical HTTPS origin",
+      "origin": "https://admin.example.com",
+      "error": false,
+      "alias": false,
+      "passed": true
+    },
+    {
+      "name": "platform alias accepted as hostname",
+      "origin": "https://admin.example.com",
+      "error": false,
+      "alias": true,
+      "passed": true
+    }
+  ],
+  "passed": 5,
+  "total": 5
+}

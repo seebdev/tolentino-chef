@@ -1,0 +1,108 @@
+{
+  "at": "2026-10-17T19:36:21.081Z",
+  "result": "PASS",
+  "environment": "local production server; hosted Supabase",
+  "base": "http://localhost:3000",
+  "target": "ylcnrfzosjzuljufwups.supabase.co",
+  "checks": {
+    "passed": 30,
+    "failed": 0,
+    "directedPairs": 6,
+    "apiDenied403": 6,
+    "crossTenantRlsSelects": 54,
+    "crossTenantRlsRows": 0,
+    "privateStorageDenied": 6,
+    "positiveControls": "Each of three owners reads nine nonempty own tables and an existing own image, before and after; verifies API assignment and own workspace.",
+    "publicMenuRequests": 0
+  },
+  "businessContentMutations": false,
+  "authSessionLifecycle": true,
+  "sessions": {
+    "created": 6,
+    "closedLocally": 6,
+    "globalRevocations": 0,
+    "emails": 0
+  },
+  "content": [
+    {
+      "key": "aurora",
+      "products": 24,
+      "categories": 8,
+      "beforeContentSha256": "bd008c9001941ac8ef9e9fbd03a15ed074238ca4b6a56f9df268b9e91bfcb543",
+      "afterContentSha256": "bd008c9001941ac8ef9e9fbd03a15ed074238ca4b6a56f9df268b9e91bfcb543",
+      "privateSnapshotUnchanged": true,
+      "tableCounts": {
+        "restaurants": 1,
+        "restaurant_memberships": 1,
+        "restaurant_settings": 1,
+        "categories": 8,
+        "products": 24,
+        "promotions": 1,
+        "restaurant_hours": 7,
+        "translations": 32,
+        "restaurant_qr_configs": 1
+      },
+      "sampledImageBytes": 13374
+    },
+    {
+      "key": "bruma",
+      "products": 24,
+      "categories": 8,
+      "beforeContentSha256": "f11579e2478a45017fdfb7ee412b391b830af3ba5c40ef72ab133b0b89a6ad57",
+      "afterContentSha256": "f11579e2478a45017fdfb7ee412b391b830af3ba5c40ef72ab133b0b89a6ad57",
+      "privateSnapshotUnchanged": true,
+      "tableCounts": {
+        "restaurants": 1,
+        "restaurant_memberships": 1,
+        "restaurant_settings": 1,
+        "categories": 8,
+        "products": 24,
+        "promotions": 1,
+        "restaurant_hours": 7,
+        "translations": 32,
+        "restaurant_qr_configs": 1
+      },
+      "sampledImageBytes": 9846
+    },
+    {
+      "key": "marea",
+      "products": 24,
+      "categories": 8,
+      "beforeContentSha256": "e4e15b2df783bf853d7b9620ed131132c58ef02b11aa486ec8f1e5bfae3b9785",
+      "afterContentSha256": "e4e15b2df783bf853d7b9620ed131132c58ef02b11aa486ec8f1e5bfae3b9785",
+      "privateSnapshotUnchanged": true,
+      "tableCounts": {
+        "restaurants": 1,
+        "restaurant_memberships": 1,
+        "restaurant_settings": 1,
+        "categories": 8,
+        "products": 24,
+        "promotions": 1,
+        "restaurant_hours": 7,
+        "translations": 32,
+        "restaurant_qr_configs": 1
+      },
+      "sampledImageBytes": 13798
+    }
+  ],
+  "finalEvidence": {
+    "path": "docs/evidence/production-isolation-20261017T193441579Z.json",
+    "sha256": "110a3a85924851dab537e7f9b4bc2f3efd6e8210921e9060c6f011784c7482b3"
+  },
+  "runner": {
+    "path": "scripts/verify-production-isolation.mjs",
+    "sha256": "cb96bae6056ca0882b75e91914f96c618dbe7510ee761e53586d9e72ccba471e"
+  },
+  "initialHistoricalEvidence": {
+    "path": "docs/evidence/production-isolation-20261017T193235681Z.json",
+    "sha256": "5438fa2273fb3fb137e2e60d5030776e904d54ef6e4c6ede1a05ebdc231a58f2",
+    "note": "Initial run preserved; six public-menu GETs can record visits and rate counters. Final runner removed them. No total-zero-write claim in either run because auth/audit/rate counters are normal session side effects."
+  },
+  "validation": "docs/evidence/production-readiness-validation-20261017.json",
+  "guards": "docs/evidence/production-isolation-runner-guards-20261017.json",
+  "limitations": [
+    "SELECT/download isolation only; does not exercise blocked INSERT/UPDATE/DELETE or suspended accounts in this run.",
+    "One confirmed existing image per tenant is sampled; not an enumeration of all Storage objects.",
+    "Successful local checks do not establish Render/public deployment, SMTP, physical QR scanning or device compatibility."
+  ]
+}

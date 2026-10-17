@@ -1,13 +1,17 @@
+import {
+  loadTargetDemos,
+  assertAppTarget,
+  evidencePath,
+  targetMenuUrl,
+  projectRef,
+  runId,
+} from "./audit-target.mjs";
 import assert from "node:assert/strict";
-import { readFileSync, writeFileSync } from "node:fs";
+import { writeFileSync } from "node:fs";
 import { chromium } from "@playwright/test";
 import { base } from "./live-client.mjs";
-const manifest = JSON.parse(
-  readFileSync("artifacts/demo/restaurants.json", "utf8"),
-);
-const accounts = JSON.parse(
-  readFileSync(".runtime/demo-accounts.json", "utf8"),
-);
+const { manifest, accounts } = loadTargetDemos();
+await assertAppTarget(base, { fresh: true });
 const browser = await chromium.launch({ channel: "chrome", headless: true });
 const context = await browser.newContext({
   viewport: { width: 1440, height: 1000 },
@@ -24,6 +28,8 @@ page.on("response", (r) => {
 });
 const result = {
   at: new Date().toISOString(),
+  projectRef,
+  runId,
   base,
   mode: "next start (production build served locally)",
   browser: await browser.version(),
@@ -34,7 +40,7 @@ try {
   assert.equal(health.status(), 200);
   result.health = await health.json();
   for (const item of manifest.restaurants) {
-    const response = await page.goto(item.localMenu, {
+    const response = await page.goto(targetMenuUrl(item, base), {
       waitUntil: "networkidle",
     });
     assert.equal(response.status(), 200);
@@ -55,6 +61,7 @@ try {
       cspProduction: true,
     });
   }
+  await assertAppTarget(base, { fresh: true });
   const hydration = page.waitForResponse(
     (r) => new URL(r.url()).pathname === "/api/health",
   );
@@ -93,7 +100,7 @@ try {
   await browser.close();
 }
 writeFileSync(
-  "docs/evidence/production-local-smoke.json",
+  evidencePath("production-local-smoke.json"),
   JSON.stringify(result, null, 2),
 );
 console.log(

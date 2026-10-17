@@ -1,9 +1,11 @@
 services:
   - type: web
     name: tolentino-restaurantes-admin
+    repo: https://github.com/seebdev/tolentino-chef
+    branch: main
     runtime: node
     plan: free
-    region: oregon
+    region: virginia
     buildCommand: npm ci --include=dev && npm run typecheck && npm run lint && npm run test && npm run build
     startCommand: npm run start
     healthCheckPath: /api/health

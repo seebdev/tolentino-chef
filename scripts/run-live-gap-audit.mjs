@@ -1,28 +1,34 @@
+import {
+  loadTargetDemos,
+  loadTargetAdmin,
+  requireDemoMutations,
+  evidencePath as targetEvidencePath,
+  artifactPath,
+  projectRef,
+  runId,
+} from "./audit-target.mjs";
 // Supplemental live QA. Runs only on the three manifested DEMOs and restores every mutation.
 // Credentials are loaded from the ignored account file / process environment and never reported.
 import assert from "node:assert/strict";
-import { readFileSync, writeFileSync, mkdirSync } from "node:fs";
+import { writeFileSync } from "node:fs";
 import { chromium, expect } from "@playwright/test";
 import { Session, base } from "./live-client.mjs";
 import { demos } from "./demo-catalog.mjs";
 
-const readJson = (path) =>
-  JSON.parse(readFileSync(path, "utf8").replace(/^\uFEFF/, ""));
-const manifest = readJson("artifacts/demo/restaurants.json");
-const accounts = readJson(".runtime/demo-accounts.json");
-assert.equal(manifest.target, "ylcnrfzosjzuljufwups.supabase.co");
-assert.equal(new URL(base).origin, new URL(manifest.base).origin);
-assert.ok(["localhost", "127.0.0.1"].includes(new URL(base).hostname));
+const { manifest, accounts } = loadTargetDemos();
+requireDemoMutations();
+const adminAccount = loadTargetAdmin();
 assert.equal(manifest.restaurants.length, 3);
 assert.ok(
-  process.env.AUDIT_ADMIN_EMAIL && process.env.AUDIT_ADMIN_PASSWORD,
+  adminAccount.email && adminAccount.password,
   "Admin environment credentials are required; do not print them.",
 );
-mkdirSync("docs/evidence", { recursive: true });
-mkdirSync("artifacts/screenshots", { recursive: true });
+artifactPath("screenshots");
 
 const evidence = {
   startedAt: new Date().toISOString(),
+  projectRef,
+  runId,
   base,
   database: "Supabase real",
   scope: "Restorable live checks on manifested DEMOs only",
@@ -32,7 +38,7 @@ const evidence = {
   checks: [],
   cleanupErrors: [],
 };
-const evidencePath = "docs/evidence/live-gap-audit.json";
+const evidencePath = targetEvidencePath("live-gap-audit.json");
 const snapshots = { platform: null, restaurants: [] };
 const ownerSessions = [];
 const admin = new Session();
@@ -99,10 +105,7 @@ const snapshotSave = () =>
   );
 
 try {
-  const logged = await admin.login(
-    process.env.AUDIT_ADMIN_EMAIL,
-    process.env.AUDIT_ADMIN_PASSWORD,
-  );
+  const logged = await admin.login(adminAccount.email, adminAccount.password);
   assert.equal(logged.role, "superadmin");
   const listing = (await admin.request("/api/admin/restaurants")).data;
   // Global contact changes are permitted only while the entire platform contains these DEMOs.
@@ -337,11 +340,12 @@ try {
         assert.equal(after.user.id, beforeIdentity.user.id);
         assert.equal(after.restaurantId, beforeIdentity.restaurantId);
         await page.screenshot({
-          path: "artifacts/screenshots/real-support-exit-" + name + ".png",
+          path: artifactPath(
+            "screenshots",
+            "real-support-exit-" + name + ".png",
+          ),
           fullPage: true,
-          mask: [
-            page.getByText(process.env.AUDIT_ADMIN_EMAIL, { exact: true }),
-          ],
+          mask: [page.getByText(adminAccount.email, { exact: true })],
         });
         return {
           identityUnchanged: true,
@@ -462,7 +466,10 @@ try {
           ).toBeVisible();
           await expect(publicPage.locator(".public-product")).toHaveCount(0);
           await publicPage.screenshot({
-            path: "artifacts/screenshots/real-platform-suspension-message.png",
+            path: artifactPath(
+              "screenshots",
+              "real-platform-suspension-message.png",
+            ),
             fullPage: true,
           });
         } finally {

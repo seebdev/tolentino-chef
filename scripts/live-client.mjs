@@ -1,13 +1,25 @@
-export const base = process.env.AUDIT_BASE_URL || "http://localhost:3000";
+import {
+  auditBase,
+  assertAppTarget,
+  requireDemoMutations,
+} from "./audit-target.mjs";
+export const base = auditBase();
 const wait = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 export class Session {
   constructor() {
     this.jar = new Map();
   }
+  /** @param {string} path @param {{method?: string, data?: Record<string, unknown>, form?: FormData, expected?: number[], retry?: number}} [options] */
   async request(
     path,
     { method = "GET", data, form, expected = [200, 201], retry = 0 } = {},
   ) {
+    if (
+      method !== "GET" &&
+      !(path === "/api/auth" && ["login", "logout"].includes(data?.action))
+    )
+      requireDemoMutations();
+    await assertAppTarget(base, { fresh: method !== "GET" });
     const headers = {
       origin: base,
       cookie: [...this.jar].map(([k, v]) => k + "=" + v).join("; "),
@@ -27,7 +39,9 @@ export class Session {
     }
     if (r.status === 429 && retry < 2) {
       console.log("Rate limit: waiting for the next permitted window");
-      await wait(61000);
+      await wait(30000);
+      await wait(30000);
+      await wait(1000);
       return this.request(path, {
         method,
         data,
