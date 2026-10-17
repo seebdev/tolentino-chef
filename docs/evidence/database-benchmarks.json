@@ -1,0 +1,28 @@
+{
+  "engine": "PostgreSQL PGlite",
+  "node": "v22.23.3",
+  "measuredAt": "2026-10-17T02:56:35.981Z",
+  "benchmarks": [
+    {
+      "rows": 1,
+      "milliseconds": 7
+    },
+    {
+      "rows": 100,
+      "milliseconds": 178
+    },
+    {
+      "rows": 999,
+      "milliseconds": 1570
+    },
+    {
+      "rows": 1000,
+      "milliseconds": 1624
+    },
+    {
+      "rows": 1001,
+      "milliseconds": 7,
+      "rejected": true
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+
+> tolentino-restaurantes-admin@0.1.0 build
+> next build --webpack
+
+▲ Next.js 16.4.2 (webpack)
+✓ Running next.config.ts took 76ms
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 27.0s
+  Running TypeScript ...
+  Finished TypeScript in 14.3s ...
+  Collecting page data using 7 workers ...
+  Generating static pages using 7 workers (0/12) ...
+  Generating static pages using 7 workers (3/12)
+  Generating static pages using 7 workers (6/12)
+  Generating static pages using 7 workers (9/12)
+✓ Generating static pages using 7 workers (12/12) in 1680ms
+  Finalizing page optimization ...
+  Collecting build traces ...
+
+Route (app)
+┌ ○ /
+├ ○ /_not-found
+├ ○ /admin
+├ ƒ /admin/restaurants/[id]
+├ ƒ /api/admin/restaurants
+├ ƒ /api/auth
+├ ƒ /api/health
+├ ƒ /api/media/[restaurantId]/[...path]
+├ ƒ /api/public/menu/[slug]
+├ ƒ /api/session
+├ ƒ /api/workspace/[restaurantId]
+├ ƒ /api/workspace/[restaurantId]/import
+├ ƒ /api/workspace/[restaurantId]/media
+├ ƒ /api/workspace/[restaurantId]/qr
+├ ƒ /auth/callback
+├ ƒ /auth/confirm
+├ ○ /dashboard
+├ ƒ /login
+├ ƒ /menu/[slug]
+└ ƒ /q/[token]
+
+
+ƒ Proxy (Middleware)
+
+○  (Static)   prerendered as static content
+ƒ  (Dynamic)  server-rendered on demand

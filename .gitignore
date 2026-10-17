@@ -1,0 +1,16 @@
+node_modules/
+.next/
+.env*
+!.env.example
+coverage/
+test-results/
+playwright-report/
+.supabase/
+*.log
+.runtime/
+.runtime-node.zip
+*.tsbuildinfo
+supabase/.temp/
+supabase/.branches/
+# Inventario privado de la referencia original: conservar solo en el equipo.
+docs/evidence/reference-before.json

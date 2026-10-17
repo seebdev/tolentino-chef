@@ -1,0 +1,2044 @@
+{
+  "numTotalTestSuites": 23,
+  "numPassedTestSuites": 23,
+  "numFailedTestSuites": 0,
+  "numPendingTestSuites": 0,
+  "numTotalTests": 161,
+  "numPassedTests": 161,
+  "numFailedTests": 0,
+  "numPendingTests": 0,
+  "numTodoTests": 0,
+  "snapshot": {
+    "added": 0,
+    "failure": false,
+    "filesAdded": 0,
+    "filesRemoved": 0,
+    "filesRemovedList": [],
+    "filesUnmatched": 0,
+    "filesUpdated": 0,
+    "matched": 0,
+    "total": 0,
+    "unchecked": 0,
+    "uncheckedKeysByFile": [],
+    "unmatched": 0,
+    "updated": 0,
+    "didUpdate": false
+  },
+  "startTime": 1792206522911,
+  "success": true,
+  "testResults": [
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": [
+            "admin handler provisioning and commercial-data regressions"
+          ],
+          "fullName": "admin handler provisioning and commercial-data regressions updates restaurant metadata without forwarding protected email or overwriting the existing sale",
+          "status": "passed",
+          "title": "updates restaurant metadata without forwarding protected email or overwriting the existing sale",
+          "duration": 38.151400000000194,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "admin handler provisioning and commercial-data regressions"
+          ],
+          "fullName": "admin handler provisioning and commercial-data regressions maps sale aliases into one atomic RPC while preserving fields absent from a partial sale edit",
+          "status": "passed",
+          "title": "maps sale aliases into one atomic RPC while preserving fields absent from a partial sale edit",
+          "duration": 5.629100000000108,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "admin handler provisioning and commercial-data regressions"
+          ],
+          "fullName": "admin handler provisioning and commercial-data regressions rejects an email reassignment and malformed commercial data before the write RPC",
+          "status": "passed",
+          "title": "rejects an email reassignment and malformed commercial data before the write RPC",
+          "duration": 8.647400000000061,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "admin handler provisioning and commercial-data regressions"
+          ],
+          "fullName": "admin handler provisioning and commercial-data regressions compensates only the newly created Auth user when atomic SQL provisioning fails",
+          "status": "passed",
+          "title": "compensates only the newly created Auth user when atomic SQL provisioning fails",
+          "duration": 3.580500000000029,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "admin handler provisioning and commercial-data regressions"
+          ],
+          "fullName": "admin handler provisioning and commercial-data regressions never deletes an existing account when Auth rejects creation",
+          "status": "passed",
+          "title": "never deletes an existing account when Auth rejects creation",
+          "duration": 2.6880999999998494,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "admin handler provisioning and commercial-data regressions"
+          ],
+          "fullName": "admin handler provisioning and commercial-data regressions keeps the created restaurant and account when invitation delivery fails",
+          "status": "passed",
+          "title": "keeps the created restaurant and account when invitation delivery fails",
+          "duration": 5.661299999999983,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "admin handler provisioning and commercial-data regressions"
+          ],
+          "fullName": "admin handler provisioning and commercial-data regressions records a failed compensation for reconciliation without deleting any other Auth user",
+          "status": "passed",
+          "title": "records a failed compensation for reconciliation without deleting any other Auth user",
+          "duration": 3.075900000000047,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        }
+      ],
+      "startTime": 1792206542400,
+      "endTime": 1792206542468.076,
+      "status": "passed",
+      "message": "",
+      "name": "./tests/admin_routes.test.ts"
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": [
+            "server authentication and tenant authorization"
+          ],
+          "fullName": "server authentication and tenant authorization denies an absent or rejected Supabase user before any privileged client is used",
+          "status": "passed",
+          "title": "denies an absent or rejected Supabase user before any privileged client is used",
+          "duration": 7.2251999999999725,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "server authentication and tenant authorization"
+          ],
+          "fullName": "server authentication and tenant authorization ignores self-editable role metadata and denies owner access to the platform admin",
+          "status": "passed",
+          "title": "ignores self-editable role metadata and denies owner access to the platform admin",
+          "duration": 2.1105999999999767,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "server authentication and tenant authorization"
+          ],
+          "fullName": "server authentication and tenant authorization denies an owner addressing another tenant before querying that restaurant",
+          "status": "passed",
+          "title": "denies an owner addressing another tenant before querying that restaurant",
+          "duration": 2.8127000000000635,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "server authentication and tenant authorization"
+          ],
+          "fullName": "server authentication and tenant authorization uses the user-scoped client and exact tenant filter for an allowed owner",
+          "status": "passed",
+          "title": "uses the user-scoped client and exact tenant filter for an allowed owner",
+          "duration": 1.2658999999999878,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "server authentication and tenant authorization"
+          ],
+          "fullName": "server authentication and tenant authorization blocks disabled memberships, unassigned users and suspended restaurants",
+          "status": "passed",
+          "title": "blocks disabled memberships, unassigned users and suspended restaurants",
+          "duration": 1.2477999999999838,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "server authentication and tenant authorization"
+          ],
+          "fullName": "server authentication and tenant authorization permits a DB-authorized superadmin to support a suspended tenant",
+          "status": "passed",
+          "title": "permits a DB-authorized superadmin to support a suspended tenant",
+          "duration": 0.9629999999999654,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "server authentication and tenant authorization"
+          ],
+          "fullName": "server authentication and tenant authorization rejects invalid IDs before performing auth calls and returns 404 for missing tenants",
+          "status": "passed",
+          "title": "rejects invalid IDs before performing auth calls and returns 404 for missing tenants",
+          "duration": 2.53329999999994,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "request boundary security"
+          ],
+          "fullName": "request boundary security requires the official origin and rejects explicit cross-site requests",
+          "status": "passed",
+          "title": "requires the official origin and rejects explicit cross-site requests",
+          "duration": 4.072900000000004,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "request boundary security"
+          ],
+          "fullName": "request boundary security limits actual streamed bytes even when Content-Length is absent or incorrect",
+          "status": "passed",
+          "title": "limits actual streamed bytes even when Content-Length is absent or incorrect",
+          "duration": 4.489200000000096,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "request boundary security"
+          ],
+          "fullName": "request boundary security cancels a real multipart upload stream once actual bytes exceed the limit despite a forged or absent length",
+          "status": "passed",
+          "title": "cancels a real multipart upload stream once actual bytes exceed the limit despite a forged or absent length",
+          "duration": 2.5258999999999787,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "request boundary security"
+          ],
+          "fullName": "request boundary security preserves binary upload bytes exactly at the accepted boundary",
+          "status": "passed",
+          "title": "preserves binary upload bytes exactly at the accepted boundary",
+          "duration": 1.6914000000000442,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "request boundary security"
+          ],
+          "fullName": "request boundary security rejects malformed JSON, arrays and null payloads",
+          "status": "passed",
+          "title": "rejects malformed JSON, arrays and null payloads",
+          "duration": 2.16719999999998,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "request boundary security"
+          ],
+          "fullName": "request boundary security hashes rate-limit identities and fails closed when the database denies a request",
+          "status": "passed",
+          "title": "hashes rate-limit identities and fails closed when the database denies a request",
+          "duration": 3.1140000000000327,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "request boundary security"
+          ],
+          "fullName": "request boundary security returns safe errors and no-store responses without leaking database secrets",
+          "status": "passed",
+          "title": "returns safe errors and no-store responses without leaking database secrets",
+          "duration": 11.17450000000008,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        }
+      ],
+      "startTime": 1792206544402,
+      "endTime": 1792206544450.1746,
+      "status": "passed",
+      "message": "",
+      "name": "./tests/api_security.test.ts"
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": [
+            "CSV real parsing and limits"
+          ],
+          "fullName": "CSV real parsing and limits accepts 1 products with UTF-8",
+          "status": "passed",
+          "title": "accepts 1 products with UTF-8",
+          "duration": 9.761999999999944,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "CSV real parsing and limits"
+          ],
+          "fullName": "CSV real parsing and limits accepts 100 products with UTF-8",
+          "status": "passed",
+          "title": "accepts 100 products with UTF-8",
+          "duration": 2.6270000000000095,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "CSV real parsing and limits"
+          ],
+          "fullName": "CSV real parsing and limits accepts 999 products with UTF-8",
+          "status": "passed",
+          "title": "accepts 999 products with UTF-8",
+          "duration": 6.942800000000034,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "CSV real parsing and limits"
+          ],
+          "fullName": "CSV real parsing and limits accepts 1000 products with UTF-8",
+          "status": "passed",
+          "title": "accepts 1000 products with UTF-8",
+          "duration": 4.0674999999999955,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "CSV real parsing and limits"
+          ],
+          "fullName": "CSV real parsing and limits rejects 1001 products without partially returning rows",
+          "status": "passed",
+          "title": "rejects 1001 products without partially returning rows",
+          "duration": 2.842899999999986,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "CSV real parsing and limits"
+          ],
+          "fullName": "CSV real parsing and limits supports mapping, quoted commas and newlines",
+          "status": "passed",
+          "title": "supports mapping, quoted commas and newlines",
+          "duration": 0.8856000000000108,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "CSV real parsing and limits"
+          ],
+          "fullName": "CSV real parsing and limits rejects invalid or ambiguous price -1",
+          "status": "passed",
+          "title": "rejects invalid or ambiguous price -1",
+          "duration": 1.1644000000000005,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "CSV real parsing and limits"
+          ],
+          "fullName": "CSV real parsing and limits rejects invalid or ambiguous price NaN",
+          "status": "passed",
+          "title": "rejects invalid or ambiguous price NaN",
+          "duration": 0.5632999999999697,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "CSV real parsing and limits"
+          ],
+          "fullName": "CSV real parsing and limits rejects invalid or ambiguous price Infinity",
+          "status": "passed",
+          "title": "rejects invalid or ambiguous price Infinity",
+          "duration": 0.9852999999999952,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "CSV real parsing and limits"
+          ],
+          "fullName": "CSV real parsing and limits rejects invalid or ambiguous price 1e4",
+          "status": "passed",
+          "title": "rejects invalid or ambiguous price 1e4",
+          "duration": 0.4955999999999676,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "CSV real parsing and limits"
+          ],
+          "fullName": "CSV real parsing and limits rejects invalid or ambiguous price 10.000",
+          "status": "passed",
+          "title": "rejects invalid or ambiguous price 10.000",
+          "duration": 0.4197000000000344,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "CSV real parsing and limits"
+          ],
+          "fullName": "CSV real parsing and limits rejects invalid or ambiguous price 1,000.00",
+          "status": "passed",
+          "title": "rejects invalid or ambiguous price 1,000.00",
+          "duration": 0.22829999999999018,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "CSV real parsing and limits"
+          ],
+          "fullName": "CSV real parsing and limits rejects invalid or ambiguous price 0xFF",
+          "status": "passed",
+          "title": "rejects invalid or ambiguous price 0xFF",
+          "duration": 0.538599999999974,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "CSV real parsing and limits"
+          ],
+          "fullName": "CSV real parsing and limits rejects invalid or ambiguous price ",
+          "status": "passed",
+          "title": "rejects invalid or ambiguous price ",
+          "duration": 0.4977000000000089,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "CSV real parsing and limits"
+          ],
+          "fullName": "CSV real parsing and limits rejects invalid or ambiguous price   ",
+          "status": "passed",
+          "title": "rejects invalid or ambiguous price   ",
+          "duration": 0.5904999999999632,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "CSV real parsing and limits"
+          ],
+          "fullName": "CSV real parsing and limits rejects invalid or ambiguous price 1.234",
+          "status": "passed",
+          "title": "rejects invalid or ambiguous price 1.234",
+          "duration": 0.39529999999996335,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "CSV real parsing and limits"
+          ],
+          "fullName": "CSV real parsing and limits rejects invalid or ambiguous price 9999999999",
+          "status": "passed",
+          "title": "rejects invalid or ambiguous price 9999999999",
+          "duration": 0.2540000000000191,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "CSV real parsing and limits"
+          ],
+          "fullName": "CSV real parsing and limits validates row and category references",
+          "status": "passed",
+          "title": "validates row and category references",
+          "duration": 3.8648999999999774,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "CSV real parsing and limits"
+          ],
+          "fullName": "CSV real parsing and limits detects repeated CSV identities instead of overwriting",
+          "status": "passed",
+          "title": "detects repeated CSV identities instead of overwriting",
+          "duration": 0.9246999999999161,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "CSV real parsing and limits"
+          ],
+          "fullName": "CSV real parsing and limits neutralizes CSV formulas on export",
+          "status": "passed",
+          "title": "neutralizes CSV formulas on export",
+          "duration": 2.6428999999999405,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "CSV real parsing and limits"
+          ],
+          "fullName": "CSV real parsing and limits rejects duplicated headers, bad UTF-8 and malformed quotes",
+          "status": "passed",
+          "title": "rejects duplicated headers, bad UTF-8 and malformed quotes",
+          "duration": 3.524000000000001,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        }
+      ],
+      "startTime": 1792206542992,
+      "endTime": 1792206543037.524,
+      "status": "passed",
+      "message": "",
+      "name": "./tests/csv.test.ts"
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": [
+            "PostgreSQL tenant isolation, constraints and transactional operations"
+          ],
+          "fullName": "PostgreSQL tenant isolation, constraints and transactional operations enables RLS on every application table and exposes no anonymous read grants",
+          "status": "passed",
+          "title": "enables RLS on every application table and exposes no anonymous read grants",
+          "duration": 23.46050000000014,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "PostgreSQL tenant isolation, constraints and transactional operations"
+          ],
+          "fullName": "PostgreSQL tenant isolation, constraints and transactional operations anonymous visitors cannot read database tables or call privileged operations",
+          "status": "passed",
+          "title": "anonymous visitors cannot read database tables or call privileged operations",
+          "duration": 26.54950000000008,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "PostgreSQL tenant isolation, constraints and transactional operations"
+          ],
+          "fullName": "PostgreSQL tenant isolation, constraints and transactional operations owner A sees only A, and owner B sees only B",
+          "status": "passed",
+          "title": "owner A sees only A, and owner B sees only B",
+          "duration": 26.27480000000014,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "PostgreSQL tenant isolation, constraints and transactional operations"
+          ],
+          "fullName": "PostgreSQL tenant isolation, constraints and transactional operations an authenticated platform admin has no global database bypass",
+          "status": "passed",
+          "title": "an authenticated platform admin has no global database bypass",
+          "duration": 13.233799999999974,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "PostgreSQL tenant isolation, constraints and transactional operations"
+          ],
+          "fullName": "PostgreSQL tenant isolation, constraints and transactional operations owners can mutate their own menu but cannot read, update, delete or insert in another tenant",
+          "status": "passed",
+          "title": "owners can mutate their own menu but cannot read, update, delete or insert in another tenant",
+          "duration": 24.003700000000208,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "PostgreSQL tenant isolation, constraints and transactional operations"
+          ],
+          "fullName": "PostgreSQL tenant isolation, constraints and transactional operations composite foreign keys reject cross-tenant products, subcategories and translations",
+          "status": "passed",
+          "title": "composite foreign keys reject cross-tenant products, subcategories and translations",
+          "duration": 33.00709999999981,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "PostgreSQL tenant isolation, constraints and transactional operations"
+          ],
+          "fullName": "PostgreSQL tenant isolation, constraints and transactional operations owners cannot promote themselves, change membership, reactivate status or forge domain verification",
+          "status": "passed",
+          "title": "owners cannot promote themselves, change membership, reactivate status or forge domain verification",
+          "duration": 22.647100000000137,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "PostgreSQL tenant isolation, constraints and transactional operations"
+          ],
+          "fullName": "PostgreSQL tenant isolation, constraints and transactional operations public token is immutable even to service role",
+          "status": "passed",
+          "title": "public token is immutable even to service role",
+          "duration": 8.050000000000182,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "PostgreSQL tenant isolation, constraints and transactional operations"
+          ],
+          "fullName": "PostgreSQL tenant isolation, constraints and transactional operations private media enforces tenant paths and rejects movement across restaurants",
+          "status": "passed",
+          "title": "private media enforces tenant paths and rejects movement across restaurants",
+          "duration": 20.474699999999757,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "PostgreSQL tenant isolation, constraints and transactional operations"
+          ],
+          "fullName": "PostgreSQL tenant isolation, constraints and transactional operations suspension denies menu and media while leaving owner status visible",
+          "status": "passed",
+          "title": "suspension denies menu and media while leaving owner status visible",
+          "duration": 25.860200000000077,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "PostgreSQL tenant isolation, constraints and transactional operations"
+          ],
+          "fullName": "PostgreSQL tenant isolation, constraints and transactional operations disabled membership remains inspectable but revokes all business access immediately",
+          "status": "passed",
+          "title": "disabled membership remains inspectable but revokes all business access immediately",
+          "duration": 14.64600000000064,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "PostgreSQL tenant isolation, constraints and transactional operations"
+          ],
+          "fullName": "PostgreSQL tenant isolation, constraints and transactional operations imports create, update and skip exact SKU or normalized-name duplicates",
+          "status": "passed",
+          "title": "imports create, update and skip exact SKU or normalized-name duplicates",
+          "duration": 36.03269999999975,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "PostgreSQL tenant isolation, constraints and transactional operations"
+          ],
+          "fullName": "PostgreSQL tenant isolation, constraints and transactional operations a bad CSV row rolls back every earlier product and newly created category",
+          "status": "passed",
+          "title": "a bad CSV row rolls back every earlier product and newly created category",
+          "duration": 12.401100000000042,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "PostgreSQL tenant isolation, constraints and transactional operations"
+          ],
+          "fullName": "PostgreSQL tenant isolation, constraints and transactional operations duplicate identity ambiguity is rejected without mutating either record",
+          "status": "passed",
+          "title": "duplicate identity ambiguity is rejected without mutating either record",
+          "duration": 14.740899999999783,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "PostgreSQL tenant isolation, constraints and transactional operations"
+          ],
+          "fullName": "PostgreSQL tenant isolation, constraints and transactional operations owner cannot import into B, even with a valid B restaurant ID",
+          "status": "passed",
+          "title": "owner cannot import into B, even with a valid B restaurant ID",
+          "duration": 8.465500000000247,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "PostgreSQL tenant isolation, constraints and transactional operations"
+          ],
+          "fullName": "PostgreSQL tenant isolation, constraints and transactional operations database constraints reject negative prices, invalid languages, cyclic category trees and unsafe image paths",
+          "status": "passed",
+          "title": "database constraints reject negative prices, invalid languages, cyclic category trees and unsafe image paths",
+          "duration": 25.180699999999888,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "PostgreSQL tenant isolation, constraints and transactional operations"
+          ],
+          "fullName": "PostgreSQL tenant isolation, constraints and transactional operations changes to products, settings and translations bump menu version",
+          "status": "passed",
+          "title": "changes to products, settings and translations bump menu version",
+          "duration": 18.02639999999974,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "PostgreSQL tenant isolation, constraints and transactional operations"
+          ],
+          "fullName": "PostgreSQL tenant isolation, constraints and transactional operations provisioning is atomic when owner assignment conflicts",
+          "status": "passed",
+          "title": "provisioning is atomic when owner assignment conflicts",
+          "duration": 9.217899999999645,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "PostgreSQL tenant isolation, constraints and transactional operations"
+          ],
+          "fullName": "PostgreSQL tenant isolation, constraints and transactional operations service role rate limiting counts across calls and rejects after the configured limit",
+          "status": "passed",
+          "title": "service role rate limiting counts across calls and rejects after the configured limit",
+          "duration": 12.751499999999396,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "PostgreSQL tenant isolation, constraints and transactional operations"
+          ],
+          "fullName": "PostgreSQL tenant isolation, constraints and transactional operations aggregate visits count QR scans separately and stop for suspended restaurants",
+          "status": "passed",
+          "title": "aggregate visits count QR scans separately and stop for suspended restaurants",
+          "duration": 13.445799999999508,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "PostgreSQL tenant isolation, constraints and transactional operations"
+          ],
+          "fullName": "PostgreSQL tenant isolation, constraints and transactional operations owners cannot edit platform-controlled slug or QR configuration",
+          "status": "passed",
+          "title": "owners cannot edit platform-controlled slug or QR configuration",
+          "duration": 9.989999999999782,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "PostgreSQL tenant isolation, constraints and transactional operations"
+          ],
+          "fullName": "PostgreSQL tenant isolation, constraints and transactional operations restaurant and sale edits commit together and reject protected properties",
+          "status": "passed",
+          "title": "restaurant and sale edits commit together and reject protected properties",
+          "duration": 19.919700000000375,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "PostgreSQL tenant isolation, constraints and transactional operations"
+          ],
+          "fullName": "PostgreSQL tenant isolation, constraints and transactional operations language changes validate enabled/default together and roll back invalid settings",
+          "status": "passed",
+          "title": "language changes validate enabled/default together and roll back invalid settings",
+          "duration": 28.22649999999976,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "PostgreSQL tenant isolation, constraints and transactional operations"
+          ],
+          "fullName": "PostgreSQL tenant isolation, constraints and transactional operations reactivation restores owner menu and media access without changing QR identity",
+          "status": "passed",
+          "title": "reactivation restores owner menu and media access without changing QR identity",
+          "duration": 17.192800000000716,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "PostgreSQL tenant isolation, constraints and transactional operations"
+          ],
+          "fullName": "PostgreSQL tenant isolation, constraints and transactional operations imports 1 products atomically within the supported batch size",
+          "status": "passed",
+          "title": "imports 1 products atomically within the supported batch size",
+          "duration": 13.602600000000166,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "PostgreSQL tenant isolation, constraints and transactional operations"
+          ],
+          "fullName": "PostgreSQL tenant isolation, constraints and transactional operations imports 100 products atomically within the supported batch size",
+          "status": "passed",
+          "title": "imports 100 products atomically within the supported batch size",
+          "duration": 135.4290000000001,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "PostgreSQL tenant isolation, constraints and transactional operations"
+          ],
+          "fullName": "PostgreSQL tenant isolation, constraints and transactional operations imports 999 products atomically within the supported batch size",
+          "status": "passed",
+          "title": "imports 999 products atomically within the supported batch size",
+          "duration": 2107.5532000000003,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "PostgreSQL tenant isolation, constraints and transactional operations"
+          ],
+          "fullName": "PostgreSQL tenant isolation, constraints and transactional operations imports 1000 products atomically within the supported batch size",
+          "status": "passed",
+          "title": "imports 1000 products atomically within the supported batch size",
+          "duration": 1543.7846,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "PostgreSQL tenant isolation, constraints and transactional operations"
+          ],
+          "fullName": "PostgreSQL tenant isolation, constraints and transactional operations rejects empty and 1001-row imports before creating any product",
+          "status": "passed",
+          "title": "rejects empty and 1001-row imports before creating any product",
+          "duration": 19.889100000000326,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "PostgreSQL tenant isolation, constraints and transactional operations"
+          ],
+          "fullName": "PostgreSQL tenant isolation, constraints and transactional operations uses exact case-sensitive SKUs and preserves accents when identifying duplicates",
+          "status": "passed",
+          "title": "uses exact case-sensitive SKUs and preserves accents when identifying duplicates",
+          "duration": 12.272000000000844,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "PostgreSQL tenant isolation, constraints and transactional operations"
+          ],
+          "fullName": "PostgreSQL tenant isolation, constraints and transactional operations rejects cross-tenant appearance images, unsafe colors and unknown appearance fields at the database boundary",
+          "status": "passed",
+          "title": "rejects cross-tenant appearance images, unsafe colors and unknown appearance fields at the database boundary",
+          "duration": 21.483000000000175,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "PostgreSQL tenant isolation, constraints and transactional operations"
+          ],
+          "fullName": "PostgreSQL tenant isolation, constraints and transactional operations aggregates all daily statistics beyond the REST row cap without exposing the other tenant",
+          "status": "passed",
+          "title": "aggregates all daily statistics beyond the REST row cap without exposing the other tenant",
+          "duration": 216.64249999999993,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "PostgreSQL tenant isolation, constraints and transactional operations"
+          ],
+          "fullName": "PostgreSQL tenant isolation, constraints and transactional operations keeps different explicit SKUs independent even when product names match",
+          "status": "passed",
+          "title": "keeps different explicit SKUs independent even when product names match",
+          "duration": 21.31710000000021,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "PostgreSQL tenant isolation, constraints and transactional operations"
+          ],
+          "fullName": "PostgreSQL tenant isolation, constraints and transactional operations supports idempotent hours and translation upserts under owner RLS",
+          "status": "passed",
+          "title": "supports idempotent hours and translation upserts under owner RLS",
+          "duration": 24.92909999999938,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "PostgreSQL tenant isolation, constraints and transactional operations"
+          ],
+          "fullName": "PostgreSQL tenant isolation, constraints and transactional operations allows the platform to disable optional contact without publishing a sample address",
+          "status": "passed",
+          "title": "allows the platform to disable optional contact without publishing a sample address",
+          "duration": 16.94750000000022,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        }
+      ],
+      "startTime": 1792206536672,
+      "endTime": 1792206541273.9475,
+      "status": "passed",
+      "message": "",
+      "name": "./tests/database.test.ts"
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": [
+            "Render registration with mocked DNS and HTTP"
+          ],
+          "fullName": "Render registration with mocked DNS and HTTP checks ownership before reading Render and adds only the named domain to the configured service",
+          "status": "passed",
+          "title": "checks ownership before reading Render and adds only the named domain to the configured service",
+          "duration": 12.618200000000002,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "Render registration with mocked DNS and HTTP"
+          ],
+          "fullName": "Render registration with mocked DNS and HTTP does not create an already registered domain or promote it to locally verified",
+          "status": "passed",
+          "title": "does not create an already registered domain or promote it to locally verified",
+          "duration": 2.1881000000000768,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "Render registration with mocked DNS and HTTP"
+          ],
+          "fullName": "Render registration with mocked DNS and HTTP never activates a newly added domain even if the provider POST says verified",
+          "status": "passed",
+          "title": "never activates a newly added domain even if the provider POST says verified",
+          "duration": 1.441000000000031,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "Render registration with mocked DNS and HTTP"
+          ],
+          "fullName": "Render registration with mocked DNS and HTTP handles a concurrent registration idempotently by rereading a 409 conflict",
+          "status": "passed",
+          "title": "handles a concurrent registration idempotently by rereading a 409 conflict",
+          "duration": 1.6976999999999407,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "Render registration with mocked DNS and HTTP"
+          ],
+          "fullName": "Render registration with mocked DNS and HTTP fails closed when a 409 belongs elsewhere rather than this service",
+          "status": "passed",
+          "title": "fails closed when a 409 belongs elsewhere rather than this service",
+          "duration": 3.7767000000000053,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "Render registration with mocked DNS and HTTP"
+          ],
+          "fullName": "Render registration with mocked DNS and HTTP refuses unproven or wrong ownership without contacting Render",
+          "status": "passed",
+          "title": "refuses unproven or wrong ownership without contacting Render",
+          "duration": 1.5796000000000276,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "Render registration with mocked DNS and HTTP"
+          ],
+          "fullName": "Render registration with mocked DNS and HTTP rejects non-hostnames, local addresses and malformed proof tokens before DNS or HTTP",
+          "status": "passed",
+          "title": "rejects non-hostnames, local addresses and malformed proof tokens before DNS or HTTP",
+          "duration": 2.471300000000042,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "Render registration with mocked DNS and HTTP"
+          ],
+          "fullName": "Render registration with mocked DNS and HTTP requires complete, fixed Render service configuration after proving ownership",
+          "status": "passed",
+          "title": "requires complete, fixed Render service configuration after proving ownership",
+          "duration": 1.4750000000000227,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "Render registration with mocked DNS and HTTP"
+          ],
+          "fullName": "Render registration with mocked DNS and HTTP sanitizes provider, billing and network errors without leaking response details",
+          "status": "passed",
+          "title": "sanitizes provider, billing and network errors without leaking response details",
+          "duration": 2.376899999999978,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "Render registration with mocked DNS and HTTP"
+          ],
+          "fullName": "Render registration with mocked DNS and HTTP rejects HTTP redirects and malformed provider data without following another host",
+          "status": "passed",
+          "title": "rejects HTTP redirects and malformed provider data without following another host",
+          "duration": 1.7264999999999873,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "separate domain activation checks"
+          ],
+          "fullName": "separate domain activation checks requires TXT, the configured CNAME and Render verified state before returning true",
+          "status": "passed",
+          "title": "requires TXT, the configured CNAME and Render verified state before returning true",
+          "duration": 1.6263999999999896,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "separate domain activation checks"
+          ],
+          "fullName": "separate domain activation checks refuses a wrong CNAME or an unverified provider domain",
+          "status": "passed",
+          "title": "refuses a wrong CNAME or an unverified provider domain",
+          "duration": 0.9830000000000609,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        }
+      ],
+      "startTime": 1792206545278,
+      "endTime": 1792206545312.983,
+      "status": "passed",
+      "message": "",
+      "name": "./tests/domains.test.ts"
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": [
+            "SSR session refresh"
+          ],
+          "fullName": "SSR session refresh validates with Auth and forwards rotated chunks to both the route and browser",
+          "status": "passed",
+          "title": "validates with Auth and forwards rotated chunks to both the route and browser",
+          "duration": 24.649099999999976,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "SSR session refresh"
+          ],
+          "fullName": "SSR session refresh retains cookies and anti-cache headers across multiple SDK writes",
+          "status": "passed",
+          "title": "retains cookies and anti-cache headers across multiple SDK writes",
+          "duration": 2.6440000000000055,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "SSR session refresh"
+          ],
+          "fullName": "SSR session refresh keeps unauthenticated requests available for the route's own authorization",
+          "status": "passed",
+          "title": "keeps unauthenticated requests available for the route's own authorization",
+          "duration": 2.958599999999933,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "SSR session refresh"
+          ],
+          "fullName": "SSR session refresh propagates invalid-session cleanup even when Auth rejects the session",
+          "status": "passed",
+          "title": "propagates invalid-session cleanup even when Auth rejects the session",
+          "duration": 2.476599999999962,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "SSR session refresh"
+          ],
+          "fullName": "SSR session refresh isolates clients, cookies and headers between independent requests",
+          "status": "passed",
+          "title": "isolates clients, cookies and headers between independent requests",
+          "duration": 5.6889999999999645,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "SSR session refresh"
+          ],
+          "fullName": "SSR session refresh allows setup pages when credentials are absent without constructing a client",
+          "status": "passed",
+          "title": "allows setup pages when credentials are absent without constructing a client",
+          "duration": 1.6467000000000098,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "SSR session refresh"
+          ],
+          "fullName": "SSR session refresh does not silently turn unexpected Auth failures into a successful refresh",
+          "status": "passed",
+          "title": "does not silently turn unexpected Auth failures into a successful refresh",
+          "duration": 4.771499999999946,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "SSR session refresh"
+          ],
+          "fullName": "SSR session refresh refreshes session routes on a platform host: /login",
+          "status": "passed",
+          "title": "refreshes session routes on a platform host: /login",
+          "duration": 2.383299999999963,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "SSR session refresh"
+          ],
+          "fullName": "SSR session refresh refreshes session routes on a platform host: /login?mode=password",
+          "status": "passed",
+          "title": "refreshes session routes on a platform host: /login?mode=password",
+          "duration": 2.286200000000008,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "SSR session refresh"
+          ],
+          "fullName": "SSR session refresh refreshes session routes on a platform host: /admin",
+          "status": "passed",
+          "title": "refreshes session routes on a platform host: /admin",
+          "duration": 1.1192999999999529,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "SSR session refresh"
+          ],
+          "fullName": "SSR session refresh refreshes session routes on a platform host: /admin/restaurants/tenant-a",
+          "status": "passed",
+          "title": "refreshes session routes on a platform host: /admin/restaurants/tenant-a",
+          "duration": 1.3618999999999915,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "SSR session refresh"
+          ],
+          "fullName": "SSR session refresh refreshes session routes on a platform host: /dashboard",
+          "status": "passed",
+          "title": "refreshes session routes on a platform host: /dashboard",
+          "duration": 0.8173999999999069,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "SSR session refresh"
+          ],
+          "fullName": "SSR session refresh refreshes session routes on a platform host: /auth/callback?code=fixture",
+          "status": "passed",
+          "title": "refreshes session routes on a platform host: /auth/callback?code=fixture",
+          "duration": 0.6684999999999945,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "SSR session refresh"
+          ],
+          "fullName": "SSR session refresh refreshes session routes on a platform host: /auth/confirm",
+          "status": "passed",
+          "title": "refreshes session routes on a platform host: /auth/confirm",
+          "duration": 0.5561000000000149,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "SSR session refresh"
+          ],
+          "fullName": "SSR session refresh refreshes session routes on a platform host: /api/session",
+          "status": "passed",
+          "title": "refreshes session routes on a platform host: /api/session",
+          "duration": 0.5189000000000306,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "SSR session refresh"
+          ],
+          "fullName": "SSR session refresh refreshes session routes on a platform host: /api/auth",
+          "status": "passed",
+          "title": "refreshes session routes on a platform host: /api/auth",
+          "duration": 0.8240999999999303,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "SSR session refresh"
+          ],
+          "fullName": "SSR session refresh refreshes session routes on a platform host: /api/admin/restaurants",
+          "status": "passed",
+          "title": "refreshes session routes on a platform host: /api/admin/restaurants",
+          "duration": 0.7299000000000433,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "SSR session refresh"
+          ],
+          "fullName": "SSR session refresh refreshes session routes on a platform host: /api/workspace/tenant-a/products",
+          "status": "passed",
+          "title": "refreshes session routes on a platform host: /api/workspace/tenant-a/products",
+          "duration": 0.653699999999958,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "SSR session refresh"
+          ],
+          "fullName": "SSR session refresh refreshes session routes on a platform host: /api/media/tenant-a/image.webp",
+          "status": "passed",
+          "title": "refreshes session routes on a platform host: /api/media/tenant-a/image.webp",
+          "duration": 0.5842000000000098,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "proxy hostname boundaries"
+          ],
+          "fullName": "proxy hostname boundaries does not attach session cookies to a public or unrelated route: /",
+          "status": "passed",
+          "title": "does not attach session cookies to a public or unrelated route: /",
+          "duration": 1.397299999999973,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "proxy hostname boundaries"
+          ],
+          "fullName": "proxy hostname boundaries does not attach session cookies to a public or unrelated route: /menu/restaurant-a",
+          "status": "passed",
+          "title": "does not attach session cookies to a public or unrelated route: /menu/restaurant-a",
+          "duration": 0.8219000000000278,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "proxy hostname boundaries"
+          ],
+          "fullName": "proxy hostname boundaries does not attach session cookies to a public or unrelated route: /api/public/menu/restaurant-a",
+          "status": "passed",
+          "title": "does not attach session cookies to a public or unrelated route: /api/public/menu/restaurant-a",
+          "duration": 0.7778999999999314,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "proxy hostname boundaries"
+          ],
+          "fullName": "proxy hostname boundaries does not attach session cookies to a public or unrelated route: /q/fixture",
+          "status": "passed",
+          "title": "does not attach session cookies to a public or unrelated route: /q/fixture",
+          "duration": 0.7608000000000175,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "proxy hostname boundaries"
+          ],
+          "fullName": "proxy hostname boundaries does not attach session cookies to a public or unrelated route: /_next/static/chunk.js",
+          "status": "passed",
+          "title": "does not attach session cookies to a public or unrelated route: /_next/static/chunk.js",
+          "duration": 0.6309999999999718,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "proxy hostname boundaries"
+          ],
+          "fullName": "proxy hostname boundaries does not attach session cookies to a public or unrelated route: /administrator",
+          "status": "passed",
+          "title": "does not attach session cookies to a public or unrelated route: /administrator",
+          "duration": 0.5816999999999553,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "proxy hostname boundaries"
+          ],
+          "fullName": "proxy hostname boundaries does not attach session cookies to a public or unrelated route: /api/authentication",
+          "status": "passed",
+          "title": "does not attach session cookies to a public or unrelated route: /api/authentication",
+          "duration": 0.6194000000000415,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "proxy hostname boundaries"
+          ],
+          "fullName": "proxy hostname boundaries does not attach session cookies to a public or unrelated route: /dashboard-other",
+          "status": "passed",
+          "title": "does not attach session cookies to a public or unrelated route: /dashboard-other",
+          "duration": 0.6061999999999443,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "proxy hostname boundaries"
+          ],
+          "fullName": "proxy hostname boundaries rejects an unknown host even with a forged forwarded platform host",
+          "status": "passed",
+          "title": "rejects an unknown host even with a forged forwarded platform host",
+          "duration": 3.0921999999999343,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "proxy hostname boundaries"
+          ],
+          "fullName": "proxy hostname boundaries preserves a verified restaurant's root rewrite without refreshing a session",
+          "status": "passed",
+          "title": "preserves a verified restaurant's root rewrite without refreshing a session",
+          "duration": 2.2555999999999585,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "proxy hostname boundaries"
+          ],
+          "fullName": "proxy hostname boundaries retains only the verified restaurant's public route: /menu/restaurant-a",
+          "status": "passed",
+          "title": "retains only the verified restaurant's public route: /menu/restaurant-a",
+          "duration": 0.9751999999999725,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "proxy hostname boundaries"
+          ],
+          "fullName": "proxy hostname boundaries retains only the verified restaurant's public route: /api/public/menu/restaurant-a",
+          "status": "passed",
+          "title": "retains only the verified restaurant's public route: /api/public/menu/restaurant-a",
+          "duration": 0.8936000000001059,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "proxy hostname boundaries"
+          ],
+          "fullName": "proxy hostname boundaries retains only the verified restaurant's public route: /api/media/tenant-a/image.webp",
+          "status": "passed",
+          "title": "retains only the verified restaurant's public route: /api/media/tenant-a/image.webp",
+          "duration": 0.7126999999999271,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "proxy hostname boundaries"
+          ],
+          "fullName": "proxy hostname boundaries denies private and other-tenant routes on a custom domain: /login",
+          "status": "passed",
+          "title": "denies private and other-tenant routes on a custom domain: /login",
+          "duration": 1.0837000000000216,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "proxy hostname boundaries"
+          ],
+          "fullName": "proxy hostname boundaries denies private and other-tenant routes on a custom domain: /admin",
+          "status": "passed",
+          "title": "denies private and other-tenant routes on a custom domain: /admin",
+          "duration": 0.9405000000000427,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "proxy hostname boundaries"
+          ],
+          "fullName": "proxy hostname boundaries denies private and other-tenant routes on a custom domain: /dashboard",
+          "status": "passed",
+          "title": "denies private and other-tenant routes on a custom domain: /dashboard",
+          "duration": 0.9774999999999636,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "proxy hostname boundaries"
+          ],
+          "fullName": "proxy hostname boundaries denies private and other-tenant routes on a custom domain: /auth/callback",
+          "status": "passed",
+          "title": "denies private and other-tenant routes on a custom domain: /auth/callback",
+          "duration": 2.5398999999999887,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "proxy hostname boundaries"
+          ],
+          "fullName": "proxy hostname boundaries denies private and other-tenant routes on a custom domain: /api/session",
+          "status": "passed",
+          "title": "denies private and other-tenant routes on a custom domain: /api/session",
+          "duration": 1.119100000000003,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "proxy hostname boundaries"
+          ],
+          "fullName": "proxy hostname boundaries denies private and other-tenant routes on a custom domain: /api/auth",
+          "status": "passed",
+          "title": "denies private and other-tenant routes on a custom domain: /api/auth",
+          "duration": 1.2576999999999998,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "proxy hostname boundaries"
+          ],
+          "fullName": "proxy hostname boundaries denies private and other-tenant routes on a custom domain: /api/workspace/tenant-a",
+          "status": "passed",
+          "title": "denies private and other-tenant routes on a custom domain: /api/workspace/tenant-a",
+          "duration": 0.9996999999999616,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "proxy hostname boundaries"
+          ],
+          "fullName": "proxy hostname boundaries denies private and other-tenant routes on a custom domain: /menu/restaurant-b",
+          "status": "passed",
+          "title": "denies private and other-tenant routes on a custom domain: /menu/restaurant-b",
+          "duration": 1.7488000000000739,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "proxy hostname boundaries"
+          ],
+          "fullName": "proxy hostname boundaries denies private and other-tenant routes on a custom domain: /api/public/menu/restaurant-b",
+          "status": "passed",
+          "title": "denies private and other-tenant routes on a custom domain: /api/public/menu/restaurant-b",
+          "duration": 1.8461000000000922,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "proxy hostname boundaries"
+          ],
+          "fullName": "proxy hostname boundaries denies private and other-tenant routes on a custom domain: /api/media/tenant-b/image.webp",
+          "status": "passed",
+          "title": "denies private and other-tenant routes on a custom domain: /api/media/tenant-b/image.webp",
+          "duration": 1.4821999999999207,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "proxy hostname boundaries"
+          ],
+          "fullName": "proxy hostname boundaries preserves health checks on any host without Auth or database calls",
+          "status": "passed",
+          "title": "preserves health checks on any host without Auth or database calls",
+          "duration": 1.3915000000000646,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        }
+      ],
+      "startTime": 1792206543671,
+      "endTime": 1792206543759.3916,
+      "status": "passed",
+      "message": "",
+      "name": "./tests/proxy_session.test.ts"
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": [
+            "public menu data boundaries"
+          ],
+          "fullName": "public menu data boundaries exposes only published content under visible ancestors, current promotions and related translations",
+          "status": "passed",
+          "title": "exposes only published content under visible ancestors, current promotions and related translations",
+          "duration": 8.04690000000005,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "public menu data boundaries"
+          ],
+          "fullName": "public menu data boundaries enforces suspension immediately even when an active menu is cached",
+          "status": "passed",
+          "title": "enforces suspension immediately even when an active menu is cached",
+          "duration": 1.2834000000000287,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "public menu data boundaries"
+          ],
+          "fullName": "public menu data boundaries uses the publication version to invalidate cached menu content",
+          "status": "passed",
+          "title": "uses the publication version to invalidate cached menu content",
+          "duration": 0.888300000000072,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "public and private image authorization"
+          ],
+          "fullName": "public and private image authorization serves a referenced public image without authentication and disables sniffing/cache",
+          "status": "passed",
+          "title": "serves a referenced public image without authentication and disables sniffing/cache",
+          "duration": 7.067999999999984,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "public and private image authorization"
+          ],
+          "fullName": "public and private image authorization denies anonymous access to a draft or unreferenced media path before storage download",
+          "status": "passed",
+          "title": "denies anonymous access to a draft or unreferenced media path before storage download",
+          "duration": 2.277400000000057,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "public and private image authorization"
+          ],
+          "fullName": "public and private image authorization denies another tenant and permits the authorized owner to preview drafts",
+          "status": "passed",
+          "title": "denies another tenant and permits the authorized owner to preview drafts",
+          "duration": 2.2012999999999465,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "public and private image authorization"
+          ],
+          "fullName": "public and private image authorization stops public image serving when the restaurant is suspended",
+          "status": "passed",
+          "title": "stops public image serving when the restaurant is suspended",
+          "duration": 1.6701000000000477,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "public and private image authorization"
+          ],
+          "fullName": "public and private image authorization rejects path traversal, foreign tenant prefixes and unsupported formats",
+          "status": "passed",
+          "title": "rejects path traversal, foreign tenant prefixes and unsupported formats",
+          "duration": 2.6616000000000213,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        }
+      ],
+      "startTime": 1792206546637,
+      "endTime": 1792206546664.6616,
+      "status": "passed",
+      "message": "",
+      "name": "./tests/public_security.test.ts"
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": [
+            "QR exports independently decoded"
+          ],
+          "fullName": "QR exports independently decoded preserves the exact URL at 256px without logo",
+          "status": "passed",
+          "title": "preserves the exact URL at 256px without logo",
+          "duration": 135.46510000000012,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "QR exports independently decoded"
+          ],
+          "fullName": "QR exports independently decoded preserves the exact URL at 256px with logo",
+          "status": "passed",
+          "title": "preserves the exact URL at 256px with logo",
+          "duration": 58.88130000000001,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "QR exports independently decoded"
+          ],
+          "fullName": "QR exports independently decoded preserves the exact URL at 512px without logo",
+          "status": "passed",
+          "title": "preserves the exact URL at 512px without logo",
+          "duration": 49.58909999999992,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "QR exports independently decoded"
+          ],
+          "fullName": "QR exports independently decoded preserves the exact URL at 512px with logo",
+          "status": "passed",
+          "title": "preserves the exact URL at 512px with logo",
+          "duration": 44.66840000000002,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "QR exports independently decoded"
+          ],
+          "fullName": "QR exports independently decoded preserves the exact URL at 1024px without logo",
+          "status": "passed",
+          "title": "preserves the exact URL at 1024px without logo",
+          "duration": 103.61279999999988,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "QR exports independently decoded"
+          ],
+          "fullName": "QR exports independently decoded preserves the exact URL at 1024px with logo",
+          "status": "passed",
+          "title": "preserves the exact URL at 1024px with logo",
+          "duration": 128.0987,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "QR exports independently decoded"
+          ],
+          "fullName": "QR exports independently decoded keeps the public token unchanged after colors, frame, label and logo change",
+          "status": "passed",
+          "title": "keeps the public token unchanged after colors, frame, label and logo change",
+          "duration": 134.98109999999997,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "QR exports independently decoded"
+          ],
+          "fullName": "QR exports independently decoded embeds an escaped label and sanitized raster logo in a decodable SVG",
+          "status": "passed",
+          "title": "embeds an escaped label and sanitized raster logo in a decodable SVG",
+          "duration": 46.28430000000003,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "QR exports independently decoded"
+          ],
+          "fullName": "QR exports independently decoded PDF contains the same complete decodable QR image with label, frame and logo",
+          "status": "passed",
+          "title": "PDF contains the same complete decodable QR image with label, frame and logo",
+          "duration": 6669.918299999999,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "QR exports independently decoded"
+          ],
+          "fullName": "QR exports independently decoded reserves at least four empty modules and ECC H",
+          "status": "passed",
+          "title": "reserves at least four empty modules and ECC H",
+          "duration": 473.1885000000002,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "QR validation"
+          ],
+          "fullName": "QR validation calculates contrast and rejects weak or inverted colors",
+          "status": "passed",
+          "title": "calculates contrast and rejects weak or inverted colors",
+          "duration": 6.324199999999109,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "QR validation"
+          ],
+          "fullName": "QR validation rejects unsafe destinations, oversized label and invalid dimensions",
+          "status": "passed",
+          "title": "rejects unsafe destinations, oversized label and invalid dimensions",
+          "duration": 4.626000000000204,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "QR validation"
+          ],
+          "fullName": "QR validation rejects SVG or non-image logos and bounds bytes",
+          "status": "passed",
+          "title": "rejects SVG or non-image logos and bounds bytes",
+          "duration": 8.751699999998891,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "QR validation"
+          ],
+          "fullName": "QR validation accepts the maximum label at the minimum size while retaining a decodable symbol",
+          "status": "passed",
+          "title": "accepts the maximum label at the minimum size while retaining a decodable symbol",
+          "duration": 111.36349999999948,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        }
+      ],
+      "startTime": 1792206523997,
+      "endTime": 1792206531976.3635,
+      "status": "passed",
+      "message": "",
+      "name": "./tests/qr.test.ts"
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": [
+            "permanent QR resolver — handler with mocked database"
+          ],
+          "fullName": "permanent QR resolver — handler with mocked database resolves the same printed token to the current slug after a rename",
+          "status": "passed",
+          "title": "resolves the same printed token to the current slug after a rename",
+          "duration": 8.349699999999984,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "permanent QR resolver — handler with mocked database"
+          ],
+          "fullName": "permanent QR resolver — handler with mocked database redirects only to APP_URL regardless of request host, redirect parameters or a custom domain",
+          "status": "passed",
+          "title": "redirects only to APP_URL regardless of request host, redirect parameters or a custom domain",
+          "duration": 2.027400000000057,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "permanent QR resolver — handler with mocked database"
+          ],
+          "fullName": "permanent QR resolver — handler with mocked database encodes unexpected slug characters without creating an external redirect",
+          "status": "passed",
+          "title": "encodes unexpected slug characters without creating an external redirect",
+          "duration": 0.8310000000000173,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "permanent QR resolver — handler with mocked database"
+          ],
+          "fullName": "permanent QR resolver — handler with mocked database rejects malformed UUIDs before contacting the database",
+          "status": "passed",
+          "title": "rejects malformed UUIDs before contacting the database",
+          "duration": 5.087999999999965,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "permanent QR resolver — handler with mocked database"
+          ],
+          "fullName": "permanent QR resolver — handler with mocked database returns a safe 404 for unknown tokens and records no metrics",
+          "status": "passed",
+          "title": "returns a safe 404 for unknown tokens and records no metrics",
+          "duration": 0.973700000000008,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "permanent QR resolver — handler with mocked database"
+          ],
+          "fullName": "permanent QR resolver — handler with mocked database keeps suspended restaurants resolvable to their current state page without metrics",
+          "status": "passed",
+          "title": "keeps suspended restaurants resolvable to their current state page without metrics",
+          "duration": 0.9543999999999642,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "permanent QR resolver — handler with mocked database"
+          ],
+          "fullName": "permanent QR resolver — handler with mocked database records an allowed active scan, but metrics failures never break the menu redirect",
+          "status": "passed",
+          "title": "records an allowed active scan, but metrics failures never break the menu redirect",
+          "duration": 3.0237999999999374,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        }
+      ],
+      "startTime": 1792206545941,
+      "endTime": 1792206545962.0237,
+      "status": "passed",
+      "message": "",
+      "name": "./tests/q_resolver.test.ts"
+    }
+  ]
+}

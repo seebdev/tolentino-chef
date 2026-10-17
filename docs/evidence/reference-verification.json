@@ -1,0 +1,15 @@
+{
+  "verifiedAtUtc": "2026-10-17T02:22:07.7789804Z",
+  "baseline": "reference-before.json",
+  "checkedFiles": 1803,
+  "exclusions": [
+    "node_modules",
+    ".next",
+    ".turbo",
+    "dist",
+    "build"
+  ],
+  "changedOrMissing": [],
+  "added": [],
+  "unchanged": true
+}

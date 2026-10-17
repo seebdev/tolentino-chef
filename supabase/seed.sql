@@ -1,0 +1,2 @@
+-- No demo users or credentials are injected automatically.
+-- Use the documented bootstrap script against a dedicated NEW project.
