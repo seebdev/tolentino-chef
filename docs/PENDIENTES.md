@@ -1,23 +1,24 @@
 # Pendientes y límites de entrega
 
-Estado: implementación local entregada; **no desplegada ni aceptada en producción**. No se reutilizó infraestructura de otros proyectos. No se introdujeron datos de demostración en la aplicación.
+Estado: implementación local y esquema Supabase remoto verificados; **no desplegada en Render ni aceptada en producción**. No se reutilizó infraestructura de otros proyectos. No se introdujeron datos de demostración en la aplicación.
 
-## Dependencias concretas para operar
+## Estado de Supabase y dependencias para operar
 
-1. El usuario eligió el proyecto `ylcnrfzosjzuljufwups`. URL y clave publicable ya se guardaron en `.env.local`, ignorado por Git. Auth responde HTTP 200. La cuenta conectada de MCP/CLI no tiene acceso administrativo a este proyecto; no se utilizará el proyecto ajeno que sí aparece en esa cuenta.
-2. Falta la conexión **Session pooler** (host, puerto y usuario) para aplicar la migración: el host directo publica solo IPv6 y la conexión desde este equipo expira. También falta `SUPABASE_SERVICE_ROLE_KEY` (clave secreta o service_role, exclusivamente en servidor). La contraseña de PostgreSQL no reemplaza esa clave. Después de migrar: desactivar registro público y configurar correo, redirecciones y plantilla de recuperación.
-3. Elegir el correo real de la primera cuenta Tolentino y ejecutar `scripts/bootstrap-admin.mjs`. Comprobar entrega del correo, contraseña, sesión y recuperación con Auth real.
-4. Conectar un repositorio nuevo a una cuenta Render autorizada, desplegar `render.yaml` y establecer `APP_URL` y `PLATFORM_HOSTNAMES`. No hay credenciales Render ni servicio Tolentino creado en esta entrega. Elegir disponibilidad y costos antes de publicar comercialmente.
-5. Para dominios personalizados, configurar además `RENDER_API_KEY`, `RENDER_SERVICE_ID` y `RENDER_SERVICE_HOSTNAME`, y los TXT/CNAME mostrados para cada dominio. No se modificó DNS ni se registraron dominios externos.
+La migración `20261017021301_initial_tenant_security` está aplicada y vigente en el proyecto autorizado `ylcnrfzosjzuljufwups`. La evidencia `evidence/db-migration-verification.json` (16 de octubre de 2026, 22:49 (America/Bogota)) verifica 15 tablas públicas y una privada con RLS, permisos anónimos restringidos, ocho RPC de negocio y sus permisos, y el bucket privado `restaurant-media` con límite de 5 MiB y cuatro políticas de tenant. Se comprobó la ejecución de estadísticas de servicio y que un rol autenticado sin membresía no ve restaurantes ni productos. Esto no equivale al recorrido remoto A/B con sesiones reales.
 
-Los comandos y el orden preciso están en [DEPLOY_RENDER_SUPABASE.md](DEPLOY_RENDER_SUPABASE.md). Sin estas dependencias, login y health informan que falta configuración; no hay acceso ficticio que sustituya Supabase.
+URL, clave publicable y clave de servicio ya están configuradas en `.env.local`, ignorado por Git. La migración no creó usuarios Auth, restaurantes ni objetos Storage, ni envió correos. La comprobación conectada de las 22:51 (America/Bogota) del 16 de octubre de 2026 está en `evidence/connected-supabase-smoke.json`: estadísticas REST correctas con cero restaurantes, bucket privado accesible, primera página de Auth sin usuarios, health local 200 y APIs privadas 401 sin sesión. No acredita acceso de un propietario ni correo real.
 
-Comprobación remota de lectura posterior a la elección del proyecto: `/auth/v1/settings` devuelve `disable_signup: false`, por lo que debe desactivarse el registro público antes de operar. `/rest/v1/restaurants` devuelve `PGRST205` (tabla no encontrada en la caché del esquema). Estos resultados no acreditan una migración aplicada; no se ejecutaron escrituras en ese proyecto.
+1. Desactivar el registro público: la última lectura de Auth devuelve `disable_signup: false`. Revisar también acceso anónimo, política de contraseña, duración de sesión, Site URL y redirecciones antes de habilitar clientes.
+2. Configurar SMTP y la plantilla de recuperación. Elegir el correo real de la primera cuenta Tolentino y ejecutar `scripts/bootstrap-admin.mjs`; comprobar entrega, definición de contraseña, sesión y recuperación con Auth real. Estas operaciones aún no se ejecutaron.
+3. El repositorio autorizado `tolentinosftw-dotcom/tolentino-chef` ya está publicado. Conectarlo a Render y desplegar `render.yaml` con sus variables de servidor, `APP_URL` y `PLATFORM_HOSTNAMES`. Render sigue pendiente. Elegir disponibilidad y costos antes de publicar comercialmente.
+4. Para dominios personalizados, configurar además `RENDER_API_KEY`, `RENDER_SERVICE_ID` y `RENDER_SERVICE_HOSTNAME`, y los TXT/CNAME mostrados para cada dominio. No se modificó DNS ni se registraron dominios externos.
+
+Los comandos y el orden preciso están en [DEPLOY_RENDER_SUPABASE.md](DEPLOY_RENDER_SUPABASE.md). Los resultados de login/health sin credenciales pertenecen a la etapa local anterior; no deben interpretarse como un fallo actual de configuración. No hay acceso ficticio que sustituya Supabase.
 
 ## Aceptación pendiente contra infraestructura real
 
 - Ejecutar el recorrido A–R con dos propietarios reales en un proyecto aislado: correo, acceso, CRUD, imagen, precio público, permisos cruzados, soporte, suspensión y reactivación. Las pruebas SQL locales ya ejercitan políticas, constraints y transacciones; no sustituyen Auth, PostgREST y Storage alojados.
-- Ejecutar advisors de Supabase, revisar la configuración remota de RLS/Auth/Storage y repetir intentos directos de lectura/escritura entre A y B.
+- Ejecutar advisors de Supabase y revisar Auth. RLS, grants, RPC y configuración del bucket ya se verificaron en remoto; faltan intentos directos de lectura/escritura entre A y B con tokens Auth reales y objetos Storage reales.
 - Verificar Render, dominio permanente, HTTPS, envío de cookies, refresco de sesiones, health, logs y persistencia después de reiniciar el servicio.
 - Registrar y verificar un dominio real, comprobar que el menú se limita al restaurante asociado y que la URL por slug permanece disponible.
 - Imprimir QR en varios tamaños y escanear con teléfonos reales, distintas cámaras e iluminación. La decodificación automática de PNG/SVG/PDF ya está probada; no acredita una prueba física.

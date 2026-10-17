@@ -1,0 +1,40 @@
+{
+  "verifiedAt": "2026-10-17T03:51:15.605Z",
+  "projectRef": "ylcnrfzosjzuljufwups",
+  "adminStats": {
+    "ok": true,
+    "restaurants": 0
+  },
+  "storage": {
+    "ok": true,
+    "bucket": "restaurant-media",
+    "public": false
+  },
+  "auth": {
+    "ok": true,
+    "firstPageUsers": 0,
+    "disable_signup": false
+  },
+  "localHttp": [
+    {
+      "path": "/api/health",
+      "status": 200,
+      "body": {
+        "status": "ok",
+        "configured": true
+      }
+    },
+    {
+      "path": "/api/admin/restaurants",
+      "status": 401
+    },
+    {
+      "path": "/api/session",
+      "status": 401
+    },
+    {
+      "path": "/login",
+      "status": 200
+    }
+  ]
+}

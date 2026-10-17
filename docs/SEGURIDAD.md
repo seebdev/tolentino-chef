@@ -25,7 +25,8 @@ Bucket privado restaurant-media; RLS exige dueño activo, negocio activo y ruta 
 - Públicas: URL Supabase y clave publicable.
 - Secretas: clave de servicio solo en módulos de servidor; nunca NEXT_PUBLIC_, localStorage, URLs o respuestas.
 - Mutaciones: sesión validada, verificación de origen y autorización del recurso.
-- Configuración local: altas públicas y sesiones anónimas desactivadas, JWT 15 minutos, contraseña mínima 12.
+- Configuración local declarada: altas públicas y sesiones anónimas desactivadas, JWT 15 minutos y contraseña mínima 12. Esto no demuestra la configuración del Auth alojado: la última lectura remota devuelve `disable_signup: false`; desactivar el registro público y verificar las demás opciones antes de operar.
+- La clave de servicio está configurada en `.env.local`, ignorado por Git. No se publica su valor ni se incluye en las evidencias.
 - Borrar usuarios no invalida automáticamente access tokens. Desactivar membresía y revocar sesiones antes de una baja.
 
 ## Transacciones y auditoría
@@ -38,9 +39,11 @@ Rate limiting usa contador compartido y atómico; el servidor guarda hashes de l
 
 npm run test:database aplica la migración real en PostgreSQL PGlite y prueba roles efectivos anon, authenticated y service_role. Casos: dos tenants aislados, administrador sin bypass, CRUD ajeno denegado, FKs, escalada, token inmutable, Storage, suspensión, rollback e importación idempotente, provisión, versión de menú, límites y visitas.
 
-Auth y Storage son esquemas mínimos sustitutos. Queda validación de integración contra un proyecto Supabase nuevo: sesiones, REST, uploads/downloads, suspensión y reactivación desde dos navegadores, DNS, HTTPS y asesores de Supabase.
+En esas pruebas locales, Auth y Storage son esquemas mínimos sustitutos. La migración `20261017021301_initial_tenant_security` ya se aplicó al proyecto autorizado `ylcnrfzosjzuljufwups`. La verificación remota del 16 de octubre de 2026 a las 22:49 (America/Bogota) está en `evidence/db-migration-verification.json`: 15 tablas públicas y una privada con RLS, cero grants de SELECT anónimo de negocio, ocho RPC con permisos verificados, cuatro FKs compuestas de tenant y diez triggers de protección de identidad. El bucket `restaurant-media` es privado, limita objetos a 5 MiB y tiene cuatro políticas de tenant. Se ejecutó la RPC de estadísticas de servicio y un rol autenticado sin membresía obtuvo cero restaurantes y productos.
 
-No se modificó ningún proyecto existente. Tras elegir el usuario `ylcnrfzosjzuljufwups`, se comprobaron en lectura sus endpoints públicos: Auth disponible, registro público todavía habilitado y tabla restaurants ausente en la caché REST. La cuenta MCP/CLI conectada no tiene acceso a ese proyecto y la conexión directa IPv6 expira; migración y asesores remotos permanecen pendientes. El CLI 2.75.0 no incluye db advisors: usar dashboard o CLI actualizado al disponer del acceso al proyecto dedicado.
+Estas comprobaciones acreditan DDL, RLS, grants, RPC y configuración de Storage, no el aislamiento remoto completo con dos identidades Auth. No se crearon usuarios, restaurantes ni objetos ni se enviaron correos durante esta verificación. Siguen pendientes SMTP, correo del primer administrador y bootstrap, sesiones y recuperación reales, REST y uploads/downloads entre A y B, suspensión/reactivación desde dos navegadores, advisors de Supabase, DNS y HTTPS en Render. El registro público sigue habilitado según la última lectura (`disable_signup: false`) y debe desactivarse antes de admitir clientes.
+
+La comprobación conectada posterior (`evidence/connected-supabase-smoke.json`) confirma acceso de servicio a REST/Auth/Storage, health local 200 y rechazo 401 en `/api/admin/restaurants` y `/api/session` sin sesión. La primera página de Auth no contiene usuarios y la RPC informa cero restaurantes; no es una prueba de login ni de aislamiento entre propietarios. La conexión PostgreSQL y la clave de servicio están disponibles para el proyecto autorizado. No se modificó el proyecto original ni se usó infraestructura ajena como destino de la migración.
 
 La base también valida appearance y draft_appearance cuando se editan por REST directo: solo campos conocidos, colores hexadecimales, familia tipográfica permitida y rutas de imagen del restaurante. No depende únicamente de validación del formulario.
 

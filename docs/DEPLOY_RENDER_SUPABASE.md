@@ -2,30 +2,25 @@
 
 ## Estado actual
 
-No hay despliegue Render. El usuario eligió Supabase `ylcnrfzosjzuljufwups` y el repositorio `https://github.com/tolentinosftw-dotcom/tolentino-chef.git`. Las variables públicas ya están configuradas en `.env.local`; el endpoint Auth responde HTTP 200. La cuenta MCP/CLI conectada no tiene acceso a ese proyecto. La conexión PostgreSQL directa usa IPv6 y expira desde este equipo: falta la dirección Session pooler para aplicar la migración. También falta la clave secreta de servidor de Tolentino. No se modificó ni utilizó el proyecto ajeno visible en el inventario conectado.
+Render sigue pendiente. Supabase `ylcnrfzosjzuljufwups` es el destino autorizado y el repositorio ya publicado es `https://github.com/tolentinosftw-dotcom/tolentino-chef.git`. URL, clave publicable y clave de servicio están configuradas en `.env.local`, ignorado por Git. La migración `20261017021301_initial_tenant_security` ya está aplicada y verificada mediante conexión PostgreSQL al proyecto elegido.
+
+La evidencia `evidence/db-migration-verification.json` registra el 16 de octubre de 2026 a las 22:49 (America/Bogota): 15 tablas públicas y una privada con RLS, grants y ocho RPC de negocio comprobados, bucket privado `restaurant-media` de 5 MiB y cuatro políticas de tenant. No se crearon usuarios, restaurantes ni objetos Storage, ni se enviaron correos. SMTP, primer administrador y recorridos remotos con Auth/Storage siguen pendientes; la última lectura de Auth indica `disable_signup: false`.
+
+La comprobación posterior `evidence/connected-supabase-smoke.json` confirmó REST, lectura de la configuración del bucket y acceso administrativo a Auth; no hay restaurantes ni usuarios en la primera página consultada. El servidor local de producción respondió health 200 (`status:ok`, `configured:true`), login 200 y APIs privadas 401 sin sesión. Esto confirma conexión y rechazo de acceso anónimo, no una sesión real de propietario.
 
 La compilación es local y reproducible. `render.yaml` describe una aplicación Node única; no crea un servicio por restaurante. No ejecutar la migración contra el proyecto de referencia ni contra el proyecto existente de otra aplicación.
 
-## 1. Crear el proyecto Supabase exclusivo
+## 1. Proyecto y migración verificados
 
-Crear un proyecto nuevo con nombre Tolentino Restaurantes Admin dentro de la organización elegida. Revisar cualquier costo antes de confirmar la creación. Obtener su URL, clave publicable y clave de servidor; guardarlas solo en `.env.local` y en las variables secretas de Render. No copiarlas en mensajes, capturas ni el repositorio.
+El destino autorizado ya es `ylcnrfzosjzuljufwups`; no crear otro proyecto ni volver a aplicar la migración inicial. La verificación remota confirmó que la migración está vigente, que no existen grants de SELECT anónimo sobre las tablas de negocio y que un rol autenticado sin membresía no puede ver restaurantes ni productos. Esta comprobación SQL no sustituye dos sesiones reales de propietarios.
 
-Aplicar `supabase/migrations/20261017021301_initial_tenant_security.sql` mediante el SQL Editor del **proyecto nuevo** o con CLI vinculada exclusivamente a su referencia:
+Para futuras migraciones, revisar primero destino, cambios y copia de seguridad, y usar el SQL Editor o una CLI autorizada para este proyecto. No ejecutar reset contra un proyecto alojado. Mantener URL y claves únicamente en `.env.local` y en las variables secretas de Render; no copiarlas en mensajes, capturas ni el repositorio. El bucket ya es privado: no convertirlo en público para facilitar las pruebas.
 
-```powershell
-supabase link --help
-supabase db push --help
-supabase link --project-ref REFERENCIA_DEL_PROYECTO_NUEVO
-supabase db push --dry-run
-# Revisar destino y migración antes de continuar:
-supabase db push
-```
-
-No ejecutar reset contra un proyecto alojado. La migración incluye todas las políticas, grants, RPC y el bucket privado; no es necesario crear un bucket público. Verificar con los advisors de Supabase, revisar tablas/RLS y probar dos usuarios reales A y B antes de habilitar clientes.
+Quedan pendientes los advisors de Supabase y la aceptación con dos usuarios reales A y B antes de habilitar clientes.
 
 ## 2. Configurar Auth y correo
 
-Deshabilitar Sign up y acceso anónimo en Supabase. Establecer longitud mínima de contraseña de 12 caracteres y tokens de acceso breves (la configuración local usa 15 minutos). Configurar un proveedor SMTP válido y probar entrega real; no asumir que el envío de pruebas de Supabase sirve para todos los clientes.
+La última lectura remota indica `disable_signup: false`: deshabilitar Sign up antes de operar y comprobar que el acceso anónimo también esté desactivado. Establecer longitud mínima de contraseña de 12 caracteres y tokens de acceso breves (la configuración local usa 15 minutos). Configurar un proveedor SMTP válido y probar entrega real; no asumir que el envío de pruebas de Supabase sirve para todos los clientes.
 
 **Site URL** debe coincidir con `APP_URL`. Autorizar la ruta exacta `APP_URL/auth/callback` para el flujo PKCE. En la plantilla **Reset password**, usar un enlace a:
 
@@ -38,7 +33,7 @@ Deshabilitar Sign up y acceso anónimo en Supabase. Establecer longitud mínima 
 
 Esta plantilla es necesaria también para el alta de clientes: el servidor crea una cuenta con contraseña aleatoria desconocida y solicita recuperación después de confirmar restaurante y membresía. No usa la plantilla Invite. El enlace estándar con un token en el fragmento no puede ser procesado por un endpoint de servidor. `verifyOtp` permite establecer la sesión y lleva a `/login?mode=password`. Callback y confirmación no se cachean y usan política de referencia restrictiva. Los enlaces de un solo uso pueden ser consumidos por sistemas de análisis de correo; probar el proveedor real y solicitar otro enlace si se consume antes de abrirlo. [Guía oficial de plantillas y endpoints de servidor](https://supabase.com/docs/guides/auth/auth-email-templates#redirecting-the-user-to-a-server-side-endpoint).
 
-Después de configurar Auth y migración:
+Después de configurar Auth, SMTP y la plantilla, elegir el correo real del primer administrador y ejecutar el bootstrap (aún pendiente; la migración ya está aplicada):
 
 ```powershell
 node --env-file=.env.local scripts/bootstrap-admin.mjs TU_CORREO_REAL
@@ -63,7 +58,7 @@ Mantener proyectos distintos para pruebas y producción. No cargar datos fictici
 
 ## 4. Publicar Render
 
-1. Subir este proyecto a un repositorio nuevo y conectar ese repositorio con Render. No subir `.env.local`, `.runtime`, `node_modules` ni `.next`.
+1. Conectar con Render el repositorio ya publicado `tolentinosftw-dotcom/tolentino-chef`. No subir `.env.local`, `.runtime`, `node_modules` ni `.next`.
 2. Crear un Web Service desde `render.yaml`, o usar Node 22.23.3, build `npm ci --include=dev && npm run typecheck && npm run lint && npm run test && npm run build`, inicio `npm run start` y health `/api/health`.
 3. Completar las variables antes de arrancar. Render proporciona PORT; Next lo respeta y escucha en 0.0.0.0.
 4. Esperar build/deploy y comprobar health 200 con `status:ok`, login real, persistencia, carga/lectura de imagen, cambio de precio y QR escaneable.

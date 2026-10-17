@@ -4,33 +4,45 @@ Fecha de trabajo: 16 de octubre de 2026, America/Bogota. Las evidencias guardan 
 
 ## Resultado y alcance
 
-La implementación local tiene frontend, rutas de servidor, migración, políticas y pruebas ejecutables. **No hay un despliegue Render ni un proyecto Supabase Tolentino conectado. No se declara listo para producción.** Ningún dato de prueba sustituye la persistencia de la aplicación.
+La implementación local tiene frontend, rutas de servidor, migración, políticas y pruebas ejecutables. Supabase `ylcnrfzosjzuljufwups` ya está conectado y tiene la migración aplicada y verificada. **Render, la configuración operativa de Auth/SMTP y la aceptación con dos propietarios reales siguen pendientes; no se declara listo para producción.** Ningún dato de prueba sustituye la persistencia de la aplicación.
 
-Se emplean tres niveles distintos de evidencia:
+Se emplean cuatro niveles distintos de evidencia:
 
-1. PostgreSQL PGlite ejecuta el SQL real de la migración y roles efectivos. Los esquemas mínimos de Auth y Storage son sustitutos de prueba; no hay servidor Supabase alojado.
+1. PostgreSQL PGlite ejecuta el SQL real de la migración y roles efectivos. Los esquemas mínimos de Auth y Storage son sustitutos de prueba; esta suite no usa el servidor Supabase alojado.
 2. Pruebas de módulos y handlers ejecutan validación/autorización/caché/QR reales, con mocks explícitos de servicios externos cuando corresponde.
-3. Playwright usa Chrome y páginas reales de Next. Login sin configuración se prueba sin sustituir la API. Los recorridos administrativos y de catálogo interceptan la API con fixtures ficticios: prueban interfaz y peticiones, no persistencia remota ni sesiones reales.
+3. Playwright usa Chrome y páginas reales de Next. El login sin configuración corresponde a la etapa local anterior y se probó sin sustituir la API. Los recorridos administrativos y de catálogo interceptan la API con fixtures ficticios: prueban interfaz y peticiones, no persistencia remota ni sesiones reales.
+4. La verificación PostgreSQL remota comprueba migración, RLS, grants, RPC y configuración del bucket del proyecto autorizado. No ejecuta la aceptación A/B con Auth ni carga objetos en Storage.
+
+## Verificación remota de esquema
+
+La evidencia `evidence/db-migration-verification.json` registra el 16 de octubre de 2026 a las 22:49 (America/Bogota) la migración `20261017021301_initial_tenant_security` vigente en `ylcnrfzosjzuljufwups`, con 98 sentencias registradas. Se verificaron 15 tablas públicas y una privada con RLS, cero grants de SELECT anónimo sobre negocio, ocho RPC y sus permisos, cuatro FKs compuestas de tenant y diez triggers de identidad. El bucket `restaurant-media` es privado, con límite de 5 MiB y cuatro políticas de tenant.
+
+La RPC de estadísticas de servicio se ejecutó y un rol autenticado sin membresía no vio restaurantes ni productos. No se crearon usuarios Auth, restaurantes ni objetos Storage, ni se enviaron correos. Esta evidencia no acredita login, cookies, SMTP, uploads/downloads ni aislamiento A/B con dos usuarios remotos reales.
+
+La comprobación conectada posterior, a las 22:51 (America/Bogota) del 16 de octubre de 2026, está en `evidence/connected-supabase-smoke.json`: estadísticas REST correctas con cero restaurantes, bucket privado accesible y listado administrativo Auth correcto con cero usuarios en la primera página. En el servidor local de producción, `/api/health` respondió 200 con `status:ok` y `configured:true`, `/login` respondió 200 y `/api/admin/restaurants` y `/api/session` respondieron 401 sin sesión. Esto acredita conectividad y denegación anónima, no un login de usuario ni recorridos de correo o Storage.
+
+La clave de servicio y las variables públicas están configuradas en `.env.local`, ignorado por Git. La última lectura de Auth devuelve `disable_signup: false`: desactivar registro público, configurar SMTP/recuperación y elegir el correo del primer administrador antes del bootstrap. Render permanece pendiente. Los resultados anteriores sin credenciales se conservan como evidencia histórica y no describen el estado actual de conexión.
 
 ## Verificación automatizada
 
 Los resultados definitivos y conteos se registran en `evidence/validation-summary.json`, `evidence/unit-tests.json` y `evidence/playwright-results.json`. **161/161 pruebas locales aprobadas en nueve archivos**, incluidas 35 SQL, 14 QR y 43 de proxy/refresco de sesiones añadidas antes de publicar el repositorio. **22/22 E2E aprobados en la entrega inicial**, más una repetición dirigida de los dos casos del dashboard tras corregir la métrica de productos publicados; esta repetición está en `evidence/playwright-admin-final.json` y no cuenta como dos escenarios nuevos. No se repitieron los E2E tras añadir el refresco; ese cambio sí se comprobó con las pruebas específicas y la suite completa de módulos.
 
-**Tipos, lint y build de producción: PASS. npm audit: 0 avisos conocidos.** El build arrancó mediante `npm run start -- --port 3001`; siete comprobaciones HTTP pasaron, guardadas en `evidence/production-smoke.json`. Sin credenciales, health y APIs privadas devolvieron 503; un origen ajeno obtuvo 403, un Host no registrado 421 y un token QR mal formado 400. Esto comprueba el arranque y el estado sin configuración, no una autenticación remota. Los servidores temporales se detuvieron al cerrar la entrega.
+**Tipos, lint y build de producción: PASS. npm audit: 0 avisos conocidos.** En la ejecución histórica anterior a configurar las credenciales, el build arrancó mediante `npm run start -- --port 3001`; siete comprobaciones HTTP pasaron, guardadas en `evidence/production-smoke.json`. Sin credenciales, health y APIs privadas devolvieron 503; un origen ajeno obtuvo 403, un Host no registrado 421 y un token QR mal formado 400. Esto comprueba el arranque y el estado sin configuración, no una autenticación remota. Los servidores temporales se detuvieron al cerrar la entrega.
 
-| Comprobación                      | Evidencia                                                                                              |
-| --------------------------------- | ------------------------------------------------------------------------------------------------------ |
-| Tipos estrictos                   | `npm run typecheck`; sin ignoreBuildErrors                                                             |
-| Lint                              | `npm run lint`                                                                                         |
-| Compilación de producción         | `npm run build`; Next App Router/Node                                                                  |
-| SQL, unidades e integración local | `npm test -- --reporter=json --outputFile=docs/evidence/unit-tests.json`                               |
-| Interfaz                          | `npm run test:e2e`; Chrome, 1440×1000 y 390×844                                                        |
-| Dependencias                      | `evidence/npm-audit.json`; resultado limitado a avisos conocidos del registro en la fecha de ejecución |
-| Original preservado               | `evidence/reference-before.json` y `evidence/reference-verification.json`                              |
+| Comprobación                           | Evidencia                                                                                                          |
+| -------------------------------------- | ------------------------------------------------------------------------------------------------------------------ |
+| Tipos estrictos                        | `npm run typecheck`; sin ignoreBuildErrors                                                                         |
+| Lint                                   | `npm run lint`                                                                                                     |
+| Compilación de producción              | `npm run build`; Next App Router/Node                                                                              |
+| SQL, unidades e integración local      | `npm test -- --reporter=json --outputFile=docs/evidence/unit-tests.json`                                           |
+| Interfaz                               | `npm run test:e2e`; Chrome, 1440×1000 y 390×844                                                                    |
+| Dependencias                           | `evidence/npm-audit.json`; resultado limitado a avisos conocidos del registro en la fecha de ejecución             |
+| Conexión Supabase desde servidor local | `evidence/connected-supabase-smoke.json`; REST/Auth/Storage de servicio, health 200 y APIs privadas 401 sin sesión |
+| Original preservado                    | `evidence/reference-before.json` y `evidence/reference-verification.json`                                          |
 
 ## Aceptación A–W
 
-PASS significa que se ejecutó la comprobación en el alcance indicado. BLOCKED requiere infraestructura/credenciales ausentes. NOT RUN no se ejecutó. Un PASS local no se convierte en PASS remoto por inferencia.
+PASS significa que se ejecutó la comprobación en el alcance indicado. BLOCKED requiere completar configuración, cuentas o infraestructura para ejecutar el recorrido. NOT RUN no se ejecutó. Un PASS local no se convierte en PASS remoto por inferencia.
 
 | Caso                                      | Estado  | Evidencia ejecutada y límite                                                                                                                                   |
 | ----------------------------------------- | ------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -78,4 +90,4 @@ Capturas revisables: `ui-real-login-desktop.png`, `ui-real-login-mobile.png`, `u
 
 ## Lo no ejecutado
 
-Despliegue y reinicio en Render, conexión remota Supabase, correo SMTP, Auth real, Storage real, DNS/TLS real, escaneo físico de QR, restauración de backup, pruebas de alta concurrencia y auditoría formal de accesibilidad: **BLOCKED o NOT RUN**, según [PENDIENTES.md](PENDIENTES.md). No se declara PASS para estas operaciones.
+Despliegue y reinicio en Render, correo SMTP y bootstrap del administrador, recorridos con sesiones Auth reales, uploads/downloads y aislamiento A/B mediante REST/Storage, DNS/TLS real, escaneo físico de QR, restauración de backup, pruebas de alta concurrencia y auditoría formal de accesibilidad: **BLOCKED o NOT RUN**, según [PENDIENTES.md](PENDIENTES.md). No se declara PASS para estas operaciones.

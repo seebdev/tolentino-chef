@@ -19,5 +19,6 @@
     "Session pooler host/port/database/user",
     "SUPABASE_SERVICE_ROLE_KEY stored locally/server-side",
     "Disable public signup before accepting customers"
-  ]
+  ],
+  "note": "Historical pre-migration connection check; superseded by db-migration-verification.json and connected-supabase-smoke.json"
 }

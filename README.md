@@ -6,7 +6,13 @@ Una aplicación Next.js para administrar múltiples restaurantes con Supabase Au
 
 ## Estado de esta entrega
 
-El código, migraciones y pruebas se encuentran en este proyecto independiente. El proyecto Supabase elegido es `ylcnrfzosjzuljufwups`; sus variables públicas están configuradas localmente y su endpoint Auth responde. La migración remota sigue pendiente de una conexión PostgreSQL accesible y falta la clave secreta de servidor. La aplicación **requiere Supabase** para operar: no contiene una base simulada ni un acceso de demostración. Sin las variables necesarias, el acceso muestra que falta la conexión y el health endpoint responde 503. La publicación en Render y la aceptación completa con Auth/Storage remotos están pendientes; consultar `docs/QA_REPORT.md` y `docs/PENDIENTES.md`.
+El código y las pruebas se encuentran en este proyecto independiente. El proyecto Supabase autorizado `ylcnrfzosjzuljufwups` ya tiene aplicada y verificada la migración `20261017021301_initial_tenant_security`. Las variables públicas y la clave de servicio están configuradas exclusivamente en `.env.local`, ignorado por Git. La comprobación remota del 16 de octubre de 2026 a las 22:49 (America/Bogota) verificó esquema, RLS, grants, RPC y configuración del bucket privado; su evidencia es `docs/evidence/db-migration-verification.json`.
+
+**Aún no está aceptado para producción.** Faltan elegir el correo del primer administrador, configurar SMTP y recuperación, desactivar el registro público (la última lectura devuelve `disable_signup: false`), ejecutar el bootstrap y validar los recorridos con Auth y Storage reales de dos propietarios. La publicación en Render está pendiente. No se crearon usuarios, restaurantes ni objetos de prueba en el proyecto remoto durante la verificación de la migración. Consultar `docs/QA_REPORT.md` y `docs/PENDIENTES.md`.
+
+La comprobación conectada posterior (`docs/evidence/connected-supabase-smoke.json`) obtuvo health 200 en el servidor local de producción, acceso de servicio a REST/Auth/Storage y 401 en las APIs privadas sin sesión. No prueba un login de usuario ni envío de correo.
+
+La aplicación requiere Supabase y no contiene una base simulada ni un acceso de demostración. Los resultados históricos sin credenciales describen una ejecución anterior; no representan el estado actual de conexión.
 
 El proyecto original `crepes menu` se inspeccionó exclusivamente en lectura. No se copiaron sus credenciales, fotografías, logos, catálogo comercial ni repositorio Git. Evidencia de integridad y alcance: `docs/evidence/reference-verification.json`.
 

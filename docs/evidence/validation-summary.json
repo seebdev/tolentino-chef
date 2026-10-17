@@ -2,7 +2,7 @@
   "recordedAt": "2026-10-17T03:11:34.750Z",
   "node": "v22.23.3",
   "location": ".",
-  "status": "local implementation verified; remote acceptance blocked",
+  "status": "local implementation verified; Supabase schema migrated and application connected; production acceptance pending",
   "checks": {
     "typecheck": {
       "status": "PASS",
@@ -109,26 +109,27 @@
       "verifiedAtUtc": "2026-10-17T02:22:07.7789804Z",
       "baseline": "reference-before.json",
       "checkedFiles": 1803,
-      "exclusions": [
-        "node_modules",
-        ".next",
-        ".turbo",
-        "dist",
-        "build"
-      ],
+      "exclusions": ["node_modules", ".next", ".turbo", "dist", "build"],
       "changedOrMissing": [],
       "added": [],
       "unchanged": true
     }
   },
   "remote": {
-    "supabase": "BLOCKED: selected ylcnrfzosjzuljufwups; IPv6 PostgreSQL timeout, Session pooler connection and server key pending",
-    "render": "BLOCKED: new repository/service connection and environment",
+    "supabase": "PASS: migration 20261017021301 applied to ylcnrfzosjzuljufwups; RLS/grants/private Storage/RPC and application connectivity verified",
+    "render": "PENDING: Render service and environment",
     "physicalQr": "NOT RUN",
-    "remoteBackupRestore": "NOT RUN"
+    "remoteBackupRestore": "NOT RUN",
+    "authAcceptance": "PENDING: initial admin, SMTP, disable public signup, and real A/B user flows",
+    "github": "main published to https://github.com/tolentinosftw-dotcom/tolentino-chef",
+    "evidence": [
+      "db-migration-verification.json",
+      "connected-supabase-smoke.json"
+    ]
   },
   "migration": {
     "file": "20261017021301_initial_tenant_security.sql",
     "sha256": "2078be5d018e543469cde0babb9b2c551929048e5a245e4dac4d6740ffd12545"
-  }
+  },
+  "updatedAt": "2026-10-17T03:53:08.982Z"
 }
