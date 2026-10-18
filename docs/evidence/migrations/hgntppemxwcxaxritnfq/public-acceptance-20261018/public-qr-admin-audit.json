@@ -1,0 +1,255 @@
+{
+  "startedAt": "2026-10-18T02:45:15.868Z",
+  "projectRef": "hgntppemxwcxaxritnfq",
+  "runId": "public-acceptance-20261018",
+  "base": "https://tolentino-restaurantes-admin.onrender.com",
+  "scope": "Real public HTTPS admin session and permanent QR GET exports; no catalog/settings writes",
+  "requests": {
+    "catalogMutations": 0,
+    "resetOrInvitationEmails": 0
+  },
+  "browser": {
+    "name": "Chrome",
+    "version": "155.0.8059.80",
+    "headless": true,
+    "ignoresHttpsErrors": false
+  },
+  "checks": [
+    {
+      "name": "Real admin login on confirmed HTTPS origin",
+      "pass": true,
+      "detail": {
+        "role": "superadmin"
+      }
+    },
+    {
+      "name": "Current-project cookies use Secure, HttpOnly, SameSite=Lax and host-only scope",
+      "pass": true,
+      "detail": {
+        "cookies": 2
+      }
+    },
+    {
+      "name": "aurora PNG/SVG/PDF decode, stable HTTPS redirect and real anonymous menu",
+      "pass": true,
+      "detail": {
+        "files": 3,
+        "products": 24
+      }
+    },
+    {
+      "name": "marea PNG/SVG/PDF decode, stable HTTPS redirect and real anonymous menu",
+      "pass": true,
+      "detail": {
+        "files": 3,
+        "products": 24
+      }
+    },
+    {
+      "name": "bruma PNG/SVG/PDF decode, stable HTTPS redirect and real anonymous menu",
+      "pass": true,
+      "detail": {
+        "files": 3,
+        "products": 24
+      }
+    },
+    {
+      "name": "desktop support exit preserves administrator identity and loads all three restaurants",
+      "pass": true
+    },
+    {
+      "name": "mobile support exit preserves administrator identity and loads all three restaurants",
+      "pass": true
+    },
+    {
+      "name": "Real admin logout removes local project cookies and denies anonymous session",
+      "pass": true
+    },
+    {
+      "name": "No browser page errors",
+      "pass": true
+    }
+  ],
+  "menus": [
+    {
+      "restaurant": "aurora",
+      "url": "https://tolentino-restaurantes-admin.onrender.com/menu/pizzeria-aurora-demo",
+      "qrUrl": "https://tolentino-restaurantes-admin.onrender.com/q/5820b231-3a31-43aa-a1ec-4f6f79ef2bb6",
+      "products": 24,
+      "redirectStatus": 302,
+      "finalStatus": 200,
+      "publicReady": true,
+      "tokenUnchanged": true,
+      "catalogAndQrSettingsUnchanged": true,
+      "tlsProtocol": "TLS 1.3",
+      "productionCsp": true
+    },
+    {
+      "restaurant": "marea",
+      "url": "https://tolentino-restaurantes-admin.onrender.com/menu/bento-marea-demo",
+      "qrUrl": "https://tolentino-restaurantes-admin.onrender.com/q/199258db-b193-4055-9f26-b1f3ea9ee1eb",
+      "products": 24,
+      "redirectStatus": 302,
+      "finalStatus": 200,
+      "publicReady": true,
+      "tokenUnchanged": true,
+      "catalogAndQrSettingsUnchanged": true,
+      "tlsProtocol": "QUIC",
+      "productionCsp": true
+    },
+    {
+      "restaurant": "bruma",
+      "url": "https://tolentino-restaurantes-admin.onrender.com/menu/cafe-bruma-demo",
+      "qrUrl": "https://tolentino-restaurantes-admin.onrender.com/q/5d236a67-793a-4a72-92f4-63abe20e8d95",
+      "products": 24,
+      "redirectStatus": 302,
+      "finalStatus": 200,
+      "publicReady": true,
+      "tokenUnchanged": true,
+      "catalogAndQrSettingsUnchanged": true,
+      "tlsProtocol": "QUIC",
+      "productionCsp": true
+    }
+  ],
+  "qr": [
+    {
+      "restaurant": "aurora",
+      "format": "png",
+      "path": "artifacts/migrations/hgntppemxwcxaxritnfq/public-acceptance-20261018/qr/aurora.png",
+      "bytes": 49783,
+      "sha256": "e66ca49991a1a5859542673de3c37ec9d4030113b2d1cccfeb1e7a21d6a9ebd3",
+      "decodedUrl": "https://tolentino-restaurantes-admin.onrender.com/q/5820b231-3a31-43aa-a1ec-4f6f79ef2bb6",
+      "width": 1024,
+      "height": 1024,
+      "tokenUnchanged": true,
+      "artifactRegeneratedForPublicOrigin": true,
+      "physicalScan": false
+    },
+    {
+      "restaurant": "aurora",
+      "format": "svg",
+      "path": "artifacts/migrations/hgntppemxwcxaxritnfq/public-acceptance-20261018/qr/aurora.svg",
+      "bytes": 60008,
+      "sha256": "42ce8d58ab84d53561a3c9aa84fee6898e5afe83072d8d6d64fdbccb1e129d77",
+      "decodedUrl": "https://tolentino-restaurantes-admin.onrender.com/q/5820b231-3a31-43aa-a1ec-4f6f79ef2bb6",
+      "width": 1024,
+      "height": 1024,
+      "tokenUnchanged": true,
+      "artifactRegeneratedForPublicOrigin": true,
+      "physicalScan": false
+    },
+    {
+      "restaurant": "aurora",
+      "format": "pdf",
+      "path": "artifacts/migrations/hgntppemxwcxaxritnfq/public-acceptance-20261018/qr/aurora.pdf",
+      "bytes": 46405,
+      "sha256": "21b5e6ef6f91a87150bfe62311473439da30a3433d8af9e513cac5404c3dee0c",
+      "decodedUrl": "https://tolentino-restaurantes-admin.onrender.com/q/5820b231-3a31-43aa-a1ec-4f6f79ef2bb6",
+      "width": 1024,
+      "height": 1024,
+      "tokenUnchanged": true,
+      "artifactRegeneratedForPublicOrigin": true,
+      "physicalScan": false
+    },
+    {
+      "restaurant": "marea",
+      "format": "png",
+      "path": "artifacts/migrations/hgntppemxwcxaxritnfq/public-acceptance-20261018/qr/marea.png",
+      "bytes": 49900,
+      "sha256": "4f9f1648baf07c27cdc78e2e186362b637b632435789c718dda96c5f14170f0b",
+      "decodedUrl": "https://tolentino-restaurantes-admin.onrender.com/q/199258db-b193-4055-9f26-b1f3ea9ee1eb",
+      "width": 1024,
+      "height": 1024,
+      "tokenUnchanged": true,
+      "artifactRegeneratedForPublicOrigin": true,
+      "physicalScan": false
+    },
+    {
+      "restaurant": "marea",
+      "format": "svg",
+      "path": "artifacts/migrations/hgntppemxwcxaxritnfq/public-acceptance-20261018/qr/marea.svg",
+      "bytes": 56817,
+      "sha256": "b28066d53e1646cfa0cd08b2eb2be815e01da2230313517ccba80db560544637",
+      "decodedUrl": "https://tolentino-restaurantes-admin.onrender.com/q/199258db-b193-4055-9f26-b1f3ea9ee1eb",
+      "width": 1024,
+      "height": 1024,
+      "tokenUnchanged": true,
+      "artifactRegeneratedForPublicOrigin": true,
+      "physicalScan": false
+    },
+    {
+      "restaurant": "marea",
+      "format": "pdf",
+      "path": "artifacts/migrations/hgntppemxwcxaxritnfq/public-acceptance-20261018/qr/marea.pdf",
+      "bytes": 46018,
+      "sha256": "75a744827e014b8012193302fd5af441ad7284ec8318668f68a1966472eee393",
+      "decodedUrl": "https://tolentino-restaurantes-admin.onrender.com/q/199258db-b193-4055-9f26-b1f3ea9ee1eb",
+      "width": 1024,
+      "height": 1024,
+      "tokenUnchanged": true,
+      "artifactRegeneratedForPublicOrigin": true,
+      "physicalScan": false
+    },
+    {
+      "restaurant": "bruma",
+      "format": "png",
+      "path": "artifacts/migrations/hgntppemxwcxaxritnfq/public-acceptance-20261018/qr/bruma.png",
+      "bytes": 48535,
+      "sha256": "6c77bed35e20df7374cdf8d7f1fa01ed76a9354e359e784aa040a1c853cf558d",
+      "decodedUrl": "https://tolentino-restaurantes-admin.onrender.com/q/5d236a67-793a-4a72-92f4-63abe20e8d95",
+      "width": 1024,
+      "height": 1024,
+      "tokenUnchanged": true,
+      "artifactRegeneratedForPublicOrigin": true,
+      "physicalScan": false
+    },
+    {
+      "restaurant": "bruma",
+      "format": "svg",
+      "path": "artifacts/migrations/hgntppemxwcxaxritnfq/public-acceptance-20261018/qr/bruma.svg",
+      "bytes": 54930,
+      "sha256": "342dceae1a6e368ccd12a7c1aa996de370a9e3829211db4adb1f605579c8480c",
+      "decodedUrl": "https://tolentino-restaurantes-admin.onrender.com/q/5d236a67-793a-4a72-92f4-63abe20e8d95",
+      "width": 1024,
+      "height": 1024,
+      "tokenUnchanged": true,
+      "artifactRegeneratedForPublicOrigin": true,
+      "physicalScan": false
+    },
+    {
+      "restaurant": "bruma",
+      "format": "pdf",
+      "path": "artifacts/migrations/hgntppemxwcxaxritnfq/public-acceptance-20261018/qr/bruma.pdf",
+      "bytes": 44969,
+      "sha256": "f51354fca5fe9e3a6fd81817b65ca8f1bfdc402bc8dd798ad5a877dc93d42a69",
+      "decodedUrl": "https://tolentino-restaurantes-admin.onrender.com/q/5d236a67-793a-4a72-92f4-63abe20e8d95",
+      "width": 1024,
+      "height": 1024,
+      "tokenUnchanged": true,
+      "artifactRegeneratedForPublicOrigin": true,
+      "physicalScan": false
+    }
+  ],
+  "screenshots": [
+    {
+      "device": "desktop",
+      "file": "artifacts/migrations/hgntppemxwcxaxritnfq/public-acceptance-20261018/screenshots/public-admin-loaded-desktop.png"
+    },
+    {
+      "device": "mobile",
+      "file": "artifacts/migrations/hgntppemxwcxaxritnfq/public-acceptance-20261018/screenshots/public-admin-loaded-mobile.png"
+    }
+  ],
+  "physicalQrScanning": false,
+  "mockedResponses": false,
+  "result": "PASS",
+  "completedAt": "2026-10-18T02:46:04.274Z",
+  "passed": 9,
+  "browserContextsClosed": true,
+  "limitations": [
+    "Public HTTPS acceptance on Chrome headless; owner/mobile menu matrix is recorded separately by visual-live-audit.",
+    "QR payload decoding and HTTPS browser resolution do not prove a physical camera scan or printed contrast.",
+    "No SMTP invitation/recovery email, customer catalog edits or platform settings changes.",
+    "Session, rate-limit and QR/visit counters may change during normal reads and authentication."
+  ]
+}

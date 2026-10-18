@@ -1,0 +1,38 @@
+{
+  "at": "2026-10-18T02:41:21.245Z",
+  "projectRef": "hgntppemxwcxaxritnfq",
+  "scope": "Offline preparation only; no health, navigation, login or remote request",
+  "confirmedOrigin": "https://tolentino-restaurantes-admin.onrender.com",
+  "status": "PASS",
+  "tests": 13,
+  "passed": 13,
+  "failed": 0,
+  "eslintExitCode": 0,
+  "checks": [
+    "requires exactly confirmed HTTPS public origin and an explicit public run ID",
+    "rejects HTTP before public authentication",
+    "rejects origin mismatch before public authentication",
+    "rejects localhost before public authentication",
+    "rejects reserved test domain before public authentication",
+    "rejects URL userinfo before public authentication",
+    "rejects URL path before public authentication",
+    "rejects missing public run ID before public authentication",
+    "rejects local run ID before public authentication",
+    "independently decodes a generated PNG artifact without network",
+    "independently rasterizes and decodes SVG without network",
+    "independently extracts and decodes the PDF image without network",
+    "rejects empty, unsupported and non-QR artifacts"
+  ],
+  "files": [
+    {
+      "file": "scripts/public-qr-admin-audit.mjs",
+      "sha256": "e08ef63ed3ed1f450a214ef81b2ec53354910ac4420aee94bd3547f25804cbf1"
+    },
+    {
+      "file": "scripts/public-qr-admin-audit-selftest.mjs",
+      "sha256": "66450c9efd4bcbc4f5ad308fe64e49fbf03825046d1dc605f43c6f702ff0bdb0"
+    }
+  ],
+  "networkGuard": "selftest replaces fetch with a rejecting function",
+  "remoteRequests": 0
+}

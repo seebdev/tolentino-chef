@@ -1,0 +1,29 @@
+{
+  "at": "2026-10-18T02:55:47.775Z",
+  "serviceId": "srv-dba32beq1p3s73a4g6v0",
+  "origin": "https://tolentino-restaurantes-admin.onrender.com",
+  "projectRef": "hgntppemxwcxaxritnfq",
+  "mutations": false,
+  "inventory": {
+    "workspace": "tea-dba1s4m1egvs7391ve50",
+    "services": [
+      {
+        "id": "srv-dba32beq1p3s73a4g6v0",
+        "name": "tolentino-restaurantes-admin"
+      }
+    ],
+    "duplicates": false
+  },
+  "publicAuth": {
+    "status": "verified",
+    "signupDisabled": true,
+    "anonymousEnabled": false,
+    "emailEnabled": true,
+    "emailAutoconfirm": false,
+    "smsAutoconfirm": false
+  },
+  "result": "FAIL",
+  "error": "AUTH_URL_MISMATCH",
+  "diagnostic": "The local verifier compared the sanitized root URL including its trailing slash without normalization. No remote mismatch was established.",
+  "supersededBy": "2026-10-18T025608979Z/release-verification.json"
+}

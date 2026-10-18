@@ -1,0 +1,17 @@
+{
+  "at": "2026-10-18T02:38:46.692Z",
+  "result": "PASS",
+  "passed": 12,
+  "failed": 0,
+  "commands": [
+    "node --test scripts/configure-production-auth-urls.test.mjs",
+    "eslint scripts/configure-production-auth-urls.mjs scripts/configure-production-auth-urls.test.mjs"
+  ],
+  "lintExitCode": 0,
+  "remoteRequests": 0,
+  "remoteMutations": 0,
+  "files": {
+    "scripts/configure-production-auth-urls.mjs": "428d64f6f2218a997da9d75fa613f381c29859f2678c1c9b26918bd4fb672bf0",
+    "scripts/configure-production-auth-urls.test.mjs": "5fb6f2ae730ae40a7f6597f946671b2e77832ba421e23acb2e21d1926d1f18d2"
+  }
+}

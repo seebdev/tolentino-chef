@@ -1,11 +1,11 @@
-# Servicio Render propuesto para autorización
+# Servicio Render autorizado y creado
 
-Estado: preparado, sin servicio creado ni despliegue iniciado. La elección del workspace no autoriza la creación. La migración y aceptación local del nuevo Supabase ya están verificadas, incluido respaldo y restauración aislada. Este es el siguiente paso externo reservado para autorización; véase MIGRATION_STATUS.md.
+Estado: autorización expresa recibida para un único servicio Free. Creado srv-dba32beq1p3s73a4g6v0 y primer despliegue live verificado. El inventario inmediatamente anterior estaba vacío; la API validó render.yaml (un servicio, ninguna base). Se aplicaron sus valores mediante API, sin crear un Blueprint administrado. El plan siguiente se conserva como registro de la decisión; no es autorización para duplicar el servicio. Véase PUBLIC_DEPLOYMENT.md.
 
 | Ajuste | Propuesta concreta |
 | --- | --- |
 | Workspace | Tolentino Restaurantes — tea-dba1s4m1egvs7391ve50 |
-| Inventario verificado | Cero servicios; volver a inventariar inmediatamente antes de crear |
+| Inventario verificado | Cero antes de crear; único servicio autorizado srv-dba32beq1p3s73a4g6v0 |
 | Blueprint | render.yaml existente, un único Web Service |
 | Nombre | tolentino-restaurantes-admin |
 | Repositorio / rama | https://github.com/seebdev/tolentino-chef — main |
@@ -15,7 +15,7 @@ Estado: preparado, sin servicio creado ni despliegue iniciado. La elección del 
 | Build | npm ci --include=dev && npm run typecheck && npm run lint && npm run test && npm run build |
 | Inicio / health | npm run start — /api/health |
 | Autodespliegue | Cada commit de main, según blueprint |
-| Hostname | El que asigne Render; aún no existe uno confirmado |
+| Hostname | tolentino-restaurantes-admin.onrender.com, asignado y verificado por Render |
 
 ## Configuración segura
 

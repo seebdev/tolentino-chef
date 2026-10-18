@@ -1,6 +1,20 @@
 # Restaurantes DEMO — Tolentino
 
-> Actualización del 18 de octubre de 2026 (UTC): los tres DEMO se migraron a `hgntppemxwcxaxritnfq` conservando UUID, catálogo y tokens QR. El servidor local actual usa ese destino. Sus contraseñas nuevas están exclusivamente en `.runtime/migrations/hgntppemxwcxaxritnfq/accounts.json`; el acceso administrador está en `admin-account.json` de la misma carpeta protegida. Las credenciales y evidencias históricas indicadas más abajo corresponden al entorno anterior. Véase [estado vigente](docs/MIGRATION_STATUS.md) y [manifiesto nuevo](artifacts/migrations/hgntppemxwcxaxritnfq/restaurants.json). Todavía no existen URLs públicas verificadas.
+> Actualización del 18 de octubre de 2026 (UTC): los tres DEMO se migraron a `hgntppemxwcxaxritnfq` conservando UUID, catálogo y tokens QR. El servidor local actual usa ese destino. Sus contraseñas nuevas están exclusivamente en `.runtime/migrations/hgntppemxwcxaxritnfq/accounts.json`; el acceso administrador está en `admin-account.json` de la misma carpeta protegida. Las credenciales y evidencias históricas indicadas más abajo corresponden al entorno anterior. Véase [estado vigente](docs/MIGRATION_STATUS.md) y [manifiesto nuevo](artifacts/migrations/hgntppemxwcxaxritnfq/restaurants.json). Los menús y accesos públicos ya están verificados; consultar [entrega pública vigente](docs/PUBLIC_DEPLOYMENT.md).
+
+## URLs y QR públicos vigentes
+
+[Superadministrador](https://tolentino-restaurantes-admin.onrender.com/admin) · [Inicio de sesión](https://tolentino-restaurantes-admin.onrender.com/login)
+
+| Restaurante | Menú HTTPS | QR permanentes |
+| --- | --- | --- |
+| Pizzería Aurora | [Abrir](https://tolentino-restaurantes-admin.onrender.com/menu/pizzeria-aurora-demo) | [PNG](artifacts/migrations/hgntppemxwcxaxritnfq/public-acceptance-20261018/qr/aurora.png) · [SVG](artifacts/migrations/hgntppemxwcxaxritnfq/public-acceptance-20261018/qr/aurora.svg) · [PDF](artifacts/migrations/hgntppemxwcxaxritnfq/public-acceptance-20261018/qr/aurora.pdf) |
+| Café Bruma | [Abrir](https://tolentino-restaurantes-admin.onrender.com/menu/cafe-bruma-demo) | [PNG](artifacts/migrations/hgntppemxwcxaxritnfq/public-acceptance-20261018/qr/bruma.png) · [SVG](artifacts/migrations/hgntppemxwcxaxritnfq/public-acceptance-20261018/qr/bruma.svg) · [PDF](artifacts/migrations/hgntppemxwcxaxritnfq/public-acceptance-20261018/qr/bruma.pdf) |
+| Bento Marea | [Abrir](https://tolentino-restaurantes-admin.onrender.com/menu/bento-marea-demo) | [PNG](artifacts/migrations/hgntppemxwcxaxritnfq/public-acceptance-20261018/qr/marea.png) · [SVG](artifacts/migrations/hgntppemxwcxaxritnfq/public-acceptance-20261018/qr/marea.svg) · [PDF](artifacts/migrations/hgntppemxwcxaxritnfq/public-acceptance-20261018/qr/marea.pdf) |
+
+Los nueve QR se decodificaron y sus tres destinos HTTPS funcionan. Falta escaneo físico. Las credenciales vigentes son las de la carpeta protegida del nuevo proyecto indicada arriba; no las históricas.
+
+## Registro histórico de la entrega local
 
 Fecha de entrega: 17 de octubre de 2026 (America/Bogota).
 

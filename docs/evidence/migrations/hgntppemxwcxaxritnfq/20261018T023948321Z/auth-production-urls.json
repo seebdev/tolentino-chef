@@ -1,0 +1,94 @@
+{
+  "at": "2026-10-18T02:39:41.650Z",
+  "projectRef": "hgntppemxwcxaxritnfq",
+  "mode": "apply",
+  "result": "PASS",
+  "stage": "complete",
+  "patchAttempted": true,
+  "patchAcknowledged": true,
+  "remoteDataMutations": 0,
+  "emailsSent": 0,
+  "requests": [
+    {
+      "endpoint": "management-before",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "endpoint": "public-before",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "endpoint": "management-freshness",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "endpoint": "management-patch",
+      "method": "PATCH",
+      "status": 200
+    },
+    {
+      "endpoint": "management-after",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "endpoint": "public-after",
+      "method": "GET",
+      "status": 200
+    }
+  ],
+  "plannedPatch": {
+    "site_url": "https://tolentino-restaurantes-admin.onrender.com",
+    "uri_allow_list": "https://tolentino-restaurantes-admin.onrender.com/auth/callback"
+  },
+  "before": {
+    "signupDisabled": true,
+    "emailEnabled": true,
+    "anonymousEnabled": false,
+    "siteUrlIsLocal": true,
+    "redirectEntryCount": 0
+  },
+  "recovery": {
+    "templateContentReturned": true,
+    "templateSource": "management configuration content; customization history unknown",
+    "templateSha256": "f452789e6dc74df5d977839e9bff203a03c3477d56f29a851672de8c6fedda21",
+    "usesConfirmationUrl": true,
+    "usesTokenHash": false,
+    "usesSiteUrl": false,
+    "referencesServerConfirm": false,
+    "smtpHostConfigured": false,
+    "smtpUserConfigured": false,
+    "smtpSenderConfigured": false,
+    "customSmtpConfigured": false,
+    "recoveryDeliveryTested": false,
+    "templateModified": false
+  },
+  "backup": {
+    "path": ".runtime/backups/auth-urls-hgntppemxwcxaxritnfq-20261018T023944266Z.json.enc",
+    "sha256": "a0eb8929a6d60d38f2a07458124d981e3195292a0ce8e48331cee4356f730b0c",
+    "verifiedRoundTrip": true,
+    "cipher": "AES-256-GCM",
+    "keyMode": "windows-dpapi-current-user",
+    "protectedDirectory": {
+      "inheritedAccessDisabled": true,
+      "allowedPrincipals": "current Windows user and SYSTEM",
+      "ignoredByGit": true
+    }
+  },
+  "changedFields": [
+    "site_url",
+    "uri_allow_list"
+  ],
+  "otherConfigUnchanged": true,
+  "after": {
+    "siteUrl": "https://tolentino-restaurantes-admin.onrender.com",
+    "redirectAllowList": "https://tolentino-restaurantes-admin.onrender.com/auth/callback",
+    "signupDisabled": true,
+    "emailEnabled": true,
+    "anonymousEnabled": false
+  },
+  "patchVerifiedByReadback": true
+}

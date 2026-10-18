@@ -1,0 +1,106 @@
+{
+  "at": "2026-10-18T02:56:08.979Z",
+  "serviceId": "srv-dba32beq1p3s73a4g6v0",
+  "origin": "https://tolentino-restaurantes-admin.onrender.com",
+  "projectRef": "hgntppemxwcxaxritnfq",
+  "mutations": false,
+  "inventory": {
+    "workspace": "tea-dba1s4m1egvs7391ve50",
+    "services": [
+      {
+        "id": "srv-dba32beq1p3s73a4g6v0",
+        "name": "tolentino-restaurantes-admin"
+      }
+    ],
+    "duplicates": false
+  },
+  "publicAuth": {
+    "status": "verified",
+    "signupDisabled": true,
+    "anonymousEnabled": false,
+    "emailEnabled": true,
+    "emailAutoconfirm": false,
+    "smsAutoconfirm": false
+  },
+  "auth": {
+    "siteUrl": "https://tolentino-restaurantes-admin.onrender.com/",
+    "callback": "https://tolentino-restaurantes-admin.onrender.com/auth/callback",
+    "smtp": {
+      "hostConfigured": false,
+      "portConfigured": false,
+      "userConfigured": false,
+      "passwordReturned": false,
+      "senderAddressConfigured": false,
+      "senderNameConfigured": false,
+      "deliveryTested": false
+    },
+    "recoveryTemplate": {
+      "contentConfigured": true,
+      "tokenHashMentioned": false,
+      "confirmationUrlMentioned": true,
+      "siteUrlMentioned": false,
+      "confirmRouteMentioned": false
+    }
+  },
+  "service": {
+    "plan": "free",
+    "region": "virginia",
+    "autoDeployTrigger": "off"
+  },
+  "environment": [
+    {
+      "key": "RENDER_SERVICE_HOSTNAME",
+      "verified": true
+    },
+    {
+      "key": "PLATFORM_HOSTNAMES",
+      "verified": true
+    },
+    {
+      "key": "APP_URL",
+      "verified": true
+    },
+    {
+      "key": "SUPABASE_SERVICE_ROLE_KEY",
+      "verified": true
+    },
+    {
+      "key": "NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY",
+      "verified": true
+    },
+    {
+      "key": "NEXT_PUBLIC_SUPABASE_URL",
+      "verified": true
+    },
+    {
+      "key": "NODE_ENV",
+      "verified": true
+    },
+    {
+      "key": "NODE_VERSION",
+      "verified": true
+    }
+  ],
+  "release": {
+    "commit": "58053f575011e76840081d4abfbbe71a6841d9f7",
+    "deployId": "dep-dba38g8m7kps73f9uib0",
+    "status": "live",
+    "finishedAt": "2026-10-18T02:53:50.089794Z",
+    "githubMatches": true
+  },
+  "pipeline": {
+    "logLines": 185,
+    "typecheck": true,
+    "lint": true,
+    "tests239": true,
+    "build": true
+  },
+  "health": {
+    "status": "ok",
+    "configured": true,
+    "supabaseProjectRef": "hgntppemxwcxaxritnfq",
+    "hsts": "max-age=31536000"
+  },
+  "smtpInputComplete": false,
+  "result": "PASS"
+}

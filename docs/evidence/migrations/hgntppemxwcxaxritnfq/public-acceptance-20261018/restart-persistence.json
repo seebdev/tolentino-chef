@@ -1,0 +1,51 @@
+{
+  "at": "2026-10-18T02:54:13.309Z",
+  "projectRef": "hgntppemxwcxaxritnfq",
+  "runId": "public-acceptance-20261018",
+  "base": "https://tolentino-restaurantes-admin.onrender.com",
+  "mode": "after",
+  "realDatabase": true,
+  "restaurants": [
+    {
+      "key": "aurora",
+      "id": "1932e721-78ab-4320-9f84-f186a80fba48",
+      "products": 24,
+      "categories": 8,
+      "translations": 32,
+      "ownerLogin": true,
+      "persistedSha256": "fb1761e55f0dff6bf6443ed61f0d0813876eecaa6b7b84a092c3e5c99ba15acc",
+      "publicSha256": "64915ca17010d5e27e552b406b42b24f8771045a5f13c468455decd6c946afdc"
+    },
+    {
+      "key": "marea",
+      "id": "e2cda10d-2771-4056-8cf0-13e00f4b1bd8",
+      "products": 24,
+      "categories": 8,
+      "translations": 32,
+      "ownerLogin": true,
+      "persistedSha256": "fa07aba908501ec3e4b520d3907c0864b3e3e92294b2d02e414d50b7ad44f390",
+      "publicSha256": "4648e835cd228c7dfa9b751570b86c5799648b57ec0412bef72d6870f2482c73"
+    },
+    {
+      "key": "bruma",
+      "id": "eca7481c-fc27-479c-b364-76274b0b4230",
+      "products": 24,
+      "categories": 8,
+      "translations": 32,
+      "ownerLogin": true,
+      "persistedSha256": "28c18095daec95752042ca8c9c8aa3a8ddee6c78a0b78ecd8b864700f18513f3",
+      "publicSha256": "cf451f6acc08e4164fdc474300c1b966e763865649f9b70e28f650d182a60eac"
+    }
+  ],
+  "health": {
+    "status": 200,
+    "body": {
+      "status": "ok",
+      "configured": true,
+      "supabaseProjectRef": "hgntppemxwcxaxritnfq"
+    }
+  },
+  "baselineAt": "2026-10-18T02:50:41.903Z",
+  "result": "PASS",
+  "checks": "Fresh server process; fresh owner logins; exact SHA256 equality of private records and public API payloads for all 3 demos; health200"
+}

@@ -1,6 +1,6 @@
 # Auditoría final — Tolentino Restaurantes Admin
 
-> Actualización del 18 de octubre de 2026 (UTC): esta auditoría conserva los resultados históricos del proyecto anterior. El destino vigente es `hgntppemxwcxaxritnfq`; su migración real, registro público desactivado y nuevas pruebas se documentan en [MIGRATION_STATUS.md](docs/MIGRATION_STATUS.md). Las cifras y pendientes históricos siguientes no sustituyen ese estado. Render todavía no está publicado.
+> Actualización del 18 de octubre de 2026 (UTC): esta auditoría conserva los resultados históricos del proyecto anterior. El destino vigente es `hgntppemxwcxaxritnfq`; su migración real, registro público desactivado y nuevas pruebas se documentan en [MIGRATION_STATUS.md](docs/MIGRATION_STATUS.md). Las cifras y pendientes históricos siguientes no sustituyen ese estado. Render está publicado; consultar [estado público vigente](docs/PUBLIC_DEPLOYMENT.md) antes de interpretar los pendientes históricos.
 
 **Fecha:** 17 de octubre de 2026.
 

@@ -1,0 +1,81 @@
+{
+  "at": "2026-10-18T02:40:28.490Z",
+  "serviceId": "srv-dba32beq1p3s73a4g6v0",
+  "ownerId": "tea-dba1s4m1egvs7391ve50",
+  "projectRef": "hgntppemxwcxaxritnfq",
+  "operations": [
+    {
+      "method": "GET",
+      "path": "/services/srv-dba32beq1p3s73a4g6v0",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/services/srv-dba32beq1p3s73a4g6v0/deploys/dep-dba32buq1p3s73a4g8og",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/services/srv-dba32beq1p3s73a4g6v0/env-vars?limit=100",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/services/srv-dba32beq1p3s73a4g6v0/env-vars?limit=100&cursor=de1xr7Jpc-syYm1xMXAzczczYTRnN3Fn",
+      "status": 200
+    },
+    {
+      "method": "PUT",
+      "path": "/services/srv-dba32beq1p3s73a4g6v0/env-vars",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/services/srv-dba32beq1p3s73a4g6v0/env-vars?limit=100",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/services/srv-dba32beq1p3s73a4g6v0/env-vars?limit=100&cursor=de1xr7Jpc-szNmFqbmZhYzczZTVtNWRn",
+      "status": 200
+    }
+  ],
+  "result": "PASS",
+  "canonicalOrigin": "https://tolentino-restaurantes-admin.onrender.com",
+  "variables": [
+    {
+      "key": "RENDER_SERVICE_HOSTNAME",
+      "verified": true
+    },
+    {
+      "key": "PLATFORM_HOSTNAMES",
+      "verified": true
+    },
+    {
+      "key": "APP_URL",
+      "verified": true
+    },
+    {
+      "key": "SUPABASE_SERVICE_ROLE_KEY",
+      "verified": true
+    },
+    {
+      "key": "NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY",
+      "verified": true
+    },
+    {
+      "key": "NEXT_PUBLIC_SUPABASE_URL",
+      "verified": true
+    },
+    {
+      "key": "NODE_ENV",
+      "verified": true
+    },
+    {
+      "key": "NODE_VERSION",
+      "verified": true
+    }
+  ],
+  "secretValuesLogged": false,
+  "initialDeployTerminal": "canceled"
+}

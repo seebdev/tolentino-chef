@@ -1,5 +1,17 @@
 # Revisión de autenticación para producción
 
+## Aceptación pública HTTPS — 2026-10-18 UTC
+
+El servicio autorizado está disponible en [https://tolentino-restaurantes-admin.onrender.com](https://tolentino-restaurantes-admin.onrender.com). El health público confirmó HTTP 200, configured=true y el proyecto **hgntppemxwcxaxritnfq** antes de cualquier login. La aceptación real pasó **12 escenarios / 186 comprobaciones en Chrome**: tres menús en anchos de 390, 768 y 1440 px, más tres propietarios. Incluyó búsqueda, categorías/subcategorías, idiomas, detalle con variantes/extras, favoritos por restaurante, horarios, nueve secciones del panel, descargas, recarga, logout, rechazo anónimo y nuevo login. No hubo mocks ni edición de catálogo. [Health](evidence/migrations/hgntppemxwcxaxritnfq/public-acceptance-20261018/public-health.json), [navegador real](evidence/migrations/hgntppemxwcxaxritnfq/public-acceptance-20261018/public-browser-audit.json).
+
+El pase administrativo independiente pasó **9/9 controles**: login real, cookies Secure/HttpOnly/SameSite=Lax y host-only, soporte y salida conservando identidad en escritorio/móvil, lista cargada con tres DEMO y 72 productos, y logout con eliminación de cookies del proyecto y posterior HTTP 401. Se regeneraron **9 archivos QR (PNG/SVG/PDF)** para los tres enlaces HTTPS permanentes; todos se decodificaron por una implementación independiente y resolvieron mediante 302 al menú correcto con HTTP 200. Los tokens, catálogos y ajustes QR conservaron sus valores. Los PDF se verificaron decodificando su imagen embebida. [Administrador y QR](evidence/migrations/hgntppemxwcxaxritnfq/public-acceptance-20261018/public-qr-admin-audit.json).
+
+Los valores aplicados son site_url=https://tolentino-restaurantes-admin.onrender.com y uri_allow_list=https://tolentino-restaurantes-admin.onrender.com/auth/callback. Email sigue habilitado. El procedimiento, respaldo cifrado, 12 pruebas locales y límites de SMTP/plantilla están en [AUTH_PRODUCTION_URLS.md](AUTH_PRODUCTION_URLS.md). El único PATCH de URLs estuvo precedido por backup cifrado y se verificó por lectura posterior; las demás opciones Auth se conservaron. El registro público continúa desactivado y el acceso anónimo, deshabilitado. [Cambio de URLs y lectura posterior](evidence/migrations/hgntppemxwcxaxritnfq/20261018T023948321Z/auth-production-urls.json).
+
+La inspección estática de capturas finales y PNG QR se registra por separado; el administrador aparece cargado y sus emails están ocultos. Todos los contextos y procesos de esta aceptación terminaron y las sesiones se cerraron. [Inspección visual](evidence/migrations/hgntppemxwcxaxritnfq/public-acceptance-20261018/public-visual-inspection.json). Los conteos de esta fase son independientes de las suites locales o con fixtures y no deben sumarse como una única suite.
+
+**Límites vigentes:** Chrome headless con tamaños emulados; Edge sólo se probó en la fase local anterior. No se probó Safari, dispositivo físico, impresión/escaneo físico del QR, una renovación tras vencer realmente el JWT ni correo de recuperación/invitación. No se cambió la plantilla de recuperación, que usa ConfirmationURL, y no hay SMTP propio configurado; la entrega y el flujo desde un buzón autorizado siguen pendientes. Durante esta aceptación sólo se modificaron sesiones, contadores normales de visitas/QR/rate-limit y favoritos locales del navegador; no contenido de negocio.
+
 ## Aceptación local del nuevo proyecto — 2026-10-18 UTC
 
 El build de producción local conectado a `hgntppemxwcxaxritnfq` pasó **24 escenarios reales y 372 comprobaciones** en Chrome y Edge: 18 menús (tres DEMO × tres tamaños × dos navegadores) y seis escenarios de propietario con login, recarga, logout, rechazo anónimo y nuevo login. El catálogo persistido se conservó. Son pruebas separadas de las 239 unitarias y los 54 E2E con fixtures; sus conteos no se suman como una sola suite. [Evidencia funcional real](evidence/migrations/hgntppemxwcxaxritnfq/local-acceptance-20261018/live-browser-audit.json).
@@ -8,7 +20,7 @@ La comprobación adicional del administrador pasó cuatro controles: login real,
 
 Esta aceptación usa localhost por HTTP: no acredita cookies/redirects en un dominio HTTPS desplegado, Safari, dispositivos físicos, QR físico ni entrega de correo de recuperación/invitación. No hubo cambios de catálogo ni configuración en los runners visuales; sí las operaciones normales de sesión y contadores.
 
-## Estado actualizado: corrección autorizada e implementada
+## Estado anterior al despliegue: corrección autorizada e implementada
 
 Actualizado el 2026-10-18 UTC. El usuario autorizó expresamente corregir logout y probarlo. La corrección ya está en `src/lib/supabase.ts`, `src/lib/session-messages.ts`, `src/app/api/auth/route.ts`, `src/components/ui.tsx` y `src/app/login/page.tsx`. Los rechazos automáticos y la propuesta que aparecen más abajo se conservan como historial de la fase anterior; **el arreglo de logout ya no está pendiente de autorización ni de implementación**.
 
@@ -20,9 +32,9 @@ La recuperación mantiene su respuesta pública genérica y omite correo para .t
 
 También se ejecutó, con autorización separada, un único PATCH `{disable_signup:true}` en el proyecto nuevo `hgntppemxwcxaxritnfq`, precedido de backup Auth AES-GCM con clave DPAPI y roundtrip verificado. Management y Auth público confirman el resultado; email sigue habilitado, anónimo deshabilitado y las demás opciones no cambiaron. [Cambio y respaldo](evidence/migrations/hgntppemxwcxaxritnfq/2026-10-18T012555929Z/auth-signup-config.json), [verificación posterior PASS](evidence/migrations/hgntppemxwcxaxritnfq/2026-10-18T012638307Z/auth-signup-readback.json). La primera lectura pública se adelantó a la propagación y permanece documentada como fallo inicial, sin repetir el PATCH.
 
-El proyecto nuevo conserva Site URL local, redirects vacíos y SMTP propio sin configurar; la inspección Management observó JWT 3600 s, OTP 3600 s y mínimo de contraseña 6. Esos valores no se cambiaron. El workspace Render seleccionado es `Tolentino Restaurantes` (`tea-dba1s4m1egvs7391ve50`), sin servicios observados. Crear un servicio o desplegar sigue requiriendo autorización aparte. [Inventario de lectura](evidence/migrations/hgntppemxwcxaxritnfq/2026-10-18T012136752Z/render-auth-inspection.json).
+La inspección previa al despliegue observó Site URL local, redirects vacíos y SMTP propio sin configurar; Management observó JWT 3600 s, OTP 3600 s y mínimo de contraseña 6. Las URLs se actualizaron después, como acredita la sección inicial; JWT, OTP, política de contraseña y SMTP no se modificaron en el PATCH de URLs. En ese inventario previo, el workspace Render seleccionado `Tolentino Restaurantes` (`tea-dba1s4m1egvs7391ve50`) no tenía servicios. La autorización y el despliegue posteriores se acreditan en la sección inicial. [Inventario de lectura](evidence/migrations/hgntppemxwcxaxritnfq/2026-10-18T012136752Z/render-auth-inspection.json).
 
-Continúan pendientes la aceptación sobre HTTPS público, renovación/logout contra identidades del destino nuevo y recuperación con un buzón autorizado. Las pruebas locales o fixtures no acreditan SMTP, revocación remota real ni un despliegue.
+En esta fase anterior al despliegue estaban pendientes la aceptación sobre HTTPS público y las sesiones del destino nuevo; ambas se verificaron después como indica la sección inicial. La renovación tras vencer el JWT y la recuperación con un buzón autorizado siguen pendientes. Las pruebas locales o fixtures no acreditan SMTP, revocación remota real ni un despliegue.
 
 ## Revisión inicial conservada — 2026-10-17
 
@@ -101,11 +113,11 @@ Después de configurar el entorno, quedan por aceptar en HTTPS: cookies Secure/H
 
 El changelog actual también confirma que las bibliotecas Supabase requieren Node 22 o posterior tras el fin de soporte de Node 20. El runtime local y el runtime documentado para Render usan Node 22. No se actualizó ninguna dependencia. [Aviso de Node 20](https://supabase.com/changelog/45715-deprecation-notice-dropping-support-for-node-js-20).
 
-## Actualización: reproducción local del fallo temprano de logout
+## Historial anterior a la corrección: reproducción local del fallo temprano de logout
 
 Se reprodujo el caso con las dependencias instaladas, una cookie de sesión sintética caducada y un fetch completamente interceptado que devuelve HTTP 503. No se usó una cuenta ni un token real, ni se contactó Supabase. Resultado: una petición simulada, AuthRetryableFetchError, **cero escrituras de cookie y cookie de sesión conservada**. El endpoint actual, por lectura de su rama logout, ignora ese error y devuelve ok. [Evidencia saneada de la reproducción](evidence/production-auth-logout-before.json).
 
-La corrección quedó **pendiente de aprobación**, sin cambios de código: la revisión automática rechazó modificar autenticación/UI porque interpretó esta fase como lectura y documentación. No se intentó una vía alternativa para aplicar el cambio.
+En aquella fase la corrección quedó **pendiente de aprobación**, sin cambios de código: la revisión automática rechazó modificar autenticación/UI porque interpretó esta fase como lectura y documentación. No se intentó una vía alternativa para aplicar el cambio.
 
 Propuesta concreta para revisión:
 

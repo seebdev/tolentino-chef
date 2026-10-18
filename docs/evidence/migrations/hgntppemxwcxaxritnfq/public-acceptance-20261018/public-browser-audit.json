@@ -1,0 +1,4005 @@
+{
+  "startedAt": "2026-10-18T02:46:26.903Z",
+  "projectRef": "hgntppemxwcxaxritnfq",
+  "runId": "public-acceptance-20261018",
+  "phase": "all",
+  "base": "https://tolentino-restaurantes-admin.onrender.com",
+  "applicationScope": "public",
+  "serverMode": "render-production",
+  "traffic": "Real Next.js application, Supabase Auth and persisted data. No API mocks or route interception.",
+  "mutations": "Only login/logout sessions, rate-limit/visit counters and local browser favorites; no menu edits, emails, reset or domain changes.",
+  "physicalDevices": false,
+  "physicalQrScanning": false,
+  "browsers": [
+    {
+      "name": "chrome",
+      "available": true,
+      "version": "155.0.8059.80",
+      "headless": true
+    },
+    {
+      "name": "WebKit/Safari",
+      "installed": false,
+      "status": "NOT RUN",
+      "reason": "No installed WebKit executable; no browser was installed for this audit."
+    }
+  ],
+  "publicMenus": [
+    {
+      "browser": "chrome",
+      "restaurant": "aurora",
+      "device": "mobile",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "status": "PASS",
+      "errors": {
+        "pageErrors": [],
+        "consoleErrors": [],
+        "failedRequests": [],
+        "httpErrors": []
+      },
+      "productCount": 24,
+      "categoryCount": 8,
+      "images": [
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/dbffcfd0-fa1d-466f-a4b3-bd0b7f4b9ebe.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/7f4be855-ef8f-4c6c-b917-8a8f39a5f2ee.webp",
+          "complete": true,
+          "width": 512,
+          "height": 512
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/47181239-605c-4b5a-b50e-551ecdc702ef.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/47181239-605c-4b5a-b50e-551ecdc702ef.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/47181239-605c-4b5a-b50e-551ecdc702ef.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/47181239-605c-4b5a-b50e-551ecdc702ef.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/47181239-605c-4b5a-b50e-551ecdc702ef.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/47181239-605c-4b5a-b50e-551ecdc702ef.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/47181239-605c-4b5a-b50e-551ecdc702ef.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/91ac2c0b-970c-4e97-a72e-6d30bcea863f.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/91ac2c0b-970c-4e97-a72e-6d30bcea863f.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/91ac2c0b-970c-4e97-a72e-6d30bcea863f.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/91ac2c0b-970c-4e97-a72e-6d30bcea863f.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/18f7db60-fda8-4d5e-a141-6d7d9df0a216.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/18f7db60-fda8-4d5e-a141-6d7d9df0a216.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/18f7db60-fda8-4d5e-a141-6d7d9df0a216.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/18f7db60-fda8-4d5e-a141-6d7d9df0a216.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/26964c89-1e04-4e5d-878e-c2e11cab466d.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/26964c89-1e04-4e5d-878e-c2e11cab466d.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/26964c89-1e04-4e5d-878e-c2e11cab466d.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/26964c89-1e04-4e5d-878e-c2e11cab466d.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/11400c11-2393-4a0b-98f3-38ab21f768a2.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/11400c11-2393-4a0b-98f3-38ab21f768a2.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/11400c11-2393-4a0b-98f3-38ab21f768a2.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/11400c11-2393-4a0b-98f3-38ab21f768a2.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/8b821373-8efa-4b95-af3b-6a95692caa1d.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/8b821373-8efa-4b95-af3b-6a95692caa1d.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/8b821373-8efa-4b95-af3b-6a95692caa1d.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/8b821373-8efa-4b95-af3b-6a95692caa1d.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        }
+      ],
+      "dimensions": {
+        "viewport": 390,
+        "document": 390,
+        "body": 390
+      },
+      "screenshot": "artifacts/migrations/hgntppemxwcxaxritnfq/public-acceptance-20261018/screenshots/real-aurora-mobile.png",
+      "englishTranslations": {
+        "products": 24,
+        "categories": 8,
+        "verifiedRendered": true
+      },
+      "interactions": {
+        "searchResultCount": 1,
+        "categoryFilters": {
+          "parentIncludesChildren": 4,
+          "subcategoryOnly": 4
+        },
+        "favoritePersistsOnReload": true,
+        "hoursRows": 7,
+        "footerContact": {
+          "status": "NOT APPLICABLE",
+          "reason": "No platform contact URL is configured."
+        },
+        "accessibility": {
+          "scope": "Basic DOM labels/alt and five opaque-background text samples; not a formal accessibility audit.",
+          "unlabeledInputs": [],
+          "imagesWithoutAlt": 0,
+          "contrast": [
+            {
+              "selector": ".public-product-main h3",
+              "foreground": "rgb(37, 48, 38)",
+              "background": "rgb(255, 255, 255)",
+              "ratio": 13.73,
+              "minimum": 4.5,
+              "pass": true
+            },
+            {
+              "selector": ".public-product-main p",
+              "foreground": "rgb(89, 106, 76)",
+              "background": "rgb(255, 255, 255)",
+              "ratio": 5.85,
+              "minimum": 4.5,
+              "pass": true
+            },
+            {
+              "selector": ".public-product-bottom > strong",
+              "foreground": "rgb(117, 29, 44)",
+              "background": "rgb(255, 255, 255)",
+              "ratio": 10.67,
+              "minimum": 4.5,
+              "pass": true
+            },
+            {
+              "selector": ".public-categories > button.active",
+              "foreground": "rgb(255, 255, 255)",
+              "background": "rgb(117, 29, 44)",
+              "ratio": 10.67,
+              "minimum": 4.5,
+              "pass": true
+            },
+            {
+              "selector": ".public-categories > button:not(.active)",
+              "foreground": "rgb(89, 106, 76)",
+              "background": "rgb(255, 255, 255)",
+              "ratio": 5.85,
+              "minimum": 4.5,
+              "pass": true
+            }
+          ],
+          "keyboardFocus": {
+            "focusVisible": true,
+            "outlineWidth": "2px",
+            "outlineStyle": "solid"
+          }
+        }
+      },
+      "reloadSnapshotUnchanged": true
+    },
+    {
+      "browser": "chrome",
+      "restaurant": "aurora",
+      "device": "tablet",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "status": "PASS",
+      "errors": {
+        "pageErrors": [],
+        "consoleErrors": [],
+        "failedRequests": [],
+        "httpErrors": []
+      },
+      "productCount": 24,
+      "categoryCount": 8,
+      "images": [
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/dbffcfd0-fa1d-466f-a4b3-bd0b7f4b9ebe.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/7f4be855-ef8f-4c6c-b917-8a8f39a5f2ee.webp",
+          "complete": true,
+          "width": 512,
+          "height": 512
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/47181239-605c-4b5a-b50e-551ecdc702ef.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/47181239-605c-4b5a-b50e-551ecdc702ef.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/47181239-605c-4b5a-b50e-551ecdc702ef.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/47181239-605c-4b5a-b50e-551ecdc702ef.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/47181239-605c-4b5a-b50e-551ecdc702ef.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/47181239-605c-4b5a-b50e-551ecdc702ef.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/47181239-605c-4b5a-b50e-551ecdc702ef.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/91ac2c0b-970c-4e97-a72e-6d30bcea863f.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/91ac2c0b-970c-4e97-a72e-6d30bcea863f.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/91ac2c0b-970c-4e97-a72e-6d30bcea863f.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/91ac2c0b-970c-4e97-a72e-6d30bcea863f.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/18f7db60-fda8-4d5e-a141-6d7d9df0a216.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/18f7db60-fda8-4d5e-a141-6d7d9df0a216.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/18f7db60-fda8-4d5e-a141-6d7d9df0a216.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/18f7db60-fda8-4d5e-a141-6d7d9df0a216.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/26964c89-1e04-4e5d-878e-c2e11cab466d.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/26964c89-1e04-4e5d-878e-c2e11cab466d.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/26964c89-1e04-4e5d-878e-c2e11cab466d.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/26964c89-1e04-4e5d-878e-c2e11cab466d.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/11400c11-2393-4a0b-98f3-38ab21f768a2.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/11400c11-2393-4a0b-98f3-38ab21f768a2.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/11400c11-2393-4a0b-98f3-38ab21f768a2.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/11400c11-2393-4a0b-98f3-38ab21f768a2.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/8b821373-8efa-4b95-af3b-6a95692caa1d.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/8b821373-8efa-4b95-af3b-6a95692caa1d.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/8b821373-8efa-4b95-af3b-6a95692caa1d.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/8b821373-8efa-4b95-af3b-6a95692caa1d.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        }
+      ],
+      "dimensions": {
+        "viewport": 768,
+        "document": 768,
+        "body": 768
+      },
+      "screenshot": "artifacts/migrations/hgntppemxwcxaxritnfq/public-acceptance-20261018/screenshots/real-aurora-tablet.png",
+      "englishTranslations": {
+        "products": 24,
+        "categories": 8,
+        "verifiedRendered": true
+      },
+      "interactions": {
+        "searchResultCount": 1,
+        "categoryFilters": {
+          "parentIncludesChildren": 4,
+          "subcategoryOnly": 4
+        },
+        "favoritePersistsOnReload": true,
+        "hoursRows": 7,
+        "footerContact": {
+          "status": "NOT APPLICABLE",
+          "reason": "No platform contact URL is configured."
+        },
+        "accessibility": {
+          "scope": "Basic DOM labels/alt and five opaque-background text samples; not a formal accessibility audit.",
+          "unlabeledInputs": [],
+          "imagesWithoutAlt": 0,
+          "contrast": [
+            {
+              "selector": ".public-product-main h3",
+              "foreground": "rgb(37, 48, 38)",
+              "background": "rgb(255, 255, 255)",
+              "ratio": 13.73,
+              "minimum": 4.5,
+              "pass": true
+            },
+            {
+              "selector": ".public-product-main p",
+              "foreground": "rgb(89, 106, 76)",
+              "background": "rgb(255, 255, 255)",
+              "ratio": 5.85,
+              "minimum": 4.5,
+              "pass": true
+            },
+            {
+              "selector": ".public-product-bottom > strong",
+              "foreground": "rgb(117, 29, 44)",
+              "background": "rgb(255, 255, 255)",
+              "ratio": 10.67,
+              "minimum": 4.5,
+              "pass": true
+            },
+            {
+              "selector": ".public-categories > button.active",
+              "foreground": "rgb(255, 255, 255)",
+              "background": "rgb(117, 29, 44)",
+              "ratio": 10.67,
+              "minimum": 4.5,
+              "pass": true
+            },
+            {
+              "selector": ".public-categories > button:not(.active)",
+              "foreground": "rgb(89, 106, 76)",
+              "background": "rgb(255, 255, 255)",
+              "ratio": 5.85,
+              "minimum": 4.5,
+              "pass": true
+            }
+          ],
+          "keyboardFocus": {
+            "focusVisible": true,
+            "outlineWidth": "2px",
+            "outlineStyle": "solid"
+          }
+        }
+      },
+      "reloadSnapshotUnchanged": true
+    },
+    {
+      "browser": "chrome",
+      "restaurant": "aurora",
+      "device": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "status": "PASS",
+      "errors": {
+        "pageErrors": [],
+        "consoleErrors": [],
+        "failedRequests": [],
+        "httpErrors": []
+      },
+      "productCount": 24,
+      "categoryCount": 8,
+      "images": [
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/dbffcfd0-fa1d-466f-a4b3-bd0b7f4b9ebe.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/7f4be855-ef8f-4c6c-b917-8a8f39a5f2ee.webp",
+          "complete": true,
+          "width": 512,
+          "height": 512
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/47181239-605c-4b5a-b50e-551ecdc702ef.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/47181239-605c-4b5a-b50e-551ecdc702ef.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/47181239-605c-4b5a-b50e-551ecdc702ef.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/47181239-605c-4b5a-b50e-551ecdc702ef.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/47181239-605c-4b5a-b50e-551ecdc702ef.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/47181239-605c-4b5a-b50e-551ecdc702ef.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/47181239-605c-4b5a-b50e-551ecdc702ef.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/91ac2c0b-970c-4e97-a72e-6d30bcea863f.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/91ac2c0b-970c-4e97-a72e-6d30bcea863f.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/91ac2c0b-970c-4e97-a72e-6d30bcea863f.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/91ac2c0b-970c-4e97-a72e-6d30bcea863f.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/18f7db60-fda8-4d5e-a141-6d7d9df0a216.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/18f7db60-fda8-4d5e-a141-6d7d9df0a216.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/18f7db60-fda8-4d5e-a141-6d7d9df0a216.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/18f7db60-fda8-4d5e-a141-6d7d9df0a216.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/26964c89-1e04-4e5d-878e-c2e11cab466d.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/26964c89-1e04-4e5d-878e-c2e11cab466d.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/26964c89-1e04-4e5d-878e-c2e11cab466d.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/26964c89-1e04-4e5d-878e-c2e11cab466d.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/11400c11-2393-4a0b-98f3-38ab21f768a2.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/11400c11-2393-4a0b-98f3-38ab21f768a2.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/11400c11-2393-4a0b-98f3-38ab21f768a2.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/11400c11-2393-4a0b-98f3-38ab21f768a2.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/8b821373-8efa-4b95-af3b-6a95692caa1d.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/8b821373-8efa-4b95-af3b-6a95692caa1d.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/8b821373-8efa-4b95-af3b-6a95692caa1d.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/1932e721-78ab-4320-9f84-f186a80fba48/1932e721-78ab-4320-9f84-f186a80fba48/8b821373-8efa-4b95-af3b-6a95692caa1d.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        }
+      ],
+      "dimensions": {
+        "viewport": 1440,
+        "document": 1440,
+        "body": 1440
+      },
+      "screenshot": "artifacts/migrations/hgntppemxwcxaxritnfq/public-acceptance-20261018/screenshots/real-aurora-desktop.png",
+      "englishTranslations": {
+        "products": 24,
+        "categories": 8,
+        "verifiedRendered": true
+      },
+      "interactions": {
+        "searchResultCount": 1,
+        "categoryFilters": {
+          "parentIncludesChildren": 4,
+          "subcategoryOnly": 4
+        },
+        "favoriteTenantIsolation": {
+          "other": "marea",
+          "noFavoriteLeak": true,
+          "sourceFavoritePreserved": true
+        },
+        "favoritePersistsOnReload": true,
+        "hoursRows": 7,
+        "footerContact": {
+          "status": "NOT APPLICABLE",
+          "reason": "No platform contact URL is configured."
+        },
+        "accessibility": {
+          "scope": "Basic DOM labels/alt and five opaque-background text samples; not a formal accessibility audit.",
+          "unlabeledInputs": [],
+          "imagesWithoutAlt": 0,
+          "contrast": [
+            {
+              "selector": ".public-product-main h3",
+              "foreground": "rgb(37, 48, 38)",
+              "background": "rgb(255, 255, 255)",
+              "ratio": 13.73,
+              "minimum": 4.5,
+              "pass": true
+            },
+            {
+              "selector": ".public-product-main p",
+              "foreground": "rgb(89, 106, 76)",
+              "background": "rgb(255, 255, 255)",
+              "ratio": 5.85,
+              "minimum": 4.5,
+              "pass": true
+            },
+            {
+              "selector": ".public-product-bottom > strong",
+              "foreground": "rgb(117, 29, 44)",
+              "background": "rgb(255, 255, 255)",
+              "ratio": 10.67,
+              "minimum": 4.5,
+              "pass": true
+            },
+            {
+              "selector": ".public-categories > button.active",
+              "foreground": "rgb(255, 255, 255)",
+              "background": "rgb(117, 29, 44)",
+              "ratio": 10.67,
+              "minimum": 4.5,
+              "pass": true
+            },
+            {
+              "selector": ".public-categories > button:not(.active)",
+              "foreground": "rgb(89, 106, 76)",
+              "background": "rgb(255, 255, 255)",
+              "ratio": 5.85,
+              "minimum": 4.5,
+              "pass": true
+            }
+          ],
+          "keyboardFocus": {
+            "focusVisible": true,
+            "outlineWidth": "2px",
+            "outlineStyle": "solid"
+          }
+        }
+      },
+      "reloadSnapshotUnchanged": true
+    },
+    {
+      "browser": "chrome",
+      "restaurant": "marea",
+      "device": "mobile",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "status": "PASS",
+      "errors": {
+        "pageErrors": [],
+        "consoleErrors": [],
+        "failedRequests": [],
+        "httpErrors": []
+      },
+      "productCount": 24,
+      "categoryCount": 8,
+      "images": [
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/17a67719-5bd6-4f3a-8237-311f79605d47.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/73fd4d95-22f5-44f1-af75-f623ba6f68d8.webp",
+          "complete": true,
+          "width": 512,
+          "height": 512
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/1e4c3d7f-912b-4553-8936-2091209a0386.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/1e4c3d7f-912b-4553-8936-2091209a0386.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/1e4c3d7f-912b-4553-8936-2091209a0386.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/1e4c3d7f-912b-4553-8936-2091209a0386.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/1e4c3d7f-912b-4553-8936-2091209a0386.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/1e4c3d7f-912b-4553-8936-2091209a0386.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/1e4c3d7f-912b-4553-8936-2091209a0386.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/74b98daf-726d-4c54-a057-b76f0768a92f.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/74b98daf-726d-4c54-a057-b76f0768a92f.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/74b98daf-726d-4c54-a057-b76f0768a92f.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/74b98daf-726d-4c54-a057-b76f0768a92f.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/d12bc26c-58a9-42a3-9abf-f21462585931.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/d12bc26c-58a9-42a3-9abf-f21462585931.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/d12bc26c-58a9-42a3-9abf-f21462585931.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/d12bc26c-58a9-42a3-9abf-f21462585931.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/01915e2e-e15e-4a1a-aec2-5b17903819df.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/01915e2e-e15e-4a1a-aec2-5b17903819df.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/01915e2e-e15e-4a1a-aec2-5b17903819df.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/01915e2e-e15e-4a1a-aec2-5b17903819df.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/9c3ae933-3a8e-4f19-871d-8672e5ef27f1.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/9c3ae933-3a8e-4f19-871d-8672e5ef27f1.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/9c3ae933-3a8e-4f19-871d-8672e5ef27f1.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/9c3ae933-3a8e-4f19-871d-8672e5ef27f1.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/aea33ce2-f804-4750-905d-3bf64eea4a85.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/aea33ce2-f804-4750-905d-3bf64eea4a85.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/aea33ce2-f804-4750-905d-3bf64eea4a85.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/aea33ce2-f804-4750-905d-3bf64eea4a85.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        }
+      ],
+      "dimensions": {
+        "viewport": 390,
+        "document": 390,
+        "body": 390
+      },
+      "screenshot": "artifacts/migrations/hgntppemxwcxaxritnfq/public-acceptance-20261018/screenshots/real-marea-mobile.png",
+      "englishTranslations": {
+        "products": 24,
+        "categories": 8,
+        "verifiedRendered": true
+      },
+      "interactions": {
+        "searchResultCount": 1,
+        "categoryFilters": {
+          "parentIncludesChildren": 4,
+          "subcategoryOnly": 4
+        },
+        "favoritePersistsOnReload": true,
+        "hoursRows": 7,
+        "footerContact": {
+          "status": "NOT APPLICABLE",
+          "reason": "No platform contact URL is configured."
+        },
+        "accessibility": {
+          "scope": "Basic DOM labels/alt and five opaque-background text samples; not a formal accessibility audit.",
+          "unlabeledInputs": [],
+          "imagesWithoutAlt": 0,
+          "contrast": [
+            {
+              "selector": ".public-product-main h3",
+              "foreground": "rgb(37, 48, 38)",
+              "background": "rgb(255, 255, 255)",
+              "ratio": 13.73,
+              "minimum": 4.5,
+              "pass": true
+            },
+            {
+              "selector": ".public-product-main p",
+              "foreground": "rgb(89, 106, 76)",
+              "background": "rgb(255, 255, 255)",
+              "ratio": 5.85,
+              "minimum": 4.5,
+              "pass": true
+            },
+            {
+              "selector": ".public-product-bottom > strong",
+              "foreground": "rgb(23, 27, 32)",
+              "background": "rgb(255, 255, 255)",
+              "ratio": 17.3,
+              "minimum": 4.5,
+              "pass": true
+            },
+            {
+              "selector": ".public-categories > button.active",
+              "foreground": "rgb(255, 255, 255)",
+              "background": "rgb(23, 27, 32)",
+              "ratio": 17.3,
+              "minimum": 4.5,
+              "pass": true
+            },
+            {
+              "selector": ".public-categories > button:not(.active)",
+              "foreground": "rgb(89, 106, 76)",
+              "background": "rgb(255, 255, 255)",
+              "ratio": 5.85,
+              "minimum": 4.5,
+              "pass": true
+            }
+          ],
+          "keyboardFocus": {
+            "focusVisible": true,
+            "outlineWidth": "2px",
+            "outlineStyle": "solid"
+          }
+        }
+      },
+      "reloadSnapshotUnchanged": true
+    },
+    {
+      "browser": "chrome",
+      "restaurant": "marea",
+      "device": "tablet",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "status": "PASS",
+      "errors": {
+        "pageErrors": [],
+        "consoleErrors": [],
+        "failedRequests": [],
+        "httpErrors": []
+      },
+      "productCount": 24,
+      "categoryCount": 8,
+      "images": [
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/17a67719-5bd6-4f3a-8237-311f79605d47.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/73fd4d95-22f5-44f1-af75-f623ba6f68d8.webp",
+          "complete": true,
+          "width": 512,
+          "height": 512
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/1e4c3d7f-912b-4553-8936-2091209a0386.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/1e4c3d7f-912b-4553-8936-2091209a0386.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/1e4c3d7f-912b-4553-8936-2091209a0386.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/1e4c3d7f-912b-4553-8936-2091209a0386.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/1e4c3d7f-912b-4553-8936-2091209a0386.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/1e4c3d7f-912b-4553-8936-2091209a0386.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/1e4c3d7f-912b-4553-8936-2091209a0386.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/74b98daf-726d-4c54-a057-b76f0768a92f.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/74b98daf-726d-4c54-a057-b76f0768a92f.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/74b98daf-726d-4c54-a057-b76f0768a92f.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/74b98daf-726d-4c54-a057-b76f0768a92f.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/d12bc26c-58a9-42a3-9abf-f21462585931.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/d12bc26c-58a9-42a3-9abf-f21462585931.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/d12bc26c-58a9-42a3-9abf-f21462585931.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/d12bc26c-58a9-42a3-9abf-f21462585931.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/01915e2e-e15e-4a1a-aec2-5b17903819df.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/01915e2e-e15e-4a1a-aec2-5b17903819df.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/01915e2e-e15e-4a1a-aec2-5b17903819df.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/01915e2e-e15e-4a1a-aec2-5b17903819df.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/9c3ae933-3a8e-4f19-871d-8672e5ef27f1.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/9c3ae933-3a8e-4f19-871d-8672e5ef27f1.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/9c3ae933-3a8e-4f19-871d-8672e5ef27f1.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/9c3ae933-3a8e-4f19-871d-8672e5ef27f1.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/aea33ce2-f804-4750-905d-3bf64eea4a85.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/aea33ce2-f804-4750-905d-3bf64eea4a85.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/aea33ce2-f804-4750-905d-3bf64eea4a85.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/aea33ce2-f804-4750-905d-3bf64eea4a85.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        }
+      ],
+      "dimensions": {
+        "viewport": 768,
+        "document": 768,
+        "body": 768
+      },
+      "screenshot": "artifacts/migrations/hgntppemxwcxaxritnfq/public-acceptance-20261018/screenshots/real-marea-tablet.png",
+      "englishTranslations": {
+        "products": 24,
+        "categories": 8,
+        "verifiedRendered": true
+      },
+      "interactions": {
+        "searchResultCount": 1,
+        "categoryFilters": {
+          "parentIncludesChildren": 4,
+          "subcategoryOnly": 4
+        },
+        "favoritePersistsOnReload": true,
+        "hoursRows": 7,
+        "footerContact": {
+          "status": "NOT APPLICABLE",
+          "reason": "No platform contact URL is configured."
+        },
+        "accessibility": {
+          "scope": "Basic DOM labels/alt and five opaque-background text samples; not a formal accessibility audit.",
+          "unlabeledInputs": [],
+          "imagesWithoutAlt": 0,
+          "contrast": [
+            {
+              "selector": ".public-product-main h3",
+              "foreground": "rgb(37, 48, 38)",
+              "background": "rgb(255, 255, 255)",
+              "ratio": 13.73,
+              "minimum": 4.5,
+              "pass": true
+            },
+            {
+              "selector": ".public-product-main p",
+              "foreground": "rgb(89, 106, 76)",
+              "background": "rgb(255, 255, 255)",
+              "ratio": 5.85,
+              "minimum": 4.5,
+              "pass": true
+            },
+            {
+              "selector": ".public-product-bottom > strong",
+              "foreground": "rgb(23, 27, 32)",
+              "background": "rgb(255, 255, 255)",
+              "ratio": 17.3,
+              "minimum": 4.5,
+              "pass": true
+            },
+            {
+              "selector": ".public-categories > button.active",
+              "foreground": "rgb(255, 255, 255)",
+              "background": "rgb(23, 27, 32)",
+              "ratio": 17.3,
+              "minimum": 4.5,
+              "pass": true
+            },
+            {
+              "selector": ".public-categories > button:not(.active)",
+              "foreground": "rgb(89, 106, 76)",
+              "background": "rgb(255, 255, 255)",
+              "ratio": 5.85,
+              "minimum": 4.5,
+              "pass": true
+            }
+          ],
+          "keyboardFocus": {
+            "focusVisible": true,
+            "outlineWidth": "2px",
+            "outlineStyle": "solid"
+          }
+        }
+      },
+      "reloadSnapshotUnchanged": true
+    },
+    {
+      "browser": "chrome",
+      "restaurant": "marea",
+      "device": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "status": "PASS",
+      "errors": {
+        "pageErrors": [],
+        "consoleErrors": [],
+        "failedRequests": [],
+        "httpErrors": []
+      },
+      "productCount": 24,
+      "categoryCount": 8,
+      "images": [
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/17a67719-5bd6-4f3a-8237-311f79605d47.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/73fd4d95-22f5-44f1-af75-f623ba6f68d8.webp",
+          "complete": true,
+          "width": 512,
+          "height": 512
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/1e4c3d7f-912b-4553-8936-2091209a0386.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/1e4c3d7f-912b-4553-8936-2091209a0386.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/1e4c3d7f-912b-4553-8936-2091209a0386.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/1e4c3d7f-912b-4553-8936-2091209a0386.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/1e4c3d7f-912b-4553-8936-2091209a0386.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/1e4c3d7f-912b-4553-8936-2091209a0386.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/1e4c3d7f-912b-4553-8936-2091209a0386.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/74b98daf-726d-4c54-a057-b76f0768a92f.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/74b98daf-726d-4c54-a057-b76f0768a92f.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/74b98daf-726d-4c54-a057-b76f0768a92f.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/74b98daf-726d-4c54-a057-b76f0768a92f.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/d12bc26c-58a9-42a3-9abf-f21462585931.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/d12bc26c-58a9-42a3-9abf-f21462585931.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/d12bc26c-58a9-42a3-9abf-f21462585931.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/d12bc26c-58a9-42a3-9abf-f21462585931.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/01915e2e-e15e-4a1a-aec2-5b17903819df.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/01915e2e-e15e-4a1a-aec2-5b17903819df.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/01915e2e-e15e-4a1a-aec2-5b17903819df.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/01915e2e-e15e-4a1a-aec2-5b17903819df.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/9c3ae933-3a8e-4f19-871d-8672e5ef27f1.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/9c3ae933-3a8e-4f19-871d-8672e5ef27f1.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/9c3ae933-3a8e-4f19-871d-8672e5ef27f1.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/9c3ae933-3a8e-4f19-871d-8672e5ef27f1.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/aea33ce2-f804-4750-905d-3bf64eea4a85.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/aea33ce2-f804-4750-905d-3bf64eea4a85.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/aea33ce2-f804-4750-905d-3bf64eea4a85.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/aea33ce2-f804-4750-905d-3bf64eea4a85.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        }
+      ],
+      "dimensions": {
+        "viewport": 1440,
+        "document": 1440,
+        "body": 1440
+      },
+      "screenshot": "artifacts/migrations/hgntppemxwcxaxritnfq/public-acceptance-20261018/screenshots/real-marea-desktop.png",
+      "englishTranslations": {
+        "products": 24,
+        "categories": 8,
+        "verifiedRendered": true
+      },
+      "interactions": {
+        "searchResultCount": 1,
+        "categoryFilters": {
+          "parentIncludesChildren": 4,
+          "subcategoryOnly": 4
+        },
+        "favoriteTenantIsolation": {
+          "other": "aurora",
+          "noFavoriteLeak": true,
+          "sourceFavoritePreserved": true
+        },
+        "favoritePersistsOnReload": true,
+        "hoursRows": 7,
+        "footerContact": {
+          "status": "NOT APPLICABLE",
+          "reason": "No platform contact URL is configured."
+        },
+        "accessibility": {
+          "scope": "Basic DOM labels/alt and five opaque-background text samples; not a formal accessibility audit.",
+          "unlabeledInputs": [],
+          "imagesWithoutAlt": 0,
+          "contrast": [
+            {
+              "selector": ".public-product-main h3",
+              "foreground": "rgb(37, 48, 38)",
+              "background": "rgb(255, 255, 255)",
+              "ratio": 13.73,
+              "minimum": 4.5,
+              "pass": true
+            },
+            {
+              "selector": ".public-product-main p",
+              "foreground": "rgb(89, 106, 76)",
+              "background": "rgb(255, 255, 255)",
+              "ratio": 5.85,
+              "minimum": 4.5,
+              "pass": true
+            },
+            {
+              "selector": ".public-product-bottom > strong",
+              "foreground": "rgb(23, 27, 32)",
+              "background": "rgb(255, 255, 255)",
+              "ratio": 17.3,
+              "minimum": 4.5,
+              "pass": true
+            },
+            {
+              "selector": ".public-categories > button.active",
+              "foreground": "rgb(255, 255, 255)",
+              "background": "rgb(23, 27, 32)",
+              "ratio": 17.3,
+              "minimum": 4.5,
+              "pass": true
+            },
+            {
+              "selector": ".public-categories > button:not(.active)",
+              "foreground": "rgb(89, 106, 76)",
+              "background": "rgb(255, 255, 255)",
+              "ratio": 5.85,
+              "minimum": 4.5,
+              "pass": true
+            }
+          ],
+          "keyboardFocus": {
+            "focusVisible": true,
+            "outlineWidth": "2px",
+            "outlineStyle": "solid"
+          }
+        }
+      },
+      "reloadSnapshotUnchanged": true
+    },
+    {
+      "browser": "chrome",
+      "restaurant": "bruma",
+      "device": "mobile",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "status": "PASS",
+      "errors": {
+        "pageErrors": [],
+        "consoleErrors": [],
+        "failedRequests": [],
+        "httpErrors": []
+      },
+      "productCount": 24,
+      "categoryCount": 8,
+      "images": [
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/ed0d2eff-bcaf-4aa7-892d-520e986ce25c.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/deef7b63-d8c9-4b6c-a54f-e5b93bd3cbc1.webp",
+          "complete": true,
+          "width": 512,
+          "height": 512
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/649e3c5e-ee76-4edf-8dbc-59fdbc3aa008.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/649e3c5e-ee76-4edf-8dbc-59fdbc3aa008.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/649e3c5e-ee76-4edf-8dbc-59fdbc3aa008.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/649e3c5e-ee76-4edf-8dbc-59fdbc3aa008.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/649e3c5e-ee76-4edf-8dbc-59fdbc3aa008.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/649e3c5e-ee76-4edf-8dbc-59fdbc3aa008.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/649e3c5e-ee76-4edf-8dbc-59fdbc3aa008.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/b96c9983-48a8-4032-bfa8-bf6fd137380d.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/b96c9983-48a8-4032-bfa8-bf6fd137380d.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/b96c9983-48a8-4032-bfa8-bf6fd137380d.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/b96c9983-48a8-4032-bfa8-bf6fd137380d.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/1a830bb4-59b5-4484-8ac9-9eb662012e6b.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/1a830bb4-59b5-4484-8ac9-9eb662012e6b.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/1a830bb4-59b5-4484-8ac9-9eb662012e6b.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/1a830bb4-59b5-4484-8ac9-9eb662012e6b.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/0cafb786-ec28-4f15-88c2-d0be1f829f94.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/0cafb786-ec28-4f15-88c2-d0be1f829f94.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/0cafb786-ec28-4f15-88c2-d0be1f829f94.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/0cafb786-ec28-4f15-88c2-d0be1f829f94.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/37896fa3-ef39-491c-8e38-26d1bf00aaff.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/37896fa3-ef39-491c-8e38-26d1bf00aaff.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/37896fa3-ef39-491c-8e38-26d1bf00aaff.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/37896fa3-ef39-491c-8e38-26d1bf00aaff.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/42a98381-4002-4e9b-8991-b28f2c4cd702.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/42a98381-4002-4e9b-8991-b28f2c4cd702.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/42a98381-4002-4e9b-8991-b28f2c4cd702.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/42a98381-4002-4e9b-8991-b28f2c4cd702.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        }
+      ],
+      "dimensions": {
+        "viewport": 390,
+        "document": 390,
+        "body": 390
+      },
+      "screenshot": "artifacts/migrations/hgntppemxwcxaxritnfq/public-acceptance-20261018/screenshots/real-bruma-mobile.png",
+      "englishTranslations": {
+        "products": 24,
+        "categories": 8,
+        "verifiedRendered": true
+      },
+      "interactions": {
+        "searchResultCount": 1,
+        "categoryFilters": {
+          "parentIncludesChildren": 4,
+          "subcategoryOnly": 4
+        },
+        "favoritePersistsOnReload": true,
+        "hoursRows": 7,
+        "footerContact": {
+          "status": "NOT APPLICABLE",
+          "reason": "No platform contact URL is configured."
+        },
+        "accessibility": {
+          "scope": "Basic DOM labels/alt and five opaque-background text samples; not a formal accessibility audit.",
+          "unlabeledInputs": [],
+          "imagesWithoutAlt": 0,
+          "contrast": [
+            {
+              "selector": ".public-product-main h3",
+              "foreground": "rgb(37, 48, 38)",
+              "background": "rgb(255, 255, 255)",
+              "ratio": 13.73,
+              "minimum": 4.5,
+              "pass": true
+            },
+            {
+              "selector": ".public-product-main p",
+              "foreground": "rgb(89, 106, 76)",
+              "background": "rgb(255, 255, 255)",
+              "ratio": 5.85,
+              "minimum": 4.5,
+              "pass": true
+            },
+            {
+              "selector": ".public-product-bottom > strong",
+              "foreground": "rgb(65, 75, 43)",
+              "background": "rgb(255, 255, 255)",
+              "ratio": 9.27,
+              "minimum": 4.5,
+              "pass": true
+            },
+            {
+              "selector": ".public-categories > button.active",
+              "foreground": "rgb(255, 255, 255)",
+              "background": "rgb(65, 75, 43)",
+              "ratio": 9.27,
+              "minimum": 4.5,
+              "pass": true
+            },
+            {
+              "selector": ".public-categories > button:not(.active)",
+              "foreground": "rgb(89, 106, 76)",
+              "background": "rgb(255, 255, 255)",
+              "ratio": 5.85,
+              "minimum": 4.5,
+              "pass": true
+            }
+          ],
+          "keyboardFocus": {
+            "focusVisible": true,
+            "outlineWidth": "2px",
+            "outlineStyle": "solid"
+          }
+        }
+      },
+      "reloadSnapshotUnchanged": true
+    },
+    {
+      "browser": "chrome",
+      "restaurant": "bruma",
+      "device": "tablet",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "status": "PASS",
+      "errors": {
+        "pageErrors": [],
+        "consoleErrors": [],
+        "failedRequests": [],
+        "httpErrors": []
+      },
+      "productCount": 24,
+      "categoryCount": 8,
+      "images": [
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/ed0d2eff-bcaf-4aa7-892d-520e986ce25c.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/deef7b63-d8c9-4b6c-a54f-e5b93bd3cbc1.webp",
+          "complete": true,
+          "width": 512,
+          "height": 512
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/649e3c5e-ee76-4edf-8dbc-59fdbc3aa008.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/649e3c5e-ee76-4edf-8dbc-59fdbc3aa008.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/649e3c5e-ee76-4edf-8dbc-59fdbc3aa008.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/649e3c5e-ee76-4edf-8dbc-59fdbc3aa008.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/649e3c5e-ee76-4edf-8dbc-59fdbc3aa008.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/649e3c5e-ee76-4edf-8dbc-59fdbc3aa008.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/649e3c5e-ee76-4edf-8dbc-59fdbc3aa008.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/b96c9983-48a8-4032-bfa8-bf6fd137380d.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/b96c9983-48a8-4032-bfa8-bf6fd137380d.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/b96c9983-48a8-4032-bfa8-bf6fd137380d.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/b96c9983-48a8-4032-bfa8-bf6fd137380d.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/1a830bb4-59b5-4484-8ac9-9eb662012e6b.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/1a830bb4-59b5-4484-8ac9-9eb662012e6b.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/1a830bb4-59b5-4484-8ac9-9eb662012e6b.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/1a830bb4-59b5-4484-8ac9-9eb662012e6b.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/0cafb786-ec28-4f15-88c2-d0be1f829f94.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/0cafb786-ec28-4f15-88c2-d0be1f829f94.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/0cafb786-ec28-4f15-88c2-d0be1f829f94.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/0cafb786-ec28-4f15-88c2-d0be1f829f94.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/37896fa3-ef39-491c-8e38-26d1bf00aaff.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/37896fa3-ef39-491c-8e38-26d1bf00aaff.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/37896fa3-ef39-491c-8e38-26d1bf00aaff.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/37896fa3-ef39-491c-8e38-26d1bf00aaff.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/42a98381-4002-4e9b-8991-b28f2c4cd702.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/42a98381-4002-4e9b-8991-b28f2c4cd702.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/42a98381-4002-4e9b-8991-b28f2c4cd702.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/42a98381-4002-4e9b-8991-b28f2c4cd702.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        }
+      ],
+      "dimensions": {
+        "viewport": 768,
+        "document": 768,
+        "body": 768
+      },
+      "screenshot": "artifacts/migrations/hgntppemxwcxaxritnfq/public-acceptance-20261018/screenshots/real-bruma-tablet.png",
+      "englishTranslations": {
+        "products": 24,
+        "categories": 8,
+        "verifiedRendered": true
+      },
+      "interactions": {
+        "searchResultCount": 1,
+        "categoryFilters": {
+          "parentIncludesChildren": 4,
+          "subcategoryOnly": 4
+        },
+        "favoritePersistsOnReload": true,
+        "hoursRows": 7,
+        "footerContact": {
+          "status": "NOT APPLICABLE",
+          "reason": "No platform contact URL is configured."
+        },
+        "accessibility": {
+          "scope": "Basic DOM labels/alt and five opaque-background text samples; not a formal accessibility audit.",
+          "unlabeledInputs": [],
+          "imagesWithoutAlt": 0,
+          "contrast": [
+            {
+              "selector": ".public-product-main h3",
+              "foreground": "rgb(37, 48, 38)",
+              "background": "rgb(255, 255, 255)",
+              "ratio": 13.73,
+              "minimum": 4.5,
+              "pass": true
+            },
+            {
+              "selector": ".public-product-main p",
+              "foreground": "rgb(89, 106, 76)",
+              "background": "rgb(255, 255, 255)",
+              "ratio": 5.85,
+              "minimum": 4.5,
+              "pass": true
+            },
+            {
+              "selector": ".public-product-bottom > strong",
+              "foreground": "rgb(65, 75, 43)",
+              "background": "rgb(255, 255, 255)",
+              "ratio": 9.27,
+              "minimum": 4.5,
+              "pass": true
+            },
+            {
+              "selector": ".public-categories > button.active",
+              "foreground": "rgb(255, 255, 255)",
+              "background": "rgb(65, 75, 43)",
+              "ratio": 9.27,
+              "minimum": 4.5,
+              "pass": true
+            },
+            {
+              "selector": ".public-categories > button:not(.active)",
+              "foreground": "rgb(89, 106, 76)",
+              "background": "rgb(255, 255, 255)",
+              "ratio": 5.85,
+              "minimum": 4.5,
+              "pass": true
+            }
+          ],
+          "keyboardFocus": {
+            "focusVisible": true,
+            "outlineWidth": "2px",
+            "outlineStyle": "solid"
+          }
+        }
+      },
+      "reloadSnapshotUnchanged": true
+    },
+    {
+      "browser": "chrome",
+      "restaurant": "bruma",
+      "device": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "status": "PASS",
+      "errors": {
+        "pageErrors": [],
+        "consoleErrors": [],
+        "failedRequests": [],
+        "httpErrors": []
+      },
+      "productCount": 24,
+      "categoryCount": 8,
+      "images": [
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/ed0d2eff-bcaf-4aa7-892d-520e986ce25c.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/deef7b63-d8c9-4b6c-a54f-e5b93bd3cbc1.webp",
+          "complete": true,
+          "width": 512,
+          "height": 512
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/649e3c5e-ee76-4edf-8dbc-59fdbc3aa008.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/649e3c5e-ee76-4edf-8dbc-59fdbc3aa008.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/649e3c5e-ee76-4edf-8dbc-59fdbc3aa008.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/649e3c5e-ee76-4edf-8dbc-59fdbc3aa008.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/649e3c5e-ee76-4edf-8dbc-59fdbc3aa008.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/649e3c5e-ee76-4edf-8dbc-59fdbc3aa008.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/649e3c5e-ee76-4edf-8dbc-59fdbc3aa008.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/b96c9983-48a8-4032-bfa8-bf6fd137380d.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/b96c9983-48a8-4032-bfa8-bf6fd137380d.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/b96c9983-48a8-4032-bfa8-bf6fd137380d.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/b96c9983-48a8-4032-bfa8-bf6fd137380d.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/1a830bb4-59b5-4484-8ac9-9eb662012e6b.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/1a830bb4-59b5-4484-8ac9-9eb662012e6b.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/1a830bb4-59b5-4484-8ac9-9eb662012e6b.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/1a830bb4-59b5-4484-8ac9-9eb662012e6b.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/0cafb786-ec28-4f15-88c2-d0be1f829f94.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/0cafb786-ec28-4f15-88c2-d0be1f829f94.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/0cafb786-ec28-4f15-88c2-d0be1f829f94.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/0cafb786-ec28-4f15-88c2-d0be1f829f94.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/37896fa3-ef39-491c-8e38-26d1bf00aaff.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/37896fa3-ef39-491c-8e38-26d1bf00aaff.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/37896fa3-ef39-491c-8e38-26d1bf00aaff.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/37896fa3-ef39-491c-8e38-26d1bf00aaff.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/42a98381-4002-4e9b-8991-b28f2c4cd702.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/42a98381-4002-4e9b-8991-b28f2c4cd702.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/42a98381-4002-4e9b-8991-b28f2c4cd702.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        },
+        {
+          "path": "/api/media/eca7481c-fc27-479c-b364-76274b0b4230/eca7481c-fc27-479c-b364-76274b0b4230/42a98381-4002-4e9b-8991-b28f2c4cd702.webp",
+          "complete": true,
+          "width": 1000,
+          "height": 650
+        }
+      ],
+      "dimensions": {
+        "viewport": 1440,
+        "document": 1440,
+        "body": 1440
+      },
+      "screenshot": "artifacts/migrations/hgntppemxwcxaxritnfq/public-acceptance-20261018/screenshots/real-bruma-desktop.png",
+      "englishTranslations": {
+        "products": 24,
+        "categories": 8,
+        "verifiedRendered": true
+      },
+      "interactions": {
+        "searchResultCount": 1,
+        "categoryFilters": {
+          "parentIncludesChildren": 4,
+          "subcategoryOnly": 4
+        },
+        "favoriteTenantIsolation": {
+          "other": "aurora",
+          "noFavoriteLeak": true,
+          "sourceFavoritePreserved": true
+        },
+        "favoritePersistsOnReload": true,
+        "hoursRows": 7,
+        "footerContact": {
+          "status": "NOT APPLICABLE",
+          "reason": "No platform contact URL is configured."
+        },
+        "accessibility": {
+          "scope": "Basic DOM labels/alt and five opaque-background text samples; not a formal accessibility audit.",
+          "unlabeledInputs": [],
+          "imagesWithoutAlt": 0,
+          "contrast": [
+            {
+              "selector": ".public-product-main h3",
+              "foreground": "rgb(37, 48, 38)",
+              "background": "rgb(255, 255, 255)",
+              "ratio": 13.73,
+              "minimum": 4.5,
+              "pass": true
+            },
+            {
+              "selector": ".public-product-main p",
+              "foreground": "rgb(89, 106, 76)",
+              "background": "rgb(255, 255, 255)",
+              "ratio": 5.85,
+              "minimum": 4.5,
+              "pass": true
+            },
+            {
+              "selector": ".public-product-bottom > strong",
+              "foreground": "rgb(65, 75, 43)",
+              "background": "rgb(255, 255, 255)",
+              "ratio": 9.27,
+              "minimum": 4.5,
+              "pass": true
+            },
+            {
+              "selector": ".public-categories > button.active",
+              "foreground": "rgb(255, 255, 255)",
+              "background": "rgb(65, 75, 43)",
+              "ratio": 9.27,
+              "minimum": 4.5,
+              "pass": true
+            },
+            {
+              "selector": ".public-categories > button:not(.active)",
+              "foreground": "rgb(89, 106, 76)",
+              "background": "rgb(255, 255, 255)",
+              "ratio": 5.85,
+              "minimum": 4.5,
+              "pass": true
+            }
+          ],
+          "keyboardFocus": {
+            "focusVisible": true,
+            "outlineWidth": "2px",
+            "outlineStyle": "solid"
+          }
+        }
+      },
+      "reloadSnapshotUnchanged": true
+    }
+  ],
+  "owners": [
+    {
+      "browser": "chrome",
+      "restaurant": "aurora",
+      "status": "PASS",
+      "errors": {
+        "pageErrors": [],
+        "consoleErrors": [
+          {
+            "message": "Failed to load resource: the server responded with a status of 401 ()",
+            "location": "https://tolentino-restaurantes-admin.onrender.com/api/session",
+            "expected": true
+          },
+          {
+            "message": "Failed to load resource: the server responded with a status of 401 ()",
+            "location": "https://tolentino-restaurantes-admin.onrender.com/api/session",
+            "expected": true
+          },
+          {
+            "message": "Failed to load resource: the server responded with a status of 401 ()",
+            "location": "https://tolentino-restaurantes-admin.onrender.com/api/session",
+            "expected": true
+          },
+          {
+            "message": "Failed to load resource: the server responded with a status of 401 ()",
+            "location": "https://tolentino-restaurantes-admin.onrender.com/api/session",
+            "expected": true
+          }
+        ],
+        "failedRequests": [],
+        "httpErrors": [
+          {
+            "url": "https://tolentino-restaurantes-admin.onrender.com/api/session",
+            "status": 401,
+            "expected": true
+          },
+          {
+            "url": "https://tolentino-restaurantes-admin.onrender.com/api/session",
+            "status": 401,
+            "expected": true
+          },
+          {
+            "url": "https://tolentino-restaurantes-admin.onrender.com/api/session",
+            "status": 401,
+            "expected": true
+          },
+          {
+            "url": "https://tolentino-restaurantes-admin.onrender.com/api/session",
+            "status": 401,
+            "expected": true
+          }
+        ]
+      },
+      "visitedTabs": [
+        "Productos",
+        "Categorías",
+        "Promociones",
+        "Apariencia",
+        "Horarios",
+        "Idiomas",
+        "Mi código QR",
+        "Importar productos",
+        "Cuenta y acceso"
+      ],
+      "downloads": [
+        {
+          "kind": "catalog-csv",
+          "filename": "catalogo-productos.csv",
+          "bytes": 2858,
+          "rows": 24,
+          "sha256": "fad9b5065bbdaf41bd8521c1cb574d8f9adbf82fdcb0678e68f6f75c1512bf3f"
+        },
+        {
+          "kind": "qr-png",
+          "filename": "qr-pizzeria-aurora-demo.png",
+          "bytes": 49783,
+          "sha256": "e66ca49991a1a5859542673de3c37ec9d4030113b2d1cccfeb1e7a21d6a9ebd3",
+          "decodedUrl": "https://tolentino-restaurantes-admin.onrender.com/q/5820b231-3a31-43aa-a1ec-4f6f79ef2bb6",
+          "targetScope": "public"
+        },
+        {
+          "kind": "qr-svg",
+          "filename": "qr-pizzeria-aurora-demo.svg",
+          "bytes": 60008,
+          "sha256": "42ce8d58ab84d53561a3c9aa84fee6898e5afe83072d8d6d64fdbccb1e129d77"
+        },
+        {
+          "kind": "qr-pdf",
+          "filename": "qr-pizzeria-aurora-demo.pdf",
+          "bytes": 46405,
+          "sha256": "487b53399d7b166df6f181cdb3d737a07008aa3d3f42016612679ea0a46f2bf7"
+        }
+      ],
+      "loginDiagnostics": [
+        {
+          "at": "2026-10-18T02:47:32.111Z",
+          "phase": "opening-login"
+        },
+        {
+          "at": "2026-10-18T02:47:33.039Z",
+          "phase": "hydration-health-response",
+          "status": 200
+        },
+        {
+          "at": "2026-10-18T02:47:33.546Z",
+          "phase": "network-idle"
+        },
+        {
+          "at": "2026-10-18T02:47:33.652Z",
+          "phase": "filled-valid-form",
+          "emailMatches": true,
+          "passwordMatches": true,
+          "valid": true
+        },
+        {
+          "at": "2026-10-18T02:47:34.332Z",
+          "phase": "auth-response",
+          "status": 200
+        },
+        {
+          "at": "2026-10-18T02:47:36.646Z",
+          "phase": "workspace-rendered"
+        },
+        {
+          "at": "2026-10-18T02:47:50.647Z",
+          "phase": "opening-login"
+        },
+        {
+          "at": "2026-10-18T02:47:51.092Z",
+          "phase": "hydration-health-response",
+          "status": 200
+        },
+        {
+          "at": "2026-10-18T02:47:51.596Z",
+          "phase": "network-idle"
+        },
+        {
+          "at": "2026-10-18T02:47:51.684Z",
+          "phase": "filled-valid-form",
+          "emailMatches": true,
+          "passwordMatches": true,
+          "valid": true
+        },
+        {
+          "at": "2026-10-18T02:47:52.227Z",
+          "phase": "auth-response",
+          "status": 200
+        },
+        {
+          "at": "2026-10-18T02:47:54.214Z",
+          "phase": "workspace-rendered"
+        }
+      ],
+      "productCount": 24,
+      "tabLabels": [
+        {
+          "tab": "Productos",
+          "missingLabels": []
+        },
+        {
+          "tab": "Categorías",
+          "missingLabels": []
+        },
+        {
+          "tab": "Promociones",
+          "missingLabels": []
+        },
+        {
+          "tab": "Apariencia",
+          "missingLabels": []
+        },
+        {
+          "tab": "Horarios",
+          "missingLabels": []
+        },
+        {
+          "tab": "Idiomas",
+          "missingLabels": []
+        },
+        {
+          "tab": "Mi código QR",
+          "missingLabels": []
+        },
+        {
+          "tab": "Importar productos",
+          "missingLabels": []
+        },
+        {
+          "tab": "Cuenta y acceso",
+          "missingLabels": []
+        }
+      ],
+      "persistedSnapshotSha256": "c1deee8f267a42d118d6c76a93932d136f4f1686ef95577f13f296ea734b0daf",
+      "reloadAndReLoginPreserved": true
+    },
+    {
+      "browser": "chrome",
+      "restaurant": "marea",
+      "status": "PASS",
+      "errors": {
+        "pageErrors": [],
+        "consoleErrors": [
+          {
+            "message": "Failed to load resource: the server responded with a status of 401 ()",
+            "location": "https://tolentino-restaurantes-admin.onrender.com/api/session",
+            "expected": true
+          },
+          {
+            "message": "Failed to load resource: the server responded with a status of 401 ()",
+            "location": "https://tolentino-restaurantes-admin.onrender.com/api/session",
+            "expected": true
+          },
+          {
+            "message": "Failed to load resource: the server responded with a status of 401 ()",
+            "location": "https://tolentino-restaurantes-admin.onrender.com/api/session",
+            "expected": true
+          },
+          {
+            "message": "Failed to load resource: the server responded with a status of 401 ()",
+            "location": "https://tolentino-restaurantes-admin.onrender.com/api/session",
+            "expected": true
+          }
+        ],
+        "failedRequests": [],
+        "httpErrors": [
+          {
+            "url": "https://tolentino-restaurantes-admin.onrender.com/api/session",
+            "status": 401,
+            "expected": true
+          },
+          {
+            "url": "https://tolentino-restaurantes-admin.onrender.com/api/session",
+            "status": 401,
+            "expected": true
+          },
+          {
+            "url": "https://tolentino-restaurantes-admin.onrender.com/api/session",
+            "status": 401,
+            "expected": true
+          },
+          {
+            "url": "https://tolentino-restaurantes-admin.onrender.com/api/session",
+            "status": 401,
+            "expected": true
+          }
+        ]
+      },
+      "visitedTabs": [
+        "Productos",
+        "Categorías",
+        "Promociones",
+        "Apariencia",
+        "Horarios",
+        "Idiomas",
+        "Mi código QR",
+        "Importar productos",
+        "Cuenta y acceso"
+      ],
+      "downloads": [
+        {
+          "kind": "catalog-csv",
+          "filename": "catalogo-productos.csv",
+          "bytes": 2757,
+          "rows": 24,
+          "sha256": "78e6f0bc1b0095b4bbb62754636a223575a80f7cf4b675c67c3ec87ec69beba4"
+        },
+        {
+          "kind": "qr-png",
+          "filename": "qr-bento-marea-demo.png",
+          "bytes": 49900,
+          "sha256": "4f9f1648baf07c27cdc78e2e186362b637b632435789c718dda96c5f14170f0b",
+          "decodedUrl": "https://tolentino-restaurantes-admin.onrender.com/q/199258db-b193-4055-9f26-b1f3ea9ee1eb",
+          "targetScope": "public"
+        },
+        {
+          "kind": "qr-svg",
+          "filename": "qr-bento-marea-demo.svg",
+          "bytes": 56817,
+          "sha256": "b28066d53e1646cfa0cd08b2eb2be815e01da2230313517ccba80db560544637"
+        },
+        {
+          "kind": "qr-pdf",
+          "filename": "qr-bento-marea-demo.pdf",
+          "bytes": 46018,
+          "sha256": "33eb72fa34c15b96f6620ecdc310ca99a5e9e4ce2ba5b462ceaae3438cd2e387"
+        }
+      ],
+      "loginDiagnostics": [
+        {
+          "at": "2026-10-18T02:47:56.340Z",
+          "phase": "opening-login"
+        },
+        {
+          "at": "2026-10-18T02:47:57.333Z",
+          "phase": "hydration-health-response",
+          "status": 200
+        },
+        {
+          "at": "2026-10-18T02:47:57.840Z",
+          "phase": "network-idle"
+        },
+        {
+          "at": "2026-10-18T02:47:57.946Z",
+          "phase": "filled-valid-form",
+          "emailMatches": true,
+          "passwordMatches": true,
+          "valid": true
+        },
+        {
+          "at": "2026-10-18T02:47:58.588Z",
+          "phase": "auth-response",
+          "status": 200
+        },
+        {
+          "at": "2026-10-18T02:48:00.775Z",
+          "phase": "workspace-rendered"
+        },
+        {
+          "at": "2026-10-18T02:48:14.711Z",
+          "phase": "opening-login"
+        },
+        {
+          "at": "2026-10-18T02:48:15.110Z",
+          "phase": "hydration-health-response",
+          "status": 200
+        },
+        {
+          "at": "2026-10-18T02:48:15.622Z",
+          "phase": "network-idle"
+        },
+        {
+          "at": "2026-10-18T02:48:15.718Z",
+          "phase": "filled-valid-form",
+          "emailMatches": true,
+          "passwordMatches": true,
+          "valid": true
+        },
+        {
+          "at": "2026-10-18T02:48:16.438Z",
+          "phase": "auth-response",
+          "status": 200
+        },
+        {
+          "at": "2026-10-18T02:48:18.493Z",
+          "phase": "workspace-rendered"
+        }
+      ],
+      "productCount": 24,
+      "tabLabels": [
+        {
+          "tab": "Productos",
+          "missingLabels": []
+        },
+        {
+          "tab": "Categorías",
+          "missingLabels": []
+        },
+        {
+          "tab": "Promociones",
+          "missingLabels": []
+        },
+        {
+          "tab": "Apariencia",
+          "missingLabels": []
+        },
+        {
+          "tab": "Horarios",
+          "missingLabels": []
+        },
+        {
+          "tab": "Idiomas",
+          "missingLabels": []
+        },
+        {
+          "tab": "Mi código QR",
+          "missingLabels": []
+        },
+        {
+          "tab": "Importar productos",
+          "missingLabels": []
+        },
+        {
+          "tab": "Cuenta y acceso",
+          "missingLabels": []
+        }
+      ],
+      "persistedSnapshotSha256": "e08d9686c70ef92464c19141fb6f32e0cd9d472d9efb5c3408f3421c25c63da0",
+      "reloadAndReLoginPreserved": true
+    },
+    {
+      "browser": "chrome",
+      "restaurant": "bruma",
+      "status": "PASS",
+      "errors": {
+        "pageErrors": [],
+        "consoleErrors": [
+          {
+            "message": "Failed to load resource: the server responded with a status of 401 ()",
+            "location": "https://tolentino-restaurantes-admin.onrender.com/api/session",
+            "expected": true
+          },
+          {
+            "message": "Failed to load resource: the server responded with a status of 401 ()",
+            "location": "https://tolentino-restaurantes-admin.onrender.com/api/session",
+            "expected": true
+          },
+          {
+            "message": "Failed to load resource: the server responded with a status of 401 ()",
+            "location": "https://tolentino-restaurantes-admin.onrender.com/api/session",
+            "expected": true
+          },
+          {
+            "message": "Failed to load resource: the server responded with a status of 401 ()",
+            "location": "https://tolentino-restaurantes-admin.onrender.com/api/session",
+            "expected": true
+          }
+        ],
+        "failedRequests": [],
+        "httpErrors": [
+          {
+            "url": "https://tolentino-restaurantes-admin.onrender.com/api/session",
+            "status": 401,
+            "expected": true
+          },
+          {
+            "url": "https://tolentino-restaurantes-admin.onrender.com/api/session",
+            "status": 401,
+            "expected": true
+          },
+          {
+            "url": "https://tolentino-restaurantes-admin.onrender.com/api/session",
+            "status": 401,
+            "expected": true
+          },
+          {
+            "url": "https://tolentino-restaurantes-admin.onrender.com/api/session",
+            "status": 401,
+            "expected": true
+          }
+        ]
+      },
+      "visitedTabs": [
+        "Productos",
+        "Categorías",
+        "Promociones",
+        "Apariencia",
+        "Horarios",
+        "Idiomas",
+        "Mi código QR",
+        "Importar productos",
+        "Cuenta y acceso"
+      ],
+      "downloads": [
+        {
+          "kind": "catalog-csv",
+          "filename": "catalogo-productos.csv",
+          "bytes": 2853,
+          "rows": 24,
+          "sha256": "09fe54351fd04f755163ab86dcd252ee757d65eefe6f9fdbcad2c0eaafbdca64"
+        },
+        {
+          "kind": "qr-png",
+          "filename": "qr-cafe-bruma-demo.png",
+          "bytes": 48535,
+          "sha256": "6c77bed35e20df7374cdf8d7f1fa01ed76a9354e359e784aa040a1c853cf558d",
+          "decodedUrl": "https://tolentino-restaurantes-admin.onrender.com/q/5d236a67-793a-4a72-92f4-63abe20e8d95",
+          "targetScope": "public"
+        },
+        {
+          "kind": "qr-svg",
+          "filename": "qr-cafe-bruma-demo.svg",
+          "bytes": 54930,
+          "sha256": "342dceae1a6e368ccd12a7c1aa996de370a9e3829211db4adb1f605579c8480c"
+        },
+        {
+          "kind": "qr-pdf",
+          "filename": "qr-cafe-bruma-demo.pdf",
+          "bytes": 44969,
+          "sha256": "90bdb16c23fb608a9947e349eb601b4750149feaf0259b9dca0ea8c2294f68a3"
+        }
+      ],
+      "loginDiagnostics": [
+        {
+          "at": "2026-10-18T02:48:21.014Z",
+          "phase": "opening-login"
+        },
+        {
+          "at": "2026-10-18T02:48:22.678Z",
+          "phase": "hydration-health-response",
+          "status": 200
+        },
+        {
+          "at": "2026-10-18T02:48:23.186Z",
+          "phase": "network-idle"
+        },
+        {
+          "at": "2026-10-18T02:48:23.300Z",
+          "phase": "filled-valid-form",
+          "emailMatches": true,
+          "passwordMatches": true,
+          "valid": true
+        },
+        {
+          "at": "2026-10-18T02:48:23.894Z",
+          "phase": "auth-response",
+          "status": 200
+        },
+        {
+          "at": "2026-10-18T02:48:26.172Z",
+          "phase": "workspace-rendered"
+        },
+        {
+          "at": "2026-10-18T02:48:39.044Z",
+          "phase": "opening-login"
+        },
+        {
+          "at": "2026-10-18T02:48:39.390Z",
+          "phase": "hydration-health-response",
+          "status": 200
+        },
+        {
+          "at": "2026-10-18T02:48:39.898Z",
+          "phase": "network-idle"
+        },
+        {
+          "at": "2026-10-18T02:48:39.987Z",
+          "phase": "filled-valid-form",
+          "emailMatches": true,
+          "passwordMatches": true,
+          "valid": true
+        },
+        {
+          "at": "2026-10-18T02:48:40.502Z",
+          "phase": "auth-response",
+          "status": 200
+        },
+        {
+          "at": "2026-10-18T02:48:42.504Z",
+          "phase": "workspace-rendered"
+        }
+      ],
+      "productCount": 24,
+      "tabLabels": [
+        {
+          "tab": "Productos",
+          "missingLabels": []
+        },
+        {
+          "tab": "Categorías",
+          "missingLabels": []
+        },
+        {
+          "tab": "Promociones",
+          "missingLabels": []
+        },
+        {
+          "tab": "Apariencia",
+          "missingLabels": []
+        },
+        {
+          "tab": "Horarios",
+          "missingLabels": []
+        },
+        {
+          "tab": "Idiomas",
+          "missingLabels": []
+        },
+        {
+          "tab": "Mi código QR",
+          "missingLabels": []
+        },
+        {
+          "tab": "Importar productos",
+          "missingLabels": []
+        },
+        {
+          "tab": "Cuenta y acceso",
+          "missingLabels": []
+        }
+      ],
+      "persistedSnapshotSha256": "48888db83f61e727ac26e9d3d6f8ab8dea973c30bf75fe2af6dbb48f5629a9ee",
+      "reloadAndReLoginPreserved": true
+    }
+  ],
+  "results": [
+    {
+      "scope": "chrome/aurora/mobile/public",
+      "name": "Real anonymous API and UI show the correct restaurant and 24 products",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/aurora/mobile/public",
+      "name": "All menu images load from actual media routes",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/aurora/mobile/public",
+      "name": "No page-level horizontal overflow",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/aurora/mobile/public",
+      "name": "All persisted English product names/descriptions and category names render",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/aurora/mobile/public",
+      "name": "English/Spanish language selection changes the real menu interface",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/aurora/mobile/public",
+      "name": "Product detail shows persisted price, variants and extras; modal closes",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/aurora/mobile/public",
+      "name": "Persisted sold-out products are visibly identified",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/aurora/mobile/public",
+      "name": "Real product search narrows results and clearing restores the menu",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/aurora/mobile/public",
+      "name": "Parent category includes its children; subcategory filter selects its own products",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/aurora/mobile/public",
+      "name": "Favorite filtering and reload persistence use browser storage only",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/aurora/mobile/public",
+      "name": "Opening-hours dialog shows persisted hours and closes with Escape",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/aurora/mobile/public",
+      "name": "Visible inputs have accessible labels, images have alt attributes, keyboard focus is visible",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/aurora/mobile/public",
+      "name": "Sampled text contrast on opaque backgrounds meets applicable minimum",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/aurora/mobile/public",
+      "name": "Reload preserves persisted public product data",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/aurora/mobile/public",
+      "name": "No runtime errors, failed resources or unexpected HTTP errors",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/aurora/tablet/public",
+      "name": "Real anonymous API and UI show the correct restaurant and 24 products",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/aurora/tablet/public",
+      "name": "All menu images load from actual media routes",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/aurora/tablet/public",
+      "name": "No page-level horizontal overflow",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/aurora/tablet/public",
+      "name": "All persisted English product names/descriptions and category names render",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/aurora/tablet/public",
+      "name": "English/Spanish language selection changes the real menu interface",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/aurora/tablet/public",
+      "name": "Product detail shows persisted price, variants and extras; modal closes",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/aurora/tablet/public",
+      "name": "Persisted sold-out products are visibly identified",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/aurora/tablet/public",
+      "name": "Real product search narrows results and clearing restores the menu",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/aurora/tablet/public",
+      "name": "Parent category includes its children; subcategory filter selects its own products",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/aurora/tablet/public",
+      "name": "Favorite filtering and reload persistence use browser storage only",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/aurora/tablet/public",
+      "name": "Opening-hours dialog shows persisted hours and closes with Escape",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/aurora/tablet/public",
+      "name": "Visible inputs have accessible labels, images have alt attributes, keyboard focus is visible",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/aurora/tablet/public",
+      "name": "Sampled text contrast on opaque backgrounds meets applicable minimum",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/aurora/tablet/public",
+      "name": "Reload preserves persisted public product data",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/aurora/tablet/public",
+      "name": "No runtime errors, failed resources or unexpected HTTP errors",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/aurora/desktop/public",
+      "name": "Real anonymous API and UI show the correct restaurant and 24 products",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/aurora/desktop/public",
+      "name": "All menu images load from actual media routes",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/aurora/desktop/public",
+      "name": "No page-level horizontal overflow",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/aurora/desktop/public",
+      "name": "All persisted English product names/descriptions and category names render",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/aurora/desktop/public",
+      "name": "English/Spanish language selection changes the real menu interface",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/aurora/desktop/public",
+      "name": "Product detail shows persisted price, variants and extras; modal closes",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/aurora/desktop/public",
+      "name": "Persisted sold-out products are visibly identified",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/aurora/desktop/public",
+      "name": "Real product search narrows results and clearing restores the menu",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/aurora/desktop/public",
+      "name": "Parent category includes its children; subcategory filter selects its own products",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/aurora/desktop/public",
+      "name": "Favorite from this tenant is absent in another real menu and remains when returning",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/aurora/desktop/public",
+      "name": "Favorite filtering and reload persistence use browser storage only",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/aurora/desktop/public",
+      "name": "Opening-hours dialog shows persisted hours and closes with Escape",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/aurora/desktop/public",
+      "name": "Visible inputs have accessible labels, images have alt attributes, keyboard focus is visible",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/aurora/desktop/public",
+      "name": "Sampled text contrast on opaque backgrounds meets applicable minimum",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/aurora/desktop/public",
+      "name": "Reload preserves persisted public product data",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/aurora/desktop/public",
+      "name": "No runtime errors, failed resources or unexpected HTTP errors",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/marea/mobile/public",
+      "name": "Real anonymous API and UI show the correct restaurant and 24 products",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/marea/mobile/public",
+      "name": "All menu images load from actual media routes",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/marea/mobile/public",
+      "name": "No page-level horizontal overflow",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/marea/mobile/public",
+      "name": "All persisted English product names/descriptions and category names render",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/marea/mobile/public",
+      "name": "English/Spanish language selection changes the real menu interface",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/marea/mobile/public",
+      "name": "Product detail shows persisted price, variants and extras; modal closes",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/marea/mobile/public",
+      "name": "Persisted sold-out products are visibly identified",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/marea/mobile/public",
+      "name": "Real product search narrows results and clearing restores the menu",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/marea/mobile/public",
+      "name": "Parent category includes its children; subcategory filter selects its own products",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/marea/mobile/public",
+      "name": "Favorite filtering and reload persistence use browser storage only",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/marea/mobile/public",
+      "name": "Opening-hours dialog shows persisted hours and closes with Escape",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/marea/mobile/public",
+      "name": "Visible inputs have accessible labels, images have alt attributes, keyboard focus is visible",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/marea/mobile/public",
+      "name": "Sampled text contrast on opaque backgrounds meets applicable minimum",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/marea/mobile/public",
+      "name": "Reload preserves persisted public product data",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/marea/mobile/public",
+      "name": "No runtime errors, failed resources or unexpected HTTP errors",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/marea/tablet/public",
+      "name": "Real anonymous API and UI show the correct restaurant and 24 products",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/marea/tablet/public",
+      "name": "All menu images load from actual media routes",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/marea/tablet/public",
+      "name": "No page-level horizontal overflow",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/marea/tablet/public",
+      "name": "All persisted English product names/descriptions and category names render",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/marea/tablet/public",
+      "name": "English/Spanish language selection changes the real menu interface",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/marea/tablet/public",
+      "name": "Product detail shows persisted price, variants and extras; modal closes",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/marea/tablet/public",
+      "name": "Persisted sold-out products are visibly identified",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/marea/tablet/public",
+      "name": "Real product search narrows results and clearing restores the menu",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/marea/tablet/public",
+      "name": "Parent category includes its children; subcategory filter selects its own products",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/marea/tablet/public",
+      "name": "Favorite filtering and reload persistence use browser storage only",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/marea/tablet/public",
+      "name": "Opening-hours dialog shows persisted hours and closes with Escape",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/marea/tablet/public",
+      "name": "Visible inputs have accessible labels, images have alt attributes, keyboard focus is visible",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/marea/tablet/public",
+      "name": "Sampled text contrast on opaque backgrounds meets applicable minimum",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/marea/tablet/public",
+      "name": "Reload preserves persisted public product data",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/marea/tablet/public",
+      "name": "No runtime errors, failed resources or unexpected HTTP errors",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/marea/desktop/public",
+      "name": "Real anonymous API and UI show the correct restaurant and 24 products",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/marea/desktop/public",
+      "name": "All menu images load from actual media routes",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/marea/desktop/public",
+      "name": "No page-level horizontal overflow",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/marea/desktop/public",
+      "name": "All persisted English product names/descriptions and category names render",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/marea/desktop/public",
+      "name": "English/Spanish language selection changes the real menu interface",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/marea/desktop/public",
+      "name": "Product detail shows persisted price, variants and extras; modal closes",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/marea/desktop/public",
+      "name": "Persisted sold-out products are visibly identified",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/marea/desktop/public",
+      "name": "Real product search narrows results and clearing restores the menu",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/marea/desktop/public",
+      "name": "Parent category includes its children; subcategory filter selects its own products",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/marea/desktop/public",
+      "name": "Favorite from this tenant is absent in another real menu and remains when returning",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/marea/desktop/public",
+      "name": "Favorite filtering and reload persistence use browser storage only",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/marea/desktop/public",
+      "name": "Opening-hours dialog shows persisted hours and closes with Escape",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/marea/desktop/public",
+      "name": "Visible inputs have accessible labels, images have alt attributes, keyboard focus is visible",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/marea/desktop/public",
+      "name": "Sampled text contrast on opaque backgrounds meets applicable minimum",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/marea/desktop/public",
+      "name": "Reload preserves persisted public product data",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/marea/desktop/public",
+      "name": "No runtime errors, failed resources or unexpected HTTP errors",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/bruma/mobile/public",
+      "name": "Real anonymous API and UI show the correct restaurant and 24 products",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/bruma/mobile/public",
+      "name": "All menu images load from actual media routes",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/bruma/mobile/public",
+      "name": "No page-level horizontal overflow",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/bruma/mobile/public",
+      "name": "All persisted English product names/descriptions and category names render",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/bruma/mobile/public",
+      "name": "English/Spanish language selection changes the real menu interface",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/bruma/mobile/public",
+      "name": "Product detail shows persisted price, variants and extras; modal closes",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/bruma/mobile/public",
+      "name": "Persisted sold-out products are visibly identified",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/bruma/mobile/public",
+      "name": "Real product search narrows results and clearing restores the menu",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/bruma/mobile/public",
+      "name": "Parent category includes its children; subcategory filter selects its own products",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/bruma/mobile/public",
+      "name": "Favorite filtering and reload persistence use browser storage only",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/bruma/mobile/public",
+      "name": "Opening-hours dialog shows persisted hours and closes with Escape",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/bruma/mobile/public",
+      "name": "Visible inputs have accessible labels, images have alt attributes, keyboard focus is visible",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/bruma/mobile/public",
+      "name": "Sampled text contrast on opaque backgrounds meets applicable minimum",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/bruma/mobile/public",
+      "name": "Reload preserves persisted public product data",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/bruma/mobile/public",
+      "name": "No runtime errors, failed resources or unexpected HTTP errors",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/bruma/tablet/public",
+      "name": "Real anonymous API and UI show the correct restaurant and 24 products",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/bruma/tablet/public",
+      "name": "All menu images load from actual media routes",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/bruma/tablet/public",
+      "name": "No page-level horizontal overflow",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/bruma/tablet/public",
+      "name": "All persisted English product names/descriptions and category names render",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/bruma/tablet/public",
+      "name": "English/Spanish language selection changes the real menu interface",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/bruma/tablet/public",
+      "name": "Product detail shows persisted price, variants and extras; modal closes",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/bruma/tablet/public",
+      "name": "Persisted sold-out products are visibly identified",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/bruma/tablet/public",
+      "name": "Real product search narrows results and clearing restores the menu",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/bruma/tablet/public",
+      "name": "Parent category includes its children; subcategory filter selects its own products",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/bruma/tablet/public",
+      "name": "Favorite filtering and reload persistence use browser storage only",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/bruma/tablet/public",
+      "name": "Opening-hours dialog shows persisted hours and closes with Escape",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/bruma/tablet/public",
+      "name": "Visible inputs have accessible labels, images have alt attributes, keyboard focus is visible",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/bruma/tablet/public",
+      "name": "Sampled text contrast on opaque backgrounds meets applicable minimum",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/bruma/tablet/public",
+      "name": "Reload preserves persisted public product data",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/bruma/tablet/public",
+      "name": "No runtime errors, failed resources or unexpected HTTP errors",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/bruma/desktop/public",
+      "name": "Real anonymous API and UI show the correct restaurant and 24 products",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/bruma/desktop/public",
+      "name": "All menu images load from actual media routes",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/bruma/desktop/public",
+      "name": "No page-level horizontal overflow",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/bruma/desktop/public",
+      "name": "All persisted English product names/descriptions and category names render",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/bruma/desktop/public",
+      "name": "English/Spanish language selection changes the real menu interface",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/bruma/desktop/public",
+      "name": "Product detail shows persisted price, variants and extras; modal closes",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/bruma/desktop/public",
+      "name": "Persisted sold-out products are visibly identified",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/bruma/desktop/public",
+      "name": "Real product search narrows results and clearing restores the menu",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/bruma/desktop/public",
+      "name": "Parent category includes its children; subcategory filter selects its own products",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/bruma/desktop/public",
+      "name": "Favorite from this tenant is absent in another real menu and remains when returning",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/bruma/desktop/public",
+      "name": "Favorite filtering and reload persistence use browser storage only",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/bruma/desktop/public",
+      "name": "Opening-hours dialog shows persisted hours and closes with Escape",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/bruma/desktop/public",
+      "name": "Visible inputs have accessible labels, images have alt attributes, keyboard focus is visible",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/bruma/desktop/public",
+      "name": "Sampled text contrast on opaque backgrounds meets applicable minimum",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/bruma/desktop/public",
+      "name": "Reload preserves persisted public product data",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/bruma/desktop/public",
+      "name": "No runtime errors, failed resources or unexpected HTTP errors",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/aurora/owner",
+      "name": "Real owner login and restaurant-bound session",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/aurora/owner",
+      "name": "Visible controls have labels in Productos",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/aurora/owner",
+      "name": "Visible controls have labels in Categorías",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/aurora/owner",
+      "name": "Visible controls have labels in Promociones",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/aurora/owner",
+      "name": "Visible controls have labels in Apariencia",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/aurora/owner",
+      "name": "Visible controls have labels in Horarios",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/aurora/owner",
+      "name": "Visible controls have labels in Idiomas",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/aurora/owner",
+      "name": "Visible controls have labels in Mi código QR",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/aurora/owner",
+      "name": "Visible controls have labels in Importar productos",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/aurora/owner",
+      "name": "Visible controls have labels in Cuenta y acceso",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/aurora/owner",
+      "name": "All owner tabs and appearance preview open without editing records",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/aurora/owner",
+      "name": "Owner downloads real persisted catalog CSV with24 products",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/aurora/owner",
+      "name": "Real owner PNG/SVG/PDF downloads; PNG independently decoded to stable route",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/aurora/owner",
+      "name": "Owner menu preview opens the correct real public menu",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/aurora/owner",
+      "name": "Reload, logout, anonymous rejection and real re-login preserve catalog data",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/aurora/owner",
+      "name": "No runtime errors or unexpected failed requests",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/marea/owner",
+      "name": "Real owner login and restaurant-bound session",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/marea/owner",
+      "name": "Visible controls have labels in Productos",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/marea/owner",
+      "name": "Visible controls have labels in Categorías",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/marea/owner",
+      "name": "Visible controls have labels in Promociones",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/marea/owner",
+      "name": "Visible controls have labels in Apariencia",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/marea/owner",
+      "name": "Visible controls have labels in Horarios",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/marea/owner",
+      "name": "Visible controls have labels in Idiomas",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/marea/owner",
+      "name": "Visible controls have labels in Mi código QR",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/marea/owner",
+      "name": "Visible controls have labels in Importar productos",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/marea/owner",
+      "name": "Visible controls have labels in Cuenta y acceso",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/marea/owner",
+      "name": "All owner tabs and appearance preview open without editing records",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/marea/owner",
+      "name": "Owner downloads real persisted catalog CSV with24 products",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/marea/owner",
+      "name": "Real owner PNG/SVG/PDF downloads; PNG independently decoded to stable route",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/marea/owner",
+      "name": "Owner menu preview opens the correct real public menu",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/marea/owner",
+      "name": "Reload, logout, anonymous rejection and real re-login preserve catalog data",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/marea/owner",
+      "name": "No runtime errors or unexpected failed requests",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/bruma/owner",
+      "name": "Real owner login and restaurant-bound session",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/bruma/owner",
+      "name": "Visible controls have labels in Productos",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/bruma/owner",
+      "name": "Visible controls have labels in Categorías",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/bruma/owner",
+      "name": "Visible controls have labels in Promociones",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/bruma/owner",
+      "name": "Visible controls have labels in Apariencia",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/bruma/owner",
+      "name": "Visible controls have labels in Horarios",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/bruma/owner",
+      "name": "Visible controls have labels in Idiomas",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/bruma/owner",
+      "name": "Visible controls have labels in Mi código QR",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/bruma/owner",
+      "name": "Visible controls have labels in Importar productos",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/bruma/owner",
+      "name": "Visible controls have labels in Cuenta y acceso",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/bruma/owner",
+      "name": "All owner tabs and appearance preview open without editing records",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/bruma/owner",
+      "name": "Owner downloads real persisted catalog CSV with24 products",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/bruma/owner",
+      "name": "Real owner PNG/SVG/PDF downloads; PNG independently decoded to stable route",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/bruma/owner",
+      "name": "Owner menu preview opens the correct real public menu",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/bruma/owner",
+      "name": "Reload, logout, anonymous rejection and real re-login preserve catalog data",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome/bruma/owner",
+      "name": "No runtime errors or unexpected failed requests",
+      "status": "PASS"
+    }
+  ],
+  "updatedAt": "2026-10-18T02:48:44.396Z",
+  "counts": {
+    "passed": 186,
+    "failed": 0
+  },
+  "completedAt": "2026-10-18T02:48:44.396Z"
+}

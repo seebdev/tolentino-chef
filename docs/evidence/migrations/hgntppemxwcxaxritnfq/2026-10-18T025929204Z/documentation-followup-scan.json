@@ -1,0 +1,32 @@
+{
+  "at": "2026-10-18T03:00:38.530Z",
+  "scope": "Only documentation/evidence updated after full working/index/history/browser scan; no code or binary changes since that scan",
+  "result": "PASS",
+  "files": [
+    {
+      "file": "docs/DEPLOY_RENDER_SUPABASE.md",
+      "sha256": "e3494ab33416290e3972c0b2edfe171553eb229e7477328cfa244a62634b24a6"
+    },
+    {
+      "file": "docs/MIGRATION_STATUS.md",
+      "sha256": "b6759d1ba218aa1f52e9f6d548f32e41126f86706c32d84e4b913e39dd863974"
+    },
+    {
+      "file": "docs/MIGRATION_AUTH_PLAN.md",
+      "sha256": "eb4ab472ffa681cffce07cc1cf777f52ec0a3965a0439e12bebbf91daa0501c0"
+    },
+    {
+      "file": "docs/PRODUCTION_AUTH_REVIEW.md",
+      "sha256": "5dc31c3ba5afddf683172ae8253cdef2c3275ac203e81cba904251d9a0ee7ec7"
+    },
+    {
+      "file": "docs/PUBLIC_DEPLOYMENT.md",
+      "sha256": "f42f6e8a23355bcc3a70774acc30872c145760846cfd85739cc7fa27917c182b"
+    },
+    {
+      "file": "docs/evidence/migrations/hgntppemxwcxaxritnfq/2026-10-18T025929204Z/secret-scan.json",
+      "sha256": "797580a9233e719e4f902687851e1e7ff2899013d0a770faf846a87f6c1193b3"
+    }
+  ],
+  "findings": 0
+}

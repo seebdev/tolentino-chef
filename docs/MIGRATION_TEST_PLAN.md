@@ -2,13 +2,31 @@
 
 Fecha: 17 de octubre de 2026. Destino autorizado: `hgntppemxwcxaxritnfq`; repositorio nuevo: `seebdev/tolentino-chef`.
 
+## Aceptación pública HTTPS — 2026-10-18 UTC
+
+El servicio publicado es [tolentino-restaurantes-admin.onrender.com](https://tolentino-restaurantes-admin.onrender.com), conectado al destino **hgntppemxwcxaxritnfq**. El health confirmó HTTP 200 y el identificador correcto antes de los logins. Esta fase usó cuentas y datos reales, sin mocks, ediciones de catálogo, importación CSV, correos ni cambios de tokens QR.
+
+| Comprobación pública | Resultado y alcance | Evidencia |
+| --- | --- | --- |
+| Navegador Chrome | **12 escenarios / 186 controles PASS**: nueve menús (tres DEMO × 390/768/1440 px) y tres propietarios; búsqueda, filtros, idiomas, variantes/extras, favoritos, horarios, paneles, descargas de lectura, recarga, logout/rechazo anónimo y nuevo login. | [Navegador real](evidence/migrations/hgntppemxwcxaxritnfq/public-acceptance-20261018/public-browser-audit.json) |
+| Administrador y QR | **9/9 controles PASS**: login, cookies Secure/HttpOnly/Lax/host-only, salida de soporte sin cambiar identidad, tres restaurantes cargados y logout con HTTP 401. **Nueve PNG/SVG/PDF** decodificados contra sus enlaces HTTPS permanentes; 302 al menú correcto y HTTP 200, sin cambios de token/catálogo/ajustes QR. | [Administrador y QR](evidence/migrations/hgntppemxwcxaxritnfq/public-acceptance-20261018/public-qr-admin-audit.json) |
+| Aislamiento API/RLS/Storage | **30/30 PASS** sobre seis pares dirigidos, positivos propios y hashes de contenido estables. Sólo SELECT/GET/descarga de imágenes existentes; no prueba nuevas operaciones INSERT/UPDATE/DELETE en esta corrida. | [Aislamiento público](evidence/migrations/hgntppemxwcxaxritnfq/public-acceptance-20261018/production-isolation-20261018T024529209Z.json) |
+| Revisión estática | **11 capturas** revisadas: nueve menús por revisor independiente y dos del administrador con lista cargada/emails ocultos; además tres PNG QR inspeccionados. Sin carga/error, imágenes rotas ni solapamiento visible. | [Inspección y hashes](evidence/migrations/hgntppemxwcxaxritnfq/public-acceptance-20261018/public-visual-inspection.json) |
+| URLs de Auth | Site URL HTTPS y redirect exacto /auth/callback, backup cifrado previo, PATCH y lectura posterior PASS; demás opciones conservadas. | [URLs Auth](evidence/migrations/hgntppemxwcxaxritnfq/20261018T023948321Z/auth-production-urls.json) |
+
+Los archivos canónicos QR están en `artifacts/migrations/hgntppemxwcxaxritnfq/public-acceptance-20261018/qr/{aurora,marea,bruma}.{png,svg,pdf}`. Los menús públicos son [Aurora](https://tolentino-restaurantes-admin.onrender.com/menu/pizzeria-aurora-demo), [Marea](https://tolentino-restaurantes-admin.onrender.com/menu/bento-marea-demo) y [Bruma](https://tolentino-restaurantes-admin.onrender.com/menu/cafe-bruma-demo). Los QR codifican las rutas permanentes /q/token y no el slug. El manifiesto local histórico no se reescribió para inventar una URL.
+
+**HSTS:** corrección desplegada y verificada después del redeploy: seis HTML con max-age=31536000 exacto, sin includeSubDomains ni preload; 22 archivos públicos sin hallazgos sensibles. Persistencia privada/pública de los tres DEMO idéntica después del despliegue. Véase PUBLIC_DEPLOYMENT.md. **Límites:** Chrome headless y tamaños emulados; Edge pertenece al pase local anterior. No se acredita Safari, equipo físico, escaneo/impresión física del QR, SMTP/recuperación con buzón autorizado ni renovación tras vencimiento real del JWT. El PDF se validó decodificando la imagen embebida. Las descripciones con elipsis y el siguiente elemento parcialmente visible en carruseles son comportamientos esperados.
+
+Los navegadores y procesos de los recorridos públicos terminaron tras logout; no quedan sesiones de auditoría abiertas en sus contextos. Hubo actividad normal de Auth, auditoría, rate-limit y métricas de visitas/QR. No sumar estos controles a las suites locales, fixtures ni subconjuntos para producir una sola cifra de aceptación.
+
 ## Estado de la aceptación local
 
-La importación real y el corte local al nuevo Supabase terminaron. Los recorridos reales contra el destino pasaron: aislamiento 30/30, principal 84/84, administrador 10/10 y comprobaciones adicionales 19/19. La integridad antes y después de QA confirma por contenido las 13 tablas de negocio comparadas, cuatro identidades Auth y 27 objetos de Storage. El registro público y el acceso anónimo del destino están cerrados. La aplicación probada usa un build de producción local; todavía no se acredita una publicación HTTPS.
+La importación real y el corte local al nuevo Supabase terminaron. Los recorridos reales contra el destino pasaron: aislamiento 30/30, principal 84/84, administrador 10/10 y comprobaciones adicionales 19/19. La integridad antes y después de QA confirma por contenido las 13 tablas de negocio comparadas, cuatro identidades Auth y 27 objetos de Storage. El registro público y el acceso anónimo del destino están cerrados. Esa fase probó un build de producción local; la publicación HTTPS posterior se acredita en la sección inicial.
 
 TypeScript, lint, 239/239 pruebas unitarias y build webpack pasan; las 54/54 pruebas de interfaz usan fixtures y no cuentan como sesiones reales. El `.env.local` actual apunta al destino nuevo y el health de producción local lo identifica. La configuración anterior quedó respaldada cifrada antes del corte. El manifiesto, las cuentas y las evidencias anteriores conservan su carácter histórico; no acreditan esta migración. No se modificó Crepes & Waffles.
 
-La aceptación visual real terminó con 24 escenarios y 372 comprobaciones PASS, más cuatro comprobaciones del administrador con datos cargados. Se revisaron estáticamente 20 capturas, incluidas las nueve Chrome verificadas de forma independiente. La persistencia tras otro reinicio, el respaldo final cifrado del destino y su ensayo local de restauración también pasaron. Render, origen HTTPS, SMTP y QR públicos con escaneo físico siguen pendientes; los nueve QR decodificados hasta ahora contienen URLs locales.
+La aceptación visual real terminó con 24 escenarios y 372 comprobaciones PASS, más cuatro comprobaciones del administrador con datos cargados. Se revisaron estáticamente 20 capturas, incluidas las nueve Chrome verificadas de forma independiente. La persistencia tras otro reinicio, el respaldo final cifrado del destino y su ensayo local de restauración también pasaron. Los nueve QR de esa fase contienen URLs locales. El despliegue HTTPS y los nueve archivos públicos nuevos se acreditan en la sección inicial; SMTP y escaneo físico siguen pendientes.
 
 ## Evidencia nueva comprobada
 
@@ -111,7 +129,7 @@ La suite completa y el build ya se ejecutaron de forma coordinada, con evidencia
 4. Completado: aislamiento privado, positivos propios y hashes estables; actividad normal de Auth, auditoría y límites registrada por separado.
 5. Completado: recorridos DEMO coordinados y restauración comprobada. La comparación posterior confirma catálogo y configuración del respaldo tras los cambios temporales.
 6. Completado: navegador real y revisión visual de capturas, persistencia tras otro reinicio y respaldo final con ensayo de restauración local 71/71. No se acredita Safari ni dispositivos físicos, ni restauración completa de GoTrue/Storage HTTP.
-7. Pendiente externo: Render, origen HTTPS y SMTP. Después se repetirán smoke público/propietarios y controles pertinentes, se verificarán correos autorizados y se generarán QR con URLs públicas para comprobar HTTP y escaneo físico. Un resultado local sigue siendo local.
+7. Completado después: Render HTTPS, aceptación pública de administrador/propietarios, aislamiento 30/30 y nueve QR públicos decodificados con HTTP correcto. HSTS y persistencia posteriores al redeploy también pasaron. Pendientes: SMTP/recuperación autorizada y escaneo físico. Los resultados locales y públicos conservan sus alcances separados.
 
 Matriz mínima de aceptación nueva:
 

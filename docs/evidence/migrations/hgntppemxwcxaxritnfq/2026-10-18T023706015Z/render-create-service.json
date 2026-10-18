@@ -1,0 +1,53 @@
+{
+  "at": "2026-10-18T02:37:06.018Z",
+  "ownerId": "tea-dba1s4m1egvs7391ve50",
+  "repo": "https://github.com/seebdev/tolentino-chef",
+  "blueprintSha256": "340a7b9ee2b475ae4cc081020d760f1fe8b4030addf6f0daf84889e3ff9ec7c2",
+  "authorization": "Explicit user approval for one Free service and canonical HTTPS URLs",
+  "operations": [
+    {
+      "method": "GET",
+      "path": "/blueprints?ownerId=tea-dba1s4m1egvs7391ve50&limit=100",
+      "status": 200
+    }
+  ],
+  "applicationSecretsSent": false,
+  "inventory": {
+    "ownerName": "Tolentino Restaurantes",
+    "services": 0,
+    "matchingServices": 0,
+    "blueprints": 0
+  },
+  "commit": "355e3a64abc38d98ee327e63a855c14258768bf6",
+  "configuration": {
+    "type": "web_service",
+    "name": "tolentino-restaurantes-admin",
+    "ownerId": "tea-dba1s4m1egvs7391ve50",
+    "repo": "https://github.com/seebdev/tolentino-chef",
+    "branch": "main",
+    "autoDeployTrigger": "commit",
+    "envVars": [
+      {
+        "key": "NODE_VERSION",
+        "present": true
+      },
+      {
+        "key": "NODE_ENV",
+        "present": true
+      }
+    ],
+    "serviceDetails": {
+      "runtime": "node",
+      "plan": "free",
+      "region": "virginia",
+      "numInstances": 1,
+      "healthCheckPath": "/api/health",
+      "envSpecificDetails": {
+        "buildCommand": "npm ci --include=dev && npm run typecheck && npm run lint && npm run test && npm run build",
+        "startCommand": "npm run start"
+      }
+    },
+    "initialDeployHandling": "No database keys or guessed URL; cancel initial deploy before configuring canonical environment"
+  },
+  "result": "READY"
+}

@@ -1,0 +1,19 @@
+{
+  "at": "2026-10-18T02:35:39.949Z",
+  "ownerId": "tea-dba1s4m1egvs7391ve50",
+  "httpStatus": 200,
+  "blueprintSha256": "340a7b9ee2b475ae4cc081020d760f1fe8b4030addf6f0daf84889e3ff9ec7c2",
+  "resourceMutations": 0,
+  "valid": true,
+  "plan": {
+    "databases": null,
+    "envGroups": null,
+    "keyValue": null,
+    "services": [
+      "tolentino-restaurantes-admin"
+    ],
+    "totalActions": 1,
+    "workflows": null
+  },
+  "errors": []
+}

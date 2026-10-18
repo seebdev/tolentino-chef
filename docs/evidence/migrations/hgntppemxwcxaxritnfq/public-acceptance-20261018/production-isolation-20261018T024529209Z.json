@@ -1,0 +1,2082 @@
+{
+  "startedAt": "2026-10-18T02:45:29.209Z",
+  "projectRef": "hgntppemxwcxaxritnfq",
+  "runId": "public-acceptance-20261018",
+  "base": "https://tolentino-restaurantes-admin.onrender.com",
+  "environment": "remote HTTPS application; hosted Supabase",
+  "target": "hgntppemxwcxaxritnfq.supabase.co",
+  "scriptSha256": "1040afbf9fbbf79400994bd828c4bda3a0a1f567e7f44d858eb34f15b1cae5b8",
+  "realData": true,
+  "mocks": false,
+  "serviceRoleUsed": false,
+  "scope": "Three fixed DEMOs; six directed pairs; authenticated API GET, RLS SELECT and private Storage download. No catalog, configuration or object mutations.",
+  "businessContentMutations": false,
+  "authSessionLifecycle": true,
+  "publicMenuRequests": false,
+  "authSideEffects": "Creates up to six temporary sessions (API and direct Supabase per owner), ordinary login audit/rate counters and Auth last-sign-in metadata; closes only those sessions with local scope. No emails or global revocations. No public menu requests or visit metrics from this runner.",
+  "persistenceScope": "Exact SHA256 before/after for owner-visible restaurant, membership, settings, categories, products, promotions, hours, translations, QR, domains and total; all rows in nine tenant tables; sampled existing private image bytes. Excludes Auth, audit, visits, rate counters and service-only commercial data.",
+  "limitations": [
+    "SELECT/download isolation only; does not exercise blocked INSERT/UPDATE/DELETE or suspended accounts in this run.",
+    "One confirmed existing image per tenant is sampled; not an enumeration of all Storage objects.",
+    "Successful local checks do not establish Render/public deployment, SMTP, physical QR scanning or device compatibility."
+  ],
+  "officialReferences": [
+    "https://supabase.com/docs/reference/javascript/auth-signinwithpassword",
+    "https://supabase.com/docs/reference/javascript/auth-signout",
+    "https://supabase.com/docs/reference/javascript/storage-from-download"
+  ],
+  "checks": [
+    {
+      "name": "aurora authenticated owner identities",
+      "pass": true,
+      "detail": {
+        "apiStatus": 200,
+        "role": "owner",
+        "assignedRestaurant": "1932e721-78ab-4320-9f84-f186a80fba48",
+        "directIdentityMatches": true
+      }
+    },
+    {
+      "name": "aurora positive controls and baseline",
+      "pass": true,
+      "detail": {
+        "key": "aurora",
+        "id": "1932e721-78ab-4320-9f84-f186a80fba48",
+        "products": 24,
+        "categories": 8,
+        "contentSha256": "e14c8bfff5ee0e8c899e8b36738845322471a9906d0431dc65b964995ff87528",
+        "tables": [
+          {
+            "table": "restaurants",
+            "rows": 1,
+            "sha256": "adc6cb78982b3cc4b4bc04e7817d43d5ec77aba2b9a8abdecf017df73f9e785a"
+          },
+          {
+            "table": "restaurant_memberships",
+            "rows": 1,
+            "sha256": "34651373f521f20a3540b6f913757eba657d36b69ba3d80b69c394795283d38c"
+          },
+          {
+            "table": "restaurant_settings",
+            "rows": 1,
+            "sha256": "2616cd6dfca6ab9f9f955fd5acf57f4e549ca6ad38394a5f88724f00e89767ab"
+          },
+          {
+            "table": "categories",
+            "rows": 8,
+            "sha256": "4950b9d2147d036fc4bd5f1e0a703ffbba8fca64f17a488d5ab6d7dac929e57a"
+          },
+          {
+            "table": "products",
+            "rows": 24,
+            "sha256": "7afbe7a5a56113d7206b88bdedb7201c807fb7df1ab20b29742ee0b135a0cf38"
+          },
+          {
+            "table": "promotions",
+            "rows": 1,
+            "sha256": "ed8823674cf60c7a8046d351b9c8b0eea3b3dfbc27e2794ef2219d6da29513db"
+          },
+          {
+            "table": "restaurant_hours",
+            "rows": 7,
+            "sha256": "8af84a4da8130bfa34875eb062d3b8a6954723112b55e3c98404fec046e25a50"
+          },
+          {
+            "table": "translations",
+            "rows": 32,
+            "sha256": "b4c5c403c1ad9b807def12a15d0fa537de1ebeee4ef454b191336f5246cb5a28"
+          },
+          {
+            "table": "restaurant_qr_configs",
+            "rows": 1,
+            "sha256": "6b858cfe8a3fcf2cd656b3960842109fccf7402e2afdfdd563e0c0979d28e4da"
+          }
+        ],
+        "sampledImage": {
+          "path": "1932e721-78ab-4320-9f84-f186a80fba48/47181239-605c-4b5a-b50e-551ecdc702ef.webp",
+          "bytes": 13374,
+          "sha256": "2c082c9c18d27bfe5278f0d7e4026e2b637d5a49518b961347276c8a9bb23f98"
+        }
+      }
+    },
+    {
+      "name": "marea authenticated owner identities",
+      "pass": true,
+      "detail": {
+        "apiStatus": 200,
+        "role": "owner",
+        "assignedRestaurant": "e2cda10d-2771-4056-8cf0-13e00f4b1bd8",
+        "directIdentityMatches": true
+      }
+    },
+    {
+      "name": "marea positive controls and baseline",
+      "pass": true,
+      "detail": {
+        "key": "marea",
+        "id": "e2cda10d-2771-4056-8cf0-13e00f4b1bd8",
+        "products": 24,
+        "categories": 8,
+        "contentSha256": "5cd91cb8e26ef1e0f694186620efcdafad32381d790f465c7151b29e472aede5",
+        "tables": [
+          {
+            "table": "restaurants",
+            "rows": 1,
+            "sha256": "a32c54f46b7bce97a776ec0b2e0332e4608a385cfe752c5ae5ce143fde495ed9"
+          },
+          {
+            "table": "restaurant_memberships",
+            "rows": 1,
+            "sha256": "45cd9e10df061480a311cb300aedd49e106662836506831be9f29477bbd174b3"
+          },
+          {
+            "table": "restaurant_settings",
+            "rows": 1,
+            "sha256": "ed9b9764a0071fc211e2806538380e9ccb4fe5433930428c8f3ae097aaefe7cd"
+          },
+          {
+            "table": "categories",
+            "rows": 8,
+            "sha256": "4f677ec08f523675243a4a91cdafdf4735d3b11bd8e2848a16af4ccc730733e4"
+          },
+          {
+            "table": "products",
+            "rows": 24,
+            "sha256": "2b890cfa9300c0a9ba94e63f505673c4d4afea5d2ac05537e4bcd57d3746a1bc"
+          },
+          {
+            "table": "promotions",
+            "rows": 1,
+            "sha256": "6f21f99ce4cb6be802d6506fa82933ff5ff372da9afa8c502b449c4dceab016e"
+          },
+          {
+            "table": "restaurant_hours",
+            "rows": 7,
+            "sha256": "99ee3f963ff4915e392c556ded5ee4a725d0dd53a2155888810333ab8d45a69a"
+          },
+          {
+            "table": "translations",
+            "rows": 32,
+            "sha256": "1c2b4128279459f612cc2926aad2549d7cacd8016e4c020a02d400d079324127"
+          },
+          {
+            "table": "restaurant_qr_configs",
+            "rows": 1,
+            "sha256": "8d788e5573cba8aeba3b6daef3d805499af03697175996690d835585e8ad3eb6"
+          }
+        ],
+        "sampledImage": {
+          "path": "e2cda10d-2771-4056-8cf0-13e00f4b1bd8/1e4c3d7f-912b-4553-8936-2091209a0386.webp",
+          "bytes": 13798,
+          "sha256": "af283d82e31c4941e1653b9ff6b0bd3f46f850420c20615f53a58d9627d0ff4f"
+        }
+      }
+    },
+    {
+      "name": "bruma authenticated owner identities",
+      "pass": true,
+      "detail": {
+        "apiStatus": 200,
+        "role": "owner",
+        "assignedRestaurant": "eca7481c-fc27-479c-b364-76274b0b4230",
+        "directIdentityMatches": true
+      }
+    },
+    {
+      "name": "bruma positive controls and baseline",
+      "pass": true,
+      "detail": {
+        "key": "bruma",
+        "id": "eca7481c-fc27-479c-b364-76274b0b4230",
+        "products": 24,
+        "categories": 8,
+        "contentSha256": "df12376a1f64717e10ac51047c38f3eb020b1e10f86be2442b1a1287c37443cc",
+        "tables": [
+          {
+            "table": "restaurants",
+            "rows": 1,
+            "sha256": "2b28b4eb3f42a1e169a980e2b62d69f4814d811337f9bc710ec2f232651bcd31"
+          },
+          {
+            "table": "restaurant_memberships",
+            "rows": 1,
+            "sha256": "d4c65f532ed773957e6d84a5e68b952cde6b3e49a0c83d14b2993d381720b4f4"
+          },
+          {
+            "table": "restaurant_settings",
+            "rows": 1,
+            "sha256": "67a58c4bca42d300617c69e30ad70975f6b72904b582e7fa87a880e99b6ae279"
+          },
+          {
+            "table": "categories",
+            "rows": 8,
+            "sha256": "8cd0699d5e38cc64a0d1132832f591da1d46cbe524b9ad6f3edae5b311a59b13"
+          },
+          {
+            "table": "products",
+            "rows": 24,
+            "sha256": "b7484a089905765526de023d1cb25589a6d076df4e83a4aa6506fd343684d195"
+          },
+          {
+            "table": "promotions",
+            "rows": 1,
+            "sha256": "da0369e3a4922001212bd3128d4725a977568605b8fc2269308976bfd07aea23"
+          },
+          {
+            "table": "restaurant_hours",
+            "rows": 7,
+            "sha256": "b20b6081e28e2e3f65cc881366808cf0920c9ff0e7f79e3c77c303fc6f45832a"
+          },
+          {
+            "table": "translations",
+            "rows": 32,
+            "sha256": "83d93672c0f3fc51c2d033200b66f297eee69f18e9c796530855eb42d666b352"
+          },
+          {
+            "table": "restaurant_qr_configs",
+            "rows": 1,
+            "sha256": "8575480d4c2ec76179f3f1874a7c8aa811715bc2000244ae13c3f5b65b293fd2"
+          }
+        ],
+        "sampledImage": {
+          "path": "eca7481c-fc27-479c-b364-76274b0b4230/649e3c5e-ee76-4edf-8dbc-59fdbc3aa008.webp",
+          "bytes": 9846,
+          "sha256": "f85ebb11c02ade30e56bd49dbea77a73ae2fa135d870299d63c91e144708611a"
+        }
+      }
+    },
+    {
+      "name": "aurora -> marea API isolation",
+      "pass": true,
+      "detail": {
+        "status": 403,
+        "containsTenantPayload": false
+      }
+    },
+    {
+      "name": "aurora -> marea RLS isolation",
+      "pass": true,
+      "detail": {
+        "tables": 9,
+        "rows": 0,
+        "targetPositiveControlsVerified": true
+      }
+    },
+    {
+      "name": "aurora -> marea private Storage isolation",
+      "pass": true,
+      "detail": {
+        "denied": true,
+        "errorStatus": 400,
+        "returnedBytes": 0,
+        "targetImagePreviouslyReadByOwner": true
+      }
+    },
+    {
+      "name": "aurora -> bruma API isolation",
+      "pass": true,
+      "detail": {
+        "status": 403,
+        "containsTenantPayload": false
+      }
+    },
+    {
+      "name": "aurora -> bruma RLS isolation",
+      "pass": true,
+      "detail": {
+        "tables": 9,
+        "rows": 0,
+        "targetPositiveControlsVerified": true
+      }
+    },
+    {
+      "name": "aurora -> bruma private Storage isolation",
+      "pass": true,
+      "detail": {
+        "denied": true,
+        "errorStatus": 400,
+        "returnedBytes": 0,
+        "targetImagePreviouslyReadByOwner": true
+      }
+    },
+    {
+      "name": "marea -> aurora API isolation",
+      "pass": true,
+      "detail": {
+        "status": 403,
+        "containsTenantPayload": false
+      }
+    },
+    {
+      "name": "marea -> aurora RLS isolation",
+      "pass": true,
+      "detail": {
+        "tables": 9,
+        "rows": 0,
+        "targetPositiveControlsVerified": true
+      }
+    },
+    {
+      "name": "marea -> aurora private Storage isolation",
+      "pass": true,
+      "detail": {
+        "denied": true,
+        "errorStatus": 400,
+        "returnedBytes": 0,
+        "targetImagePreviouslyReadByOwner": true
+      }
+    },
+    {
+      "name": "marea -> bruma API isolation",
+      "pass": true,
+      "detail": {
+        "status": 403,
+        "containsTenantPayload": false
+      }
+    },
+    {
+      "name": "marea -> bruma RLS isolation",
+      "pass": true,
+      "detail": {
+        "tables": 9,
+        "rows": 0,
+        "targetPositiveControlsVerified": true
+      }
+    },
+    {
+      "name": "marea -> bruma private Storage isolation",
+      "pass": true,
+      "detail": {
+        "denied": true,
+        "errorStatus": 400,
+        "returnedBytes": 0,
+        "targetImagePreviouslyReadByOwner": true
+      }
+    },
+    {
+      "name": "bruma -> aurora API isolation",
+      "pass": true,
+      "detail": {
+        "status": 403,
+        "containsTenantPayload": false
+      }
+    },
+    {
+      "name": "bruma -> aurora RLS isolation",
+      "pass": true,
+      "detail": {
+        "tables": 9,
+        "rows": 0,
+        "targetPositiveControlsVerified": true
+      }
+    },
+    {
+      "name": "bruma -> aurora private Storage isolation",
+      "pass": true,
+      "detail": {
+        "denied": true,
+        "errorStatus": 400,
+        "returnedBytes": 0,
+        "targetImagePreviouslyReadByOwner": true
+      }
+    },
+    {
+      "name": "bruma -> marea API isolation",
+      "pass": true,
+      "detail": {
+        "status": 403,
+        "containsTenantPayload": false
+      }
+    },
+    {
+      "name": "bruma -> marea RLS isolation",
+      "pass": true,
+      "detail": {
+        "tables": 9,
+        "rows": 0,
+        "targetPositiveControlsVerified": true
+      }
+    },
+    {
+      "name": "bruma -> marea private Storage isolation",
+      "pass": true,
+      "detail": {
+        "denied": true,
+        "errorStatus": 400,
+        "returnedBytes": 0,
+        "targetImagePreviouslyReadByOwner": true
+      }
+    },
+    {
+      "name": "aurora content unchanged after read-only audit",
+      "pass": true,
+      "detail": {
+        "exactHashEquality": true,
+        "beforeSha256": "6e6701fa1c1a81e87edeae4b74925cbe5c3cba8c7f134c279c38642fd2116643",
+        "afterSha256": "6e6701fa1c1a81e87edeae4b74925cbe5c3cba8c7f134c279c38642fd2116643"
+      }
+    },
+    {
+      "name": "marea content unchanged after read-only audit",
+      "pass": true,
+      "detail": {
+        "exactHashEquality": true,
+        "beforeSha256": "5e694f29a574cbc4e48c0a2c18d2c0523330cebc80e4e90fd2c514932f8c0e65",
+        "afterSha256": "5e694f29a574cbc4e48c0a2c18d2c0523330cebc80e4e90fd2c514932f8c0e65"
+      }
+    },
+    {
+      "name": "bruma content unchanged after read-only audit",
+      "pass": true,
+      "detail": {
+        "exactHashEquality": true,
+        "beforeSha256": "c248a6018662521a0c7511c0c9ff5371601c56ce4c0b9738e27eaed09d676268",
+        "afterSha256": "c248a6018662521a0c7511c0c9ff5371601c56ce4c0b9738e27eaed09d676268"
+      }
+    },
+    {
+      "name": "aurora close audit sessions locally",
+      "pass": true,
+      "detail": {
+        "scope": "local",
+        "apiClosed": true,
+        "directClosed": true
+      }
+    },
+    {
+      "name": "marea close audit sessions locally",
+      "pass": true,
+      "detail": {
+        "scope": "local",
+        "apiClosed": true,
+        "directClosed": true
+      }
+    },
+    {
+      "name": "bruma close audit sessions locally",
+      "pass": true,
+      "detail": {
+        "scope": "local",
+        "apiClosed": true,
+        "directClosed": true
+      }
+    }
+  ],
+  "pairs": [
+    {
+      "from": "aurora",
+      "to": "marea",
+      "api": {
+        "status": 403,
+        "containsTenantPayload": false
+      },
+      "rls": [
+        {
+          "table": "restaurants",
+          "rows": 0
+        },
+        {
+          "table": "restaurant_memberships",
+          "rows": 0
+        },
+        {
+          "table": "restaurant_settings",
+          "rows": 0
+        },
+        {
+          "table": "categories",
+          "rows": 0
+        },
+        {
+          "table": "products",
+          "rows": 0
+        },
+        {
+          "table": "promotions",
+          "rows": 0
+        },
+        {
+          "table": "restaurant_hours",
+          "rows": 0
+        },
+        {
+          "table": "translations",
+          "rows": 0
+        },
+        {
+          "table": "restaurant_qr_configs",
+          "rows": 0
+        }
+      ],
+      "storage": {
+        "denied": true,
+        "errorStatus": 400,
+        "returnedBytes": 0,
+        "targetImagePreviouslyReadByOwner": true
+      }
+    },
+    {
+      "from": "aurora",
+      "to": "bruma",
+      "api": {
+        "status": 403,
+        "containsTenantPayload": false
+      },
+      "rls": [
+        {
+          "table": "restaurants",
+          "rows": 0
+        },
+        {
+          "table": "restaurant_memberships",
+          "rows": 0
+        },
+        {
+          "table": "restaurant_settings",
+          "rows": 0
+        },
+        {
+          "table": "categories",
+          "rows": 0
+        },
+        {
+          "table": "products",
+          "rows": 0
+        },
+        {
+          "table": "promotions",
+          "rows": 0
+        },
+        {
+          "table": "restaurant_hours",
+          "rows": 0
+        },
+        {
+          "table": "translations",
+          "rows": 0
+        },
+        {
+          "table": "restaurant_qr_configs",
+          "rows": 0
+        }
+      ],
+      "storage": {
+        "denied": true,
+        "errorStatus": 400,
+        "returnedBytes": 0,
+        "targetImagePreviouslyReadByOwner": true
+      }
+    },
+    {
+      "from": "marea",
+      "to": "aurora",
+      "api": {
+        "status": 403,
+        "containsTenantPayload": false
+      },
+      "rls": [
+        {
+          "table": "restaurants",
+          "rows": 0
+        },
+        {
+          "table": "restaurant_memberships",
+          "rows": 0
+        },
+        {
+          "table": "restaurant_settings",
+          "rows": 0
+        },
+        {
+          "table": "categories",
+          "rows": 0
+        },
+        {
+          "table": "products",
+          "rows": 0
+        },
+        {
+          "table": "promotions",
+          "rows": 0
+        },
+        {
+          "table": "restaurant_hours",
+          "rows": 0
+        },
+        {
+          "table": "translations",
+          "rows": 0
+        },
+        {
+          "table": "restaurant_qr_configs",
+          "rows": 0
+        }
+      ],
+      "storage": {
+        "denied": true,
+        "errorStatus": 400,
+        "returnedBytes": 0,
+        "targetImagePreviouslyReadByOwner": true
+      }
+    },
+    {
+      "from": "marea",
+      "to": "bruma",
+      "api": {
+        "status": 403,
+        "containsTenantPayload": false
+      },
+      "rls": [
+        {
+          "table": "restaurants",
+          "rows": 0
+        },
+        {
+          "table": "restaurant_memberships",
+          "rows": 0
+        },
+        {
+          "table": "restaurant_settings",
+          "rows": 0
+        },
+        {
+          "table": "categories",
+          "rows": 0
+        },
+        {
+          "table": "products",
+          "rows": 0
+        },
+        {
+          "table": "promotions",
+          "rows": 0
+        },
+        {
+          "table": "restaurant_hours",
+          "rows": 0
+        },
+        {
+          "table": "translations",
+          "rows": 0
+        },
+        {
+          "table": "restaurant_qr_configs",
+          "rows": 0
+        }
+      ],
+      "storage": {
+        "denied": true,
+        "errorStatus": 400,
+        "returnedBytes": 0,
+        "targetImagePreviouslyReadByOwner": true
+      }
+    },
+    {
+      "from": "bruma",
+      "to": "aurora",
+      "api": {
+        "status": 403,
+        "containsTenantPayload": false
+      },
+      "rls": [
+        {
+          "table": "restaurants",
+          "rows": 0
+        },
+        {
+          "table": "restaurant_memberships",
+          "rows": 0
+        },
+        {
+          "table": "restaurant_settings",
+          "rows": 0
+        },
+        {
+          "table": "categories",
+          "rows": 0
+        },
+        {
+          "table": "products",
+          "rows": 0
+        },
+        {
+          "table": "promotions",
+          "rows": 0
+        },
+        {
+          "table": "restaurant_hours",
+          "rows": 0
+        },
+        {
+          "table": "translations",
+          "rows": 0
+        },
+        {
+          "table": "restaurant_qr_configs",
+          "rows": 0
+        }
+      ],
+      "storage": {
+        "denied": true,
+        "errorStatus": 400,
+        "returnedBytes": 0,
+        "targetImagePreviouslyReadByOwner": true
+      }
+    },
+    {
+      "from": "bruma",
+      "to": "marea",
+      "api": {
+        "status": 403,
+        "containsTenantPayload": false
+      },
+      "rls": [
+        {
+          "table": "restaurants",
+          "rows": 0
+        },
+        {
+          "table": "restaurant_memberships",
+          "rows": 0
+        },
+        {
+          "table": "restaurant_settings",
+          "rows": 0
+        },
+        {
+          "table": "categories",
+          "rows": 0
+        },
+        {
+          "table": "products",
+          "rows": 0
+        },
+        {
+          "table": "promotions",
+          "rows": 0
+        },
+        {
+          "table": "restaurant_hours",
+          "rows": 0
+        },
+        {
+          "table": "translations",
+          "rows": 0
+        },
+        {
+          "table": "restaurant_qr_configs",
+          "rows": 0
+        }
+      ],
+      "storage": {
+        "denied": true,
+        "errorStatus": 400,
+        "returnedBytes": 0,
+        "targetImagePreviouslyReadByOwner": true
+      }
+    }
+  ],
+  "before": [
+    {
+      "key": "aurora",
+      "id": "1932e721-78ab-4320-9f84-f186a80fba48",
+      "products": 24,
+      "categories": 8,
+      "contentSha256": "e14c8bfff5ee0e8c899e8b36738845322471a9906d0431dc65b964995ff87528",
+      "tables": [
+        {
+          "table": "restaurants",
+          "rows": 1,
+          "sha256": "adc6cb78982b3cc4b4bc04e7817d43d5ec77aba2b9a8abdecf017df73f9e785a"
+        },
+        {
+          "table": "restaurant_memberships",
+          "rows": 1,
+          "sha256": "34651373f521f20a3540b6f913757eba657d36b69ba3d80b69c394795283d38c"
+        },
+        {
+          "table": "restaurant_settings",
+          "rows": 1,
+          "sha256": "2616cd6dfca6ab9f9f955fd5acf57f4e549ca6ad38394a5f88724f00e89767ab"
+        },
+        {
+          "table": "categories",
+          "rows": 8,
+          "sha256": "4950b9d2147d036fc4bd5f1e0a703ffbba8fca64f17a488d5ab6d7dac929e57a"
+        },
+        {
+          "table": "products",
+          "rows": 24,
+          "sha256": "7afbe7a5a56113d7206b88bdedb7201c807fb7df1ab20b29742ee0b135a0cf38"
+        },
+        {
+          "table": "promotions",
+          "rows": 1,
+          "sha256": "ed8823674cf60c7a8046d351b9c8b0eea3b3dfbc27e2794ef2219d6da29513db"
+        },
+        {
+          "table": "restaurant_hours",
+          "rows": 7,
+          "sha256": "8af84a4da8130bfa34875eb062d3b8a6954723112b55e3c98404fec046e25a50"
+        },
+        {
+          "table": "translations",
+          "rows": 32,
+          "sha256": "b4c5c403c1ad9b807def12a15d0fa537de1ebeee4ef454b191336f5246cb5a28"
+        },
+        {
+          "table": "restaurant_qr_configs",
+          "rows": 1,
+          "sha256": "6b858cfe8a3fcf2cd656b3960842109fccf7402e2afdfdd563e0c0979d28e4da"
+        }
+      ],
+      "sampledImage": {
+        "path": "1932e721-78ab-4320-9f84-f186a80fba48/47181239-605c-4b5a-b50e-551ecdc702ef.webp",
+        "bytes": 13374,
+        "sha256": "2c082c9c18d27bfe5278f0d7e4026e2b637d5a49518b961347276c8a9bb23f98"
+      }
+    },
+    {
+      "key": "marea",
+      "id": "e2cda10d-2771-4056-8cf0-13e00f4b1bd8",
+      "products": 24,
+      "categories": 8,
+      "contentSha256": "5cd91cb8e26ef1e0f694186620efcdafad32381d790f465c7151b29e472aede5",
+      "tables": [
+        {
+          "table": "restaurants",
+          "rows": 1,
+          "sha256": "a32c54f46b7bce97a776ec0b2e0332e4608a385cfe752c5ae5ce143fde495ed9"
+        },
+        {
+          "table": "restaurant_memberships",
+          "rows": 1,
+          "sha256": "45cd9e10df061480a311cb300aedd49e106662836506831be9f29477bbd174b3"
+        },
+        {
+          "table": "restaurant_settings",
+          "rows": 1,
+          "sha256": "ed9b9764a0071fc211e2806538380e9ccb4fe5433930428c8f3ae097aaefe7cd"
+        },
+        {
+          "table": "categories",
+          "rows": 8,
+          "sha256": "4f677ec08f523675243a4a91cdafdf4735d3b11bd8e2848a16af4ccc730733e4"
+        },
+        {
+          "table": "products",
+          "rows": 24,
+          "sha256": "2b890cfa9300c0a9ba94e63f505673c4d4afea5d2ac05537e4bcd57d3746a1bc"
+        },
+        {
+          "table": "promotions",
+          "rows": 1,
+          "sha256": "6f21f99ce4cb6be802d6506fa82933ff5ff372da9afa8c502b449c4dceab016e"
+        },
+        {
+          "table": "restaurant_hours",
+          "rows": 7,
+          "sha256": "99ee3f963ff4915e392c556ded5ee4a725d0dd53a2155888810333ab8d45a69a"
+        },
+        {
+          "table": "translations",
+          "rows": 32,
+          "sha256": "1c2b4128279459f612cc2926aad2549d7cacd8016e4c020a02d400d079324127"
+        },
+        {
+          "table": "restaurant_qr_configs",
+          "rows": 1,
+          "sha256": "8d788e5573cba8aeba3b6daef3d805499af03697175996690d835585e8ad3eb6"
+        }
+      ],
+      "sampledImage": {
+        "path": "e2cda10d-2771-4056-8cf0-13e00f4b1bd8/1e4c3d7f-912b-4553-8936-2091209a0386.webp",
+        "bytes": 13798,
+        "sha256": "af283d82e31c4941e1653b9ff6b0bd3f46f850420c20615f53a58d9627d0ff4f"
+      }
+    },
+    {
+      "key": "bruma",
+      "id": "eca7481c-fc27-479c-b364-76274b0b4230",
+      "products": 24,
+      "categories": 8,
+      "contentSha256": "df12376a1f64717e10ac51047c38f3eb020b1e10f86be2442b1a1287c37443cc",
+      "tables": [
+        {
+          "table": "restaurants",
+          "rows": 1,
+          "sha256": "2b28b4eb3f42a1e169a980e2b62d69f4814d811337f9bc710ec2f232651bcd31"
+        },
+        {
+          "table": "restaurant_memberships",
+          "rows": 1,
+          "sha256": "d4c65f532ed773957e6d84a5e68b952cde6b3e49a0c83d14b2993d381720b4f4"
+        },
+        {
+          "table": "restaurant_settings",
+          "rows": 1,
+          "sha256": "67a58c4bca42d300617c69e30ad70975f6b72904b582e7fa87a880e99b6ae279"
+        },
+        {
+          "table": "categories",
+          "rows": 8,
+          "sha256": "8cd0699d5e38cc64a0d1132832f591da1d46cbe524b9ad6f3edae5b311a59b13"
+        },
+        {
+          "table": "products",
+          "rows": 24,
+          "sha256": "b7484a089905765526de023d1cb25589a6d076df4e83a4aa6506fd343684d195"
+        },
+        {
+          "table": "promotions",
+          "rows": 1,
+          "sha256": "da0369e3a4922001212bd3128d4725a977568605b8fc2269308976bfd07aea23"
+        },
+        {
+          "table": "restaurant_hours",
+          "rows": 7,
+          "sha256": "b20b6081e28e2e3f65cc881366808cf0920c9ff0e7f79e3c77c303fc6f45832a"
+        },
+        {
+          "table": "translations",
+          "rows": 32,
+          "sha256": "83d93672c0f3fc51c2d033200b66f297eee69f18e9c796530855eb42d666b352"
+        },
+        {
+          "table": "restaurant_qr_configs",
+          "rows": 1,
+          "sha256": "8575480d4c2ec76179f3f1874a7c8aa811715bc2000244ae13c3f5b65b293fd2"
+        }
+      ],
+      "sampledImage": {
+        "path": "eca7481c-fc27-479c-b364-76274b0b4230/649e3c5e-ee76-4edf-8dbc-59fdbc3aa008.webp",
+        "bytes": 9846,
+        "sha256": "f85ebb11c02ade30e56bd49dbea77a73ae2fa135d870299d63c91e144708611a"
+      }
+    }
+  ],
+  "after": [
+    {
+      "key": "aurora",
+      "id": "1932e721-78ab-4320-9f84-f186a80fba48",
+      "products": 24,
+      "categories": 8,
+      "contentSha256": "e14c8bfff5ee0e8c899e8b36738845322471a9906d0431dc65b964995ff87528",
+      "tables": [
+        {
+          "table": "restaurants",
+          "rows": 1,
+          "sha256": "adc6cb78982b3cc4b4bc04e7817d43d5ec77aba2b9a8abdecf017df73f9e785a"
+        },
+        {
+          "table": "restaurant_memberships",
+          "rows": 1,
+          "sha256": "34651373f521f20a3540b6f913757eba657d36b69ba3d80b69c394795283d38c"
+        },
+        {
+          "table": "restaurant_settings",
+          "rows": 1,
+          "sha256": "2616cd6dfca6ab9f9f955fd5acf57f4e549ca6ad38394a5f88724f00e89767ab"
+        },
+        {
+          "table": "categories",
+          "rows": 8,
+          "sha256": "4950b9d2147d036fc4bd5f1e0a703ffbba8fca64f17a488d5ab6d7dac929e57a"
+        },
+        {
+          "table": "products",
+          "rows": 24,
+          "sha256": "7afbe7a5a56113d7206b88bdedb7201c807fb7df1ab20b29742ee0b135a0cf38"
+        },
+        {
+          "table": "promotions",
+          "rows": 1,
+          "sha256": "ed8823674cf60c7a8046d351b9c8b0eea3b3dfbc27e2794ef2219d6da29513db"
+        },
+        {
+          "table": "restaurant_hours",
+          "rows": 7,
+          "sha256": "8af84a4da8130bfa34875eb062d3b8a6954723112b55e3c98404fec046e25a50"
+        },
+        {
+          "table": "translations",
+          "rows": 32,
+          "sha256": "b4c5c403c1ad9b807def12a15d0fa537de1ebeee4ef454b191336f5246cb5a28"
+        },
+        {
+          "table": "restaurant_qr_configs",
+          "rows": 1,
+          "sha256": "6b858cfe8a3fcf2cd656b3960842109fccf7402e2afdfdd563e0c0979d28e4da"
+        }
+      ],
+      "sampledImage": {
+        "path": "1932e721-78ab-4320-9f84-f186a80fba48/47181239-605c-4b5a-b50e-551ecdc702ef.webp",
+        "bytes": 13374,
+        "sha256": "2c082c9c18d27bfe5278f0d7e4026e2b637d5a49518b961347276c8a9bb23f98"
+      }
+    },
+    {
+      "key": "marea",
+      "id": "e2cda10d-2771-4056-8cf0-13e00f4b1bd8",
+      "products": 24,
+      "categories": 8,
+      "contentSha256": "5cd91cb8e26ef1e0f694186620efcdafad32381d790f465c7151b29e472aede5",
+      "tables": [
+        {
+          "table": "restaurants",
+          "rows": 1,
+          "sha256": "a32c54f46b7bce97a776ec0b2e0332e4608a385cfe752c5ae5ce143fde495ed9"
+        },
+        {
+          "table": "restaurant_memberships",
+          "rows": 1,
+          "sha256": "45cd9e10df061480a311cb300aedd49e106662836506831be9f29477bbd174b3"
+        },
+        {
+          "table": "restaurant_settings",
+          "rows": 1,
+          "sha256": "ed9b9764a0071fc211e2806538380e9ccb4fe5433930428c8f3ae097aaefe7cd"
+        },
+        {
+          "table": "categories",
+          "rows": 8,
+          "sha256": "4f677ec08f523675243a4a91cdafdf4735d3b11bd8e2848a16af4ccc730733e4"
+        },
+        {
+          "table": "products",
+          "rows": 24,
+          "sha256": "2b890cfa9300c0a9ba94e63f505673c4d4afea5d2ac05537e4bcd57d3746a1bc"
+        },
+        {
+          "table": "promotions",
+          "rows": 1,
+          "sha256": "6f21f99ce4cb6be802d6506fa82933ff5ff372da9afa8c502b449c4dceab016e"
+        },
+        {
+          "table": "restaurant_hours",
+          "rows": 7,
+          "sha256": "99ee3f963ff4915e392c556ded5ee4a725d0dd53a2155888810333ab8d45a69a"
+        },
+        {
+          "table": "translations",
+          "rows": 32,
+          "sha256": "1c2b4128279459f612cc2926aad2549d7cacd8016e4c020a02d400d079324127"
+        },
+        {
+          "table": "restaurant_qr_configs",
+          "rows": 1,
+          "sha256": "8d788e5573cba8aeba3b6daef3d805499af03697175996690d835585e8ad3eb6"
+        }
+      ],
+      "sampledImage": {
+        "path": "e2cda10d-2771-4056-8cf0-13e00f4b1bd8/1e4c3d7f-912b-4553-8936-2091209a0386.webp",
+        "bytes": 13798,
+        "sha256": "af283d82e31c4941e1653b9ff6b0bd3f46f850420c20615f53a58d9627d0ff4f"
+      }
+    },
+    {
+      "key": "bruma",
+      "id": "eca7481c-fc27-479c-b364-76274b0b4230",
+      "products": 24,
+      "categories": 8,
+      "contentSha256": "df12376a1f64717e10ac51047c38f3eb020b1e10f86be2442b1a1287c37443cc",
+      "tables": [
+        {
+          "table": "restaurants",
+          "rows": 1,
+          "sha256": "2b28b4eb3f42a1e169a980e2b62d69f4814d811337f9bc710ec2f232651bcd31"
+        },
+        {
+          "table": "restaurant_memberships",
+          "rows": 1,
+          "sha256": "d4c65f532ed773957e6d84a5e68b952cde6b3e49a0c83d14b2993d381720b4f4"
+        },
+        {
+          "table": "restaurant_settings",
+          "rows": 1,
+          "sha256": "67a58c4bca42d300617c69e30ad70975f6b72904b582e7fa87a880e99b6ae279"
+        },
+        {
+          "table": "categories",
+          "rows": 8,
+          "sha256": "8cd0699d5e38cc64a0d1132832f591da1d46cbe524b9ad6f3edae5b311a59b13"
+        },
+        {
+          "table": "products",
+          "rows": 24,
+          "sha256": "b7484a089905765526de023d1cb25589a6d076df4e83a4aa6506fd343684d195"
+        },
+        {
+          "table": "promotions",
+          "rows": 1,
+          "sha256": "da0369e3a4922001212bd3128d4725a977568605b8fc2269308976bfd07aea23"
+        },
+        {
+          "table": "restaurant_hours",
+          "rows": 7,
+          "sha256": "b20b6081e28e2e3f65cc881366808cf0920c9ff0e7f79e3c77c303fc6f45832a"
+        },
+        {
+          "table": "translations",
+          "rows": 32,
+          "sha256": "83d93672c0f3fc51c2d033200b66f297eee69f18e9c796530855eb42d666b352"
+        },
+        {
+          "table": "restaurant_qr_configs",
+          "rows": 1,
+          "sha256": "8575480d4c2ec76179f3f1874a7c8aa811715bc2000244ae13c3f5b65b293fd2"
+        }
+      ],
+      "sampledImage": {
+        "path": "eca7481c-fc27-479c-b364-76274b0b4230/649e3c5e-ee76-4edf-8dbc-59fdbc3aa008.webp",
+        "bytes": 9846,
+        "sha256": "f85ebb11c02ade30e56bd49dbea77a73ae2fa135d870299d63c91e144708611a"
+      }
+    }
+  ],
+  "cleanup": [
+    {
+      "owner": "aurora",
+      "scope": "local",
+      "apiClosed": true,
+      "directClosed": true
+    },
+    {
+      "owner": "marea",
+      "scope": "local",
+      "apiClosed": true,
+      "directClosed": true
+    },
+    {
+      "owner": "bruma",
+      "scope": "local",
+      "apiClosed": true,
+      "directClosed": true
+    }
+  ],
+  "traffic": [
+    {
+      "service": "application",
+      "method": "GET",
+      "path": "/api/health",
+      "status": 200
+    },
+    {
+      "service": "application",
+      "method": "POST",
+      "path": "/api/auth",
+      "action": "login",
+      "status": 200
+    },
+    {
+      "service": "supabase",
+      "method": "POST",
+      "path": "/auth/v1/token",
+      "status": 200
+    },
+    {
+      "service": "application",
+      "method": "GET",
+      "path": "/api/session",
+      "status": 200
+    },
+    {
+      "service": "supabase",
+      "method": "GET",
+      "path": "/auth/v1/user",
+      "status": 200
+    },
+    {
+      "service": "application",
+      "method": "GET",
+      "path": "/api/workspace/1932e721-78ab-4320-9f84-f186a80fba48",
+      "status": 200
+    },
+    {
+      "service": "supabase",
+      "method": "GET",
+      "path": "/rest/v1/restaurants",
+      "status": 200
+    },
+    {
+      "service": "supabase",
+      "method": "GET",
+      "path": "/rest/v1/restaurant_memberships",
+      "status": 200
+    },
+    {
+      "service": "supabase",
+      "method": "GET",
+      "path": "/rest/v1/restaurant_settings",
+      "status": 200
+    },
+    {
+      "service": "supabase",
+      "method": "GET",
+      "path": "/rest/v1/categories",
+      "status": 200
+    },
+    {
+      "service": "supabase",
+      "method": "GET",
+      "path": "/rest/v1/products",
+      "status": 200
+    },
+    {
+      "service": "supabase",
+      "method": "GET",
+      "path": "/rest/v1/promotions",
+      "status": 200
+    },
+    {
+      "service": "supabase",
+      "method": "GET",
+      "path": "/rest/v1/restaurant_hours",
+      "status": 200
+    },
+    {
+      "service": "supabase",
+      "method": "GET",
+      "path": "/rest/v1/translations",
+      "status": 200
+    },
+    {
+      "service": "supabase",
+      "method": "GET",
+      "path": "/rest/v1/restaurant_qr_configs",
+      "status": 200
+    },
+    {
+      "service": "supabase",
+      "method": "GET",
+      "path": "/storage/v1/object/restaurant-media/1932e721-78ab-4320-9f84-f186a80fba48/47181239-605c-4b5a-b50e-551ecdc702ef.webp",
+      "status": 200
+    },
+    {
+      "service": "application",
+      "method": "POST",
+      "path": "/api/auth",
+      "action": "login",
+      "status": 200
+    },
+    {
+      "service": "supabase",
+      "method": "POST",
+      "path": "/auth/v1/token",
+      "status": 200
+    },
+    {
+      "service": "application",
+      "method": "GET",
+      "path": "/api/session",
+      "status": 200
+    },
+    {
+      "service": "supabase",
+      "method": "GET",
+      "path": "/auth/v1/user",
+      "status": 200
+    },
+    {
+      "service": "application",
+      "method": "GET",
+      "path": "/api/workspace/e2cda10d-2771-4056-8cf0-13e00f4b1bd8",
+      "status": 200
+    },
+    {
+      "service": "supabase",
+      "method": "GET",
+      "path": "/rest/v1/restaurants",
+      "status": 200
+    },
+    {
+      "service": "supabase",
+      "method": "GET",
+      "path": "/rest/v1/restaurant_memberships",
+      "status": 200
+    },
+    {
+      "service": "supabase",
+      "method": "GET",
+      "path": "/rest/v1/restaurant_settings",
+      "status": 200
+    },
+    {
+      "service": "supabase",
+      "method": "GET",
+      "path": "/rest/v1/categories",
+      "status": 200
+    },
+    {
+      "service": "supabase",
+      "method": "GET",
+      "path": "/rest/v1/products",
+      "status": 200
+    },
+    {
+      "service": "supabase",
+      "method": "GET",
+      "path": "/rest/v1/promotions",
+      "status": 200
+    },
+    {
+      "service": "supabase",
+      "method": "GET",
+      "path": "/rest/v1/restaurant_hours",
+      "status": 200
+    },
+    {
+      "service": "supabase",
+      "method": "GET",
+      "path": "/rest/v1/translations",
+      "status": 200
+    },
+    {
+      "service": "supabase",
+      "method": "GET",
+      "path": "/rest/v1/restaurant_qr_configs",
+      "status": 200
+    },
+    {
+      "service": "supabase",
+      "method": "GET",
+      "path": "/storage/v1/object/restaurant-media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/1e4c3d7f-912b-4553-8936-2091209a0386.webp",
+      "status": 200
+    },
+    {
+      "service": "application",
+      "method": "POST",
+      "path": "/api/auth",
+      "action": "login",
+      "status": 200
+    },
+    {
+      "service": "supabase",
+      "method": "POST",
+      "path": "/auth/v1/token",
+      "status": 200
+    },
+    {
+      "service": "application",
+      "method": "GET",
+      "path": "/api/session",
+      "status": 200
+    },
+    {
+      "service": "supabase",
+      "method": "GET",
+      "path": "/auth/v1/user",
+      "status": 200
+    },
+    {
+      "service": "application",
+      "method": "GET",
+      "path": "/api/workspace/eca7481c-fc27-479c-b364-76274b0b4230",
+      "status": 200
+    },
+    {
+      "service": "supabase",
+      "method": "GET",
+      "path": "/rest/v1/restaurants",
+      "status": 200
+    },
+    {
+      "service": "supabase",
+      "method": "GET",
+      "path": "/rest/v1/restaurant_memberships",
+      "status": 200
+    },
+    {
+      "service": "supabase",
+      "method": "GET",
+      "path": "/rest/v1/restaurant_settings",
+      "status": 200
+    },
+    {
+      "service": "supabase",
+      "method": "GET",
+      "path": "/rest/v1/categories",
+      "status": 200
+    },
+    {
+      "service": "supabase",
+      "method": "GET",
+      "path": "/rest/v1/products",
+      "status": 200
+    },
+    {
+      "service": "supabase",
+      "method": "GET",
+      "path": "/rest/v1/promotions",
+      "status": 200
+    },
+    {
+      "service": "supabase",
+      "method": "GET",
+      "path": "/rest/v1/restaurant_hours",
+      "status": 200
+    },
+    {
+      "service": "supabase",
+      "method": "GET",
+      "path": "/rest/v1/translations",
+      "status": 200
+    },
+    {
+      "service": "supabase",
+      "method": "GET",
+      "path": "/rest/v1/restaurant_qr_configs",
+      "status": 200
+    },
+    {
+      "service": "supabase",
+      "method": "GET",
+      "path": "/storage/v1/object/restaurant-media/eca7481c-fc27-479c-b364-76274b0b4230/649e3c5e-ee76-4edf-8dbc-59fdbc3aa008.webp",
+      "status": 200
+    },
+    {
+      "service": "application",
+      "method": "GET",
+      "path": "/api/workspace/e2cda10d-2771-4056-8cf0-13e00f4b1bd8",
+      "status": 403
+    },
+    {
+      "service": "supabase",
+      "method": "GET",
+      "path": "/rest/v1/restaurants",
+      "status": 200
+    },
+    {
+      "service": "supabase",
+      "method": "GET",
+      "path": "/rest/v1/restaurant_memberships",
+      "status": 200
+    },
+    {
+      "service": "supabase",
+      "method": "GET",
+      "path": "/rest/v1/restaurant_settings",
+      "status": 200
+    },
+    {
+      "service": "supabase",
+      "method": "GET",
+      "path": "/rest/v1/categories",
+      "status": 200
+    },
+    {
+      "service": "supabase",
+      "method": "GET",
+      "path": "/rest/v1/products",
+      "status": 200
+    },
+    {
+      "service": "supabase",
+      "method": "GET",
+      "path": "/rest/v1/promotions",
+      "status": 200
+    },
+    {
+      "service": "supabase",
+      "method": "GET",
+      "path": "/rest/v1/restaurant_hours",
+      "status": 200
+    },
+    {
+      "service": "supabase",
+      "method": "GET",
+      "path": "/rest/v1/translations",
+      "status": 200
+    },
+    {
+      "service": "supabase",
+      "method": "GET",
+      "path": "/rest/v1/restaurant_qr_configs",
+      "status": 200
+    },
+    {
+      "service": "supabase",
+      "method": "GET",
+      "path": "/storage/v1/object/restaurant-media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/1e4c3d7f-912b-4553-8936-2091209a0386.webp",
+      "status": 400
+    },
+    {
+      "service": "application",
+      "method": "GET",
+      "path": "/api/workspace/eca7481c-fc27-479c-b364-76274b0b4230",
+      "status": 403
+    },
+    {
+      "service": "supabase",
+      "method": "GET",
+      "path": "/rest/v1/restaurants",
+      "status": 200
+    },
+    {
+      "service": "supabase",
+      "method": "GET",
+      "path": "/rest/v1/restaurant_memberships",
+      "status": 200
+    },
+    {
+      "service": "supabase",
+      "method": "GET",
+      "path": "/rest/v1/restaurant_settings",
+      "status": 200
+    },
+    {
+      "service": "supabase",
+      "method": "GET",
+      "path": "/rest/v1/categories",
+      "status": 200
+    },
+    {
+      "service": "supabase",
+      "method": "GET",
+      "path": "/rest/v1/products",
+      "status": 200
+    },
+    {
+      "service": "supabase",
+      "method": "GET",
+      "path": "/rest/v1/promotions",
+      "status": 200
+    },
+    {
+      "service": "supabase",
+      "method": "GET",
+      "path": "/rest/v1/restaurant_hours",
+      "status": 200
+    },
+    {
+      "service": "supabase",
+      "method": "GET",
+      "path": "/rest/v1/translations",
+      "status": 200
+    },
+    {
+      "service": "supabase",
+      "method": "GET",
+      "path": "/rest/v1/restaurant_qr_configs",
+      "status": 200
+    },
+    {
+      "service": "supabase",
+      "method": "GET",
+      "path": "/storage/v1/object/restaurant-media/eca7481c-fc27-479c-b364-76274b0b4230/649e3c5e-ee76-4edf-8dbc-59fdbc3aa008.webp",
+      "status": 400
+    },
+    {
+      "service": "application",
+      "method": "GET",
+      "path": "/api/workspace/1932e721-78ab-4320-9f84-f186a80fba48",
+      "status": 403
+    },
+    {
+      "service": "supabase",
+      "method": "GET",
+      "path": "/rest/v1/restaurants",
+      "status": 200
+    },
+    {
+      "service": "supabase",
+      "method": "GET",
+      "path": "/rest/v1/restaurant_memberships",
+      "status": 200
+    },
+    {
+      "service": "supabase",
+      "method": "GET",
+      "path": "/rest/v1/restaurant_settings",
+      "status": 200
+    },
+    {
+      "service": "supabase",
+      "method": "GET",
+      "path": "/rest/v1/categories",
+      "status": 200
+    },
+    {
+      "service": "supabase",
+      "method": "GET",
+      "path": "/rest/v1/products",
+      "status": 200
+    },
+    {
+      "service": "supabase",
+      "method": "GET",
+      "path": "/rest/v1/promotions",
+      "status": 200
+    },
+    {
+      "service": "supabase",
+      "method": "GET",
+      "path": "/rest/v1/restaurant_hours",
+      "status": 200
+    },
+    {
+      "service": "supabase",
+      "method": "GET",
+      "path": "/rest/v1/translations",
+      "status": 200
+    },
+    {
+      "service": "supabase",
+      "method": "GET",
+      "path": "/rest/v1/restaurant_qr_configs",
+      "status": 200
+    },
+    {
+      "service": "supabase",
+      "method": "GET",
+      "path": "/storage/v1/object/restaurant-media/1932e721-78ab-4320-9f84-f186a80fba48/47181239-605c-4b5a-b50e-551ecdc702ef.webp",
+      "status": 400
+    },
+    {
+      "service": "application",
+      "method": "GET",
+      "path": "/api/workspace/eca7481c-fc27-479c-b364-76274b0b4230",
+      "status": 403
+    },
+    {
+      "service": "supabase",
+      "method": "GET",
+      "path": "/rest/v1/restaurants",
+      "status": 200
+    },
+    {
+      "service": "supabase",
+      "method": "GET",
+      "path": "/rest/v1/restaurant_memberships",
+      "status": 200
+    },
+    {
+      "service": "supabase",
+      "method": "GET",
+      "path": "/rest/v1/restaurant_settings",
+      "status": 200
+    },
+    {
+      "service": "supabase",
+      "method": "GET",
+      "path": "/rest/v1/categories",
+      "status": 200
+    },
+    {
+      "service": "supabase",
+      "method": "GET",
+      "path": "/rest/v1/products",
+      "status": 200
+    },
+    {
+      "service": "supabase",
+      "method": "GET",
+      "path": "/rest/v1/promotions",
+      "status": 200
+    },
+    {
+      "service": "supabase",
+      "method": "GET",
+      "path": "/rest/v1/restaurant_hours",
+      "status": 200
+    },
+    {
+      "service": "supabase",
+      "method": "GET",
+      "path": "/rest/v1/translations",
+      "status": 200
+    },
+    {
+      "service": "supabase",
+      "method": "GET",
+      "path": "/rest/v1/restaurant_qr_configs",
+      "status": 200
+    },
+    {
+      "service": "supabase",
+      "method": "GET",
+      "path": "/storage/v1/object/restaurant-media/eca7481c-fc27-479c-b364-76274b0b4230/649e3c5e-ee76-4edf-8dbc-59fdbc3aa008.webp",
+      "status": 400
+    },
+    {
+      "service": "application",
+      "method": "GET",
+      "path": "/api/workspace/1932e721-78ab-4320-9f84-f186a80fba48",
+      "status": 403
+    },
+    {
+      "service": "supabase",
+      "method": "GET",
+      "path": "/rest/v1/restaurants",
+      "status": 200
+    },
+    {
+      "service": "supabase",
+      "method": "GET",
+      "path": "/rest/v1/restaurant_memberships",
+      "status": 200
+    },
+    {
+      "service": "supabase",
+      "method": "GET",
+      "path": "/rest/v1/restaurant_settings",
+      "status": 200
+    },
+    {
+      "service": "supabase",
+      "method": "GET",
+      "path": "/rest/v1/categories",
+      "status": 200
+    },
+    {
+      "service": "supabase",
+      "method": "GET",
+      "path": "/rest/v1/products",
+      "status": 200
+    },
+    {
+      "service": "supabase",
+      "method": "GET",
+      "path": "/rest/v1/promotions",
+      "status": 200
+    },
+    {
+      "service": "supabase",
+      "method": "GET",
+      "path": "/rest/v1/restaurant_hours",
+      "status": 200
+    },
+    {
+      "service": "supabase",
+      "method": "GET",
+      "path": "/rest/v1/translations",
+      "status": 200
+    },
+    {
+      "service": "supabase",
+      "method": "GET",
+      "path": "/rest/v1/restaurant_qr_configs",
+      "status": 200
+    },
+    {
+      "service": "supabase",
+      "method": "GET",
+      "path": "/storage/v1/object/restaurant-media/1932e721-78ab-4320-9f84-f186a80fba48/47181239-605c-4b5a-b50e-551ecdc702ef.webp",
+      "status": 400
+    },
+    {
+      "service": "application",
+      "method": "GET",
+      "path": "/api/workspace/e2cda10d-2771-4056-8cf0-13e00f4b1bd8",
+      "status": 403
+    },
+    {
+      "service": "supabase",
+      "method": "GET",
+      "path": "/rest/v1/restaurants",
+      "status": 200
+    },
+    {
+      "service": "supabase",
+      "method": "GET",
+      "path": "/rest/v1/restaurant_memberships",
+      "status": 200
+    },
+    {
+      "service": "supabase",
+      "method": "GET",
+      "path": "/rest/v1/restaurant_settings",
+      "status": 200
+    },
+    {
+      "service": "supabase",
+      "method": "GET",
+      "path": "/rest/v1/categories",
+      "status": 200
+    },
+    {
+      "service": "supabase",
+      "method": "GET",
+      "path": "/rest/v1/products",
+      "status": 200
+    },
+    {
+      "service": "supabase",
+      "method": "GET",
+      "path": "/rest/v1/promotions",
+      "status": 200
+    },
+    {
+      "service": "supabase",
+      "method": "GET",
+      "path": "/rest/v1/restaurant_hours",
+      "status": 200
+    },
+    {
+      "service": "supabase",
+      "method": "GET",
+      "path": "/rest/v1/translations",
+      "status": 200
+    },
+    {
+      "service": "supabase",
+      "method": "GET",
+      "path": "/rest/v1/restaurant_qr_configs",
+      "status": 200
+    },
+    {
+      "service": "supabase",
+      "method": "GET",
+      "path": "/storage/v1/object/restaurant-media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/1e4c3d7f-912b-4553-8936-2091209a0386.webp",
+      "status": 400
+    },
+    {
+      "service": "application",
+      "method": "GET",
+      "path": "/api/workspace/1932e721-78ab-4320-9f84-f186a80fba48",
+      "status": 200
+    },
+    {
+      "service": "supabase",
+      "method": "GET",
+      "path": "/rest/v1/restaurants",
+      "status": 200
+    },
+    {
+      "service": "supabase",
+      "method": "GET",
+      "path": "/rest/v1/restaurant_memberships",
+      "status": 200
+    },
+    {
+      "service": "supabase",
+      "method": "GET",
+      "path": "/rest/v1/restaurant_settings",
+      "status": 200
+    },
+    {
+      "service": "supabase",
+      "method": "GET",
+      "path": "/rest/v1/categories",
+      "status": 200
+    },
+    {
+      "service": "supabase",
+      "method": "GET",
+      "path": "/rest/v1/products",
+      "status": 200
+    },
+    {
+      "service": "supabase",
+      "method": "GET",
+      "path": "/rest/v1/promotions",
+      "status": 200
+    },
+    {
+      "service": "supabase",
+      "method": "GET",
+      "path": "/rest/v1/restaurant_hours",
+      "status": 200
+    },
+    {
+      "service": "supabase",
+      "method": "GET",
+      "path": "/rest/v1/translations",
+      "status": 200
+    },
+    {
+      "service": "supabase",
+      "method": "GET",
+      "path": "/rest/v1/restaurant_qr_configs",
+      "status": 200
+    },
+    {
+      "service": "supabase",
+      "method": "GET",
+      "path": "/storage/v1/object/restaurant-media/1932e721-78ab-4320-9f84-f186a80fba48/47181239-605c-4b5a-b50e-551ecdc702ef.webp",
+      "status": 200
+    },
+    {
+      "service": "application",
+      "method": "GET",
+      "path": "/api/workspace/e2cda10d-2771-4056-8cf0-13e00f4b1bd8",
+      "status": 200
+    },
+    {
+      "service": "supabase",
+      "method": "GET",
+      "path": "/rest/v1/restaurants",
+      "status": 200
+    },
+    {
+      "service": "supabase",
+      "method": "GET",
+      "path": "/rest/v1/restaurant_memberships",
+      "status": 200
+    },
+    {
+      "service": "supabase",
+      "method": "GET",
+      "path": "/rest/v1/restaurant_settings",
+      "status": 200
+    },
+    {
+      "service": "supabase",
+      "method": "GET",
+      "path": "/rest/v1/categories",
+      "status": 200
+    },
+    {
+      "service": "supabase",
+      "method": "GET",
+      "path": "/rest/v1/products",
+      "status": 200
+    },
+    {
+      "service": "supabase",
+      "method": "GET",
+      "path": "/rest/v1/promotions",
+      "status": 200
+    },
+    {
+      "service": "supabase",
+      "method": "GET",
+      "path": "/rest/v1/restaurant_hours",
+      "status": 200
+    },
+    {
+      "service": "supabase",
+      "method": "GET",
+      "path": "/rest/v1/translations",
+      "status": 200
+    },
+    {
+      "service": "supabase",
+      "method": "GET",
+      "path": "/rest/v1/restaurant_qr_configs",
+      "status": 200
+    },
+    {
+      "service": "supabase",
+      "method": "GET",
+      "path": "/storage/v1/object/restaurant-media/e2cda10d-2771-4056-8cf0-13e00f4b1bd8/1e4c3d7f-912b-4553-8936-2091209a0386.webp",
+      "status": 200
+    },
+    {
+      "service": "application",
+      "method": "GET",
+      "path": "/api/workspace/eca7481c-fc27-479c-b364-76274b0b4230",
+      "status": 200
+    },
+    {
+      "service": "supabase",
+      "method": "GET",
+      "path": "/rest/v1/restaurants",
+      "status": 200
+    },
+    {
+      "service": "supabase",
+      "method": "GET",
+      "path": "/rest/v1/restaurant_memberships",
+      "status": 200
+    },
+    {
+      "service": "supabase",
+      "method": "GET",
+      "path": "/rest/v1/restaurant_settings",
+      "status": 200
+    },
+    {
+      "service": "supabase",
+      "method": "GET",
+      "path": "/rest/v1/categories",
+      "status": 200
+    },
+    {
+      "service": "supabase",
+      "method": "GET",
+      "path": "/rest/v1/products",
+      "status": 200
+    },
+    {
+      "service": "supabase",
+      "method": "GET",
+      "path": "/rest/v1/promotions",
+      "status": 200
+    },
+    {
+      "service": "supabase",
+      "method": "GET",
+      "path": "/rest/v1/restaurant_hours",
+      "status": 200
+    },
+    {
+      "service": "supabase",
+      "method": "GET",
+      "path": "/rest/v1/translations",
+      "status": 200
+    },
+    {
+      "service": "supabase",
+      "method": "GET",
+      "path": "/rest/v1/restaurant_qr_configs",
+      "status": 200
+    },
+    {
+      "service": "supabase",
+      "method": "GET",
+      "path": "/storage/v1/object/restaurant-media/eca7481c-fc27-479c-b364-76274b0b4230/649e3c5e-ee76-4edf-8dbc-59fdbc3aa008.webp",
+      "status": 200
+    },
+    {
+      "service": "supabase",
+      "method": "POST",
+      "path": "/auth/v1/logout",
+      "status": 204,
+      "scope": "local"
+    },
+    {
+      "service": "application",
+      "method": "POST",
+      "path": "/api/auth",
+      "action": "logout",
+      "status": 200
+    },
+    {
+      "service": "supabase",
+      "method": "POST",
+      "path": "/auth/v1/logout",
+      "status": 204,
+      "scope": "local"
+    },
+    {
+      "service": "application",
+      "method": "POST",
+      "path": "/api/auth",
+      "action": "logout",
+      "status": 200
+    },
+    {
+      "service": "supabase",
+      "method": "POST",
+      "path": "/auth/v1/logout",
+      "status": 204,
+      "scope": "local"
+    },
+    {
+      "service": "application",
+      "method": "POST",
+      "path": "/api/auth",
+      "action": "logout",
+      "status": 200
+    }
+  ],
+  "verifiedApplicationTarget": {
+    "status": 200,
+    "supabaseProjectRef": "hgntppemxwcxaxritnfq"
+  },
+  "completedAt": "2026-10-18T02:46:07.843Z",
+  "passed": 30,
+  "failed": 0,
+  "result": "PASS"
+}

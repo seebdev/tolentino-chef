@@ -1,6 +1,6 @@
 # Plan de migración sin pérdida de datos — Tolentino
 
-Actualizado el 18 de octubre de 2026 (UTC). Estado: migración real y corte local completados; aceptación local aprobada. Render y aceptación HTTPS pendientes. Consultar MIGRATION_STATUS.md para resultados vigentes.
+Actualizado el 18 de octubre de 2026 (UTC). Estado: migración real y corte local completados; aceptación local aprobada. Render y aceptación HTTPS verificadas; SMTP y escaneo físico pendientes. Consultar MIGRATION_STATUS.md para resultados vigentes.
 
 ## Destinos y conservación
 
@@ -43,8 +43,8 @@ El respaldo de origen ya pasó restauración lógica local53/53 y pruebas de uti
 
 ## Accesos pendientes y decisiones
 
-Las claves del destino y la contraseña DB rotada ya fueron verificadas, incluida conexión Session pooler. Management permitió cerrar el registro público con autorización específica. La cuenta Render nueva funciona; el usuario seleccionó Tolentino Restaurantes (tea-dba1s4m1egvs7391ve50), actualmente sin servicios. Falta autorizar la creación/despliegue concreto, obtener HTTPS y configurar SMTP.
+Las claves del destino y la contraseña DB rotada ya fueron verificadas, incluida conexión Session pooler. Management permitió cerrar el registro público con autorización específica. La cuenta Render nueva funciona; el usuario seleccionó Tolentino Restaurantes (tea-dba1s4m1egvs7391ve50), con un único servicio Free creado y publicado después de autorización expresa. HTTPS, APP_URL y URLs Auth ya están verificados; falta SMTP.
 
 La corrección de logout fue autorizada y aplicada: 17/17 pruebas focalizadas y 239/239 de la suite completa pasan. PRODUCTION_AUTH_REVIEW.md conserva el hallazgo y la evidencia. La revisión anterior quedó resuelta con la autorización específica del usuario.
 
-La migración de datos fue ejecutada y verificada en el destino. La preparación y aceptación local no equivalen a publicación: Render, HTTPS, SMTP, QR públicos y verificación desde otro dispositivo siguen pendientes. Las evidencias vigentes están en MIGRATION_STATUS.md.
+La migración de datos fue ejecutada y verificada en el destino. Render y HTTPS ya están publicados; los nueve QR públicos y los recorridos públicos pasaron. HSTS y persistencia tras el nuevo despliegue pasaron. SMTP y verificación desde otro dispositivo siguen pendientes. Las evidencias vigentes están en MIGRATION_STATUS.md y PUBLIC_DEPLOYMENT.md.

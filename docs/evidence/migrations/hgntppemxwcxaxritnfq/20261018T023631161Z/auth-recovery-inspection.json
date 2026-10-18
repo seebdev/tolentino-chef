@@ -1,0 +1,46 @@
+{
+  "at": "2026-10-18T02:36:30.065Z",
+  "projectRef": "hgntppemxwcxaxritnfq",
+  "mode": "inspect",
+  "result": "PASS",
+  "stage": "inspection-complete",
+  "patchAttempted": false,
+  "patchAcknowledged": false,
+  "remoteDataMutations": 0,
+  "emailsSent": 0,
+  "requests": [
+    {
+      "endpoint": "management-before",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "endpoint": "public-before",
+      "method": "GET",
+      "status": 200
+    }
+  ],
+  "before": {
+    "signupDisabled": true,
+    "emailEnabled": true,
+    "anonymousEnabled": false,
+    "siteUrlIsLocal": true,
+    "redirectEntryCount": 0
+  },
+  "recovery": {
+    "templateSource": "management configuration content; customization history unknown",
+    "templateSha256": "f452789e6dc74df5d977839e9bff203a03c3477d56f29a851672de8c6fedda21",
+    "usesConfirmationUrl": true,
+    "usesTokenHash": false,
+    "usesSiteUrl": false,
+    "referencesServerConfirm": false,
+    "smtpHostConfigured": false,
+    "smtpUserConfigured": false,
+    "smtpSenderConfigured": false,
+    "customSmtpConfigured": false,
+    "recoveryDeliveryTested": false,
+    "templateModified": false,
+    "templateContentReturned": true
+  },
+  "interpretation": "Returned recovery template uses ConfirmationURL and does not point to the application server confirm endpoint. SMTP custom configuration and real delivery/recovery remain unverified; no template was changed."
+}

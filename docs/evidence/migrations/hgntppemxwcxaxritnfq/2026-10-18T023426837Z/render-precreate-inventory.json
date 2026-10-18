@@ -1,0 +1,154 @@
+{
+  "checkedAt": "2026-10-18T02:34:25.975Z",
+  "projectRef": "hgntppemxwcxaxritnfq",
+  "expectedRepository": "https://github.com/seebdev/tolentino-chef",
+  "externalMutations": false,
+  "emailsSent": false,
+  "deploymentsStarted": false,
+  "requests": [
+    {
+      "endpoint": "render_services",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "endpoint": "render_owners",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "endpoint": "render_owners",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "endpoint": "supabase_public_auth_settings",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "endpoint": "supabase_management_auth_config",
+      "method": "GET",
+      "status": 200
+    }
+  ],
+  "blockers": [
+    "WORKSPACE_SELECTION_REQUIRED"
+  ],
+  "render": {
+    "status": "read_only_inventory_complete",
+    "ownersPages": 2,
+    "servicesPages": 1,
+    "workspaceSelectionRequired": true,
+    "accountVerified": false,
+    "ownerSelectionConfirmedByUser": false,
+    "owners": [
+      {
+        "id": "tea-d7vbe49o3t8c73con4eg",
+        "name": "Sebastian's workspace",
+        "type": "team",
+        "serviceCount": 0
+      },
+      {
+        "id": "tea-dba1s4m1egvs7391ve50",
+        "name": "Tolentino Restaurantes",
+        "type": "team",
+        "serviceCount": 0
+      }
+    ],
+    "services": [],
+    "selectedOwner": {
+      "id": "tea-dba1s4m1egvs7391ve50",
+      "name": "Tolentino Restaurantes",
+      "type": "team",
+      "serviceCount": 0,
+      "selection": "explicit user reply",
+      "serviceCreationAuthorized": true
+    }
+  },
+  "publicAuth": {
+    "status": "verified",
+    "signupDisabled": true,
+    "anonymousEnabled": false,
+    "emailEnabled": true,
+    "emailAutoconfirm": false,
+    "smsAutoconfirm": false
+  },
+  "managementAuth": {
+    "status": "verified",
+    "flags": {
+      "disable_signup": true,
+      "external_anonymous_users_enabled": false,
+      "external_email_enabled": true,
+      "external_phone_enabled": false,
+      "mailer_autoconfirm": false,
+      "sms_autoconfirm": false,
+      "mailer_secure_email_change_enabled": true,
+      "mailer_allow_unverified_email_sign_ins": false,
+      "refresh_token_rotation_enabled": true,
+      "security_captcha_enabled": false,
+      "security_manual_linking_enabled": false,
+      "security_update_password_require_current_password": false,
+      "security_update_password_require_reauthentication": false,
+      "password_hibp_enabled": false,
+      "sessions_single_per_user": false,
+      "mfa_totp_enroll_enabled": true,
+      "mfa_totp_verify_enabled": true,
+      "hook_send_email_enabled": false,
+      "hook_before_user_created_enabled": false
+    },
+    "policies": {
+      "jwt_exp": 3600,
+      "mailer_otp_exp": 3600,
+      "mailer_otp_length": 8,
+      "password_min_length": 6,
+      "security_refresh_token_reuse_interval": 10,
+      "sessions_inactivity_timeout": 0,
+      "sessions_timebox": 0,
+      "rate_limit_email_sent": 2,
+      "rate_limit_token_refresh": 150,
+      "rate_limit_verify": 30,
+      "rate_limit_otp": 30,
+      "smtp_max_frequency": 60
+    },
+    "passwordCharacterGroupsConfigured": false,
+    "siteUrl": "http://localhost:3000/",
+    "redirectUrls": [],
+    "redirectCount": 0,
+    "wildcardRedirectsPresent": false,
+    "smtp": {
+      "hostConfigured": false,
+      "portConfigured": false,
+      "userConfigured": false,
+      "passwordReturned": false,
+      "senderAddressConfigured": false,
+      "senderNameConfigured": false,
+      "deliveryTested": false
+    },
+    "templates": {
+      "recovery": {
+        "contentConfigured": true,
+        "tokenHashMentioned": false,
+        "confirmationUrlMentioned": true,
+        "siteUrlMentioned": false,
+        "confirmRouteMentioned": false
+      },
+      "invitation": {
+        "contentConfigured": true,
+        "tokenHashMentioned": false,
+        "confirmationUrlMentioned": true,
+        "siteUrlMentioned": false,
+        "confirmRouteMentioned": false
+      }
+    }
+  },
+  "readyToDeploy": false,
+  "authorization": {
+    "singleFreeService": true,
+    "region": "virginia",
+    "repository": "seebdev/tolentino-chef",
+    "branch": "main",
+    "existingSupabase": "hgntppemxwcxaxritnfq",
+    "authCanonicalUrls": true
+  }
+}
