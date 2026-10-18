@@ -1,0 +1,24 @@
+{
+  "startedAt": "2026-10-18T01:36:55.781Z",
+  "projectRef": "hgntppemxwcxaxritnfq",
+  "baseUrl": "http://127.0.0.1:3001",
+  "browser": "chrome",
+  "scope": "Production build UI with synthetic API fixtures only",
+  "buildEvidence": "../2026-10-18T013032608Z/application-validation.json",
+  "expectedTests": 4,
+  "realLogins": 0,
+  "realAuthMutations": 0,
+  "envFileUnchanged": true,
+  "rebuilt": false,
+  "serverReady": true,
+  "exitCode": 1,
+  "counts": {
+    "passed": 0,
+    "failed": 4,
+    "skipped": 0,
+    "flaky": 0
+  },
+  "result": "FAIL",
+  "serverStopped": true,
+  "finishedAt": "2026-10-18T01:37:17.481Z"
+}

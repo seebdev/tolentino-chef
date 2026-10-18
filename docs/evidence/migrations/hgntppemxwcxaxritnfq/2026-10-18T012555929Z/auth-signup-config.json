@@ -1,0 +1,66 @@
+{
+  "checkedAt": "2026-10-18T01:25:50.557Z",
+  "projectRef": "hgntppemxwcxaxritnfq",
+  "authorizedPatch": {
+    "disable_signup": true
+  },
+  "result": "FAIL",
+  "stage": "verify_after",
+  "patchAttempted": true,
+  "patchAccepted": true,
+  "emailsSent": false,
+  "renderOperations": 0,
+  "requests": [
+    {
+      "endpoint": "management_auth_before",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "endpoint": "management_auth_freshness",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "endpoint": "management_auth_patch",
+      "method": "PATCH",
+      "status": 200
+    },
+    {
+      "endpoint": "public_auth_after",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "endpoint": "management_auth_after",
+      "method": "GET",
+      "status": 200
+    }
+  ],
+  "before": {
+    "signupDisabled": false,
+    "emailEnabled": true,
+    "anonymousEnabled": false
+  },
+  "backup": {
+    "path": ".runtime/backups/migration-auth-hgntppemxwcxaxritnfq-2026-10-18T012552645Z.enc",
+    "sha256": "ee8d25941999c6ef7e9b5d20d4a92df5d2ab63028fdff229e5a71b64de31474f",
+    "cipher": "AES-256-GCM",
+    "keyMode": "windows-dpapi-current-user",
+    "verifiedRoundTrip": true,
+    "protectedDirectory": {
+      "inheritedAccessDisabled": true,
+      "allowedPrincipals": "current Windows user and SYSTEM",
+      "ignoredByGit": true
+    },
+    "fieldCount": 41
+  },
+  "after": {
+    "signupDisabled": true,
+    "publicSignupDisabled": false,
+    "emailEnabled": true,
+    "anonymousEnabled": false
+  },
+  "otherConfigUnchanged": true,
+  "code": "PUBLIC_VERIFY_FAILED"
+}

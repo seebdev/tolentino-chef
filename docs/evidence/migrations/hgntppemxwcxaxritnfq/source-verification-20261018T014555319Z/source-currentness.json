@@ -1,0 +1,272 @@
+{
+  "at": "2026-10-18T01:46:17.802Z",
+  "result": "PASS",
+  "comparison": "UNCHANGED",
+  "comparisonOnly": true,
+  "refreshedCaptureSkipped": false,
+  "projectRef": "ylcnrfzosjzuljufwups",
+  "baseline": {
+    "file": ".runtime/backups/application-source-current-20261018012154252.json.enc",
+    "sha256": "148c4dd9feba2a2b7257e6314cf594b406a9ed80865cf08fd103503198130c6a",
+    "preserved": true
+  },
+  "refreshedArchive": null,
+  "tableChanges": {
+    "platform_admins": {
+      "beforeRows": 1,
+      "afterRows": 1,
+      "added": 0,
+      "removed": 0,
+      "changed": 0,
+      "fieldChanges": {},
+      "equal": true,
+      "beforeSha256": "51baf154bf75164e149b0bd576c60087f79b28adf2ca57690ec53224b74acf4c",
+      "afterSha256": "51baf154bf75164e149b0bd576c60087f79b28adf2ca57690ec53224b74acf4c"
+    },
+    "restaurants": {
+      "beforeRows": 3,
+      "afterRows": 3,
+      "added": 0,
+      "removed": 0,
+      "changed": 0,
+      "fieldChanges": {},
+      "equal": true,
+      "beforeSha256": "7cecfef8923e3a6b99d41a3cbace2d083a5853563ce539a7a5cc2d785e9d586c",
+      "afterSha256": "7cecfef8923e3a6b99d41a3cbace2d083a5853563ce539a7a5cc2d785e9d586c"
+    },
+    "restaurant_memberships": {
+      "beforeRows": 3,
+      "afterRows": 3,
+      "added": 0,
+      "removed": 0,
+      "changed": 0,
+      "fieldChanges": {},
+      "equal": true,
+      "beforeSha256": "8c6d155cc5931f05aec5fed458ded3e54ca6001e331750436099bf419ea0a654",
+      "afterSha256": "8c6d155cc5931f05aec5fed458ded3e54ca6001e331750436099bf419ea0a654"
+    },
+    "restaurant_settings": {
+      "beforeRows": 3,
+      "afterRows": 3,
+      "added": 0,
+      "removed": 0,
+      "changed": 0,
+      "fieldChanges": {},
+      "equal": true,
+      "beforeSha256": "ddde216290a97df9ac4e7fba894dc94649db9e5569e7dbc282b67e106eec2447",
+      "afterSha256": "ddde216290a97df9ac4e7fba894dc94649db9e5569e7dbc282b67e106eec2447"
+    },
+    "categories": {
+      "beforeRows": 24,
+      "afterRows": 24,
+      "added": 0,
+      "removed": 0,
+      "changed": 0,
+      "fieldChanges": {},
+      "equal": true,
+      "beforeSha256": "792ebb7eca5a2d2843969991d45c3a2ca3bfccd7340f465169977bb88e4feb90",
+      "afterSha256": "792ebb7eca5a2d2843969991d45c3a2ca3bfccd7340f465169977bb88e4feb90"
+    },
+    "products": {
+      "beforeRows": 72,
+      "afterRows": 72,
+      "added": 0,
+      "removed": 0,
+      "changed": 0,
+      "fieldChanges": {},
+      "equal": true,
+      "beforeSha256": "f313df1ad2a03188bf6ce9601dac9e331f4ea918478b53198a9af1599425a413",
+      "afterSha256": "f313df1ad2a03188bf6ce9601dac9e331f4ea918478b53198a9af1599425a413"
+    },
+    "promotions": {
+      "beforeRows": 3,
+      "afterRows": 3,
+      "added": 0,
+      "removed": 0,
+      "changed": 0,
+      "fieldChanges": {},
+      "equal": true,
+      "beforeSha256": "8733e87f2c3ce4736ad7b6fe6ac116e1fe082ae4cf0d630c572804fa888e7264",
+      "afterSha256": "8733e87f2c3ce4736ad7b6fe6ac116e1fe082ae4cf0d630c572804fa888e7264"
+    },
+    "restaurant_hours": {
+      "beforeRows": 21,
+      "afterRows": 21,
+      "added": 0,
+      "removed": 0,
+      "changed": 0,
+      "fieldChanges": {},
+      "equal": true,
+      "beforeSha256": "695c15960b99b2889d5d8b7ed386ec5cd4a55acd384896057bef6469d0bf8fb3",
+      "afterSha256": "695c15960b99b2889d5d8b7ed386ec5cd4a55acd384896057bef6469d0bf8fb3"
+    },
+    "translations": {
+      "beforeRows": 96,
+      "afterRows": 96,
+      "added": 0,
+      "removed": 0,
+      "changed": 0,
+      "fieldChanges": {},
+      "equal": true,
+      "beforeSha256": "ffae9de21c45069e295c7f196d5eada596804afbe009be4fc4da8a42668cf334",
+      "afterSha256": "ffae9de21c45069e295c7f196d5eada596804afbe009be4fc4da8a42668cf334"
+    },
+    "restaurant_qr_configs": {
+      "beforeRows": 3,
+      "afterRows": 3,
+      "added": 0,
+      "removed": 0,
+      "changed": 0,
+      "fieldChanges": {},
+      "equal": true,
+      "beforeSha256": "819e7f15ba0fe37c5ba1139cc93f0005d7e7939dc52819ee91470a44a6f76285",
+      "afterSha256": "819e7f15ba0fe37c5ba1139cc93f0005d7e7939dc52819ee91470a44a6f76285"
+    },
+    "restaurant_domains": {
+      "beforeRows": 0,
+      "afterRows": 0,
+      "added": 0,
+      "removed": 0,
+      "changed": 0,
+      "fieldChanges": {},
+      "equal": true,
+      "beforeSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "afterSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "commercial_sales": {
+      "beforeRows": 3,
+      "afterRows": 3,
+      "added": 0,
+      "removed": 0,
+      "changed": 0,
+      "fieldChanges": {},
+      "equal": true,
+      "beforeSha256": "5aa6e60d357b93dc8eea00c25494bb109da600a421f27e2a6093439eac52149b",
+      "afterSha256": "5aa6e60d357b93dc8eea00c25494bb109da600a421f27e2a6093439eac52149b"
+    },
+    "security_audit_events": {
+      "beforeRows": 125,
+      "afterRows": 125,
+      "added": 0,
+      "removed": 0,
+      "changed": 0,
+      "fieldChanges": {},
+      "equal": true,
+      "beforeSha256": "526a43565a571ad8d394d8653cb5177c3ee97baab08da535c2c71aad88235806",
+      "afterSha256": "526a43565a571ad8d394d8653cb5177c3ee97baab08da535c2c71aad88235806"
+    },
+    "visit_events": {
+      "beforeRows": 3,
+      "afterRows": 3,
+      "added": 0,
+      "removed": 0,
+      "changed": 0,
+      "fieldChanges": {},
+      "equal": true,
+      "beforeSha256": "0ea455acae54a55ed3a138cf816a2dd3117a5ed9e1c33b9048570b00200d8945",
+      "afterSha256": "0ea455acae54a55ed3a138cf816a2dd3117a5ed9e1c33b9048570b00200d8945"
+    },
+    "platform_settings": {
+      "beforeRows": 1,
+      "afterRows": 1,
+      "added": 0,
+      "removed": 0,
+      "changed": 0,
+      "fieldChanges": {},
+      "equal": true,
+      "beforeSha256": "03893b3de5423926026e0f496dcdb570efbddc632f4268a7d427a1ad5b2a79e7",
+      "afterSha256": "03893b3de5423926026e0f496dcdb570efbddc632f4268a7d427a1ad5b2a79e7"
+    }
+  },
+  "authChanges": {
+    "beforeRows": 4,
+    "afterRows": 4,
+    "added": 0,
+    "removed": 0,
+    "changed": 0,
+    "fieldChanges": {},
+    "equal": true,
+    "beforeSha256": "0fe4a97246b8992fcecd7ba3ce1bd6b6b077df7bc75e9aa2adbc50e86594bcf4",
+    "afterSha256": "0fe4a97246b8992fcecd7ba3ce1bd6b6b077df7bc75e9aa2adbc50e86594bcf4"
+  },
+  "authWithoutUpdatedAt": {
+    "beforeRows": 4,
+    "afterRows": 4,
+    "added": 0,
+    "removed": 0,
+    "changed": 0,
+    "fieldChanges": {},
+    "equal": true,
+    "beforeSha256": "6de05b7999204be9b3b3ff5b87c80969077919e9ba2eb7102ba058609b12c870",
+    "afterSha256": "6de05b7999204be9b3b3ff5b87c80969077919e9ba2eb7102ba058609b12c870"
+  },
+  "storage": {
+    "inventory": {
+      "beforeRows": 27,
+      "afterRows": 27,
+      "added": 0,
+      "removed": 0,
+      "changed": 0,
+      "fieldChanges": {},
+      "equal": true,
+      "beforeSha256": "6120c7e1b86d59f4339f1dd185993b6120e1e7bb45b5858ae53d24d338cf0c56",
+      "afterSha256": "6120c7e1b86d59f4339f1dd185993b6120e1e7bb45b5858ae53d24d338cf0c56"
+    },
+    "content": {
+      "beforeRows": 27,
+      "afterRows": 27,
+      "added": 0,
+      "removed": 0,
+      "changed": 0,
+      "fieldChanges": {},
+      "equal": true,
+      "beforeSha256": "1a0d755fed6645d0efdd3a6cda11d81972799c3d9eb2f4ced4737fe6d23a361b",
+      "afterSha256": "1a0d755fed6645d0efdd3a6cda11d81972799c3d9eb2f4ced4737fe6d23a361b"
+    },
+    "objects": 27,
+    "bytes": 314126,
+    "bucketEqual": true,
+    "beforeBucketSha256": "38fae57a541129b216c01ac45c0fc6ba1e9c886fc6c36b25f542a14a09e82ebe",
+    "afterBucketSha256": "38fae57a541129b216c01ac45c0fc6ba1e9c886fc6c36b25f542a14a09e82ebe"
+  },
+  "migrationEqual": true,
+  "sourceDoubleRead": {
+    "beforeSha256": "3d13e49163cb301ff266f908497948cd885d65a79e03e82efbde3ce9d5c9e6e0",
+    "afterSha256": "3d13e49163cb301ff266f908497948cd885d65a79e03e82efbde3ce9d5c9e6e0",
+    "equal": true,
+    "transactionSnapshot": false
+  },
+  "acl": {
+    "inheritedAccessDisabled": true,
+    "allowedPrincipals": "current Windows user and SYSTEM",
+    "ignoredByGit": true
+  },
+  "requestSummary": {
+    "total": 78,
+    "byOperation": {
+      "table-or-schema-read": 31,
+      "auth-profiles-read": 2,
+      "bucket-read": 2,
+      "storage-list-read": 16,
+      "object-download": 27
+    },
+    "unexpectedStatus": []
+  },
+  "remoteMutations": 0,
+  "authLogins": 0,
+  "authLogouts": 0,
+  "sqlConnections": 0,
+  "plaintextBackupFilesWritten": 0,
+  "migrationContractChanged": false,
+  "cutoffDeclared": false,
+  "limits": [
+    "Auth password hashes, sessions, refresh tokens and MFA secrets",
+    "private.rate_limits",
+    "private.restaurant_creation_requests",
+    "Supabase managed schemas, roles, extension binaries and full PostgreSQL snapshot",
+    "Auth/SMTP/JWT/provider settings and secret keys",
+    "Storage managed DB metadata not exposed by list/getBucket",
+    "Auth comparison includes only profile fields exported in the original archive; last_sign_in_at was not exported.",
+    "Read-only revalidation is not a maintenance window, source freeze, or authority to import a refreshed archive."
+  ]
+}

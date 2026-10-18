@@ -1,0 +1,280 @@
+{
+  "at": "2026-10-18T01:24:59.276Z",
+  "result": "PASS",
+  "scope": "Local preparation; no target project connection",
+  "targetProjectRef": "hgntppemxwcxaxritnfq",
+  "sourceArchiveSha256": "148c4dd9feba2a2b7257e6314cf594b406a9ed80865cf08fd103503198130c6a",
+  "inventory": {
+    "sourceProjectRef": "ylcnrfzosjzuljufwups",
+    "targetProjectRef": "hgntppemxwcxaxritnfq",
+    "archiveSha256": "148c4dd9feba2a2b7257e6314cf594b406a9ed80865cf08fd103503198130c6a",
+    "rows": {
+      "platform_admins": 1,
+      "restaurants": 3,
+      "restaurant_memberships": 3,
+      "restaurant_settings": 3,
+      "categories": 24,
+      "products": 72,
+      "promotions": 3,
+      "restaurant_hours": 21,
+      "translations": 96,
+      "restaurant_qr_configs": 3,
+      "restaurant_domains": 0,
+      "commercial_sales": 3,
+      "security_audit_events": 125,
+      "visit_events": 3,
+      "platform_settings": 1
+    },
+    "authUsers": 4,
+    "storageObjects": 27,
+    "storageBytes": 314126,
+    "migrations": 2
+  },
+  "engine": "PGlite 0.5.10",
+  "node": "v22.23.3",
+  "passedChecks": 52,
+  "failedChecks": 0,
+  "checks": [
+    {
+      "name": "Authorized encrypted archive, all source hashes and demo relationships",
+      "pass": true
+    },
+    {
+      "name": "A different encrypted archive is rejected",
+      "pass": true
+    },
+    {
+      "name": "Modified permanent QR is rejected by source integrity",
+      "pass": true
+    },
+    {
+      "name": "Exact new project direct connection accepted without connecting",
+      "pass": true
+    },
+    {
+      "name": "Old Supabase URL blocked before network",
+      "pass": true
+    },
+    {
+      "name": "Lookalike host blocked before network",
+      "pass": true
+    },
+    {
+      "name": "Unconfirmed password rotation blocked",
+      "pass": true
+    },
+    {
+      "name": "Transaction pooler 6543 rejected",
+      "pass": true
+    },
+    {
+      "name": "Unconfirmed Session parameters rejected",
+      "pass": true
+    },
+    {
+      "name": "Confirmed actual Session parameters accepted without connecting",
+      "pass": true
+    },
+    {
+      "name": "Four explicit Auth UUIDs preserved in create plans",
+      "pass": true
+    },
+    {
+      "name": "New random credentials generated independently; no old password input",
+      "pass": true
+    },
+    {
+      "name": "Demo account schema has exactly three demo keys; administrator separate",
+      "pass": true
+    },
+    {
+      "name": "Marked exact Auth identities reuse without resetting credentials",
+      "pass": true
+    },
+    {
+      "name": "Regenerated local credentials cannot silently reuse existing Auth accounts",
+      "pass": true
+    },
+    {
+      "name": "Unmarked pre-existing Auth identity rejected",
+      "pass": true
+    },
+    {
+      "name": "Same Auth UUID with a different email rejected",
+      "pass": true
+    },
+    {
+      "name": "Unrelated destination Auth account rejected",
+      "pass": true
+    },
+    {
+      "name": "Private object upload plans preserve every exact source path",
+      "pass": true
+    },
+    {
+      "name": "Second Storage pass reuses all equal bytes and MIME types",
+      "pass": true
+    },
+    {
+      "name": "Existing Storage bytes are never overwritten",
+      "pass": true
+    },
+    {
+      "name": "Unexpected MIME on an existing object aborts",
+      "pass": true
+    },
+    {
+      "name": "Unexpected destination object aborts",
+      "pass": true
+    },
+    {
+      "name": "Unknown destination row cannot be removed by import",
+      "pass": true
+    },
+    {
+      "name": "Both reviewed migrations apply in isolated PostgreSQL",
+      "pass": true
+    },
+    {
+      "name": "A customized singleton is rejected even when supplied as trusted bootstrap",
+      "pass": true
+    },
+    {
+      "name": "Invalid product FK rolls back earlier restaurant/category inserts",
+      "pass": true
+    },
+    {
+      "name": "Failed import leaves all business tables empty and initial singleton intact",
+      "pass": true
+    },
+    {
+      "name": "First import inserts data and replaces only the verified initial singleton",
+      "pass": true
+    },
+    {
+      "name": "Exact restored data including generated columns: platform_admins",
+      "pass": true
+    },
+    {
+      "name": "Exact restored data including generated columns: restaurants",
+      "pass": true
+    },
+    {
+      "name": "Exact restored data including generated columns: restaurant_memberships",
+      "pass": true
+    },
+    {
+      "name": "Exact restored data including generated columns: restaurant_settings",
+      "pass": true
+    },
+    {
+      "name": "Exact restored data including generated columns: categories",
+      "pass": true
+    },
+    {
+      "name": "Exact restored data including generated columns: products",
+      "pass": true
+    },
+    {
+      "name": "Exact restored data including generated columns: promotions",
+      "pass": true
+    },
+    {
+      "name": "Exact restored data including generated columns: restaurant_hours",
+      "pass": true
+    },
+    {
+      "name": "Exact restored data including generated columns: translations",
+      "pass": true
+    },
+    {
+      "name": "Exact restored data including generated columns: restaurant_qr_configs",
+      "pass": true
+    },
+    {
+      "name": "Exact restored data including generated columns: restaurant_domains",
+      "pass": true
+    },
+    {
+      "name": "Exact restored data including generated columns: commercial_sales",
+      "pass": true
+    },
+    {
+      "name": "Exact restored data including generated columns: security_audit_events",
+      "pass": true
+    },
+    {
+      "name": "Exact restored data including generated columns: visit_events",
+      "pass": true
+    },
+    {
+      "name": "Exact restored data including generated columns: platform_settings",
+      "pass": true
+    },
+    {
+      "name": "Source transaction IDs reset without changing permanent IDs or menu versions",
+      "pass": true
+    },
+    {
+      "name": "Second import creates no duplicate or update and reuses every row",
+      "pass": true
+    },
+    {
+      "name": "All original permanent QR UUIDs preserved after both imports",
+      "pass": true
+    },
+    {
+      "name": "All application triggers enabled after committed and failed imports",
+      "pass": true
+    },
+    {
+      "name": "All fifteen public tables retain RLS",
+      "pass": true
+    },
+    {
+      "name": "A changed target row stops rerun without overwriting it",
+      "pass": true
+    },
+    {
+      "name": "Conflict leaves destination changes untouched",
+      "pass": true
+    },
+    {
+      "name": "Transient operational tables remain intentionally empty",
+      "pass": true
+    }
+  ],
+  "idempotentImport": {
+    "first": {
+      "inserted": 360,
+      "reused": 0,
+      "bootstrapReplaced": 1
+    },
+    "second": {
+      "inserted": 0,
+      "reused": 361,
+      "bootstrapReplaced": 0
+    }
+  },
+  "remoteRequests": 0,
+  "remoteMutations": 0,
+  "plaintextSourceFilesWritten": 0,
+  "credentialFilesWritten": 0,
+  "schemaVerifiedOnRemote": false,
+  "authRuntimeVerifiedOnRemote": false,
+  "storageHttpVerifiedOnRemote": false,
+  "targetBackupCompleted": false,
+  "applicationRowsPreserved": true,
+  "qrIdentifiersPreserved": true,
+  "normalizedOperationalColumns": [
+    "restaurants.menu_version_transaction reset to 0"
+  ],
+  "storageTechnicalIdsPreservedByFutureApiUpload": false,
+  "command": "node scripts/migration-data-local.mjs .runtime/backups/application-source-current-20261018012154252.json.enc",
+  "limitations": [
+    "Auth and Storage decisions tested with in-memory snapshots, not target APIs.",
+    "Only application SQL restored into PGlite; managed Supabase Auth/Storage services not restored.",
+    "No destination credentials yet; preflight, encrypted target backup and remote execution remain pending.",
+    "Source double read detects stability but is not a transaction snapshot."
+  ]
+}

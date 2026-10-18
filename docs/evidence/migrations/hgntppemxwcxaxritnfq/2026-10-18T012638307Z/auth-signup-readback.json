@@ -1,0 +1,24 @@
+{
+  "checkedAt": "2026-10-18T01:26:38.291Z",
+  "projectRef": "hgntppemxwcxaxritnfq",
+  "changeEvidence": "docs/evidence/migrations/hgntppemxwcxaxritnfq/2026-10-18T012555929Z/auth-signup-config.json",
+  "result": "PASS",
+  "checks": [
+    {
+      "source": "management",
+      "status": 200,
+      "signupDisabled": true,
+      "emailEnabled": true,
+      "anonymousEnabled": false
+    },
+    {
+      "source": "public",
+      "status": 200,
+      "signupDisabled": true,
+      "emailEnabled": true,
+      "anonymousEnabled": false
+    }
+  ],
+  "additionalMutations": 0,
+  "emailsSent": false
+}

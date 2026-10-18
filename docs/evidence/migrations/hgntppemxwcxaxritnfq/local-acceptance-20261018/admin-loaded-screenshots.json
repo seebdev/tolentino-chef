@@ -1,0 +1,57 @@
+{
+  "at": "2026-10-18T02:10:02.694Z",
+  "projectRef": "hgntppemxwcxaxritnfq",
+  "runId": "local-acceptance-20261018",
+  "base": "http://localhost:3000",
+  "scope": "Real Chrome admin login, support exit and loaded list; no catalog or platform mutations",
+  "earlierEvidence": {
+    "files": [
+      "real-support-exit-mobile.png",
+      "real-support-exit-desktop.png"
+    ],
+    "limitation": "Earlier gap-runner captures were taken before restaurant data finished loading. They are retained unchanged; these new files show the loaded list."
+  },
+  "credentialsCaptured": false,
+  "mocks": false,
+  "checks": [
+    {
+      "name": "Real admin login and three DEMOs loaded",
+      "pass": true
+    },
+    {
+      "name": "desktop support exit retains admin identity and loaded catalog",
+      "pass": true
+    },
+    {
+      "name": "mobile support exit retains admin identity and loaded catalog",
+      "pass": true
+    },
+    {
+      "name": "Final logout and no page errors",
+      "pass": true
+    }
+  ],
+  "screenshots": [
+    {
+      "device": "desktop",
+      "file": "artifacts/migrations/hgntppemxwcxaxritnfq/local-acceptance-20261018/screenshots/real-admin-loaded-desktop.png",
+      "restaurantsLoaded": 3,
+      "dimensions": {
+        "width": 1440,
+        "scroll": 1440
+      }
+    },
+    {
+      "device": "mobile",
+      "file": "artifacts/migrations/hgntppemxwcxaxritnfq/local-acceptance-20261018/screenshots/real-admin-loaded-mobile.png",
+      "restaurantsLoaded": 3,
+      "dimensions": {
+        "width": 390,
+        "scroll": 390
+      }
+    }
+  ],
+  "result": "PASS",
+  "completedAt": "2026-10-18T02:10:21.098Z",
+  "passed": 4
+}

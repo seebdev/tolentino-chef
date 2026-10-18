@@ -9,8 +9,24 @@ import {
   clientKey,
   ApiError,
 } from "@/lib/api";
-import { sessionDb } from "@/lib/supabase";
+import { sessionDb, clearSessionCookies } from "@/lib/supabase";
 import { appUrl } from "@/lib/config";
+import { LOCAL_LOGOUT_WARNING } from "@/lib/session-messages";
+
+async function endLocalSession(db: Awaited<ReturnType<typeof sessionDb>>) {
+  let revoked = false;
+  try {
+    const { error } = await db.auth.signOut({ scope: "local" });
+    revoked = !error;
+  } catch {
+    // No provider error text or cookie/token data belongs in this response.
+  } finally {
+    // If cookie cleanup itself fails, propagate the error: do not claim success.
+    await clearSessionCookies();
+  }
+  return revoked;
+}
+
 export async function POST(request: Request) {
   return route(async () => {
     mutationOrigin(request);
@@ -26,8 +42,18 @@ export async function POST(request: Request) {
       .parse(await body(request, 10000));
     const db = await sessionDb();
     if (input.action === "logout") {
-      await db.auth.signOut({ scope: "local" });
-      return json({ ok: true });
+      const revoked = await endLocalSession(db);
+      if (!revoked)
+        return json(
+          {
+            ok: false,
+            code: "AUTH_REVOCATION_UNCONFIRMED",
+            localSessionCleared: true,
+            error: LOCAL_LOGOUT_WARNING,
+          },
+          503,
+        );
+      return json({ ok: true, localSessionCleared: true });
     }
     await rateLimit(`auth-ip:${clientKey(request)}`, 30, 300);
     if (input.action === "login") {
@@ -49,20 +75,39 @@ export async function POST(request: Request) {
           role: current.role,
           redirect: current.role === "superadmin" ? "/admin" : "/dashboard",
         });
-      } catch (e) {
-        await db.auth.signOut({ scope: "local" });
-        throw e;
+      } catch (error) {
+        await endLocalSession(db);
+        throw error;
       }
     }
     if (input.action === "recover") {
       const email = z.email().parse(input.email);
       await rateLimit(`recovery:${email.toLowerCase()}`, 3, 900);
-      // Reserved DEMO addresses never invoke the email service. Keep the same
-      // generic response and rate limits to avoid account enumeration.
-      if (!/@[^@]+\.test$/i.test(email))
-        await db.auth.resetPasswordForEmail(email, {
-          redirectTo: appUrl() + "/auth/callback",
-        });
+      // Reserved DEMO addresses never invoke the email service. Preserve the
+      // generic public response, including provider failure, to avoid enumeration.
+      if (!/@[^@]+\.test$/i.test(email)) {
+        try {
+          const { error } = await db.auth.resetPasswordForEmail(email, {
+            redirectTo: appUrl() + "/auth/callback",
+          });
+          if (error)
+            console.warn(
+              JSON.stringify({
+                event: "auth_recovery_failed",
+                stage: "provider",
+                code: "PROVIDER_FAILURE",
+              }),
+            );
+        } catch {
+          console.warn(
+            JSON.stringify({
+              event: "auth_recovery_failed",
+              stage: "provider",
+              code: "PROVIDER_FAILURE",
+            }),
+          );
+        }
+      }
       return json({
         ok: true,
         message:

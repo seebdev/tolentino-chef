@@ -1,5 +1,58 @@
 # Respaldo y restauración de Tolentino
 
+## Procedimiento vigente para el proyecto nuevo
+
+Destino exclusivo: `hgntppemxwcxaxritnfq`. Los scripts de captura del ensayo histórico inferior están fijados al proyecto anterior; no deben ejecutarse con la configuración local ya migrada. El origen anterior se conserva.
+
+Antes de capturar, detener las pruebas y el servidor local para evitar sesiones, visitas y ediciones concurrentes. La captura nueva lee sólo `.env.migration.local`, verifica el destino y usa TLS con CA y hostname verificados. Nunca necesita escribir en la base ni suspender el proyecto remoto.
+
+```text
+node scripts/migration-target-final-backup.mjs --capture --confirm-target hgntppemxwcxaxritnfq
+```
+
+El archivo cifrado incluye dump lógico PostgreSQL17.11, roles sin sus contraseñas, datos de las quince tablas, dos tablas privadas, tablas Auth en el dump y los bytes de todos los objetos Storage. Se comparan lecturas antes/después; cambios durante la ventana abortan la captura. La evidencia pública registra la ruta y SHA256 del archivo, nunca credenciales ni filas privadas.
+
+Para ensayar la restauración, usar exactamente el archivo y SHA256 registrados en esa captura:
+
+```text
+node scripts/migration-target-final-restore-local.mjs --archive .runtime/backups/ARCHIVO.json.enc --sha256 HASH_DE_LA_CAPTURA
+```
+
+El ensayo crea exclusivamente una instancia PGlite en memoria, sin URL de destino ni conexión remota. Verifica el cifrado, hashes del dump, historial SQL y migraciones locales; restaura las quince tablas y las dos privadas, y compara UUID, QR y bytes Storage. Comprueba los seis pares de aislamiento. No ejecuta GoTrue ni el servicio HTTP de Storage: Auth usa stubs de UUID y el dump completo se decodifica, no se restaura como plataforma administrada.
+
+Los archivos permanecen cifrados bajo `.runtime/backups`, con ACL del usuario Windows y SYSTEM y clave DPAPI. El respaldo de la configuración anterior también está cifrado allí. Recuperarse en otro equipo sigue requiriendo custodia separada de una clave de recuperación y un ensayo independiente; no se ha acreditado recuperación portátil o PITR. La configuración externa SMTP/Auth/JWT necesita su respaldo propio. Ninguna restauración se ensaya sobre los DEMO existentes.
+
+Las capturas/ensayos nuevos y sus resultados se registran bajo `docs/evidence/migrations/hgntppemxwcxaxritnfq/`; consultar [MIGRATION_STATUS.md](MIGRATION_STATUS.md) para la última ejecución efectivamente comprobada.
+
+### Captura y ensayo final comprobados — 18 de octubre de 2026
+
+Captura realizada con el servidor local detenido y sin runners de QA: **PASS**. Se preservaron 15 tablas/449 filas de aplicación, cuatro identidades y 27 objetos/314.126 bytes. El archivo incluye además el estado de las dos tablas privadas y un dump lógico PostgreSQL17.11 completo. No hubo escrituras remotas ni archivos de respaldo en texto claro.
+
+| Comprobación vigente | Resultado |
+| --- | --- |
+| Archivo cifrado | 715.632 bytes, AES-256-GCM/DPAPI y ACL usuario Windows/SYSTEM |
+| Dump PostgreSQL custom | 531.178 bytes; todos los segmentos decodificados |
+| Consistencia | Inventario, tablas, perfiles y bytes Storage iguales antes/después |
+| Restauración aislada | 71/71 comprobaciones PASS en PGlite/memoria |
+| Filas públicas | 449 exactas en las 15 tablas, incluyendo auditoría/métricas de QA |
+| Filas privadas | rate_limits:25; restaurant_creation_requests:3, restauradas exactamente |
+| Identidades y Storage | Cuatro UUID Auth y 27 IDs/rutas/bytes de objetos conservados en stubs/memoria |
+| Seguridad de aplicación | RLS15/15, triggers habilitados y seis pares de propietarios aislados |
+| Efectos del restore | Cero conexiones remotas, mutaciones remotas o archivos en texto claro |
+
+Archivo privado: .runtime/backups/target-final-hgntppemxwcxaxritnfq-20261018T021153664Z.json.enc. SHA256 del archivo cifrado:
+
+    57bd66441a9ab399f022899f4e2be41a9d02bbcb2c841a55185dd12ddbc23cab
+
+Evidencias saneadas: [captura final](evidence/migrations/hgntppemxwcxaxritnfq/20261018T021153664Z/target-final-backup.json) y [restauración local final](evidence/migrations/hgntppemxwcxaxritnfq/20261018T021315710Z/target-final-restore-local.json).
+
+El snapshot SQL de pg_dump es consistente; la comparación adicional de API/Storage detecta estabilidad y no constituye una transacción distribuida. Auth utiliza UUID-only stubs en el ensayo: **no se ha restaurado GoTrue, contraseñas/sesiones ni Storage HTTP como plataforma completa**. El dump incluye esas tablas actuales cifradas, pero sólo se decodificó íntegramente. No se acreditan recuperación portable de DPAPI, PITR, secretos externos o configuración SMTP/JWT. La sección histórica siguiente se conserva como evidencia separada.
+
+## Ensayo histórico del proyecto anterior
+
+La sección siguiente describe la captura inicial del 17 de octubre. Sus exclusiones y cifras no deben confundirse con el respaldo nuevo, que incluye el dump PostgreSQL y las tablas privadas.
+
+
 ## Resultado del ensayo — 17 de octubre de 2026
 
 Se creó un respaldo lógico cifrado de la aplicación desde el proyecto autorizado y se restauró desde ese archivo en PostgreSQL PGlite, exclusivamente en memoria. No se modificó Supabase ni se creó ningún proyecto, servicio o base remota.
@@ -95,4 +148,4 @@ Para acreditar recuperación completa todavía hace falta:
 
 La guía oficial describe el respaldo de roles/esquema/datos y el trabajo separado para Storage y configuración externa. No se ejecutó ese procedimiento completo en este ensayo. [Restaurar Supabase alojado a un entorno propio](https://supabase.com/docs/guides/self-hosting/restore-from-platform).
 
-No hubo nuevas cuentas, correos, servicios, proyectos, escrituras remotas ni cambios en Crepes & Waffles durante este trabajo.
+Durante este ensayo histórico inicial no hubo nuevas cuentas, correos, servicios, proyectos ni escrituras remotas. La migración posterior al proyecto nuevo tiene evidencias separadas; Crepes & Waffles se conserva sin modificaciones.

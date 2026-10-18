@@ -1,0 +1,39 @@
+{
+  "at": "2026-10-18T01:35:10.733Z",
+  "projectRef": "hgntppemxwcxaxritnfq",
+  "scope": "Local code validation and build with explicit new-project environment; no real user acceptance",
+  "appEnvFileUnchanged": true,
+  "checks": [
+    {
+      "name": "typegen",
+      "exitCode": 0,
+      "seconds": 16
+    },
+    {
+      "name": "typescript",
+      "exitCode": 0,
+      "seconds": 46
+    },
+    {
+      "name": "lint",
+      "exitCode": 0,
+      "seconds": 30
+    },
+    {
+      "name": "unit",
+      "exitCode": 0,
+      "seconds": 77
+    },
+    {
+      "name": "build",
+      "exitCode": 0,
+      "seconds": 109
+    }
+  ],
+  "allPassed": true,
+  "unitTests": {
+    "passed": 239,
+    "failed": 0,
+    "total": 239
+  }
+}

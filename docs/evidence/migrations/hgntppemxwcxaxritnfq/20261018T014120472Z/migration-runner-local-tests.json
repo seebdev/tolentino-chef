@@ -1,0 +1,82 @@
+{
+  "at": "2026-10-18T01:41:20.472Z",
+  "result": "PASS",
+  "targetProjectRef": "hgntppemxwcxaxritnfq",
+  "scope": "Local runner guards and versioned schema transaction; in-memory PGlite and mocked HTTP",
+  "passedChecks": 17,
+  "failedChecks": 0,
+  "checks": [
+    {
+      "name": "Source project cannot receive any request",
+      "pass": true
+    },
+    {
+      "name": "DELETE is always blocked",
+      "pass": true
+    },
+    {
+      "name": "Password reset and arbitrary user updates are blocked",
+      "pass": true
+    },
+    {
+      "name": "Recovery email requests are blocked",
+      "pass": true
+    },
+    {
+      "name": "Unplanned Auth UUID is blocked",
+      "pass": true
+    },
+    {
+      "name": "Reviewed explicit Auth identity can be created through mocked transport",
+      "pass": true
+    },
+    {
+      "name": "Storage overwrite is blocked by HTTP guard",
+      "pass": true
+    },
+    {
+      "name": "Unplanned Storage route is blocked",
+      "pass": true
+    },
+    {
+      "name": "Only an exact planned Storage path with no upsert reaches mocked transport",
+      "pass": true
+    },
+    {
+      "name": "Structured helper progress reaches journal as a string stage",
+      "pass": true
+    },
+    {
+      "name": "An object cannot become the journal stage",
+      "pass": true
+    },
+    {
+      "name": "Both schema migrations and history apply together",
+      "pass": true
+    },
+    {
+      "name": "Fifteen RLS tables and restricted anonymous/owner permissions verified",
+      "pass": true
+    },
+    {
+      "name": "Second schema run verifies exact SQL hashes and reuses both versions",
+      "pass": true
+    },
+    {
+      "name": "Unexpected migration history cannot be silently accepted",
+      "pass": true
+    },
+    {
+      "name": "Failure in migration two rolls back the entire schema transaction",
+      "pass": true
+    },
+    {
+      "name": "No first-migration schema or history remains after rollback",
+      "pass": true
+    }
+  ],
+  "remoteRequests": 0,
+  "remoteMutations": 0,
+  "credentialFilesWritten": 0,
+  "command": "node scripts/migration-target-selftest.mjs .runtime/backups/application-source-current-20261018012154252.json.enc"
+}

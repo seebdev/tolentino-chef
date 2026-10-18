@@ -146,7 +146,7 @@ const report = {
   commit: git("rev-parse", "HEAD").toString().trim(),
   scope:
     "Working files, Git index, reachable history, existing browser bundles. Known server/API secrets and locally protected DEMO/new admin passwords; generic private key and Supabase server token markers. Previously exposed source DB/admin password not used.",
-  newEnvironmentBundleVerified: false,
+  buildEnvironmentAttribution: "This secret scan does not determine build provenance; use application-validation and live health evidence for the configured project.",
   exactSecretsChecked: needles.length,
   workingFiles: new Set(working).size,
   indexEntries: staged.length,

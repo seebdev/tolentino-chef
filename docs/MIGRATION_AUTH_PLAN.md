@@ -1,8 +1,18 @@
 # Plan de migración de Auth, sesiones y accesos
 
-Fecha: 2026-10-17. Destino autorizado: **hgntppemxwcxaxritnfq**. Nuevo repositorio: [seebdev/tolentino-chef](https://github.com/seebdev/tolentino-chef). Este documento prepara la migración del proyecto existente; no acredita una conexión, cuenta Auth o despliegue nuevo.
+## Estado actualizado — 2026-10-18 UTC
 
-Alcance de esta revisión: lectura de aplicación, scripts, migraciones, configuración de ejemplo y documentación oficial. No se leyeron valores secretos, no se iniciaron sesiones y no se ejecutaron operaciones en Supabase o Render. La infraestructura anterior debe permanecer intacta. La corrección de logout documentada en [PRODUCTION_AUTH_REVIEW.md](PRODUCTION_AUTH_REVIEW.md) continúa pendiente de autorización explícita y no forma parte de estos cambios.
+El destino nuevo ya tiene aceptación real local: **24 escenarios / 372 comprobaciones PASS** en Chrome y Edge, con seis escenarios de propietario que comprueban login, recarga, logout y nuevo login; además, **4/4 controles administrativos** verificaron salida de soporte sin cambiar identidad, lista de tres DEMO cargada y logout final. Las 20 capturas finales se inspeccionaron, y los navegadores/procesos se cerraron antes del backup. No se enviaron correos ni se editó catálogo/configuración durante este pase visual. [Pruebas reales](evidence/migrations/hgntppemxwcxaxritnfq/local-acceptance-20261018/live-browser-audit.json), [admin y capturas](evidence/migrations/hgntppemxwcxaxritnfq/local-acceptance-20261018/admin-loaded-screenshots.json), [inspección visual](evidence/migrations/hgntppemxwcxaxritnfq/local-acceptance-20261018/visual-inspection.json). HTTPS público, SMTP/recuperación real y Safari continúan fuera de esta aceptación local.
+
+La corrección de logout fue autorizada expresamente y está implementada. La validación integrada pasó **239/239 pruebas unitarias**, incluidos los 17 casos focalizados, y **54/54 E2E de interfaz**, incluidos los cuatro casos de logout en escritorio/móvil. La revisión independiente confirmó limpieza del proyecto actual, scope local, respuesta 503 honesta y propagación segura del aviso a login. Los E2E usaron fixtures sobre el build nuevo y el servidor temporal 3001 ya está cerrado; la aceptación posterior de sesiones reales del destino ya pasó en el build local, como se detalla a continuación. [Pipeline local](evidence/migrations/hgntppemxwcxaxritnfq/2026-10-18T013032608Z/application-validation.json), [regresión UI](evidence/migrations/hgntppemxwcxaxritnfq/2026-10-18T013918216Z/ui-e2e-summary.json). [Estado y evidencia de Auth](PRODUCTION_AUTH_REVIEW.md).
+
+El registro público de `hgntppemxwcxaxritnfq` se desactivó con autorización específica, backup cifrado previo y un único PATCH. Management y Auth público confirman `disable_signup:true`; email sigue habilitado y acceso anónimo deshabilitado. [Verificación final](evidence/migrations/hgntppemxwcxaxritnfq/2026-10-18T012638307Z/auth-signup-readback.json). No se cambiaron JWT, contraseñas, SMTP ni URLs: la lectura actual mostró JWT 3600 s, mínimo de contraseña 6, Site URL localhost y redirects vacíos; no confundirlos con los valores propuestos por el TOML.
+
+El usuario confirmó el workspace Render **Tolentino Restaurantes**, `tea-dba1s4m1egvs7391ve50`. El inventario autorizado encontró cero servicios; crear o desplegar todavía está prohibido sin autorización aparte. Las credenciales de migración se leen únicamente desde el archivo separado y nunca se incluyen en la evidencia. [Inventario sanitizado](evidence/migrations/hgntppemxwcxaxritnfq/2026-10-18T012136752Z/render-auth-inspection.json).
+
+Fecha: 2026-10-17. Destino autorizado: **hgntppemxwcxaxritnfq**. Nuevo repositorio: [seebdev/tolentino-chef](https://github.com/seebdev/tolentino-chef). El contenido histórico siguiente preparaba la migración; la conexión y las sesiones nuevas se acreditan mediante la aceptación local anterior. No acredita un despliegue público.
+
+Alcance de la revisión inicial: lectura de aplicación, scripts, migraciones, configuración de ejemplo y documentación oficial. No se leyeron valores secretos, no se iniciaron sesiones y no se ejecutaron operaciones en Supabase o Render. La infraestructura anterior debe permanecer intacta. Esa fase fue de lectura; el arreglo de logout se autorizó e implementó posteriormente, como indica el estado actualizado.
 
 ## Inventario y riesgo de destino
 
@@ -113,7 +123,7 @@ Las suites antiguas son evidencia histórica, no resultado del destino nuevo. Re
 | Superadmin nuevo | Login, rol de DB, acceso admin y soporte con identidad constante. |
 | Tres owners nuevos | Login de cada uno, su restaurante y rechazo de los seis pares cruzados. |
 | Renovación y cookies | Renovación tras caducar JWT, cookies del proyecto nuevo con atributos correctos, propagación SSR y no-store. |
-| Logout | Camino normal local y API posterior 401; mantener registrado el defecto de error temprano hasta autorizar/corregirlo. |
+| Logout | Camino normal local y API posterior 401 en el destino nuevo; verificar también el manejo del error temprano ya corregido y probado localmente. |
 | Signup | Desactivado en el proyecto nuevo, sin impedir altas administrativas autorizadas. |
 | Recovery | Solo cuando se autorice correo: enlace nuevo, destino canónico, enlace inválido/usado/expirado y cambio de contraseña. |
 | Datos y Storage | Tres DEMO con identidades, catálogos, imágenes privadas y relaciones correctas; pruebas funcionales nuevas. |
@@ -132,4 +142,4 @@ Se leyeron production-preflight.mjs, render.yaml, la ruta health y tests/health.
 - La ruta health no devuelve secretos ni errores de base de datos. Sus seis casos de prueba revisados cubren ref nuevo/anterior, credencial ausente, hostname ajeno y errores seguros. Estas pruebas son mocks y no acreditan el destino remoto; su ejecución global corresponde al agente principal.
 - El blueprint no contiene credenciales ni URL pública inventada. Usa el repositorio nuevo y variables de Render no sincronizadas desde el archivo. El plan gratuito y la región declarada requieren revisión de disponibilidad antes de aceptación comercial.
 
-Pendientes para continuar con operaciones: credenciales nuevas después de rotar la contraseña expuesta; inspección y respaldo del destino; identificación de la cuenta/workspace Render nueva; URL canónica real; SMTP y configuración Auth del destino. La propuesta de arreglo de logout sigue separada, sin aplicar.
+Los pendientes registrados en la revisión inicial incluían credenciales, inspección y respaldo del destino, selección de Render, URL canónica y SMTP. El estado actualizado confirma selección de workspace y registro público desactivado; consultar los reportes de migración del agente principal para el avance de datos. HTTPS/SMTP y el despliegue siguen sin acreditarse. El arreglo de logout ya está autorizado e implementado; su prueba con Auth real del destino nuevo permanece separada.

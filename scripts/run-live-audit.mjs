@@ -15,7 +15,7 @@ import { randomUUID } from "node:crypto";
 import sharp from "sharp";
 import jsQR from "jsqr";
 import { Session, base } from "./live-client.mjs";
-import { demos } from "./demo-catalog.mjs";
+import { runTemporaryCreationAudit } from "./qa-temporary-creation.mjs";
 const { manifest, accounts } = loadTargetDemos();
 requireDemoMutations();
 const config = targetConfig(process.env, { service: true });
@@ -550,86 +550,12 @@ try {
   }
   await check(
     "real creation replay, concurrent replay and genuine email/slug conflicts",
-    async () => {
-      const item = manifest.restaurants.find((x) => x.key === "bruma");
-      const demo = demos.find((x) => x.key === "bruma");
-      const auth = await service.auth.admin.getUserById(accounts.bruma.userId);
-      assert.equal(auth.error, null);
-      const requestId = auth.data.user.app_metadata.creation_request_id;
-      const data = {
-        name: demo.name,
-        slug: demo.slug,
-        owner_name: demo.owner,
-        owner_email: demo.email,
-        description: demo.description,
-        demo: true,
-      };
-      const replay = () =>
-        admin.request("/api/admin/restaurants", {
-          method: "POST",
-          data: { action: "create", requestId, data },
-          expected: [201],
-        });
-      const both = await Promise.all([replay(), replay()]);
-      for (const r of both) {
-        assert.equal(r.data.restaurantId, item.id);
-        assert.equal(r.data.replayed, true);
-      }
-      const mismatch = await admin.request("/api/admin/restaurants", {
-        method: "POST",
-        data: {
-          action: "create",
-          requestId,
-          data: { ...data, name: "Different request DEMO" },
-        },
-        expected: [409],
-      });
-      assert.equal(mismatch.data.code, "IDEMPOTENCY_KEY_REUSED");
-      const before = (
-        await service.auth.admin.listUsers({ page: 1, perPage: 1000 })
-      ).data.users.length;
-      const emailConflict = await admin.request("/api/admin/restaurants", {
-        method: "POST",
-        data: {
-          action: "create",
-          requestId: randomUUID(),
-          data: { ...data, slug: "qa-conflict-" + randomUUID() },
-        },
-        expected: [409],
-      });
-      assert.equal(emailConflict.data.code, "OWNER_EMAIL_EXISTS");
-      const slugConflict = await admin.request("/api/admin/restaurants", {
-        method: "POST",
-        data: {
-          action: "create",
-          requestId: randomUUID(),
-          data: {
-            ...data,
-            owner_email: "qa-" + randomUUID() + "@tolentino-demo.test",
-          },
-        },
-        expected: [409],
-      });
-      assert.equal(slugConflict.data.code, "SLUG_TAKEN");
-      const after = (
-        await service.auth.admin.listUsers({ page: 1, perPage: 1000 })
-      ).data.users.length;
-      assert.equal(after, before);
-      const count = (
-        await service
-          .from("restaurants")
-          .select("id", { count: "exact", head: true })
-      ).count;
-      assert.equal(count, 3);
-      return {
-        replayedRequests: 2,
-        restaurantCount: count,
-        orphanAccounts: after - before,
-        emailConflict: 409,
-        slugConflict: 409,
-      };
-    },
+    () => runTemporaryCreationAudit({
+      service, admin, actorId: adminAccount.userId,
+      originalIds: manifest.restaurants.map((item) => item.id),
+    }),
   );
+  if (!checks.at(-1).pass) throw Error("CREATION_AUDIT_FAILED_STOPPING_FURTHER_MUTATIONS");
   // Real CSV writes are confined to a hidden, task-owned category and removed afterwards.
   const a = owners[0],
     id = a.item.id,

@@ -1,0 +1,462 @@
+{
+  "config": {
+    "argv": [
+      "C:\\Users\\sebas\\OneDrive\\Escritorio\\tolentino-restaurantes-admin\\.runtime\\node-v22.23.3-win-x64\\node.exe",
+      "C:\\Users\\sebas\\OneDrive\\Escritorio\\tolentino-restaurantes-admin\\node_modules\\@playwright\\test\\cli.js",
+      "test",
+      "tests/e2e/logout.spec.ts"
+    ],
+    "configFile": "C:\\Users\\sebas\\OneDrive\\Escritorio\\tolentino-restaurantes-admin\\playwright.config.ts",
+    "rootDir": "C:/Users/sebas/OneDrive/Escritorio/tolentino-restaurantes-admin/tests/e2e",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "C:/Users/sebas/OneDrive/Escritorio/tolentino-restaurantes-admin/test-results/e2e",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "desktop",
+        "name": "desktop",
+        "testDir": "C:/Users/sebas/OneDrive/Escritorio/tolentino-restaurantes-admin/tests/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "C:/Users/sebas/OneDrive/Escritorio/tolentino-restaurantes-admin/test-results/e2e",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "mobile",
+        "name": "mobile",
+        "testDir": "C:/Users/sebas/OneDrive/Escritorio/tolentino-restaurantes-admin/tests/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "C:\\Users\\sebas\\OneDrive\\Escritorio\\tolentino-restaurantes-admin\\test-results\\e2e",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "desktop",
+        "testDir": "C:\\Users\\sebas\\OneDrive\\Escritorio\\tolentino-restaurantes-admin\\tests\\e2e",
+        "snapshotDir": "C:\\Users\\sebas\\OneDrive\\Escritorio\\tolentino-restaurantes-admin\\tests\\e2e",
+        "testIgnore": [],
+        "testMatch": "**/*.@(spec|test).?(c|m)[jt]s?(x)",
+        "timeout": 90000,
+        "use": {
+          "baseURL": "http://127.0.0.1:3001",
+          "browserName": "chromium",
+          "channel": "chrome",
+          "trace": "retain-on-failure",
+          "screenshot": "only-on-failure",
+          "viewport": {
+            "width": 1440,
+            "height": 1000
+          }
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "desktop"
+      },
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "C:\\Users\\sebas\\OneDrive\\Escritorio\\tolentino-restaurantes-admin\\test-results\\e2e",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "mobile",
+        "testDir": "C:\\Users\\sebas\\OneDrive\\Escritorio\\tolentino-restaurantes-admin\\tests\\e2e",
+        "snapshotDir": "C:\\Users\\sebas\\OneDrive\\Escritorio\\tolentino-restaurantes-admin\\tests\\e2e",
+        "testIgnore": [],
+        "testMatch": "**/*.@(spec|test).?(c|m)[jt]s?(x)",
+        "timeout": 90000,
+        "use": {
+          "baseURL": "http://127.0.0.1:3001",
+          "browserName": "chromium",
+          "channel": "chrome",
+          "trace": "retain-on-failure",
+          "screenshot": "only-on-failure",
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "isMobile": true,
+          "hasTouch": true
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "mobile"
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "docs/evidence/migrations/hgntppemxwcxaxritnfq/2026-10-18T013655774Z/logout-playwright.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "default",
+    "updateSourceMethod": "patch",
+    "version": "1.64.1",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "logout.spec.ts",
+      "file": "logout.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "logout UI leaves panel after confirmed local cleanup",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 2490,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('alert')\nExpected: visible\nError: strict mode violation: getByRole('alert') resolved to 2 elements:\n    1) <div role=\"alert\" class=\"notice notice-error\">…</div> aka getByRole('alert').filter({ hasText: 'Cerramos la sesión en este' })\n    2) <div role=\"alert\" aria-live=\"assertive\" id=\"__next-route-announcer__\"></div> aka locator('[id=\"__next-route-announcer__\"]')\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" getByRole('alert') with timeout 20000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('alert')\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('alert')\nExpected: visible\nError: strict mode violation: getByRole('alert') resolved to 2 elements:\n    1) <div role=\"alert\" class=\"notice notice-error\">…</div> aka getByRole('alert').filter({ hasText: 'Cerramos la sesión en este' })\n    2) <div role=\"alert\" aria-live=\"assertive\" id=\"__next-route-announcer__\"></div> aka locator('[id=\"__next-route-announcer__\"]')\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" getByRole('alert') with timeout 20000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('alert')\u001b[22m\n\n    at C:\\Users\\sebas\\OneDrive\\Escritorio\\tolentino-restaurantes-admin\\tests\\e2e\\logout.spec.ts:63:47",
+                    "location": {
+                      "file": "C:\\Users\\sebas\\OneDrive\\Escritorio\\tolentino-restaurantes-admin\\tests\\e2e\\logout.spec.ts",
+                      "column": 47,
+                      "line": 63
+                    },
+                    "snippet": "  61 |       if (cleared) {\n  62 |         await expect(page).toHaveURL(/\\/login\\?logout=unconfirmed$/);\n> 63 |         await expect(page.getByRole(\"alert\")).toBeVisible();\n     |                                               ^\n  64 |         await expect(page.getByRole(\"alert\")).toContainText(\n  65 |           LOCAL_LOGOUT_WARNING,\n  66 |         );"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "C:\\Users\\sebas\\OneDrive\\Escritorio\\tolentino-restaurantes-admin\\tests\\e2e\\logout.spec.ts",
+                        "column": 47,
+                        "line": 63
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('alert')\nExpected: visible\nError: strict mode violation: getByRole('alert') resolved to 2 elements:\n    1) <div role=\"alert\" class=\"notice notice-error\">…</div> aka getByRole('alert').filter({ hasText: 'Cerramos la sesión en este' })\n    2) <div role=\"alert\" aria-live=\"assertive\" id=\"__next-route-announcer__\"></div> aka locator('[id=\"__next-route-announcer__\"]')\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" getByRole('alert') with timeout 20000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('alert')\u001b[22m\n\n\n  61 |       if (cleared) {\n  62 |         await expect(page).toHaveURL(/\\/login\\?logout=unconfirmed$/);\n> 63 |         await expect(page.getByRole(\"alert\")).toBeVisible();\n     |                                               ^\n  64 |         await expect(page.getByRole(\"alert\")).toContainText(\n  65 |           LOCAL_LOGOUT_WARNING,\n  66 |         );\n    at C:\\Users\\sebas\\OneDrive\\Escritorio\\tolentino-restaurantes-admin\\tests\\e2e\\logout.spec.ts:63:47"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-18T01:37:01.015Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "C:\\Users\\sebas\\OneDrive\\Escritorio\\tolentino-restaurantes-admin\\test-results\\e2e\\logout-logout-UI-leaves-panel-after-confirmed-local-cleanup-desktop\\test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "C:\\Users\\sebas\\OneDrive\\Escritorio\\tolentino-restaurantes-admin\\test-results\\e2e\\logout-logout-UI-leaves-panel-after-confirmed-local-cleanup-desktop\\error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "C:\\Users\\sebas\\OneDrive\\Escritorio\\tolentino-restaurantes-admin\\test-results\\e2e\\logout-logout-UI-leaves-panel-after-confirmed-local-cleanup-desktop\\trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "C:\\Users\\sebas\\OneDrive\\Escritorio\\tolentino-restaurantes-admin\\tests\\e2e\\logout.spec.ts",
+                    "column": 47,
+                    "line": 63
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "01b3c3c82abdc8a715b2-5b17e4ecfec2eef41c1a",
+          "file": "logout.spec.ts",
+          "line": 7,
+          "column": 7
+        },
+        {
+          "title": "logout UI keeps an unconfirmed failure visible",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 1904,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('alert')\nExpected: visible\nError: strict mode violation: getByRole('alert') resolved to 2 elements:\n    1) <div role=\"alert\" class=\"notice notice-error\">…</div> aka getByRole('alert').filter({ hasText: 'No se pudo confirmar el' })\n    2) <div role=\"alert\" aria-live=\"assertive\" id=\"__next-route-announcer__\"></div> aka locator('[id=\"__next-route-announcer__\"]')\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" getByRole('alert') with timeout 20000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('alert')\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('alert')\nExpected: visible\nError: strict mode violation: getByRole('alert') resolved to 2 elements:\n    1) <div role=\"alert\" class=\"notice notice-error\">…</div> aka getByRole('alert').filter({ hasText: 'No se pudo confirmar el' })\n    2) <div role=\"alert\" aria-live=\"assertive\" id=\"__next-route-announcer__\"></div> aka locator('[id=\"__next-route-announcer__\"]')\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" getByRole('alert') with timeout 20000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('alert')\u001b[22m\n\n    at C:\\Users\\sebas\\OneDrive\\Escritorio\\tolentino-restaurantes-admin\\tests\\e2e\\logout.spec.ts:70:47",
+                    "location": {
+                      "file": "C:\\Users\\sebas\\OneDrive\\Escritorio\\tolentino-restaurantes-admin\\tests\\e2e\\logout.spec.ts",
+                      "column": 47,
+                      "line": 70
+                    },
+                    "snippet": "  68 |         await expect(page).toHaveURL(/\\/dashboard$/);\n  69 |         await expect(page.locator(\".sidebar-backdrop\")).toHaveCount(0);\n> 70 |         await expect(page.getByRole(\"alert\")).toBeVisible();\n     |                                               ^\n  71 |         await expect(page.getByRole(\"alert\")).toContainText(\n  72 |           \"No se pudo confirmar el cierre de sesión.\",\n  73 |         );"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "C:\\Users\\sebas\\OneDrive\\Escritorio\\tolentino-restaurantes-admin\\tests\\e2e\\logout.spec.ts",
+                        "column": 47,
+                        "line": 70
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('alert')\nExpected: visible\nError: strict mode violation: getByRole('alert') resolved to 2 elements:\n    1) <div role=\"alert\" class=\"notice notice-error\">…</div> aka getByRole('alert').filter({ hasText: 'No se pudo confirmar el' })\n    2) <div role=\"alert\" aria-live=\"assertive\" id=\"__next-route-announcer__\"></div> aka locator('[id=\"__next-route-announcer__\"]')\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" getByRole('alert') with timeout 20000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('alert')\u001b[22m\n\n\n  68 |         await expect(page).toHaveURL(/\\/dashboard$/);\n  69 |         await expect(page.locator(\".sidebar-backdrop\")).toHaveCount(0);\n> 70 |         await expect(page.getByRole(\"alert\")).toBeVisible();\n     |                                               ^\n  71 |         await expect(page.getByRole(\"alert\")).toContainText(\n  72 |           \"No se pudo confirmar el cierre de sesión.\",\n  73 |         );\n    at C:\\Users\\sebas\\OneDrive\\Escritorio\\tolentino-restaurantes-admin\\tests\\e2e\\logout.spec.ts:70:47"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-18T01:37:05.762Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "C:\\Users\\sebas\\OneDrive\\Escritorio\\tolentino-restaurantes-admin\\test-results\\e2e\\logout-logout-UI-keeps-an-unconfirmed-failure-visible-desktop\\test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "C:\\Users\\sebas\\OneDrive\\Escritorio\\tolentino-restaurantes-admin\\test-results\\e2e\\logout-logout-UI-keeps-an-unconfirmed-failure-visible-desktop\\error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "C:\\Users\\sebas\\OneDrive\\Escritorio\\tolentino-restaurantes-admin\\test-results\\e2e\\logout-logout-UI-keeps-an-unconfirmed-failure-visible-desktop\\trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "C:\\Users\\sebas\\OneDrive\\Escritorio\\tolentino-restaurantes-admin\\tests\\e2e\\logout.spec.ts",
+                    "column": 47,
+                    "line": 70
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "01b3c3c82abdc8a715b2-c49a3fd835dccf51356a",
+          "file": "logout.spec.ts",
+          "line": 7,
+          "column": 7
+        },
+        {
+          "title": "logout UI leaves panel after confirmed local cleanup",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 2237,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('alert')\nExpected: visible\nError: strict mode violation: getByRole('alert') resolved to 2 elements:\n    1) <div role=\"alert\" class=\"notice notice-error\">…</div> aka getByRole('alert').filter({ hasText: 'Cerramos la sesión en este' })\n    2) <div role=\"alert\" aria-live=\"assertive\" id=\"__next-route-announcer__\"></div> aka locator('[id=\"__next-route-announcer__\"]')\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" getByRole('alert') with timeout 20000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('alert')\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('alert')\nExpected: visible\nError: strict mode violation: getByRole('alert') resolved to 2 elements:\n    1) <div role=\"alert\" class=\"notice notice-error\">…</div> aka getByRole('alert').filter({ hasText: 'Cerramos la sesión en este' })\n    2) <div role=\"alert\" aria-live=\"assertive\" id=\"__next-route-announcer__\"></div> aka locator('[id=\"__next-route-announcer__\"]')\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" getByRole('alert') with timeout 20000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('alert')\u001b[22m\n\n    at C:\\Users\\sebas\\OneDrive\\Escritorio\\tolentino-restaurantes-admin\\tests\\e2e\\logout.spec.ts:63:47",
+                    "location": {
+                      "file": "C:\\Users\\sebas\\OneDrive\\Escritorio\\tolentino-restaurantes-admin\\tests\\e2e\\logout.spec.ts",
+                      "column": 47,
+                      "line": 63
+                    },
+                    "snippet": "  61 |       if (cleared) {\n  62 |         await expect(page).toHaveURL(/\\/login\\?logout=unconfirmed$/);\n> 63 |         await expect(page.getByRole(\"alert\")).toBeVisible();\n     |                                               ^\n  64 |         await expect(page.getByRole(\"alert\")).toContainText(\n  65 |           LOCAL_LOGOUT_WARNING,\n  66 |         );"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "C:\\Users\\sebas\\OneDrive\\Escritorio\\tolentino-restaurantes-admin\\tests\\e2e\\logout.spec.ts",
+                        "column": 47,
+                        "line": 63
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('alert')\nExpected: visible\nError: strict mode violation: getByRole('alert') resolved to 2 elements:\n    1) <div role=\"alert\" class=\"notice notice-error\">…</div> aka getByRole('alert').filter({ hasText: 'Cerramos la sesión en este' })\n    2) <div role=\"alert\" aria-live=\"assertive\" id=\"__next-route-announcer__\"></div> aka locator('[id=\"__next-route-announcer__\"]')\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" getByRole('alert') with timeout 20000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('alert')\u001b[22m\n\n\n  61 |       if (cleared) {\n  62 |         await expect(page).toHaveURL(/\\/login\\?logout=unconfirmed$/);\n> 63 |         await expect(page.getByRole(\"alert\")).toBeVisible();\n     |                                               ^\n  64 |         await expect(page.getByRole(\"alert\")).toContainText(\n  65 |           LOCAL_LOGOUT_WARNING,\n  66 |         );\n    at C:\\Users\\sebas\\OneDrive\\Escritorio\\tolentino-restaurantes-admin\\tests\\e2e\\logout.spec.ts:63:47"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-18T01:37:09.512Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "C:\\Users\\sebas\\OneDrive\\Escritorio\\tolentino-restaurantes-admin\\test-results\\e2e\\logout-logout-UI-leaves-panel-after-confirmed-local-cleanup-mobile\\test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "C:\\Users\\sebas\\OneDrive\\Escritorio\\tolentino-restaurantes-admin\\test-results\\e2e\\logout-logout-UI-leaves-panel-after-confirmed-local-cleanup-mobile\\error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "C:\\Users\\sebas\\OneDrive\\Escritorio\\tolentino-restaurantes-admin\\test-results\\e2e\\logout-logout-UI-leaves-panel-after-confirmed-local-cleanup-mobile\\trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "C:\\Users\\sebas\\OneDrive\\Escritorio\\tolentino-restaurantes-admin\\tests\\e2e\\logout.spec.ts",
+                    "column": 47,
+                    "line": 63
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "01b3c3c82abdc8a715b2-d78ecfccb1a923f48661",
+          "file": "logout.spec.ts",
+          "line": 7,
+          "column": 7
+        },
+        {
+          "title": "logout UI keeps an unconfirmed failure visible",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 2422,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('alert')\nExpected: visible\nError: strict mode violation: getByRole('alert') resolved to 2 elements:\n    1) <div role=\"alert\" class=\"notice notice-error\">…</div> aka getByRole('alert').filter({ hasText: 'No se pudo confirmar el' })\n    2) <div role=\"alert\" aria-live=\"assertive\" id=\"__next-route-announcer__\"></div> aka locator('[id=\"__next-route-announcer__\"]')\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" getByRole('alert') with timeout 20000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('alert')\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('alert')\nExpected: visible\nError: strict mode violation: getByRole('alert') resolved to 2 elements:\n    1) <div role=\"alert\" class=\"notice notice-error\">…</div> aka getByRole('alert').filter({ hasText: 'No se pudo confirmar el' })\n    2) <div role=\"alert\" aria-live=\"assertive\" id=\"__next-route-announcer__\"></div> aka locator('[id=\"__next-route-announcer__\"]')\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" getByRole('alert') with timeout 20000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('alert')\u001b[22m\n\n    at C:\\Users\\sebas\\OneDrive\\Escritorio\\tolentino-restaurantes-admin\\tests\\e2e\\logout.spec.ts:70:47",
+                    "location": {
+                      "file": "C:\\Users\\sebas\\OneDrive\\Escritorio\\tolentino-restaurantes-admin\\tests\\e2e\\logout.spec.ts",
+                      "column": 47,
+                      "line": 70
+                    },
+                    "snippet": "  68 |         await expect(page).toHaveURL(/\\/dashboard$/);\n  69 |         await expect(page.locator(\".sidebar-backdrop\")).toHaveCount(0);\n> 70 |         await expect(page.getByRole(\"alert\")).toBeVisible();\n     |                                               ^\n  71 |         await expect(page.getByRole(\"alert\")).toContainText(\n  72 |           \"No se pudo confirmar el cierre de sesión.\",\n  73 |         );"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "C:\\Users\\sebas\\OneDrive\\Escritorio\\tolentino-restaurantes-admin\\tests\\e2e\\logout.spec.ts",
+                        "column": 47,
+                        "line": 70
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('alert')\nExpected: visible\nError: strict mode violation: getByRole('alert') resolved to 2 elements:\n    1) <div role=\"alert\" class=\"notice notice-error\">…</div> aka getByRole('alert').filter({ hasText: 'No se pudo confirmar el' })\n    2) <div role=\"alert\" aria-live=\"assertive\" id=\"__next-route-announcer__\"></div> aka locator('[id=\"__next-route-announcer__\"]')\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" getByRole('alert') with timeout 20000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('alert')\u001b[22m\n\n\n  68 |         await expect(page).toHaveURL(/\\/dashboard$/);\n  69 |         await expect(page.locator(\".sidebar-backdrop\")).toHaveCount(0);\n> 70 |         await expect(page.getByRole(\"alert\")).toBeVisible();\n     |                                               ^\n  71 |         await expect(page.getByRole(\"alert\")).toContainText(\n  72 |           \"No se pudo confirmar el cierre de sesión.\",\n  73 |         );\n    at C:\\Users\\sebas\\OneDrive\\Escritorio\\tolentino-restaurantes-admin\\tests\\e2e\\logout.spec.ts:70:47"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-18T01:37:13.891Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "C:\\Users\\sebas\\OneDrive\\Escritorio\\tolentino-restaurantes-admin\\test-results\\e2e\\logout-logout-UI-keeps-an-unconfirmed-failure-visible-mobile\\test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "C:\\Users\\sebas\\OneDrive\\Escritorio\\tolentino-restaurantes-admin\\test-results\\e2e\\logout-logout-UI-keeps-an-unconfirmed-failure-visible-mobile\\error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "C:\\Users\\sebas\\OneDrive\\Escritorio\\tolentino-restaurantes-admin\\test-results\\e2e\\logout-logout-UI-keeps-an-unconfirmed-failure-visible-mobile\\trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "C:\\Users\\sebas\\OneDrive\\Escritorio\\tolentino-restaurantes-admin\\tests\\e2e\\logout.spec.ts",
+                    "column": 47,
+                    "line": 70
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "01b3c3c82abdc8a715b2-2c6bbda15b651b04651f",
+          "file": "logout.spec.ts",
+          "line": 7,
+          "column": 7
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-18T01:36:59.699Z",
+    "duration": 17702.408,
+    "expected": 0,
+    "skipped": 0,
+    "unexpected": 4,
+    "flaky": 0
+  }
+}

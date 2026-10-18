@@ -1,0 +1,15 @@
+{
+  "at": "2026-10-18T01:43:42.172Z",
+  "result": "PASS",
+  "vulnerabilities": {
+    "info": 0,
+    "low": 0,
+    "moderate": 0,
+    "high": 0,
+    "critical": 0,
+    "total": 0
+  },
+  "findings": [],
+  "lockfileAudited": true,
+  "packagesChanged": false
+}

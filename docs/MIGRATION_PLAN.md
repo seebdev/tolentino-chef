@@ -1,6 +1,6 @@
 # Plan de migración sin pérdida de datos — Tolentino
 
-Fecha: 17 de octubre de 2026. Estado: preparación local; nuevo Supabase y Render todavía sin verificar.
+Actualizado el 18 de octubre de 2026 (UTC). Estado: migración real y corte local completados; aceptación local aprobada. Render y aceptación HTTPS pendientes. Consultar MIGRATION_STATUS.md para resultados vigentes.
 
 ## Destinos y conservación
 
@@ -8,11 +8,11 @@ Fecha: 17 de octubre de 2026. Estado: preparación local; nuevo Supabase y Rende
 | --- | --- | --- |
 | GitHub | tolentinosftw-dotcom/tolentino-chef | seebdev/tolentino-chef |
 | Supabase | ylcnrfzosjzuljufwups | hgntppemxwcxaxritnfq |
-| Render | No hay despliegue anterior acreditado | Cuenta nueva, pendiente de acceso e inventario |
+| Render | No hay despliegue anterior acreditado | Workspace Tolentino Restaurantes, tea-dba1s4m1egvs7391ve50; inventario sin servicios |
 
-El repositorio local conserva su historial y los cambios preparados. GitHub nuevo se encontró vacío; la cuenta seebdev está autenticada y tiene permiso ADMIN. No se requiere fusionar un README inicial. El historial completo ya está publicado en main con SHA 67a99778196584521c9ec048ac7d6de8496e72de; los cambios de preparación posteriores se publicarán tras su revisión y pruebas. No se harán pushes al repositorio anterior, resets, reinicialización Git ni eliminación de recursos. Crepes & Waffles queda fuera de esta migración.
+El repositorio local conserva su historial y los cambios preparados. GitHub nuevo se encontró vacío; la cuenta seebdev está autenticada y tiene permiso ADMIN. No se requiere fusionar un README inicial. El historial y la preparación están publicados en main con SHA 2650c7096b4ba6b7076ac14dba5ab30dec75c490; los cambios de esta ejecución se publicarán tras su revisión y pruebas. No se harán pushes al repositorio anterior, resets, reinicialización Git ni eliminación de recursos. Crepes & Waffles queda fuera de esta migración.
 
-El servidor y .env.local todavía corresponden al origen. No cambiar esas variables hasta preparar y verificar la base nueva. No ejecutar contra el origen los runners que crean, editan, suspenden o eliminan datos. Las pruebas antiguas no acreditan el destino.
+El servidor anterior está detenido. La configuración original se respaldó cifrada antes del corte; .env.local y el build actual corresponden exclusivamente al proyecto nuevo. La importación real conservó 361 filas, cuatro identidades y 27 objetos, y la comparación posterior a QA confirmó catálogo, UUID y QR. No ejecutar contra el origen los runners que crean, editan, suspenden o eliminan datos. Las pruebas antiguas no acreditan el destino.
 
 ## Secuencia y controles
 
@@ -43,8 +43,8 @@ El respaldo de origen ya pasó restauración lógica local53/53 y pruebas de uti
 
 ## Accesos pendientes y decisiones
 
-Faltan clave publicable, clave de servidor y contraseña DB nueva del destino; Management opcional para configuración. La integración actual no tiene permiso sobre el proyecto nuevo. Faltan acceso a cuenta Render nueva, selección de servicio/plan y URL definitiva.
+Las claves del destino y la contraseña DB rotada ya fueron verificadas, incluida conexión Session pooler. Management permitió cerrar el registro público con autorización específica. La cuenta Render nueva funciona; el usuario seleccionó Tolentino Restaurantes (tea-dba1s4m1egvs7391ve50), actualmente sin servicios. Falta autorizar la creación/despliegue concreto, obtener HTTPS y configurar SMTP.
 
-El fallo temprano de logout reproducido en la fase anterior conserva una propuesta en PRODUCTION_AUTH_REVIEW.md. Su corrección sigue pendiente de autorización específica tras el rechazo de revisión automática; no forma parte de cambios ya aplicados.
+La corrección de logout fue autorizada y aplicada: 17/17 pruebas focalizadas y 239/239 de la suite completa pasan. PRODUCTION_AUTH_REVIEW.md conserva el hallazgo y la evidencia. La revisión anterior quedó resuelta con la autorización específica del usuario.
 
-No se declarará migración ni despliegue terminados por haber preparado scripts o por resultados del entorno anterior.
+La migración de datos fue ejecutada y verificada en el destino. La preparación y aceptación local no equivalen a publicación: Render, HTTPS, SMTP, QR públicos y verificación desde otro dispositivo siguen pendientes. Las evidencias vigentes están en MIGRATION_STATUS.md.

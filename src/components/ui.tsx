@@ -22,6 +22,7 @@ import {
   ChevronRight,
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
+import { hasConfirmedLocalLogout } from "@/lib/session-messages";
 
 export async function api<T>(url: string, init?: RequestInit): Promise<T> {
   const res = await fetch(url, {
@@ -52,6 +53,7 @@ export async function api<T>(url: string, init?: RequestInit): Promise<T> {
         code: data.code,
         fields: data.fields,
         pending: data.pending,
+        localSessionCleared: data.localSessionCleared === true,
       },
     );
   return data as T;
@@ -319,8 +321,13 @@ export function Shell({
     try {
       await post("/api/auth", { action: "logout" });
       window.location.assign("/login");
-    } catch (e) {
-      setError((e as Error).message);
+    } catch (error) {
+      if (hasConfirmedLocalLogout(error)) {
+        window.location.assign("/login?logout=unconfirmed");
+        return;
+      }
+      setOpen(false);
+      setError((error as Error).message);
     }
   }
   return (

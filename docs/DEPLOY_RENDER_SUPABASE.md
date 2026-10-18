@@ -2,11 +2,11 @@
 
 ## Destino vigente de la migración
 
-Actualizado el 17 de octubre de 2026. Repositorio: [seebdev/tolentino-chef](https://github.com/seebdev/tolentino-chef), rama `main`. Supabase destino: **`hgntppemxwcxaxritnfq`**. Render: **cuenta nueva, acceso y servicio pendientes**. Todavía no hay una URL pública verificada.
+Actualizado el 18 de octubre de 2026 (UTC). Repositorio: [seebdev/tolentino-chef](https://github.com/seebdev/tolentino-chef), rama `main`. Supabase destino: **`hgntppemxwcxaxritnfq`**. Render: **workspace Tolentino Restaurantes (`tea-dba1s4m1egvs7391ve50`), API verificada y sin servicios; creación/despliegue pendientes de autorización**. Todavía no hay una URL pública verificada.
 
-El historial completo se publicó inicialmente con el commit `67a99778196584521c9ec048ac7d6de8496e72de`. El remoto anterior se conserva como `legacy-origin`, con push deshabilitado localmente. No volver a publicar allí.
+El historial completo y la preparación están publicados con el commit `2650c7096b4ba6b7076ac14dba5ab30dec75c490` antes de esta ejecución. El remoto anterior se conserva como `legacy-origin`, con push deshabilitado localmente. No volver a publicar allí.
 
-La base anterior `ylcnrfzosjzuljufwups`, sus tres DEMO y el servidor local anterior se conservan. Sus resultados están en [la auditoría histórica](../AUDITORIA_FINAL_TOLENTINO_RESTAURANTES.md) y [los DEMO históricos](../RESTAURANTES_DEMO.md); **no acreditan el nuevo Supabase ni Render**. El respaldo lógico anterior pasó un ensayo local de restauración, descrito en [BACKUP_RESTORE.md](BACKUP_RESTORE.md).
+La base anterior `ylcnrfzosjzuljufwups` y sus tres DEMO se conservan. El servidor local anterior se detuvo; su configuración se preservó cifrada antes del corte. El entorno local actual ya utiliza exclusivamente el proyecto nuevo. Se trasladaron y verificaron dos migraciones, cuatro identidades Auth, 361 filas y 27 objetos; los tres DEMO conservan sus UUID y tokens QR. Sus resultados están en [la auditoría histórica](../AUDITORIA_FINAL_TOLENTINO_RESTAURANTES.md) y [los DEMO históricos](../RESTAURANTES_DEMO.md); **no acreditan el nuevo Supabase ni Render**. El respaldo lógico anterior pasó un ensayo local de restauración, descrito en [BACKUP_RESTORE.md](BACKUP_RESTORE.md).
 
 Seguir primero el [plan de migración sin pérdida](MIGRATION_PLAN.md), [el plan de datos](MIGRATION_DATA_PLAN.md), [Auth](MIGRATION_AUTH_PLAN.md) y [pruebas](MIGRATION_TEST_PLAN.md). No ejecutar `bootstrap-admin.mjs` ni `provision-demos.mjs` como atajo: el traslado debe preservar identidades, relaciones, fotografías y tokens QR.
 
@@ -46,11 +46,11 @@ La plantilla **Reset password** debe usar el endpoint de servidor:
 
 El alta administrativa confirma primero restaurante y membresía y luego solicita recuperación. Configurar SMTP/remitente en el proyecto nuevo y probar entrega y recuperación en un buzón autorizado; las cuentas `.test` no sirven para probar correo. No se ha acreditado entrega real. [Plantillas de servidor de Supabase](https://supabase.com/docs/guides/auth/auth-email-templates#redirecting-the-user-to-a-server-side-endpoint).
 
-El defecto de logout durante un fallo temprano de renovación sigue documentado en [PRODUCTION_AUTH_REVIEW.md](PRODUCTION_AUTH_REVIEW.md), pendiente de autorización específica tras el rechazo de revisión automática. No se presenta como corregido.
+El defecto de logout fue corregido con autorización específica: se limpian las cookies locales aunque falle la revocación, sin afirmar éxito completo. Pasan 17/17 pruebas focalizadas y 239/239 de la suite. También se verificaron login/logout reales del destino. La protección contra contraseñas filtradas sigue deshabilitada: Supabase la ofrece desde Pro; no se contrató ese plan. Véase [PRODUCTION_AUTH_REVIEW.md](PRODUCTION_AUTH_REVIEW.md).
 
 ## 3. Variables de la aplicación y del servicio Render
 
-Después de comprobar la migración, conservar una copia privada de la configuración local anterior y sustituir conjuntamente las variables de la aplicación. Detener el proceso viejo y reconstruir con las nuevas variables; un build anterior conserva variables públicas antiguas.
+El corte local ya se ejecutó después de verificar la importación y cifrar la configuración anterior. El build fue reconstruido con las variables nuevas y health identifica hgntppemxwcxaxritnfq. En futuros cambios, sustituir conjuntamente las variables y reconstruir: un build anterior conserva variables públicas antiguas.
 
 | Variable de aplicación | Valor/requisito |
 | --- | --- |
@@ -96,4 +96,4 @@ Las evidencias nuevas se guardan en `docs/evidence/migrations/hgntppemxwcxaxritn
 
 ## Bloqueos actuales
 
-Faltan credenciales nuevas de Supabase, confirmación de contraseña DB rotada y conectividad SQL, verificación/configuración de Auth, migración real de datos, acceso/workspace Render, autorización del servicio, HTTPS, SMTP y aceptación pública. No hay URL pública de superadministrador ni menús que pueda darse por verificada. La infraestructura anterior permanece conservada.
+Credenciales nuevas, contraseña DB rotada, conectividad SQL, respaldo destino, registro público desactivado y workspace Render ya están verificados. La importación real y la aceptación funcional local del entorno nuevo pasaron: 239 unitarias, 54 de interfaz con fixtures, 113 funcionales reales, 30 de aislamiento y nueve QR locales decodificados. La integridad posterior confirmó catálogo, UUID, cuentas y objetos sin residuos temporales. Quedan autorización del servicio Render, HTTPS, SMTP y aceptación pública. No hay URL pública de superadministrador ni menús que pueda darse por verificada. La infraestructura anterior permanece conservada.

@@ -197,7 +197,7 @@ try {
     applicationRowsPreserved: true, qrIdentifiersPreserved: true,
     normalizedOperationalColumns: ["restaurants.menu_version_transaction reset to 0"],
     storageTechnicalIdsPreservedByFutureApiUpload: false,
-    command: "node scripts/migration-data-local.mjs .runtime/backups/application-20261017193357263.json.enc",
+    command: "node scripts/migration-data-local.mjs .runtime/backups/application-source-current-20261018012154252.json.enc",
     limitations: [
       "Auth and Storage decisions tested with in-memory snapshots, not target APIs.",
       "Only application SQL restored into PGlite; managed Supabase Auth/Storage services not restored.",
@@ -205,7 +205,7 @@ try {
       "Source double read detects stability but is not a transaction snapshot.",
     ],
   };
-  writeFileSync(resolve(directory, "local-data-preparation.json"), JSON.stringify(report, null, 2) + "\n");
+  writeFileSync(resolve(directory, "local-data-preparation-current.json"), JSON.stringify(report, null, 2) + "\n");
   console.log(JSON.stringify({
     result: "PASS", passedChecks: checks.length, failedChecks: 0,
     sourceArchiveSha256: sha256(encrypted), remoteRequests: 0, remoteMutations: 0,

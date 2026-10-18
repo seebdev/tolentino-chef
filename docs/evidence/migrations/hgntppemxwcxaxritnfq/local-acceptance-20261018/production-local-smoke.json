@@ -1,0 +1,36 @@
+{
+  "at": "2026-10-18T01:49:53.871Z",
+  "projectRef": "hgntppemxwcxaxritnfq",
+  "runId": "local-acceptance-20261018",
+  "base": "http://localhost:3000",
+  "mode": "next start (production build served locally)",
+  "browser": "155.0.8059.80",
+  "menus": [
+    {
+      "key": "aurora",
+      "http": 200,
+      "products": 24,
+      "cspProduction": true
+    },
+    {
+      "key": "marea",
+      "http": 200,
+      "products": 24,
+      "cspProduction": true
+    },
+    {
+      "key": "bruma",
+      "http": 200,
+      "products": 24,
+      "cspProduction": true
+    }
+  ],
+  "health": {
+    "status": "ok",
+    "configured": true,
+    "supabaseProjectRef": "hgntppemxwcxaxritnfq"
+  },
+  "ownerLoginLogout": "PASS",
+  "runtimeErrors": [],
+  "result": "PASS"
+}

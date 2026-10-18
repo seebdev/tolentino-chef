@@ -1,0 +1,226 @@
+{
+  "at": "2026-10-18T02:03:09.716Z",
+  "targetProjectRef": "hgntppemxwcxaxritnfq",
+  "sourceArchiveSha256": "148c4dd9feba2a2b7257e6314cf594b406a9ed80865cf08fd103503198130c6a",
+  "stage": "after-qa",
+  "result": "PASS",
+  "tables": {
+    "platform_admins": {
+      "expectedRows": 1,
+      "actualRows": 1,
+      "added": 0,
+      "removed": 0,
+      "changed": 0,
+      "duplicates": false,
+      "expectedSha256": "51baf154bf75164e149b0bd576c60087f79b28adf2ca57690ec53224b74acf4c",
+      "actualSha256": "51baf154bf75164e149b0bd576c60087f79b28adf2ca57690ec53224b74acf4c",
+      "equal": true
+    },
+    "restaurants": {
+      "expectedRows": 3,
+      "actualRows": 3,
+      "added": 0,
+      "removed": 0,
+      "changed": 0,
+      "duplicates": false,
+      "expectedSha256": "f697710873472bb0280716d39f0189d6080f8039c8668533684a4c1fee72dee3",
+      "actualSha256": "f697710873472bb0280716d39f0189d6080f8039c8668533684a4c1fee72dee3",
+      "equal": true
+    },
+    "restaurant_memberships": {
+      "expectedRows": 3,
+      "actualRows": 3,
+      "added": 0,
+      "removed": 0,
+      "changed": 0,
+      "duplicates": false,
+      "expectedSha256": "8c6d155cc5931f05aec5fed458ded3e54ca6001e331750436099bf419ea0a654",
+      "actualSha256": "8c6d155cc5931f05aec5fed458ded3e54ca6001e331750436099bf419ea0a654",
+      "equal": true
+    },
+    "restaurant_settings": {
+      "expectedRows": 3,
+      "actualRows": 3,
+      "added": 0,
+      "removed": 0,
+      "changed": 0,
+      "duplicates": false,
+      "expectedSha256": "c5a5744c96c31822a550a3eaafdf189ba47316c9a36db144e4adb14136ae4bac",
+      "actualSha256": "c5a5744c96c31822a550a3eaafdf189ba47316c9a36db144e4adb14136ae4bac",
+      "equal": true
+    },
+    "categories": {
+      "expectedRows": 24,
+      "actualRows": 24,
+      "added": 0,
+      "removed": 0,
+      "changed": 0,
+      "duplicates": false,
+      "expectedSha256": "16824c4302443ff45e114c1c5dc64a7db42a486b5016eb0467df07fae3d88501",
+      "actualSha256": "16824c4302443ff45e114c1c5dc64a7db42a486b5016eb0467df07fae3d88501",
+      "equal": true
+    },
+    "products": {
+      "expectedRows": 72,
+      "actualRows": 72,
+      "added": 0,
+      "removed": 0,
+      "changed": 0,
+      "duplicates": false,
+      "expectedSha256": "51ab9d679fe83221cf4272a00c116caca51d1472f9d743b9ff5d3a8475bde77a",
+      "actualSha256": "51ab9d679fe83221cf4272a00c116caca51d1472f9d743b9ff5d3a8475bde77a",
+      "equal": true
+    },
+    "promotions": {
+      "expectedRows": 3,
+      "actualRows": 3,
+      "added": 0,
+      "removed": 0,
+      "changed": 0,
+      "duplicates": false,
+      "expectedSha256": "27cd766f5e3e876400c64f09c9317dcbef0eec5c1deec72114d3e6af9cfde497",
+      "actualSha256": "27cd766f5e3e876400c64f09c9317dcbef0eec5c1deec72114d3e6af9cfde497",
+      "equal": true
+    },
+    "restaurant_hours": {
+      "expectedRows": 21,
+      "actualRows": 21,
+      "added": 0,
+      "removed": 0,
+      "changed": 0,
+      "duplicates": false,
+      "expectedSha256": "695c15960b99b2889d5d8b7ed386ec5cd4a55acd384896057bef6469d0bf8fb3",
+      "actualSha256": "695c15960b99b2889d5d8b7ed386ec5cd4a55acd384896057bef6469d0bf8fb3",
+      "equal": true
+    },
+    "translations": {
+      "expectedRows": 96,
+      "actualRows": 96,
+      "added": 0,
+      "removed": 0,
+      "changed": 0,
+      "duplicates": false,
+      "expectedSha256": "520441278a0df2563a27276701685ccf25b6f28822b1fe117175ff4bf4838ab1",
+      "actualSha256": "520441278a0df2563a27276701685ccf25b6f28822b1fe117175ff4bf4838ab1",
+      "equal": true
+    },
+    "restaurant_qr_configs": {
+      "expectedRows": 3,
+      "actualRows": 3,
+      "added": 0,
+      "removed": 0,
+      "changed": 0,
+      "duplicates": false,
+      "expectedSha256": "573f54a88f84eba516217913087a6aec9de8e534753c14613b2c2f2d22a4512d",
+      "actualSha256": "573f54a88f84eba516217913087a6aec9de8e534753c14613b2c2f2d22a4512d",
+      "equal": true
+    },
+    "restaurant_domains": {
+      "expectedRows": 0,
+      "actualRows": 0,
+      "added": 0,
+      "removed": 0,
+      "changed": 0,
+      "duplicates": false,
+      "expectedSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "actualSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "equal": true
+    },
+    "commercial_sales": {
+      "expectedRows": 3,
+      "actualRows": 3,
+      "added": 0,
+      "removed": 0,
+      "changed": 0,
+      "duplicates": false,
+      "expectedSha256": "5aa6e60d357b93dc8eea00c25494bb109da600a421f27e2a6093439eac52149b",
+      "actualSha256": "5aa6e60d357b93dc8eea00c25494bb109da600a421f27e2a6093439eac52149b",
+      "equal": true
+    },
+    "platform_settings": {
+      "expectedRows": 1,
+      "actualRows": 1,
+      "added": 0,
+      "removed": 0,
+      "changed": 0,
+      "duplicates": false,
+      "expectedSha256": "e64ab3f79a7facce21c7920b2b955afe03c770065ec42a0987289e4d8294f88e",
+      "actualSha256": "e64ab3f79a7facce21c7920b2b955afe03c770065ec42a0987289e4d8294f88e",
+      "equal": true
+    }
+  },
+  "auth": {
+    "expectedRows": 4,
+    "actualRows": 4,
+    "added": 0,
+    "removed": 0,
+    "changed": 0,
+    "duplicates": false,
+    "expectedSha256": "85baa8193f1fbe69efcfdfa6500f8d86581f2f29bc5659e899c9e4d387db69cc",
+    "actualSha256": "85baa8193f1fbe69efcfdfa6500f8d86581f2f29bc5659e899c9e4d387db69cc",
+    "equal": true
+  },
+  "buckets": {
+    "expectedRows": 1,
+    "actualRows": 1,
+    "added": 0,
+    "removed": 0,
+    "changed": 0,
+    "duplicates": false,
+    "expectedSha256": "83530de4a5bf7ba53adf241a734425efa9f6695a9db7c92fd1d02dffe5121d02",
+    "actualSha256": "83530de4a5bf7ba53adf241a734425efa9f6695a9db7c92fd1d02dffe5121d02",
+    "equal": true
+  },
+  "bucketPrivateAndConfigEqual": true,
+  "storage": {
+    "expectedRows": 27,
+    "actualRows": 27,
+    "added": 0,
+    "removed": 0,
+    "changed": 0,
+    "duplicates": false,
+    "expectedSha256": "012517664fa023609925db71af44240c178f9b93e94d76e882fca203ec378e6b",
+    "actualSha256": "012517664fa023609925db71af44240c178f9b93e94d76e882fca203ec378e6b",
+    "equal": true,
+    "downloadedObjects": 27,
+    "downloadedBytes": 314126,
+    "metadataMatches": true
+  },
+  "targetDoubleRead": {
+    "equal": true,
+    "beforeSha256": "ec558bdd8f730a3344fa00323eec48ac44226ccf6ce1d0d61ab8436b27d43dbd",
+    "afterSha256": "ec558bdd8f730a3344fa00323eec48ac44226ccf6ce1d0d61ab8436b27d43dbd",
+    "transactionSnapshot": false
+  },
+  "excludedTables": [
+    "security_audit_events",
+    "visit_events"
+  ],
+  "excludedFields": {
+    "allBusinessTables": [
+      "updated_at"
+    ],
+    "restaurants": [
+      "menu_version",
+      "menu_version_transaction"
+    ]
+  },
+  "authScope": "All four original Auth UUIDs and exact emails; no sessions or password values read or tested",
+  "storageScope": "Exact bucket configuration and complete path/byte/MIME/SHA256 comparison; no extra buckets or objects",
+  "sourceRequests": 0,
+  "remoteMutations": 0,
+  "businessContentMutations": false,
+  "authSessionLifecycle": false,
+  "requests": {
+    "requests": 77,
+    "failedRequests": 0,
+    "operations": {
+      "businessTable": 26,
+      "authProfiles": 2,
+      "buckets": 6,
+      "storageList": 16,
+      "storageDownload": 27
+    }
+  },
+  "privateRowsOrCredentialValuesPrinted": false
+}

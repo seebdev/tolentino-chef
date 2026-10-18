@@ -1,0 +1,68 @@
+{
+  "at": "2026-10-18T01:49:05.338Z",
+  "projectRef": "hgntppemxwcxaxritnfq",
+  "status": 200,
+  "scope": "Supabase Management security advisor GET only",
+  "remoteMutations": 0,
+  "findings": [
+    {
+      "name": "rls_enabled_no_policy",
+      "level": "INFO",
+      "title": "RLS Enabled No Policy",
+      "categories": [
+        "SECURITY"
+      ],
+      "table": "rate_limits",
+      "schema": "private"
+    },
+    {
+      "name": "rls_enabled_no_policy",
+      "level": "INFO",
+      "title": "RLS Enabled No Policy",
+      "categories": [
+        "SECURITY"
+      ],
+      "table": "restaurant_creation_requests",
+      "schema": "private"
+    },
+    {
+      "name": "rls_enabled_no_policy",
+      "level": "INFO",
+      "title": "RLS Enabled No Policy",
+      "categories": [
+        "SECURITY"
+      ],
+      "table": "commercial_sales",
+      "schema": "public"
+    },
+    {
+      "name": "rls_enabled_no_policy",
+      "level": "INFO",
+      "title": "RLS Enabled No Policy",
+      "categories": [
+        "SECURITY"
+      ],
+      "table": "platform_settings",
+      "schema": "public"
+    },
+    {
+      "name": "rls_enabled_no_policy",
+      "level": "INFO",
+      "title": "RLS Enabled No Policy",
+      "categories": [
+        "SECURITY"
+      ],
+      "table": "security_audit_events",
+      "schema": "public"
+    },
+    {
+      "name": "auth_leaked_password_protection",
+      "level": "WARN",
+      "title": "Leaked Password Protection Disabled",
+      "categories": [
+        "SECURITY"
+      ]
+    }
+  ],
+  "reference": "https://supabase.com/docs/reference/api/v1-get-security-advisors"
+}

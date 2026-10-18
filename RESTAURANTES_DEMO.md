@@ -1,5 +1,7 @@
 # Restaurantes DEMO — Tolentino
 
+> Actualización del 18 de octubre de 2026 (UTC): los tres DEMO se migraron a `hgntppemxwcxaxritnfq` conservando UUID, catálogo y tokens QR. El servidor local actual usa ese destino. Sus contraseñas nuevas están exclusivamente en `.runtime/migrations/hgntppemxwcxaxritnfq/accounts.json`; el acceso administrador está en `admin-account.json` de la misma carpeta protegida. Las credenciales y evidencias históricas indicadas más abajo corresponden al entorno anterior. Véase [estado vigente](docs/MIGRATION_STATUS.md) y [manifiesto nuevo](artifacts/migrations/hgntppemxwcxaxritnfq/restaurants.json). Todavía no existen URLs públicas verificadas.
+
 Fecha de entrega: 17 de octubre de 2026 (America/Bogota).
 
 Los tres restaurantes están guardados en Supabase y marcados como DEMO. Cada uno tiene un propietario distinto, una única sucursal, 24 productos, 6 categorías principales, 2 subcategorías, ilustraciones propias, logo, colores, promociones, horarios y español/inglés habilitados. Son datos ficticios; no representan clientes reales. Las cuentas .test no reciben invitaciones ni recuperación por correo.

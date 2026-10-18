@@ -1,0 +1,50 @@
+{
+  "at": "2026-10-18T01:53:06.611Z",
+  "projectRef": "hgntppemxwcxaxritnfq",
+  "scope": "local mocks only; no remote creation or cleanup executed",
+  "networkGuard": "global fetch rejects all requests in selftest",
+  "exitCode": 0,
+  "tests": 15,
+  "passed": 15,
+  "failed": 0,
+  "skipped": 0,
+  "checks": [
+    "fresh DEMO replays concurrently, conflicts are genuine, cleanup preserves the original three and Auth",
+    "a lost creation response is retried with the same request ID and cleaned once",
+    "pending responses reuse the same request until a terminal result",
+    "an unconfirmed active worker keeps the journal and forbids cleanup races",
+    "a failed assertion still cleans the completed temporary restaurant",
+    "an Auth marker changed by another actor prevents every delete",
+    "an additional owner membership prevents deletion of that account or restaurant",
+    "failure deleting a restricted sale prevents restaurant and Auth deletion",
+    "Auth delete failure retains exact recovery identifiers after restaurant cleanup",
+    "a fourth pre-existing restaurant fails before mutation",
+    "journal durability failure prevents the first network mutation",
+    "Auth pagination reads beyond 200 users without truncating or leaking records",
+    "service deletion predicates require exact sale, tenant and owner identifiers",
+    "a prior pending journal prevents treating an orphan account as a fresh baseline",
+    "a journal with another target or format cannot authorize a new audit"
+  ],
+  "syntax": [
+    {
+      "file": "scripts/run-live-audit.mjs",
+      "exitCode": 0,
+      "sha256": "d68941e88df4510168b397f4bb3fad44b28842d2514bac309e020d81318e53ec"
+    },
+    {
+      "file": "scripts/qa-temporary-creation.mjs",
+      "exitCode": 0,
+      "sha256": "b8580a69f7e3e43f51ce11a2c00b6632c693dcd2aff226c24a90fd013b289b69"
+    },
+    {
+      "file": "scripts/qa-temporary-creation-selftest.mjs",
+      "exitCode": 0,
+      "sha256": "60886ed77bdf287ced2d673883ce9e64f7cc70f9a2fcd0bb5d74cc6b99d31f2b"
+    }
+  ],
+  "limitations": [
+    "No remote acceptance claimed.",
+    "A nonterminal creation worker or changed ownership preserves the encrypted journal and requires reconciliation before another run.",
+    "Durable creation requests and security audit events are retained; temporary restaurant, sale and Auth cleanup is verified separately."
+  ]
+}

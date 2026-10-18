@@ -1,3 +1,4 @@
+import { LOCAL_LOGOUT_WARNING } from "@/lib/session-messages";
 import { Login } from "@/components/login";
 export default async function LoginPage({
   searchParams,
@@ -11,9 +12,11 @@ export default async function LoginPage({
         p.mode === "password" || p.recovery === "1" ? "password" : "login"
       }
       initialError={
-        p.error
-          ? "El enlace de acceso no es válido o ha caducado. Solicita uno nuevo."
-          : ""
+        p.logout === "unconfirmed"
+          ? LOCAL_LOGOUT_WARNING
+          : p.error
+            ? "El enlace de acceso no es válido o ha caducado. Solicita uno nuevo."
+            : ""
       }
     />
   );

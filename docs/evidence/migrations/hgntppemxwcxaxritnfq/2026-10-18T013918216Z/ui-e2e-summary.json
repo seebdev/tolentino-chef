@@ -1,0 +1,70 @@
+{
+  "startedAt": "2026-10-18T01:39:18.218Z",
+  "projectRef": "hgntppemxwcxaxritnfq",
+  "baseUrl": "http://127.0.0.1:3001",
+  "browser": "chrome",
+  "scope": "Production build UI with synthetic API fixtures only",
+  "buildEvidence": "../2026-10-18T013032608Z/application-validation.json",
+  "expectedTests": null,
+  "realLogins": 0,
+  "realAuthMutations": 0,
+  "envFileUnchanged": true,
+  "rebuilt": false,
+  "serverReady": true,
+  "exitCode": 0,
+  "counts": {
+    "passed": 54,
+    "failed": 0,
+    "skipped": 0,
+    "flaky": 0
+  },
+  "result": "PASS",
+  "logoutCases": [
+    {
+      "file": "logout.spec.ts",
+      "title": "logout UI leaves panel after confirmed local cleanup",
+      "project": "desktop",
+      "status": "expected"
+    },
+    {
+      "file": "logout.spec.ts",
+      "title": "logout UI keeps an unconfirmed failure visible",
+      "project": "desktop",
+      "status": "expected"
+    },
+    {
+      "file": "logout.spec.ts",
+      "title": "logout UI leaves panel after confirmed local cleanup",
+      "project": "mobile",
+      "status": "expected"
+    },
+    {
+      "file": "logout.spec.ts",
+      "title": "logout UI keeps an unconfirmed failure visible",
+      "project": "mobile",
+      "status": "expected"
+    }
+  ],
+  "skippedCases": [],
+  "serverStopped": true,
+  "finishedAt": "2026-10-18T01:41:04.853Z",
+  "screenshots": [
+    "screenshots/audit-appearance-1440.png",
+    "screenshots/audit-appearance-390.png",
+    "screenshots/audit-appearance-820.png",
+    "screenshots/audit-ui-demo-form-desktop.png",
+    "screenshots/audit-ui-demo-form-mobile.png",
+    "screenshots/audit-ui-public-options-desktop.png",
+    "screenshots/audit-ui-public-options-mobile.png",
+    "screenshots/audit-ui-tablet-admin.png",
+    "screenshots/audit-ui-tablet-owner.png",
+    "screenshots/audit-ui-tablet-public.png",
+    "screenshots/ui-fixture-admin-desktop.png",
+    "screenshots/ui-fixture-admin-mobile.png",
+    "screenshots/ui-fixture-public-desktop.png",
+    "screenshots/ui-fixture-public-mobile.png",
+    "screenshots/ui-real-login-desktop.png",
+    "screenshots/ui-real-login-mobile.png"
+  ],
+  "historicalScreenshotBytesRestored": true
+}

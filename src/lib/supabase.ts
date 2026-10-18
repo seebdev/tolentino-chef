@@ -34,3 +34,31 @@ export async function sessionDb() {
     },
   );
 }
+
+// Route handlers must clear the request's local cookies even when Auth cannot
+// refresh/revoke the session. Cookie names follow the installed SDK's storage key.
+export async function clearSessionCookies() {
+  const project = new URL(process.env.NEXT_PUBLIC_SUPABASE_URL!).hostname.split(
+    ".",
+  )[0];
+  const base = `sb-${project}-auth-token`;
+  const jar = await cookies();
+  for (const { name } of jar.getAll()) {
+    if (!name.startsWith(base)) continue;
+    const suffix = name.slice(base.length);
+    if (
+      !/^(?:|\.\d+|-code-verifier(?:\.\d+)?|-flows-code-verifier(?:\.\d+)?|-flow-[A-Za-z0-9_-]{8,64}-code-verifier(?:\.\d+)?)$/.test(
+        suffix,
+      )
+    )
+      continue;
+    jar.set(name, "", {
+      httpOnly: true,
+      sameSite: "lax",
+      secure: process.env.NODE_ENV === "production",
+      path: "/",
+      maxAge: 0,
+      expires: new Date(0),
+    });
+  }
+}

@@ -1,0 +1,109 @@
+{
+  "at": "2026-10-18T02:03:03.314Z",
+  "projectRef": "hgntppemxwcxaxritnfq",
+  "runId": "local-acceptance-20261018",
+  "base": "http://localhost:3000",
+  "status": "ARTIFACT_DECODING_ONLY",
+  "reason": "Decoding proves payload only; public HTTP resolution and physical scans require separate evidence",
+  "results": [
+    {
+      "restaurant": "aurora",
+      "format": "png",
+      "path": "C:\\Users\\sebas\\OneDrive\\Escritorio\\tolentino-restaurantes-admin\\artifacts\\migrations\\hgntppemxwcxaxritnfq\\local-acceptance-20261018\\qr\\aurora.png",
+      "width": 1024,
+      "height": 1024,
+      "decodedUrl": "http://localhost:3000/q/5820b231-3a31-43aa-a1ec-4f6f79ef2bb6",
+      "decoded": true,
+      "publicReady": false,
+      "physicalScan": false
+    },
+    {
+      "restaurant": "aurora",
+      "format": "svg",
+      "path": "C:\\Users\\sebas\\OneDrive\\Escritorio\\tolentino-restaurantes-admin\\artifacts\\migrations\\hgntppemxwcxaxritnfq\\local-acceptance-20261018\\qr\\aurora.svg",
+      "width": 1024,
+      "height": 1024,
+      "decodedUrl": "http://localhost:3000/q/5820b231-3a31-43aa-a1ec-4f6f79ef2bb6",
+      "decoded": true,
+      "publicReady": false,
+      "physicalScan": false
+    },
+    {
+      "restaurant": "aurora",
+      "format": "pdf",
+      "path": "C:\\Users\\sebas\\OneDrive\\Escritorio\\tolentino-restaurantes-admin\\artifacts\\migrations\\hgntppemxwcxaxritnfq\\local-acceptance-20261018\\qr\\aurora.pdf",
+      "width": 1024,
+      "height": 1024,
+      "decodedUrl": "http://localhost:3000/q/5820b231-3a31-43aa-a1ec-4f6f79ef2bb6",
+      "decoded": true,
+      "publicReady": false,
+      "physicalScan": false
+    },
+    {
+      "restaurant": "marea",
+      "format": "png",
+      "path": "C:\\Users\\sebas\\OneDrive\\Escritorio\\tolentino-restaurantes-admin\\artifacts\\migrations\\hgntppemxwcxaxritnfq\\local-acceptance-20261018\\qr\\marea.png",
+      "width": 1024,
+      "height": 1024,
+      "decodedUrl": "http://localhost:3000/q/199258db-b193-4055-9f26-b1f3ea9ee1eb",
+      "decoded": true,
+      "publicReady": false,
+      "physicalScan": false
+    },
+    {
+      "restaurant": "marea",
+      "format": "svg",
+      "path": "C:\\Users\\sebas\\OneDrive\\Escritorio\\tolentino-restaurantes-admin\\artifacts\\migrations\\hgntppemxwcxaxritnfq\\local-acceptance-20261018\\qr\\marea.svg",
+      "width": 1024,
+      "height": 1024,
+      "decodedUrl": "http://localhost:3000/q/199258db-b193-4055-9f26-b1f3ea9ee1eb",
+      "decoded": true,
+      "publicReady": false,
+      "physicalScan": false
+    },
+    {
+      "restaurant": "marea",
+      "format": "pdf",
+      "path": "C:\\Users\\sebas\\OneDrive\\Escritorio\\tolentino-restaurantes-admin\\artifacts\\migrations\\hgntppemxwcxaxritnfq\\local-acceptance-20261018\\qr\\marea.pdf",
+      "width": 1024,
+      "height": 1024,
+      "decodedUrl": "http://localhost:3000/q/199258db-b193-4055-9f26-b1f3ea9ee1eb",
+      "decoded": true,
+      "publicReady": false,
+      "physicalScan": false
+    },
+    {
+      "restaurant": "bruma",
+      "format": "png",
+      "path": "C:\\Users\\sebas\\OneDrive\\Escritorio\\tolentino-restaurantes-admin\\artifacts\\migrations\\hgntppemxwcxaxritnfq\\local-acceptance-20261018\\qr\\bruma.png",
+      "width": 1024,
+      "height": 1024,
+      "decodedUrl": "http://localhost:3000/q/5d236a67-793a-4a72-92f4-63abe20e8d95",
+      "decoded": true,
+      "publicReady": false,
+      "physicalScan": false
+    },
+    {
+      "restaurant": "bruma",
+      "format": "svg",
+      "path": "C:\\Users\\sebas\\OneDrive\\Escritorio\\tolentino-restaurantes-admin\\artifacts\\migrations\\hgntppemxwcxaxritnfq\\local-acceptance-20261018\\qr\\bruma.svg",
+      "width": 1024,
+      "height": 1024,
+      "decodedUrl": "http://localhost:3000/q/5d236a67-793a-4a72-92f4-63abe20e8d95",
+      "decoded": true,
+      "publicReady": false,
+      "physicalScan": false
+    },
+    {
+      "restaurant": "bruma",
+      "format": "pdf",
+      "path": "C:\\Users\\sebas\\OneDrive\\Escritorio\\tolentino-restaurantes-admin\\artifacts\\migrations\\hgntppemxwcxaxritnfq\\local-acceptance-20261018\\qr\\bruma.pdf",
+      "width": 1024,
+      "height": 1024,
+      "decodedUrl": "http://localhost:3000/q/5d236a67-793a-4a72-92f4-63abe20e8d95",
+      "decoded": true,
+      "publicReady": false,
+      "physicalScan": false
+    }
+  ]
+}

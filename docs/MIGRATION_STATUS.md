@@ -1,37 +1,56 @@
-# Estado de preparación de la migración
+# Estado de la migración
 
-Actualizado el 17 de octubre de 2026. Esta entrega prepara el traslado; no acredita que se haya migrado Supabase o publicado Render.
+Actualizado el 18 de octubre de 2026 (UTC). La migración a Supabase **hgntppemxwcxaxritnfq** y la aceptación local están verificadas. **Render todavía no está publicado y no hay URLs HTTPS públicas acreditadas.**
 
 | Componente | Resultado verificado |
 | --- | --- |
-| GitHub | Cuenta seebdev, permiso ADMIN; historial completo publicado en main del nuevo repositorio. Remoto anterior conservado como legacy-origin con push deshabilitado localmente. |
-| Destino Supabase | hgntppemxwcxaxritnfq; credenciales aún ausentes, inspección/migraciones/traslado reales pendientes. |
-| Código y scripts | Health identifica el proyecto público; verificadores rechazan origen anterior antes de login y guardan evidencia separada. |
-| Suite local completa | 226/226 pruebas en 14 archivos; incluye SQL/RLS aislado, CSV1000, Auth/API, QR y 19 controles de destino. |
-| TypeScript y lint | Ambos aprobados con el runtime Node22.23.3. |
-| Traslado ensayado | 52/52 comprobaciones en PGlite: 358 filas/15tablas, segunda importación sin duplicados, conflictos/rollback y conservación de UUID/QR. Planes Auth/Storage sólo en memoria. |
-| Blueprint | Esquema válido: repositorio seebdev, main, un Web Service, Virginia y Free para validación. No crea otra base de datos ni incorpora secretos. |
-| Render | Sin API key nueva ni workspace verificado; no se creó, modificó o desplegó ningún servicio. |
-| Auth/correos | Registro público, SMTP, sesiones alojadas y recuperación del proyecto nuevo aún sin verificar. |
-| QR públicos | Pendientes de HTTPS real y verificación pública; no se entregan QR locales como comerciales. |
-| Rebuild y aceptación real | Pendientes del traslado y de las variables nuevas. El build/servidor anteriores no se presentan como prueba del destino. |
+| GitHub | Cuenta seebdev con ADMIN/PUSH, rama main y origin en seebdev/tolentino-chef. Historial conservado; legacy-origin tiene push deshabilitado localmente. El SHA publicado se comprueba con Git al cerrar esta ejecución. |
+| Migración real | Dos migraciones aplicadas; cuatro identidades con UUID/correos preservados y contraseñas nuevas; 361 filas iniciales en quince tablas y 27 objetos con bytes/MIME verificados. Sin mutaciones en origen. |
+| Tres DEMO | Aurora, Bruma y Marea conservan UUID, tokens QR, propietarios, 72 productos, 24 categorías y 96 traducciones. Las pruebas temporales se limpiaron. |
+| Integridad después de QA | Trece tablas de negocio, cuatro identidades y 27 objetos iguales al respaldo aprobado. Se excluyen timestamps de edición/versiones internas y auditoría/métricas, cuyos cambios por QA están documentados. |
+| Registro y sesiones | Registro público desactivado exclusivamente en el destino, Email habilitado y anónimo deshabilitado. Logout corregido y probado; credenciales nuevas sólo en archivos locales protegidos. |
+| Corte local | Configuración anterior cifrada; .env.local, build y servidor actual usan el proyecto nuevo. APP_URL local deliberado: http://localhost:3000. |
+| Código | Typegen, TypeScript, lint y build PASS; 239/239 unitarias. Lint final de scripts, src y tests también pasó. |
+| Interfaz con fixtures | 54/54, incluyendo cuatro casos de logout; no se presentan como sesiones alojadas reales. |
+| Pruebas funcionales reales | Principal 84/84, administración 10/10, complementarias 19/19; creación idempotente, CRUD, CSV hasta 1.000, soporte, suspensión y restauración de los originales. |
+| Aislamiento real | 30/30; seis pares dirigidos API/RLS/Storage, controles positivos propios y cero acceso a contenido ajeno. |
+| Navegadores reales | Chrome y Edge, 24 escenarios y 372 comprobaciones; tres menús en 390/768/1440 y paneles de propietarios. Capturas adicionales de admin cargado desktop/móvil: 4/4. No son dispositivos físicos. |
+| Persistencia | Proceso anterior 20636 cerrado, proceso nuevo 21044; hashes privados/públicos exactos para tres DEMO, nuevos logins y health200. |
+| QR | Nueve PNG/SVG/PDF decodificados conservan los tokens originales. Contienen localhost y todavía no son QR públicos definitivos. |
+| Respaldo final | Cifrado AES-256-GCM, dump PostgreSQL17.11, quince tablas/449 filas después de QA, dos tablas privadas, Auth en dump y 27 objetos/314.126 bytes. Lecturas estables y descifrado verificado. |
+| Restauración aislada | 71/71 en PGlite/memoria; quince tablas, dos privadas y bytes/UUID/QR exactos, seis pares RLS. No restaura GoTrue ni el servicio HTTP de Storage. |
+| Seguridad | npm audit sin vulnerabilidades conocidas; advisor sin ERROR. Cinco avisos INFO de tablas cerradas se comprobaron sin grants a anon/authenticated. Protección contra contraseñas filtradas pendiente (requiere Supabase Pro). |
+| Render | API verificada, workspace Tolentino Restaurantes — tea-dba1s4m1egvs7391ve50, inventario sin servicios. Creación y despliegue aún requieren autorización específica del usuario. |
 
-Los tres restaurantes y toda la infraestructura anterior se conservan. No se modificó Crepes & Waffles. Antes de aplicar el traslado se volverá a comparar el origen en modo de sólo lectura: el respaldo ensayado no autoriza perder cambios posteriores.
+El Supabase anterior, los tres DEMO originales y el proyecto Crepes & Waffles se conservaron. No se enviaron correos a las cuentas DEMO. Los nuevos accesos están en .runtime/migrations/hgntppemxwcxaxritnfq/accounts.json y admin-account.json, ignorados por Git; nunca en este documento.
 
-## Siguiente paso seguro
+## Respaldo comprobado
 
-Completar en el equipo .env.migration.local con claves del proyecto nuevo y contraseña DB recién rotada. Confirmar TARGET_SUPABASE_DB_PASSWORD_ROTATED y, si se usa Session pooler, sus parámetros reales y TARGET_SUPABASE_DB_SESSION_CONFIRMED. No introducir secretos en el chat o Git.
+Archivo local cifrado: .runtime/backups/target-final-hgntppemxwcxaxritnfq-20261018T021153664Z.json.enc.
 
-Después: inspeccionar y respaldar destino, verificar vigencia del origen, aplicar migraciones y traslado, configurar Auth, reconstruir y probar la aplicación. Para Render hace falta una API key de la cuenta nueva y confirmar su workspace; inventariar antes de presentar el servicio concreto para autorización. APP_URL se establecerá cuando exista su origen HTTPS real.
+SHA256: 57bd66441a9ab399f022899f4e2be41a9d02bbcb2c841a55185dd12ddbc23cab.
 
-No están implementados ni ejecutados todavía el adaptador de escritura remota y el respaldo completo del destino: deben construirse sobre su inventario real. Las utilidades locales no equivalen a esa ejecución.
+La clave DPAPI depende de este perfil Windows. Todavía no se acredita recuperación en otro equipo, PITR ni restauración completa de Supabase administrado. El ensayo no se ejecutó sobre los datos existentes. [Procedimiento, resultados y límites](BACKUP_RESTORE.md).
 
-La propuesta de corregir el error temprano de logout permanece pendiente de autorización explícita después de que la revisión automática rechazara modificar Auth/UI en la fase anterior. Véase PRODUCTION_AUTH_REVIEW.md. No se declara corregido.
+## Pendiente para publicación
 
-## Evidencias y procedimiento
+1. Autorizar el [único servicio Render propuesto](RENDER_SERVICE_PROPOSAL.md), basado en render.yaml: repo nuevo/main, Node22.23.3, Virginia y Free para validación pública. No contratar recursos de pago. Volver a inventariar antes de crear para evitar duplicados.
+2. Obtener la URL HTTPS realmente asignada y configurar APP_URL, hosts, Site URL y callbacks exactos. Verificar commit desplegado, health, administrador, propietarios y tres menús públicos.
+3. Regenerar los nueve QR con ese origen, decodificar y comprobar HTTP/HTTPS. El escaneo desde otro dispositivo requiere una prueba real posterior.
+4. Configurar SMTP/remitente por un canal seguro y acreditar entrega y recuperación en un buzón autorizado. Hoy no hay SMTP propio ni entrega verificada.
+5. Definir disponibilidad comercial y recuperación ante pérdida del equipo. Free se suspende por inactividad; el ensayo local de respaldo no resuelve por sí solo esos requisitos.
 
-- [Plan general](MIGRATION_PLAN.md), [datos](MIGRATION_DATA_PLAN.md), [Auth](MIGRATION_AUTH_PLAN.md), [pruebas](MIGRATION_TEST_PLAN.md).
-- [Guía vigente de Render/Supabase](DEPLOY_RENDER_SUPABASE.md).
-- [Ensayo de datos](evidence/migrations/hgntppemxwcxaxritnfq/local-data-preparation.json).
-- [Controles de destino](evidence/migrations/hgntppemxwcxaxritnfq/local-guards-20261017/validation.json).
-- Evidencias de preflight, esquema del blueprint, suite completa y escaneo de secretos: subdirectorios fechados bajo docs/evidence/migrations/hgntppemxwcxaxritnfq/.
+No se declara el despliegue terminado. No hay URLs públicas verificadas de superadministrador o menús que se puedan entregar todavía.
+
+## Evidencias de esta ejecución
+
+- [Importación real](evidence/migrations/hgntppemxwcxaxritnfq/20261018T014644816Z/target-migration.json), [corte local](evidence/migrations/hgntppemxwcxaxritnfq/20261018T014816249Z/local-cutover.json) e [integridad después de QA](evidence/migrations/hgntppemxwcxaxritnfq/20261018T020309718Z/target-integrity-after-qa.json).
+- [Registro público cerrado](evidence/migrations/hgntppemxwcxaxritnfq/2026-10-18T012638307Z/auth-signup-readback.json), [revisión Auth](PRODUCTION_AUTH_REVIEW.md) y [configuración/pendientes Auth](MIGRATION_AUTH_PLAN.md).
+- [Código/build239](evidence/migrations/hgntppemxwcxaxritnfq/2026-10-18T013032608Z/application-validation.json) e [interfaz54](evidence/migrations/hgntppemxwcxaxritnfq/2026-10-18T013918216Z/ui-e2e-summary.json).
+- [Funcionales84](evidence/migrations/hgntppemxwcxaxritnfq/local-acceptance-20261018/live-audit.json), [admin10](evidence/migrations/hgntppemxwcxaxritnfq/local-acceptance-20261018/live-admin-audit.json), [adicionales19](evidence/migrations/hgntppemxwcxaxritnfq/local-acceptance-20261018/live-gap-audit.json) y [aislamiento30](evidence/migrations/hgntppemxwcxaxritnfq/local-acceptance-20261018/production-isolation-20261018T014923709Z.json).
+- [Navegadores24/372](evidence/migrations/hgntppemxwcxaxritnfq/local-acceptance-20261018/live-browser-audit.json), [admin cargado](evidence/migrations/hgntppemxwcxaxritnfq/local-acceptance-20261018/admin-loaded-screenshots.json), [reinicio](evidence/migrations/hgntppemxwcxaxritnfq/local-acceptance-20261018/restart-persistence.json) y [QR locales](evidence/migrations/hgntppemxwcxaxritnfq/local-acceptance-20261018/demo-qr-decoding.json).
+- [Respaldo final](evidence/migrations/hgntppemxwcxaxritnfq/20261018T021153664Z/target-final-backup.json) y [restauración71](evidence/migrations/hgntppemxwcxaxritnfq/20261018T021315710Z/target-final-restore-local.json).
+- [Dependencias](evidence/migrations/hgntppemxwcxaxritnfq/2026-10-18T014342172Z/dependency-audit.json), [advisor](evidence/migrations/hgntppemxwcxaxritnfq/2026-10-18T014905338Z/security-advisors.json) y [grants cerrados](evidence/migrations/hgntppemxwcxaxritnfq/2026-10-18T015033170Z/security-advisor-assessment.json).
+- [Workspace Render](evidence/migrations/hgntppemxwcxaxritnfq/2026-10-18T013932176Z/selected-render-workspace.json), [plan de pruebas](MIGRATION_TEST_PLAN.md) y [guía de despliegue](DEPLOY_RENDER_SUPABASE.md).
+
+Escaneo final antes del commit: 412 archivos de trabajo/índice, 337 blobs del historial y 44 archivos del navegador; 11 secretos conocidos comprobados en memoria y cero hallazgos. Los archivos .env, accesos privados y respaldos están ignorados. [Reporte del escaneo](evidence/migrations/hgntppemxwcxaxritnfq/2026-10-18T021723507Z/secret-scan.json).

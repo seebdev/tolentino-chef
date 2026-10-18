@@ -1,0 +1,16 @@
+{
+  "checkedAt": "2026-10-18T01:39:52.491Z",
+  "source": "https://supabase-downloads.s3-ap-southeast-1.amazonaws.com/prod/ssl/prod-ca-2021.crt",
+  "sourceCode": "https://github.com/supabase/supabase/blob/master/apps/studio/hooks/custom-content/custom-content.json",
+  "localFile": ".runtime/supabase-ca.crt",
+  "subject": "C=US\nST=Delware\nL=New Castle\nO=Supabase Inc\nCN=Supabase Root 2021 CA",
+  "issuer": "C=US\nST=Delware\nL=New Castle\nO=Supabase Inc\nCN=Supabase Root 2021 CA",
+  "validFrom": "Apr 28 10:56:53 2021 GMT",
+  "validTo": "Apr 26 10:56:53 2031 GMT",
+  "ca": true,
+  "fingerprint256": "80:70:25:AD:50:D4:ED:21:9D:2C:9C:7D:29:9C:00:4F:82:4E:B0:0C:F7:F6:5A:FE:F6:07:D0:7B:72:E6:CA:FA",
+  "fileSha256": "700723581420dd1ac98fd7e9ac529f0ef210eadcaf87fc868a3ad7d114c2f3b7",
+  "tlsVerificationDisabled": false,
+  "credentialsUsed": false,
+  "remoteMutations": 0
+}

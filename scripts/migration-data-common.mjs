@@ -8,7 +8,7 @@ import {
 
 export const TARGET_PROJECT = "hgntppemxwcxaxritnfq";
 export const SOURCE_ARCHIVE_SHA256 =
-  "79be105c5b3828056209dcab47c3e887dccac158e0121a8416f848b267e73207";
+  "148c4dd9feba2a2b7257e6314cf594b406a9ed80865cf08fd103503198130c6a";
 export const DEMO_KEYS = {
   "1932e721-78ab-4320-9f84-f186a80fba48": "aurora",
   "eca7481c-fc27-479c-b364-76274b0b4230": "bruma",

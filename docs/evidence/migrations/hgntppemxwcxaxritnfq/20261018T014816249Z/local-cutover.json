@@ -1,0 +1,25 @@
+{
+  "at": "2026-10-18T01:48:16.249Z",
+  "sourceProjectRef": "ylcnrfzosjzuljufwups",
+  "targetProjectRef": "hgntppemxwcxaxritnfq",
+  "result": "PASS",
+  "scope": "Local application environment only; no remote changes",
+  "backup": ".runtime/backups/source-local-environment-20261018T014816249Z.json.enc",
+  "backupSha256": "1e40a887fcc024e92935702464808c28e55c473f62010980961a1ab43c2a3324",
+  "backupVerified": true,
+  "acl": {
+    "inheritedAccessDisabled": true,
+    "allowedPrincipals": "current Windows user and SYSTEM",
+    "ignoredByGit": true
+  },
+  "keys": [
+    "APP_URL",
+    "PLATFORM_HOSTNAMES",
+    "NEXT_PUBLIC_SUPABASE_URL",
+    "NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY",
+    "SUPABASE_SERVICE_ROLE_KEY"
+  ],
+  "appUrl": "http://localhost:3000",
+  "renderConfigured": false,
+  "restartAndHealthRequired": true
+}

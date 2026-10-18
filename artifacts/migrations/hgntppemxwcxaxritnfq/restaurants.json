@@ -1,0 +1,55 @@
+{
+  "at": "2026-10-18T01:47:48.882Z",
+  "target": "hgntppemxwcxaxritnfq.supabase.co",
+  "targetProjectRef": "hgntppemxwcxaxritnfq",
+  "base": "http://localhost:3000",
+  "sourceArchiveSha256": "148c4dd9feba2a2b7257e6314cf594b406a9ed80865cf08fd103503198130c6a",
+  "publicDeploymentVerified": false,
+  "restaurants": [
+    {
+      "key": "aurora",
+      "name": "Pizzería Aurora · DEMO",
+      "id": "1932e721-78ab-4320-9f84-f186a80fba48",
+      "owner": "aurora@tolentino-demo.test",
+      "status": "active",
+      "isDemo": true,
+      "products": 24,
+      "categories": 8,
+      "publicToken": "5820b231-3a31-43aa-a1ec-4f6f79ef2bb6",
+      "localMenu": "http://localhost:3000/menu/pizzeria-aurora-demo",
+      "stableRoute": "/q/5820b231-3a31-43aa-a1ec-4f6f79ef2bb6",
+      "logoPath": "1932e721-78ab-4320-9f84-f186a80fba48/7f4be855-ef8f-4c6c-b917-8a8f39a5f2ee.webp",
+      "migratedFromEncryptedArchive": true
+    },
+    {
+      "key": "marea",
+      "name": "Bento Marea · DEMO",
+      "id": "e2cda10d-2771-4056-8cf0-13e00f4b1bd8",
+      "owner": "marea@tolentino-demo.test",
+      "status": "active",
+      "isDemo": true,
+      "products": 24,
+      "categories": 8,
+      "publicToken": "199258db-b193-4055-9f26-b1f3ea9ee1eb",
+      "localMenu": "http://localhost:3000/menu/bento-marea-demo",
+      "stableRoute": "/q/199258db-b193-4055-9f26-b1f3ea9ee1eb",
+      "logoPath": "e2cda10d-2771-4056-8cf0-13e00f4b1bd8/73fd4d95-22f5-44f1-af75-f623ba6f68d8.webp",
+      "migratedFromEncryptedArchive": true
+    },
+    {
+      "key": "bruma",
+      "name": "Café Bruma · DEMO",
+      "id": "eca7481c-fc27-479c-b364-76274b0b4230",
+      "owner": "bruma@tolentino-demo.test",
+      "status": "active",
+      "isDemo": true,
+      "products": 24,
+      "categories": 8,
+      "publicToken": "5d236a67-793a-4a72-92f4-63abe20e8d95",
+      "localMenu": "http://localhost:3000/menu/cafe-bruma-demo",
+      "stableRoute": "/q/5d236a67-793a-4a72-92f4-63abe20e8d95",
+      "logoPath": "eca7481c-fc27-479c-b364-76274b0b4230/deef7b63-d8c9-4b6c-a54f-e5b93bd3cbc1.webp",
+      "migratedFromEncryptedArchive": true
+    }
+  ]
+}

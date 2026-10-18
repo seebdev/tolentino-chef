@@ -1,0 +1,293 @@
+{
+  "at": "2026-10-18T02:13:46.299Z",
+  "projectRef": "hgntppemxwcxaxritnfq",
+  "runId": "local-acceptance-20261018",
+  "result": "PASS",
+  "scope": "Offline static review of final screenshots after real local browser acceptance",
+  "functionalEvidence": "live-browser-audit.json",
+  "adminEvidence": "admin-loaded-screenshots.json",
+  "functionalScenarios": 24,
+  "functionalChecks": {
+    "passed": 372,
+    "failed": 0
+  },
+  "additionalAdminChecks": {
+    "passed": 4,
+    "failed": 0
+  },
+  "reviewedImages": 20,
+  "files": [
+    {
+      "file": "artifacts/migrations/hgntppemxwcxaxritnfq/local-acceptance-20261018/screenshots/real-aurora-mobile.png",
+      "sha256": "2a788424f4a639fdc22bfe2ce3b55ace266b61dd5350204eb59a3338efd3b4ae",
+      "width": 390,
+      "height": 5521,
+      "browser": "Chrome",
+      "device": "mobile",
+      "tenant": "aurora",
+      "reviewer": "audit_reference",
+      "reviewMethod": "view_image",
+      "result": "PASS"
+    },
+    {
+      "file": "artifacts/migrations/hgntppemxwcxaxritnfq/local-acceptance-20261018/screenshots/real-aurora-mobile-msedge.png",
+      "sha256": "05cb84bdd5226e8bb2017fc4ca2aa1538f646c993f6f4f160457b300cb172a3c",
+      "width": 390,
+      "height": 5521,
+      "browser": "Edge",
+      "device": "mobile",
+      "tenant": "aurora",
+      "reviewer": "frontend",
+      "reviewMethod": "view_image",
+      "result": "PASS"
+    },
+    {
+      "file": "artifacts/migrations/hgntppemxwcxaxritnfq/local-acceptance-20261018/screenshots/real-aurora-tablet.png",
+      "sha256": "186a7a512f9f6a7a3c3c08fb2d1c775faa7db6d19610ea45cc03370d9fd67f7b",
+      "width": 768,
+      "height": 3842,
+      "browser": "Chrome",
+      "device": "tablet",
+      "tenant": "aurora",
+      "reviewer": "audit_reference",
+      "reviewMethod": "view_image",
+      "result": "PASS"
+    },
+    {
+      "file": "artifacts/migrations/hgntppemxwcxaxritnfq/local-acceptance-20261018/screenshots/real-aurora-tablet-msedge.png",
+      "sha256": "17f0750c4bf1a9e7700bb0e92f22178bc2deabe62f296d87feaf2d4ca60b385c",
+      "width": 768,
+      "height": 3842,
+      "browser": "Edge",
+      "device": "tablet",
+      "tenant": "aurora",
+      "reviewer": "frontend",
+      "reviewMethod": "view_image",
+      "result": "PASS"
+    },
+    {
+      "file": "artifacts/migrations/hgntppemxwcxaxritnfq/local-acceptance-20261018/screenshots/real-aurora-desktop.png",
+      "sha256": "8ec2303fcd35c61f4dd5502a50470ddc5129f44380f804e3f3d57a66dbe8ef2f",
+      "width": 1440,
+      "height": 3937,
+      "browser": "Chrome",
+      "device": "desktop",
+      "tenant": "aurora",
+      "reviewer": "audit_reference",
+      "reviewMethod": "view_image",
+      "result": "PASS"
+    },
+    {
+      "file": "artifacts/migrations/hgntppemxwcxaxritnfq/local-acceptance-20261018/screenshots/real-aurora-desktop-msedge.png",
+      "sha256": "8ec2303fcd35c61f4dd5502a50470ddc5129f44380f804e3f3d57a66dbe8ef2f",
+      "width": 1440,
+      "height": 3937,
+      "browser": "Edge",
+      "device": "desktop",
+      "tenant": "aurora",
+      "reviewer": "frontend",
+      "reviewMethod": "view_image",
+      "result": "PASS"
+    },
+    {
+      "file": "artifacts/migrations/hgntppemxwcxaxritnfq/local-acceptance-20261018/screenshots/real-bruma-mobile.png",
+      "sha256": "2b9ed6b816444a76a12b4bed61cd94814d0dc2dee6733745fbfea80b041929b0",
+      "width": 390,
+      "height": 5461,
+      "browser": "Chrome",
+      "device": "mobile",
+      "tenant": "bruma",
+      "reviewer": "audit_reference",
+      "reviewMethod": "view_image",
+      "result": "PASS"
+    },
+    {
+      "file": "artifacts/migrations/hgntppemxwcxaxritnfq/local-acceptance-20261018/screenshots/real-bruma-mobile-msedge.png",
+      "sha256": "fb2293e3e49b64a5678f72374d40de9cc6e68246417899f9af58fbe461eaa3b9",
+      "width": 390,
+      "height": 5461,
+      "browser": "Edge",
+      "device": "mobile",
+      "tenant": "bruma",
+      "reviewer": "frontend",
+      "reviewMethod": "view_image",
+      "result": "PASS"
+    },
+    {
+      "file": "artifacts/migrations/hgntppemxwcxaxritnfq/local-acceptance-20261018/screenshots/real-bruma-tablet.png",
+      "sha256": "274a52a1c04a7a3678b021b1b6049bd82a42b4481890c0df74f3eb5cc58a2551",
+      "width": 768,
+      "height": 3847,
+      "browser": "Chrome",
+      "device": "tablet",
+      "tenant": "bruma",
+      "reviewer": "audit_reference",
+      "reviewMethod": "view_image",
+      "result": "PASS"
+    },
+    {
+      "file": "artifacts/migrations/hgntppemxwcxaxritnfq/local-acceptance-20261018/screenshots/real-bruma-tablet-msedge.png",
+      "sha256": "340e7e68e394cec81cd13aebd058ef8820fa1e34a986d17c5f08466c406b9efe",
+      "width": 768,
+      "height": 3847,
+      "browser": "Edge",
+      "device": "tablet",
+      "tenant": "bruma",
+      "reviewer": "frontend",
+      "reviewMethod": "view_image",
+      "result": "PASS"
+    },
+    {
+      "file": "artifacts/migrations/hgntppemxwcxaxritnfq/local-acceptance-20261018/screenshots/real-bruma-desktop.png",
+      "sha256": "e64b0de3d3cc237e4e341e57fef59a0dbbb78213d1179d92128c91e81cd5a1d6",
+      "width": 1440,
+      "height": 3942,
+      "browser": "Chrome",
+      "device": "desktop",
+      "tenant": "bruma",
+      "reviewer": "audit_reference",
+      "reviewMethod": "view_image",
+      "result": "PASS"
+    },
+    {
+      "file": "artifacts/migrations/hgntppemxwcxaxritnfq/local-acceptance-20261018/screenshots/real-bruma-desktop-msedge.png",
+      "sha256": "e64b0de3d3cc237e4e341e57fef59a0dbbb78213d1179d92128c91e81cd5a1d6",
+      "width": 1440,
+      "height": 3942,
+      "browser": "Edge",
+      "device": "desktop",
+      "tenant": "bruma",
+      "reviewer": "frontend",
+      "reviewMethod": "view_image",
+      "result": "PASS"
+    },
+    {
+      "file": "artifacts/migrations/hgntppemxwcxaxritnfq/local-acceptance-20261018/screenshots/real-marea-mobile.png",
+      "sha256": "ba0154dbe09a613d3055597f46a5d43f7710f2165620172cf7263d56b1f24fc7",
+      "width": 390,
+      "height": 5482,
+      "browser": "Chrome",
+      "device": "mobile",
+      "tenant": "marea",
+      "reviewer": "audit_reference",
+      "reviewMethod": "view_image",
+      "result": "PASS"
+    },
+    {
+      "file": "artifacts/migrations/hgntppemxwcxaxritnfq/local-acceptance-20261018/screenshots/real-marea-mobile-msedge.png",
+      "sha256": "1219db7a4be2ec7aed5ba80a22a5c8c22ad135d1a9bb46534c36f5c64b6e7510",
+      "width": 390,
+      "height": 5482,
+      "browser": "Edge",
+      "device": "mobile",
+      "tenant": "marea",
+      "reviewer": "frontend",
+      "reviewMethod": "view_image",
+      "result": "PASS"
+    },
+    {
+      "file": "artifacts/migrations/hgntppemxwcxaxritnfq/local-acceptance-20261018/screenshots/real-marea-tablet.png",
+      "sha256": "c483eb96fb8966521d43da1b6d50f0044a3d5125ae507fa51704de44609e03ad",
+      "width": 768,
+      "height": 3847,
+      "browser": "Chrome",
+      "device": "tablet",
+      "tenant": "marea",
+      "reviewer": "audit_reference",
+      "reviewMethod": "view_image",
+      "result": "PASS"
+    },
+    {
+      "file": "artifacts/migrations/hgntppemxwcxaxritnfq/local-acceptance-20261018/screenshots/real-marea-tablet-msedge.png",
+      "sha256": "4722b6b456bd817a0fa17c182c7c25656912fe700aac006959033643a40a6915",
+      "width": 768,
+      "height": 3847,
+      "browser": "Edge",
+      "device": "tablet",
+      "tenant": "marea",
+      "reviewer": "frontend",
+      "reviewMethod": "view_image",
+      "result": "PASS"
+    },
+    {
+      "file": "artifacts/migrations/hgntppemxwcxaxritnfq/local-acceptance-20261018/screenshots/real-marea-desktop.png",
+      "sha256": "5c4ada4837629e74ff5b0bb44a02296525137a7366031aa2680df20e3a301a2d",
+      "width": 1440,
+      "height": 3942,
+      "browser": "Chrome",
+      "device": "desktop",
+      "tenant": "marea",
+      "reviewer": "audit_reference",
+      "reviewMethod": "view_image",
+      "result": "PASS"
+    },
+    {
+      "file": "artifacts/migrations/hgntppemxwcxaxritnfq/local-acceptance-20261018/screenshots/real-marea-desktop-msedge.png",
+      "sha256": "5c4ada4837629e74ff5b0bb44a02296525137a7366031aa2680df20e3a301a2d",
+      "width": 1440,
+      "height": 3942,
+      "browser": "Edge",
+      "device": "desktop",
+      "tenant": "marea",
+      "reviewer": "frontend",
+      "reviewMethod": "view_image",
+      "result": "PASS"
+    },
+    {
+      "file": "artifacts/migrations/hgntppemxwcxaxritnfq/local-acceptance-20261018/screenshots/real-admin-loaded-mobile.png",
+      "sha256": "9409666baf9f8dc4fefa1911029044521b44b25132c0fa0b3ee1601e2076e232",
+      "width": 390,
+      "height": 1597,
+      "browser": "Chrome",
+      "device": "mobile",
+      "scope": "admin support exit",
+      "reviewer": "frontend",
+      "reviewMethod": "view_image original",
+      "result": "PASS",
+      "loadedRestaurantCount": 3
+    },
+    {
+      "file": "artifacts/migrations/hgntppemxwcxaxritnfq/local-acceptance-20261018/screenshots/real-admin-loaded-desktop.png",
+      "sha256": "40b327b9807baf678525a36791694ac71daf3f27d401e290006b0e83830154cd",
+      "width": 1440,
+      "height": 1219,
+      "browser": "Chrome",
+      "device": "desktop",
+      "scope": "admin support exit",
+      "reviewer": "frontend",
+      "reviewMethod": "view_image original",
+      "result": "PASS",
+      "loadedRestaurantCount": 3
+    }
+  ],
+  "findings": [
+    "Menus show loaded names, logos, covers, promotions, product cards, prices and footers; no loading/error screen or unintended overlap observed.",
+    "Mobile recommendations and category tabs intentionally reveal only part of horizontally scrollable content.",
+    "Tablet descriptions use line clamping inside cards without hiding prices.",
+    "Admin captures show three active DEMOs and 72 published products; emails are masked.",
+    "The mobile admin table scrolls horizontally inside its own container; right-hand columns are not all visible at its initial scroll position."
+  ],
+  "earlierEvidence": {
+    "retained": true,
+    "files": [
+      "real-support-exit-mobile.png",
+      "real-support-exit-desktop.png"
+    ],
+    "limitation": "Earlier capture timing preceded completion of the restaurant list; new admin-loaded files are separate and show the loaded state."
+  },
+  "shutdown": {
+    "ownerFinalLogoutsConfirmed": true,
+    "adminLogoutConfirmed401": true,
+    "browserContextsClosed": true,
+    "browserProcessesClosed": true,
+    "runnerProcessesExitCode": 0,
+    "serverOwnership": "Parent agent; no restart or stop by frontend."
+  },
+  "limitations": [
+    "Local production build over HTTP; no public Render/HTTPS acceptance.",
+    "Chrome and Edge headless viewport emulation; no physical mobile/tablet or Safari compatibility claim.",
+    "Static screenshot inspection supplements the functional runner; not a full WCAG audit.",
+    "No physical QR scanning or real email recovery/invitation/SMTP test.",
+    "No catalog or platform settings mutations in these visual runners. Session and visit/rate-limit counters are normal operational writes."
+  ]
+}

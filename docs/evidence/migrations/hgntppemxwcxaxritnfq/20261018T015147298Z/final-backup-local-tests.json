@@ -1,0 +1,17 @@
+{
+  "at": "2026-10-18T01:51:47.296Z",
+  "result": "PASS",
+  "passed": 4,
+  "failed": 0,
+  "scope": "Local decoder and guard only; existing encrypted empty-target baseline unchanged",
+  "checks": [
+    "Pinned dump SHA256 preserved after decrypt",
+    "All archive segments decode and Auth/Storage structures present",
+    "Connection parameter blocked before pg_restore",
+    "Invalid archive rejected"
+  ],
+  "remoteRequests": 0,
+  "remoteMutations": 0,
+  "plaintextFilesWritten": 0,
+  "finalPopulatedBackupCaptured": false
+}

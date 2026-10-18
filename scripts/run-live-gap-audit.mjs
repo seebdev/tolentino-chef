@@ -339,6 +339,10 @@ try {
         assert.equal(after.role, "superadmin");
         assert.equal(after.user.id, beforeIdentity.user.id);
         assert.equal(after.restaurantId, beforeIdentity.restaurantId);
+        await expect(page.locator("tbody tr")).toHaveCount(3);
+        for (const restaurant of listing.restaurants)
+          await expect(page.locator(".table-identity strong").filter({ hasText: restaurant.name })).toBeVisible();
+        await expect(page.locator(".loading")).toHaveCount(0);
         await page.screenshot({
           path: artifactPath(
             "screenshots",

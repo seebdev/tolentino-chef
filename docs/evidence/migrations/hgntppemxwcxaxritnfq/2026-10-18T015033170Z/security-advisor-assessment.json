@@ -1,0 +1,46 @@
+{
+  "at": "2026-10-18T01:50:33.170Z",
+  "projectRef": "hgntppemxwcxaxritnfq",
+  "result": "PASS",
+  "purpose": "Verify intentional server-only access for five Security Advisor INFO findings",
+  "tables": [
+    {
+      "table": "private.rate_limits",
+      "anon_read": false,
+      "authenticated_read": false,
+      "anon_write": false,
+      "authenticated_write": false
+    },
+    {
+      "table": "private.restaurant_creation_requests",
+      "anon_read": false,
+      "authenticated_read": false,
+      "anon_write": false,
+      "authenticated_write": false
+    },
+    {
+      "table": "public.commercial_sales",
+      "anon_read": false,
+      "authenticated_read": false,
+      "anon_write": false,
+      "authenticated_write": false
+    },
+    {
+      "table": "public.platform_settings",
+      "anon_read": false,
+      "authenticated_read": false,
+      "anon_write": false,
+      "authenticated_write": false
+    },
+    {
+      "table": "public.security_audit_events",
+      "anon_read": false,
+      "authenticated_read": false,
+      "anon_write": false,
+      "authenticated_write": false
+    }
+  ],
+  "remoteMutations": 0,
+  "remainingWarning": "Leaked password protection disabled; requires Pro plan or above. No plan change authorized.",
+  "reference": "https://supabase.com/docs/guides/auth/password-security"
+}

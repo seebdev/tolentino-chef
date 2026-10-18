@@ -1,0 +1,104 @@
+{
+  "at": "2026-10-18T01:32:45.579Z",
+  "result": "PASS",
+  "targetProjectRef": "hgntppemxwcxaxritnfq",
+  "serverVersion": "17.11",
+  "clientTls": {
+    "protocol": "TLSv1.3",
+    "cipher": "TLS_AES_256_GCM_SHA384"
+  },
+  "backendSsl": false,
+  "backendSslNote": "pg_stat_ssl describes pooler-to-backend; client-to-pooler TLS is verified separately by libpq conninfo.",
+  "sqlReadOnly": true,
+  "schemas": [
+    "auth",
+    "extensions",
+    "graphql",
+    "graphql_public",
+    "public",
+    "realtime",
+    "storage",
+    "vault"
+  ],
+  "extensions": [
+    {
+      "name": "pg_stat_statements",
+      "version": "1.11"
+    },
+    {
+      "name": "pgcrypto",
+      "version": "1.3"
+    },
+    {
+      "name": "plpgsql",
+      "version": "1.0"
+    },
+    {
+      "name": "supabase_vault",
+      "version": "0.3.1"
+    },
+    {
+      "name": "uuid-ossp",
+      "version": "1.1"
+    }
+  ],
+  "applicationRelations": 0,
+  "applicationFunctions": 0,
+  "applicationPolicies": 0,
+  "migrationCount": 0,
+  "authUsers": 0,
+  "storageBuckets": 0,
+  "storageObjects": 0,
+  "publicKeyAccepted": true,
+  "adminKeyAccepted": true,
+  "initialTargetIsEmpty": true,
+  "inventorySha256": "27515d48521161f5170a728d0c5b6be5a63e6b718fbf67ab4dadba129589970f",
+  "apiReadRequests": 8,
+  "remoteMutations": 0,
+  "completedAt": "2026-10-18T01:32:45.579Z",
+  "operation": "Read-only encrypted backup before target migration",
+  "archive": ".runtime/backups/target-hgntppemxwcxaxritnfq-20261018T013206536Z.json.enc",
+  "encryptedArchiveBytes": 129212,
+  "encryptedArchiveSha256": "2d085aeaf6d77886e367d81e44c9ddccf8ef04057f7bd1aa08e9ce524169749b",
+  "cipher": "AES-256-GCM",
+  "keyProtection": "windows-dpapi-current-user",
+  "acl": {
+    "inheritedAccessDisabled": true,
+    "allowedPrincipals": "current Windows user and SYSTEM",
+    "ignoredByGit": true
+  },
+  "postgresDump": {
+    "format": "custom",
+    "bytes": 364807,
+    "sha256": "1102fb95dc8dde58b8b8d79731ebc348224af8ecf1e7f3e3f1ba8ea06ff6a589"
+  },
+  "rolesDump": {
+    "format": "SQL without role passwords",
+    "bytes": 6051,
+    "sha256": "ed7f099d4a338810520f5d6f4d85ac326e9c34d850424ed75c0c0a343a9f5fa0"
+  },
+  "tool": {
+    "version": "17.11",
+    "distribution": "EDB portable zip linked by postgresql.org",
+    "zipSha256": "80379b2c04d51c30225532e0ae04509899141e9957ed096fe749d7fd9df8f82f"
+  },
+  "verification": {
+    "beforeAfterInventoryEqual": true,
+    "encryptedRoundtripEqual": true,
+    "encryptedDiskReadEqual": true,
+    "fullCustomArchiveDecoded": true,
+    "authAndStorageTablesPresentInArchive": true,
+    "emptyPublicApplicationFootprintReplayedInMemory": true,
+    "fullManagedSupabaseRestoreExecuted": false,
+    "postgresPhysicalBackup": false
+  },
+  "plaintextBackupFilesWritten": 0,
+  "targetMutationAuthorizedByThisScript": false,
+  "limitations": [
+    "PostgreSQL physical backup, WAL and PITR",
+    "Role password hashes, other databases, host filesystem and extension binaries",
+    "Project API/Auth/SMTP/provider configuration and signing keys (separate configuration backup)",
+    "Publications and subscriptions"
+  ],
+  "configurationBackup": "Auth Management configuration is handled separately; this script never changes it."
+}

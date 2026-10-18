@@ -1,0 +1,102 @@
+{
+  "at": "2026-10-18T01:47:48.889Z",
+  "result": "PASS",
+  "operation": "New target migration",
+  "targetProjectRef": "hgntppemxwcxaxritnfq",
+  "sourceArchiveSha256": "148c4dd9feba2a2b7257e6314cf594b406a9ed80865cf08fd103503198130c6a",
+  "targetBackupSha256": "2d085aeaf6d77886e367d81e44c9ddccf8ef04057f7bd1aa08e9ce524169749b",
+  "sourceEvidence": {
+    "file": "docs/evidence/migrations/hgntppemxwcxaxritnfq/source-verification-20261018T014555319Z/source-currentness.json",
+    "at": "2026-10-18T01:46:17.802Z",
+    "sha256": "06bd8126f4f0792ae283f5263d275cf653ea3063279837c4411b2c4fa7594cc1"
+  },
+  "inventory": {
+    "sourceProjectRef": "ylcnrfzosjzuljufwups",
+    "targetProjectRef": "hgntppemxwcxaxritnfq",
+    "archiveSha256": "148c4dd9feba2a2b7257e6314cf594b406a9ed80865cf08fd103503198130c6a",
+    "rows": {
+      "platform_admins": 1,
+      "restaurants": 3,
+      "restaurant_memberships": 3,
+      "restaurant_settings": 3,
+      "categories": 24,
+      "products": 72,
+      "promotions": 3,
+      "restaurant_hours": 21,
+      "translations": 96,
+      "restaurant_qr_configs": 3,
+      "restaurant_domains": 0,
+      "commercial_sales": 3,
+      "security_audit_events": 125,
+      "visit_events": 3,
+      "platform_settings": 1
+    },
+    "authUsers": 4,
+    "storageObjects": 27,
+    "storageBytes": 314126,
+    "migrations": 2
+  },
+  "schema": {
+    "applied": 2,
+    "reused": 0
+  },
+  "assets": {
+    "authCreated": 4,
+    "authReused": 0,
+    "objectsUploaded": 27,
+    "objectsReused": 0,
+    "objectsVerified": 27,
+    "bytesVerified": 314126
+  },
+  "imported": {
+    "inserted": 360,
+    "reused": 0,
+    "bootstrapReplaced": 1
+  },
+  "security": {
+    "public_tables": 15,
+    "public_rls": 15,
+    "policies": 35,
+    "disabled_triggers": 0,
+    "anon_product_select": false,
+    "owner_status_update": false,
+    "owner_qr_update": false,
+    "bucket_public": false
+  },
+  "finalCounts": {
+    "auth": 4,
+    "memberships": 3,
+    "objects": 27
+  },
+  "clientTlsVerified": true,
+  "acl": {
+    "inheritedAccessDisabled": true,
+    "allowedPrincipals": "current Windows user and SYSTEM",
+    "ignoredByGit": true
+  },
+  "credentialFiles": [
+    ".runtime/migrations/hgntppemxwcxaxritnfq/accounts.json",
+    ".runtime/migrations/hgntppemxwcxaxritnfq/admin-account.json"
+  ],
+  "manifest": "artifacts/migrations/hgntppemxwcxaxritnfq/restaurants.json",
+  "preserved": [
+    "Restaurant/product/category/owner/admin UUIDs",
+    "Permanent QR UUIDs",
+    "All business data and object paths/bytes"
+  ],
+  "normalized": [
+    "restaurants.menu_version_transaction=0",
+    "Fresh Auth credentials and migration marker"
+  ],
+  "sourceRequestsByThisRunner": 0,
+  "sourceMutations": 0,
+  "targetHttpRequests": 81,
+  "targetHttpMutationRequests": 31,
+  "applicationRowsEqual": true,
+  "storageObjectBytesEqual": true,
+  "passwordOrKeyValuesPrinted": false,
+  "emailMessagesSentByRunner": 0,
+  "authLoginTested": false,
+  "publicDeploymentVerified": false,
+  "publicQrVerified": false
+}

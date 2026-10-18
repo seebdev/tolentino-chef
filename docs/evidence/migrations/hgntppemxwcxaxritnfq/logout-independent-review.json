@@ -1,0 +1,95 @@
+{
+  "reviewedAt": "2026-10-18T01:42:14.097Z",
+  "projectRef": "hgntppemxwcxaxritnfq",
+  "reviewer": "frontend-independent",
+  "scope": "Code review, installed SDK cookie contract and fixture E2E selectors",
+  "applicationFilesEditedByReviewer": [],
+  "tests": {
+    "reportedBy": "principal agent",
+    "reportedPassed": 17,
+    "reportedFailed": 0,
+    "evidenceType": "successful local tool execution reported by principal; integrated report pending",
+    "files": [
+      "tests/auth_routes.test.ts",
+      "tests/session_cookies.test.ts",
+      "tests/logout_client.test.ts"
+    ],
+    "remoteAuthProof": false,
+    "integrated": {
+      "passed": 239,
+      "failed": 0,
+      "evidence": "2026-10-18T013032608Z/application-validation.json",
+      "includesFocused17": true
+    }
+  },
+  "reviewedControls": [
+    "exact project cookie scope with chunk and PKCE coverage",
+    "matching host-only Path=/ HttpOnly SameSite=Lax Secure emission/deletion",
+    "finally cleanup on SDK returned or thrown error",
+    "local scope without global logout or immediate JWT invalidation claim",
+    "503 status plus fixed code plus localSessionCleared required for UI navigation",
+    "recovery remains generic with fixed telemetry fields and .test suppression"
+  ],
+  "findings": [
+    {
+      "id": "REVIEW-01",
+      "description": "SDK mock recorded actual fetch arguments; assertion incorrectly expected zero arguments",
+      "status": "corrected by principal before final focused pass"
+    },
+    {
+      "id": "REVIEW-02",
+      "description": "E2E used nonexistent heading Vista general",
+      "status": "corrected to actual overview heading and loaded restaurant fixture"
+    },
+    {
+      "id": "REVIEW-03",
+      "description": "Common logout failure could leave mobile drawer covering notice",
+      "status": "corrected by principal; visible mobile error verified in passing E2E"
+    },
+    {
+      "id": "REVIEW-04",
+      "description": "Production Next route announcer shared role=alert; initial generic selector ambiguous",
+      "status": "test filtered by warning text; final4/4 PASS",
+      "initialEvidence": "2026-10-18T013655774Z/logout-e2e-summary.json"
+    }
+  ],
+  "e2e": {
+    "file": "tests/e2e/logout.spec.ts",
+    "scenarios": 2,
+    "configuredViewports": 2,
+    "plannedExecutions": 4,
+    "executed": true,
+    "source": "synthetic API fixtures",
+    "asserts": [
+      "confirmed local cleanup navigates to login warning",
+      "unconfirmed failure retains dashboard and visible notice without mobile backdrop",
+      "single logout request"
+    ],
+    "doesNotProve": [
+      "real cookie deletion in browser",
+      "Supabase revocation",
+      "new account persistence",
+      "public HTTPS"
+    ],
+    "discovery": {
+      "command": "node node_modules/@playwright/test/cli.js test tests/e2e/logout.spec.ts --list --reporter=list",
+      "exitCode": 0,
+      "listed": 4,
+      "browserStarted": false
+    },
+    "passed": 4,
+    "failed": 0,
+    "fullSuite": {
+      "passed": 54,
+      "failed": 0,
+      "skipped": 0,
+      "flaky": 0,
+      "evidence": "2026-10-18T013918216Z/ui-e2e-summary.json",
+      "includesLogout4": true
+    },
+    "serverStopped": true,
+    "realLogins": 0,
+    "realAuthMutations": 0
+  },
+  "externalMutationsByThisReview": 0
+}

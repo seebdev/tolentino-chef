@@ -1,0 +1,45 @@
+{
+  "at": "2026-10-18T02:12:53.031Z",
+  "result": "PASS",
+  "targetProjectRef": "hgntppemxwcxaxritnfq",
+  "operation": "Read-only final target logical database and storage backup",
+  "archive": ".runtime/backups/target-final-hgntppemxwcxaxritnfq-20261018T021153664Z.json.enc",
+  "encryptedArchiveSha256": "57bd66441a9ab399f022899f4e2be41a9d02bbcb2c841a55185dd12ddbc23cab",
+  "encryptedArchiveBytes": 715632,
+  "counts": {
+    "tables": 15,
+    "rows": 449,
+    "authUsers": 4,
+    "objects": 27,
+    "objectBytes": 314126
+  },
+  "postgresDump": {
+    "bytes": 531178,
+    "sha256": "ac5ac3825b32355ada0d637ad712189ae598f9bb914bb19e0460c45fe402ab00",
+    "format": "custom"
+  },
+  "cipher": "AES-256-GCM",
+  "keyProtection": "windows-dpapi-current-user",
+  "acl": {
+    "inheritedAccessDisabled": true,
+    "allowedPrincipals": "current Windows user and SYSTEM",
+    "ignoredByGit": true
+  },
+  "fullArchiveDecoded": true,
+  "encryptedMemoryAndDiskRoundtrip": true,
+  "allObjectBytesVerified": true,
+  "beforeAfterStable": true,
+  "readOnlyRequests": 80,
+  "remoteMutations": 0,
+  "plaintextFilesWritten": 0,
+  "clientTlsHostnameAndCaVerified": true,
+  "fullManagedSupabaseRestoreExecuted": false,
+  "physicalBackupOrPitr": false,
+  "limitations": [
+    "pg_dump is a consistent database snapshot; comparison of API/Storage before and after detects stability but is not a distributed transaction.",
+    "Complete archive decode validates compressed entries, not a full managed Supabase restoration.",
+    "Includes current Auth tables in the encrypted dump, not Auth/SMTP/provider/JWT settings or signing keys.",
+    "Storage bytes are included separately; role passwords, publications, subscriptions, other databases and physical WAL/PITR are excluded.",
+    "DPAPI CurrentUser requires this Windows profile/machine; independent portable disaster recovery is not established."
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "at": "2026-10-18T02:15:13.867Z",
+  "projectRef": "hgntppemxwcxaxritnfq",
+  "origin": "http://localhost:3000",
+  "previousPid": 20636,
+  "newPid": 21044,
+  "previousListenerClosed": true,
+  "previousProcessIdentityVerifiedBeforeStop": true,
+  "previousProcessStopped": true,
+  "newProcessStarted": true,
+  "comparisonEvidence": "restart-persistence.json",
+  "result": "PASS",
+  "scope": "Local production process restart; no Render deployment"
+}
