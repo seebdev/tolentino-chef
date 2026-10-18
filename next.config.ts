@@ -7,6 +7,10 @@ const config: NextConfig = {
       {
         source: "/(.*)",
         headers: [
+          ...(process.env.NODE_ENV === "production" &&
+          process.env.APP_URL?.startsWith("https://")
+            ? [{ key: "Strict-Transport-Security", value: "max-age=31536000" }]
+            : []),
           { key: "X-Content-Type-Options", value: "nosniff" },
           { key: "X-Frame-Options", value: "DENY" },
           { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
