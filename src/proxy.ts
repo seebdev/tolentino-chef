@@ -35,8 +35,11 @@ export async function proxy(request: NextRequest) {
   }
   if (
     pathname.startsWith("/_next/") ||
+    /^\/flags\/(co|gb|fr|it|cn|jp|in)\.svg$/.test(pathname) ||
+    pathname === "/creditos-fotografias" ||
     pathname === `/menu/${restaurant.data.slug}` ||
     pathname === `/api/public/menu/${restaurant.data.slug}` ||
+    pathname === `/api/public/menu/${restaurant.data.slug}/version` ||
     pathname.startsWith(`/api/media/${domain.data.restaurant_id}/`)
   )
     return NextResponse.next();

@@ -1,0 +1,329 @@
+{
+  "at": "2026-10-18T05:33:50.258Z",
+  "result": "PASS",
+  "targetProjectRef": "hgntppemxwcxaxritnfq",
+  "archiveSha256": "dafd8e92d92ff6b05a12b183b379bcd5bb6feec386d78b7e12fb6d523c23911e",
+  "operation": "Isolated application restore from populated-target encrypted backup",
+  "engine": "PGlite 0.5.10 in memory",
+  "passed": 72,
+  "failed": 0,
+  "checks": [
+    {
+      "name": "Encrypted archive matches independently supplied capture hash",
+      "pass": true
+    },
+    {
+      "name": "Encrypted payload belongs to the populated new-target backup",
+      "pass": true
+    },
+    {
+      "name": "Inventory was stable at capture",
+      "pass": true
+    },
+    {
+      "name": "Application snapshot hash",
+      "pass": true
+    },
+    {
+      "name": "Private snapshot hash",
+      "pass": true
+    },
+    {
+      "name": "Full captured Auth profile hash",
+      "pass": true
+    },
+    {
+      "name": "PostgreSQL custom dump exact bytes",
+      "pass": true
+    },
+    {
+      "name": "Role dump exact bytes without role passwords",
+      "pass": true
+    },
+    {
+      "name": "Complete custom archive decodes locally",
+      "pass": true
+    },
+    {
+      "name": "Exactly two captured and local migrations",
+      "pass": true
+    },
+    {
+      "name": "Captured history equals local reviewed SQL: 20261017021301_initial_tenant_security.sql",
+      "pass": true
+    },
+    {
+      "name": "Captured history equals local reviewed SQL: 20261017165549_restaurant_creation_requests.sql",
+      "pass": true
+    },
+    {
+      "name": "All application tables and the two transient tables are present",
+      "pass": true
+    },
+    {
+      "name": "Four distinct identity UUIDs captured",
+      "pass": true
+    },
+    {
+      "name": "Restored exact rows including generated columns: platform_admins",
+      "pass": true
+    },
+    {
+      "name": "Restored exact rows including generated columns: restaurants",
+      "pass": true
+    },
+    {
+      "name": "Restored exact rows including generated columns: restaurant_memberships",
+      "pass": true
+    },
+    {
+      "name": "Restored exact rows including generated columns: restaurant_settings",
+      "pass": true
+    },
+    {
+      "name": "Restored exact rows including generated columns: categories",
+      "pass": true
+    },
+    {
+      "name": "Restored exact rows including generated columns: products",
+      "pass": true
+    },
+    {
+      "name": "Restored exact rows including generated columns: promotions",
+      "pass": true
+    },
+    {
+      "name": "Restored exact rows including generated columns: restaurant_hours",
+      "pass": true
+    },
+    {
+      "name": "Restored exact rows including generated columns: translations",
+      "pass": true
+    },
+    {
+      "name": "Restored exact rows including generated columns: restaurant_qr_configs",
+      "pass": true
+    },
+    {
+      "name": "Restored exact rows including generated columns: restaurant_domains",
+      "pass": true
+    },
+    {
+      "name": "Restored exact rows including generated columns: commercial_sales",
+      "pass": true
+    },
+    {
+      "name": "Restored exact rows including generated columns: security_audit_events",
+      "pass": true
+    },
+    {
+      "name": "Restored exact rows including generated columns: visit_events",
+      "pass": true
+    },
+    {
+      "name": "Restored exact rows including generated columns: platform_settings",
+      "pass": true
+    },
+    {
+      "name": "Restored exact private operational rows: rate_limits",
+      "pass": true
+    },
+    {
+      "name": "Restored exact private operational rows: restaurant_creation_requests",
+      "pass": true
+    },
+    {
+      "name": "Menu transaction values preserved without additional normalization",
+      "pass": true
+    },
+    {
+      "name": "Storage content restored in memory: 479f223b61a1",
+      "pass": true
+    },
+    {
+      "name": "Storage content restored in memory: bb3ad030af20",
+      "pass": true
+    },
+    {
+      "name": "Storage content restored in memory: e40d5cd9f478",
+      "pass": true
+    },
+    {
+      "name": "Storage content restored in memory: 0bc4b52dc258",
+      "pass": true
+    },
+    {
+      "name": "Storage content restored in memory: 30badbd98162",
+      "pass": true
+    },
+    {
+      "name": "Storage content restored in memory: 6a426f1e0b8e",
+      "pass": true
+    },
+    {
+      "name": "Storage content restored in memory: d5c0c6f48ea1",
+      "pass": true
+    },
+    {
+      "name": "Storage content restored in memory: 0beed107bf0a",
+      "pass": true
+    },
+    {
+      "name": "Storage content restored in memory: 01c44bb3d4eb",
+      "pass": true
+    },
+    {
+      "name": "Storage content restored in memory: 40604c63c448",
+      "pass": true
+    },
+    {
+      "name": "Storage content restored in memory: 023a9560c5a7",
+      "pass": true
+    },
+    {
+      "name": "Storage content restored in memory: d63614beaf84",
+      "pass": true
+    },
+    {
+      "name": "Storage content restored in memory: d930182763e3",
+      "pass": true
+    },
+    {
+      "name": "Storage content restored in memory: ae903f56f01a",
+      "pass": true
+    },
+    {
+      "name": "Storage content restored in memory: fd0cc0c01c61",
+      "pass": true
+    },
+    {
+      "name": "Storage content restored in memory: ede7d514cee5",
+      "pass": true
+    },
+    {
+      "name": "Storage content restored in memory: bc17928d5653",
+      "pass": true
+    },
+    {
+      "name": "Storage content restored in memory: f05817749feb",
+      "pass": true
+    },
+    {
+      "name": "Storage content restored in memory: a49ee8297242",
+      "pass": true
+    },
+    {
+      "name": "Storage content restored in memory: 753b8fcf2bda",
+      "pass": true
+    },
+    {
+      "name": "Storage content restored in memory: 5b3b71595e93",
+      "pass": true
+    },
+    {
+      "name": "Storage content restored in memory: 9317583a5ff2",
+      "pass": true
+    },
+    {
+      "name": "Storage content restored in memory: df12a747fffb",
+      "pass": true
+    },
+    {
+      "name": "Storage content restored in memory: c17dabd8ae53",
+      "pass": true
+    },
+    {
+      "name": "Storage content restored in memory: d7459aea38af",
+      "pass": true
+    },
+    {
+      "name": "Storage content restored in memory: fe51d476ec8b",
+      "pass": true
+    },
+    {
+      "name": "Storage content restored in memory: 5fed5d8f2e03",
+      "pass": true
+    },
+    {
+      "name": "Storage content restored in memory: e5c8cbb7c633",
+      "pass": true
+    },
+    {
+      "name": "Storage object inventory hash and count exact",
+      "pass": true
+    },
+    {
+      "name": "Original QR UUIDs retained",
+      "pass": true
+    },
+    {
+      "name": "Three unique restaurants and owner memberships support all six tenant pairs",
+      "pass": true
+    },
+    {
+      "name": "Owner RLS isolation pair 1",
+      "pass": true
+    },
+    {
+      "name": "Owner RLS isolation pair 2",
+      "pass": true
+    },
+    {
+      "name": "Owner RLS isolation pair 3",
+      "pass": true
+    },
+    {
+      "name": "Owner RLS isolation pair 4",
+      "pass": true
+    },
+    {
+      "name": "Owner RLS isolation pair 5",
+      "pass": true
+    },
+    {
+      "name": "Owner RLS isolation pair 6",
+      "pass": true
+    },
+    {
+      "name": "Exactly six owner-to-other-tenant pairs tested",
+      "pass": true
+    },
+    {
+      "name": "Fifteen public tables retain RLS and all application triggers enabled",
+      "pass": true
+    },
+    {
+      "name": "Final application hash equals captured target",
+      "pass": true
+    }
+  ],
+  "imported": {
+    "inserted": 616,
+    "reused": 0,
+    "bootstrapReplaced": 1
+  },
+  "counts": {
+    "tables": 15,
+    "rows": 617,
+    "authUsers": 4,
+    "objects": 28,
+    "objectBytes": 315166
+  },
+  "tenantPairs": 6,
+  "privateRows": {
+    "rate_limits": 47,
+    "restaurant_creation_requests": 3
+  },
+  "remoteRequests": 0,
+  "remoteMutations": 0,
+  "plaintextFilesWritten": 0,
+  "fullManagedSupabaseRestoreExecuted": false,
+  "authLoginTested": false,
+  "storageHttpTested": false,
+  "limitations": [
+    "Only the application schema and rows plus captured private rows are restored in isolated PGlite.",
+    "Auth uses UUID-only stubs; captured profile bytes/hashes and full PostgreSQL dump are verified, but GoTrue/password/session restoration is not executed.",
+    "Storage object bytes and technical IDs are restored in memory/stub table, not through the Storage HTTP service.",
+    "Full custom dump decode is validation, not execution of all managed Supabase DDL."
+  ]
+}

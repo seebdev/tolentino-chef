@@ -1,0 +1,67 @@
+{
+  "at": "2026-10-25T06:58:15.981Z",
+  "provider": "OpenAI Responses",
+  "smallRealBatch": true,
+  "authorizedTotalBudgetUsd": 2,
+  "events": [
+    {
+      "event": "translation_job_finished",
+      "jobId": "27bbe450-54bb-4773-a9b4-28ba2bb40f97",
+      "status": "failed",
+      "errorCode": "provider_unauthorized"
+    }
+  ],
+  "samples": [],
+  "checks": [
+    {
+      "name": "OWNER_LOGIN",
+      "status": "PASS"
+    },
+    {
+      "name": "LANGUAGES_QUEUE_TRANSACTION",
+      "status": "PASS"
+    },
+    {
+      "name": "THREE_JOBS_PERSISTED",
+      "status": "PASS"
+    }
+  ],
+  "destination": {
+    "projectRef": "hgntppemxwcxaxritnfq",
+    "serviceId": "srv-dba32beq1p3s73a4g6v0",
+    "branch": "main",
+    "liveCommit": "ae0f7cb74b8dc73fd3f3db90a6958410b78d74ba",
+    "localOrigin": "http://localhost:3002"
+  },
+  "model": "gpt-4.1-mini-2025-04-14",
+  "prices": {
+    "input": 0.4,
+    "output": 1.6
+  },
+  "worker": {
+    "processed": 1,
+    "reason": "provider_unauthorized"
+  },
+  "results": [
+    {
+      "id": "27bbe450-54bb-4773-a9b4-28ba2bb40f97",
+      "status": "failed",
+      "attempts": 1,
+      "error_code": "provider_unauthorized"
+    },
+    {
+      "id": "69e3b7c8-d3d2-4c99-9a2c-8058f9f7b084",
+      "status": "pending",
+      "attempts": 0,
+      "error_code": null
+    },
+    {
+      "id": "8c7f03a2-ccd3-4e3a-bd5e-f20c259c3641",
+      "status": "pending",
+      "attempts": 0,
+      "error_code": null
+    }
+  ],
+  "result": "FAIL",
+  "code": "CLOSURE_THREE_REAL_TRANSLATIONS_COMPLETED"
+}

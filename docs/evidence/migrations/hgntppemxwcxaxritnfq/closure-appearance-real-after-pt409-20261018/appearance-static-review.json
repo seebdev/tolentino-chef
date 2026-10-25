@@ -1,0 +1,29 @@
+{
+  "review": "independent-static-image-review",
+  "reviewer": "audit_reference",
+  "scope": "Four real temporary-alpha screenshots, no browser or mutations",
+  "status": "PASS",
+  "limitations": [
+    "Static visual review does not certify interactions, WCAG, or physical devices",
+    "Preview screenshots show 820px of a scrollable iframe",
+    "Next dev indicator partially overlays a mobile tab; verify production separately"
+  ],
+  "images": [
+    {
+      "file": "appearance-real-320-public.png",
+      "sha256": "adb42ca9c5c95345dd715fde1dfc780d1ad10c6843ed6d40f3c416be83846625"
+    },
+    {
+      "file": "appearance-real-1440-public.png",
+      "sha256": "d7593088d697d0dc917d6590228b870442acc36e685ebaae7f223e7d403a5a61"
+    },
+    {
+      "file": "appearance-real-320-preview.png",
+      "sha256": "4315d3bf2255a925162fc658da09f6d55473fe6927251d05667baeec550b821a"
+    },
+    {
+      "file": "appearance-real-1440-preview.png",
+      "sha256": "26c088b7aa46f7d31528478f450a7e5f99408d59bafa58a0e38716c58720a4b1"
+    }
+  ]
+}

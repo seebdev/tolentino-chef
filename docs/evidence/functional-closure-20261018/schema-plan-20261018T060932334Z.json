@@ -1,0 +1,34 @@
+{
+  "at": "2026-10-18T06:09:32.334Z",
+  "projectRef": "hgntppemxwcxaxritnfq",
+  "serviceId": "srv-dba32beq1p3s73a4g6v0",
+  "operation": "incremental-schema-plan",
+  "migrations": [
+    {
+      "file": "20261018053627_owner_access.sql",
+      "sha256": "24511655c61a86af30e7d63aefe8eca10953ce9c26e9d497a237746e5f96e9f6"
+    },
+    {
+      "file": "20261018053802_import_attempts_and_qr_versions.sql",
+      "sha256": "5c84ec8522033d24a0218a83b595805b56d3d609150dd5eb2e56c4405f35e28b"
+    },
+    {
+      "file": "20261018053943_appearance_publication.sql",
+      "sha256": "26137944c61307b20e57c88d7097f328965e89a79fa970ffaac41766a111838e"
+    },
+    {
+      "file": "20261018054420_translation_jobs.sql",
+      "sha256": "3a44b3e22dd36efefa37e6e20636a39fbfe93235145b0f927a2d74fc909328ba"
+    }
+  ],
+  "remoteMutations": 0,
+  "destination": {
+    "repository": "https://github.com/seebdev/tolentino-chef",
+    "branch": "main",
+    "commit": "ae0f7cb74b8dc73fd3f3db90a6958410b78d74ba",
+    "url": "https://tolentino-restaurantes-admin.onrender.com",
+    "workspace": "tea-dba1s4m1egvs7391ve50",
+    "signupDisabled": true
+  },
+  "result": "PASS"
+}

@@ -1,0 +1,677 @@
+{
+  "at": "2026-10-25T07:17:45.169Z",
+  "projectRef": "hgntppemxwcxaxritnfq",
+  "readOnly": true,
+  "security": {
+    "httpStatus": 401,
+    "notices": []
+  },
+  "performance": {
+    "httpStatus": 401,
+    "notices": []
+  },
+  "tables": [
+    {
+      "schema": "private",
+      "name": "import_attempts",
+      "rls": true
+    },
+    {
+      "schema": "private",
+      "name": "owner_access",
+      "rls": true
+    },
+    {
+      "schema": "private",
+      "name": "owner_access_requests",
+      "rls": true
+    },
+    {
+      "schema": "private",
+      "name": "rate_limits",
+      "rls": true
+    },
+    {
+      "schema": "private",
+      "name": "restaurant_creation_requests",
+      "rls": true
+    },
+    {
+      "schema": "private",
+      "name": "translation_attempts",
+      "rls": true
+    },
+    {
+      "schema": "private",
+      "name": "translation_budget",
+      "rls": true
+    },
+    {
+      "schema": "public",
+      "name": "categories",
+      "rls": true
+    },
+    {
+      "schema": "public",
+      "name": "commercial_sales",
+      "rls": true
+    },
+    {
+      "schema": "public",
+      "name": "platform_admins",
+      "rls": true
+    },
+    {
+      "schema": "public",
+      "name": "platform_settings",
+      "rls": true
+    },
+    {
+      "schema": "public",
+      "name": "products",
+      "rls": true
+    },
+    {
+      "schema": "public",
+      "name": "promotions",
+      "rls": true
+    },
+    {
+      "schema": "public",
+      "name": "restaurant_domains",
+      "rls": true
+    },
+    {
+      "schema": "public",
+      "name": "restaurant_hours",
+      "rls": true
+    },
+    {
+      "schema": "public",
+      "name": "restaurant_memberships",
+      "rls": true
+    },
+    {
+      "schema": "public",
+      "name": "restaurant_qr_configs",
+      "rls": true
+    },
+    {
+      "schema": "public",
+      "name": "restaurant_settings",
+      "rls": true
+    },
+    {
+      "schema": "public",
+      "name": "restaurants",
+      "rls": true
+    },
+    {
+      "schema": "public",
+      "name": "security_audit_events",
+      "rls": true
+    },
+    {
+      "schema": "public",
+      "name": "translation_jobs",
+      "rls": true
+    },
+    {
+      "schema": "public",
+      "name": "translations",
+      "rls": true
+    },
+    {
+      "schema": "public",
+      "name": "visit_events",
+      "rls": true
+    }
+  ],
+  "functions": [
+    {
+      "schema": "private",
+      "proname": "assert_import_actor",
+      "definer": true,
+      "config": [
+        "search_path=\"\""
+      ],
+      "anon": false,
+      "authenticated": false
+    },
+    {
+      "schema": "private",
+      "proname": "bump_menu_version",
+      "definer": true,
+      "config": [
+        "search_path=\"\""
+      ],
+      "anon": false,
+      "authenticated": false
+    },
+    {
+      "schema": "private",
+      "proname": "can_access_media",
+      "definer": false,
+      "config": [
+        "search_path=\"\""
+      ],
+      "anon": false,
+      "authenticated": true
+    },
+    {
+      "schema": "private",
+      "proname": "can_manage_restaurant",
+      "definer": true,
+      "config": [
+        "search_path=\"\""
+      ],
+      "anon": false,
+      "authenticated": true
+    },
+    {
+      "schema": "private",
+      "proname": "enqueue_restaurant_translations",
+      "definer": true,
+      "config": [
+        "search_path=\"\""
+      ],
+      "anon": false,
+      "authenticated": false
+    },
+    {
+      "schema": "private",
+      "proname": "enqueue_translation_entity",
+      "definer": true,
+      "config": [
+        "search_path=\"\""
+      ],
+      "anon": false,
+      "authenticated": false
+    },
+    {
+      "schema": "private",
+      "proname": "guard_category_tree",
+      "definer": false,
+      "config": [
+        "search_path=\"\""
+      ],
+      "anon": false,
+      "authenticated": false
+    },
+    {
+      "schema": "private",
+      "proname": "guard_restaurant_identity",
+      "definer": false,
+      "config": [
+        "search_path=\"\""
+      ],
+      "anon": false,
+      "authenticated": false
+    },
+    {
+      "schema": "private",
+      "proname": "guard_tenant_identity",
+      "definer": false,
+      "config": [
+        "search_path=\"\""
+      ],
+      "anon": false,
+      "authenticated": false
+    },
+    {
+      "schema": "private",
+      "proname": "normalize_translation_manual_fields",
+      "definer": false,
+      "config": [
+        "search_path=\"\""
+      ],
+      "anon": false,
+      "authenticated": false
+    },
+    {
+      "schema": "private",
+      "proname": "owner_session_allowed",
+      "definer": true,
+      "config": [
+        "search_path=\"\""
+      ],
+      "anon": false,
+      "authenticated": true
+    },
+    {
+      "schema": "private",
+      "proname": "owns_restaurant",
+      "definer": true,
+      "config": [
+        "search_path=\"\""
+      ],
+      "anon": false,
+      "authenticated": true
+    },
+    {
+      "schema": "private",
+      "proname": "queue_language_translations",
+      "definer": true,
+      "config": [
+        "search_path=\"\""
+      ],
+      "anon": false,
+      "authenticated": false
+    },
+    {
+      "schema": "private",
+      "proname": "queue_menu_translation",
+      "definer": true,
+      "config": [
+        "search_path=\"\""
+      ],
+      "anon": false,
+      "authenticated": false
+    },
+    {
+      "schema": "private",
+      "proname": "sync_owner_access",
+      "definer": true,
+      "config": [
+        "search_path=\"\""
+      ],
+      "anon": false,
+      "authenticated": false
+    },
+    {
+      "schema": "private",
+      "proname": "touch_updated_at",
+      "definer": false,
+      "config": [
+        "search_path=\"\""
+      ],
+      "anon": false,
+      "authenticated": false
+    },
+    {
+      "schema": "private",
+      "proname": "translation_has_text",
+      "definer": false,
+      "config": [
+        "search_path=\"\""
+      ],
+      "anon": false,
+      "authenticated": true
+    },
+    {
+      "schema": "private",
+      "proname": "translation_manual_complete",
+      "definer": false,
+      "config": [
+        "search_path=\"\""
+      ],
+      "anon": false,
+      "authenticated": true
+    },
+    {
+      "schema": "private",
+      "proname": "translation_manual_values",
+      "definer": false,
+      "config": [
+        "search_path=\"\""
+      ],
+      "anon": false,
+      "authenticated": true
+    },
+    {
+      "schema": "private",
+      "proname": "translation_shape_matches",
+      "definer": false,
+      "config": [
+        "search_path=\"\""
+      ],
+      "anon": false,
+      "authenticated": true
+    },
+    {
+      "schema": "private",
+      "proname": "translation_source",
+      "definer": true,
+      "config": [
+        "search_path=\"\""
+      ],
+      "anon": false,
+      "authenticated": false
+    },
+    {
+      "schema": "private",
+      "proname": "valid_appearance",
+      "definer": false,
+      "config": [
+        "search_path=\"\""
+      ],
+      "anon": false,
+      "authenticated": true
+    },
+    {
+      "schema": "private",
+      "proname": "valid_translation_fields",
+      "definer": false,
+      "config": [
+        "search_path=\"\""
+      ],
+      "anon": false,
+      "authenticated": true
+    },
+    {
+      "schema": "public",
+      "proname": "admin_stats",
+      "definer": false,
+      "config": [
+        "search_path=\"\""
+      ],
+      "anon": false,
+      "authenticated": false
+    },
+    {
+      "schema": "public",
+      "proname": "begin_owner_auth",
+      "definer": false,
+      "config": [
+        "search_path=\"\""
+      ],
+      "anon": false,
+      "authenticated": false
+    },
+    {
+      "schema": "public",
+      "proname": "claim_owner_access",
+      "definer": false,
+      "config": [
+        "search_path=\"\""
+      ],
+      "anon": false,
+      "authenticated": false
+    },
+    {
+      "schema": "public",
+      "proname": "claim_restaurant_creation",
+      "definer": false,
+      "config": [
+        "search_path=\"\""
+      ],
+      "anon": false,
+      "authenticated": false
+    },
+    {
+      "schema": "public",
+      "proname": "claim_translation_job",
+      "definer": true,
+      "config": [
+        "search_path=\"\""
+      ],
+      "anon": false,
+      "authenticated": false
+    },
+    {
+      "schema": "public",
+      "proname": "complete_owner_access",
+      "definer": false,
+      "config": [
+        "search_path=\"\""
+      ],
+      "anon": false,
+      "authenticated": false
+    },
+    {
+      "schema": "public",
+      "proname": "complete_owner_password_change",
+      "definer": false,
+      "config": [
+        "search_path=\"\""
+      ],
+      "anon": false,
+      "authenticated": false
+    },
+    {
+      "schema": "public",
+      "proname": "complete_restaurant_creation",
+      "definer": false,
+      "config": [
+        "search_path=\"\""
+      ],
+      "anon": false,
+      "authenticated": false
+    },
+    {
+      "schema": "public",
+      "proname": "configure_translation_budget",
+      "definer": true,
+      "config": [
+        "search_path=\"\""
+      ],
+      "anon": false,
+      "authenticated": false
+    },
+    {
+      "schema": "public",
+      "proname": "consume_rate_limit",
+      "definer": false,
+      "config": [
+        "search_path=\"\""
+      ],
+      "anon": false,
+      "authenticated": false
+    },
+    {
+      "schema": "public",
+      "proname": "fail_owner_access",
+      "definer": false,
+      "config": [
+        "search_path=\"\""
+      ],
+      "anon": false,
+      "authenticated": false
+    },
+    {
+      "schema": "public",
+      "proname": "finish_translation_job",
+      "definer": true,
+      "config": [
+        "search_path=\"\""
+      ],
+      "anon": false,
+      "authenticated": false
+    },
+    {
+      "schema": "public",
+      "proname": "get_import_attempt",
+      "definer": true,
+      "config": [
+        "search_path=\"\""
+      ],
+      "anon": false,
+      "authenticated": true
+    },
+    {
+      "schema": "public",
+      "proname": "import_products",
+      "definer": false,
+      "config": [
+        "search_path=\"\""
+      ],
+      "anon": false,
+      "authenticated": true
+    },
+    {
+      "schema": "public",
+      "proname": "import_products_attempt",
+      "definer": true,
+      "config": [
+        "search_path=\"\""
+      ],
+      "anon": false,
+      "authenticated": true
+    },
+    {
+      "schema": "public",
+      "proname": "owner_admin_state",
+      "definer": false,
+      "config": [
+        "search_path=\"\""
+      ],
+      "anon": false,
+      "authenticated": false
+    },
+    {
+      "schema": "public",
+      "proname": "owner_session_state",
+      "definer": true,
+      "config": [
+        "search_path=\"\""
+      ],
+      "anon": false,
+      "authenticated": true
+    },
+    {
+      "schema": "public",
+      "proname": "provision_restaurant",
+      "definer": false,
+      "config": [
+        "search_path=\"\""
+      ],
+      "anon": false,
+      "authenticated": false
+    },
+    {
+      "schema": "public",
+      "proname": "record_menu_visit",
+      "definer": false,
+      "config": [
+        "search_path=\"\""
+      ],
+      "anon": false,
+      "authenticated": false
+    },
+    {
+      "schema": "public",
+      "proname": "request_menu_translations",
+      "definer": true,
+      "config": [
+        "search_path=\"\""
+      ],
+      "anon": false,
+      "authenticated": true
+    },
+    {
+      "schema": "public",
+      "proname": "resolve_owner_login",
+      "definer": false,
+      "config": [
+        "search_path=\"\""
+      ],
+      "anon": false,
+      "authenticated": false
+    },
+    {
+      "schema": "public",
+      "proname": "restaurant_stats",
+      "definer": false,
+      "config": [
+        "search_path=\"\""
+      ],
+      "anon": false,
+      "authenticated": true
+    },
+    {
+      "schema": "public",
+      "proname": "save_manual_translation",
+      "definer": true,
+      "config": [
+        "search_path=\"\""
+      ],
+      "anon": false,
+      "authenticated": true
+    },
+    {
+      "schema": "public",
+      "proname": "save_qr_configuration",
+      "definer": false,
+      "config": [
+        "search_path=\"\""
+      ],
+      "anon": false,
+      "authenticated": false
+    },
+    {
+      "schema": "public",
+      "proname": "save_restaurant_appearance",
+      "definer": false,
+      "config": [
+        "search_path=\"\""
+      ],
+      "anon": false,
+      "authenticated": true
+    },
+    {
+      "schema": "public",
+      "proname": "save_restaurant_languages",
+      "definer": false,
+      "config": [
+        "search_path=\"\""
+      ],
+      "anon": false,
+      "authenticated": true
+    },
+    {
+      "schema": "public",
+      "proname": "settle_restaurant_creation",
+      "definer": false,
+      "config": [
+        "search_path=\"\""
+      ],
+      "anon": false,
+      "authenticated": false
+    },
+    {
+      "schema": "public",
+      "proname": "translation_job_summary",
+      "definer": false,
+      "config": [
+        "search_path=\"\""
+      ],
+      "anon": false,
+      "authenticated": true
+    },
+    {
+      "schema": "public",
+      "proname": "translation_worker_state",
+      "definer": true,
+      "config": [
+        "search_path=\"\""
+      ],
+      "anon": false,
+      "authenticated": false
+    },
+    {
+      "schema": "public",
+      "proname": "update_owner_access",
+      "definer": false,
+      "config": [
+        "search_path=\"\""
+      ],
+      "anon": false,
+      "authenticated": false
+    },
+    {
+      "schema": "public",
+      "proname": "update_restaurant",
+      "definer": false,
+      "config": [
+        "search_path=\"\""
+      ],
+      "anon": false,
+      "authenticated": false
+    }
+  ],
+  "changelogCompatibility": {
+    "version": "PostgreSQL 17.11 on x86_64-pc-linux-gnu, compiled by gcc (GCC) 15.2.0, 64-bit",
+    "ltree_columns": 0,
+    "legacy_cipher_functions": 0
+  }
+}

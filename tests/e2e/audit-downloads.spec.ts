@@ -35,13 +35,19 @@ test("audit UI QR download checks HTTP errors and names a successful file", asyn
 }) => {
   const { data } = await auditFixture(page);
   let failed = true;
+  let previewed = false;
   await page.route("**/api/workspace/" + tenantId + "/qr?*", async (route) => {
-    const url = new URL(route.request().url());
-    if (url.searchParams.has("v"))
+    if (!previewed) {
+      previewed = true;
       return route.fulfill({
         contentType: "image/svg+xml",
+        headers: {
+          "X-QR-Validated": "true",
+          "X-QR-Permanent-URL": "https://permanent.example.test/q/fixture",
+        },
         body: '<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64"><rect width="64" height="64" fill="black"/></svg>',
       });
+    }
     if (failed)
       return route.fulfill({
         status: 503,
@@ -53,6 +59,7 @@ test("audit UI QR download checks HTTP errors and names a successful file", asyn
     });
   });
   await page.goto("/dashboard");
+  await page.waitForLoadState("networkidle");
   await navigateAudit(page, "Mi código QR");
   const link = page.getByRole("link", { name: "SVG", exact: true });
   await link.click();

@@ -1,0 +1,398 @@
+{
+  "mode": "PROPOSAL_ONLY",
+  "sources": [
+    {
+      "id": "extra-walnut-brownies",
+      "title": "Walnut brownies, October 2010.jpg",
+      "skus": ["DEMO-BRUMA-19"],
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Walnut_brownies,_October_2010.jpg",
+      "author": "Fabiana Loturco",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "optimized": {
+        "file": "extra-walnut-brownies.webp",
+        "bytes": 59076,
+        "sha256": "9a359cd7b8ee2efdebc012436c0efef5633ab77957173fe92b801d405b9f3d26",
+        "changes": "Orientation normalized; resized inside 1200x1000 without upscaling; WebP quality 82; metadata stripped. No generative edits."
+      }
+    },
+    {
+      "id": "extra-carrot-supreme",
+      "title": "Carrot Cake Supreme.jpg",
+      "skus": ["DEMO-BRUMA-18"],
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Carrot_Cake_Supreme.jpg",
+      "author": "Michael Pham",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "optimized": {
+        "file": "extra-carrot-supreme.webp",
+        "bytes": 41008,
+        "sha256": "3262f74944bfa2262e1513ce9a431cd2e57a44b3f7a056ac1bc6375b50f995d8",
+        "changes": "Orientation normalized; resized inside 1200x1000 without upscaling; WebP quality 82; metadata stripped. No generative edits."
+      }
+    },
+    {
+      "id": "extra-v60-wish",
+      "title": "V60 brew at Wish Slow Coffee (22180573700).jpg",
+      "skus": ["DEMO-BRUMA-04"],
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:V60_brew_at_Wish_Slow_Coffee_(22180573700).jpg",
+      "author": "Bex Walton from London, England",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "optimized": {
+        "file": "extra-v60-wish.webp",
+        "bytes": 132252,
+        "sha256": "13418e88f134573d5a7d52955fa7887e3f6b8fd14e3b3bf10e317b6efd3a07fe",
+        "changes": "Orientation normalized; resized inside 1200x1000 without upscaling; WebP quality 82; metadata stripped. No generative edits."
+      }
+    },
+    {
+      "id": "extra-v60-manual",
+      "title": "Manual Brew V60.jpg",
+      "skus": ["DEMO-BRUMA-04"],
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Manual_Brew_V60.jpg",
+      "author": "Robijuniarta",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "optimized": {
+        "file": "extra-v60-manual.webp",
+        "bytes": 41296,
+        "sha256": "03db96e5985259e8585d2ad6a8d0266e219a99963fe177bf7edd03e4d9d55abf",
+        "changes": "Orientation normalized; resized inside 1200x1000 without upscaling; WebP quality 82; metadata stripped. No generative edits."
+      }
+    },
+    {
+      "id": "extra-tonic-orange",
+      "title": "Espresso tonic.jpg",
+      "skus": ["DEMO-BRUMA-07"],
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Espresso_tonic.jpg",
+      "author": "Lajmmoore",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "optimized": {
+        "file": "extra-tonic-orange.webp",
+        "bytes": 66560,
+        "sha256": "01833503da9558e5ea503e7ae7fed790cfdc02cebd1a962383efff50996ec12c",
+        "changes": "Orientation normalized; resized inside 1200x1000 without upscaling; WebP quality 82; metadata stripped. No generative edits."
+      }
+    },
+    {
+      "id": "extra-tonic-two",
+      "title": "Espresso tonic 2.jpg",
+      "skus": ["DEMO-BRUMA-07"],
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Espresso_tonic_2.jpg",
+      "author": "Lajmmoore",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "optimized": {
+        "file": "extra-tonic-two.webp",
+        "bytes": 101676,
+        "sha256": "4ce6ef6e2ce415c30d0be34048df5a934c5aaa6c05314fa7d96cb73711ef855c",
+        "changes": "Orientation normalized; resized inside 1200x1000 without upscaling; WebP quality 82; metadata stripped. No generative edits."
+      }
+    },
+    {
+      "id": "extra-vanilla-latte",
+      "title": "Vanilla Latte (5339583568).jpg",
+      "skus": ["DEMO-BRUMA-03"]
+    },
+    {
+      "id": "extra-basil-lemonade",
+      "title": "Basil lemonade (3609257528).jpg",
+      "skus": ["DEMO-AURORA-13"],
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Basil_lemonade_(3609257528).jpg",
+      "author": "dana robinson from los angeles, ca, usa",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "optimized": {
+        "file": "extra-basil-lemonade.webp",
+        "bytes": 65594,
+        "sha256": "e63566f0e130c96eb6b254fb03bd58dbbcdb3b0e504dee8d95e9dcf443f57cb8",
+        "changes": "Orientation normalized; resized inside 1200x1000 without upscaling; WebP quality 82; metadata stripped. No generative edits."
+      }
+    },
+    {
+      "id": "extra-hibiscus-glass",
+      "title": "A glass of hibiscus tea 03 (cropped).jpg",
+      "skus": ["DEMO-BRUMA-24"],
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:A_glass_of_hibiscus_tea_03_(cropped).jpg",
+      "author": "claralieu",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "optimized": {
+        "file": "extra-hibiscus-glass.webp",
+        "bytes": 55906,
+        "sha256": "140749ac86ae8a07b9fb95287103ff42a913d7456862a16eee6df46ad53b7df6",
+        "changes": "Orientation normalized; resized inside 1200x1000 without upscaling; WebP quality 82; metadata stripped. No generative edits."
+      }
+    },
+    {
+      "id": "extra-peach-tea-local",
+      "title": "Peach tea in coffee house.jpg",
+      "skus": ["DEMO-AURORA-15"],
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Peach_tea_in_coffee_house.jpg",
+      "author": "Geoffreyrabbit",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "optimized": {
+        "file": "extra-peach-tea-local.webp",
+        "bytes": 107938,
+        "sha256": "9fdf6c4be99e1f5e862f7f7fdd366b12301f0407710f10db843b679027d46d81",
+        "changes": "Orientation normalized; resized inside 1200x1000 without upscaling; WebP quality 82; metadata stripped. No generative edits."
+      }
+    },
+    {
+      "id": "extra-peach-tea-iced",
+      "title": "A iced peach tea.jpg",
+      "skus": ["DEMO-AURORA-15"],
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:A_iced_peach_tea.jpg",
+      "author": "Geoffreyrabbit",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "optimized": {
+        "file": "extra-peach-tea-iced.webp",
+        "bytes": 95738,
+        "sha256": "32a19ca277edf58028311a6ca256c2b61365ccdaa1b0fb453454fc1e0d1762d9",
+        "changes": "Orientation normalized; resized inside 1200x1000 without upscaling; WebP quality 82; metadata stripped. No generative edits."
+      }
+    },
+    {
+      "id": "extra-latte-simple",
+      "title": "2019-03-17 Caffè latte.jpg",
+      "skus": ["DEMO-BRUMA-03"],
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:2019-03-17_Caff%C3%A8_latte.jpg",
+      "author": "Maksym Kozlenko",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "optimized": {
+        "file": "extra-latte-simple.webp",
+        "bytes": 70894,
+        "sha256": "12f02c3e2504da8c900125ac4be5a1ed97dda910a4c7df62ad1c807e879ffe9e",
+        "changes": "Orientation normalized; resized inside 1200x1000 without upscaling; WebP quality 82; metadata stripped. No generative edits."
+      }
+    },
+    {
+      "id": "extra-lemonade-fresh",
+      "title": "Fresh lemonade and lemons.jpg",
+      "skus": ["DEMO-AURORA-13"],
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Fresh_lemonade_and_lemons.jpg",
+      "author": "Eric Polk",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "optimized": {
+        "file": "extra-lemonade-fresh.webp",
+        "bytes": 244880,
+        "sha256": "def4d360c8e0fceba36018c83e0ba92f3ee59eb41bea8b574cf1467e11d94a08",
+        "changes": "Orientation normalized; resized inside 1200x1000 without upscaling; WebP quality 82; metadata stripped. No generative edits."
+      }
+    },
+    {
+      "id": "extra-green-lemonade",
+      "title": "Green lemonade.jpg",
+      "skus": ["DEMO-AURORA-13"],
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Green_lemonade.jpg",
+      "author": "Kritzolina",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "optimized": {
+        "file": "extra-green-lemonade.webp",
+        "bytes": 79462,
+        "sha256": "7fb22670da0e558714b45dbccf2b201cacb0c0628331e62dbb3c1d8de2d5a0e7",
+        "changes": "Orientation normalized; resized inside 1200x1000 without upscaling; WebP quality 82; metadata stripped. No generative edits."
+      }
+    },
+    {
+      "id": "extra-iced-tea-plain",
+      "title": "Ice tea glass.jpg",
+      "skus": ["DEMO-AURORA-15"],
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Ice_tea_glass.jpg",
+      "author": "Kanko from Nagasaki, Japan",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "optimized": {
+        "file": "extra-iced-tea-plain.webp",
+        "bytes": 47544,
+        "sha256": "003f52192a2e26034983f3da985413ccd39ad5badc23bf6dae1e43c47d02a6a7",
+        "changes": "Orientation normalized; resized inside 1200x1000 without upscaling; WebP quality 82; metadata stripped. No generative edits."
+      }
+    },
+    {
+      "id": "extra-black-tea-glass",
+      "title": "Glass tea cup.jpg",
+      "skus": ["DEMO-BRUMA-22"],
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Glass_tea_cup.jpg",
+      "author": "Zeynel Cebeci",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "optimized": {
+        "file": "extra-black-tea-glass.webp",
+        "bytes": 42750,
+        "sha256": "31b79d8bb1c77599460441f721570dee7a67106bede3e1f1c9de7ce09c0d0847",
+        "changes": "Orientation normalized; resized inside 1200x1000 without upscaling; WebP quality 82; metadata stripped. No generative edits."
+      }
+    },
+    {
+      "id": "extra-cacao-frappe",
+      "title": "Chocolate Frappe — OeG0_YsoFgk",
+      "skus": ["DEMO-BRUMA-08"],
+      "provider": "Unsplash",
+      "sourcePage": "https://unsplash.com/photos/a-drink-with-whipped-cream-and-chocolate-sprinkles-on-a-table-OeG0_YsoFgk",
+      "author": "Circle Digital Marketing Agency",
+      "license": "Unsplash License",
+      "licenseUrl": "https://unsplash.com/license",
+      "description": "Chocolate Frappe; primary page tags include coffee and milk.",
+      "originalUrl": "https://images.unsplash.com/photo-1718267050202-9b1b6bfb8545",
+      "optimized": {
+        "file": "extra-cacao-frappe.webp",
+        "bytes": 30742,
+        "sha256": "2131aeea9df00369b827bf6ccec8018d2e863e9ef656f013b3824f255e8e7bfe",
+        "changes": "Resized inside1200x1000 and WebP82; metadata stripped; no generative edits."
+      }
+    },
+    {
+      "id": "extra-lemonade-mug",
+      "title": "Mug of Lemonade.jpg",
+      "skus": ["DEMO-AURORA-13"],
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Mug_of_Lemonade.jpg",
+      "author": "Adryan R. Villanueva",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "optimized": {
+        "file": "extra-lemonade-mug.webp",
+        "bytes": 54738,
+        "sha256": "c92356d9a46d205fed954a49b1d6837366f18ee303f4087e9c67cbba7843f4a9",
+        "changes": "Orientation normalized; resized inside 1200x1000 without upscaling; WebP quality 82; metadata stripped. No generative edits."
+      }
+    },
+    {
+      "id": "extra-orange-soda-pour",
+      "title": "A Pouring Orange Soda into Glass — 5659362",
+      "skus": ["DEMO-AURORA-14"],
+      "provider": "Pexels",
+      "sourcePage": "https://www.pexels.com/photo/a-pouring-orange-soda-into-glass-5659362/",
+      "author": "Eva Bronzini",
+      "license": "Pexels License",
+      "licenseUrl": "https://www.pexels.com/license/",
+      "originalUrl": "https://images.pexels.com/photos/5659362/pexels-photo-5659362.jpeg",
+      "description": "Page title calls it orange soda; primary tags also include beer/kombucha, requires visual content review.",
+      "optimized": {
+        "file": "extra-orange-soda-pour.webp",
+        "bytes": 31398,
+        "sha256": "8e84bb7b45880372cd838f55869a8070bf288d8b66641395a0c41a5a02ceda52",
+        "changes": "Resized inside1200x1000 and WebP82; metadata stripped; no generative edits."
+      }
+    }
+  ],
+  "reviews": {
+    "extra-walnut-brownies": [
+      "SELECTED",
+      "Brownies de chocolate oscuro con nueces visibles, sin helado ni marcas; fuente primaria identifica walnut brownies."
+    ],
+    "extra-carrot-supreme": [
+      "SELECTED",
+      "Torta de zanahoria completa con cobertura de queso visible, confirmada por la ficha; sin marca ni otros platos. Foto representativa, no porción prometida."
+    ],
+    "extra-v60-wish": [
+      "REJECTED",
+      "Incluye galletas y elementos auxiliares; se prefiere el V60 manual aislado para evitar sugerir combo."
+    ],
+    "extra-v60-manual": [
+      "SELECTED",
+      "Café de filtrado manual en jarra y vaso con granos, sin toppings ni marcas; ficha primaria identifica V60. No verifica origen concreto del grano."
+    ],
+    "extra-tonic-orange": [
+      "SELECTED",
+      "Espresso con tónica y hielo, fuente primaria inequívoca; sin limón ni guarnición incompatible visible. La piel de naranja no se verifica visualmente."
+    ],
+    "extra-tonic-two": [
+      "REJECTED",
+      "Alternativa del mismo producto con persona/mano prominente; se prefiere el vaso aislado de otra fotografía."
+    ],
+    "extra-vanilla-latte": [
+      "REJECTED",
+      "Descarga fallida; no revisada visualmente ni habilitada para integración."
+    ],
+    "extra-basil-lemonade": [
+      "REJECTED",
+      "La descripción primaria declara vodka y sake: bebida alcohólica incompatible con la limonada del catálogo."
+    ],
+    "extra-hibiscus-glass": [
+      "SELECTED",
+      "Infusión roja de hibisco en vaso sin marcas ni ingredientes contradictorios. Menta y cítricos internos no se verifican en la foto."
+    ],
+    "extra-peach-tea-local": [
+      "REJECTED",
+      "Té en prensa con taza para servir caliente; no representa claramente el té frío pedido."
+    ],
+    "extra-peach-tea-iced": [
+      "REJECTED",
+      "Marcas de otro restaurante y personas visibles en fondo; no usar para el menú."
+    ],
+    "extra-latte-simple": [
+      "SELECTED",
+      "Latte caliente de café y leche, sin marca ni toppings incompatibles. Representativa; la vainilla interna no se verifica visualmente."
+    ],
+    "extra-lemonade-fresh": [
+      "REJECTED",
+      "Encuadre cerrado de recipiente de preparación con muchos limones; peor representación del producto servido que la alternativa en vaso."
+    ],
+    "extra-green-lemonade": [
+      "REJECTED",
+      "Jarra verde con personas de fondo; composición menos adecuada y hierba no verificable. Se prefiere limonada servida en vaso sin personas."
+    ],
+    "extra-iced-tea-plain": [
+      "SELECTED",
+      "Té frío con hielo, vaso sin marca ni otra fruta visible. Representativa de la bebida; el durazno infusionado no puede verificarse visualmente."
+    ],
+    "extra-black-tea-glass": [
+      "SELECTED",
+      "Infusión de té negro sin leche visible y sin marcas; no contradice la descripción de chai sin leche. Las especias internas no se verifican en fotografía."
+    ],
+    "extra-cacao-frappe": [
+      "SELECTED",
+      "Frappé marrón con crema y cacao/chocolate, sin marca visible; la ficha original dice Chocolate Frappe e incluye café. Fuente Unsplash con licencia propia verificada, no CC."
+    ],
+    "extra-lemonade-mug": [
+      "SELECTED",
+      "Limonada con rodajas de limón, sin otras hierbas o marcas visibles. Representativa; albahaca infusionada y gas no son verificables en la imagen."
+    ],
+    "extra-orange-soda-pour": [
+      "SELECTED",
+      "Bebida naranja carbonatada vertida en vaso sin marca; título primario identifica orange soda. Imagen representativa; ingredientes y elaboración artesanal no se verifican. Fuente Pexels con licencia propia, no CC."
+    ]
+  },
+  "remoteWrites": false,
+  "reviewedAt": "2026-10-18T06:46:57.626Z",
+  "mapping": {
+    "DEMO-BRUMA-19": "extra-walnut-brownies",
+    "DEMO-BRUMA-18": "extra-carrot-supreme",
+    "DEMO-BRUMA-04": "extra-v60-manual",
+    "DEMO-BRUMA-07": "extra-tonic-orange",
+    "DEMO-BRUMA-24": "extra-hibiscus-glass",
+    "DEMO-BRUMA-03": "extra-latte-simple",
+    "DEMO-AURORA-15": "extra-iced-tea-plain",
+    "DEMO-BRUMA-22": "extra-black-tea-glass",
+    "DEMO-BRUMA-08": "extra-cacao-frappe",
+    "DEMO-AURORA-13": "extra-lemonade-mug",
+    "DEMO-AURORA-14": "extra-orange-soda-pour"
+  },
+  "criteria": {
+    "representativePhotos": true,
+    "noRecipeOrAllergenVerification": true,
+    "noObservableContradictoryIngredient": true,
+    "noBrandingOrIdentifiablePeopleInSelectedForeground": true,
+    "photosAreNotClaimedAsRestaurantOriginalPhotography": true,
+    "originalCatalogueTextUnchanged": true
+  },
+  "counts": {
+    "candidates": 19,
+    "downloadedAndVisuallyReviewed": 18,
+    "selected": 11,
+    "rejectedAfterVisualReview": 7,
+    "downloadFailed": 1,
+    "coveredReservedSkus": 11
+  },
+  "assetDirectory": ".runtime/assets-proposed/extras",
+  "attributionIntegrationRequired": true,
+  "nonCCLicenses": ["Unsplash License", "Pexels License"]
+}

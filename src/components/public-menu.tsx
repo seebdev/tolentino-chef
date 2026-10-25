@@ -7,18 +7,19 @@ import {
   ArrowUpRight,
   Clock3,
   ChevronDown,
-  Globe,
   Star,
 } from "lucide-react";
 import { copy, languages } from "@/lib/i18n";
 import {
-  DEFAULT_APPEARANCE,
   mediaUrl,
   money,
   type Product,
   type PublicMenuData,
 } from "@/lib/types";
 import { Loading, Modal } from "./ui";
+import { menuAppearance, themeStyle } from "@/lib/menu-theme";
+import { LanguagePicker } from "./language-picker";
+import { hasPendingMenuTranslation } from "@/lib/menu-translations";
 type Unavailable = {
   suspended?: boolean;
   name?: string;
@@ -35,47 +36,171 @@ export function PublicMenu({
   const [data, setData] = useState<PublicMenuData | null>(initialData || null);
   const [unavailable, setUnavailable] = useState<Unavailable | null>(null);
   const [loading, setLoading] = useState(!initialData);
-  const [language, setLanguage] = useState(
-    initialData?.restaurant.default_language || "es",
-  );
-  const [category, setCategory] = useState("all");
-  const [search, setSearch] = useState("");
-  const [favorites, setFavorites] = useState<string[]>([]);
-  const [onlyFavorites, setOnlyFavorites] = useState(false);
-  const [selected, setSelected] = useState<Product | null>(null);
-  const [showHours, setShowHours] = useState(false);
-  const [now] = useState(() => Date.now());
+  const [refreshFailed, setRefreshFailed] = useState(false);
   useEffect(() => {
     if (initialData) return;
-    let ignore = false;
-    fetch("/api/public/menu/" + encodeURIComponent(slug))
+    const controller = new AbortController();
+    fetch("/api/public/menu/" + encodeURIComponent(slug), {
+      signal: controller.signal,
+    })
       .then(async (response) => {
         const result = await response.json();
-        if (ignore) return;
+        if (controller.signal.aborted) return;
         if (!response.ok) {
+          setData(null);
           setUnavailable(result);
           return;
         }
         setData(result);
-        setLanguage(result.restaurant.default_language || "es");
       })
       .catch(() => {
-        if (!ignore)
+        if (!controller.signal.aborted)
           setUnavailable({
             message:
               "No pudimos cargar este menú. Comprueba tu conexión e inténtalo de nuevo.",
           });
       })
       .finally(() => {
-        if (!ignore) setLoading(false);
+        if (!controller.signal.aborted) setLoading(false);
       });
-    return () => {
-      ignore = true;
-    };
+    return () => controller.abort();
   }, [slug, initialData]);
   useEffect(() => {
     if (!data) return;
+    let controller: AbortController | null = null;
+    let lastCheck = 0;
+    const check = async () => {
+      if (
+        document.visibilityState === "hidden" ||
+        Date.now() - lastCheck < 15000
+      )
+        return;
+      lastCheck = Date.now();
+      controller?.abort();
+      controller = new AbortController();
+      const current = controller;
+      try {
+        const version = await fetch(
+          "/api/public/menu/" + encodeURIComponent(slug) + "/version",
+          { signal: current.signal, cache: "no-store" },
+        );
+        const info = await version.json();
+        if (current.signal.aborted) return;
+        if (version.status === 404) {
+          setUnavailable(info);
+          setData(null);
+          return;
+        }
+        if (
+          version.ok &&
+          info.status === "active" &&
+          info.restaurantId === data.restaurant.id &&
+          String(info.menu_version) === String(data.restaurant.menu_version)
+        ) {
+          setRefreshFailed(false);
+          return;
+        }
+        const response = await fetch(
+          "/api/public/menu/" + encodeURIComponent(slug),
+          { signal: current.signal },
+        );
+        const result = await response.json();
+        if (current.signal.aborted) return;
+        if (!response.ok) {
+          if (response.status === 404 || response.status === 410) {
+            setUnavailable(result);
+            setData(null);
+          } else setRefreshFailed(true);
+          return;
+        }
+        if (result.restaurant.id !== data.restaurant.id) {
+          setUnavailable({
+            message:
+              "La dirección del menú cambió. Vuelve a abrir el código QR del restaurante.",
+          });
+          setData(null);
+          return;
+        }
+        setData(result);
+        setRefreshFailed(false);
+      } catch {
+        if (!current.signal.aborted) setRefreshFailed(true);
+      }
+    };
+    window.addEventListener("focus", check);
+    document.addEventListener("visibilitychange", check);
+    return () => {
+      controller?.abort();
+      window.removeEventListener("focus", check);
+      document.removeEventListener("visibilitychange", check);
+    };
+  }, [slug, data]);
+  if (loading)
+    return (
+      <main className="public-loading">
+        <Loading text="Preparando tu menú…" />
+      </main>
+    );
+  if (!data)
+    return (
+      <main className="standalone-state">
+        <span className="empty-icon">
+          <UtensilsCrossed size={32} />
+        </span>
+        <h1>{unavailable?.name || "Este menú no está disponible"}</h1>
+        <p>
+          {unavailable?.message ||
+            unavailable?.error ||
+            "Comprueba la dirección del menú o vuelve a intentarlo más tarde."}
+        </p>
+        {!unavailable?.suspended && (
+          <button
+            className="button secondary"
+            onClick={() => window.location.reload()}
+          >
+            Volver a intentar
+          </button>
+        )}
+      </main>
+    );
+  return (
+    <MenuRenderer
+      key={data.restaurant.id}
+      data={data}
+      refreshFailed={refreshFailed}
+    />
+  );
+}
+export function MenuRenderer({
+  data,
+  preview = false,
+  refreshFailed = false,
+}: {
+  data: PublicMenuData;
+  preview?: boolean;
+  refreshFailed?: boolean;
+}) {
+  const [chosenLanguage, setLanguage] = useState(
+    data.restaurant.default_language || "es",
+  );
+  const enabled = languages.filter((l) =>
+    (data.settings.enabled_languages || ["es"]).includes(l.code),
+  );
+  const language = enabled.some((l) => l.code === chosenLanguage)
+    ? chosenLanguage
+    : enabled[0]?.code || "es";
+  const [category, setCategory] = useState("all");
+  const [search, setSearch] = useState("");
+  const [favorites, setFavorites] = useState<string[]>([]);
+  const [onlyFavorites, setOnlyFavorites] = useState(false);
+  const [selectedId, setSelected] = useState<string | null>(null);
+  const selected = data.products.find((p) => p.id === selectedId) || null;
+  const [showHours, setShowHours] = useState(false);
+  const [now] = useState(() => Date.now());
+  useEffect(() => {
+    let cancelled = false;
     Promise.resolve().then(() => {
+      if (cancelled) return;
       try {
         const saved = JSON.parse(
           localStorage.getItem("tolentino:favorites:" + data.restaurant.id) ||
@@ -83,40 +208,79 @@ export function PublicMenu({
         );
         if (Array.isArray(saved))
           setFavorites(saved.filter((v) => typeof v === "string"));
+        const lang = localStorage.getItem(
+          "tolentino:language:" + data.restaurant.id,
+        );
+        if (lang) setLanguage(lang);
       } catch {
-        setFavorites([]);
+        /* Storage is optional; state still works for this visit. */
       }
     });
-  }, [data]);
+    return () => {
+      cancelled = true;
+    };
+  }, [data.restaurant.id]);
   useEffect(() => {
-    const path = data?.settings.appearance?.favicon_path;
-    if (!data || !path) return;
+    if (preview || !data.settings.appearance?.favicon_path) return;
     const link = document.createElement("link");
     link.rel = "icon";
-    link.href = mediaUrl(data.restaurant.id, path);
+    link.href = mediaUrl(
+      data.restaurant.id,
+      data.settings.appearance.favicon_path,
+    );
     link.dataset.tolentinoFavicon = data.restaurant.id;
     document.head.appendChild(link);
     return () => link.remove();
-  }, [data]);
+  }, [preview, data.restaurant.id, data.settings.appearance?.favicon_path]);
+  function changeLanguage(value: string) {
+    setLanguage(value);
+    try {
+      localStorage.setItem("tolentino:language:" + data.restaurant.id, value);
+    } catch {
+      /* Optional preference storage. */
+    }
+  }
   const t = copy[language] || copy.es;
-  const appearance = { ...DEFAULT_APPEARANCE, ...data?.settings.appearance };
-  const enabled = languages.filter((l) =>
-    (data?.settings.enabled_languages || ["es"]).includes(l.code),
-  );
+  const appearance = menuAppearance(data.settings.appearance);
   function text(
     type: string,
     id: string,
-    field: "name" | "description",
+    field: "name" | "description" | "title" | "ingredients",
     fallback: string,
   ) {
-    return (
-      data?.translations.find(
-        (tr) =>
-          tr.entity_type === type &&
-          tr.entity_id === id &&
-          tr.language === language,
-      )?.fields[field] || fallback
-    );
+    const value = data.translations.find(
+      (tr) =>
+        tr.entity_type === type &&
+        tr.entity_id === id &&
+        tr.language === language,
+    )?.fields[field];
+    return typeof value === "string" && value.trim() ? value : fallback;
+  }
+  function optionText(
+    id: string,
+    field: "tags" | "extras" | "variants",
+    index: number,
+    fallback: string,
+  ) {
+    const value = data.translations.find(
+      (tr) =>
+        tr.entity_type === "product" &&
+        tr.entity_id === id &&
+        tr.language === language,
+    )?.fields[field];
+    if (!Array.isArray(value)) return fallback;
+    const entry = value[index];
+    return typeof entry === "string"
+      ? entry.trim()
+        ? entry
+        : fallback
+      : entry &&
+          typeof entry === "object" &&
+          "name" in entry &&
+          typeof entry.name === "string" &&
+          entry.name.trim()
+        ? entry.name
+        : fallback;
   }
   function favorite(id: string) {
     const next = favorites.includes(id)
@@ -191,37 +355,14 @@ export function PublicMenu({
     language,
     orderedCategories,
   ]);
-  if (loading)
-    return (
-      <main className="public-loading">
-        <Loading text="Preparando tu menú…" />
-      </main>
-    );
-  if (!data)
-    return (
-      <main className="standalone-state">
-        <span className="empty-icon">
-          <UtensilsCrossed size={32} />
-        </span>
-        <span className="eyebrow">MENÚ DIGITAL</span>
-        <h1>{unavailable?.name || "Este menú no está disponible"}</h1>
-        <p>
-          {unavailable?.message ||
-            unavailable?.error ||
-            "Comprueba la dirección del menú o vuelve a intentarlo más tarde."}
-        </p>
-        {!unavailable?.suspended && (
-          <button
-            className="button secondary"
-            onClick={() => window.location.reload()}
-          >
-            Volver a intentar
-          </button>
-        )}
-      </main>
-    );
   const r = data.restaurant;
-  const featured = visibleProducts.filter((p) => p.is_featured);
+  const pendingTranslation = hasPendingMenuTranslation(data, language);
+  const featured = data.products.filter(
+    (p) =>
+      p.is_published &&
+      p.is_featured &&
+      orderedCategories.some((c) => c.id === p.category_id),
+  );
   const groups = orderedCategories
     .map((c) => ({
       category: c,
@@ -232,16 +373,25 @@ export function PublicMenu({
   return (
     <main
       className={"public-menu font-" + appearance.font}
-      style={
-        {
-          "--menu-primary": appearance.primary,
-          "--menu-secondary": appearance.secondary,
-        } as React.CSSProperties
-      }
+      style={themeStyle(appearance)}
+      data-menu-version={data.restaurant.menu_version}
+      data-mobile-columns={appearance.columns_mobile}
       lang={language}
     >
       <header className="public-topbar">
-        <a href={"/menu/" + r.slug} className="public-wordmark">
+        <a
+          href={"/menu/" + r.slug}
+          className="public-wordmark"
+          onClick={(e) => {
+            if (!e.ctrlKey && !e.metaKey && !e.shiftKey) {
+              e.preventDefault();
+              e.currentTarget.ownerDocument.defaultView?.scrollTo({
+                top: 0,
+                behavior: "smooth",
+              });
+            }
+          }}
+        >
           {r.name}
         </a>
         <div>
@@ -254,22 +404,11 @@ export function PublicMenu({
             <span>{t.favorites}</span>
             {favorites.length > 0 && <b>{favorites.length}</b>}
           </button>
-          {enabled.length > 1 && (
-            <div className="language-selector">
-              <Globe size={16} />
-              <select
-                aria-label="Language / Idioma"
-                value={language}
-                onChange={(e) => setLanguage(e.target.value)}
-              >
-                {enabled.map((l) => (
-                  <option value={l.code} key={l.code}>
-                    {l.label}
-                  </option>
-                ))}
-              </select>
-            </div>
-          )}
+          <LanguagePicker
+            enabled={enabled}
+            value={language}
+            onChange={changeLanguage}
+          />
         </div>
       </header>
       <section
@@ -294,7 +433,9 @@ export function PublicMenu({
             />
           )}
           <h1>{r.name}</h1>
-          {r.description && <p>{r.description}</p>}
+          {r.description && (
+            <p>{text("restaurant", r.id, "description", r.description)}</p>
+          )}
           {data.hours.length > 0 && (
             <button className="public-hours" onClick={() => setShowHours(true)}>
               <Clock3 size={15} />
@@ -306,6 +447,16 @@ export function PublicMenu({
         <div className="menu-hero-label">{t.hero}</div>
       </section>
       <div className="public-body">
+        {refreshFailed && (
+          <p className="menu-update-status" role="status">
+            {t.refreshError}
+          </p>
+        )}
+        {pendingTranslation && (
+          <p className="menu-update-status" role="status">
+            {t.pendingTranslation}
+          </p>
+        )}
         <div className="public-heading">
           <div>
             <span className="eyebrow">
@@ -369,80 +520,82 @@ export function PublicMenu({
             <aside className="public-promotion" key={p.id}>
               <Star size={20} />
               <div>
-                <strong>{p.title}</strong>
-                <p>{p.description}</p>
+                <strong>
+                  {text(
+                    "promotion",
+                    p.id,
+                    "title",
+                    text("promotion", p.id, "name", p.title),
+                  )}
+                </strong>
+                <p>{text("promotion", p.id, "description", p.description)}</p>
               </div>
             </aside>
           ))}
-        {featured.length > 0 &&
-          category === "all" &&
-          !search &&
-          !onlyFavorites && (
-            <section className="featured-section">
-              <div className="public-section-heading">
-                <span className="eyebrow">{t.featured}</span>
-                <span className="hairline" />
-              </div>
-              <div className="featured-grid">
-                {featured.slice(0, 3).map((p) => (
-                  <article className="featured-product" key={p.id}>
-                    <button
-                      className="featured-product-main"
-                      onClick={() => setSelected(p)}
-                    >
-                      {p.image_path ? (
-                        <img
-                          src={mediaUrl(r.id, p.image_path)}
-                          alt={text("product", p.id, "name", p.name)}
-                          loading="lazy"
-                        />
-                      ) : (
-                        <div className="product-image-placeholder">
-                          <UtensilsCrossed size={36} />
-                        </div>
-                      )}
-                      <div>
-                        <span className="product-category">
-                          {text(
-                            "category",
-                            p.category_id || "",
-                            "name",
-                            data.categories.find((c) => c.id === p.category_id)
-                              ?.name || "",
-                          )}
-                        </span>
-                        <h3>{text("product", p.id, "name", p.name)}</h3>
-                        <p>
-                          {text("product", p.id, "description", p.description)}
-                        </p>
-                        <strong>{money(p.price, r.currency, language)}</strong>
-                      </div>
-                    </button>
-                    <button
-                      className={
-                        "favorite-button " +
-                        (favorites.includes(p.id) ? "is-favorite" : "")
-                      }
-                      aria-label={
-                        favorites.includes(p.id) ? t.removeFavorite : t.favorite
-                      }
-                      onClick={() => favorite(p.id)}
-                    >
-                      <Heart
-                        size={18}
-                        fill={
-                          favorites.includes(p.id) ? "currentColor" : "none"
-                        }
+        {featured.length > 0 && (
+          <section className="featured-section">
+            <div className="public-section-heading">
+              <span className="eyebrow">{t.featured}</span>
+              <span className="hairline" />
+            </div>
+            <div className="featured-grid">
+              {featured.map((p) => (
+                <article className="featured-product" key={p.id}>
+                  <button
+                    className="featured-product-main"
+                    onClick={() => setSelected(p.id)}
+                  >
+                    {p.image_path ? (
+                      <img
+                        src={mediaUrl(r.id, p.image_path)}
+                        alt={text("product", p.id, "name", p.name)}
+                        loading="lazy"
                       />
-                    </button>
-                    {!p.is_available && (
-                      <span className="sold-out">{t.unavailable}</span>
+                    ) : (
+                      <div className="product-image-placeholder">
+                        <UtensilsCrossed size={36} />
+                      </div>
                     )}
-                  </article>
-                ))}
-              </div>
-            </section>
-          )}
+                    <div>
+                      <span className="product-category">
+                        {text(
+                          "category",
+                          p.category_id || "",
+                          "name",
+                          data.categories.find((c) => c.id === p.category_id)
+                            ?.name || "",
+                        )}
+                      </span>
+                      <h3>{text("product", p.id, "name", p.name)}</h3>
+                      <p>
+                        {text("product", p.id, "description", p.description)}
+                      </p>
+                      <strong>{money(p.price, r.currency, language)}</strong>
+                    </div>
+                  </button>
+                  <button
+                    className={
+                      "favorite-button " +
+                      (favorites.includes(p.id) ? "is-favorite" : "")
+                    }
+                    aria-label={
+                      favorites.includes(p.id) ? t.removeFavorite : t.favorite
+                    }
+                    onClick={() => favorite(p.id)}
+                  >
+                    <Heart
+                      size={18}
+                      fill={favorites.includes(p.id) ? "currentColor" : "none"}
+                    />
+                  </button>
+                  {!p.is_available && (
+                    <span className="sold-out">{t.unavailable}</span>
+                  )}
+                </article>
+              ))}
+            </div>
+          </section>
+        )}
         {!visibleProducts.length ? (
           <div className="public-empty">
             <UtensilsCrossed size={33} strokeWidth={1.4} />
@@ -480,7 +633,7 @@ export function PublicMenu({
                       product={p}
                       favorite={favorites.includes(p.id)}
                       onFavorite={() => favorite(p.id)}
-                      onOpen={() => setSelected(p)}
+                      onOpen={() => setSelected(p.id)}
                       name={text("product", p.id, "name", p.name)}
                       description={text(
                         "product",
@@ -504,7 +657,7 @@ export function PublicMenu({
                       product={p}
                       favorite={favorites.includes(p.id)}
                       onFavorite={() => favorite(p.id)}
-                      onOpen={() => setSelected(p)}
+                      onOpen={() => setSelected(p.id)}
                       name={text("product", p.id, "name", p.name)}
                       description={text(
                         "product",
@@ -526,11 +679,29 @@ export function PublicMenu({
         <strong>{r.name}</strong>
         <p>{t.digital}</p>
         {data.contact?.url && (
-          <a href={data.contact.url} target="_blank" rel="noopener noreferrer">
-            {data.contact.label || "Menú digital por Tolentino"}
+          <a
+            className="creator-contact"
+            href={data.contact.url}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {data.contact.brand
+              ? t.createdBy +
+                " " +
+                data.contact.brand +
+                (data.contact.phone ? " · " + data.contact.phone : "")
+              : data.contact.label}
             <ArrowUpRight size={13} />
           </a>
         )}
+        <a
+          className="photo-credits-link"
+          href={"/creditos-fotografias?restaurant=" + encodeURIComponent(r.id)}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {t.photoCredits}
+        </a>
       </footer>
       {selected && (
         <Modal
@@ -565,15 +736,24 @@ export function PublicMenu({
             </p>
             {selected.tags?.length > 0 && (
               <div className="product-tags">
-                {selected.tags.map((tag) => (
-                  <span key={tag}>{tag}</span>
+                {selected.tags.map((tag, index) => (
+                  <span key={index}>
+                    {optionText(selected.id, "tags", index, tag)}
+                  </span>
                 ))}
               </div>
             )}
             {selected.ingredients && (
               <div className="detail-block">
                 <h3>{t.ingredients}</h3>
-                <p>{selected.ingredients}</p>
+                <p>
+                  {text(
+                    "product",
+                    selected.id,
+                    "ingredients",
+                    selected.ingredients,
+                  )}
+                </p>
               </div>
             )}
             {(
@@ -588,7 +768,9 @@ export function PublicMenu({
                     <h3>{group.label}</h3>
                     {selected[group.key].map((v, i) => (
                       <div className="option-price" key={i}>
-                        <span>{v.name}</span>
+                        <span>
+                          {optionText(selected.id, group.key, i, v.name)}
+                        </span>
                         <strong>
                           {group.key === "extras" ? "+ " : ""}
                           {money(v.price, r.currency, language)}

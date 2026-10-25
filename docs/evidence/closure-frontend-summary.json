@@ -1,0 +1,70 @@
+{
+  "scope": "Frontend appearance/menu closure; local fixtures plus owned temporary-alpha real Supabase integration",
+  "status": "PASS",
+  "fixtures": {
+    "reports": [
+      {
+        "file": "docs/evidence/closure-browsers-final.json",
+        "stats": {
+          "startTime": "2026-10-18T06:14:29.389Z",
+          "duration": 544200.859,
+          "expected": 48,
+          "skipped": 0,
+          "unexpected": 0,
+          "flaky": 0
+        }
+      },
+      {
+        "file": "docs/evidence/closure-footer-parity-final.json",
+        "stats": {
+          "startTime": "2026-10-18T06:34:20.499Z",
+          "duration": 152375.054,
+          "expected": 8,
+          "skipped": 0,
+          "unexpected": 0,
+          "flaky": 0
+        }
+      },
+      {
+        "file": "docs/evidence/closure-owner-appearance-final.json",
+        "stats": {
+          "startTime": "2026-10-18T06:37:10.441Z",
+          "duration": 18055.472999999998,
+          "expected": 1,
+          "skipped": 0,
+          "unexpected": 0,
+          "flaky": 0
+        }
+      }
+    ],
+    "uniqueScenarioExecutions": 49,
+    "focusedRepeatExecutions": 8,
+    "unitTests": 8,
+    "browsers": ["Chrome", "Edge", "Firefox", "WebKit"],
+    "engineFamilies": 3,
+    "widths": [320, 390, 768, 1440],
+    "ownerPanelWidths": [390, 820, 1440]
+  },
+  "real": {
+    "report": "docs/evidence/migrations/hgntppemxwcxaxritnfq/closure-appearance-real-after-pt409-20261018/appearance-live-audit.json",
+    "checks": 12,
+    "cleanup": "PASS",
+    "conflictElapsedMs": 1182,
+    "sourceMutations": "Only task-owned temporary alpha; original DEMOs excluded",
+    "providerCalls": false,
+    "emailSent": false
+  },
+  "historicalFailuresPreserved": [
+    "docs/evidence/closure-menu-before.json",
+    "docs/evidence/closure-menu-regression.json",
+    "docs/evidence/closure-parity-height-before.json",
+    "docs/evidence/migrations/hgntppemxwcxaxritnfq/closure-appearance-real-20261018/appearance-live-audit-before.json"
+  ],
+  "limits": [
+    "No physical devices or camera/printed QR acceptance",
+    "No external translation-provider quality assertion",
+    "Development indicator is visible in local screenshots; production build checked separately",
+    "No deployment claim from local tests"
+  ],
+  "applicationSourceFrozen": true
+}

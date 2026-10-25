@@ -1,0 +1,1426 @@
+{
+  "config": {
+    "argv": [
+      "C:\\Users\\sebas\\OneDrive\\Escritorio\\tolentino-restaurantes-admin\\.runtime\\node-v22.23.3-win-x64\\node.exe",
+      "C:\\Users\\sebas\\OneDrive\\Escritorio\\tolentino-restaurantes-admin\\node_modules\\@playwright\\test\\cli.js",
+      "test",
+      "--config=playwright.menu.config.ts"
+    ],
+    "configFile": "C:\\Users\\sebas\\OneDrive\\Escritorio\\tolentino-restaurantes-admin\\playwright.menu.config.ts",
+    "rootDir": "C:/Users/sebas/OneDrive/Escritorio/tolentino-restaurantes-admin/tests/e2e",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "C:/Users/sebas/OneDrive/Escritorio/tolentino-restaurantes-admin/test-results/menu-closure-browsers",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "C:/Users/sebas/OneDrive/Escritorio/tolentino-restaurantes-admin/tests/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "menu-closure.spec.ts"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "C:/Users/sebas/OneDrive/Escritorio/tolentino-restaurantes-admin/test-results/menu-closure-browsers",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "firefox",
+        "name": "firefox",
+        "testDir": "C:/Users/sebas/OneDrive/Escritorio/tolentino-restaurantes-admin/tests/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "menu-closure.spec.ts"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "C:/Users/sebas/OneDrive/Escritorio/tolentino-restaurantes-admin/test-results/menu-closure-browsers",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "webkit",
+        "name": "webkit",
+        "testDir": "C:/Users/sebas/OneDrive/Escritorio/tolentino-restaurantes-admin/tests/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "menu-closure.spec.ts"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "C:/Users/sebas/OneDrive/Escritorio/tolentino-restaurantes-admin/test-results/menu-closure-browsers",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "edge",
+        "name": "edge",
+        "testDir": "C:/Users/sebas/OneDrive/Escritorio/tolentino-restaurantes-admin/tests/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "menu-closure.spec.ts"
+        ],
+        "timeout": 90000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "C:\\Users\\sebas\\OneDrive\\Escritorio\\tolentino-restaurantes-admin\\test-results\\menu-closure-browsers",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "chromium",
+        "testDir": "C:\\Users\\sebas\\OneDrive\\Escritorio\\tolentino-restaurantes-admin\\tests\\e2e",
+        "snapshotDir": "C:\\Users\\sebas\\OneDrive\\Escritorio\\tolentino-restaurantes-admin\\tests\\e2e",
+        "testIgnore": [],
+        "testMatch": "menu-closure.spec.ts",
+        "timeout": 90000,
+        "use": {
+          "baseURL": "http://localhost:3002",
+          "viewport": {
+            "width": 1440,
+            "height": 1000
+          },
+          "trace": "retain-on-failure",
+          "screenshot": "only-on-failure",
+          "browserName": "chromium",
+          "channel": "chrome"
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "chromium"
+      },
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "C:\\Users\\sebas\\OneDrive\\Escritorio\\tolentino-restaurantes-admin\\test-results\\menu-closure-browsers",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "firefox",
+        "testDir": "C:\\Users\\sebas\\OneDrive\\Escritorio\\tolentino-restaurantes-admin\\tests\\e2e",
+        "snapshotDir": "C:\\Users\\sebas\\OneDrive\\Escritorio\\tolentino-restaurantes-admin\\tests\\e2e",
+        "testIgnore": [],
+        "testMatch": "menu-closure.spec.ts",
+        "timeout": 90000,
+        "use": {
+          "baseURL": "http://localhost:3002",
+          "viewport": {
+            "width": 1440,
+            "height": 1000
+          },
+          "trace": "retain-on-failure",
+          "screenshot": "only-on-failure",
+          "browserName": "firefox"
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "firefox"
+      },
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "C:\\Users\\sebas\\OneDrive\\Escritorio\\tolentino-restaurantes-admin\\test-results\\menu-closure-browsers",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "webkit",
+        "testDir": "C:\\Users\\sebas\\OneDrive\\Escritorio\\tolentino-restaurantes-admin\\tests\\e2e",
+        "snapshotDir": "C:\\Users\\sebas\\OneDrive\\Escritorio\\tolentino-restaurantes-admin\\tests\\e2e",
+        "testIgnore": [],
+        "testMatch": "menu-closure.spec.ts",
+        "timeout": 90000,
+        "use": {
+          "baseURL": "http://localhost:3002",
+          "viewport": {
+            "width": 1440,
+            "height": 1000
+          },
+          "trace": "retain-on-failure",
+          "screenshot": "only-on-failure",
+          "browserName": "webkit"
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "webkit"
+      },
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "C:\\Users\\sebas\\OneDrive\\Escritorio\\tolentino-restaurantes-admin\\test-results\\menu-closure-browsers",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "edge",
+        "testDir": "C:\\Users\\sebas\\OneDrive\\Escritorio\\tolentino-restaurantes-admin\\tests\\e2e",
+        "snapshotDir": "C:\\Users\\sebas\\OneDrive\\Escritorio\\tolentino-restaurantes-admin\\tests\\e2e",
+        "testIgnore": [],
+        "testMatch": "menu-closure.spec.ts",
+        "timeout": 90000,
+        "use": {
+          "baseURL": "http://localhost:3002",
+          "viewport": {
+            "width": 1440,
+            "height": 1000
+          },
+          "trace": "retain-on-failure",
+          "screenshot": "only-on-failure",
+          "browserName": "chromium",
+          "channel": "msedge"
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "edge"
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "docs/evidence/closure-browsers.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "default",
+    "updateSourceMethod": "patch",
+    "version": "1.64.1",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "menu-closure.spec.ts",
+      "file": "menu-closure.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "closure: seven local flags and selected language persist per restaurant",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 8634,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-18T06:07:42.416Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e6e105cba9fce2d184bb-cf4840264e9b7a0fe56f",
+          "file": "menu-closure.spec.ts",
+          "line": 86,
+          "column": 5
+        },
+        {
+          "title": "closure: recommendations survive category selection",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4735,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-18T06:07:51.502Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e6e105cba9fce2d184bb-52159b0afdd8d1d350e8",
+          "file": "menu-closure.spec.ts",
+          "line": 103,
+          "column": 5
+        },
+        {
+          "title": "closure: configured mobile two columns and desktop one column",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3900,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-18T06:07:56.284Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e6e105cba9fce2d184bb-f4662474373c0c0a5609",
+          "file": "menu-closure.spec.ts",
+          "line": 115,
+          "column": 5
+        },
+        {
+          "title": "closure: complete preview uses a real viewport and same renderer",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4490,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-18T06:08:00.221Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e6e105cba9fce2d184bb-7e66628daf17b29e5241",
+          "file": "menu-closure.spec.ts",
+          "line": 133,
+          "column": 5
+        },
+        {
+          "title": "closure: all seven languages translate interface and available content without changing prices",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 10470,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-18T06:08:04.752Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e6e105cba9fce2d184bb-0e3acea469dc5a1d2e85",
+          "file": "menu-closure.spec.ts",
+          "line": 147,
+          "column": 5
+        },
+        {
+          "title": "closure: focus refresh preserves search, language, favorites and scroll",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3537,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-18T06:08:15.266Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e6e105cba9fce2d184bb-d6989254f5108bd002a7",
+          "file": "menu-closure.spec.ts",
+          "line": 239,
+          "column": 5
+        },
+        {
+          "title": "closure: preview and public share styles and geometry at four real widths",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 11488,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-18T06:08:18.841Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "same-renderer-320",
+                      "contentType": "application/json",
+                      "body": "eyJwcmV2aWV3Ijp7IndpZHRoIjozMjAsInBhZ2VXaWR0aCI6MzIwLCJtYWluIjp7ImJhY2tncm91bmQiOiJyZ2IoMjU1LCAyNDAsIDIyMykiLCJjb2xvciI6InJnYigzNywgMzcsIDM3KSIsImZvbnQiOiJcIkRNIFNhbnNcIiwgQXJpYWwsIHNhbnMtc2VyaWYiLCJmb250U2l6ZSI6IjE0cHgiLCJjb2x1bW5zIjoibm9uZSIsIndpZHRoIjozMjB9LCJjYXJkIjp7ImJhY2tncm91bmQiOiJyZ2IoMjU1LCAyNTAsIDI0NSkiLCJjb2xvciI6InJnYigzNywgMzcsIDM3KSIsImZvbnQiOiJcIkRNIFNhbnNcIiwgQXJpYWwsIHNhbnMtc2VyaWYiLCJmb250U2l6ZSI6IjE0cHgiLCJjb2x1bW5zIjoibm9uZSIsIndpZHRoIjoxNDB9LCJncmlkIjp7ImJhY2tncm91bmQiOiJyZ2JhKDAsIDAsIDAsIDApIiwiY29sb3IiOiJyZ2IoMzcsIDM3LCAzNykiLCJmb250IjoiXCJETSBTYW5zXCIsIEFyaWFsLCBzYW5zLXNlcmlmIiwiZm9udFNpemUiOiIxNHB4IiwiY29sdW1ucyI6IjE0MHB4IDE0MHB4Iiwid2lkdGgiOjI5Mn0sInRpdGxlIjp7ImJhY2tncm91bmQiOiJyZ2JhKDAsIDAsIDAsIDApIiwiY29sb3IiOiJyZ2IoMzcsIDM3LCAzNykiLCJmb250IjoiTWFucm9wZSwgQXJpYWwsIHNhbnMtc2VyaWYiLCJmb250U2l6ZSI6IjE0cHgiLCJjb2x1bW5zIjoibm9uZSIsIndpZHRoIjoxMTR9LCJoZXJvIjp7ImJhY2tncm91bmQiOiJyZ2JhKDAsIDAsIDAsIDApIiwiY29sb3IiOiJyZ2IoMzcsIDM3LCAzNykiLCJmb250IjoiXCJETSBTYW5zXCIsIEFyaWFsLCBzYW5zLXNlcmlmIiwiZm9udFNpemUiOiIxNHB4IiwiY29sdW1ucyI6Im5vbmUiLCJ3aWR0aCI6MzIwfSwicHJpY2UiOnsiYmFja2dyb3VuZCI6InJnYmEoMCwgMCwgMCwgMCkiLCJjb2xvciI6InJnYigzOCwgNzUsIDYwKSIsImZvbnQiOiJcIkRNIFNhbnNcIiwgQXJpYWwsIHNhbnMtc2VyaWYiLCJmb250U2l6ZSI6IjE0cHgiLCJjb2x1bW5zIjoibm9uZSIsIndpZHRoIjo3N30sImNvdW50Ijo2fSwicHVibGlzaGVkIjp7IndpZHRoIjozMjAsInBhZ2VXaWR0aCI6MzIwLCJtYWluIjp7ImJhY2tncm91bmQiOiJyZ2IoMjU1LCAyNDAsIDIyMykiLCJjb2xvciI6InJnYigzNywgMzcsIDM3KSIsImZvbnQiOiJcIkRNIFNhbnNcIiwgQXJpYWwsIHNhbnMtc2VyaWYiLCJmb250U2l6ZSI6IjE0cHgiLCJjb2x1bW5zIjoibm9uZSIsIndpZHRoIjozMjB9LCJjYXJkIjp7ImJhY2tncm91bmQiOiJyZ2IoMjU1LCAyNTAsIDI0NSkiLCJjb2xvciI6InJnYigzNywgMzcsIDM3KSIsImZvbnQiOiJcIkRNIFNhbnNcIiwgQXJpYWwsIHNhbnMtc2VyaWYiLCJmb250U2l6ZSI6IjE0cHgiLCJjb2x1bW5zIjoibm9uZSIsIndpZHRoIjoxNDB9LCJncmlkIjp7ImJhY2tncm91bmQiOiJyZ2JhKDAsIDAsIDAsIDApIiwiY29sb3IiOiJyZ2IoMzcsIDM3LCAzNykiLCJmb250IjoiXCJETSBTYW5zXCIsIEFyaWFsLCBzYW5zLXNlcmlmIiwiZm9udFNpemUiOiIxNHB4IiwiY29sdW1ucyI6IjE0MHB4IDE0MHB4Iiwid2lkdGgiOjI5Mn0sInRpdGxlIjp7ImJhY2tncm91bmQiOiJyZ2JhKDAsIDAsIDAsIDApIiwiY29sb3IiOiJyZ2IoMzcsIDM3LCAzNykiLCJmb250IjoiTWFucm9wZSwgQXJpYWwsIHNhbnMtc2VyaWYiLCJmb250U2l6ZSI6IjE0cHgiLCJjb2x1bW5zIjoibm9uZSIsIndpZHRoIjoxMTR9LCJoZXJvIjp7ImJhY2tncm91bmQiOiJyZ2JhKDAsIDAsIDAsIDApIiwiY29sb3IiOiJyZ2IoMzcsIDM3LCAzNykiLCJmb250IjoiXCJETSBTYW5zXCIsIEFyaWFsLCBzYW5zLXNlcmlmIiwiZm9udFNpemUiOiIxNHB4IiwiY29sdW1ucyI6Im5vbmUiLCJ3aWR0aCI6MzIwfSwicHJpY2UiOnsiYmFja2dyb3VuZCI6InJnYmEoMCwgMCwgMCwgMCkiLCJjb2xvciI6InJnYigzOCwgNzUsIDYwKSIsImZvbnQiOiJcIkRNIFNhbnNcIiwgQXJpYWwsIHNhbnMtc2VyaWYiLCJmb250U2l6ZSI6IjE0cHgiLCJjb2x1bW5zIjoibm9uZSIsIndpZHRoIjo3N30sImNvdW50Ijo2fX0="
+                    },
+                    {
+                      "name": "same-renderer-390",
+                      "contentType": "application/json",
+                      "body": "eyJwcmV2aWV3Ijp7IndpZHRoIjozOTAsInBhZ2VXaWR0aCI6MzkwLCJtYWluIjp7ImJhY2tncm91bmQiOiJyZ2IoMjU1LCAyNDAsIDIyMykiLCJjb2xvciI6InJnYigzNywgMzcsIDM3KSIsImZvbnQiOiJcIkRNIFNhbnNcIiwgQXJpYWwsIHNhbnMtc2VyaWYiLCJmb250U2l6ZSI6IjE0cHgiLCJjb2x1bW5zIjoibm9uZSIsIndpZHRoIjozOTB9LCJjYXJkIjp7ImJhY2tncm91bmQiOiJyZ2IoMjU1LCAyNTAsIDI0NSkiLCJjb2xvciI6InJnYigzNywgMzcsIDM3KSIsImZvbnQiOiJcIkRNIFNhbnNcIiwgQXJpYWwsIHNhbnMtc2VyaWYiLCJmb250U2l6ZSI6IjE0cHgiLCJjb2x1bW5zIjoibm9uZSIsIndpZHRoIjoxNzV9LCJncmlkIjp7ImJhY2tncm91bmQiOiJyZ2JhKDAsIDAsIDAsIDApIiwiY29sb3IiOiJyZ2IoMzcsIDM3LCAzNykiLCJmb250IjoiXCJETSBTYW5zXCIsIEFyaWFsLCBzYW5zLXNlcmlmIiwiZm9udFNpemUiOiIxNHB4IiwiY29sdW1ucyI6IjE3NXB4IDE3NXB4Iiwid2lkdGgiOjM2Mn0sInRpdGxlIjp7ImJhY2tncm91bmQiOiJyZ2JhKDAsIDAsIDAsIDApIiwiY29sb3IiOiJyZ2IoMzcsIDM3LCAzNykiLCJmb250IjoiTWFucm9wZSwgQXJpYWwsIHNhbnMtc2VyaWYiLCJmb250U2l6ZSI6IjE0cHgiLCJjb2x1bW5zIjoibm9uZSIsIndpZHRoIjoxNDl9LCJoZXJvIjp7ImJhY2tncm91bmQiOiJyZ2JhKDAsIDAsIDAsIDApIiwiY29sb3IiOiJyZ2IoMzcsIDM3LCAzNykiLCJmb250IjoiXCJETSBTYW5zXCIsIEFyaWFsLCBzYW5zLXNlcmlmIiwiZm9udFNpemUiOiIxNHB4IiwiY29sdW1ucyI6Im5vbmUiLCJ3aWR0aCI6MzkwfSwicHJpY2UiOnsiYmFja2dyb3VuZCI6InJnYmEoMCwgMCwgMCwgMCkiLCJjb2xvciI6InJnYigzOCwgNzUsIDYwKSIsImZvbnQiOiJcIkRNIFNhbnNcIiwgQXJpYWwsIHNhbnMtc2VyaWYiLCJmb250U2l6ZSI6IjE0cHgiLCJjb2x1bW5zIjoibm9uZSIsIndpZHRoIjo3N30sImNvdW50Ijo2fSwicHVibGlzaGVkIjp7IndpZHRoIjozOTAsInBhZ2VXaWR0aCI6MzkwLCJtYWluIjp7ImJhY2tncm91bmQiOiJyZ2IoMjU1LCAyNDAsIDIyMykiLCJjb2xvciI6InJnYigzNywgMzcsIDM3KSIsImZvbnQiOiJcIkRNIFNhbnNcIiwgQXJpYWwsIHNhbnMtc2VyaWYiLCJmb250U2l6ZSI6IjE0cHgiLCJjb2x1bW5zIjoibm9uZSIsIndpZHRoIjozOTB9LCJjYXJkIjp7ImJhY2tncm91bmQiOiJyZ2IoMjU1LCAyNTAsIDI0NSkiLCJjb2xvciI6InJnYigzNywgMzcsIDM3KSIsImZvbnQiOiJcIkRNIFNhbnNcIiwgQXJpYWwsIHNhbnMtc2VyaWYiLCJmb250U2l6ZSI6IjE0cHgiLCJjb2x1bW5zIjoibm9uZSIsIndpZHRoIjoxNzV9LCJncmlkIjp7ImJhY2tncm91bmQiOiJyZ2JhKDAsIDAsIDAsIDApIiwiY29sb3IiOiJyZ2IoMzcsIDM3LCAzNykiLCJmb250IjoiXCJETSBTYW5zXCIsIEFyaWFsLCBzYW5zLXNlcmlmIiwiZm9udFNpemUiOiIxNHB4IiwiY29sdW1ucyI6IjE3NXB4IDE3NXB4Iiwid2lkdGgiOjM2Mn0sInRpdGxlIjp7ImJhY2tncm91bmQiOiJyZ2JhKDAsIDAsIDAsIDApIiwiY29sb3IiOiJyZ2IoMzcsIDM3LCAzNykiLCJmb250IjoiTWFucm9wZSwgQXJpYWwsIHNhbnMtc2VyaWYiLCJmb250U2l6ZSI6IjE0cHgiLCJjb2x1bW5zIjoibm9uZSIsIndpZHRoIjoxNDl9LCJoZXJvIjp7ImJhY2tncm91bmQiOiJyZ2JhKDAsIDAsIDAsIDApIiwiY29sb3IiOiJyZ2IoMzcsIDM3LCAzNykiLCJmb250IjoiXCJETSBTYW5zXCIsIEFyaWFsLCBzYW5zLXNlcmlmIiwiZm9udFNpemUiOiIxNHB4IiwiY29sdW1ucyI6Im5vbmUiLCJ3aWR0aCI6MzkwfSwicHJpY2UiOnsiYmFja2dyb3VuZCI6InJnYmEoMCwgMCwgMCwgMCkiLCJjb2xvciI6InJnYigzOCwgNzUsIDYwKSIsImZvbnQiOiJcIkRNIFNhbnNcIiwgQXJpYWwsIHNhbnMtc2VyaWYiLCJmb250U2l6ZSI6IjE0cHgiLCJjb2x1bW5zIjoibm9uZSIsIndpZHRoIjo3N30sImNvdW50Ijo2fX0="
+                    },
+                    {
+                      "name": "same-renderer-768",
+                      "contentType": "application/json",
+                      "body": "eyJwcmV2aWV3Ijp7IndpZHRoIjo3NjgsInBhZ2VXaWR0aCI6NzY4LCJtYWluIjp7ImJhY2tncm91bmQiOiJyZ2IoMjU1LCAyNDAsIDIyMykiLCJjb2xvciI6InJnYigzNywgMzcsIDM3KSIsImZvbnQiOiJcIkRNIFNhbnNcIiwgQXJpYWwsIHNhbnMtc2VyaWYiLCJmb250U2l6ZSI6IjE0cHgiLCJjb2x1bW5zIjoibm9uZSIsIndpZHRoIjo3Njh9LCJjYXJkIjp7ImJhY2tncm91bmQiOiJyZ2IoMjU1LCAyNTAsIDI0NSkiLCJjb2xvciI6InJnYigzNywgMzcsIDM3KSIsImZvbnQiOiJcIkRNIFNhbnNcIiwgQXJpYWwsIHNhbnMtc2VyaWYiLCJmb250U2l6ZSI6IjE0cHgiLCJjb2x1bW5zIjoibm9uZSIsIndpZHRoIjo3MTh9LCJncmlkIjp7ImJhY2tncm91bmQiOiJyZ2JhKDAsIDAsIDAsIDApIiwiY29sb3IiOiJyZ2IoMzcsIDM3LCAzNykiLCJmb250IjoiXCJETSBTYW5zXCIsIEFyaWFsLCBzYW5zLXNlcmlmIiwiZm9udFNpemUiOiIxNHB4IiwiY29sdW1ucyI6IjcxOHB4Iiwid2lkdGgiOjcxOH0sInRpdGxlIjp7ImJhY2tncm91bmQiOiJyZ2JhKDAsIDAsIDAsIDApIiwiY29sb3IiOiJyZ2IoMzcsIDM3LCAzNykiLCJmb250IjoiTWFucm9wZSwgQXJpYWwsIHNhbnMtc2VyaWYiLCJmb250U2l6ZSI6IjE1cHgiLCJjb2x1bW5zIjoibm9uZSIsIndpZHRoIjo1ODN9LCJoZXJvIjp7ImJhY2tncm91bmQiOiJyZ2JhKDAsIDAsIDAsIDApIiwiY29sb3IiOiJyZ2IoMzcsIDM3LCAzNykiLCJmb250IjoiXCJETSBTYW5zXCIsIEFyaWFsLCBzYW5zLXNlcmlmIiwiZm9udFNpemUiOiIxNHB4IiwiY29sdW1ucyI6Im5vbmUiLCJ3aWR0aCI6NzY4fSwicHJpY2UiOnsiYmFja2dyb3VuZCI6InJnYmEoMCwgMCwgMCwgMCkiLCJjb2xvciI6InJnYigzOCwgNzUsIDYwKSIsImZvbnQiOiJcIkRNIFNhbnNcIiwgQXJpYWwsIHNhbnMtc2VyaWYiLCJmb250U2l6ZSI6IjE0cHgiLCJjb2x1bW5zIjoibm9uZSIsIndpZHRoIjo3N30sImNvdW50Ijo2fSwicHVibGlzaGVkIjp7IndpZHRoIjo3NjgsInBhZ2VXaWR0aCI6NzY4LCJtYWluIjp7ImJhY2tncm91bmQiOiJyZ2IoMjU1LCAyNDAsIDIyMykiLCJjb2xvciI6InJnYigzNywgMzcsIDM3KSIsImZvbnQiOiJcIkRNIFNhbnNcIiwgQXJpYWwsIHNhbnMtc2VyaWYiLCJmb250U2l6ZSI6IjE0cHgiLCJjb2x1bW5zIjoibm9uZSIsIndpZHRoIjo3Njh9LCJjYXJkIjp7ImJhY2tncm91bmQiOiJyZ2IoMjU1LCAyNTAsIDI0NSkiLCJjb2xvciI6InJnYigzNywgMzcsIDM3KSIsImZvbnQiOiJcIkRNIFNhbnNcIiwgQXJpYWwsIHNhbnMtc2VyaWYiLCJmb250U2l6ZSI6IjE0cHgiLCJjb2x1bW5zIjoibm9uZSIsIndpZHRoIjo3MTh9LCJncmlkIjp7ImJhY2tncm91bmQiOiJyZ2JhKDAsIDAsIDAsIDApIiwiY29sb3IiOiJyZ2IoMzcsIDM3LCAzNykiLCJmb250IjoiXCJETSBTYW5zXCIsIEFyaWFsLCBzYW5zLXNlcmlmIiwiZm9udFNpemUiOiIxNHB4IiwiY29sdW1ucyI6IjcxOHB4Iiwid2lkdGgiOjcxOH0sInRpdGxlIjp7ImJhY2tncm91bmQiOiJyZ2JhKDAsIDAsIDAsIDApIiwiY29sb3IiOiJyZ2IoMzcsIDM3LCAzNykiLCJmb250IjoiTWFucm9wZSwgQXJpYWwsIHNhbnMtc2VyaWYiLCJmb250U2l6ZSI6IjE1cHgiLCJjb2x1bW5zIjoibm9uZSIsIndpZHRoIjo1ODN9LCJoZXJvIjp7ImJhY2tncm91bmQiOiJyZ2JhKDAsIDAsIDAsIDApIiwiY29sb3IiOiJyZ2IoMzcsIDM3LCAzNykiLCJmb250IjoiXCJETSBTYW5zXCIsIEFyaWFsLCBzYW5zLXNlcmlmIiwiZm9udFNpemUiOiIxNHB4IiwiY29sdW1ucyI6Im5vbmUiLCJ3aWR0aCI6NzY4fSwicHJpY2UiOnsiYmFja2dyb3VuZCI6InJnYmEoMCwgMCwgMCwgMCkiLCJjb2xvciI6InJnYigzOCwgNzUsIDYwKSIsImZvbnQiOiJcIkRNIFNhbnNcIiwgQXJpYWwsIHNhbnMtc2VyaWYiLCJmb250U2l6ZSI6IjE0cHgiLCJjb2x1bW5zIjoibm9uZSIsIndpZHRoIjo3N30sImNvdW50Ijo2fX0="
+                    },
+                    {
+                      "name": "same-renderer-1440",
+                      "contentType": "application/json",
+                      "body": "eyJwcmV2aWV3Ijp7IndpZHRoIjoxNDQwLCJwYWdlV2lkdGgiOjE0NDAsIm1haW4iOnsiYmFja2dyb3VuZCI6InJnYigyNTUsIDI0MCwgMjIzKSIsImNvbG9yIjoicmdiKDM3LCAzNywgMzcpIiwiZm9udCI6IlwiRE0gU2Fuc1wiLCBBcmlhbCwgc2Fucy1zZXJpZiIsImZvbnRTaXplIjoiMTRweCIsImNvbHVtbnMiOiJub25lIiwid2lkdGgiOjE0NDB9LCJjYXJkIjp7ImJhY2tncm91bmQiOiJyZ2IoMjU1LCAyNTAsIDI0NSkiLCJjb2xvciI6InJnYigzNywgMzcsIDM3KSIsImZvbnQiOiJcIkRNIFNhbnNcIiwgQXJpYWwsIHNhbnMtc2VyaWYiLCJmb250U2l6ZSI6IjE0cHgiLCJjb2x1bW5zIjoibm9uZSIsIndpZHRoIjoxMDcwfSwiZ3JpZCI6eyJiYWNrZ3JvdW5kIjoicmdiYSgwLCAwLCAwLCAwKSIsImNvbG9yIjoicmdiKDM3LCAzNywgMzcpIiwiZm9udCI6IlwiRE0gU2Fuc1wiLCBBcmlhbCwgc2Fucy1zZXJpZiIsImZvbnRTaXplIjoiMTRweCIsImNvbHVtbnMiOiIxMDcwcHgiLCJ3aWR0aCI6MTA3MH0sInRpdGxlIjp7ImJhY2tncm91bmQiOiJyZ2JhKDAsIDAsIDAsIDApIiwiY29sb3IiOiJyZ2IoMzcsIDM3LCAzNykiLCJmb250IjoiTWFucm9wZSwgQXJpYWwsIHNhbnMtc2VyaWYiLCJmb250U2l6ZSI6IjE1cHgiLCJjb2x1bW5zIjoibm9uZSIsIndpZHRoIjo5MDR9LCJoZXJvIjp7ImJhY2tncm91bmQiOiJyZ2JhKDAsIDAsIDAsIDApIiwiY29sb3IiOiJyZ2IoMzcsIDM3LCAzNykiLCJmb250IjoiXCJETSBTYW5zXCIsIEFyaWFsLCBzYW5zLXNlcmlmIiwiZm9udFNpemUiOiIxNHB4IiwiY29sdW1ucyI6Im5vbmUiLCJ3aWR0aCI6MTQ0MH0sInByaWNlIjp7ImJhY2tncm91bmQiOiJyZ2JhKDAsIDAsIDAsIDApIiwiY29sb3IiOiJyZ2IoMzgsIDc1LCA2MCkiLCJmb250IjoiXCJETSBTYW5zXCIsIEFyaWFsLCBzYW5zLXNlcmlmIiwiZm9udFNpemUiOiIxNHB4IiwiY29sdW1ucyI6Im5vbmUiLCJ3aWR0aCI6Nzd9LCJjb3VudCI6Nn0sInB1Ymxpc2hlZCI6eyJ3aWR0aCI6MTQ0MCwicGFnZVdpZHRoIjoxNDQwLCJtYWluIjp7ImJhY2tncm91bmQiOiJyZ2IoMjU1LCAyNDAsIDIyMykiLCJjb2xvciI6InJnYigzNywgMzcsIDM3KSIsImZvbnQiOiJcIkRNIFNhbnNcIiwgQXJpYWwsIHNhbnMtc2VyaWYiLCJmb250U2l6ZSI6IjE0cHgiLCJjb2x1bW5zIjoibm9uZSIsIndpZHRoIjoxNDQwfSwiY2FyZCI6eyJiYWNrZ3JvdW5kIjoicmdiKDI1NSwgMjUwLCAyNDUpIiwiY29sb3IiOiJyZ2IoMzcsIDM3LCAzNykiLCJmb250IjoiXCJETSBTYW5zXCIsIEFyaWFsLCBzYW5zLXNlcmlmIiwiZm9udFNpemUiOiIxNHB4IiwiY29sdW1ucyI6Im5vbmUiLCJ3aWR0aCI6MTA3MH0sImdyaWQiOnsiYmFja2dyb3VuZCI6InJnYmEoMCwgMCwgMCwgMCkiLCJjb2xvciI6InJnYigzNywgMzcsIDM3KSIsImZvbnQiOiJcIkRNIFNhbnNcIiwgQXJpYWwsIHNhbnMtc2VyaWYiLCJmb250U2l6ZSI6IjE0cHgiLCJjb2x1bW5zIjoiMTA3MHB4Iiwid2lkdGgiOjEwNzB9LCJ0aXRsZSI6eyJiYWNrZ3JvdW5kIjoicmdiYSgwLCAwLCAwLCAwKSIsImNvbG9yIjoicmdiKDM3LCAzNywgMzcpIiwiZm9udCI6Ik1hbnJvcGUsIEFyaWFsLCBzYW5zLXNlcmlmIiwiZm9udFNpemUiOiIxNXB4IiwiY29sdW1ucyI6Im5vbmUiLCJ3aWR0aCI6OTA0fSwiaGVybyI6eyJiYWNrZ3JvdW5kIjoicmdiYSgwLCAwLCAwLCAwKSIsImNvbG9yIjoicmdiKDM3LCAzNywgMzcpIiwiZm9udCI6IlwiRE0gU2Fuc1wiLCBBcmlhbCwgc2Fucy1zZXJpZiIsImZvbnRTaXplIjoiMTRweCIsImNvbHVtbnMiOiJub25lIiwid2lkdGgiOjE0NDB9LCJwcmljZSI6eyJiYWNrZ3JvdW5kIjoicmdiYSgwLCAwLCAwLCAwKSIsImNvbG9yIjoicmdiKDM4LCA3NSwgNjApIiwiZm9udCI6IlwiRE0gU2Fuc1wiLCBBcmlhbCwgc2Fucy1zZXJpZiIsImZvbnRTaXplIjoiMTRweCIsImNvbHVtbnMiOiJub25lIiwid2lkdGgiOjc3fSwiY291bnQiOjZ9fQ=="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e6e105cba9fce2d184bb-89df807a4a758f2db99d",
+          "file": "menu-closure.spec.ts",
+          "line": 267,
+          "column": 5
+        },
+        {
+          "title": "closure: draft save is private, publish is one atomic request and conflict preserves local form",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 12272,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-18T06:08:30.366Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e6e105cba9fce2d184bb-561a4e46a4318e101741",
+          "file": "menu-closure.spec.ts",
+          "line": 378,
+          "column": 5
+        },
+        {
+          "title": "closure: seven local flags and selected language persist per restaurant",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 17192,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-18T06:08:44.728Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e6e105cba9fce2d184bb-a498e1b6fb8c4a8aba90",
+          "file": "menu-closure.spec.ts",
+          "line": 86,
+          "column": 5
+        },
+        {
+          "title": "closure: recommendations survive category selection",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4744,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-18T06:09:03.404Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e6e105cba9fce2d184bb-5c3402d2ed9d3bee9b61",
+          "file": "menu-closure.spec.ts",
+          "line": 103,
+          "column": 5
+        },
+        {
+          "title": "closure: configured mobile two columns and desktop one column",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4855,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-18T06:09:08.183Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e6e105cba9fce2d184bb-6ed3769afcee21484e63",
+          "file": "menu-closure.spec.ts",
+          "line": 115,
+          "column": 5
+        },
+        {
+          "title": "closure: complete preview uses a real viewport and same renderer",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5154,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-18T06:09:13.075Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e6e105cba9fce2d184bb-4fb3052eaa9400facf37",
+          "file": "menu-closure.spec.ts",
+          "line": 133,
+          "column": 5
+        },
+        {
+          "title": "closure: all seven languages translate interface and available content without changing prices",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 11843,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-18T06:09:18.266Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e6e105cba9fce2d184bb-31c34dc20f9d94cb4740",
+          "file": "menu-closure.spec.ts",
+          "line": 147,
+          "column": 5
+        },
+        {
+          "title": "closure: focus refresh preserves search, language, favorites and scroll",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5475,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-18T06:09:30.146Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e6e105cba9fce2d184bb-0af6fb5f02129b1fa931",
+          "file": "menu-closure.spec.ts",
+          "line": 239,
+          "column": 5
+        },
+        {
+          "title": "closure: preview and public share styles and geometry at four real widths",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 17755,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-18T06:09:35.656Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "same-renderer-320",
+                      "contentType": "application/json",
+                      "body": "eyJwcmV2aWV3Ijp7IndpZHRoIjozMjAsInBhZ2VXaWR0aCI6MzIwLCJtYWluIjp7ImJhY2tncm91bmQiOiJyZ2IoMjU1LCAyNDAsIDIyMykiLCJjb2xvciI6InJnYigzNywgMzcsIDM3KSIsImZvbnQiOiJcIkRNIFNhbnNcIiwgQXJpYWwsIHNhbnMtc2VyaWYiLCJmb250U2l6ZSI6IjE0cHgiLCJjb2x1bW5zIjoibm9uZSIsIndpZHRoIjozMjB9LCJjYXJkIjp7ImJhY2tncm91bmQiOiJyZ2IoMjU1LCAyNTAsIDI0NSkiLCJjb2xvciI6InJnYigzNywgMzcsIDM3KSIsImZvbnQiOiJcIkRNIFNhbnNcIiwgQXJpYWwsIHNhbnMtc2VyaWYiLCJmb250U2l6ZSI6IjE0cHgiLCJjb2x1bW5zIjoibm9uZSIsIndpZHRoIjoxNDB9LCJncmlkIjp7ImJhY2tncm91bmQiOiJyZ2JhKDAsIDAsIDAsIDApIiwiY29sb3IiOiJyZ2IoMzcsIDM3LCAzNykiLCJmb250IjoiXCJETSBTYW5zXCIsIEFyaWFsLCBzYW5zLXNlcmlmIiwiZm9udFNpemUiOiIxNHB4IiwiY29sdW1ucyI6IjE0MHB4IDE0MHB4Iiwid2lkdGgiOjI5Mn0sInRpdGxlIjp7ImJhY2tncm91bmQiOiJyZ2JhKDAsIDAsIDAsIDApIiwiY29sb3IiOiJyZ2IoMzcsIDM3LCAzNykiLCJmb250IjoiTWFucm9wZSwgQXJpYWwsIHNhbnMtc2VyaWYiLCJmb250U2l6ZSI6IjE0cHgiLCJjb2x1bW5zIjoibm9uZSIsIndpZHRoIjoxMTR9LCJoZXJvIjp7ImJhY2tncm91bmQiOiJyZ2JhKDAsIDAsIDAsIDApIiwiY29sb3IiOiJyZ2IoMzcsIDM3LCAzNykiLCJmb250IjoiXCJETSBTYW5zXCIsIEFyaWFsLCBzYW5zLXNlcmlmIiwiZm9udFNpemUiOiIxNHB4IiwiY29sdW1ucyI6Im5vbmUiLCJ3aWR0aCI6MzIwfSwicHJpY2UiOnsiYmFja2dyb3VuZCI6InJnYmEoMCwgMCwgMCwgMCkiLCJjb2xvciI6InJnYigzOCwgNzUsIDYwKSIsImZvbnQiOiJcIkRNIFNhbnNcIiwgQXJpYWwsIHNhbnMtc2VyaWYiLCJmb250U2l6ZSI6IjE0cHgiLCJjb2x1bW5zIjoibm9uZSIsIndpZHRoIjo3N30sImNvdW50Ijo2fSwicHVibGlzaGVkIjp7IndpZHRoIjozMjAsInBhZ2VXaWR0aCI6MzIwLCJtYWluIjp7ImJhY2tncm91bmQiOiJyZ2IoMjU1LCAyNDAsIDIyMykiLCJjb2xvciI6InJnYigzNywgMzcsIDM3KSIsImZvbnQiOiJcIkRNIFNhbnNcIiwgQXJpYWwsIHNhbnMtc2VyaWYiLCJmb250U2l6ZSI6IjE0cHgiLCJjb2x1bW5zIjoibm9uZSIsIndpZHRoIjozMjB9LCJjYXJkIjp7ImJhY2tncm91bmQiOiJyZ2IoMjU1LCAyNTAsIDI0NSkiLCJjb2xvciI6InJnYigzNywgMzcsIDM3KSIsImZvbnQiOiJcIkRNIFNhbnNcIiwgQXJpYWwsIHNhbnMtc2VyaWYiLCJmb250U2l6ZSI6IjE0cHgiLCJjb2x1bW5zIjoibm9uZSIsIndpZHRoIjoxNDB9LCJncmlkIjp7ImJhY2tncm91bmQiOiJyZ2JhKDAsIDAsIDAsIDApIiwiY29sb3IiOiJyZ2IoMzcsIDM3LCAzNykiLCJmb250IjoiXCJETSBTYW5zXCIsIEFyaWFsLCBzYW5zLXNlcmlmIiwiZm9udFNpemUiOiIxNHB4IiwiY29sdW1ucyI6IjE0MHB4IDE0MHB4Iiwid2lkdGgiOjI5Mn0sInRpdGxlIjp7ImJhY2tncm91bmQiOiJyZ2JhKDAsIDAsIDAsIDApIiwiY29sb3IiOiJyZ2IoMzcsIDM3LCAzNykiLCJmb250IjoiTWFucm9wZSwgQXJpYWwsIHNhbnMtc2VyaWYiLCJmb250U2l6ZSI6IjE0cHgiLCJjb2x1bW5zIjoibm9uZSIsIndpZHRoIjoxMTR9LCJoZXJvIjp7ImJhY2tncm91bmQiOiJyZ2JhKDAsIDAsIDAsIDApIiwiY29sb3IiOiJyZ2IoMzcsIDM3LCAzNykiLCJmb250IjoiXCJETSBTYW5zXCIsIEFyaWFsLCBzYW5zLXNlcmlmIiwiZm9udFNpemUiOiIxNHB4IiwiY29sdW1ucyI6Im5vbmUiLCJ3aWR0aCI6MzIwfSwicHJpY2UiOnsiYmFja2dyb3VuZCI6InJnYmEoMCwgMCwgMCwgMCkiLCJjb2xvciI6InJnYigzOCwgNzUsIDYwKSIsImZvbnQiOiJcIkRNIFNhbnNcIiwgQXJpYWwsIHNhbnMtc2VyaWYiLCJmb250U2l6ZSI6IjE0cHgiLCJjb2x1bW5zIjoibm9uZSIsIndpZHRoIjo3N30sImNvdW50Ijo2fX0="
+                    },
+                    {
+                      "name": "same-renderer-390",
+                      "contentType": "application/json",
+                      "body": "eyJwcmV2aWV3Ijp7IndpZHRoIjozOTAsInBhZ2VXaWR0aCI6MzkwLCJtYWluIjp7ImJhY2tncm91bmQiOiJyZ2IoMjU1LCAyNDAsIDIyMykiLCJjb2xvciI6InJnYigzNywgMzcsIDM3KSIsImZvbnQiOiJcIkRNIFNhbnNcIiwgQXJpYWwsIHNhbnMtc2VyaWYiLCJmb250U2l6ZSI6IjE0cHgiLCJjb2x1bW5zIjoibm9uZSIsIndpZHRoIjozOTB9LCJjYXJkIjp7ImJhY2tncm91bmQiOiJyZ2IoMjU1LCAyNTAsIDI0NSkiLCJjb2xvciI6InJnYigzNywgMzcsIDM3KSIsImZvbnQiOiJcIkRNIFNhbnNcIiwgQXJpYWwsIHNhbnMtc2VyaWYiLCJmb250U2l6ZSI6IjE0cHgiLCJjb2x1bW5zIjoibm9uZSIsIndpZHRoIjoxNzV9LCJncmlkIjp7ImJhY2tncm91bmQiOiJyZ2JhKDAsIDAsIDAsIDApIiwiY29sb3IiOiJyZ2IoMzcsIDM3LCAzNykiLCJmb250IjoiXCJETSBTYW5zXCIsIEFyaWFsLCBzYW5zLXNlcmlmIiwiZm9udFNpemUiOiIxNHB4IiwiY29sdW1ucyI6IjE3NXB4IDE3NXB4Iiwid2lkdGgiOjM2Mn0sInRpdGxlIjp7ImJhY2tncm91bmQiOiJyZ2JhKDAsIDAsIDAsIDApIiwiY29sb3IiOiJyZ2IoMzcsIDM3LCAzNykiLCJmb250IjoiTWFucm9wZSwgQXJpYWwsIHNhbnMtc2VyaWYiLCJmb250U2l6ZSI6IjE0cHgiLCJjb2x1bW5zIjoibm9uZSIsIndpZHRoIjoxNDl9LCJoZXJvIjp7ImJhY2tncm91bmQiOiJyZ2JhKDAsIDAsIDAsIDApIiwiY29sb3IiOiJyZ2IoMzcsIDM3LCAzNykiLCJmb250IjoiXCJETSBTYW5zXCIsIEFyaWFsLCBzYW5zLXNlcmlmIiwiZm9udFNpemUiOiIxNHB4IiwiY29sdW1ucyI6Im5vbmUiLCJ3aWR0aCI6MzkwfSwicHJpY2UiOnsiYmFja2dyb3VuZCI6InJnYmEoMCwgMCwgMCwgMCkiLCJjb2xvciI6InJnYigzOCwgNzUsIDYwKSIsImZvbnQiOiJcIkRNIFNhbnNcIiwgQXJpYWwsIHNhbnMtc2VyaWYiLCJmb250U2l6ZSI6IjE0cHgiLCJjb2x1bW5zIjoibm9uZSIsIndpZHRoIjo3N30sImNvdW50Ijo2fSwicHVibGlzaGVkIjp7IndpZHRoIjozOTAsInBhZ2VXaWR0aCI6MzkwLCJtYWluIjp7ImJhY2tncm91bmQiOiJyZ2IoMjU1LCAyNDAsIDIyMykiLCJjb2xvciI6InJnYigzNywgMzcsIDM3KSIsImZvbnQiOiJcIkRNIFNhbnNcIiwgQXJpYWwsIHNhbnMtc2VyaWYiLCJmb250U2l6ZSI6IjE0cHgiLCJjb2x1bW5zIjoibm9uZSIsIndpZHRoIjozOTB9LCJjYXJkIjp7ImJhY2tncm91bmQiOiJyZ2IoMjU1LCAyNTAsIDI0NSkiLCJjb2xvciI6InJnYigzNywgMzcsIDM3KSIsImZvbnQiOiJcIkRNIFNhbnNcIiwgQXJpYWwsIHNhbnMtc2VyaWYiLCJmb250U2l6ZSI6IjE0cHgiLCJjb2x1bW5zIjoibm9uZSIsIndpZHRoIjoxNzV9LCJncmlkIjp7ImJhY2tncm91bmQiOiJyZ2JhKDAsIDAsIDAsIDApIiwiY29sb3IiOiJyZ2IoMzcsIDM3LCAzNykiLCJmb250IjoiXCJETSBTYW5zXCIsIEFyaWFsLCBzYW5zLXNlcmlmIiwiZm9udFNpemUiOiIxNHB4IiwiY29sdW1ucyI6IjE3NXB4IDE3NXB4Iiwid2lkdGgiOjM2Mn0sInRpdGxlIjp7ImJhY2tncm91bmQiOiJyZ2JhKDAsIDAsIDAsIDApIiwiY29sb3IiOiJyZ2IoMzcsIDM3LCAzNykiLCJmb250IjoiTWFucm9wZSwgQXJpYWwsIHNhbnMtc2VyaWYiLCJmb250U2l6ZSI6IjE0cHgiLCJjb2x1bW5zIjoibm9uZSIsIndpZHRoIjoxNDl9LCJoZXJvIjp7ImJhY2tncm91bmQiOiJyZ2JhKDAsIDAsIDAsIDApIiwiY29sb3IiOiJyZ2IoMzcsIDM3LCAzNykiLCJmb250IjoiXCJETSBTYW5zXCIsIEFyaWFsLCBzYW5zLXNlcmlmIiwiZm9udFNpemUiOiIxNHB4IiwiY29sdW1ucyI6Im5vbmUiLCJ3aWR0aCI6MzkwfSwicHJpY2UiOnsiYmFja2dyb3VuZCI6InJnYmEoMCwgMCwgMCwgMCkiLCJjb2xvciI6InJnYigzOCwgNzUsIDYwKSIsImZvbnQiOiJcIkRNIFNhbnNcIiwgQXJpYWwsIHNhbnMtc2VyaWYiLCJmb250U2l6ZSI6IjE0cHgiLCJjb2x1bW5zIjoibm9uZSIsIndpZHRoIjo3N30sImNvdW50Ijo2fX0="
+                    },
+                    {
+                      "name": "same-renderer-768",
+                      "contentType": "application/json",
+                      "body": "eyJwcmV2aWV3Ijp7IndpZHRoIjo3NjgsInBhZ2VXaWR0aCI6NzY4LCJtYWluIjp7ImJhY2tncm91bmQiOiJyZ2IoMjU1LCAyNDAsIDIyMykiLCJjb2xvciI6InJnYigzNywgMzcsIDM3KSIsImZvbnQiOiJcIkRNIFNhbnNcIiwgQXJpYWwsIHNhbnMtc2VyaWYiLCJmb250U2l6ZSI6IjE0cHgiLCJjb2x1bW5zIjoibm9uZSIsIndpZHRoIjo3Njh9LCJjYXJkIjp7ImJhY2tncm91bmQiOiJyZ2IoMjU1LCAyNTAsIDI0NSkiLCJjb2xvciI6InJnYigzNywgMzcsIDM3KSIsImZvbnQiOiJcIkRNIFNhbnNcIiwgQXJpYWwsIHNhbnMtc2VyaWYiLCJmb250U2l6ZSI6IjE0cHgiLCJjb2x1bW5zIjoibm9uZSIsIndpZHRoIjo3MTh9LCJncmlkIjp7ImJhY2tncm91bmQiOiJyZ2JhKDAsIDAsIDAsIDApIiwiY29sb3IiOiJyZ2IoMzcsIDM3LCAzNykiLCJmb250IjoiXCJETSBTYW5zXCIsIEFyaWFsLCBzYW5zLXNlcmlmIiwiZm9udFNpemUiOiIxNHB4IiwiY29sdW1ucyI6IjcxOHB4Iiwid2lkdGgiOjcxOH0sInRpdGxlIjp7ImJhY2tncm91bmQiOiJyZ2JhKDAsIDAsIDAsIDApIiwiY29sb3IiOiJyZ2IoMzcsIDM3LCAzNykiLCJmb250IjoiTWFucm9wZSwgQXJpYWwsIHNhbnMtc2VyaWYiLCJmb250U2l6ZSI6IjE1cHgiLCJjb2x1bW5zIjoibm9uZSIsIndpZHRoIjo1ODN9LCJoZXJvIjp7ImJhY2tncm91bmQiOiJyZ2JhKDAsIDAsIDAsIDApIiwiY29sb3IiOiJyZ2IoMzcsIDM3LCAzNykiLCJmb250IjoiXCJETSBTYW5zXCIsIEFyaWFsLCBzYW5zLXNlcmlmIiwiZm9udFNpemUiOiIxNHB4IiwiY29sdW1ucyI6Im5vbmUiLCJ3aWR0aCI6NzY4fSwicHJpY2UiOnsiYmFja2dyb3VuZCI6InJnYmEoMCwgMCwgMCwgMCkiLCJjb2xvciI6InJnYigzOCwgNzUsIDYwKSIsImZvbnQiOiJcIkRNIFNhbnNcIiwgQXJpYWwsIHNhbnMtc2VyaWYiLCJmb250U2l6ZSI6IjE0cHgiLCJjb2x1bW5zIjoibm9uZSIsIndpZHRoIjo3N30sImNvdW50Ijo2fSwicHVibGlzaGVkIjp7IndpZHRoIjo3NjgsInBhZ2VXaWR0aCI6NzY4LCJtYWluIjp7ImJhY2tncm91bmQiOiJyZ2IoMjU1LCAyNDAsIDIyMykiLCJjb2xvciI6InJnYigzNywgMzcsIDM3KSIsImZvbnQiOiJcIkRNIFNhbnNcIiwgQXJpYWwsIHNhbnMtc2VyaWYiLCJmb250U2l6ZSI6IjE0cHgiLCJjb2x1bW5zIjoibm9uZSIsIndpZHRoIjo3Njh9LCJjYXJkIjp7ImJhY2tncm91bmQiOiJyZ2IoMjU1LCAyNTAsIDI0NSkiLCJjb2xvciI6InJnYigzNywgMzcsIDM3KSIsImZvbnQiOiJcIkRNIFNhbnNcIiwgQXJpYWwsIHNhbnMtc2VyaWYiLCJmb250U2l6ZSI6IjE0cHgiLCJjb2x1bW5zIjoibm9uZSIsIndpZHRoIjo3MTh9LCJncmlkIjp7ImJhY2tncm91bmQiOiJyZ2JhKDAsIDAsIDAsIDApIiwiY29sb3IiOiJyZ2IoMzcsIDM3LCAzNykiLCJmb250IjoiXCJETSBTYW5zXCIsIEFyaWFsLCBzYW5zLXNlcmlmIiwiZm9udFNpemUiOiIxNHB4IiwiY29sdW1ucyI6IjcxOHB4Iiwid2lkdGgiOjcxOH0sInRpdGxlIjp7ImJhY2tncm91bmQiOiJyZ2JhKDAsIDAsIDAsIDApIiwiY29sb3IiOiJyZ2IoMzcsIDM3LCAzNykiLCJmb250IjoiTWFucm9wZSwgQXJpYWwsIHNhbnMtc2VyaWYiLCJmb250U2l6ZSI6IjE1cHgiLCJjb2x1bW5zIjoibm9uZSIsIndpZHRoIjo1ODN9LCJoZXJvIjp7ImJhY2tncm91bmQiOiJyZ2JhKDAsIDAsIDAsIDApIiwiY29sb3IiOiJyZ2IoMzcsIDM3LCAzNykiLCJmb250IjoiXCJETSBTYW5zXCIsIEFyaWFsLCBzYW5zLXNlcmlmIiwiZm9udFNpemUiOiIxNHB4IiwiY29sdW1ucyI6Im5vbmUiLCJ3aWR0aCI6NzY4fSwicHJpY2UiOnsiYmFja2dyb3VuZCI6InJnYmEoMCwgMCwgMCwgMCkiLCJjb2xvciI6InJnYigzOCwgNzUsIDYwKSIsImZvbnQiOiJcIkRNIFNhbnNcIiwgQXJpYWwsIHNhbnMtc2VyaWYiLCJmb250U2l6ZSI6IjE0cHgiLCJjb2x1bW5zIjoibm9uZSIsIndpZHRoIjo3N30sImNvdW50Ijo2fX0="
+                    },
+                    {
+                      "name": "same-renderer-1440",
+                      "contentType": "application/json",
+                      "body": "eyJwcmV2aWV3Ijp7IndpZHRoIjoxNDQwLCJwYWdlV2lkdGgiOjE0NDAsIm1haW4iOnsiYmFja2dyb3VuZCI6InJnYigyNTUsIDI0MCwgMjIzKSIsImNvbG9yIjoicmdiKDM3LCAzNywgMzcpIiwiZm9udCI6IlwiRE0gU2Fuc1wiLCBBcmlhbCwgc2Fucy1zZXJpZiIsImZvbnRTaXplIjoiMTRweCIsImNvbHVtbnMiOiJub25lIiwid2lkdGgiOjE0NDB9LCJjYXJkIjp7ImJhY2tncm91bmQiOiJyZ2IoMjU1LCAyNTAsIDI0NSkiLCJjb2xvciI6InJnYigzNywgMzcsIDM3KSIsImZvbnQiOiJcIkRNIFNhbnNcIiwgQXJpYWwsIHNhbnMtc2VyaWYiLCJmb250U2l6ZSI6IjE0cHgiLCJjb2x1bW5zIjoibm9uZSIsIndpZHRoIjoxMDcwfSwiZ3JpZCI6eyJiYWNrZ3JvdW5kIjoicmdiYSgwLCAwLCAwLCAwKSIsImNvbG9yIjoicmdiKDM3LCAzNywgMzcpIiwiZm9udCI6IlwiRE0gU2Fuc1wiLCBBcmlhbCwgc2Fucy1zZXJpZiIsImZvbnRTaXplIjoiMTRweCIsImNvbHVtbnMiOiIxMDcwcHgiLCJ3aWR0aCI6MTA3MH0sInRpdGxlIjp7ImJhY2tncm91bmQiOiJyZ2JhKDAsIDAsIDAsIDApIiwiY29sb3IiOiJyZ2IoMzcsIDM3LCAzNykiLCJmb250IjoiTWFucm9wZSwgQXJpYWwsIHNhbnMtc2VyaWYiLCJmb250U2l6ZSI6IjE1cHgiLCJjb2x1bW5zIjoibm9uZSIsIndpZHRoIjo5MDR9LCJoZXJvIjp7ImJhY2tncm91bmQiOiJyZ2JhKDAsIDAsIDAsIDApIiwiY29sb3IiOiJyZ2IoMzcsIDM3LCAzNykiLCJmb250IjoiXCJETSBTYW5zXCIsIEFyaWFsLCBzYW5zLXNlcmlmIiwiZm9udFNpemUiOiIxNHB4IiwiY29sdW1ucyI6Im5vbmUiLCJ3aWR0aCI6MTQ0MH0sInByaWNlIjp7ImJhY2tncm91bmQiOiJyZ2JhKDAsIDAsIDAsIDApIiwiY29sb3IiOiJyZ2IoMzgsIDc1LCA2MCkiLCJmb250IjoiXCJETSBTYW5zXCIsIEFyaWFsLCBzYW5zLXNlcmlmIiwiZm9udFNpemUiOiIxNHB4IiwiY29sdW1ucyI6Im5vbmUiLCJ3aWR0aCI6Nzd9LCJjb3VudCI6Nn0sInB1Ymxpc2hlZCI6eyJ3aWR0aCI6MTQ0MCwicGFnZVdpZHRoIjoxNDQwLCJtYWluIjp7ImJhY2tncm91bmQiOiJyZ2IoMjU1LCAyNDAsIDIyMykiLCJjb2xvciI6InJnYigzNywgMzcsIDM3KSIsImZvbnQiOiJcIkRNIFNhbnNcIiwgQXJpYWwsIHNhbnMtc2VyaWYiLCJmb250U2l6ZSI6IjE0cHgiLCJjb2x1bW5zIjoibm9uZSIsIndpZHRoIjoxNDQwfSwiY2FyZCI6eyJiYWNrZ3JvdW5kIjoicmdiKDI1NSwgMjUwLCAyNDUpIiwiY29sb3IiOiJyZ2IoMzcsIDM3LCAzNykiLCJmb250IjoiXCJETSBTYW5zXCIsIEFyaWFsLCBzYW5zLXNlcmlmIiwiZm9udFNpemUiOiIxNHB4IiwiY29sdW1ucyI6Im5vbmUiLCJ3aWR0aCI6MTA3MH0sImdyaWQiOnsiYmFja2dyb3VuZCI6InJnYmEoMCwgMCwgMCwgMCkiLCJjb2xvciI6InJnYigzNywgMzcsIDM3KSIsImZvbnQiOiJcIkRNIFNhbnNcIiwgQXJpYWwsIHNhbnMtc2VyaWYiLCJmb250U2l6ZSI6IjE0cHgiLCJjb2x1bW5zIjoiMTA3MHB4Iiwid2lkdGgiOjEwNzB9LCJ0aXRsZSI6eyJiYWNrZ3JvdW5kIjoicmdiYSgwLCAwLCAwLCAwKSIsImNvbG9yIjoicmdiKDM3LCAzNywgMzcpIiwiZm9udCI6Ik1hbnJvcGUsIEFyaWFsLCBzYW5zLXNlcmlmIiwiZm9udFNpemUiOiIxNXB4IiwiY29sdW1ucyI6Im5vbmUiLCJ3aWR0aCI6OTA0fSwiaGVybyI6eyJiYWNrZ3JvdW5kIjoicmdiYSgwLCAwLCAwLCAwKSIsImNvbG9yIjoicmdiKDM3LCAzNywgMzcpIiwiZm9udCI6IlwiRE0gU2Fuc1wiLCBBcmlhbCwgc2Fucy1zZXJpZiIsImZvbnRTaXplIjoiMTRweCIsImNvbHVtbnMiOiJub25lIiwid2lkdGgiOjE0NDB9LCJwcmljZSI6eyJiYWNrZ3JvdW5kIjoicmdiYSgwLCAwLCAwLCAwKSIsImNvbG9yIjoicmdiKDM4LCA3NSwgNjApIiwiZm9udCI6IlwiRE0gU2Fuc1wiLCBBcmlhbCwgc2Fucy1zZXJpZiIsImZvbnRTaXplIjoiMTRweCIsImNvbHVtbnMiOiJub25lIiwid2lkdGgiOjc3fSwiY291bnQiOjZ9fQ=="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e6e105cba9fce2d184bb-5d40c21295ac7a44b082",
+          "file": "menu-closure.spec.ts",
+          "line": 267,
+          "column": 5
+        },
+        {
+          "title": "closure: draft save is private, publish is one atomic request and conflict preserves local form",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 17811,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-18T06:09:53.459Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e6e105cba9fce2d184bb-859fbe0ce6d2f5de2e71",
+          "file": "menu-closure.spec.ts",
+          "line": 378,
+          "column": 5
+        },
+        {
+          "title": "closure: seven local flags and selected language persist per restaurant",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 6866,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-18T06:10:13.032Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e6e105cba9fce2d184bb-b6232db36e1c34d3b495",
+          "file": "menu-closure.spec.ts",
+          "line": 86,
+          "column": 5
+        },
+        {
+          "title": "closure: recommendations survive category selection",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4017,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-18T06:10:20.399Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e6e105cba9fce2d184bb-1072b5679bafdb418705",
+          "file": "menu-closure.spec.ts",
+          "line": 103,
+          "column": 5
+        },
+        {
+          "title": "closure: configured mobile two columns and desktop one column",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3622,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-18T06:10:24.461Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e6e105cba9fce2d184bb-c124abefba7cef127482",
+          "file": "menu-closure.spec.ts",
+          "line": 115,
+          "column": 5
+        },
+        {
+          "title": "closure: complete preview uses a real viewport and same renderer",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3806,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-18T06:10:28.121Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e6e105cba9fce2d184bb-02e31471f908a96fc449",
+          "file": "menu-closure.spec.ts",
+          "line": 133,
+          "column": 5
+        },
+        {
+          "title": "closure: all seven languages translate interface and available content without changing prices",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 10015,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-18T06:10:31.965Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e6e105cba9fce2d184bb-1f331aa53cc8e627559d",
+          "file": "menu-closure.spec.ts",
+          "line": 147,
+          "column": 5
+        },
+        {
+          "title": "closure: focus refresh preserves search, language, favorites and scroll",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4032,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-18T06:10:42.012Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e6e105cba9fce2d184bb-fe01c47514265fb979f0",
+          "file": "menu-closure.spec.ts",
+          "line": 239,
+          "column": 5
+        },
+        {
+          "title": "closure: preview and public share styles and geometry at four real widths",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 19574,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-18T06:10:46.074Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "same-renderer-320",
+                      "contentType": "application/json",
+                      "body": "eyJwcmV2aWV3Ijp7IndpZHRoIjozMjAsInBhZ2VXaWR0aCI6MzIwLCJtYWluIjp7ImJhY2tncm91bmQiOiJyZ2IoMjU1LCAyNDAsIDIyMykiLCJjb2xvciI6InJnYigzNywgMzcsIDM3KSIsImZvbnQiOiJETSBTYW5zLCBBcmlhbCwgc2Fucy1zZXJpZiIsImZvbnRTaXplIjoiMTRweCIsImNvbHVtbnMiOiJub25lIiwid2lkdGgiOjMyMH0sImNhcmQiOnsiYmFja2dyb3VuZCI6InJnYigyNTUsIDI1MCwgMjQ1KSIsImNvbG9yIjoicmdiKDM3LCAzNywgMzcpIiwiZm9udCI6IkRNIFNhbnMsIEFyaWFsLCBzYW5zLXNlcmlmIiwiZm9udFNpemUiOiIxNHB4IiwiY29sdW1ucyI6Im5vbmUiLCJ3aWR0aCI6MTQwfSwiZ3JpZCI6eyJiYWNrZ3JvdW5kIjoicmdiYSgwLCAwLCAwLCAwKSIsImNvbG9yIjoicmdiKDM3LCAzNywgMzcpIiwiZm9udCI6IkRNIFNhbnMsIEFyaWFsLCBzYW5zLXNlcmlmIiwiZm9udFNpemUiOiIxNHB4IiwiY29sdW1ucyI6IjE0MHB4IDE0MHB4Iiwid2lkdGgiOjI5Mn0sInRpdGxlIjp7ImJhY2tncm91bmQiOiJyZ2JhKDAsIDAsIDAsIDApIiwiY29sb3IiOiJyZ2IoMzcsIDM3LCAzNykiLCJmb250IjoiTWFucm9wZSwgQXJpYWwsIHNhbnMtc2VyaWYiLCJmb250U2l6ZSI6IjE0cHgiLCJjb2x1bW5zIjoibm9uZSIsIndpZHRoIjoxMTR9LCJoZXJvIjp7ImJhY2tncm91bmQiOiJyZ2JhKDAsIDAsIDAsIDApIiwiY29sb3IiOiJyZ2IoMzcsIDM3LCAzNykiLCJmb250IjoiRE0gU2FucywgQXJpYWwsIHNhbnMtc2VyaWYiLCJmb250U2l6ZSI6IjE0cHgiLCJjb2x1bW5zIjoibm9uZSIsIndpZHRoIjozMjB9LCJwcmljZSI6eyJiYWNrZ3JvdW5kIjoicmdiYSgwLCAwLCAwLCAwKSIsImNvbG9yIjoicmdiKDM4LCA3NSwgNjApIiwiZm9udCI6IkRNIFNhbnMsIEFyaWFsLCBzYW5zLXNlcmlmIiwiZm9udFNpemUiOiIxNHB4IiwiY29sdW1ucyI6Im5vbmUiLCJ3aWR0aCI6Nzd9LCJjb3VudCI6Nn0sInB1Ymxpc2hlZCI6eyJ3aWR0aCI6MzIwLCJwYWdlV2lkdGgiOjMyMCwibWFpbiI6eyJiYWNrZ3JvdW5kIjoicmdiKDI1NSwgMjQwLCAyMjMpIiwiY29sb3IiOiJyZ2IoMzcsIDM3LCAzNykiLCJmb250IjoiRE0gU2FucywgQXJpYWwsIHNhbnMtc2VyaWYiLCJmb250U2l6ZSI6IjE0cHgiLCJjb2x1bW5zIjoibm9uZSIsIndpZHRoIjozMjB9LCJjYXJkIjp7ImJhY2tncm91bmQiOiJyZ2IoMjU1LCAyNTAsIDI0NSkiLCJjb2xvciI6InJnYigzNywgMzcsIDM3KSIsImZvbnQiOiJETSBTYW5zLCBBcmlhbCwgc2Fucy1zZXJpZiIsImZvbnRTaXplIjoiMTRweCIsImNvbHVtbnMiOiJub25lIiwid2lkdGgiOjE0MH0sImdyaWQiOnsiYmFja2dyb3VuZCI6InJnYmEoMCwgMCwgMCwgMCkiLCJjb2xvciI6InJnYigzNywgMzcsIDM3KSIsImZvbnQiOiJETSBTYW5zLCBBcmlhbCwgc2Fucy1zZXJpZiIsImZvbnRTaXplIjoiMTRweCIsImNvbHVtbnMiOiIxNDBweCAxNDBweCIsIndpZHRoIjoyOTJ9LCJ0aXRsZSI6eyJiYWNrZ3JvdW5kIjoicmdiYSgwLCAwLCAwLCAwKSIsImNvbG9yIjoicmdiKDM3LCAzNywgMzcpIiwiZm9udCI6Ik1hbnJvcGUsIEFyaWFsLCBzYW5zLXNlcmlmIiwiZm9udFNpemUiOiIxNHB4IiwiY29sdW1ucyI6Im5vbmUiLCJ3aWR0aCI6MTE0fSwiaGVybyI6eyJiYWNrZ3JvdW5kIjoicmdiYSgwLCAwLCAwLCAwKSIsImNvbG9yIjoicmdiKDM3LCAzNywgMzcpIiwiZm9udCI6IkRNIFNhbnMsIEFyaWFsLCBzYW5zLXNlcmlmIiwiZm9udFNpemUiOiIxNHB4IiwiY29sdW1ucyI6Im5vbmUiLCJ3aWR0aCI6MzIwfSwicHJpY2UiOnsiYmFja2dyb3VuZCI6InJnYmEoMCwgMCwgMCwgMCkiLCJjb2xvciI6InJnYigzOCwgNzUsIDYwKSIsImZvbnQiOiJETSBTYW5zLCBBcmlhbCwgc2Fucy1zZXJpZiIsImZvbnRTaXplIjoiMTRweCIsImNvbHVtbnMiOiJub25lIiwid2lkdGgiOjc3fSwiY291bnQiOjZ9fQ=="
+                    },
+                    {
+                      "name": "same-renderer-390",
+                      "contentType": "application/json",
+                      "body": "eyJwcmV2aWV3Ijp7IndpZHRoIjozOTAsInBhZ2VXaWR0aCI6MzkwLCJtYWluIjp7ImJhY2tncm91bmQiOiJyZ2IoMjU1LCAyNDAsIDIyMykiLCJjb2xvciI6InJnYigzNywgMzcsIDM3KSIsImZvbnQiOiJETSBTYW5zLCBBcmlhbCwgc2Fucy1zZXJpZiIsImZvbnRTaXplIjoiMTRweCIsImNvbHVtbnMiOiJub25lIiwid2lkdGgiOjM5MH0sImNhcmQiOnsiYmFja2dyb3VuZCI6InJnYigyNTUsIDI1MCwgMjQ1KSIsImNvbG9yIjoicmdiKDM3LCAzNywgMzcpIiwiZm9udCI6IkRNIFNhbnMsIEFyaWFsLCBzYW5zLXNlcmlmIiwiZm9udFNpemUiOiIxNHB4IiwiY29sdW1ucyI6Im5vbmUiLCJ3aWR0aCI6MTc1fSwiZ3JpZCI6eyJiYWNrZ3JvdW5kIjoicmdiYSgwLCAwLCAwLCAwKSIsImNvbG9yIjoicmdiKDM3LCAzNywgMzcpIiwiZm9udCI6IkRNIFNhbnMsIEFyaWFsLCBzYW5zLXNlcmlmIiwiZm9udFNpemUiOiIxNHB4IiwiY29sdW1ucyI6IjE3NXB4IDE3NXB4Iiwid2lkdGgiOjM2Mn0sInRpdGxlIjp7ImJhY2tncm91bmQiOiJyZ2JhKDAsIDAsIDAsIDApIiwiY29sb3IiOiJyZ2IoMzcsIDM3LCAzNykiLCJmb250IjoiTWFucm9wZSwgQXJpYWwsIHNhbnMtc2VyaWYiLCJmb250U2l6ZSI6IjE0cHgiLCJjb2x1bW5zIjoibm9uZSIsIndpZHRoIjoxNDl9LCJoZXJvIjp7ImJhY2tncm91bmQiOiJyZ2JhKDAsIDAsIDAsIDApIiwiY29sb3IiOiJyZ2IoMzcsIDM3LCAzNykiLCJmb250IjoiRE0gU2FucywgQXJpYWwsIHNhbnMtc2VyaWYiLCJmb250U2l6ZSI6IjE0cHgiLCJjb2x1bW5zIjoibm9uZSIsIndpZHRoIjozOTB9LCJwcmljZSI6eyJiYWNrZ3JvdW5kIjoicmdiYSgwLCAwLCAwLCAwKSIsImNvbG9yIjoicmdiKDM4LCA3NSwgNjApIiwiZm9udCI6IkRNIFNhbnMsIEFyaWFsLCBzYW5zLXNlcmlmIiwiZm9udFNpemUiOiIxNHB4IiwiY29sdW1ucyI6Im5vbmUiLCJ3aWR0aCI6Nzd9LCJjb3VudCI6Nn0sInB1Ymxpc2hlZCI6eyJ3aWR0aCI6MzkwLCJwYWdlV2lkdGgiOjM5MCwibWFpbiI6eyJiYWNrZ3JvdW5kIjoicmdiKDI1NSwgMjQwLCAyMjMpIiwiY29sb3IiOiJyZ2IoMzcsIDM3LCAzNykiLCJmb250IjoiRE0gU2FucywgQXJpYWwsIHNhbnMtc2VyaWYiLCJmb250U2l6ZSI6IjE0cHgiLCJjb2x1bW5zIjoibm9uZSIsIndpZHRoIjozOTB9LCJjYXJkIjp7ImJhY2tncm91bmQiOiJyZ2IoMjU1LCAyNTAsIDI0NSkiLCJjb2xvciI6InJnYigzNywgMzcsIDM3KSIsImZvbnQiOiJETSBTYW5zLCBBcmlhbCwgc2Fucy1zZXJpZiIsImZvbnRTaXplIjoiMTRweCIsImNvbHVtbnMiOiJub25lIiwid2lkdGgiOjE3NX0sImdyaWQiOnsiYmFja2dyb3VuZCI6InJnYmEoMCwgMCwgMCwgMCkiLCJjb2xvciI6InJnYigzNywgMzcsIDM3KSIsImZvbnQiOiJETSBTYW5zLCBBcmlhbCwgc2Fucy1zZXJpZiIsImZvbnRTaXplIjoiMTRweCIsImNvbHVtbnMiOiIxNzVweCAxNzVweCIsIndpZHRoIjozNjJ9LCJ0aXRsZSI6eyJiYWNrZ3JvdW5kIjoicmdiYSgwLCAwLCAwLCAwKSIsImNvbG9yIjoicmdiKDM3LCAzNywgMzcpIiwiZm9udCI6Ik1hbnJvcGUsIEFyaWFsLCBzYW5zLXNlcmlmIiwiZm9udFNpemUiOiIxNHB4IiwiY29sdW1ucyI6Im5vbmUiLCJ3aWR0aCI6MTQ5fSwiaGVybyI6eyJiYWNrZ3JvdW5kIjoicmdiYSgwLCAwLCAwLCAwKSIsImNvbG9yIjoicmdiKDM3LCAzNywgMzcpIiwiZm9udCI6IkRNIFNhbnMsIEFyaWFsLCBzYW5zLXNlcmlmIiwiZm9udFNpemUiOiIxNHB4IiwiY29sdW1ucyI6Im5vbmUiLCJ3aWR0aCI6MzkwfSwicHJpY2UiOnsiYmFja2dyb3VuZCI6InJnYmEoMCwgMCwgMCwgMCkiLCJjb2xvciI6InJnYigzOCwgNzUsIDYwKSIsImZvbnQiOiJETSBTYW5zLCBBcmlhbCwgc2Fucy1zZXJpZiIsImZvbnRTaXplIjoiMTRweCIsImNvbHVtbnMiOiJub25lIiwid2lkdGgiOjc3fSwiY291bnQiOjZ9fQ=="
+                    },
+                    {
+                      "name": "same-renderer-768",
+                      "contentType": "application/json",
+                      "body": "eyJwcmV2aWV3Ijp7IndpZHRoIjo3NjgsInBhZ2VXaWR0aCI6NzY4LCJtYWluIjp7ImJhY2tncm91bmQiOiJyZ2IoMjU1LCAyNDAsIDIyMykiLCJjb2xvciI6InJnYigzNywgMzcsIDM3KSIsImZvbnQiOiJETSBTYW5zLCBBcmlhbCwgc2Fucy1zZXJpZiIsImZvbnRTaXplIjoiMTRweCIsImNvbHVtbnMiOiJub25lIiwid2lkdGgiOjc2OH0sImNhcmQiOnsiYmFja2dyb3VuZCI6InJnYigyNTUsIDI1MCwgMjQ1KSIsImNvbG9yIjoicmdiKDM3LCAzNywgMzcpIiwiZm9udCI6IkRNIFNhbnMsIEFyaWFsLCBzYW5zLXNlcmlmIiwiZm9udFNpemUiOiIxNHB4IiwiY29sdW1ucyI6Im5vbmUiLCJ3aWR0aCI6NzE4fSwiZ3JpZCI6eyJiYWNrZ3JvdW5kIjoicmdiYSgwLCAwLCAwLCAwKSIsImNvbG9yIjoicmdiKDM3LCAzNywgMzcpIiwiZm9udCI6IkRNIFNhbnMsIEFyaWFsLCBzYW5zLXNlcmlmIiwiZm9udFNpemUiOiIxNHB4IiwiY29sdW1ucyI6IjcxOHB4Iiwid2lkdGgiOjcxOH0sInRpdGxlIjp7ImJhY2tncm91bmQiOiJyZ2JhKDAsIDAsIDAsIDApIiwiY29sb3IiOiJyZ2IoMzcsIDM3LCAzNykiLCJmb250IjoiTWFucm9wZSwgQXJpYWwsIHNhbnMtc2VyaWYiLCJmb250U2l6ZSI6IjE1cHgiLCJjb2x1bW5zIjoibm9uZSIsIndpZHRoIjo1ODN9LCJoZXJvIjp7ImJhY2tncm91bmQiOiJyZ2JhKDAsIDAsIDAsIDApIiwiY29sb3IiOiJyZ2IoMzcsIDM3LCAzNykiLCJmb250IjoiRE0gU2FucywgQXJpYWwsIHNhbnMtc2VyaWYiLCJmb250U2l6ZSI6IjE0cHgiLCJjb2x1bW5zIjoibm9uZSIsIndpZHRoIjo3Njh9LCJwcmljZSI6eyJiYWNrZ3JvdW5kIjoicmdiYSgwLCAwLCAwLCAwKSIsImNvbG9yIjoicmdiKDM4LCA3NSwgNjApIiwiZm9udCI6IkRNIFNhbnMsIEFyaWFsLCBzYW5zLXNlcmlmIiwiZm9udFNpemUiOiIxNHB4IiwiY29sdW1ucyI6Im5vbmUiLCJ3aWR0aCI6Nzd9LCJjb3VudCI6Nn0sInB1Ymxpc2hlZCI6eyJ3aWR0aCI6NzY4LCJwYWdlV2lkdGgiOjc2OCwibWFpbiI6eyJiYWNrZ3JvdW5kIjoicmdiKDI1NSwgMjQwLCAyMjMpIiwiY29sb3IiOiJyZ2IoMzcsIDM3LCAzNykiLCJmb250IjoiRE0gU2FucywgQXJpYWwsIHNhbnMtc2VyaWYiLCJmb250U2l6ZSI6IjE0cHgiLCJjb2x1bW5zIjoibm9uZSIsIndpZHRoIjo3Njh9LCJjYXJkIjp7ImJhY2tncm91bmQiOiJyZ2IoMjU1LCAyNTAsIDI0NSkiLCJjb2xvciI6InJnYigzNywgMzcsIDM3KSIsImZvbnQiOiJETSBTYW5zLCBBcmlhbCwgc2Fucy1zZXJpZiIsImZvbnRTaXplIjoiMTRweCIsImNvbHVtbnMiOiJub25lIiwid2lkdGgiOjcxOH0sImdyaWQiOnsiYmFja2dyb3VuZCI6InJnYmEoMCwgMCwgMCwgMCkiLCJjb2xvciI6InJnYigzNywgMzcsIDM3KSIsImZvbnQiOiJETSBTYW5zLCBBcmlhbCwgc2Fucy1zZXJpZiIsImZvbnRTaXplIjoiMTRweCIsImNvbHVtbnMiOiI3MThweCIsIndpZHRoIjo3MTh9LCJ0aXRsZSI6eyJiYWNrZ3JvdW5kIjoicmdiYSgwLCAwLCAwLCAwKSIsImNvbG9yIjoicmdiKDM3LCAzNywgMzcpIiwiZm9udCI6Ik1hbnJvcGUsIEFyaWFsLCBzYW5zLXNlcmlmIiwiZm9udFNpemUiOiIxNXB4IiwiY29sdW1ucyI6Im5vbmUiLCJ3aWR0aCI6NTgzfSwiaGVybyI6eyJiYWNrZ3JvdW5kIjoicmdiYSgwLCAwLCAwLCAwKSIsImNvbG9yIjoicmdiKDM3LCAzNywgMzcpIiwiZm9udCI6IkRNIFNhbnMsIEFyaWFsLCBzYW5zLXNlcmlmIiwiZm9udFNpemUiOiIxNHB4IiwiY29sdW1ucyI6Im5vbmUiLCJ3aWR0aCI6NzY4fSwicHJpY2UiOnsiYmFja2dyb3VuZCI6InJnYmEoMCwgMCwgMCwgMCkiLCJjb2xvciI6InJnYigzOCwgNzUsIDYwKSIsImZvbnQiOiJETSBTYW5zLCBBcmlhbCwgc2Fucy1zZXJpZiIsImZvbnRTaXplIjoiMTRweCIsImNvbHVtbnMiOiJub25lIiwid2lkdGgiOjc3fSwiY291bnQiOjZ9fQ=="
+                    },
+                    {
+                      "name": "same-renderer-1440",
+                      "contentType": "application/json",
+                      "body": "eyJwcmV2aWV3Ijp7IndpZHRoIjoxNDQwLCJwYWdlV2lkdGgiOjE0NDAsIm1haW4iOnsiYmFja2dyb3VuZCI6InJnYigyNTUsIDI0MCwgMjIzKSIsImNvbG9yIjoicmdiKDM3LCAzNywgMzcpIiwiZm9udCI6IkRNIFNhbnMsIEFyaWFsLCBzYW5zLXNlcmlmIiwiZm9udFNpemUiOiIxNHB4IiwiY29sdW1ucyI6Im5vbmUiLCJ3aWR0aCI6MTQ0MH0sImNhcmQiOnsiYmFja2dyb3VuZCI6InJnYigyNTUsIDI1MCwgMjQ1KSIsImNvbG9yIjoicmdiKDM3LCAzNywgMzcpIiwiZm9udCI6IkRNIFNhbnMsIEFyaWFsLCBzYW5zLXNlcmlmIiwiZm9udFNpemUiOiIxNHB4IiwiY29sdW1ucyI6Im5vbmUiLCJ3aWR0aCI6MTA3MH0sImdyaWQiOnsiYmFja2dyb3VuZCI6InJnYmEoMCwgMCwgMCwgMCkiLCJjb2xvciI6InJnYigzNywgMzcsIDM3KSIsImZvbnQiOiJETSBTYW5zLCBBcmlhbCwgc2Fucy1zZXJpZiIsImZvbnRTaXplIjoiMTRweCIsImNvbHVtbnMiOiIxMDcwcHgiLCJ3aWR0aCI6MTA3MH0sInRpdGxlIjp7ImJhY2tncm91bmQiOiJyZ2JhKDAsIDAsIDAsIDApIiwiY29sb3IiOiJyZ2IoMzcsIDM3LCAzNykiLCJmb250IjoiTWFucm9wZSwgQXJpYWwsIHNhbnMtc2VyaWYiLCJmb250U2l6ZSI6IjE1cHgiLCJjb2x1bW5zIjoibm9uZSIsIndpZHRoIjo5MDR9LCJoZXJvIjp7ImJhY2tncm91bmQiOiJyZ2JhKDAsIDAsIDAsIDApIiwiY29sb3IiOiJyZ2IoMzcsIDM3LCAzNykiLCJmb250IjoiRE0gU2FucywgQXJpYWwsIHNhbnMtc2VyaWYiLCJmb250U2l6ZSI6IjE0cHgiLCJjb2x1bW5zIjoibm9uZSIsIndpZHRoIjoxNDQwfSwicHJpY2UiOnsiYmFja2dyb3VuZCI6InJnYmEoMCwgMCwgMCwgMCkiLCJjb2xvciI6InJnYigzOCwgNzUsIDYwKSIsImZvbnQiOiJETSBTYW5zLCBBcmlhbCwgc2Fucy1zZXJpZiIsImZvbnRTaXplIjoiMTRweCIsImNvbHVtbnMiOiJub25lIiwid2lkdGgiOjc3fSwiY291bnQiOjZ9LCJwdWJsaXNoZWQiOnsid2lkdGgiOjE0NDAsInBhZ2VXaWR0aCI6MTQ0MCwibWFpbiI6eyJiYWNrZ3JvdW5kIjoicmdiKDI1NSwgMjQwLCAyMjMpIiwiY29sb3IiOiJyZ2IoMzcsIDM3LCAzNykiLCJmb250IjoiRE0gU2FucywgQXJpYWwsIHNhbnMtc2VyaWYiLCJmb250U2l6ZSI6IjE0cHgiLCJjb2x1bW5zIjoibm9uZSIsIndpZHRoIjoxNDQwfSwiY2FyZCI6eyJiYWNrZ3JvdW5kIjoicmdiKDI1NSwgMjUwLCAyNDUpIiwiY29sb3IiOiJyZ2IoMzcsIDM3LCAzNykiLCJmb250IjoiRE0gU2FucywgQXJpYWwsIHNhbnMtc2VyaWYiLCJmb250U2l6ZSI6IjE0cHgiLCJjb2x1bW5zIjoibm9uZSIsIndpZHRoIjoxMDcwfSwiZ3JpZCI6eyJiYWNrZ3JvdW5kIjoicmdiYSgwLCAwLCAwLCAwKSIsImNvbG9yIjoicmdiKDM3LCAzNywgMzcpIiwiZm9udCI6IkRNIFNhbnMsIEFyaWFsLCBzYW5zLXNlcmlmIiwiZm9udFNpemUiOiIxNHB4IiwiY29sdW1ucyI6IjEwNzBweCIsIndpZHRoIjoxMDcwfSwidGl0bGUiOnsiYmFja2dyb3VuZCI6InJnYmEoMCwgMCwgMCwgMCkiLCJjb2xvciI6InJnYigzNywgMzcsIDM3KSIsImZvbnQiOiJNYW5yb3BlLCBBcmlhbCwgc2Fucy1zZXJpZiIsImZvbnRTaXplIjoiMTVweCIsImNvbHVtbnMiOiJub25lIiwid2lkdGgiOjkwNH0sImhlcm8iOnsiYmFja2dyb3VuZCI6InJnYmEoMCwgMCwgMCwgMCkiLCJjb2xvciI6InJnYigzNywgMzcsIDM3KSIsImZvbnQiOiJETSBTYW5zLCBBcmlhbCwgc2Fucy1zZXJpZiIsImZvbnRTaXplIjoiMTRweCIsImNvbHVtbnMiOiJub25lIiwid2lkdGgiOjE0NDB9LCJwcmljZSI6eyJiYWNrZ3JvdW5kIjoicmdiYSgwLCAwLCAwLCAwKSIsImNvbG9yIjoicmdiKDM4LCA3NSwgNjApIiwiZm9udCI6IkRNIFNhbnMsIEFyaWFsLCBzYW5zLXNlcmlmIiwiZm9udFNpemUiOiIxNHB4IiwiY29sdW1ucyI6Im5vbmUiLCJ3aWR0aCI6Nzd9LCJjb3VudCI6Nn19"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e6e105cba9fce2d184bb-0dc629f9358287421f85",
+          "file": "menu-closure.spec.ts",
+          "line": 267,
+          "column": 5
+        },
+        {
+          "title": "closure: draft save is private, publish is one atomic request and conflict preserves local form",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 16495,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-18T06:11:05.714Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e6e105cba9fce2d184bb-35f0ba5dc1f5f5ba171f",
+          "file": "menu-closure.spec.ts",
+          "line": 378,
+          "column": 5
+        },
+        {
+          "title": "closure: seven local flags and selected language persist per restaurant",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "edge",
+              "projectName": "edge",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 12759,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-18T06:11:23.824Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e6e105cba9fce2d184bb-055e4ce706653d8c92b5",
+          "file": "menu-closure.spec.ts",
+          "line": 86,
+          "column": 5
+        },
+        {
+          "title": "closure: recommendations survive category selection",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "edge",
+              "projectName": "edge",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4066,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-18T06:11:37.554Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e6e105cba9fce2d184bb-598c3eb3db165e174783",
+          "file": "menu-closure.spec.ts",
+          "line": 103,
+          "column": 5
+        },
+        {
+          "title": "closure: configured mobile two columns and desktop one column",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "edge",
+              "projectName": "edge",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3972,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-18T06:11:41.674Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e6e105cba9fce2d184bb-d924d16ba21260950f43",
+          "file": "menu-closure.spec.ts",
+          "line": 115,
+          "column": 5
+        },
+        {
+          "title": "closure: complete preview uses a real viewport and same renderer",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "edge",
+              "projectName": "edge",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4429,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-18T06:11:45.701Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e6e105cba9fce2d184bb-7d61e7d4062d5b74fd99",
+          "file": "menu-closure.spec.ts",
+          "line": 133,
+          "column": 5
+        },
+        {
+          "title": "closure: all seven languages translate interface and available content without changing prices",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "edge",
+              "projectName": "edge",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 10065,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-18T06:11:50.173Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e6e105cba9fce2d184bb-c9cd52d53e0cbc2a9b3e",
+          "file": "menu-closure.spec.ts",
+          "line": 147,
+          "column": 5
+        },
+        {
+          "title": "closure: focus refresh preserves search, language, favorites and scroll",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "edge",
+              "projectName": "edge",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 6117,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-18T06:12:00.281Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e6e105cba9fce2d184bb-fabdca5642e7e3c4bae9",
+          "file": "menu-closure.spec.ts",
+          "line": 239,
+          "column": 5
+        },
+        {
+          "title": "closure: preview and public share styles and geometry at four real widths",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "edge",
+              "projectName": "edge",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 14031,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-18T06:12:06.456Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "same-renderer-320",
+                      "contentType": "application/json",
+                      "body": "eyJwcmV2aWV3Ijp7IndpZHRoIjozMjAsInBhZ2VXaWR0aCI6MzIwLCJtYWluIjp7ImJhY2tncm91bmQiOiJyZ2IoMjU1LCAyNDAsIDIyMykiLCJjb2xvciI6InJnYigzNywgMzcsIDM3KSIsImZvbnQiOiJcIkRNIFNhbnNcIiwgQXJpYWwsIHNhbnMtc2VyaWYiLCJmb250U2l6ZSI6IjE0cHgiLCJjb2x1bW5zIjoibm9uZSIsIndpZHRoIjozMjB9LCJjYXJkIjp7ImJhY2tncm91bmQiOiJyZ2IoMjU1LCAyNTAsIDI0NSkiLCJjb2xvciI6InJnYigzNywgMzcsIDM3KSIsImZvbnQiOiJcIkRNIFNhbnNcIiwgQXJpYWwsIHNhbnMtc2VyaWYiLCJmb250U2l6ZSI6IjE0cHgiLCJjb2x1bW5zIjoibm9uZSIsIndpZHRoIjoxNDB9LCJncmlkIjp7ImJhY2tncm91bmQiOiJyZ2JhKDAsIDAsIDAsIDApIiwiY29sb3IiOiJyZ2IoMzcsIDM3LCAzNykiLCJmb250IjoiXCJETSBTYW5zXCIsIEFyaWFsLCBzYW5zLXNlcmlmIiwiZm9udFNpemUiOiIxNHB4IiwiY29sdW1ucyI6IjE0MHB4IDE0MHB4Iiwid2lkdGgiOjI5Mn0sInRpdGxlIjp7ImJhY2tncm91bmQiOiJyZ2JhKDAsIDAsIDAsIDApIiwiY29sb3IiOiJyZ2IoMzcsIDM3LCAzNykiLCJmb250IjoiTWFucm9wZSwgQXJpYWwsIHNhbnMtc2VyaWYiLCJmb250U2l6ZSI6IjE0cHgiLCJjb2x1bW5zIjoibm9uZSIsIndpZHRoIjoxMTR9LCJoZXJvIjp7ImJhY2tncm91bmQiOiJyZ2JhKDAsIDAsIDAsIDApIiwiY29sb3IiOiJyZ2IoMzcsIDM3LCAzNykiLCJmb250IjoiXCJETSBTYW5zXCIsIEFyaWFsLCBzYW5zLXNlcmlmIiwiZm9udFNpemUiOiIxNHB4IiwiY29sdW1ucyI6Im5vbmUiLCJ3aWR0aCI6MzIwfSwicHJpY2UiOnsiYmFja2dyb3VuZCI6InJnYmEoMCwgMCwgMCwgMCkiLCJjb2xvciI6InJnYigzOCwgNzUsIDYwKSIsImZvbnQiOiJcIkRNIFNhbnNcIiwgQXJpYWwsIHNhbnMtc2VyaWYiLCJmb250U2l6ZSI6IjE0cHgiLCJjb2x1bW5zIjoibm9uZSIsIndpZHRoIjo3N30sImNvdW50Ijo2fSwicHVibGlzaGVkIjp7IndpZHRoIjozMjAsInBhZ2VXaWR0aCI6MzIwLCJtYWluIjp7ImJhY2tncm91bmQiOiJyZ2IoMjU1LCAyNDAsIDIyMykiLCJjb2xvciI6InJnYigzNywgMzcsIDM3KSIsImZvbnQiOiJcIkRNIFNhbnNcIiwgQXJpYWwsIHNhbnMtc2VyaWYiLCJmb250U2l6ZSI6IjE0cHgiLCJjb2x1bW5zIjoibm9uZSIsIndpZHRoIjozMjB9LCJjYXJkIjp7ImJhY2tncm91bmQiOiJyZ2IoMjU1LCAyNTAsIDI0NSkiLCJjb2xvciI6InJnYigzNywgMzcsIDM3KSIsImZvbnQiOiJcIkRNIFNhbnNcIiwgQXJpYWwsIHNhbnMtc2VyaWYiLCJmb250U2l6ZSI6IjE0cHgiLCJjb2x1bW5zIjoibm9uZSIsIndpZHRoIjoxNDB9LCJncmlkIjp7ImJhY2tncm91bmQiOiJyZ2JhKDAsIDAsIDAsIDApIiwiY29sb3IiOiJyZ2IoMzcsIDM3LCAzNykiLCJmb250IjoiXCJETSBTYW5zXCIsIEFyaWFsLCBzYW5zLXNlcmlmIiwiZm9udFNpemUiOiIxNHB4IiwiY29sdW1ucyI6IjE0MHB4IDE0MHB4Iiwid2lkdGgiOjI5Mn0sInRpdGxlIjp7ImJhY2tncm91bmQiOiJyZ2JhKDAsIDAsIDAsIDApIiwiY29sb3IiOiJyZ2IoMzcsIDM3LCAzNykiLCJmb250IjoiTWFucm9wZSwgQXJpYWwsIHNhbnMtc2VyaWYiLCJmb250U2l6ZSI6IjE0cHgiLCJjb2x1bW5zIjoibm9uZSIsIndpZHRoIjoxMTR9LCJoZXJvIjp7ImJhY2tncm91bmQiOiJyZ2JhKDAsIDAsIDAsIDApIiwiY29sb3IiOiJyZ2IoMzcsIDM3LCAzNykiLCJmb250IjoiXCJETSBTYW5zXCIsIEFyaWFsLCBzYW5zLXNlcmlmIiwiZm9udFNpemUiOiIxNHB4IiwiY29sdW1ucyI6Im5vbmUiLCJ3aWR0aCI6MzIwfSwicHJpY2UiOnsiYmFja2dyb3VuZCI6InJnYmEoMCwgMCwgMCwgMCkiLCJjb2xvciI6InJnYigzOCwgNzUsIDYwKSIsImZvbnQiOiJcIkRNIFNhbnNcIiwgQXJpYWwsIHNhbnMtc2VyaWYiLCJmb250U2l6ZSI6IjE0cHgiLCJjb2x1bW5zIjoibm9uZSIsIndpZHRoIjo3N30sImNvdW50Ijo2fX0="
+                    },
+                    {
+                      "name": "same-renderer-390",
+                      "contentType": "application/json",
+                      "body": "eyJwcmV2aWV3Ijp7IndpZHRoIjozOTAsInBhZ2VXaWR0aCI6MzkwLCJtYWluIjp7ImJhY2tncm91bmQiOiJyZ2IoMjU1LCAyNDAsIDIyMykiLCJjb2xvciI6InJnYigzNywgMzcsIDM3KSIsImZvbnQiOiJcIkRNIFNhbnNcIiwgQXJpYWwsIHNhbnMtc2VyaWYiLCJmb250U2l6ZSI6IjE0cHgiLCJjb2x1bW5zIjoibm9uZSIsIndpZHRoIjozOTB9LCJjYXJkIjp7ImJhY2tncm91bmQiOiJyZ2IoMjU1LCAyNTAsIDI0NSkiLCJjb2xvciI6InJnYigzNywgMzcsIDM3KSIsImZvbnQiOiJcIkRNIFNhbnNcIiwgQXJpYWwsIHNhbnMtc2VyaWYiLCJmb250U2l6ZSI6IjE0cHgiLCJjb2x1bW5zIjoibm9uZSIsIndpZHRoIjoxNzV9LCJncmlkIjp7ImJhY2tncm91bmQiOiJyZ2JhKDAsIDAsIDAsIDApIiwiY29sb3IiOiJyZ2IoMzcsIDM3LCAzNykiLCJmb250IjoiXCJETSBTYW5zXCIsIEFyaWFsLCBzYW5zLXNlcmlmIiwiZm9udFNpemUiOiIxNHB4IiwiY29sdW1ucyI6IjE3NXB4IDE3NXB4Iiwid2lkdGgiOjM2Mn0sInRpdGxlIjp7ImJhY2tncm91bmQiOiJyZ2JhKDAsIDAsIDAsIDApIiwiY29sb3IiOiJyZ2IoMzcsIDM3LCAzNykiLCJmb250IjoiTWFucm9wZSwgQXJpYWwsIHNhbnMtc2VyaWYiLCJmb250U2l6ZSI6IjE0cHgiLCJjb2x1bW5zIjoibm9uZSIsIndpZHRoIjoxNDl9LCJoZXJvIjp7ImJhY2tncm91bmQiOiJyZ2JhKDAsIDAsIDAsIDApIiwiY29sb3IiOiJyZ2IoMzcsIDM3LCAzNykiLCJmb250IjoiXCJETSBTYW5zXCIsIEFyaWFsLCBzYW5zLXNlcmlmIiwiZm9udFNpemUiOiIxNHB4IiwiY29sdW1ucyI6Im5vbmUiLCJ3aWR0aCI6MzkwfSwicHJpY2UiOnsiYmFja2dyb3VuZCI6InJnYmEoMCwgMCwgMCwgMCkiLCJjb2xvciI6InJnYigzOCwgNzUsIDYwKSIsImZvbnQiOiJcIkRNIFNhbnNcIiwgQXJpYWwsIHNhbnMtc2VyaWYiLCJmb250U2l6ZSI6IjE0cHgiLCJjb2x1bW5zIjoibm9uZSIsIndpZHRoIjo3N30sImNvdW50Ijo2fSwicHVibGlzaGVkIjp7IndpZHRoIjozOTAsInBhZ2VXaWR0aCI6MzkwLCJtYWluIjp7ImJhY2tncm91bmQiOiJyZ2IoMjU1LCAyNDAsIDIyMykiLCJjb2xvciI6InJnYigzNywgMzcsIDM3KSIsImZvbnQiOiJcIkRNIFNhbnNcIiwgQXJpYWwsIHNhbnMtc2VyaWYiLCJmb250U2l6ZSI6IjE0cHgiLCJjb2x1bW5zIjoibm9uZSIsIndpZHRoIjozOTB9LCJjYXJkIjp7ImJhY2tncm91bmQiOiJyZ2IoMjU1LCAyNTAsIDI0NSkiLCJjb2xvciI6InJnYigzNywgMzcsIDM3KSIsImZvbnQiOiJcIkRNIFNhbnNcIiwgQXJpYWwsIHNhbnMtc2VyaWYiLCJmb250U2l6ZSI6IjE0cHgiLCJjb2x1bW5zIjoibm9uZSIsIndpZHRoIjoxNzV9LCJncmlkIjp7ImJhY2tncm91bmQiOiJyZ2JhKDAsIDAsIDAsIDApIiwiY29sb3IiOiJyZ2IoMzcsIDM3LCAzNykiLCJmb250IjoiXCJETSBTYW5zXCIsIEFyaWFsLCBzYW5zLXNlcmlmIiwiZm9udFNpemUiOiIxNHB4IiwiY29sdW1ucyI6IjE3NXB4IDE3NXB4Iiwid2lkdGgiOjM2Mn0sInRpdGxlIjp7ImJhY2tncm91bmQiOiJyZ2JhKDAsIDAsIDAsIDApIiwiY29sb3IiOiJyZ2IoMzcsIDM3LCAzNykiLCJmb250IjoiTWFucm9wZSwgQXJpYWwsIHNhbnMtc2VyaWYiLCJmb250U2l6ZSI6IjE0cHgiLCJjb2x1bW5zIjoibm9uZSIsIndpZHRoIjoxNDl9LCJoZXJvIjp7ImJhY2tncm91bmQiOiJyZ2JhKDAsIDAsIDAsIDApIiwiY29sb3IiOiJyZ2IoMzcsIDM3LCAzNykiLCJmb250IjoiXCJETSBTYW5zXCIsIEFyaWFsLCBzYW5zLXNlcmlmIiwiZm9udFNpemUiOiIxNHB4IiwiY29sdW1ucyI6Im5vbmUiLCJ3aWR0aCI6MzkwfSwicHJpY2UiOnsiYmFja2dyb3VuZCI6InJnYmEoMCwgMCwgMCwgMCkiLCJjb2xvciI6InJnYigzOCwgNzUsIDYwKSIsImZvbnQiOiJcIkRNIFNhbnNcIiwgQXJpYWwsIHNhbnMtc2VyaWYiLCJmb250U2l6ZSI6IjE0cHgiLCJjb2x1bW5zIjoibm9uZSIsIndpZHRoIjo3N30sImNvdW50Ijo2fX0="
+                    },
+                    {
+                      "name": "same-renderer-768",
+                      "contentType": "application/json",
+                      "body": "eyJwcmV2aWV3Ijp7IndpZHRoIjo3NjgsInBhZ2VXaWR0aCI6NzY4LCJtYWluIjp7ImJhY2tncm91bmQiOiJyZ2IoMjU1LCAyNDAsIDIyMykiLCJjb2xvciI6InJnYigzNywgMzcsIDM3KSIsImZvbnQiOiJcIkRNIFNhbnNcIiwgQXJpYWwsIHNhbnMtc2VyaWYiLCJmb250U2l6ZSI6IjE0cHgiLCJjb2x1bW5zIjoibm9uZSIsIndpZHRoIjo3Njh9LCJjYXJkIjp7ImJhY2tncm91bmQiOiJyZ2IoMjU1LCAyNTAsIDI0NSkiLCJjb2xvciI6InJnYigzNywgMzcsIDM3KSIsImZvbnQiOiJcIkRNIFNhbnNcIiwgQXJpYWwsIHNhbnMtc2VyaWYiLCJmb250U2l6ZSI6IjE0cHgiLCJjb2x1bW5zIjoibm9uZSIsIndpZHRoIjo3MTh9LCJncmlkIjp7ImJhY2tncm91bmQiOiJyZ2JhKDAsIDAsIDAsIDApIiwiY29sb3IiOiJyZ2IoMzcsIDM3LCAzNykiLCJmb250IjoiXCJETSBTYW5zXCIsIEFyaWFsLCBzYW5zLXNlcmlmIiwiZm9udFNpemUiOiIxNHB4IiwiY29sdW1ucyI6IjcxOHB4Iiwid2lkdGgiOjcxOH0sInRpdGxlIjp7ImJhY2tncm91bmQiOiJyZ2JhKDAsIDAsIDAsIDApIiwiY29sb3IiOiJyZ2IoMzcsIDM3LCAzNykiLCJmb250IjoiTWFucm9wZSwgQXJpYWwsIHNhbnMtc2VyaWYiLCJmb250U2l6ZSI6IjE1cHgiLCJjb2x1bW5zIjoibm9uZSIsIndpZHRoIjo1ODN9LCJoZXJvIjp7ImJhY2tncm91bmQiOiJyZ2JhKDAsIDAsIDAsIDApIiwiY29sb3IiOiJyZ2IoMzcsIDM3LCAzNykiLCJmb250IjoiXCJETSBTYW5zXCIsIEFyaWFsLCBzYW5zLXNlcmlmIiwiZm9udFNpemUiOiIxNHB4IiwiY29sdW1ucyI6Im5vbmUiLCJ3aWR0aCI6NzY4fSwicHJpY2UiOnsiYmFja2dyb3VuZCI6InJnYmEoMCwgMCwgMCwgMCkiLCJjb2xvciI6InJnYigzOCwgNzUsIDYwKSIsImZvbnQiOiJcIkRNIFNhbnNcIiwgQXJpYWwsIHNhbnMtc2VyaWYiLCJmb250U2l6ZSI6IjE0cHgiLCJjb2x1bW5zIjoibm9uZSIsIndpZHRoIjo3N30sImNvdW50Ijo2fSwicHVibGlzaGVkIjp7IndpZHRoIjo3NjgsInBhZ2VXaWR0aCI6NzY4LCJtYWluIjp7ImJhY2tncm91bmQiOiJyZ2IoMjU1LCAyNDAsIDIyMykiLCJjb2xvciI6InJnYigzNywgMzcsIDM3KSIsImZvbnQiOiJcIkRNIFNhbnNcIiwgQXJpYWwsIHNhbnMtc2VyaWYiLCJmb250U2l6ZSI6IjE0cHgiLCJjb2x1bW5zIjoibm9uZSIsIndpZHRoIjo3Njh9LCJjYXJkIjp7ImJhY2tncm91bmQiOiJyZ2IoMjU1LCAyNTAsIDI0NSkiLCJjb2xvciI6InJnYigzNywgMzcsIDM3KSIsImZvbnQiOiJcIkRNIFNhbnNcIiwgQXJpYWwsIHNhbnMtc2VyaWYiLCJmb250U2l6ZSI6IjE0cHgiLCJjb2x1bW5zIjoibm9uZSIsIndpZHRoIjo3MTh9LCJncmlkIjp7ImJhY2tncm91bmQiOiJyZ2JhKDAsIDAsIDAsIDApIiwiY29sb3IiOiJyZ2IoMzcsIDM3LCAzNykiLCJmb250IjoiXCJETSBTYW5zXCIsIEFyaWFsLCBzYW5zLXNlcmlmIiwiZm9udFNpemUiOiIxNHB4IiwiY29sdW1ucyI6IjcxOHB4Iiwid2lkdGgiOjcxOH0sInRpdGxlIjp7ImJhY2tncm91bmQiOiJyZ2JhKDAsIDAsIDAsIDApIiwiY29sb3IiOiJyZ2IoMzcsIDM3LCAzNykiLCJmb250IjoiTWFucm9wZSwgQXJpYWwsIHNhbnMtc2VyaWYiLCJmb250U2l6ZSI6IjE1cHgiLCJjb2x1bW5zIjoibm9uZSIsIndpZHRoIjo1ODN9LCJoZXJvIjp7ImJhY2tncm91bmQiOiJyZ2JhKDAsIDAsIDAsIDApIiwiY29sb3IiOiJyZ2IoMzcsIDM3LCAzNykiLCJmb250IjoiXCJETSBTYW5zXCIsIEFyaWFsLCBzYW5zLXNlcmlmIiwiZm9udFNpemUiOiIxNHB4IiwiY29sdW1ucyI6Im5vbmUiLCJ3aWR0aCI6NzY4fSwicHJpY2UiOnsiYmFja2dyb3VuZCI6InJnYmEoMCwgMCwgMCwgMCkiLCJjb2xvciI6InJnYigzOCwgNzUsIDYwKSIsImZvbnQiOiJcIkRNIFNhbnNcIiwgQXJpYWwsIHNhbnMtc2VyaWYiLCJmb250U2l6ZSI6IjE0cHgiLCJjb2x1bW5zIjoibm9uZSIsIndpZHRoIjo3N30sImNvdW50Ijo2fX0="
+                    },
+                    {
+                      "name": "same-renderer-1440",
+                      "contentType": "application/json",
+                      "body": "eyJwcmV2aWV3Ijp7IndpZHRoIjoxNDQwLCJwYWdlV2lkdGgiOjE0NDAsIm1haW4iOnsiYmFja2dyb3VuZCI6InJnYigyNTUsIDI0MCwgMjIzKSIsImNvbG9yIjoicmdiKDM3LCAzNywgMzcpIiwiZm9udCI6IlwiRE0gU2Fuc1wiLCBBcmlhbCwgc2Fucy1zZXJpZiIsImZvbnRTaXplIjoiMTRweCIsImNvbHVtbnMiOiJub25lIiwid2lkdGgiOjE0NDB9LCJjYXJkIjp7ImJhY2tncm91bmQiOiJyZ2IoMjU1LCAyNTAsIDI0NSkiLCJjb2xvciI6InJnYigzNywgMzcsIDM3KSIsImZvbnQiOiJcIkRNIFNhbnNcIiwgQXJpYWwsIHNhbnMtc2VyaWYiLCJmb250U2l6ZSI6IjE0cHgiLCJjb2x1bW5zIjoibm9uZSIsIndpZHRoIjoxMDcwfSwiZ3JpZCI6eyJiYWNrZ3JvdW5kIjoicmdiYSgwLCAwLCAwLCAwKSIsImNvbG9yIjoicmdiKDM3LCAzNywgMzcpIiwiZm9udCI6IlwiRE0gU2Fuc1wiLCBBcmlhbCwgc2Fucy1zZXJpZiIsImZvbnRTaXplIjoiMTRweCIsImNvbHVtbnMiOiIxMDcwcHgiLCJ3aWR0aCI6MTA3MH0sInRpdGxlIjp7ImJhY2tncm91bmQiOiJyZ2JhKDAsIDAsIDAsIDApIiwiY29sb3IiOiJyZ2IoMzcsIDM3LCAzNykiLCJmb250IjoiTWFucm9wZSwgQXJpYWwsIHNhbnMtc2VyaWYiLCJmb250U2l6ZSI6IjE1cHgiLCJjb2x1bW5zIjoibm9uZSIsIndpZHRoIjo5MDR9LCJoZXJvIjp7ImJhY2tncm91bmQiOiJyZ2JhKDAsIDAsIDAsIDApIiwiY29sb3IiOiJyZ2IoMzcsIDM3LCAzNykiLCJmb250IjoiXCJETSBTYW5zXCIsIEFyaWFsLCBzYW5zLXNlcmlmIiwiZm9udFNpemUiOiIxNHB4IiwiY29sdW1ucyI6Im5vbmUiLCJ3aWR0aCI6MTQ0MH0sInByaWNlIjp7ImJhY2tncm91bmQiOiJyZ2JhKDAsIDAsIDAsIDApIiwiY29sb3IiOiJyZ2IoMzgsIDc1LCA2MCkiLCJmb250IjoiXCJETSBTYW5zXCIsIEFyaWFsLCBzYW5zLXNlcmlmIiwiZm9udFNpemUiOiIxNHB4IiwiY29sdW1ucyI6Im5vbmUiLCJ3aWR0aCI6Nzd9LCJjb3VudCI6Nn0sInB1Ymxpc2hlZCI6eyJ3aWR0aCI6MTQ0MCwicGFnZVdpZHRoIjoxNDQwLCJtYWluIjp7ImJhY2tncm91bmQiOiJyZ2IoMjU1LCAyNDAsIDIyMykiLCJjb2xvciI6InJnYigzNywgMzcsIDM3KSIsImZvbnQiOiJcIkRNIFNhbnNcIiwgQXJpYWwsIHNhbnMtc2VyaWYiLCJmb250U2l6ZSI6IjE0cHgiLCJjb2x1bW5zIjoibm9uZSIsIndpZHRoIjoxNDQwfSwiY2FyZCI6eyJiYWNrZ3JvdW5kIjoicmdiKDI1NSwgMjUwLCAyNDUpIiwiY29sb3IiOiJyZ2IoMzcsIDM3LCAzNykiLCJmb250IjoiXCJETSBTYW5zXCIsIEFyaWFsLCBzYW5zLXNlcmlmIiwiZm9udFNpemUiOiIxNHB4IiwiY29sdW1ucyI6Im5vbmUiLCJ3aWR0aCI6MTA3MH0sImdyaWQiOnsiYmFja2dyb3VuZCI6InJnYmEoMCwgMCwgMCwgMCkiLCJjb2xvciI6InJnYigzNywgMzcsIDM3KSIsImZvbnQiOiJcIkRNIFNhbnNcIiwgQXJpYWwsIHNhbnMtc2VyaWYiLCJmb250U2l6ZSI6IjE0cHgiLCJjb2x1bW5zIjoiMTA3MHB4Iiwid2lkdGgiOjEwNzB9LCJ0aXRsZSI6eyJiYWNrZ3JvdW5kIjoicmdiYSgwLCAwLCAwLCAwKSIsImNvbG9yIjoicmdiKDM3LCAzNywgMzcpIiwiZm9udCI6Ik1hbnJvcGUsIEFyaWFsLCBzYW5zLXNlcmlmIiwiZm9udFNpemUiOiIxNXB4IiwiY29sdW1ucyI6Im5vbmUiLCJ3aWR0aCI6OTA0fSwiaGVybyI6eyJiYWNrZ3JvdW5kIjoicmdiYSgwLCAwLCAwLCAwKSIsImNvbG9yIjoicmdiKDM3LCAzNywgMzcpIiwiZm9udCI6IlwiRE0gU2Fuc1wiLCBBcmlhbCwgc2Fucy1zZXJpZiIsImZvbnRTaXplIjoiMTRweCIsImNvbHVtbnMiOiJub25lIiwid2lkdGgiOjE0NDB9LCJwcmljZSI6eyJiYWNrZ3JvdW5kIjoicmdiYSgwLCAwLCAwLCAwKSIsImNvbG9yIjoicmdiKDM4LCA3NSwgNjApIiwiZm9udCI6IlwiRE0gU2Fuc1wiLCBBcmlhbCwgc2Fucy1zZXJpZiIsImZvbnRTaXplIjoiMTRweCIsImNvbHVtbnMiOiJub25lIiwid2lkdGgiOjc3fSwiY291bnQiOjZ9fQ=="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e6e105cba9fce2d184bb-c1400ab8345c40a7e4f7",
+          "file": "menu-closure.spec.ts",
+          "line": 267,
+          "column": 5
+        },
+        {
+          "title": "closure: draft save is private, publish is one atomic request and conflict preserves local form",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "edge",
+              "projectName": "edge",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 16700,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-18T06:12:20.542Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e6e105cba9fce2d184bb-336b61e89c2057e08835",
+          "file": "menu-closure.spec.ts",
+          "line": 378,
+          "column": 5
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-18T06:07:41.004Z",
+    "duration": 297020.957,
+    "expected": 32,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

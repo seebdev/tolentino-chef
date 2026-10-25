@@ -2,6 +2,7 @@ import { beforeEach, describe, expect, it, vi } from "vitest";
 const fixture = vi.hoisted(() => {
   const writes: string[] = [];
   const db = {
+    rpc: vi.fn(async () => { writes.push("save_restaurant_appearance"); return {data:{appearance_revision:1},error:null}; }),
     from: vi.fn((table: string) => ({
       update: vi.fn(() => ({
         eq: vi.fn(async () => {
@@ -56,6 +57,7 @@ beforeEach(() => {
 describe("workspace input validation before persistence", () => {
   it("rejects invalid restaurant name before saving appearance draft", async () => {
     const response = await post("save_appearance", {
+      expectedRevision: 0,
       name: "x",
       description: "",
       appearance: { primary: "#751D2C", secondary: "#FFF4DF", font: "serif" },
@@ -74,13 +76,15 @@ describe("workspace input validation before persistence", () => {
     expect(response.status).toBe(400);
     expect(fixture.writes).toEqual([]);
   });
-  it("saves valid restaurant information and appearance", async () => {
+  it("saves a validated draft in one atomic RPC without directly publishing restaurant information", async () => {
     const response = await post("save_appearance", {
+      expectedRevision: 0,
       name: "Demo restaurant",
       description: "Demo only",
       appearance: { primary: "#751D2C", secondary: "#FFF4DF", font: "serif" },
     });
     expect(response.status).toBe(200);
-    expect(fixture.writes).toEqual(["restaurant_settings", "restaurants"]);
+    expect(fixture.writes).toEqual(["save_restaurant_appearance"]);
+    expect(fixture.db.rpc).toHaveBeenCalledWith("save_restaurant_appearance",expect.objectContaining({p_publish:false,p_expected_revision:0,p_name:"Demo restaurant"}));
   });
 });

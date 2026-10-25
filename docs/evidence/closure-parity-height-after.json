@@ -1,0 +1,232 @@
+{
+  "config": {
+    "argv": [
+      "C:\\Users\\sebas\\OneDrive\\Escritorio\\tolentino-restaurantes-admin\\.runtime\\node-v22.23.3-win-x64\\node.exe",
+      "C:\\Users\\sebas\\OneDrive\\Escritorio\\tolentino-restaurantes-admin\\node_modules\\@playwright\\test\\cli.js",
+      "test",
+      "--config=playwright.menu.config.ts",
+      "--project=chromium",
+      "--grep",
+      "preview and public",
+      "--output=test-results/menu-parity-height-after"
+    ],
+    "configFile": "C:\\Users\\sebas\\OneDrive\\Escritorio\\tolentino-restaurantes-admin\\playwright.menu.config.ts",
+    "rootDir": "C:/Users/sebas/OneDrive/Escritorio/tolentino-restaurantes-admin/tests/e2e",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "C:/Users/sebas/OneDrive/Escritorio/tolentino-restaurantes-admin/test-results/menu-parity-height-after",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "C:/Users/sebas/OneDrive/Escritorio/tolentino-restaurantes-admin/tests/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "menu-closure.spec.ts",
+          "menu-layout-matrix.spec.ts"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "C:/Users/sebas/OneDrive/Escritorio/tolentino-restaurantes-admin/test-results/menu-parity-height-after",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "firefox",
+        "name": "firefox",
+        "testDir": "C:/Users/sebas/OneDrive/Escritorio/tolentino-restaurantes-admin/tests/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "menu-closure.spec.ts",
+          "menu-layout-matrix.spec.ts"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "C:/Users/sebas/OneDrive/Escritorio/tolentino-restaurantes-admin/test-results/menu-parity-height-after",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "webkit",
+        "name": "webkit",
+        "testDir": "C:/Users/sebas/OneDrive/Escritorio/tolentino-restaurantes-admin/tests/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "menu-closure.spec.ts",
+          "menu-layout-matrix.spec.ts"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "C:/Users/sebas/OneDrive/Escritorio/tolentino-restaurantes-admin/test-results/menu-parity-height-after",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "edge",
+        "name": "edge",
+        "testDir": "C:/Users/sebas/OneDrive/Escritorio/tolentino-restaurantes-admin/tests/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "menu-closure.spec.ts",
+          "menu-layout-matrix.spec.ts"
+        ],
+        "timeout": 90000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "C:\\Users\\sebas\\OneDrive\\Escritorio\\tolentino-restaurantes-admin\\test-results\\menu-parity-height-after",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "chromium",
+        "testDir": "C:\\Users\\sebas\\OneDrive\\Escritorio\\tolentino-restaurantes-admin\\tests\\e2e",
+        "snapshotDir": "C:\\Users\\sebas\\OneDrive\\Escritorio\\tolentino-restaurantes-admin\\tests\\e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "menu-closure.spec.ts",
+          "menu-layout-matrix.spec.ts"
+        ],
+        "timeout": 90000,
+        "use": {
+          "baseURL": "http://localhost:3002",
+          "viewport": {
+            "width": 1440,
+            "height": 1000
+          },
+          "trace": "retain-on-failure",
+          "screenshot": "only-on-failure",
+          "browserName": "chromium",
+          "channel": "chrome"
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "chromium"
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "docs/evidence/closure-parity-height-after.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "default",
+    "updateSourceMethod": "patch",
+    "version": "1.64.1",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "menu-closure.spec.ts",
+      "file": "menu-closure.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "closure: preview and public share styles and geometry at four real widths",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 20013,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-18T06:13:56.077Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "same-renderer-320",
+                      "contentType": "application/json",
+                      "body": "eyJwcmV2aWV3Ijp7ImNvbXBhdE1vZGUiOiJDU1MxQ29tcGF0Iiwid2lkdGgiOjMyMCwicGFnZVdpZHRoIjozMjAsIm1haW4iOnsiYmFja2dyb3VuZCI6InJnYigyNTUsIDI0MCwgMjIzKSIsImNvbG9yIjoicmdiKDM3LCAzNywgMzcpIiwiZm9udCI6IlwiRE0gU2Fuc1wiLCBBcmlhbCwgc2Fucy1zZXJpZiIsImZvbnRTaXplIjoiMTRweCIsImNvbHVtbnMiOiJub25lIiwid2lkdGgiOjMyMCwiaGVpZ2h0IjoyNDEyLCJ0b3AiOjB9LCJjYXJkIjp7ImJhY2tncm91bmQiOiJyZ2IoMjU1LCAyNTAsIDI0NSkiLCJjb2xvciI6InJnYigzNywgMzcsIDM3KSIsImZvbnQiOiJcIkRNIFNhbnNcIiwgQXJpYWwsIHNhbnMtc2VyaWYiLCJmb250U2l6ZSI6IjE0cHgiLCJjb2x1bW5zIjoibm9uZSIsIndpZHRoIjoxNDAsImhlaWdodCI6MzA2LCJ0b3AiOjEyMzN9LCJncmlkIjp7ImJhY2tncm91bmQiOiJyZ2JhKDAsIDAsIDAsIDApIiwiY29sb3IiOiJyZ2IoMzcsIDM3LCAzNykiLCJmb250IjoiXCJETSBTYW5zXCIsIEFyaWFsLCBzYW5zLXNlcmlmIiwiZm9udFNpemUiOiIxNHB4IiwiY29sdW1ucyI6IjE0MHB4IDE0MHB4Iiwid2lkdGgiOjI5MiwiaGVpZ2h0Ijo2MDYsInRvcCI6MTIzM30sInRpdGxlIjp7ImJhY2tncm91bmQiOiJyZ2JhKDAsIDAsIDAsIDApIiwiY29sb3IiOiJyZ2IoMzcsIDM3LCAzNykiLCJmb250IjoiTWFucm9wZSwgQXJpYWwsIHNhbnMtc2VyaWYiLCJmb250U2l6ZSI6IjE0cHgiLCJjb2x1bW5zIjoibm9uZSIsIndpZHRoIjoxMTQsImhlaWdodCI6ODQsInRvcCI6MTM4MH0sImhlcm8iOnsiYmFja2dyb3VuZCI6InJnYmEoMCwgMCwgMCwgMCkiLCJjb2xvciI6InJnYigzNywgMzcsIDM3KSIsImZvbnQiOiJcIkRNIFNhbnNcIiwgQXJpYWwsIHNhbnMtc2VyaWYiLCJmb250U2l6ZSI6IjE0cHgiLCJjb2x1bW5zIjoibm9uZSIsIndpZHRoIjozMjAsImhlaWdodCI6MzMwLCJ0b3AiOjE1Nn0sInByaWNlIjp7ImJhY2tncm91bmQiOiJyZ2JhKDAsIDAsIDAsIDApIiwiY29sb3IiOiJyZ2IoMzgsIDc1LCA2MCkiLCJmb250IjoiXCJETSBTYW5zXCIsIEFyaWFsLCBzYW5zLXNlcmlmIiwiZm9udFNpemUiOiIxNHB4IiwiY29sdW1ucyI6Im5vbmUiLCJ3aWR0aCI6NzcsImhlaWdodCI6MjEsInRvcCI6MTUwNH0sImNvdW50Ijo2fSwicHVibGlzaGVkIjp7ImNvbXBhdE1vZGUiOiJDU1MxQ29tcGF0Iiwid2lkdGgiOjMyMCwicGFnZVdpZHRoIjozMjAsIm1haW4iOnsiYmFja2dyb3VuZCI6InJnYigyNTUsIDI0MCwgMjIzKSIsImNvbG9yIjoicmdiKDM3LCAzNywgMzcpIiwiZm9udCI6IlwiRE0gU2Fuc1wiLCBBcmlhbCwgc2Fucy1zZXJpZiIsImZvbnRTaXplIjoiMTRweCIsImNvbHVtbnMiOiJub25lIiwid2lkdGgiOjMyMCwiaGVpZ2h0IjoyNDEyLCJ0b3AiOjB9LCJjYXJkIjp7ImJhY2tncm91bmQiOiJyZ2IoMjU1LCAyNTAsIDI0NSkiLCJjb2xvciI6InJnYigzNywgMzcsIDM3KSIsImZvbnQiOiJcIkRNIFNhbnNcIiwgQXJpYWwsIHNhbnMtc2VyaWYiLCJmb250U2l6ZSI6IjE0cHgiLCJjb2x1bW5zIjoibm9uZSIsIndpZHRoIjoxNDAsImhlaWdodCI6MzA2LCJ0b3AiOjEyMzN9LCJncmlkIjp7ImJhY2tncm91bmQiOiJyZ2JhKDAsIDAsIDAsIDApIiwiY29sb3IiOiJyZ2IoMzcsIDM3LCAzNykiLCJmb250IjoiXCJETSBTYW5zXCIsIEFyaWFsLCBzYW5zLXNlcmlmIiwiZm9udFNpemUiOiIxNHB4IiwiY29sdW1ucyI6IjE0MHB4IDE0MHB4Iiwid2lkdGgiOjI5MiwiaGVpZ2h0Ijo2MDYsInRvcCI6MTIzM30sInRpdGxlIjp7ImJhY2tncm91bmQiOiJyZ2JhKDAsIDAsIDAsIDApIiwiY29sb3IiOiJyZ2IoMzcsIDM3LCAzNykiLCJmb250IjoiTWFucm9wZSwgQXJpYWwsIHNhbnMtc2VyaWYiLCJmb250U2l6ZSI6IjE0cHgiLCJjb2x1bW5zIjoibm9uZSIsIndpZHRoIjoxMTQsImhlaWdodCI6ODQsInRvcCI6MTM4MH0sImhlcm8iOnsiYmFja2dyb3VuZCI6InJnYmEoMCwgMCwgMCwgMCkiLCJjb2xvciI6InJnYigzNywgMzcsIDM3KSIsImZvbnQiOiJcIkRNIFNhbnNcIiwgQXJpYWwsIHNhbnMtc2VyaWYiLCJmb250U2l6ZSI6IjE0cHgiLCJjb2x1bW5zIjoibm9uZSIsIndpZHRoIjozMjAsImhlaWdodCI6MzMwLCJ0b3AiOjE1Nn0sInByaWNlIjp7ImJhY2tncm91bmQiOiJyZ2JhKDAsIDAsIDAsIDApIiwiY29sb3IiOiJyZ2IoMzgsIDc1LCA2MCkiLCJmb250IjoiXCJETSBTYW5zXCIsIEFyaWFsLCBzYW5zLXNlcmlmIiwiZm9udFNpemUiOiIxNHB4IiwiY29sdW1ucyI6Im5vbmUiLCJ3aWR0aCI6NzcsImhlaWdodCI6MjEsInRvcCI6MTUwNH0sImNvdW50Ijo2fX0="
+                    },
+                    {
+                      "name": "same-renderer-390",
+                      "contentType": "application/json",
+                      "body": "eyJwcmV2aWV3Ijp7ImNvbXBhdE1vZGUiOiJDU1MxQ29tcGF0Iiwid2lkdGgiOjM5MCwicGFnZVdpZHRoIjozOTAsIm1haW4iOnsiYmFja2dyb3VuZCI6InJnYigyNTUsIDI0MCwgMjIzKSIsImNvbG9yIjoicmdiKDM3LCAzNywgMzcpIiwiZm9udCI6IlwiRE0gU2Fuc1wiLCBBcmlhbCwgc2Fucy1zZXJpZiIsImZvbnRTaXplIjoiMTRweCIsImNvbHVtbnMiOiJub25lIiwid2lkdGgiOjM5MCwiaGVpZ2h0IjoyNDA5LCJ0b3AiOjB9LCJjYXJkIjp7ImJhY2tncm91bmQiOiJyZ2IoMjU1LCAyNTAsIDI0NSkiLCJjb2xvciI6InJnYigzNywgMzcsIDM3KSIsImZvbnQiOiJcIkRNIFNhbnNcIiwgQXJpYWwsIHNhbnMtc2VyaWYiLCJmb250U2l6ZSI6IjE0cHgiLCJjb2x1bW5zIjoibm9uZSIsIndpZHRoIjoxNzUsImhlaWdodCI6MzExLCJ0b3AiOjEyMTV9LCJncmlkIjp7ImJhY2tncm91bmQiOiJyZ2JhKDAsIDAsIDAsIDApIiwiY29sb3IiOiJyZ2IoMzcsIDM3LCAzNykiLCJmb250IjoiXCJETSBTYW5zXCIsIEFyaWFsLCBzYW5zLXNlcmlmIiwiZm9udFNpemUiOiIxNHB4IiwiY29sdW1ucyI6IjE3NXB4IDE3NXB4Iiwid2lkdGgiOjM2MiwiaGVpZ2h0Ijo2MTcsInRvcCI6MTIxNX0sInRpdGxlIjp7ImJhY2tncm91bmQiOiJyZ2JhKDAsIDAsIDAsIDApIiwiY29sb3IiOiJyZ2IoMzcsIDM3LCAzNykiLCJmb250IjoiTWFucm9wZSwgQXJpYWwsIHNhbnMtc2VyaWYiLCJmb250U2l6ZSI6IjE0cHgiLCJjb2x1bW5zIjoibm9uZSIsIndpZHRoIjoxNDksImhlaWdodCI6NjMsInRvcCI6MTM4OH0sImhlcm8iOnsiYmFja2dyb3VuZCI6InJnYmEoMCwgMCwgMCwgMCkiLCJjb2xvciI6InJnYigzNywgMzcsIDM3KSIsImZvbnQiOiJcIkRNIFNhbnNcIiwgQXJpYWwsIHNhbnMtc2VyaWYiLCJmb250U2l6ZSI6IjE0cHgiLCJjb2x1bW5zIjoibm9uZSIsIndpZHRoIjozOTAsImhlaWdodCI6MzMwLCJ0b3AiOjE1Nn0sInByaWNlIjp7ImJhY2tncm91bmQiOiJyZ2JhKDAsIDAsIDAsIDApIiwiY29sb3IiOiJyZ2IoMzgsIDc1LCA2MCkiLCJmb250IjoiXCJETSBTYW5zXCIsIEFyaWFsLCBzYW5zLXNlcmlmIiwiZm9udFNpemUiOiIxNHB4IiwiY29sdW1ucyI6Im5vbmUiLCJ3aWR0aCI6NzcsImhlaWdodCI6MjEsInRvcCI6MTQ5MX0sImNvdW50Ijo2fSwicHVibGlzaGVkIjp7ImNvbXBhdE1vZGUiOiJDU1MxQ29tcGF0Iiwid2lkdGgiOjM5MCwicGFnZVdpZHRoIjozOTAsIm1haW4iOnsiYmFja2dyb3VuZCI6InJnYigyNTUsIDI0MCwgMjIzKSIsImNvbG9yIjoicmdiKDM3LCAzNywgMzcpIiwiZm9udCI6IlwiRE0gU2Fuc1wiLCBBcmlhbCwgc2Fucy1zZXJpZiIsImZvbnRTaXplIjoiMTRweCIsImNvbHVtbnMiOiJub25lIiwid2lkdGgiOjM5MCwiaGVpZ2h0IjoyNDA5LCJ0b3AiOjB9LCJjYXJkIjp7ImJhY2tncm91bmQiOiJyZ2IoMjU1LCAyNTAsIDI0NSkiLCJjb2xvciI6InJnYigzNywgMzcsIDM3KSIsImZvbnQiOiJcIkRNIFNhbnNcIiwgQXJpYWwsIHNhbnMtc2VyaWYiLCJmb250U2l6ZSI6IjE0cHgiLCJjb2x1bW5zIjoibm9uZSIsIndpZHRoIjoxNzUsImhlaWdodCI6MzExLCJ0b3AiOjEyMTV9LCJncmlkIjp7ImJhY2tncm91bmQiOiJyZ2JhKDAsIDAsIDAsIDApIiwiY29sb3IiOiJyZ2IoMzcsIDM3LCAzNykiLCJmb250IjoiXCJETSBTYW5zXCIsIEFyaWFsLCBzYW5zLXNlcmlmIiwiZm9udFNpemUiOiIxNHB4IiwiY29sdW1ucyI6IjE3NXB4IDE3NXB4Iiwid2lkdGgiOjM2MiwiaGVpZ2h0Ijo2MTcsInRvcCI6MTIxNX0sInRpdGxlIjp7ImJhY2tncm91bmQiOiJyZ2JhKDAsIDAsIDAsIDApIiwiY29sb3IiOiJyZ2IoMzcsIDM3LCAzNykiLCJmb250IjoiTWFucm9wZSwgQXJpYWwsIHNhbnMtc2VyaWYiLCJmb250U2l6ZSI6IjE0cHgiLCJjb2x1bW5zIjoibm9uZSIsIndpZHRoIjoxNDksImhlaWdodCI6NjMsInRvcCI6MTM4OH0sImhlcm8iOnsiYmFja2dyb3VuZCI6InJnYmEoMCwgMCwgMCwgMCkiLCJjb2xvciI6InJnYigzNywgMzcsIDM3KSIsImZvbnQiOiJcIkRNIFNhbnNcIiwgQXJpYWwsIHNhbnMtc2VyaWYiLCJmb250U2l6ZSI6IjE0cHgiLCJjb2x1bW5zIjoibm9uZSIsIndpZHRoIjozOTAsImhlaWdodCI6MzMwLCJ0b3AiOjE1Nn0sInByaWNlIjp7ImJhY2tncm91bmQiOiJyZ2JhKDAsIDAsIDAsIDApIiwiY29sb3IiOiJyZ2IoMzgsIDc1LCA2MCkiLCJmb250IjoiXCJETSBTYW5zXCIsIEFyaWFsLCBzYW5zLXNlcmlmIiwiZm9udFNpemUiOiIxNHB4IiwiY29sdW1ucyI6Im5vbmUiLCJ3aWR0aCI6NzcsImhlaWdodCI6MjEsInRvcCI6MTQ5MX0sImNvdW50Ijo2fX0="
+                    },
+                    {
+                      "name": "same-renderer-768",
+                      "contentType": "application/json",
+                      "body": "eyJwcmV2aWV3Ijp7ImNvbXBhdE1vZGUiOiJDU1MxQ29tcGF0Iiwid2lkdGgiOjc2OCwicGFnZVdpZHRoIjo3NjgsIm1haW4iOnsiYmFja2dyb3VuZCI6InJnYigyNTUsIDI0MCwgMjIzKSIsImNvbG9yIjoicmdiKDM3LCAzNywgMzcpIiwiZm9udCI6IlwiRE0gU2Fuc1wiLCBBcmlhbCwgc2Fucy1zZXJpZiIsImZvbnRTaXplIjoiMTRweCIsImNvbHVtbnMiOiJub25lIiwid2lkdGgiOjc2OCwiaGVpZ2h0IjoyNTIzLCJ0b3AiOjB9LCJjYXJkIjp7ImJhY2tncm91bmQiOiJyZ2IoMjU1LCAyNTAsIDI0NSkiLCJjb2xvciI6InJnYigzNywgMzcsIDM3KSIsImZvbnQiOiJcIkRNIFNhbnNcIiwgQXJpYWwsIHNhbnMtc2VyaWYiLCJmb250U2l6ZSI6IjE0cHgiLCJjb2x1bW5zIjoibm9uZSIsIndpZHRoIjo3MTgsImhlaWdodCI6MTU3LCJ0b3AiOjEyMDN9LCJncmlkIjp7ImJhY2tncm91bmQiOiJyZ2JhKDAsIDAsIDAsIDApIiwiY29sb3IiOiJyZ2IoMzcsIDM3LCAzNykiLCJmb250IjoiXCJETSBTYW5zXCIsIEFyaWFsLCBzYW5zLXNlcmlmIiwiZm9udFNpemUiOiIxNHB4IiwiY29sdW1ucyI6IjcxOHB4Iiwid2lkdGgiOjcxOCwiaGVpZ2h0Ijo2NzAsInRvcCI6MTIwM30sInRpdGxlIjp7ImJhY2tncm91bmQiOiJyZ2JhKDAsIDAsIDAsIDApIiwiY29sb3IiOiJyZ2IoMzcsIDM3LCAzNykiLCJmb250IjoiTWFucm9wZSwgQXJpYWwsIHNhbnMtc2VyaWYiLCJmb250U2l6ZSI6IjE1cHgiLCJjb2x1bW5zIjoibm9uZSIsIndpZHRoIjo1ODMsImhlaWdodCI6MjMsInRvcCI6MTI0OH0sImhlcm8iOnsiYmFja2dyb3VuZCI6InJnYmEoMCwgMCwgMCwgMCkiLCJjb2xvciI6InJnYigzNywgMzcsIDM3KSIsImZvbnQiOiJcIkRNIFNhbnNcIiwgQXJpYWwsIHNhbnMtc2VyaWYiLCJmb250U2l6ZSI6IjE0cHgiLCJjb2x1bW5zIjoibm9uZSIsIndpZHRoIjo3NjgsImhlaWdodCI6MzgwLCJ0b3AiOjExM30sInByaWNlIjp7ImJhY2tncm91bmQiOiJyZ2JhKDAsIDAsIDAsIDApIiwiY29sb3IiOiJyZ2IoMzgsIDc1LCA2MCkiLCJmb250IjoiXCJETSBTYW5zXCIsIEFyaWFsLCBzYW5zLXNlcmlmIiwiZm9udFNpemUiOiIxNHB4IiwiY29sdW1ucyI6Im5vbmUiLCJ3aWR0aCI6NzcsImhlaWdodCI6MTYsInRvcCI6MTMxNH0sImNvdW50Ijo2fSwicHVibGlzaGVkIjp7ImNvbXBhdE1vZGUiOiJDU1MxQ29tcGF0Iiwid2lkdGgiOjc2OCwicGFnZVdpZHRoIjo3NjgsIm1haW4iOnsiYmFja2dyb3VuZCI6InJnYigyNTUsIDI0MCwgMjIzKSIsImNvbG9yIjoicmdiKDM3LCAzNywgMzcpIiwiZm9udCI6IlwiRE0gU2Fuc1wiLCBBcmlhbCwgc2Fucy1zZXJpZiIsImZvbnRTaXplIjoiMTRweCIsImNvbHVtbnMiOiJub25lIiwid2lkdGgiOjc2OCwiaGVpZ2h0IjoyNTIzLCJ0b3AiOjB9LCJjYXJkIjp7ImJhY2tncm91bmQiOiJyZ2IoMjU1LCAyNTAsIDI0NSkiLCJjb2xvciI6InJnYigzNywgMzcsIDM3KSIsImZvbnQiOiJcIkRNIFNhbnNcIiwgQXJpYWwsIHNhbnMtc2VyaWYiLCJmb250U2l6ZSI6IjE0cHgiLCJjb2x1bW5zIjoibm9uZSIsIndpZHRoIjo3MTgsImhlaWdodCI6MTU3LCJ0b3AiOjEyMDN9LCJncmlkIjp7ImJhY2tncm91bmQiOiJyZ2JhKDAsIDAsIDAsIDApIiwiY29sb3IiOiJyZ2IoMzcsIDM3LCAzNykiLCJmb250IjoiXCJETSBTYW5zXCIsIEFyaWFsLCBzYW5zLXNlcmlmIiwiZm9udFNpemUiOiIxNHB4IiwiY29sdW1ucyI6IjcxOHB4Iiwid2lkdGgiOjcxOCwiaGVpZ2h0Ijo2NzAsInRvcCI6MTIwM30sInRpdGxlIjp7ImJhY2tncm91bmQiOiJyZ2JhKDAsIDAsIDAsIDApIiwiY29sb3IiOiJyZ2IoMzcsIDM3LCAzNykiLCJmb250IjoiTWFucm9wZSwgQXJpYWwsIHNhbnMtc2VyaWYiLCJmb250U2l6ZSI6IjE1cHgiLCJjb2x1bW5zIjoibm9uZSIsIndpZHRoIjo1ODMsImhlaWdodCI6MjMsInRvcCI6MTI0OH0sImhlcm8iOnsiYmFja2dyb3VuZCI6InJnYmEoMCwgMCwgMCwgMCkiLCJjb2xvciI6InJnYigzNywgMzcsIDM3KSIsImZvbnQiOiJcIkRNIFNhbnNcIiwgQXJpYWwsIHNhbnMtc2VyaWYiLCJmb250U2l6ZSI6IjE0cHgiLCJjb2x1bW5zIjoibm9uZSIsIndpZHRoIjo3NjgsImhlaWdodCI6MzgwLCJ0b3AiOjExM30sInByaWNlIjp7ImJhY2tncm91bmQiOiJyZ2JhKDAsIDAsIDAsIDApIiwiY29sb3IiOiJyZ2IoMzgsIDc1LCA2MCkiLCJmb250IjoiXCJETSBTYW5zXCIsIEFyaWFsLCBzYW5zLXNlcmlmIiwiZm9udFNpemUiOiIxNHB4IiwiY29sdW1ucyI6Im5vbmUiLCJ3aWR0aCI6NzcsImhlaWdodCI6MTYsInRvcCI6MTMxNH0sImNvdW50Ijo2fX0="
+                    },
+                    {
+                      "name": "same-renderer-1440",
+                      "contentType": "application/json",
+                      "body": "eyJwcmV2aWV3Ijp7ImNvbXBhdE1vZGUiOiJDU1MxQ29tcGF0Iiwid2lkdGgiOjE0NDAsInBhZ2VXaWR0aCI6MTQ0MCwibWFpbiI6eyJiYWNrZ3JvdW5kIjoicmdiKDI1NSwgMjQwLCAyMjMpIiwiY29sb3IiOiJyZ2IoMzcsIDM3LCAzNykiLCJmb250IjoiXCJETSBTYW5zXCIsIEFyaWFsLCBzYW5zLXNlcmlmIiwiZm9udFNpemUiOiIxNHB4IiwiY29sdW1ucyI6Im5vbmUiLCJ3aWR0aCI6MTQ0MCwiaGVpZ2h0IjoyNTM4LCJ0b3AiOjB9LCJjYXJkIjp7ImJhY2tncm91bmQiOiJyZ2IoMjU1LCAyNTAsIDI0NSkiLCJjb2xvciI6InJnYigzNywgMzcsIDM3KSIsImZvbnQiOiJcIkRNIFNhbnNcIiwgQXJpYWwsIHNhbnMtc2VyaWYiLCJmb250U2l6ZSI6IjE0cHgiLCJjb2x1bW5zIjoibm9uZSIsIndpZHRoIjoxMDcwLCJoZWlnaHQiOjE1NywidG9wIjoxMTg3fSwiZ3JpZCI6eyJiYWNrZ3JvdW5kIjoicmdiYSgwLCAwLCAwLCAwKSIsImNvbG9yIjoicmdiKDM3LCAzNywgMzcpIiwiZm9udCI6IlwiRE0gU2Fuc1wiLCBBcmlhbCwgc2Fucy1zZXJpZiIsImZvbnRTaXplIjoiMTRweCIsImNvbHVtbnMiOiIxMDcwcHgiLCJ3aWR0aCI6MTA3MCwiaGVpZ2h0Ijo2ODIsInRvcCI6MTE4N30sInRpdGxlIjp7ImJhY2tncm91bmQiOiJyZ2JhKDAsIDAsIDAsIDApIiwiY29sb3IiOiJyZ2IoMzcsIDM3LCAzNykiLCJmb250IjoiTWFucm9wZSwgQXJpYWwsIHNhbnMtc2VyaWYiLCJmb250U2l6ZSI6IjE1cHgiLCJjb2x1bW5zIjoibm9uZSIsIndpZHRoIjo5MDQsImhlaWdodCI6MjMsInRvcCI6MTIzMn0sImhlcm8iOnsiYmFja2dyb3VuZCI6InJnYmEoMCwgMCwgMCwgMCkiLCJjb2xvciI6InJnYigzNywgMzcsIDM3KSIsImZvbnQiOiJcIkRNIFNhbnNcIiwgQXJpYWwsIHNhbnMtc2VyaWYiLCJmb250U2l6ZSI6IjE0cHgiLCJjb2x1bW5zIjoibm9uZSIsIndpZHRoIjoxNDQwLCJoZWlnaHQiOjM4MCwidG9wIjo3N30sInByaWNlIjp7ImJhY2tncm91bmQiOiJyZ2JhKDAsIDAsIDAsIDApIiwiY29sb3IiOiJyZ2IoMzgsIDc1LCA2MCkiLCJmb250IjoiXCJETSBTYW5zXCIsIEFyaWFsLCBzYW5zLXNlcmlmIiwiZm9udFNpemUiOiIxNHB4IiwiY29sdW1ucyI6Im5vbmUiLCJ3aWR0aCI6NzcsImhlaWdodCI6MTYsInRvcCI6MTI5OH0sImNvdW50Ijo2fSwicHVibGlzaGVkIjp7ImNvbXBhdE1vZGUiOiJDU1MxQ29tcGF0Iiwid2lkdGgiOjE0NDAsInBhZ2VXaWR0aCI6MTQ0MCwibWFpbiI6eyJiYWNrZ3JvdW5kIjoicmdiKDI1NSwgMjQwLCAyMjMpIiwiY29sb3IiOiJyZ2IoMzcsIDM3LCAzNykiLCJmb250IjoiXCJETSBTYW5zXCIsIEFyaWFsLCBzYW5zLXNlcmlmIiwiZm9udFNpemUiOiIxNHB4IiwiY29sdW1ucyI6Im5vbmUiLCJ3aWR0aCI6MTQ0MCwiaGVpZ2h0IjoyNTM4LCJ0b3AiOjB9LCJjYXJkIjp7ImJhY2tncm91bmQiOiJyZ2IoMjU1LCAyNTAsIDI0NSkiLCJjb2xvciI6InJnYigzNywgMzcsIDM3KSIsImZvbnQiOiJcIkRNIFNhbnNcIiwgQXJpYWwsIHNhbnMtc2VyaWYiLCJmb250U2l6ZSI6IjE0cHgiLCJjb2x1bW5zIjoibm9uZSIsIndpZHRoIjoxMDcwLCJoZWlnaHQiOjE1NywidG9wIjoxMTg3fSwiZ3JpZCI6eyJiYWNrZ3JvdW5kIjoicmdiYSgwLCAwLCAwLCAwKSIsImNvbG9yIjoicmdiKDM3LCAzNywgMzcpIiwiZm9udCI6IlwiRE0gU2Fuc1wiLCBBcmlhbCwgc2Fucy1zZXJpZiIsImZvbnRTaXplIjoiMTRweCIsImNvbHVtbnMiOiIxMDcwcHgiLCJ3aWR0aCI6MTA3MCwiaGVpZ2h0Ijo2ODIsInRvcCI6MTE4N30sInRpdGxlIjp7ImJhY2tncm91bmQiOiJyZ2JhKDAsIDAsIDAsIDApIiwiY29sb3IiOiJyZ2IoMzcsIDM3LCAzNykiLCJmb250IjoiTWFucm9wZSwgQXJpYWwsIHNhbnMtc2VyaWYiLCJmb250U2l6ZSI6IjE1cHgiLCJjb2x1bW5zIjoibm9uZSIsIndpZHRoIjo5MDQsImhlaWdodCI6MjMsInRvcCI6MTIzMn0sImhlcm8iOnsiYmFja2dyb3VuZCI6InJnYmEoMCwgMCwgMCwgMCkiLCJjb2xvciI6InJnYigzNywgMzcsIDM3KSIsImZvbnQiOiJcIkRNIFNhbnNcIiwgQXJpYWwsIHNhbnMtc2VyaWYiLCJmb250U2l6ZSI6IjE0cHgiLCJjb2x1bW5zIjoibm9uZSIsIndpZHRoIjoxNDQwLCJoZWlnaHQiOjM4MCwidG9wIjo3N30sInByaWNlIjp7ImJhY2tncm91bmQiOiJyZ2JhKDAsIDAsIDAsIDApIiwiY29sb3IiOiJyZ2IoMzgsIDc1LCA2MCkiLCJmb250IjoiXCJETSBTYW5zXCIsIEFyaWFsLCBzYW5zLXNlcmlmIiwiZm9udFNpemUiOiIxNHB4IiwiY29sdW1ucyI6Im5vbmUiLCJ3aWR0aCI6NzcsImhlaWdodCI6MTYsInRvcCI6MTI5OH0sImNvdW50Ijo2fX0="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e6e105cba9fce2d184bb-89df807a4a758f2db99d",
+          "file": "menu-closure.spec.ts",
+          "line": 267,
+          "column": 5
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-18T06:13:54.628Z",
+    "duration": 22578.592,
+    "expected": 1,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

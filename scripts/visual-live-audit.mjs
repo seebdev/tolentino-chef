@@ -568,7 +568,7 @@ async function publicScenario(browser, browserKey, restaurant, device) {
       item.status = "PASS";
       return;
     }
-    const selector = page.getByLabel("Language / Idioma");
+    const selector = page.locator(".language-choice select");
     await selector.selectOption("en");
     await check(page.locator(".public-menu")).toHaveAttribute("lang", "en");
     await check(

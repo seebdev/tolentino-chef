@@ -34,7 +34,11 @@ test("appearance with persisted brand images fits desktop, tablet and mobile", a
       page.getByRole("heading", { name: "Identidad de tu restaurante" }),
     ).toBeVisible();
     await expect(page.locator(".brand-upload img")).toHaveCount(3);
-    await expect(page.locator(".phone-cover img")).toBeVisible();
+    await expect(
+      page
+        .frameLocator('iframe[title="Vista previa del menú"]')
+        .locator(".menu-cover"),
+    ).toBeVisible();
     await page
       .locator(".brand-upload img")
       .first()
@@ -53,12 +57,10 @@ test("appearance with persisted brand images fits desktop, tablet and mobile", a
         }))
         .filter((x) => x.right > innerWidth + 1),
     }));
-    await test
-      .info()
-      .attach("appearance-dimensions-" + width, {
-        body: JSON.stringify(dimensions, null, 2),
-        contentType: "application/json",
-      });
+    await test.info().attach("appearance-dimensions-" + width, {
+      body: JSON.stringify(dimensions, null, 2),
+      contentType: "application/json",
+    });
     expect(
       dimensions.document,
       JSON.stringify(dimensions.offenders),
@@ -67,7 +69,7 @@ test("appearance with persisted brand images fits desktop, tablet and mobile", a
       page.getByRole("button", { name: "Publicar cambios", exact: true }),
     ).toBeVisible();
     await page.screenshot({
-      path: "docs/evidence/audit-appearance-" + width + ".png",
+      path: "docs/evidence/closure-owner-appearance-" + width + ".png",
       fullPage: true,
     });
   }

@@ -1,0 +1,26 @@
+{
+  "at": "2026-10-18T06:07:07.728Z",
+  "result": "PASS",
+  "scope": "actual-user-CSV-parsed-and-imported-in-isolated-PGlite",
+  "sourceFileName": "tolentino_123_productos_prueba.csv",
+  "sourceSha256": "e085606719695eb7a4392a75788620f946f8f6b5a146d4c17475ded6ba4a48c5",
+  "sourceBytes": 21419,
+  "parsed": 123,
+  "uniqueSkus": 123,
+  "first": {
+    "created": 123,
+    "updated": 0,
+    "skipped": 0,
+    "rejected": 0
+  },
+  "replayed": true,
+  "repeatSkip": {
+    "created": 0,
+    "skipped": 123
+  },
+  "persistedLocalRows": 123,
+  "remoteMutations": false,
+  "network": false,
+  "physicalDatabase": "PGlite in memory; Auth and Storage schemas are stubs; no GoTrue or Storage HTTP",
+  "sourceContentPublished": false
+}

@@ -2,7 +2,7 @@ import "server-only";
 import { z } from "zod";
 import { sessionDb, serviceDb } from "./supabase";
 import { ApiError, dbError, rateLimit } from "./api";
-export async function actor() {
+export async function actor(options: { allowPasswordChange?: boolean } = {}) {
   const db = await sessionDb();
   const {
     data: { user },
@@ -32,9 +32,20 @@ export async function actor() {
       403,
       "Tu acceso está suspendido. Contacta con Tolentino.",
     );
+  let ownerAccess: { valid: boolean; requiresPasswordChange: boolean; generation: string | null } | null = null;
+  if (!admin.data) {
+    const state = await db.rpc("owner_session_state");
+    dbError(state.error);
+    ownerAccess = state.data;
+    if (!ownerAccess?.valid) throw new ApiError(401, "Este acceso cambió. Inicia sesión nuevamente.", "OWNER_SESSION_REVOKED");
+    if (ownerAccess.requiresPasswordChange && !options.allowPasswordChange)
+      throw new ApiError(403, "Debes cambiar tu contraseña temporal antes de continuar.", "PASSWORD_CHANGE_REQUIRED");
+  }
   return {
     db,
     user,
+    requiresPasswordChange: ownerAccess?.requiresPasswordChange || false,
+    ownerAccessGeneration: ownerAccess?.generation || null,
     role: admin.data ? ("superadmin" as const) : ("owner" as const),
     membership: membership.data,
   };

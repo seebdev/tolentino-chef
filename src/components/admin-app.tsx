@@ -41,6 +41,7 @@ import {
   Modal,
   Pagination,
 } from "./ui";
+import { OwnerAccessDialog } from "./owner-access-dialog";
 import { mediaUrl, type Restaurant, type Session } from "@/lib/types";
 type AdminData = {
   restaurants: Restaurant[];
@@ -89,6 +90,7 @@ export function AdminApp() {
   const [status, setStatus] = useState("");
   const [page, setPage] = useState(1);
   const [editor, setEditor] = useState<Restaurant | "new" | null>(null);
+  const [accessOwner, setAccessOwner] = useState<Restaurant | null>(null);
   const [busy, setBusy] = useState(false);
   const mutationInFlight = useRef(false);
   const createAttempt = useRef<{ signature: string; requestId: string } | null>(
@@ -528,6 +530,7 @@ export function AdminApp() {
                         </td>
                         <td>
                           <div className="row-actions">
+                            <button className="button small secondary" onClick={() => setAccessOwner(rest)} aria-label={"Acceso del propietario de " + rest.name}><KeyRound size={16}/> Acceso del propietario</button>
                             <a
                               className="button small secondary"
                               href={"/admin/restaurants/" + rest.id}
@@ -623,6 +626,7 @@ export function AdminApp() {
           )}
         </>
       )}
+      {accessOwner && <OwnerAccessDialog restaurantId={accessOwner.id} name={accessOwner.name} onClose={() => setAccessOwner(null)} />}
       {active === "settings" && (
         <form className="panel form-panel" onSubmit={settings}>
           <div className="section-heading">
@@ -632,6 +636,9 @@ export function AdminApp() {
               modificarlo.
             </p>
           </div>
+          <Field label="Marca del creador"><input name="creator_brand" aria-label="Marca del creador" required maxLength={80} defaultValue={data?.platform?.creator_brand || "Tolentino Chef"} /></Field>
+          <Field label="Teléfono del creador"><input name="creator_phone" aria-label="Teléfono del creador" required maxLength={24} defaultValue={data?.platform?.creator_phone || "3108853158"} /></Field>
+          <Field label="WhatsApp del creador" hint="Enlace HTTPS de wa.me; sólo abre la conversación cuando el visitante lo elige."><input name="creator_whatsapp" aria-label="WhatsApp del creador" type="url" required defaultValue={data?.platform?.creator_whatsapp || "https://wa.me/573108853158?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20un%20men%C3%BA%20digital%20para%20mi%20restaurante"} /></Field>
           <Field label="Texto del enlace">
             <input
               name="contact_label"

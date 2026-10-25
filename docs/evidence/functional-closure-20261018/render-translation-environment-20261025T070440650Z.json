@@ -1,0 +1,88 @@
+{
+  "at": "2026-10-25T07:04:40.650Z",
+  "operation": "merge-existing-render-environment",
+  "serviceId": "srv-dba32beq1p3s73a4g6v0",
+  "secretsPrinted": false,
+  "operations": [
+    {
+      "path": "/services/srv-dba32beq1p3s73a4g6v0/env-vars?limit=100",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/services/srv-dba32beq1p3s73a4g6v0/env-vars?limit=100&cursor=de1xr7Jpc-szNmFqbmZhYzczZTVtNWRn",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/services/srv-dba32beq1p3s73a4g6v0/env-vars?limit=100",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/services/srv-dba32beq1p3s73a4g6v0/env-vars?limit=100&cursor=de1xr7Jpc-szNmFqbmZhYzczZTVtNWRn",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/services/srv-dba32beq1p3s73a4g6v0/env-vars",
+      "method": "PUT",
+      "status": 200
+    },
+    {
+      "path": "/services/srv-dba32beq1p3s73a4g6v0/env-vars?limit=100",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/services/srv-dba32beq1p3s73a4g6v0/env-vars?limit=100&cursor=rRWFiysCQQ9rMnJyamxoczczOGloaGhn",
+      "method": "GET",
+      "status": 200
+    }
+  ],
+  "destination": {
+    "projectRef": "hgntppemxwcxaxritnfq",
+    "serviceId": "srv-dba32beq1p3s73a4g6v0",
+    "branch": "main",
+    "liveCommit": "ae0f7cb74b8dc73fd3f3db90a6958410b78d74ba",
+    "localOrigin": "http://localhost:3002"
+  },
+  "preservedKeys": [
+    "RENDER_SERVICE_HOSTNAME",
+    "PLATFORM_HOSTNAMES",
+    "APP_URL",
+    "SUPABASE_SERVICE_ROLE_KEY",
+    "NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY",
+    "NEXT_PUBLIC_SUPABASE_URL",
+    "NODE_ENV",
+    "NODE_VERSION"
+  ],
+  "configuredKeys": [
+    "OPENAI_TRANSLATION_MODEL",
+    "TRANSLATION_ENABLED",
+    "TRANSLATION_BUDGET_USD",
+    "TRANSLATION_MAX_OUTPUT_TOKENS"
+  ],
+  "translationEnabled": false,
+  "budgetUsd": 0,
+  "backup": {
+    "file": ".runtime/backups/render-environment-20261025T070440650Z.json.enc",
+    "sha256": "93f7bc4b227a17878110222303af70c7b722f8877e2f732f2a497d8be8ffd404"
+  },
+  "verifiedKeys": [
+    "TRANSLATION_MAX_OUTPUT_TOKENS",
+    "TRANSLATION_BUDGET_USD",
+    "TRANSLATION_ENABLED",
+    "OPENAI_TRANSLATION_MODEL",
+    "NODE_VERSION",
+    "NODE_ENV",
+    "NEXT_PUBLIC_SUPABASE_URL",
+    "NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY",
+    "SUPABASE_SERVICE_ROLE_KEY",
+    "APP_URL",
+    "PLATFORM_HOSTNAMES",
+    "RENDER_SERVICE_HOSTNAME"
+  ],
+  "applied": true,
+  "result": "PASS"
+}

@@ -1,0 +1,43 @@
+{
+  "at": "2026-10-25T06:56:51.885Z",
+  "projectRef": "hgntppemxwcxaxritnfq",
+  "serviceId": "srv-dba32beq1p3s73a4g6v0",
+  "operation": "incremental-schema-apply",
+  "migrations": [
+    {
+      "file": "20261018063724_translation_manual_fields.sql",
+      "sha256": "3686faa15c159080049c5134da36185c13deb9f9190f650b8b8c7bfecd2d8986"
+    }
+  ],
+  "remoteMutations": 1,
+  "destination": {
+    "repository": "https://github.com/seebdev/tolentino-chef",
+    "branch": "main",
+    "commit": "ae0f7cb74b8dc73fd3f3db90a6958410b78d74ba",
+    "url": "https://tolentino-restaurantes-admin.onrender.com",
+    "workspace": "tea-dba1s4m1egvs7391ve50",
+    "signupDisabled": true
+  },
+  "backup": {
+    "archive": ".runtime/backups/target-final-hgntppemxwcxaxritnfq-20261025T065225059Z.json.enc",
+    "sha256": "b4b805e7919df65d62ac2b705c5f1313733e1f40fd16ebf39abf1093c970bb3a",
+    "restoreEvidence": "docs/evidence/migrations/hgntppemxwcxaxritnfq/20261025T065610892Z/target-final-restore-local.json"
+  },
+  "expectedMetadataChanges": {
+    "manualFieldMasks": 96,
+    "menuVersionIncrements": 3,
+    "newJobs": 191,
+    "manualTextPreserved": true
+  },
+  "dataPreservation": {
+    "tables": 16,
+    "rows": 2092,
+    "originalColumnsAndRowsUnchanged": false,
+    "originalBusinessDataPreserved": true
+  },
+  "security": {
+    "tables": 16,
+    "secured": 16
+  },
+  "result": "PASS"
+}

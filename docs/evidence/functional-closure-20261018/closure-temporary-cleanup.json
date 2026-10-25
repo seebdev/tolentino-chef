@@ -1,0 +1,24 @@
+{
+  "at": "2026-10-25T07:01:49.264Z",
+  "operation": "cleanup-only-task-owned-closure-fixtures",
+  "projectRef": "hgntppemxwcxaxritnfq",
+  "remoteMutations": 18,
+  "auditRetained": true,
+  "translationBudgetReset": false,
+  "destination": {
+    "projectRef": "hgntppemxwcxaxritnfq",
+    "serviceId": "srv-dba32beq1p3s73a4g6v0",
+    "branch": "main",
+    "liveCommit": "ae0f7cb74b8dc73fd3f3db90a6958410b78d74ba",
+    "localOrigin": "http://localhost:3002"
+  },
+  "result": "PASS",
+  "restaurantsDeleted": 3,
+  "authUsersDeleted": 3,
+  "storageObjectsDeleted": 3,
+  "creationRequestsDeleted": 3,
+  "retainedContentUnchanged": true,
+  "retainedRestaurants": 3,
+  "translationBudgetPreserved": true,
+  "localCredentialsErased": true
+}

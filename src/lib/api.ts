@@ -18,6 +18,8 @@ export function dbError(error: { code?: string; message?: string } | null) {
   if (!error) return;
   if (error.code === "PGRST116")
     throw new ApiError(404, "No se encontró el recurso solicitado.", "NOT_FOUND");
+  if (error.code === "PT409")
+    throw new ApiError(409, "La operación entra en conflicto con cambios recientes. Recarga antes de reintentar.", "REVISION_CONFLICT");
   if (error.code === "23505")
     throw new ApiError(
       409,

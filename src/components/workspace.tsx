@@ -58,11 +58,13 @@ import {
   AppearancePanel,
   HoursPanel,
   LanguagesPanel,
-  QrPanel,
   DomainsPanel,
-  ImportPanel,
   AccountPanel,
 } from "./workspace-settings";
+import { QrPanel } from "./qr-settings";
+import { OwnerAccessButton } from "./owner-access-dialog";
+import { ImportPanel } from "./import-panel";
+import { ImportProgress, uploadWithProgress, type TransferProgress, type ImportStage } from "./import-progress";
 const navigation = [
   {
     id: "overview",
@@ -347,6 +349,7 @@ export function Workspace({
           )
         }
       />
+      {data?.role === "superadmin" && r && <OwnerAccessButton restaurantId={r.id} name={r.name}/>}
       {error && <Notice message={error} error onClose={() => setError("")} />}{" "}
       {message && <Notice message={message} onClose={() => setMessage("")} />}{" "}
       {!data ? (
@@ -820,7 +823,7 @@ export function Workspace({
             ))}
           {active === "appearance" && (
             <AppearancePanel
-              key={JSON.stringify(data.settings.draft_appearance)}
+              key={data.restaurant.id}
               data={data}
               mutate={mutate}
               busy={busy}
@@ -946,6 +949,8 @@ function EntityEditor({
   const [image, setImage] = useState(p?.image_path || "");
   const [uploading, setUploading] = useState(false);
   const [uploadError, setUploadError] = useState("");
+  const [uploadProgress,setUploadProgress] = useState<TransferProgress>({loaded:0});
+  const [uploadStage,setUploadStage] = useState<ImportStage>("uploading");
   const [validationError, setValidationError] = useState("");
   const submitting = useRef(false);
   const uploadInFlight = useRef(false);
@@ -957,14 +962,13 @@ function EntityEditor({
     }
     uploadInFlight.current = true;
     setUploading(true);
+    setUploadStage("uploading");
+    setUploadProgress({loaded:0,total:file.size});
     setUploadError("");
     try {
       const body = new FormData();
       body.append("file", file);
-      const result = await api<{ path: string }>(
-        "/api/workspace/" + data.restaurant.id + "/media",
-        { method: "POST", body },
-      );
+      const result = await uploadWithProgress<{path:string}>("/api/workspace/"+data.restaurant.id+"/media",body,{onProgress:setUploadProgress,onUploaded:()=>setUploadStage("validating")});
       setImage(result.path);
     } catch (e) {
       setUploadError((e as Error).message);
@@ -994,7 +998,6 @@ function EntityEditor({
         is_published: f.has("is_published"),
         is_available: f.has("is_available"),
         is_featured: f.has("is_featured"),
-        variants: [],
         extras: [],
       });
     } else if (editor.type === "category") {
@@ -1015,7 +1018,6 @@ function EntityEditor({
       });
     try {
       if (editor.type === "product") {
-        payload.variants = parseOptions(String(raw.variants), "Presentaciones");
         payload.extras = parseOptions(String(raw.extras), "Extras");
       }
       if (
@@ -1093,6 +1095,7 @@ function EntityEditor({
                   />
                 </label>
                 <small>JPG, PNG o WebP · hasta 5 MB</small>
+                {uploading && <ImportProgress stage={uploadStage} label={uploadStage === "uploading" ? "Subiendo fotografía" : "Validando y guardando fotografía"} {...uploadProgress}/>}
                 {image && (
                   <button
                     className="text-button danger-text"
@@ -1182,21 +1185,6 @@ function EntityEditor({
               </Field>
             </div>
             <div className="form-grid">
-              <Field
-                label="Presentaciones / variantes"
-                hint="Una por línea: nombre | precio. Ejemplo: Grande | 25000"
-              >
-                <textarea
-                  name="variants"
-                  rows={3}
-                  defaultValue={
-                    p?.variants
-                      ?.map((o) => o.name + " | " + o.price)
-                      .join("\n") || ""
-                  }
-                  aria-label="Presentaciones y precios"
-                />
-              </Field>
               <Field
                 label="Extras"
                 hint="Uno por línea: nombre | precio adicional."

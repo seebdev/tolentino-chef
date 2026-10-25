@@ -1,0 +1,15 @@
+{
+  "at": "2026-10-18T06:31:54.501Z",
+  "restaurantId": "8710120e-768e-41a6-85ae-98a46e1fbfd2",
+  "operation": "reset-only-owned-beta-fixture",
+  "before": {
+    "products": 1126,
+    "jobs": 0
+  },
+  "deleted": {
+    "private.import_attempts": 4,
+    "public.products": 1126,
+    "public.categories": 2
+  },
+  "result": "PASS"
+}

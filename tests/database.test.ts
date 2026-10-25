@@ -23,7 +23,7 @@ beforeAll(async () => {
   await db.exec(
     "create role anon nologin; create role authenticated nologin; create role service_role nologin bypassrls;" +
       "create schema auth; create schema storage; grant usage on schema public,auth,storage to anon,authenticated,service_role;" +
-      "create table auth.users(id uuid primary key);" +
+      "create table auth.users(id uuid primary key, raw_app_meta_data jsonb not null default '{}');create table auth.sessions(id uuid primary key,user_id uuid references auth.users(id),created_at timestamptz not null default now());" +
       "create function auth.uid() returns uuid language sql stable as $$ select nullif(current_setting('request.jwt.claim.sub',true),'')::uuid $$;" +
       "create table storage.buckets(id text primary key,name text,public boolean,file_size_limit bigint,allowed_mime_types text[]);" +
       "create table storage.objects(id uuid primary key default gen_random_uuid(),bucket_id text references storage.buckets(id),name text not null,unique(bucket_id,name));" +
@@ -290,7 +290,7 @@ describe.sequential(
           "insert into storage.objects(bucket_id,name) values('restaurant-media','invalid/../../secret.png')",
         );
       }));
-    it("suspension denies menu and media while leaving owner status visible", () =>
+    it("suspension revokes the prior session and denies menu and media", () =>
       asRole("service_role", null, async () => {
         await db.query(
           "update public.restaurants set status='suspended' where id=$1",
@@ -300,9 +300,7 @@ describe.sequential(
         await db.query("select set_config('request.jwt.claim.sub',$1,true)", [
           UA,
         ]);
-        expect(await rows("select status from public.restaurants")).toEqual([
-          { status: "suspended" },
-        ]);
+        expect(await rows("select status from public.restaurants")).toEqual([]);
         expect(await rows("select * from public.products")).toEqual([]);
         expect(await rows("select * from storage.objects")).toEqual([]);
         await denied(
@@ -659,7 +657,7 @@ describe.sequential(
           [B],
         );
       }));
-    it("reactivation restores owner menu and media access without changing QR identity", () =>
+    it("reactivation requires a fresh session and preserves QR identity", () =>
       asRole("service_role", null, async () => {
         const token = await scalar(
           "select public_token from public.restaurants where id=$1",
@@ -677,6 +675,12 @@ describe.sequential(
         await db.query("select set_config('request.jwt.claim.sub',$1,true)", [
           UA,
         ]);
+        expect(await rows("select name from public.products")).toEqual([]);
+        await db.exec("reset role");
+        const freshSession = "55555555-5555-4555-8555-555555555555";
+        await db.query("insert into auth.sessions(id,user_id,created_at) values($1,$2,clock_timestamp())", [freshSession, UA]);
+        await db.query("select set_config('request.jwt.claims',$1,true)", [JSON.stringify({ session_id: freshSession })]);
+        await db.exec("set local role authenticated");
         expect(await rows("select name from public.products")).toEqual([
           { name: "A dish" },
         ]);

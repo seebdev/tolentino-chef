@@ -1,0 +1,716 @@
+{
+  "at": "2026-10-18T06:25:29.381Z",
+  "operation": "real-isolated-owner-security",
+  "checks": [
+    {
+      "name": "Administrator identity kept",
+      "pass": true
+    },
+    {
+      "name": "Login temporary task-owned owner",
+      "pass": true,
+      "status": 200
+    },
+    {
+      "name": "Direct Auth login for task-owned identity",
+      "pass": true
+    },
+    {
+      "name": "Owner access works before reset",
+      "pass": true,
+      "status": 200
+    },
+    {
+      "name": "Temporary password returned once",
+      "pass": true
+    },
+    {
+      "name": "Completed access retry never returns credential",
+      "pass": true
+    },
+    {
+      "name": "Old application session denied after reset",
+      "pass": true,
+      "status": 401
+    },
+    {
+      "name": "Old direct REST JWT has no access after reset",
+      "pass": true,
+      "status": 200
+    },
+    {
+      "name": "Login temporary task-owned owner",
+      "pass": true,
+      "status": 200
+    },
+    {
+      "name": "Temporary login cannot enter business API",
+      "pass": true
+    },
+    {
+      "name": "Direct Auth login for task-owned identity",
+      "pass": true
+    },
+    {
+      "name": "Temporary login cannot bypass through direct REST",
+      "pass": true
+    },
+    {
+      "name": "Owner completes first mandatory change",
+      "pass": true,
+      "status": 200
+    },
+    {
+      "name": "Changed password unlocks same owner session",
+      "pass": true,
+      "status": 200
+    },
+    {
+      "name": "Other temporary session cannot keep access",
+      "pass": true
+    },
+    {
+      "name": "Duplicate normalized owner alias rejected",
+      "pass": true
+    },
+    {
+      "name": "Owner denied administrative access action",
+      "pass": true,
+      "status": 403
+    },
+    {
+      "name": "Direct alias directory not exposed",
+      "pass": true
+    },
+    {
+      "name": "Suspend only task-owned owner",
+      "pass": true,
+      "status": 200
+    },
+    {
+      "name": "Suspended membership immediately blocks session",
+      "pass": true,
+      "status": 403
+    },
+    {
+      "name": "Reactivate only task-owned owner",
+      "pass": true,
+      "status": 200
+    },
+    {
+      "name": "Reactivation does not revive old session",
+      "pass": true,
+      "status": 401
+    },
+    {
+      "name": "Login temporary task-owned owner",
+      "pass": true,
+      "status": 200
+    },
+    {
+      "name": "Fresh session after membership reactivation works",
+      "pass": true,
+      "status": 200
+    },
+    {
+      "name": "Suspend only task-owned restaurant",
+      "pass": true,
+      "status": 200
+    },
+    {
+      "name": "Restaurant suspension immediately blocks prior session",
+      "pass": true,
+      "status": 401
+    },
+    {
+      "name": "Reactivate only task-owned restaurant",
+      "pass": true,
+      "status": 200
+    },
+    {
+      "name": "Restaurant reactivation requires new session",
+      "pass": true,
+      "status": 401
+    },
+    {
+      "name": "Support workspace retains superadmin role",
+      "pass": true
+    },
+    {
+      "name": "Support never impersonates owner",
+      "pass": true
+    },
+    {
+      "name": "Login temporary task-owned owner",
+      "pass": true,
+      "status": 200
+    },
+    {
+      "name": "Direct Auth login for task-owned identity",
+      "pass": true
+    },
+    {
+      "name": "Own Storage upload alpha",
+      "pass": true
+    },
+    {
+      "name": "Own private Storage download alpha",
+      "pass": true
+    },
+    {
+      "name": "Own direct RLS positive control alpha",
+      "pass": true
+    },
+    {
+      "name": "Own QR decodes stable UUID alpha",
+      "pass": true
+    },
+    {
+      "name": "Own translation job status alpha",
+      "pass": true,
+      "status": 200
+    },
+    {
+      "name": "Login temporary task-owned owner",
+      "pass": true,
+      "status": 200
+    },
+    {
+      "name": "Direct Auth login for task-owned identity",
+      "pass": true
+    },
+    {
+      "name": "Own Storage upload beta",
+      "pass": true
+    },
+    {
+      "name": "Own private Storage download beta",
+      "pass": true
+    },
+    {
+      "name": "Own direct RLS positive control beta",
+      "pass": true
+    },
+    {
+      "name": "Own QR decodes stable UUID beta",
+      "pass": true
+    },
+    {
+      "name": "Own translation job status beta",
+      "pass": true,
+      "status": 200
+    },
+    {
+      "name": "Login temporary task-owned owner",
+      "pass": true,
+      "status": 200
+    },
+    {
+      "name": "Direct Auth login for task-owned identity",
+      "pass": true
+    },
+    {
+      "name": "Own Storage upload gamma",
+      "pass": true
+    },
+    {
+      "name": "Own private Storage download gamma",
+      "pass": true
+    },
+    {
+      "name": "Own direct RLS positive control gamma",
+      "pass": true
+    },
+    {
+      "name": "Own QR decodes stable UUID gamma",
+      "pass": true
+    },
+    {
+      "name": "Own translation job status gamma",
+      "pass": true,
+      "status": 200
+    },
+    {
+      "name": "Cross-tenant API read denied alpha to beta",
+      "pass": true,
+      "status": 403
+    },
+    {
+      "name": "Cross-tenant API write denied alpha to beta",
+      "pass": true,
+      "status": 403
+    },
+    {
+      "name": "Cross-tenant QR export denied alpha to beta",
+      "pass": true,
+      "status": 403
+    },
+    {
+      "name": "Cross-tenant jobs read denied alpha to beta",
+      "pass": true,
+      "status": 403
+    },
+    {
+      "name": "Cross-tenant jobs enqueue denied alpha to beta",
+      "pass": true,
+      "status": 403
+    },
+    {
+      "name": "Cross-tenant RLS restaurants alpha to beta",
+      "pass": true
+    },
+    {
+      "name": "Cross-tenant RLS restaurant_settings alpha to beta",
+      "pass": true
+    },
+    {
+      "name": "Cross-tenant RLS categories alpha to beta",
+      "pass": true
+    },
+    {
+      "name": "Cross-tenant RLS products alpha to beta",
+      "pass": true
+    },
+    {
+      "name": "Cross-tenant RLS promotions alpha to beta",
+      "pass": true
+    },
+    {
+      "name": "Cross-tenant RLS restaurant_hours alpha to beta",
+      "pass": true
+    },
+    {
+      "name": "Cross-tenant RLS translations alpha to beta",
+      "pass": true
+    },
+    {
+      "name": "Cross-tenant RLS restaurant_qr_configs alpha to beta",
+      "pass": true
+    },
+    {
+      "name": "Cross-tenant RLS restaurant_domains alpha to beta",
+      "pass": true
+    },
+    {
+      "name": "Cross-tenant RLS translation_jobs alpha to beta",
+      "pass": true
+    },
+    {
+      "name": "Cross-tenant direct RLS update denied alpha to beta",
+      "pass": true
+    },
+    {
+      "name": "Cross-tenant Storage list hidden alpha to beta",
+      "pass": true
+    },
+    {
+      "name": "Cross-tenant Storage object denied alpha to beta",
+      "pass": true
+    },
+    {
+      "name": "Cross-tenant API read denied alpha to gamma",
+      "pass": true,
+      "status": 403
+    },
+    {
+      "name": "Cross-tenant API write denied alpha to gamma",
+      "pass": true,
+      "status": 403
+    },
+    {
+      "name": "Cross-tenant QR export denied alpha to gamma",
+      "pass": true,
+      "status": 403
+    },
+    {
+      "name": "Cross-tenant jobs read denied alpha to gamma",
+      "pass": true,
+      "status": 403
+    },
+    {
+      "name": "Cross-tenant jobs enqueue denied alpha to gamma",
+      "pass": true,
+      "status": 403
+    },
+    {
+      "name": "Cross-tenant RLS restaurants alpha to gamma",
+      "pass": true
+    },
+    {
+      "name": "Cross-tenant RLS restaurant_settings alpha to gamma",
+      "pass": true
+    },
+    {
+      "name": "Cross-tenant RLS categories alpha to gamma",
+      "pass": true
+    },
+    {
+      "name": "Cross-tenant RLS products alpha to gamma",
+      "pass": true
+    },
+    {
+      "name": "Cross-tenant RLS promotions alpha to gamma",
+      "pass": true
+    },
+    {
+      "name": "Cross-tenant RLS restaurant_hours alpha to gamma",
+      "pass": true
+    },
+    {
+      "name": "Cross-tenant RLS translations alpha to gamma",
+      "pass": true
+    },
+    {
+      "name": "Cross-tenant RLS restaurant_qr_configs alpha to gamma",
+      "pass": true
+    },
+    {
+      "name": "Cross-tenant RLS restaurant_domains alpha to gamma",
+      "pass": true
+    },
+    {
+      "name": "Cross-tenant RLS translation_jobs alpha to gamma",
+      "pass": true
+    },
+    {
+      "name": "Cross-tenant direct RLS update denied alpha to gamma",
+      "pass": true
+    },
+    {
+      "name": "Cross-tenant Storage list hidden alpha to gamma",
+      "pass": true
+    },
+    {
+      "name": "Cross-tenant Storage object denied alpha to gamma",
+      "pass": true
+    },
+    {
+      "name": "Cross-tenant API read denied beta to alpha",
+      "pass": true,
+      "status": 403
+    },
+    {
+      "name": "Cross-tenant API write denied beta to alpha",
+      "pass": true,
+      "status": 403
+    },
+    {
+      "name": "Cross-tenant QR export denied beta to alpha",
+      "pass": true,
+      "status": 403
+    },
+    {
+      "name": "Cross-tenant jobs read denied beta to alpha",
+      "pass": true,
+      "status": 403
+    },
+    {
+      "name": "Cross-tenant jobs enqueue denied beta to alpha",
+      "pass": true,
+      "status": 403
+    },
+    {
+      "name": "Cross-tenant RLS restaurants beta to alpha",
+      "pass": true
+    },
+    {
+      "name": "Cross-tenant RLS restaurant_settings beta to alpha",
+      "pass": true
+    },
+    {
+      "name": "Cross-tenant RLS categories beta to alpha",
+      "pass": true
+    },
+    {
+      "name": "Cross-tenant RLS products beta to alpha",
+      "pass": true
+    },
+    {
+      "name": "Cross-tenant RLS promotions beta to alpha",
+      "pass": true
+    },
+    {
+      "name": "Cross-tenant RLS restaurant_hours beta to alpha",
+      "pass": true
+    },
+    {
+      "name": "Cross-tenant RLS translations beta to alpha",
+      "pass": true
+    },
+    {
+      "name": "Cross-tenant RLS restaurant_qr_configs beta to alpha",
+      "pass": true
+    },
+    {
+      "name": "Cross-tenant RLS restaurant_domains beta to alpha",
+      "pass": true
+    },
+    {
+      "name": "Cross-tenant RLS translation_jobs beta to alpha",
+      "pass": true
+    },
+    {
+      "name": "Cross-tenant direct RLS update denied beta to alpha",
+      "pass": true
+    },
+    {
+      "name": "Cross-tenant Storage list hidden beta to alpha",
+      "pass": true
+    },
+    {
+      "name": "Cross-tenant Storage object denied beta to alpha",
+      "pass": true
+    },
+    {
+      "name": "Cross-tenant API read denied beta to gamma",
+      "pass": true,
+      "status": 403
+    },
+    {
+      "name": "Cross-tenant API write denied beta to gamma",
+      "pass": true,
+      "status": 403
+    },
+    {
+      "name": "Cross-tenant QR export denied beta to gamma",
+      "pass": true,
+      "status": 403
+    },
+    {
+      "name": "Cross-tenant jobs read denied beta to gamma",
+      "pass": true,
+      "status": 403
+    },
+    {
+      "name": "Cross-tenant jobs enqueue denied beta to gamma",
+      "pass": true,
+      "status": 403
+    },
+    {
+      "name": "Cross-tenant RLS restaurants beta to gamma",
+      "pass": true
+    },
+    {
+      "name": "Cross-tenant RLS restaurant_settings beta to gamma",
+      "pass": true
+    },
+    {
+      "name": "Cross-tenant RLS categories beta to gamma",
+      "pass": true
+    },
+    {
+      "name": "Cross-tenant RLS products beta to gamma",
+      "pass": true
+    },
+    {
+      "name": "Cross-tenant RLS promotions beta to gamma",
+      "pass": true
+    },
+    {
+      "name": "Cross-tenant RLS restaurant_hours beta to gamma",
+      "pass": true
+    },
+    {
+      "name": "Cross-tenant RLS translations beta to gamma",
+      "pass": true
+    },
+    {
+      "name": "Cross-tenant RLS restaurant_qr_configs beta to gamma",
+      "pass": true
+    },
+    {
+      "name": "Cross-tenant RLS restaurant_domains beta to gamma",
+      "pass": true
+    },
+    {
+      "name": "Cross-tenant RLS translation_jobs beta to gamma",
+      "pass": true
+    },
+    {
+      "name": "Cross-tenant direct RLS update denied beta to gamma",
+      "pass": true
+    },
+    {
+      "name": "Cross-tenant Storage list hidden beta to gamma",
+      "pass": true
+    },
+    {
+      "name": "Cross-tenant Storage object denied beta to gamma",
+      "pass": true
+    },
+    {
+      "name": "Cross-tenant API read denied gamma to alpha",
+      "pass": true,
+      "status": 403
+    },
+    {
+      "name": "Cross-tenant API write denied gamma to alpha",
+      "pass": true,
+      "status": 403
+    },
+    {
+      "name": "Cross-tenant QR export denied gamma to alpha",
+      "pass": true,
+      "status": 403
+    },
+    {
+      "name": "Cross-tenant jobs read denied gamma to alpha",
+      "pass": true,
+      "status": 403
+    },
+    {
+      "name": "Cross-tenant jobs enqueue denied gamma to alpha",
+      "pass": true,
+      "status": 403
+    },
+    {
+      "name": "Cross-tenant RLS restaurants gamma to alpha",
+      "pass": true
+    },
+    {
+      "name": "Cross-tenant RLS restaurant_settings gamma to alpha",
+      "pass": true
+    },
+    {
+      "name": "Cross-tenant RLS categories gamma to alpha",
+      "pass": true
+    },
+    {
+      "name": "Cross-tenant RLS products gamma to alpha",
+      "pass": true
+    },
+    {
+      "name": "Cross-tenant RLS promotions gamma to alpha",
+      "pass": true
+    },
+    {
+      "name": "Cross-tenant RLS restaurant_hours gamma to alpha",
+      "pass": true
+    },
+    {
+      "name": "Cross-tenant RLS translations gamma to alpha",
+      "pass": true
+    },
+    {
+      "name": "Cross-tenant RLS restaurant_qr_configs gamma to alpha",
+      "pass": true
+    },
+    {
+      "name": "Cross-tenant RLS restaurant_domains gamma to alpha",
+      "pass": true
+    },
+    {
+      "name": "Cross-tenant RLS translation_jobs gamma to alpha",
+      "pass": true
+    },
+    {
+      "name": "Cross-tenant direct RLS update denied gamma to alpha",
+      "pass": true
+    },
+    {
+      "name": "Cross-tenant Storage list hidden gamma to alpha",
+      "pass": true
+    },
+    {
+      "name": "Cross-tenant Storage object denied gamma to alpha",
+      "pass": true
+    },
+    {
+      "name": "Cross-tenant API read denied gamma to beta",
+      "pass": true,
+      "status": 403
+    },
+    {
+      "name": "Cross-tenant API write denied gamma to beta",
+      "pass": true,
+      "status": 403
+    },
+    {
+      "name": "Cross-tenant QR export denied gamma to beta",
+      "pass": true,
+      "status": 403
+    },
+    {
+      "name": "Cross-tenant jobs read denied gamma to beta",
+      "pass": true,
+      "status": 403
+    },
+    {
+      "name": "Cross-tenant jobs enqueue denied gamma to beta",
+      "pass": true,
+      "status": 403
+    },
+    {
+      "name": "Cross-tenant RLS restaurants gamma to beta",
+      "pass": true
+    },
+    {
+      "name": "Cross-tenant RLS restaurant_settings gamma to beta",
+      "pass": true
+    },
+    {
+      "name": "Cross-tenant RLS categories gamma to beta",
+      "pass": true
+    },
+    {
+      "name": "Cross-tenant RLS products gamma to beta",
+      "pass": true
+    },
+    {
+      "name": "Cross-tenant RLS promotions gamma to beta",
+      "pass": true
+    },
+    {
+      "name": "Cross-tenant RLS restaurant_hours gamma to beta",
+      "pass": true
+    },
+    {
+      "name": "Cross-tenant RLS translations gamma to beta",
+      "pass": true
+    },
+    {
+      "name": "Cross-tenant RLS restaurant_qr_configs gamma to beta",
+      "pass": true
+    },
+    {
+      "name": "Cross-tenant RLS restaurant_domains gamma to beta",
+      "pass": true
+    },
+    {
+      "name": "Cross-tenant RLS translation_jobs gamma to beta",
+      "pass": true
+    },
+    {
+      "name": "Cross-tenant direct RLS update denied gamma to beta",
+      "pass": true
+    },
+    {
+      "name": "Cross-tenant Storage list hidden gamma to beta",
+      "pass": true
+    },
+    {
+      "name": "Cross-tenant Storage object denied gamma to beta",
+      "pass": true
+    },
+    {
+      "name": "Existing restaurant content unchanged",
+      "pass": true
+    }
+  ],
+  "remoteEmails": 0,
+  "existingOwnersChanged": 0,
+  "cleanupPerformed": false,
+  "destination": {
+    "projectRef": "hgntppemxwcxaxritnfq",
+    "serviceId": "srv-dba32beq1p3s73a4g6v0",
+    "branch": "main",
+    "liveCommit": "ae0f7cb74b8dc73fd3f3db90a6958410b78d74ba",
+    "localOrigin": "http://localhost:3002"
+  },
+  "result": "PASS",
+  "tenantDirections": 6,
+  "accountsRetained": 3,
+  "credentialsUpdatedPrivately": true,
+  "passed": 160,
+  "failed": 0
+}

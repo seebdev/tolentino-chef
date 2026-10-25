@@ -1,0 +1,238 @@
+{
+  "config": {
+    "argv": [
+      "C:\\Users\\sebas\\OneDrive\\Escritorio\\tolentino-restaurantes-admin\\.runtime\\node-v22.23.3-win-x64\\node.exe",
+      "C:\\Users\\sebas\\OneDrive\\Escritorio\\tolentino-restaurantes-admin\\node_modules\\@playwright\\test\\cli.js",
+      "test",
+      "tests/e2e/import-qr-closure.spec.ts",
+      "--project=desktop",
+      "--output=test-results/import-qr"
+    ],
+    "configFile": "C:\\Users\\sebas\\OneDrive\\Escritorio\\tolentino-restaurantes-admin\\playwright.config.ts",
+    "rootDir": "C:/Users/sebas/OneDrive/Escritorio/tolentino-restaurantes-admin/tests/e2e",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "C:/Users/sebas/OneDrive/Escritorio/tolentino-restaurantes-admin/test-results/import-qr",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "desktop",
+        "name": "desktop",
+        "testDir": "C:/Users/sebas/OneDrive/Escritorio/tolentino-restaurantes-admin/tests/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "C:/Users/sebas/OneDrive/Escritorio/tolentino-restaurantes-admin/test-results/import-qr",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "mobile",
+        "name": "mobile",
+        "testDir": "C:/Users/sebas/OneDrive/Escritorio/tolentino-restaurantes-admin/tests/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "C:\\Users\\sebas\\OneDrive\\Escritorio\\tolentino-restaurantes-admin\\test-results\\import-qr",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "desktop",
+        "testDir": "C:\\Users\\sebas\\OneDrive\\Escritorio\\tolentino-restaurantes-admin\\tests\\e2e",
+        "snapshotDir": "C:\\Users\\sebas\\OneDrive\\Escritorio\\tolentino-restaurantes-admin\\tests\\e2e",
+        "testIgnore": [],
+        "testMatch": "**/*.@(spec|test).?(c|m)[jt]s?(x)",
+        "timeout": 90000,
+        "use": {
+          "baseURL": "http://localhost:3002",
+          "browserName": "chromium",
+          "channel": "chrome",
+          "trace": "retain-on-failure",
+          "screenshot": "only-on-failure",
+          "viewport": {
+            "width": 1440,
+            "height": 1000
+          }
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "desktop"
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "docs/evidence/closure-import-qr-browser.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "default",
+    "updateSourceMethod": "patch",
+    "version": "1.64.1",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "import-qr-closure.spec.ts",
+      "file": "import-qr-closure.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "CSV fixtures: lost response is recovered with one commit, including after reload",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 26833,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-18T05:55:37.685Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "08b861e6e3b904b1873f-659f57b9d6ca859d6911",
+          "file": "import-qr-closure.spec.ts",
+          "line": 6,
+          "column": 5
+        },
+        {
+          "title": "CSV fixtures: no result is not success; resend retains id after reload",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 9761,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-18T05:56:05.278Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "08b861e6e3b904b1873f-ef75fc75406cf90ff23a",
+          "file": "import-qr-closure.spec.ts",
+          "line": 24,
+          "column": 5
+        },
+        {
+          "title": "QR fixtures: newest validated draft wins, bad contrast keeps last image and blocks export",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 7976,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-18T05:56:15.098Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "08b861e6e3b904b1873f-0ea3be1d6fa3cdd32995",
+          "file": "import-qr-closure.spec.ts",
+          "line": 36,
+          "column": 5
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-18T05:55:34.125Z",
+    "duration": 49532.736000000004,
+    "expected": 3,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

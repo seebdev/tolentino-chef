@@ -1,4 +1,6 @@
 import { z } from "zod";
+import { createHash } from "node:crypto";
+import { aliasInput, temporaryPasswordInput } from "@/lib/owner-access";
 import { actor, audit } from "@/lib/access";
 import {
   route,
@@ -9,7 +11,7 @@ import {
   clientKey,
   ApiError,
 } from "@/lib/api";
-import { sessionDb, clearSessionCookies } from "@/lib/supabase";
+import { sessionDb, serviceDb, clearSessionCookies } from "@/lib/supabase";
 import { appUrl } from "@/lib/config";
 import { LOCAL_LOGOUT_WARNING } from "@/lib/session-messages";
 
@@ -33,6 +35,7 @@ export async function POST(request: Request) {
     const input = z
       .object({
         action: z.enum(["login", "logout", "recover", "password"]),
+        identifier: z.string().trim().max(254).optional(),
         email: z.preprocess(
           (v) => (v === "" ? undefined : v),
           z.email().optional(),
@@ -57,14 +60,26 @@ export async function POST(request: Request) {
     }
     await rateLimit(`auth-ip:${clientKey(request)}`, 30, 300);
     if (input.action === "login") {
-      const email = z.email().parse(input.email);
+      const identifier = (input.identifier || input.email || "").trim().toLowerCase();
+      await rateLimit(`login:${createHash("sha256").update(identifier).digest("hex")}`, 10, 300);
+      let email: string;
+      let resolved = true;
+      if (identifier.includes("@")) email = z.email().parse(identifier);
+      else {
+        const parsed = aliasInput.safeParse(identifier);
+        if (!parsed.success || !parsed.data) throw new ApiError(401, "El correo, usuario o contraseña no son correctos.");
+        const lookup = await serviceDb().rpc("resolve_owner_login", { p_alias: parsed.data });
+        if (lookup.error) throw new ApiError(503, "No se pudo comprobar el acceso. Reintenta en unos minutos.");
+        resolved = typeof lookup.data === "string" && !!lookup.data;
+        email = resolved ? lookup.data : "unavailable@invalid.example";
+      }
       const password = z.string().min(1).parse(input.password);
-      await rateLimit(`login:${email.toLowerCase()}`, 10, 300);
       const { error } = await db.auth.signInWithPassword({ email, password });
-      if (error)
-        throw new ApiError(401, "El correo o la contraseña no son correctos.");
+      if (!resolved && !error) await endLocalSession(db);
+      if (error || !resolved)
+        throw new ApiError(401, "El correo, usuario o contraseña no son correctos.");
       try {
-        const current = await actor();
+        const current = await actor({ allowPasswordChange: true });
         await audit(
           current.user.id,
           "login",
@@ -73,7 +88,8 @@ export async function POST(request: Request) {
         return json({
           ok: true,
           role: current.role,
-          redirect: current.role === "superadmin" ? "/admin" : "/dashboard",
+          requiresPasswordChange: current.requiresPasswordChange,
+          redirect: current.requiresPasswordChange ? "/login?mode=password" : current.role === "superadmin" ? "/admin" : "/dashboard",
         });
       } catch (error) {
         await endLocalSession(db);
@@ -114,23 +130,32 @@ export async function POST(request: Request) {
           "Si el correo tiene acceso, recibirás instrucciones para cambiar tu contraseña.",
       });
     }
-    const current = await actor();
-    const password = z
-      .string()
-      .min(12, "Usa al menos 12 caracteres.")
-      .max(128)
-      .parse(input.password);
+    const current = await actor({ allowPasswordChange: true });
+    const password = temporaryPasswordInput.parse(input.password);
+    let sessionId: string | undefined;
+    if (current.role === "owner") {
+      const { data, error } = await db.auth.getClaims();
+      if (error || data?.claims.sub !== current.user.id) throw new ApiError(401, "Inicia sesión de nuevo.");
+      sessionId = z.uuid().parse(data?.claims.session_id);
+    }
     const { error } = await db.auth.updateUser({ password });
     if (error)
       throw new ApiError(
         400,
         "No se pudo cambiar la contraseña. Repite el acceso desde el enlace recibido.",
       );
+    if (current.role === "owner") {
+      const completed = await serviceDb().rpc("complete_owner_password_change", {
+        p_user_id: current.user.id, p_generation: current.ownerAccessGeneration, p_session_id: sessionId,
+      });
+      if (completed.error || completed.data !== true)
+        throw new ApiError(409, "El acceso cambió durante la operación. Inicia sesión con la contraseña recién establecida y vuelve a cambiarla.", "PASSWORD_CHANGE_STALE");
+    }
     await audit(
       current.user.id,
       "password_changed",
       current.membership?.restaurant_id,
     );
-    return json({ ok: true });
+    return json({ ok: true, redirect: current.role === "superadmin" ? "/admin" : "/dashboard" });
   });
 }

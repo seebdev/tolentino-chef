@@ -1,5 +1,6 @@
 import { z } from "zod";
-import { context, audit } from "@/lib/access";
+import { context } from "@/lib/access";
+import { createHash } from "node:crypto";
 import {
   route,
   json,
@@ -12,9 +13,59 @@ import {
 import { parseProductsCsv, exportCsv } from "@/lib/csv";
 import { allRows } from "@/lib/queries";
 type Params = { params: Promise<{ restaurantId: string }> };
+function attemptResult(attempt: {
+  attempt_id: string;
+  status: string;
+  replayed?: boolean;
+  found?: boolean;
+  result: Record<string, number>;
+}) {
+  const value = attempt.result;
+  return {
+    ok: attempt.status === "completed",
+    found: true,
+    attemptId: attempt.attempt_id,
+    status: attempt.status,
+    replayed: attempt.replayed === true,
+    summary: {
+      total: value.total,
+      created: value.inserted,
+      updated: value.updated,
+      skipped: value.skipped,
+      rejected: value.rejected,
+    },
+    message:
+      attempt.status === "completed"
+        ? "Importación completada y guardada en la base de datos."
+        : "La importación no se guardó: el lote completo fue rechazado. Corrige el archivo y crea un nuevo intento.",
+    ...value,
+  };
+}
 export async function GET(request: Request, { params }: Params) {
   return route(async () => {
     const c = await context((await params).restaurantId);
+    const attemptId = new URL(request.url).searchParams.get("attempt");
+    if (attemptId) {
+      z.uuid().parse(attemptId);
+      await rateLimit(`import-status:${c.user.id}`, 60, 60);
+      const result = await c.db.rpc("get_import_attempt", {
+        p_restaurant_id: c.restaurantId,
+        p_attempt_id: attemptId,
+        p_actor_user_id: c.user.id,
+      });
+      dbError(result.error);
+      return json(
+        result.data?.found
+          ? attemptResult(result.data)
+          : {
+              found: false,
+              attemptId,
+              status: "unconfirmed",
+              message:
+                "Todavía no hay confirmación. Esto no demuestra que una operación en curso se haya cancelado.",
+            },
+      );
+    }
     const download = z
       .enum(["template", "catalog"])
       .parse(new URL(request.url).searchParams.get("download") || "template");
@@ -85,8 +136,14 @@ export async function POST(request: Request, { params }: Params) {
         mapping: z.record(z.string(), z.string()).default({}),
         mode: z.enum(["skip", "update"]).default("skip"),
         createCategories: z.boolean().default(false),
+        attemptId: z.uuid().optional(),
       })
-      .parse(await body(request, 6 * 1024 * 1024));
+      .parse(await body(request, 11 * 1024 * 1024));
+    if (input.action === "commit" && !input.attemptId)
+      throw new ApiError(
+        400,
+        "La importación necesita un identificador de intento. Vuelve a validar el archivo.",
+      );
     const categoryResult = await allRows(
       c.db,
       "categories",
@@ -177,29 +234,32 @@ export async function POST(request: Request, { params }: Params) {
       throw new ApiError(
         400,
         "Corrige los errores de la previsualización antes de confirmar. No se guardó ningún producto.",
+        "IMPORT_VALIDATION_REJECTED",
       );
-    const imported = await c.db.rpc("import_products", {
+    const imported = await c.db.rpc("import_products_attempt", {
       p_restaurant_id: c.restaurantId,
+      p_attempt_id: input.attemptId,
+      p_request_hash: createHash("sha256")
+        .update(
+          JSON.stringify({
+            rows: parsed.rows,
+            mode: input.mode,
+            createCategories: input.createCategories,
+          }),
+        )
+        .digest("hex"),
+      p_actor_user_id: c.user.id,
       p_rows: parsed.rows,
       p_mode: input.mode,
       p_create_categories: input.createCategories,
     });
+    if (imported.error?.code === "PT409")
+      throw new ApiError(
+        409,
+        "Este intento ya corresponde a otro archivo o configuración. Consulta su resultado antes de empezar otro.",
+      );
     dbError(imported.error);
-    await audit(c.user.id, "csv_import", c.restaurantId, {
-      ...imported.data,
-      rows: parsed.rows.length,
-    });
-    return json({
-      ok: true,
-      summary: {
-        total: parsed.total,
-        created: imported.data.inserted,
-        updated: imported.data.updated,
-        skipped: imported.data.skipped,
-        rejected: 0,
-      },
-      message: "Importación completada y guardada en la base de datos.",
-      ...imported.data,
-    });
+    // Counts, attempt journal, audit event and catalog commit share the DB transaction.
+    return json(attemptResult(imported.data));
   });
 }

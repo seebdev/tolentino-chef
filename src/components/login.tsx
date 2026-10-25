@@ -34,10 +34,10 @@ export function Login({
   const [configured, setConfigured] = useState<boolean | null>(null);
   useEffect(() => {
     if (initialMode === "password") return;
-    api<Session>("/api/session")
+    api<Session & { requiresPasswordChange?: boolean }>("/api/session")
       .then((s) =>
         window.location.replace(
-          s.role === "superadmin" ? "/admin" : "/dashboard",
+          s.requiresPasswordChange ? "/login?mode=password" : s.role === "superadmin" ? "/admin" : "/dashboard",
         ),
       )
       .catch(() => {});
@@ -60,19 +60,20 @@ export function Login({
     submitting.current = true;
     setBusy(true);
     try {
-      const result = await post<{ role?: string; message?: string }>(
+      const result = await post<{ role?: string; message?: string; redirect?: string; requiresPasswordChange?: boolean }>(
         "/api/auth",
-        { action: mode, ...(mode === "password" ? {} : { email }), password },
+        { action: mode, ...(mode === "password" ? {} : mode === "login" ? { identifier: email } : { email }), password },
       );
       if (mode === "login") {
-        const s = await api<Session>("/api/session");
+        const s = await api<Session & { requiresPasswordChange?: boolean }>("/api/session");
         window.location.assign(
-          s.role === "superadmin" ? "/admin" : "/dashboard",
+          s.requiresPasswordChange ? "/login?mode=password" : s.role === "superadmin" ? "/admin" : "/dashboard",
         );
       } else if (mode === "password") {
         setMessage("Tu contraseña se actualizó correctamente.");
-        setMode("login");
         setPassword("");
+        setConfirm("");
+        window.location.assign(result.redirect || "/dashboard");
       } else
         setMessage(
           result.message ||
@@ -161,15 +162,15 @@ export function Login({
           {message && <Notice message={message} />}
           <form onSubmit={submit} className="form-stack">
             {mode !== "password" && (
-              <Field label="Correo electrónico">
+              <Field label={mode === "login" ? "Correo o usuario de acceso" : "Correo electrónico"}>
                 <input
-                  type="email"
+                  type={mode === "login" ? "text" : "email"}
                   autoComplete="username"
                   required
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="tu@restaurante.com"
-                  aria-label="Correo electrónico"
+                  aria-label={mode === "login" ? "Correo o usuario de acceso" : "Correo electrónico"}
                 />
               </Field>
             )}
@@ -262,7 +263,7 @@ export function Login({
             <p>
               Acceso privado para clientes de Tolentino.
               <br />
-              Las cuentas se crean por invitación.
+              Tolentino entrega el acceso a cada propietario.
             </p>
           </div>
         </div>

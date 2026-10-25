@@ -1,0 +1,47 @@
+{
+  "projectRef": "hgntppemxwcxaxritnfq",
+  "runId": "closure-appearance-real-20261018",
+  "base": "http://localhost:3002",
+  "startedAt": "2026-10-18T06:26:42.335Z",
+  "traffic": "Real browser and application APIs; no interception",
+  "businessScope": "Only task-owned temporary alpha",
+  "checks": [
+    {
+      "name": "real-owner-session-and-task-ownership",
+      "status": "PASS"
+    },
+    {
+      "name": "task-owned-seed-and-seven-languages",
+      "status": "PASS",
+      "products": 3
+    },
+    {
+      "name": "draft-persists-and-remains-private",
+      "status": "PASS"
+    },
+    {
+      "name": "draft-reopened-after-real-reload",
+      "status": "PASS"
+    },
+    {
+      "name": "published-version-visible-to-anonymous-browser",
+      "status": "PASS"
+    }
+  ],
+  "cleanup": {
+    "status": "PASS",
+    "productsDeleted": 3,
+    "categoryDeleted": true,
+    "contentRestored": true,
+    "revisionCountersIncreaseNormally": true,
+    "draftNullsMayBeNormalized": true,
+    "appearanceDefaultsNormalized": true,
+    "containerDeletion": "Parent/database owns final deletion of task-owned alpha and Auth"
+  },
+  "physicalDevices": false,
+  "providerCalls": false,
+  "status": "FAIL",
+  "failure": "page.waitForResponse: Timeout 30000ms exceeded while waiting for event \"response\"",
+  "finishedAt": "2026-10-18T06:28:45.007Z",
+  "passed": 5
+}

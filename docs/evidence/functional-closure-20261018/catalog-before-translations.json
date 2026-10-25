@@ -1,0 +1,94 @@
+{
+  "at": "2026-10-18T06:20:21.745Z",
+  "restaurants": [
+    {
+      "id": "1932e721-78ab-4320-9f84-f186a80fba48",
+      "name": "Pizzería Aurora · DEMO",
+      "slug": "pizzeria-aurora-demo",
+      "is_demo": true,
+      "status": "active",
+      "enabled_languages": [
+        "es",
+        "en"
+      ],
+      "products": 24,
+      "translations": 32
+    },
+    {
+      "id": "e2cda10d-2771-4056-8cf0-13e00f4b1bd8",
+      "name": "Bento Marea · DEMO",
+      "slug": "bento-marea-demo",
+      "is_demo": true,
+      "status": "active",
+      "enabled_languages": [
+        "es",
+        "en"
+      ],
+      "products": 24,
+      "translations": 32
+    },
+    {
+      "id": "eca7481c-fc27-479c-b364-76274b0b4230",
+      "name": "Café Bruma · DEMO",
+      "slug": "cafe-bruma-demo",
+      "is_demo": true,
+      "status": "active",
+      "enabled_languages": [
+        "es",
+        "en"
+      ],
+      "products": 147,
+      "translations": 32
+    }
+  ],
+  "coverage": [
+    {
+      "entity_type": "category",
+      "language": "en",
+      "count": 24,
+      "manual": 24,
+      "same_name_source": 4
+    },
+    {
+      "entity_type": "product",
+      "language": "en",
+      "count": 72,
+      "manual": 72,
+      "same_name_source": 11
+    }
+  ],
+  "examples": [
+    {
+      "language": "en",
+      "source": "Brownie de cacao",
+      "fields": {
+        "name": "Cocoa brownie",
+        "description": "Dark chocolate and toasted walnuts. Demonstration product."
+      }
+    },
+    {
+      "language": "en",
+      "source": "Edamame al sésamo",
+      "fields": {
+        "name": "Sesame edamame",
+        "description": "Steamed edamame pods with salt and sesame. Demonstration product."
+      }
+    },
+    {
+      "language": "en",
+      "source": "Tagliatelle al ragù",
+      "fields": {
+        "name": "Tagliatelle with ragù",
+        "description": "Handmade pasta with slow-cooked ragù. Demonstration product."
+      }
+    },
+    {
+      "language": "en",
+      "source": "Ravioli ricotta",
+      "fields": {
+        "name": "Ricotta ravioli",
+        "description": "Ricotta and spinach with sage butter. Demonstration product."
+      }
+    }
+  ]
+}

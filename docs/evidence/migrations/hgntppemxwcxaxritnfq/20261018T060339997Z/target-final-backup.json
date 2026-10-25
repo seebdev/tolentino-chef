@@ -1,0 +1,55 @@
+{
+  "at": "2026-10-18T06:05:01.693Z",
+  "result": "PASS",
+  "targetProjectRef": "hgntppemxwcxaxritnfq",
+  "operation": "Read-only final target logical database and storage backup",
+  "archive": ".runtime/backups/target-final-hgntppemxwcxaxritnfq-20261018T060339997Z.json.enc",
+  "encryptedArchiveSha256": "e1fce9f1e9073eede78a23fa3f175d9a332695db1121d7388d51ac5e1c3b177d",
+  "encryptedArchiveBytes": 743720,
+  "counts": {
+    "tables": 15,
+    "privateTables": 2,
+    "rows": 617,
+    "authUsers": 4,
+    "objects": 28,
+    "objectBytes": 315166
+  },
+  "postgresDump": {
+    "bytes": 539697,
+    "sha256": "79bfd4ce5a428fb1d3803b9c9e433059fa15f9fb122fa4b9209486f7561fa776",
+    "format": "custom"
+  },
+  "cipher": "AES-256-GCM",
+  "keyProtection": "windows-dpapi-current-user",
+  "acl": {
+    "inheritedAccessDisabled": true,
+    "allowedPrincipals": "current Windows user and SYSTEM",
+    "ignoredByGit": true
+  },
+  "fullArchiveDecoded": true,
+  "encryptedMemoryAndDiskRoundtrip": true,
+  "allObjectBytesVerified": true,
+  "catalogCaptured": true,
+  "migrationVersions": [
+    "20261017021301",
+    "20261017165549"
+  ],
+  "privateRows": {
+    "rate_limits": 47,
+    "restaurant_creation_requests": 3
+  },
+  "beforeAfterStable": true,
+  "readOnlyRequests": 82,
+  "remoteMutations": 0,
+  "plaintextFilesWritten": 0,
+  "clientTlsHostnameAndCaVerified": true,
+  "fullManagedSupabaseRestoreExecuted": false,
+  "physicalBackupOrPitr": false,
+  "limitations": [
+    "pg_dump is a consistent database snapshot; comparison of API/Storage before and after detects stability but is not a distributed transaction.",
+    "Complete archive decode validates compressed entries, not a full managed Supabase restoration.",
+    "Includes current Auth tables in the encrypted dump, not Auth/SMTP/provider/JWT settings or signing keys.",
+    "Storage bytes are included separately; role passwords, publications, subscriptions, other databases and physical WAL/PITR are excluded.",
+    "DPAPI CurrentUser requires this Windows profile/machine; independent portable disaster recovery is not established."
+  ]
+}

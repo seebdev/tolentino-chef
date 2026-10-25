@@ -1,0 +1,11 @@
+{
+  "date": "2026-10-18T06:03:43.115Z",
+  "status": "interrupted",
+  "scope": "controlled API fixtures, no remote business writes",
+  "completedPassed": 6,
+  "failed": 1,
+  "remaining": "not executed",
+  "failure": "iframe navigated to /dashboard during parity case; explicit about:blank source added and isolated rerun started",
+  "cause": "under investigation; dev app was being edited concurrently",
+  "artifacts": "error-context.md and failure screenshots"
+}

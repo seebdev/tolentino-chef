@@ -1,0 +1,431 @@
+{
+  "config": {
+    "argv": [
+      "C:\\Users\\sebas\\OneDrive\\Escritorio\\tolentino-restaurantes-admin\\.runtime\\node-v22.23.3-win-x64\\node.exe",
+      "C:\\Users\\sebas\\OneDrive\\Escritorio\\tolentino-restaurantes-admin\\node_modules\\@playwright\\test\\cli.js",
+      "test",
+      "tests/e2e/menu-closure.spec.ts",
+      "--project=desktop"
+    ],
+    "configFile": "C:\\Users\\sebas\\OneDrive\\Escritorio\\tolentino-restaurantes-admin\\playwright.config.ts",
+    "rootDir": "C:/Users/sebas/OneDrive/Escritorio/tolentino-restaurantes-admin/tests/e2e",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "C:/Users/sebas/OneDrive/Escritorio/tolentino-restaurantes-admin/test-results/e2e",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "desktop",
+        "name": "desktop",
+        "testDir": "C:/Users/sebas/OneDrive/Escritorio/tolentino-restaurantes-admin/tests/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "C:/Users/sebas/OneDrive/Escritorio/tolentino-restaurantes-admin/test-results/e2e",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "mobile",
+        "name": "mobile",
+        "testDir": "C:/Users/sebas/OneDrive/Escritorio/tolentino-restaurantes-admin/tests/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "C:\\Users\\sebas\\OneDrive\\Escritorio\\tolentino-restaurantes-admin\\test-results\\e2e",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "desktop",
+        "testDir": "C:\\Users\\sebas\\OneDrive\\Escritorio\\tolentino-restaurantes-admin\\tests\\e2e",
+        "snapshotDir": "C:\\Users\\sebas\\OneDrive\\Escritorio\\tolentino-restaurantes-admin\\tests\\e2e",
+        "testIgnore": [],
+        "testMatch": "**/*.@(spec|test).?(c|m)[jt]s?(x)",
+        "timeout": 90000,
+        "use": {
+          "baseURL": "http://localhost:3002",
+          "browserName": "chromium",
+          "channel": "chrome",
+          "trace": "retain-on-failure",
+          "screenshot": "only-on-failure",
+          "viewport": {
+            "width": 1440,
+            "height": 1000
+          }
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "desktop"
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "docs/evidence/closure-menu-before.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "default",
+    "updateSourceMethod": "patch",
+    "version": "1.64.1",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "menu-closure.spec.ts",
+      "file": "menu-closure.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "closure: seven local flags and selected language persist per restaurant",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 96915,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveCount\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('.language-flag')\nExpected: \u001b[32m7\u001b[39m\nReceived: \u001b[31m0\u001b[39m\nTimeout:  20000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveCount\" locator('.language-flag') with timeout 20000ms\u001b[22m\n\u001b[2m  - waiting for locator('.language-flag')\u001b[22m\n\u001b[2m    43 × locator resolved to 0 elements\u001b[22m\n\u001b[2m       - unexpected value \"0\"\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveCount\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('.language-flag')\nExpected: \u001b[32m7\u001b[39m\nReceived: \u001b[31m0\u001b[39m\nTimeout:  20000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveCount\" locator('.language-flag') with timeout 20000ms\u001b[22m\n\u001b[2m  - waiting for locator('.language-flag')\u001b[22m\n\u001b[2m    43 × locator resolved to 0 elements\u001b[22m\n\u001b[2m       - unexpected value \"0\"\u001b[22m\n\n    at C:\\Users\\sebas\\OneDrive\\Escritorio\\tolentino-restaurantes-admin\\tests\\e2e\\menu-closure.spec.ts:27:62",
+                    "location": {
+                      "file": "C:\\Users\\sebas\\OneDrive\\Escritorio\\tolentino-restaurantes-admin\\tests\\e2e\\menu-closure.spec.ts",
+                      "column": 62,
+                      "line": 27
+                    },
+                    "snippet": "  25 |  await setup(page);await page.goto(\"/menu/demo-ui-restaurante\");\n  26 |  await expect(page.locator(\".public-product\").first()).toBeVisible();\n> 27 |  await expect(page.locator(\".language-flag\"),{timeout:4000}).toHaveCount(7);\n     |                                                              ^\n  28 |  for(const lang of languages)await expect(page.locator('.language-flag[data-language=\"'+lang.code+'\"]')).toBeVisible();\n  29 |  await page.getByRole(\"button\",{name:\"English\",exact:true}).click();\n  30 |  await page.reload();"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "C:\\Users\\sebas\\OneDrive\\Escritorio\\tolentino-restaurantes-admin\\tests\\e2e\\menu-closure.spec.ts",
+                        "column": 62,
+                        "line": 27
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveCount\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('.language-flag')\nExpected: \u001b[32m7\u001b[39m\nReceived: \u001b[31m0\u001b[39m\nTimeout:  20000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveCount\" locator('.language-flag') with timeout 20000ms\u001b[22m\n\u001b[2m  - waiting for locator('.language-flag')\u001b[22m\n\u001b[2m    43 × locator resolved to 0 elements\u001b[22m\n\u001b[2m       - unexpected value \"0\"\u001b[22m\n\n\n  25 |  await setup(page);await page.goto(\"/menu/demo-ui-restaurante\");\n  26 |  await expect(page.locator(\".public-product\").first()).toBeVisible();\n> 27 |  await expect(page.locator(\".language-flag\"),{timeout:4000}).toHaveCount(7);\n     |                                                              ^\n  28 |  for(const lang of languages)await expect(page.locator('.language-flag[data-language=\"'+lang.code+'\"]')).toBeVisible();\n  29 |  await page.getByRole(\"button\",{name:\"English\",exact:true}).click();\n  30 |  await page.reload();\n    at C:\\Users\\sebas\\OneDrive\\Escritorio\\tolentino-restaurantes-admin\\tests\\e2e\\menu-closure.spec.ts:27:62"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-18T05:33:58.209Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "C:\\Users\\sebas\\OneDrive\\Escritorio\\tolentino-restaurantes-admin\\test-results\\e2e\\menu-closure-closure-seven-1bfa0-uage-persist-per-restaurant-desktop\\test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "C:\\Users\\sebas\\OneDrive\\Escritorio\\tolentino-restaurantes-admin\\test-results\\e2e\\menu-closure-closure-seven-1bfa0-uage-persist-per-restaurant-desktop\\error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "C:\\Users\\sebas\\OneDrive\\Escritorio\\tolentino-restaurantes-admin\\test-results\\e2e\\menu-closure-closure-seven-1bfa0-uage-persist-per-restaurant-desktop\\trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "C:\\Users\\sebas\\OneDrive\\Escritorio\\tolentino-restaurantes-admin\\tests\\e2e\\menu-closure.spec.ts",
+                    "column": 62,
+                    "line": 27
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "e6e105cba9fce2d184bb-86e52f00aa368ad400d1",
+          "file": "menu-closure.spec.ts",
+          "line": 24,
+          "column": 5
+        },
+        {
+          "title": "closure: recommendations survive category selection",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 33862,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('.featured-section')\nExpected: visible\nTimeout: 20000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" locator('.featured-section') with timeout 20000ms\u001b[22m\n\u001b[2m  - waiting for locator('.featured-section')\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('.featured-section')\nExpected: visible\nTimeout: 20000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" locator('.featured-section') with timeout 20000ms\u001b[22m\n\u001b[2m  - waiting for locator('.featured-section')\u001b[22m\n\n    at C:\\Users\\sebas\\OneDrive\\Escritorio\\tolentino-restaurantes-admin\\tests\\e2e\\menu-closure.spec.ts:37:65",
+                    "location": {
+                      "file": "C:\\Users\\sebas\\OneDrive\\Escritorio\\tolentino-restaurantes-admin\\tests\\e2e\\menu-closure.spec.ts",
+                      "column": 65,
+                      "line": 37
+                    },
+                    "snippet": "  35 |  await expect(page.locator(\".featured-section\")).toBeVisible();\n  36 |  await page.getByRole(\"button\",{name:\"Bebidas\",exact:true}).click();\n> 37 |  await expect(page.locator(\".featured-section\"),{timeout:4000}).toBeVisible();\n     |                                                                 ^\n  38 |  await expect(page.locator(\".public-product\")).toHaveCount(2);\n  39 | });\n  40 | test(\"closure: configured mobile two columns and desktop one column\",async({page})=>{"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "C:\\Users\\sebas\\OneDrive\\Escritorio\\tolentino-restaurantes-admin\\tests\\e2e\\menu-closure.spec.ts",
+                        "column": 65,
+                        "line": 37
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('.featured-section')\nExpected: visible\nTimeout: 20000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" locator('.featured-section') with timeout 20000ms\u001b[22m\n\u001b[2m  - waiting for locator('.featured-section')\u001b[22m\n\n\n  35 |  await expect(page.locator(\".featured-section\")).toBeVisible();\n  36 |  await page.getByRole(\"button\",{name:\"Bebidas\",exact:true}).click();\n> 37 |  await expect(page.locator(\".featured-section\"),{timeout:4000}).toBeVisible();\n     |                                                                 ^\n  38 |  await expect(page.locator(\".public-product\")).toHaveCount(2);\n  39 | });\n  40 | test(\"closure: configured mobile two columns and desktop one column\",async({page})=>{\n    at C:\\Users\\sebas\\OneDrive\\Escritorio\\tolentino-restaurantes-admin\\tests\\e2e\\menu-closure.spec.ts:37:65"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-18T05:35:45.049Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "C:\\Users\\sebas\\OneDrive\\Escritorio\\tolentino-restaurantes-admin\\test-results\\e2e\\menu-closure-closure-recom-28f9c--survive-category-selection-desktop\\test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "C:\\Users\\sebas\\OneDrive\\Escritorio\\tolentino-restaurantes-admin\\test-results\\e2e\\menu-closure-closure-recom-28f9c--survive-category-selection-desktop\\error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "C:\\Users\\sebas\\OneDrive\\Escritorio\\tolentino-restaurantes-admin\\test-results\\e2e\\menu-closure-closure-recom-28f9c--survive-category-selection-desktop\\trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "C:\\Users\\sebas\\OneDrive\\Escritorio\\tolentino-restaurantes-admin\\tests\\e2e\\menu-closure.spec.ts",
+                    "column": 65,
+                    "line": 37
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "e6e105cba9fce2d184bb-e21a4e67dfa7b0591657",
+          "file": "menu-closure.spec.ts",
+          "line": 33,
+          "column": 5
+        },
+        {
+          "title": "closure: configured mobile two columns and desktop one column",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 7613,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m2\u001b[39m\nReceived: \u001b[31m1\u001b[39m\n\nCall Log:\n- Timeout 4000ms exceeded while waiting on the predicate",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m2\u001b[39m\nReceived: \u001b[31m1\u001b[39m\n\nCall Log:\n- Timeout 4000ms exceeded while waiting on the predicate\n    at C:\\Users\\sebas\\OneDrive\\Escritorio\\tolentino-restaurantes-admin\\tests\\e2e\\menu-closure.spec.ts:44:41",
+                    "location": {
+                      "file": "C:\\Users\\sebas\\OneDrive\\Escritorio\\tolentino-restaurantes-admin\\tests\\e2e\\menu-closure.spec.ts",
+                      "column": 41,
+                      "line": 44
+                    },
+                    "snippet": "  42 |  await expect(page.locator(\".public-product\").first()).toBeVisible();\n  43 |  const cols=()=>page.locator(\".public-product-grid\").first().evaluate(e=>getComputedStyle(e).gridTemplateColumns.split(\" \").length);\n> 44 |  await expect.poll(cols,{timeout:4000}).toBe(2);\n     |                                         ^\n  45 |  await page.setViewportSize({width:1440,height:1000});await expect.poll(cols).toBe(1);\n  46 | });\n  47 | test(\"closure: complete preview uses a real viewport and same renderer\",async({page})=>{"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "C:\\Users\\sebas\\OneDrive\\Escritorio\\tolentino-restaurantes-admin\\tests\\e2e\\menu-closure.spec.ts",
+                        "column": 41,
+                        "line": 44
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m2\u001b[39m\nReceived: \u001b[31m1\u001b[39m\n\nCall Log:\n- Timeout 4000ms exceeded while waiting on the predicate\n\n  42 |  await expect(page.locator(\".public-product\").first()).toBeVisible();\n  43 |  const cols=()=>page.locator(\".public-product-grid\").first().evaluate(e=>getComputedStyle(e).gridTemplateColumns.split(\" \").length);\n> 44 |  await expect.poll(cols,{timeout:4000}).toBe(2);\n     |                                         ^\n  45 |  await page.setViewportSize({width:1440,height:1000});await expect.poll(cols).toBe(1);\n  46 | });\n  47 | test(\"closure: complete preview uses a real viewport and same renderer\",async({page})=>{\n    at C:\\Users\\sebas\\OneDrive\\Escritorio\\tolentino-restaurantes-admin\\tests\\e2e\\menu-closure.spec.ts:44:41"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-18T05:36:35.799Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "C:\\Users\\sebas\\OneDrive\\Escritorio\\tolentino-restaurantes-admin\\test-results\\e2e\\menu-closure-closure-confi-f4c2e-umns-and-desktop-one-column-desktop\\test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "C:\\Users\\sebas\\OneDrive\\Escritorio\\tolentino-restaurantes-admin\\test-results\\e2e\\menu-closure-closure-confi-f4c2e-umns-and-desktop-one-column-desktop\\error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "C:\\Users\\sebas\\OneDrive\\Escritorio\\tolentino-restaurantes-admin\\test-results\\e2e\\menu-closure-closure-confi-f4c2e-umns-and-desktop-one-column-desktop\\trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "C:\\Users\\sebas\\OneDrive\\Escritorio\\tolentino-restaurantes-admin\\tests\\e2e\\menu-closure.spec.ts",
+                    "column": 41,
+                    "line": 44
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "e6e105cba9fce2d184bb-4c341d07acf48c8c62a2",
+          "file": "menu-closure.spec.ts",
+          "line": 40,
+          "column": 5
+        },
+        {
+          "title": "closure: complete preview uses a real viewport and same renderer",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 31024,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveCount\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('iframe[title=\"Vista previa del menú\"]').contentFrame().locator('.public-product')\nExpected: \u001b[32m6\u001b[39m\nReceived: \u001b[31m0\u001b[39m\nTimeout:  20000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveCount\" locator('iframe[title=\"Vista previa del menú\"]').contentFrame().locator('.public-product') with timeout 20000ms\u001b[22m\n\u001b[2m  - waiting for locator('iframe[title=\"Vista previa del menú\"]').contentFrame().locator('.public-product')\u001b[22m\n\u001b[2m    42 × locator resolved to 0 elements\u001b[22m\n\u001b[2m       - unexpected value \"0\"\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveCount\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('iframe[title=\"Vista previa del menú\"]').contentFrame().locator('.public-product')\nExpected: \u001b[32m6\u001b[39m\nReceived: \u001b[31m0\u001b[39m\nTimeout:  20000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveCount\" locator('iframe[title=\"Vista previa del menú\"]').contentFrame().locator('.public-product') with timeout 20000ms\u001b[22m\n\u001b[2m  - waiting for locator('iframe[title=\"Vista previa del menú\"]').contentFrame().locator('.public-product')\u001b[22m\n\u001b[2m    42 × locator resolved to 0 elements\u001b[22m\n\u001b[2m       - unexpected value \"0\"\u001b[22m\n\n    at C:\\Users\\sebas\\OneDrive\\Escritorio\\tolentino-restaurantes-admin\\tests\\e2e\\menu-closure.spec.ts:50:64",
+                    "location": {
+                      "file": "C:\\Users\\sebas\\OneDrive\\Escritorio\\tolentino-restaurantes-admin\\tests\\e2e\\menu-closure.spec.ts",
+                      "column": 64,
+                      "line": 50
+                    },
+                    "snippet": "  48 |  await setup(page);await page.goto(\"/dashboard\");await navigateAudit(page,\"Apariencia\");\n  49 |  const frame=page.frameLocator('iframe[title=\"Vista previa del menú\"]');\n> 50 |  await expect(frame.locator(\".public-product\"),{timeout:4000}).toHaveCount(6);\n     |                                                                ^\n  51 |  await expect(frame.locator(\".public-footer\")).toContainText(\"Tolentino Chef\");\n  52 |  await expect(frame.locator(\".featured-section\")).toBeVisible();\n  53 | });"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "C:\\Users\\sebas\\OneDrive\\Escritorio\\tolentino-restaurantes-admin\\tests\\e2e\\menu-closure.spec.ts",
+                        "column": 64,
+                        "line": 50
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveCount\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('iframe[title=\"Vista previa del menú\"]').contentFrame().locator('.public-product')\nExpected: \u001b[32m6\u001b[39m\nReceived: \u001b[31m0\u001b[39m\nTimeout:  20000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveCount\" locator('iframe[title=\"Vista previa del menú\"]').contentFrame().locator('.public-product') with timeout 20000ms\u001b[22m\n\u001b[2m  - waiting for locator('iframe[title=\"Vista previa del menú\"]').contentFrame().locator('.public-product')\u001b[22m\n\u001b[2m    42 × locator resolved to 0 elements\u001b[22m\n\u001b[2m       - unexpected value \"0\"\u001b[22m\n\n\n  48 |  await setup(page);await page.goto(\"/dashboard\");await navigateAudit(page,\"Apariencia\");\n  49 |  const frame=page.frameLocator('iframe[title=\"Vista previa del menú\"]');\n> 50 |  await expect(frame.locator(\".public-product\"),{timeout:4000}).toHaveCount(6);\n     |                                                                ^\n  51 |  await expect(frame.locator(\".public-footer\")).toContainText(\"Tolentino Chef\");\n  52 |  await expect(frame.locator(\".featured-section\")).toBeVisible();\n  53 | });\n    at C:\\Users\\sebas\\OneDrive\\Escritorio\\tolentino-restaurantes-admin\\tests\\e2e\\menu-closure.spec.ts:50:64"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-18T05:36:46.344Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "C:\\Users\\sebas\\OneDrive\\Escritorio\\tolentino-restaurantes-admin\\test-results\\e2e\\menu-closure-closure-compl-3692b--viewport-and-same-renderer-desktop\\test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "C:\\Users\\sebas\\OneDrive\\Escritorio\\tolentino-restaurantes-admin\\test-results\\e2e\\menu-closure-closure-compl-3692b--viewport-and-same-renderer-desktop\\error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "C:\\Users\\sebas\\OneDrive\\Escritorio\\tolentino-restaurantes-admin\\test-results\\e2e\\menu-closure-closure-compl-3692b--viewport-and-same-renderer-desktop\\trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "C:\\Users\\sebas\\OneDrive\\Escritorio\\tolentino-restaurantes-admin\\tests\\e2e\\menu-closure.spec.ts",
+                    "column": 64,
+                    "line": 50
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "e6e105cba9fce2d184bb-2d14529012a072dfdcd6",
+          "file": "menu-closure.spec.ts",
+          "line": 47,
+          "column": 5
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-18T05:33:55.592Z",
+    "duration": 202918.184,
+    "expected": 0,
+    "skipped": 0,
+    "unexpected": 4,
+    "flaky": 0
+  }
+}

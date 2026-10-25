@@ -3,18 +3,13 @@ import { useState, useEffect, useRef, type FormEvent } from "react";
 import {
   Eye,
   ExternalLink,
-  Check as CheckIcon,
-  Download,
-  QrCode,
   Globe,
   Trash2,
   RefreshCw,
-  FileSpreadsheet,
   ArrowRight,
   KeyRound,
   Shield,
   ImagePlus,
-  Copy,
 } from "lucide-react";
 import {
   Button,
@@ -27,35 +22,71 @@ import {
   Badge,
   Modal,
   Pagination,
+  Loading,
 } from "./ui";
 import {
-  DEFAULT_APPEARANCE,
   mediaUrl,
-  money,
   type WorkspaceData,
   type Appearance,
   type Hours,
+  type PublicMenuData,
 } from "@/lib/types";
+import { menuAppearance, contrastWarnings } from "@/lib/menu-theme";
+import { MenuPreview } from "./menu-preview";
+import {
+  ImportProgress,
+  uploadWithProgress,
+  type TransferProgress,
+} from "./import-progress";
 import { languages } from "@/lib/i18n";
 import type { Mutate } from "./workspace";
-import { DownloadLink } from "./download-link";
+import { TranslationStatus } from "./translation-status";
 type Props = { data: WorkspaceData; mutate: Mutate; busy: boolean };
 export function AppearancePanel({ data, mutate, busy }: Props) {
-  const [appearance, setAppearance] = useState<Appearance>({
-    ...DEFAULT_APPEARANCE,
-    ...data.settings.appearance,
-    ...data.settings.draft_appearance,
-  });
+  const [appearance, setAppearance] = useState<Appearance>(() =>
+    menuAppearance({
+      ...data.settings.appearance,
+      ...data.settings.draft_appearance,
+    }),
+  );
+  const [name, setName] = useState(
+    data.settings.draft_name ?? data.restaurant.name,
+  );
+  const [description, setDescription] = useState(
+    data.settings.draft_description ?? data.restaurant.description ?? "",
+  );
+  const [revision, setRevision] = useState(
+    data.settings.appearance_revision ?? 0,
+  );
   const [uploading, setUploading] = useState("");
-  const operationInFlight = useRef(false);
+  const [uploadProgress, setUploadProgress] = useState<TransferProgress>({
+    loaded: 0,
+  });
+  const [uploadStored, setUploadStored] = useState(false);
   const [saving, setSaving] = useState(false);
   const [error, setError] = useState("");
-  const [name, setName] = useState(data.restaurant.name);
-  const [description, setDescription] = useState(
-    data.restaurant.description || "",
-  );
-  const update = (key: keyof Appearance, value: string) =>
+  const [saved, setSaved] = useState("");
+  const [previewData, setPreviewData] = useState<PublicMenuData | null>(null);
+  const [previewError, setPreviewError] = useState("");
+  const [width, setWidth] = useState(390);
+  const operationInFlight = useRef(false);
+  useEffect(() => {
+    const controller = new AbortController();
+    api<PublicMenuData>("/api/workspace/" + data.restaurant.id + "/preview", {
+      signal: controller.signal,
+    })
+      .then((result) => {
+        if (!controller.signal.aborted) setPreviewData(result);
+      })
+      .catch((e) => {
+        if (!controller.signal.aborted) setPreviewError((e as Error).message);
+      });
+    return () => controller.abort();
+  }, [data.restaurant.id]);
+  function update<K extends keyof Appearance>(key: K, value: Appearance[K]) {
     setAppearance((a) => ({ ...a, [key]: value }));
+    setSaved("");
+  }
   async function upload(
     key: "logo_path" | "cover_path" | "favicon_path",
     file: File,
@@ -67,13 +98,19 @@ export function AppearancePanel({ data, mutate, busy }: Props) {
     }
     operationInFlight.current = true;
     setUploading(key);
+    setUploadProgress({ loaded: 0 });
+    setUploadStored(false);
     setError("");
     try {
       const body = new FormData();
       body.append("file", file);
-      const result = await api<{ path: string }>(
+      const result = await uploadWithProgress<{ path: string }>(
         "/api/workspace/" + data.restaurant.id + "/media",
-        { method: "POST", body },
+        body,
+        {
+          onProgress: setUploadProgress,
+          onUploaded: () => setUploadStored(true),
+        },
       );
       update(key, result.path);
     } catch (e) {
@@ -92,130 +129,331 @@ export function AppearancePanel({ data, mutate, busy }: Props) {
       "publish";
     operationInFlight.current = true;
     setSaving(true);
+    setError("");
+    setSaved("");
     try {
-      if (await mutate("save_appearance", { appearance, name, description })) {
-        if (publishing) await mutate("publish_appearance", {});
-      }
+      const ok = await mutate(
+        publishing ? "publish_appearance" : "save_appearance",
+        { appearance, name, description, expectedRevision: revision },
+      );
+      if (ok) {
+        setRevision((v) => v + 1);
+        setSaved(
+          publishing
+            ? "Publicación confirmada. La nueva versión ya está disponible."
+            : "Borrador guardado. El menú público conserva su versión publicada.",
+        );
+      } else
+        setError(
+          "No se confirmó el guardado. Conservamos tus cambios aquí. Si otro editor guardó antes, recarga el borrador y revisa sus cambios.",
+        );
     } finally {
       operationInFlight.current = false;
       setSaving(false);
     }
   }
+  async function reload() {
+    if (
+      operationInFlight.current ||
+      busy ||
+      !window.confirm(
+        "¿Descartar los cambios locales y cargar el último borrador guardado?",
+      )
+    )
+      return;
+    operationInFlight.current = true;
+    setSaving(true);
+    setError("");
+    setSaved("");
+    try {
+      const latest = await api<WorkspaceData>(
+        "/api/workspace/" + data.restaurant.id,
+      );
+      setAppearance(
+        menuAppearance({
+          ...latest.settings.appearance,
+          ...latest.settings.draft_appearance,
+        }),
+      );
+      setName(latest.settings.draft_name ?? latest.restaurant.name);
+      setDescription(
+        latest.settings.draft_description ??
+          latest.restaurant.description ??
+          "",
+      );
+      setRevision(latest.settings.appearance_revision ?? 0);
+      setPreviewData(
+        await api<PublicMenuData>(
+          "/api/workspace/" + data.restaurant.id + "/preview",
+        ),
+      );
+      setPreviewError("");
+    } catch (e) {
+      setError((e as Error).message);
+    } finally {
+      operationInFlight.current = false;
+      setSaving(false);
+    }
+  }
+  const current = menuAppearance(appearance),
+    warnings = contrastWarnings(appearance);
+  const colors = [
+    {
+      key: "primary",
+      label: "Color principal",
+      help: "Títulos, precios, enlaces y categoría seleccionada.",
+    },
+    {
+      key: "secondary",
+      label: "Color secundario",
+      help: "Fondo de promociones y pie del menú.",
+    },
+    {
+      key: "background",
+      label: "Fondo del menú",
+      help: "Fondo de página y navegación por categorías.",
+    },
+    {
+      key: "card",
+      label: "Superficie de las tarjetas",
+      help: "Tarjetas, búsqueda y ventanas de detalle.",
+    },
+    {
+      key: "text",
+      label: "Texto principal",
+      help: "Nombres de productos y contenido de detalle.",
+    },
+    {
+      key: "muted",
+      label: "Texto secundario",
+      help: "Descripciones, etiquetas y textos auxiliares.",
+    },
+    {
+      key: "cover_overlay",
+      label: "Superposición de portada",
+      help: "Velo en degradado sobre la fotografía; el texto de portada es blanco.",
+    },
+  ] as const;
+  const preview = previewData
+    ? {
+        ...previewData,
+        restaurant: { ...previewData.restaurant, name, description },
+        settings: { ...previewData.settings, appearance },
+      }
+    : null;
   return (
-    <div className="settings-two-column">
+    <div className="appearance-editor">
       <form className="panel form-panel" onSubmit={save}>
+        {uploading && (
+          <ImportProgress
+            stage={uploadStored ? "validating" : "uploading"}
+            label={
+              uploadStored ? "Procesando y guardando imagen" : "Subiendo imagen"
+            }
+            loaded={uploadProgress.loaded}
+            total={uploadProgress.total}
+          />
+        )}
         <div className="section-heading">
           <h2>Identidad de tu restaurante</h2>
           <p>
-            Colores, tipografía e imágenes se guardan como borrador. El nombre y
-            la descripción se actualizan al guardar.
+            Nombre, descripción, colores, distribución e imágenes son un
+            borrador privado hasta publicar. Los productos, categorías,
+            promociones e idiomas se guardan desde sus propias secciones y
+            pueden publicarse de inmediato.
           </p>
         </div>
         {error && <Notice message={error} error />}
-        <div className="form-grid">
-          <Field label="Nombre">
-            <input
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-              required
-              maxLength={100}
-              aria-label="Nombre del restaurante"
+        {saved && <Notice message={saved} />}
+        <fieldset
+          disabled={busy || saving || !!uploading}
+          style={{ border: 0, padding: 0, margin: 0, minWidth: 0 }}
+        >
+          <div className="form-grid">
+            <Field label="Nombre">
+              <input
+                aria-label="Nombre del restaurante"
+                value={name}
+                onChange={(e) => {
+                  setName(e.target.value);
+                  setSaved("");
+                }}
+                required
+                maxLength={100}
+              />
+            </Field>
+            <Field label="Tipografía">
+              <select
+                aria-label="Tipografía"
+                value={appearance.font}
+                onChange={(e) => update("font", e.target.value)}
+              >
+                <option value="sans">Moderna · Sans serif</option>
+                <option value="serif">Clásica · Serif</option>
+                <option value="rounded">Cercana · Rounded</option>
+              </select>
+            </Field>
+          </div>
+          <Field label="Descripción">
+            <textarea
+              aria-label="Descripción del restaurante"
+              value={description}
+              onChange={(e) => {
+                setDescription(e.target.value);
+                setSaved("");
+              }}
+              rows={3}
             />
           </Field>
-          <Field label="Tipografía">
-            <select
-              value={appearance.font}
-              onChange={(e) => update("font", e.target.value)}
-              aria-label="Tipografía"
-            >
-              <option value="sans">Moderna · Sans serif</option>
-              <option value="serif">Clásica · Serif</option>
-              <option value="rounded">Cercana · Rounded</option>
-            </select>
-          </Field>
-        </div>
-        <Field label="Descripción">
-          <textarea
-            value={description}
-            onChange={(e) => setDescription(e.target.value)}
-            rows={3}
-            aria-label="Descripción del restaurante"
-          />
-        </Field>
-        <div className="form-grid">
-          <Field label="Color principal">
-            <div className="color-field">
-              <input
-                type="color"
-                value={appearance.primary}
-                onChange={(e) => update("primary", e.target.value)}
-                aria-label="Color principal"
-              />
-              <span>{appearance.primary.toUpperCase()}</span>
-            </div>
-          </Field>
-          <Field label="Color secundario">
-            <div className="color-field">
-              <input
-                type="color"
-                value={appearance.secondary}
-                onChange={(e) => update("secondary", e.target.value)}
-                aria-label="Color secundario"
-              />
-              <span>{appearance.secondary.toUpperCase()}</span>
-            </div>
-          </Field>
-        </div>
-        <div className="section-divider">IMÁGENES DE MARCA</div>
-        <div className="brand-uploads">
-          {(
-            [
-              { key: "logo_path", label: "Logo" },
-              { key: "cover_path", label: "Portada" },
-              { key: "favicon_path", label: "Favicon" },
-            ] as const
-          ).map((item) => (
-            <div className="brand-upload" key={item.key}>
-              <span>
-                {appearance[item.key] ? (
-                  <img
-                    src={mediaUrl(data.restaurant.id, appearance[item.key])}
-                    alt={item.label}
+          <div className="section-divider">COLORES DEL MENÚ</div>
+          <div className="appearance-color-grid">
+            {colors.map((c) => (
+              <Field key={c.key} label={c.label} hint={c.help}>
+                <div className="color-field">
+                  <input
+                    type="color"
+                    value={current[c.key]}
+                    aria-label={c.label}
+                    onChange={(e) => update(c.key, e.target.value)}
                   />
-                ) : (
-                  <ImagePlus size={24} />
-                )}
-              </span>
-              <strong>{item.label}</strong>
-              <label className="text-button">
-                {uploading === item.key ? "Subiendo…" : "Subir imagen"}
-                <input
-                  type="file"
-                  accept="image/jpeg,image/png,image/webp"
-                  disabled={!!uploading || busy || saving}
-                  onChange={(e) => {
-                    const file = e.target.files?.[0];
-                    e.target.value = "";
-                    if (file) void upload(item.key, file);
-                  }}
-                />
-              </label>
-              {appearance[item.key] && (
-                <button
-                  className="text-button danger-text"
-                  type="button"
-                  onClick={() => update(item.key, "")}
-                >
-                  Quitar
-                </button>
-              )}
+                  <span>{current[c.key].toUpperCase()}</span>
+                </div>
+              </Field>
+            ))}
+            <Field
+              label="Intensidad de la superposición"
+              hint="Aumenta la intensidad para que el texto blanco destaque sobre la portada."
+            >
+              <input
+                aria-label="Intensidad de la superposición"
+                type="range"
+                min="0"
+                max="1"
+                step="0.05"
+                value={current.cover_overlay_opacity}
+                onChange={(e) =>
+                  update("cover_overlay_opacity", Number(e.target.value))
+                }
+              />
+              <output>
+                {Math.round(current.cover_overlay_opacity * 100)}%
+              </output>
+            </Field>
+          </div>
+          {warnings.length > 0 && (
+            <div className="notice" role="status">
+              <strong>Revisa el contraste de estos colores</strong>
+              <ul className="appearance-contrast-list">
+                {warnings.map((w) => (
+                  <li key={w.label}>
+                    {w.label}: {w.ratio.toFixed(2)}:1; recomendado 4.5:1 para
+                    texto normal.
+                  </li>
+                ))}
+              </ul>
+              <p>
+                Los colores elegidos se conservan. Comprueba también el texto
+                blanco sobre tu fotografía.
+              </p>
             </div>
-          ))}
-        </div>
-        <small className="helper-text">
-          JPG, PNG y WebP · hasta 5 MB por archivo.
-        </small>
+          )}
+          <div className="section-divider">PRODUCTOS POR FILA</div>
+          <div className="form-grid">
+            <Field
+              label="Productos por fila en móvil"
+              hint="Pantallas menores de 700 px."
+            >
+              <select
+                aria-label="Productos por fila en móvil"
+                value={current.columns_mobile}
+                onChange={(e) =>
+                  update("columns_mobile", Number(e.target.value) as 1 | 2)
+                }
+              >
+                <option value={1}>1 tarjeta</option>
+                <option value={2}>2 tarjetas</option>
+              </select>
+            </Field>
+            <Field
+              label="Productos por fila en escritorio"
+              hint="Desde 700 px; la tableta utiliza esta opción."
+            >
+              <select
+                aria-label="Productos por fila en escritorio"
+                value={current.columns_desktop}
+                onChange={(e) =>
+                  update("columns_desktop", Number(e.target.value) as 1 | 2)
+                }
+              >
+                <option value={1}>1 tarjeta</option>
+                <option value={2}>2 tarjetas</option>
+              </select>
+            </Field>
+          </div>
+          <p className="helper-text">
+            El listado conserva todos los productos. Recomendados tiene su
+            propia disposición y permanece visible al buscar o filtrar.
+          </p>
+          <div className="section-divider">IMÁGENES DE MARCA</div>
+          <div className="brand-uploads">
+            {(
+              [
+                { key: "logo_path", label: "Logo" },
+                { key: "cover_path", label: "Portada" },
+                { key: "favicon_path", label: "Favicon" },
+              ] as const
+            ).map((item) => (
+              <div className="brand-upload" key={item.key}>
+                <span>
+                  {appearance[item.key] ? (
+                    <img
+                      src={mediaUrl(data.restaurant.id, appearance[item.key])}
+                      alt={item.label}
+                    />
+                  ) : (
+                    <ImagePlus size={24} />
+                  )}
+                </span>
+                <strong>{item.label}</strong>
+                <label className="text-button">
+                  {uploading === item.key ? "Subiendo imagen…" : "Subir imagen"}
+                  <input
+                    type="file"
+                    accept="image/jpeg,image/png,image/webp"
+                    aria-label={"Subir " + item.label.toLowerCase()}
+                    onChange={(e) => {
+                      const file = e.target.files?.[0];
+                      e.target.value = "";
+                      if (file) void upload(item.key, file);
+                    }}
+                  />
+                </label>
+                {appearance[item.key] && (
+                  <button
+                    type="button"
+                    className="text-button danger-text"
+                    onClick={() => update(item.key, "")}
+                  >
+                    Quitar {item.label.toLowerCase()}
+                  </button>
+                )}
+              </div>
+            ))}
+          </div>
+          <small className="helper-text">
+            JPG, PNG y WebP · hasta 5 MB. Subir un archivo no lo publica;
+            publica el borrador para aplicarlo.
+          </small>
+        </fieldset>
         <div className="form-footer">
+          <Button
+            type="button"
+            variant="secondary"
+            onClick={reload}
+            disabled={busy || saving || !!uploading}
+          >
+            Recargar borrador
+          </Button>
           <Button
             type="submit"
             variant="secondary"
@@ -232,91 +470,39 @@ export function AppearancePanel({ data, mutate, busy }: Props) {
           </Button>
         </div>
       </form>
-      <aside>
-        <div className="preview-label">
-          <Eye size={16} />
-          VISTA PREVIA DEL BORRADOR
-        </div>
-        <div
-          className={"phone-preview font-" + appearance.font}
-          style={
-            {
-              "--menu-primary": appearance.primary,
-              "--menu-secondary": appearance.secondary,
-            } as React.CSSProperties
-          }
-        >
-          <div className="phone-top">
-            <span /> <i />
-          </div>
-          <div
-            className="phone-cover"
-            style={{ backgroundColor: appearance.primary }}
-          >
-            {appearance.cover_path && (
-              <img
-                src={mediaUrl(data.restaurant.id, appearance.cover_path)}
-                alt="Portada"
-              />
-            )}
-          </div>
-          <div className="phone-identity">
-            {appearance.logo_path ? (
-              <img
-                src={mediaUrl(data.restaurant.id, appearance.logo_path)}
-                alt="Logo"
-              />
-            ) : (
-              <span style={{ background: appearance.primary }}>
-                {name.slice(0, 1)}
-              </span>
-            )}
-            <h3>{name}</h3>
-            <p>
-              {description ||
-                "La descripción de tu restaurante aparecerá aquí."}
+      <section className="panel appearance-preview-panel">
+        <div className="appearance-preview-toolbar">
+          <div>
+            <div className="preview-label">
+              <Eye size={16} />
+              VISTA PREVIA COMPLETA DEL BORRADOR
+            </div>
+            <p className="helper-text">
+              Mismo menú y estilos que la publicación. El ancho es real, sin
+              reducir la página con una escala.
             </p>
           </div>
-          <div className="phone-categories">
-            <span style={{ background: appearance.primary, color: "#fff" }}>
-              Todo el menú
-            </span>
-            {data.categories.slice(0, 2).map((c) => (
-              <span key={c.id}>{c.name}</span>
-            ))}
-          </div>
-          <div className="phone-products">
-            {data.products.length ? (
-              data.products.slice(0, 3).map((p) => (
-                <div className="phone-product" key={p.id}>
-                  <div>
-                    <strong>{p.name}</strong>
-                    <small>{p.description}</small>
-                    <b style={{ color: appearance.primary }}>
-                      {money(p.price, data.restaurant.currency)}
-                    </b>
-                  </div>
-                  {p.image_path && (
-                    <img
-                      src={mediaUrl(data.restaurant.id, p.image_path)}
-                      alt=""
-                    />
-                  )}
-                </div>
-              ))
-            ) : (
-              <p className="helper-text">
-                Tus productos aparecerán aquí cuando los añadas.
-              </p>
-            )}
-          </div>
-          <div className="phone-footer">MENÚ DIGITAL · TOLENTINO</div>
+          <Field label="Ancho de vista previa">
+            <select
+              value={width}
+              aria-label="Ancho de vista previa"
+              onChange={(e) => setWidth(Number(e.target.value))}
+            >
+              <option value={320}>Móvil · 320 px</option>
+              <option value={390}>Móvil · 390 px</option>
+              <option value={768}>Tableta · 768 px</option>
+              <option value={1440}>Escritorio · 1440 px</option>
+            </select>
+          </Field>
         </div>
-        <p className="preview-help">
-          La vista previa muestra tu borrador visual. Publica para aplicar
-          colores, tipografía e imágenes.
-        </p>
-      </aside>
+        {previewError ? (
+          <Notice message={previewError} error />
+        ) : preview ? (
+          <MenuPreview data={preview} width={width} />
+        ) : (
+          <Loading text="Cargando el menú completo para la vista previa…" />
+        )}
+      </section>
     </div>
   );
 }
@@ -410,10 +596,15 @@ export function LanguagesPanel({ data, mutate, busy }: Props) {
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [catalog, setCatalog] = useState(data);
+  const [ingredients, setIngredients] = useState("");
+  const [tagNames, setTagNames] = useState<string[]>([]);
+  const [extraNames, setExtraNames] = useState<string[]>([]);
+  const [variantNames, setVariantNames] = useState<string[]>([]);
   const [search, setSearch] = useState("");
   const [catalogPage, setCatalogPage] = useState(1);
   const [catalogError, setCatalogError] = useState("");
   useEffect(() => {
+    const controller = new AbortController();
     const timer = setTimeout(() => {
       api<WorkspaceData>(
         "/api/workspace/" +
@@ -422,13 +613,42 @@ export function LanguagesPanel({ data, mutate, busy }: Props) {
           catalogPage +
           "&q=" +
           encodeURIComponent(search),
+        { signal: controller.signal },
       )
-        .then(setCatalog)
-        .catch((e) => setCatalogError((e as Error).message));
+        .then((result) => {
+          if (!controller.signal.aborted) {
+            setCatalog(result);
+            setCatalogError("");
+          }
+        })
+        .catch((e) => {
+          if (!controller.signal.aborted) setCatalogError((e as Error).message);
+        });
     }, 250);
-    return () => clearTimeout(timer);
+    return () => {
+      clearTimeout(timer);
+      controller.abort();
+    };
   }, [data.restaurant.id, catalogPage, search]);
-  const entities = [
+  const entities: {
+    key: string;
+    name: string;
+    description: string;
+    ingredients?: string;
+    tags?: string[];
+    extras?: { name: string }[];
+    variants?: { name: string }[];
+  }[] = [
+    {
+      key: "restaurant:" + data.restaurant.id,
+      name: data.restaurant.name,
+      description: data.restaurant.description || "",
+    },
+    ...data.promotions.map((p) => ({
+      key: "promotion:" + p.id,
+      name: p.title,
+      description: p.description,
+    })),
     ...data.categories.map((c) => ({
       key: "category:" + c.id,
       name: c.name,
@@ -438,6 +658,10 @@ export function LanguagesPanel({ data, mutate, busy }: Props) {
       key: "product:" + p.id,
       name: p.name,
       description: p.description,
+      ingredients: p.ingredients,
+      tags: p.tags,
+      extras: p.extras,
+      variants: p.variants,
     })),
   ];
   function select(key: string, lang = language) {
@@ -447,18 +671,36 @@ export function LanguagesPanel({ data, mutate, busy }: Props) {
       (x) =>
         x.entity_type === type && x.entity_id === id && x.language === lang,
     );
-    setName(t?.fields.name || "");
+    setName(t?.fields.title || t?.fields.name || "");
     setDescription(t?.fields.description || "");
+    const source = entities.find((x) => x.key === key);
+    setIngredients(t?.fields.ingredients || "");
+    setTagNames((source?.tags || []).map((_, i) => t?.fields.tags?.[i] || ""));
+    setExtraNames(
+      (source?.extras || []).map((_, i) => t?.fields.extras?.[i]?.name || ""),
+    );
+    setVariantNames(
+      (source?.variants || []).map(
+        (_, i) => t?.fields.variants?.[i]?.name || "",
+      ),
+    );
   }
   const selected = entities.find((e) => e.key === entity);
   return (
     <div className="settings-two-column language-layout">
+      <div className="translation-status-row">
+        <TranslationStatus restaurantId={data.restaurant.id} />
+      </div>
       <section className="panel form-panel">
         <div className="section-heading">
           <h2>Idiomas de tu menú</h2>
           <p>
-            La interfaz está disponible en siete idiomas. El contenido lo
-            traduces tú.
+            La interfaz está disponible en siete idiomas. Revisa las
+            traducciones del contenido y completa o corrige los campos
+            manualmente. Los campos vacíos no borran traducciones guardadas.
+            Para traducir etiquetas, extras o presentaciones, completa todos
+            los nombres de esa lista; si la dejas vacía, queda pendiente de
+            traducción automática.
           </p>
         </div>
         <Field label="Idioma principal">
@@ -486,19 +728,21 @@ export function LanguagesPanel({ data, mutate, busy }: Props) {
         </Field>
         <div className="language-checks">
           {languages.map((l) => (
-            <Check
-              key={l.code}
-              label={l.label + (l.code === main ? " · principal" : "")}
-              checked={enabled.includes(l.code)}
-              disabled={l.code === main}
-              onChange={(e) =>
-                setEnabled((v) =>
-                  e.target.checked
-                    ? [...v, l.code]
-                    : v.filter((x) => x !== l.code),
-                )
-              }
-            />
+            <div className="language-option-with-flag" key={l.code}>
+              <img src={l.flag} alt="" width={25} height={19} />
+              <Check
+                label={l.label + (l.code === main ? " · principal" : "")}
+                checked={enabled.includes(l.code)}
+                disabled={l.code === main}
+                onChange={(e) =>
+                  setEnabled((v) =>
+                    e.target.checked
+                      ? [...v, l.code]
+                      : v.filter((x) => x !== l.code),
+                  )
+                }
+              />
+            </div>
           ))}
         </div>
         <div className="form-footer">
@@ -530,7 +774,21 @@ export function LanguagesPanel({ data, mutate, busy }: Props) {
               entity_type: type,
               entity_id: id,
               language,
-              fields: { name, description },
+              fields:
+                type === "restaurant"
+                  ? { description }
+                  : type === "promotion"
+                    ? { title: name, description }
+                    : type === "category"
+                      ? { name }
+                      : {
+                          name,
+                          description,
+                          ingredients,
+                          tags: tagNames,
+                          extras: extraNames.map((name) => ({ name })),
+                          variants: variantNames.map((name) => ({ name })),
+                        },
             });
           }}
         >
@@ -574,8 +832,14 @@ export function LanguagesPanel({ data, mutate, busy }: Props) {
                 <option value="">Seleccionar contenido</option>
                 {entities.map((e) => (
                   <option key={e.key} value={e.key}>
-                    {e.key.startsWith("category") ? "Categoría" : "Producto"} ·{" "}
-                    {e.name}
+                    {e.key.startsWith("category")
+                      ? "Categoría"
+                      : e.key.startsWith("promotion")
+                        ? "Promoción"
+                        : e.key.startsWith("restaurant")
+                          ? "Restaurante"
+                          : "Producto"}{" "}
+                    · {e.name}
                   </option>
                 ))}
               </select>
@@ -587,15 +851,17 @@ export function LanguagesPanel({ data, mutate, busy }: Props) {
                 <p>{selected.description}</p>
               </div>
             )}
-            <Field label="Nombre traducido">
-              <input
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-                maxLength={200}
-                aria-label="Nombre traducido"
-              />
-            </Field>
-            {entity.startsWith("product:") && (
+            {!entity.startsWith("restaurant:") && (
+              <Field label="Nombre traducido">
+                <input
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  maxLength={200}
+                  aria-label="Nombre traducido"
+                />
+              </Field>
+            )}
+            {entity && !entity.startsWith("category:") && (
               <Field label="Descripción traducida">
                 <textarea
                   rows={4}
@@ -604,6 +870,64 @@ export function LanguagesPanel({ data, mutate, busy }: Props) {
                   aria-label="Descripción traducida"
                 />
               </Field>
+            )}
+            {entity.startsWith("product:") && (
+              <>
+                <Field label="Ingredientes traducidos">
+                  <textarea
+                    aria-label="Ingredientes traducidos"
+                    value={ingredients}
+                    onChange={(e) => setIngredients(e.target.value)}
+                    placeholder={selected?.ingredients || ""}
+                  />
+                </Field>
+                {(
+                  [
+                    {
+                      label: "Etiqueta",
+                      values: tagNames,
+                      set: setTagNames,
+                      source: selected?.tags || [],
+                    },
+                    {
+                      label: "Extra",
+                      values: extraNames,
+                      set: setExtraNames,
+                      source: selected?.extras?.map((x) => x.name) || [],
+                    },
+                    {
+                      label: "Presentación existente",
+                      values: variantNames,
+                      set: setVariantNames,
+                      source: selected?.variants?.map((x) => x.name) || [],
+                    },
+                  ] as const
+                ).map((group) =>
+                  group.values.map((value, index) => (
+                    <Field
+                      key={group.label + index}
+                      label={group.label + " · " + group.source[index]}
+                    >
+                      <input
+                        aria-label={group.label + " traducido " + (index + 1)}
+                        value={value}
+                        onChange={(e) =>
+                          group.set((values) =>
+                            values.map((text, i) =>
+                              i === index ? e.target.value : text,
+                            ),
+                          )
+                        }
+                      />
+                    </Field>
+                  )),
+                )}
+                <p className="helper-text">
+                  Sólo se traducen los nombres; se conservan orden, cantidades y
+                  precios originales. Los campos vacíos muestran el texto
+                  fuente.
+                </p>
+              </>
             )}
             <div className="form-footer">
               <Button type="submit" disabled={!entity} busy={busy}>
@@ -618,183 +942,6 @@ export function LanguagesPanel({ data, mutate, busy }: Props) {
           total={catalog.total}
           onChange={setCatalogPage}
         />
-      </section>
-    </div>
-  );
-}
-export function QrPanel({
-  data,
-  mutate,
-  busy,
-  support,
-}: Props & { support: boolean }) {
-  const [config, setConfig] = useState(
-    data.qr ?? {
-      foreground: "#163c2c",
-      background: "#ffffff",
-      frame: "simple",
-      label: "Descubre nuestro menú",
-      include_logo: false,
-    },
-  );
-  const [version, setVersion] = useState(0);
-  const [copied, setCopied] = useState(false);
-  const [error, setError] = useState("");
-  const [previewError, setPreviewError] = useState(false);
-  const url = "/api/workspace/" + data.restaurant.id + "/qr";
-  const stable = "/q/" + data.restaurant.public_token;
-  async function save() {
-    if (await mutate("save_qr", config)) {
-      setVersion((v) => v + 1);
-      setPreviewError(false);
-    }
-  }
-  async function copy() {
-    try {
-      await navigator.clipboard.writeText(window.location.origin + stable);
-      setCopied(true);
-    } catch {
-      setError(
-        "No se pudo copiar. Puedes abrir el enlace y copiarlo desde el navegador.",
-      );
-    }
-  }
-  return (
-    <div className="settings-two-column">
-      <section className="panel form-panel">
-        <div className="section-heading">
-          <h2>Un código, siempre conectado</h2>
-          <p>
-            Este QR usa una dirección permanente de Tolentino para abrir tu menú
-            actual.
-          </p>
-        </div>
-        {error && <Notice message={error} error />}
-        {support ? (
-          <>
-            <div className="form-grid">
-              <Field label="Color del código">
-                <input
-                  type="color"
-                  value={config.foreground}
-                  aria-label="Color del código"
-                  onChange={(e) =>
-                    setConfig({ ...config, foreground: e.target.value })
-                  }
-                />
-              </Field>
-              <Field label="Color del fondo">
-                <input
-                  type="color"
-                  value={config.background}
-                  aria-label="Color del fondo"
-                  onChange={(e) =>
-                    setConfig({ ...config, background: e.target.value })
-                  }
-                />
-              </Field>
-            </div>
-            <Field label="Marco">
-              <select
-                value={config.frame}
-                aria-label="Marco"
-                onChange={(e) =>
-                  setConfig({ ...config, frame: e.target.value })
-                }
-              >
-                <option value="none">Sin marco</option>
-                <option value="simple">Clásico</option>
-                <option value="rounded">Redondeado</option>
-              </select>
-            </Field>
-            <Field label="Texto del QR">
-              <input
-                value={config.label}
-                maxLength={80}
-                aria-label="Texto del QR"
-                onChange={(e) =>
-                  setConfig({ ...config, label: e.target.value })
-                }
-              />
-            </Field>
-            <Check
-              label="Incluir el logo del restaurante"
-              checked={config.include_logo}
-              disabled={!data.settings.appearance?.logo_path}
-              onChange={(e) =>
-                setConfig({ ...config, include_logo: e.target.checked })
-              }
-            />
-            <p className="helper-text">
-              El servidor valida el contraste y limita el tamaño del logo para
-              conservar la lectura.
-            </p>
-            <div className="form-footer">
-              <Button busy={busy} onClick={save}>
-                Guardar diseño
-              </Button>
-            </div>
-          </>
-        ) : (
-          <div className="connection-notice">
-            <QrCode size={21} />
-            <p>
-              Tu QR está listo para descargar. Tolentino puede ayudarte a
-              personalizar sus colores, marco y logo.
-            </p>
-          </div>
-        )}
-        <div className="section-divider">ENLACE PERMANENTE</div>
-        <div className="copy-link">
-          <a href={stable} target="_blank" rel="noreferrer">
-            Abrir enlace del QR <ExternalLink size={14} />
-          </a>
-          <button
-            className="icon-button"
-            onClick={copy}
-            aria-label="Copiar enlace permanente"
-          >
-            {copied ? <CheckIcon size={18} /> : <Copy size={18} />}
-          </button>
-        </div>
-        <small className="helper-text">
-          Conserva este QR al cambiar el nombre, la dirección o el diseño de tu
-          restaurante.
-        </small>
-      </section>
-      <section className="panel qr-display">
-        <span className="eyebrow">TU MENÚ A UN ESCANEO</span>
-        <div className="qr-image">
-          {previewError ? (
-            <Notice
-              error
-              message="No se pudo generar la vista previa del QR. Revisa la configuración del servicio."
-            />
-          ) : (
-            <img
-              key={version}
-              src={url + "?format=svg&v=" + version}
-              alt="Código QR del restaurante"
-              onError={() => setPreviewError(true)}
-            />
-          )}
-        </div>
-        <h3>{data.restaurant.name}</h3>
-        <p>Descárgalo y compártelo en tus mesas.</p>
-        <div className="qr-downloads">
-          {["png", "svg", "pdf"].map((format) => (
-            <DownloadLink
-              className="button secondary small"
-              key={format}
-              href={url + "?format=" + format}
-              filename={"qr-" + data.restaurant.slug + "." + format}
-            >
-              <Download size={15} />
-              {format.toUpperCase()}
-            </DownloadLink>
-          ))}
-        </div>
-        <small>Haz una prueba de escaneo antes de imprimir.</small>
       </section>
     </div>
   );
@@ -983,323 +1130,6 @@ export function DomainsPanel({ data, mutate, busy }: Props) {
             </Button>
           </div>
         </Modal>
-      )}
-    </section>
-  );
-}
-type ImportResult = {
-  headers?: string[];
-  rows?: Record<string, unknown>[];
-  errors?: unknown[];
-  duplicates?: unknown[];
-  summary?: Record<string, number>;
-  message?: string;
-};
-export function ImportPanel({
-  data,
-  onComplete,
-}: {
-  data: WorkspaceData;
-  onComplete: () => Promise<void>;
-}) {
-  const [csv, setCsv] = useState("");
-  const [filename, setFilename] = useState("");
-  const [headers, setHeaders] = useState<string[]>([]);
-  const [mapping, setMapping] = useState<Record<string, string>>({
-    name: "",
-    price: "",
-    category: "",
-    description: "",
-    sku: "",
-  });
-  const [mode, setMode] = useState("skip");
-  const [createCategories, setCreateCategories] = useState(true);
-  const [preview, setPreview] = useState<ImportResult | null>(null);
-  const [busy, setBusy] = useState(false);
-  const [error, setError] = useState("");
-  const [message, setMessage] = useState("");
-  const importInFlight = useRef(false);
-  const endpoint = "/api/workspace/" + data.restaurant.id + "/import";
-  async function select(file: File) {
-    if (importInFlight.current) return;
-    setError("");
-    setHeaders([]);
-    setCsv("");
-    setFilename("");
-    setMessage("");
-    setPreview(null);
-    if (file.size > 5 * 1024 * 1024) {
-      setError("El archivo supera el límite de 5 MB.");
-      return;
-    }
-    importInFlight.current = true;
-    setBusy(true);
-    try {
-      const text = await file.text();
-      setCsv(text);
-      setFilename(file.name);
-      const result = await post<ImportResult>(endpoint, {
-        action: "preview",
-        csv: text,
-        mapping: {},
-        mode,
-        createCategories,
-      });
-      const cols = result.headers || [];
-      setHeaders(cols);
-      const aliases: Record<string, string[]> = {
-        name: ["name", "nombre", "producto"],
-        price: ["price", "precio"],
-        category: ["category", "categoria", "categoría"],
-        description: ["description", "descripcion", "descripción"],
-        sku: ["sku", "codigo", "código"],
-      };
-      setMapping(
-        Object.fromEntries(
-          Object.entries(aliases).map(([key, names]) => [
-            key,
-            cols.find((c) => names.includes(c.toLowerCase().trim())) || "",
-          ]),
-        ),
-      );
-    } catch (e) {
-      setError((e as Error).message);
-    } finally {
-      importInFlight.current = false;
-      setBusy(false);
-    }
-  }
-  async function run(action: "preview" | "commit") {
-    if (importInFlight.current || !csv) return;
-    importInFlight.current = true;
-    setBusy(true);
-    setError("");
-    setMessage("");
-    try {
-      const result = await post<ImportResult>(endpoint, {
-        action,
-        csv,
-        mapping,
-        mode,
-        createCategories,
-      });
-      setPreview(result);
-      if (action === "commit") {
-        setMessage(
-          result.message ||
-            "Importación completada. Revisa el resultado antes de publicar tus productos.",
-        );
-        setCsv("");
-        setHeaders([]);
-        await onComplete();
-      }
-    } catch (e) {
-      setError((e as Error).message);
-    } finally {
-      importInFlight.current = false;
-      setBusy(false);
-    }
-  }
-  function changeMapping(key: string, value: string) {
-    setMapping((m) => ({ ...m, [key]: value }));
-    setPreview(null);
-  }
-  return (
-    <section className="panel form-panel import-panel">
-      <div className="section-heading">
-        <h2>Importación de productos</h2>
-        <p>
-          Sube el archivo, revisa las columnas y valida el resultado antes de
-          guardar.
-        </p>
-      </div>
-      {error && <Notice error message={error} />}{" "}
-      {message && <Notice message={message} />}
-      <div className="import-steps">
-        <span className="active">1. Archivo</span>
-        <ArrowRight size={14} />
-        <span className={headers.length ? "active" : ""}>2. Columnas</span>
-        <ArrowRight size={14} />
-        <span className={preview ? "active" : ""}>3. Validación</span>
-      </div>
-      <div className="csv-drop">
-        <FileSpreadsheet size={37} strokeWidth={1.3} />
-        <h3>{filename || "Trae tu carta en un archivo"}</h3>
-        <p>CSV en UTF-8 · máximo 1.000 productos · 5 MB</p>
-        <label className="button secondary">
-          {busy ? "Procesando…" : "Seleccionar archivo"}
-          <input
-            type="file"
-            accept=".csv,text/csv"
-            disabled={busy}
-            onChange={(e) => {
-              const file = e.target.files?.[0];
-              e.target.value = "";
-              if (file) void select(file);
-            }}
-          />
-        </label>
-        <DownloadLink href={endpoint} filename="plantilla-productos.csv">
-          <Download size={15} />
-          Descargar plantilla CSV
-        </DownloadLink>
-        <DownloadLink
-          href={endpoint + "?download=catalog"}
-          filename="catalogo-productos.csv"
-        >
-          <Download size={15} /> Exportar catálogo CSV
-        </DownloadLink>
-        <small>
-          Exporta nombre, precio, categoría, descripción y SKU. Las imágenes,
-          variantes y extras se administran desde Productos.
-        </small>
-      </div>
-      {headers.length > 0 && (
-        <>
-          <div className="section-divider">RELACIONA LAS COLUMNAS</div>
-          <div className="form-grid">
-            {Object.entries({
-              name: "Nombre *",
-              price: "Precio *",
-              category: "Categoría *",
-              description: "Descripción",
-              sku: "Código / SKU",
-            }).map(([key, label]) => (
-              <Field label={label} key={key}>
-                <select
-                  value={mapping[key]}
-                  aria-label={label}
-                  onChange={(e) => changeMapping(key, e.target.value)}
-                >
-                  <option value="">No importar</option>
-                  {headers.map((h) => (
-                    <option key={h}>{h}</option>
-                  ))}
-                </select>
-              </Field>
-            ))}
-          </div>
-          <Field label="Si el producto ya existe">
-            <select
-              value={mode}
-              aria-label="Si el producto ya existe"
-              onChange={(e) => {
-                setMode(e.target.value);
-                setPreview(null);
-              }}
-            >
-              <option value="skip">Omitir duplicados</option>
-              <option value="update">Actualizar el producto existente</option>
-            </select>
-          </Field>
-          <Check
-            label="Crear automáticamente las categorías nuevas"
-            checked={createCategories}
-            onChange={(e) => {
-              setCreateCategories(e.target.checked);
-              setPreview(null);
-            }}
-          />
-          <div className="form-footer">
-            <Button
-              variant="secondary"
-              busy={busy}
-              disabled={!mapping.name || !mapping.price || !mapping.category}
-              onClick={() => run("preview")}
-            >
-              <Eye size={17} />
-              Validar y previsualizar
-            </Button>
-          </div>
-        </>
-      )}
-      {preview && (
-        <div className="import-result">
-          <h3>Resultado de la validación</h3>
-          {preview.summary && (
-            <div className="import-summary">
-              {Object.entries(preview.summary).map(([key, value]) => (
-                <span key={key}>
-                  <strong>{value}</strong>
-                  {{
-                    total: "Filas",
-                    valid: "Válidas",
-                    invalid: "Con errores",
-                    duplicates: "Duplicados",
-                    created: "Creados",
-                    updated: "Actualizados",
-                    skipped: "Omitidos",
-                  }[key] || key}
-                </span>
-              ))}
-            </div>
-          )}
-          {!!preview.errors?.length && (
-            <div className="validation-errors" role="alert">
-              <strong>Corrige estos errores antes de importar:</strong>
-              <ul>
-                {preview.errors.slice(0, 30).map((err, i) => (
-                  <li key={i}>{formatImportIssue(err)}</li>
-                ))}
-              </ul>
-            </div>
-          )}
-          {!!preview.duplicates?.length && (
-            <div className="connection-notice">
-              <strong>Coincidencias detectadas</strong>
-              <ul>
-                {preview.duplicates.slice(0, 30).map((item, i) => (
-                  <li key={i}>{formatImportIssue(item)}</li>
-                ))}
-              </ul>
-            </div>
-          )}
-          {!!preview.rows?.length && (
-            <div className="table-scroll">
-              <table>
-                <thead>
-                  <tr>
-                    {Object.keys(preview.rows[0]).map((key) => (
-                      <th key={key}>
-                        {{
-                          name: "Nombre",
-                          price: "Precio",
-                          category: "Categoría",
-                          description: "Descripción",
-                          sku: "Código",
-                        }[key] || key}
-                      </th>
-                    ))}
-                  </tr>
-                </thead>
-                <tbody>
-                  {preview.rows.slice(0, 10).map((row, i) => (
-                    <tr key={i}>
-                      {Object.values(row).map((value, j) => (
-                        <td key={j}>{String(value ?? "")}</td>
-                      ))}
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          )}
-          {csv && (
-            <div className="form-footer">
-              <p className="helper-text">
-                Se guardarán los productos validados según las opciones
-                seleccionadas.
-              </p>
-              <Button
-                disabled={!!preview.errors?.length}
-                busy={busy}
-                onClick={() => run("commit")}
-              >
-                Confirmar importación <ArrowRight size={16} />
-              </Button>
-            </div>
-          )}
-        </div>
       )}
     </section>
   );
@@ -1543,16 +1373,4 @@ export function AccountPanel({
       )}
     </div>
   );
-}
-
-function formatImportIssue(value: unknown): string {
-  if (typeof value === "string") return value;
-  if (value && typeof value === "object") {
-    const issue = value as Record<string, unknown>;
-    return (
-      (issue.row ? "Fila " + issue.row + ": " : "") +
-      String(issue.message || issue.name || "Revisa este registro.")
-    );
-  }
-  return "Revisa este registro.";
 }

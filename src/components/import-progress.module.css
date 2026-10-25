@@ -1,0 +1,50 @@
+.progress {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px;
+  border: 1px solid #d8ded4;
+  border-radius: 12px;
+  margin: 14px 0;
+  color: #23432f;
+  background: #f8faf6;
+}
+.progress strong,
+.progress small {
+  display: block;
+}
+.progress small {
+  font-size: 0.8rem;
+  margin-top: 4px;
+  max-width: 65ch;
+}
+.circle {
+  position: relative;
+  flex: 0 0 48px;
+  height: 48px;
+}
+.circle svg {
+  width: 48px;
+  height: 48px;
+}
+.circle span {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  font-size: 11px;
+  font-weight: 700;
+}
+.indeterminate {
+  animation: turn 1.2s linear infinite;
+}
+@keyframes turn {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .indeterminate {
+    animation: none;
+  }
+}

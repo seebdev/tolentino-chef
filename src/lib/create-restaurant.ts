@@ -3,7 +3,6 @@ import { createHash, randomBytes } from "node:crypto";
 import type { SupabaseClient, User } from "@supabase/supabase-js";
 import { z } from "zod";
 import { ApiError, json } from "./api";
-import { appUrl } from "./config";
 import { restaurantInput, uuid } from "./validation";
 import { audit } from "./access";
 
@@ -16,6 +15,10 @@ type Attempt = {
   response?: Record<string, unknown>;
   http_status?: number;
 };
+const createdResponse = (response: Record<string, unknown> | undefined, replayed = false) => json({
+  ...response, ...(replayed ? { replayed: true } : {}),
+  ...(response?.invitationSent === false ? { message: "Restaurante creado. Abre Acceso del propietario para entregar una contraseña temporal. No se enviaron correos." } : {}),
+}, 201);
 const pending = () => json({
   ok: false, pending: true, code: "REQUEST_IN_PROGRESS",
   error: "La creación sigue en proceso. Reintenta con la misma solicitud.",
@@ -82,8 +85,8 @@ export async function createRestaurant(
   if (demo && !/@[^@]+\.test$/i.test(data.owner_email))
     throw new ApiError(400, "Las cuentas DEMO deben usar un correo con dominio .test.",
       "DEMO_EMAIL_REQUIRED", [{ field: "owner_email", message: "Usa un dominio reservado .test." }]);
-  // Reserved addresses never produce external mail, even without the demo toggle.
-  const silent = demo || /@[^@]+\.test$/i.test(data.owner_email);
+  // Owner access is delivered manually from its dedicated action; creation never sends mail.
+
   const hash = createHash("sha256").update(JSON.stringify(data)).digest("hex");
   const claimArgs = { p_actor_id: actorId, p_request_id: requestId, p_request_hash: hash };
   const claim = await db.rpc("claim_restaurant_creation", claimArgs);
@@ -96,7 +99,7 @@ export async function createRestaurant(
     throw new ApiError(409, "Esta solicitud ya se usó con otros datos. Inicia un nuevo intento.",
       "IDEMPOTENCY_KEY_REUSED");
   if (attempt.state === "completed")
-    return json({ ...attempt.response, replayed: true }, 201);
+    return createdResponse(attempt.response, true);
   if (attempt.state === "failed")
     return json(attempt.response, attempt.http_status || 400);
   if (attempt.state === "pending") return pending();
@@ -112,13 +115,13 @@ export async function createRestaurant(
     // A timed-out RPC may have committed. The locked request row is authoritative.
     const result = await settle("retry");
     if (!result.error && result.data?.state === "completed")
-      return json({ ...result.data.response, replayed: true }, 201);
+      return createdResponse(result.data.response, true);
     throw unavailable();
   }
   async function finishFailure(error: ApiError) {
     const result = await settle("failed", errorPayload(error), error.status);
     if (result.error) throw unavailable();
-    if (result.data?.state === "completed") return json(result.data.response, 201);
+    if (result.data?.state === "completed") return createdResponse(result.data.response);
     if (result.data?.state !== "failed") return pending();
     throw error;
   }
@@ -127,7 +130,7 @@ export async function createRestaurant(
     // delete an account after another worker committed the restaurant.
     const marked = await settle("cleanup", payload, status);
     if (marked.error) throw unavailable();
-    if (marked.data?.state === "completed") return json(marked.data.response, 201);
+    if (marked.data?.state === "completed") return createdResponse(marked.data.response);
     if (marked.data?.state !== "cleanup") return pending();
     const lookup = await db.auth.admin.getUserById(attempt.owner_id);
     if (lookup.error && lookup.error.code !== "user_not_found" && lookup.error.status !== 404)
@@ -194,16 +197,6 @@ export async function createRestaurant(
     return retry("provision", completed.error || {});
   }
   const result = completed.data as { committed: boolean; response: Record<string, unknown> };
-  if (!result.committed) return json({ ...result.response, replayed: true }, 201);
-  if (silent) return json(result.response, 201);
-  try {
-    const invitation = await db.auth.resetPasswordForEmail(data.owner_email,
-      { redirectTo: appUrl() + "/auth/callback" });
-    if (!invitation.error) {
-      const notified = await settle("invited");
-      if (!notified.error && notified.data?.response) return json(notified.data.response, 201);
-    } else safeLog(requestId, "invitation", invitation.error);
-  } catch { safeLog(requestId, "invitation", { code: "delivery_unconfirmed" }); }
-  // Delivery cannot roll back a restaurant or turn successful creation into 409.
-  return json(result.response, 201);
+  if (!result.committed) return createdResponse(result.response, true);
+  return createdResponse(result.response);
 }

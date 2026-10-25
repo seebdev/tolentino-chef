@@ -1,0 +1,524 @@
+{
+  "config": {
+    "argv": [
+      "C:\\Users\\sebas\\OneDrive\\Escritorio\\tolentino-restaurantes-admin\\.runtime\\node-v22.23.3-win-x64\\node.exe",
+      "C:\\Users\\sebas\\OneDrive\\Escritorio\\tolentino-restaurantes-admin\\node_modules\\@playwright\\test\\cli.js",
+      "test",
+      "tests/e2e/menu-closure.spec.ts",
+      "--project=desktop"
+    ],
+    "configFile": "C:\\Users\\sebas\\OneDrive\\Escritorio\\tolentino-restaurantes-admin\\playwright.config.ts",
+    "rootDir": "C:/Users/sebas/OneDrive/Escritorio/tolentino-restaurantes-admin/tests/e2e",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "C:/Users/sebas/OneDrive/Escritorio/tolentino-restaurantes-admin/test-results/e2e",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "desktop",
+        "name": "desktop",
+        "testDir": "C:/Users/sebas/OneDrive/Escritorio/tolentino-restaurantes-admin/tests/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "C:/Users/sebas/OneDrive/Escritorio/tolentino-restaurantes-admin/test-results/e2e",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "mobile",
+        "name": "mobile",
+        "testDir": "C:/Users/sebas/OneDrive/Escritorio/tolentino-restaurantes-admin/tests/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "C:\\Users\\sebas\\OneDrive\\Escritorio\\tolentino-restaurantes-admin\\test-results\\e2e",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "desktop",
+        "testDir": "C:\\Users\\sebas\\OneDrive\\Escritorio\\tolentino-restaurantes-admin\\tests\\e2e",
+        "snapshotDir": "C:\\Users\\sebas\\OneDrive\\Escritorio\\tolentino-restaurantes-admin\\tests\\e2e",
+        "testIgnore": [],
+        "testMatch": "**/*.@(spec|test).?(c|m)[jt]s?(x)",
+        "timeout": 90000,
+        "use": {
+          "baseURL": "http://localhost:3002",
+          "browserName": "chromium",
+          "channel": "chrome",
+          "trace": "retain-on-failure",
+          "screenshot": "only-on-failure",
+          "viewport": {
+            "width": 1440,
+            "height": 1000
+          }
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "desktop"
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "docs/evidence/closure-menu-regression.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "default",
+    "updateSourceMethod": "patch",
+    "version": "1.64.1",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "menu-closure.spec.ts",
+      "file": "menu-closure.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "closure: seven local flags and selected language persist per restaurant",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 11797,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-18T05:50:44.368Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e6e105cba9fce2d184bb-86e52f00aa368ad400d1",
+          "file": "menu-closure.spec.ts",
+          "line": 83,
+          "column": 5
+        },
+        {
+          "title": "closure: recommendations survive category selection",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 6100,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-18T05:50:56.838Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e6e105cba9fce2d184bb-e21a4e67dfa7b0591657",
+          "file": "menu-closure.spec.ts",
+          "line": 100,
+          "column": 5
+        },
+        {
+          "title": "closure: configured mobile two columns and desktop one column",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 7613,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-18T05:51:03.015Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e6e105cba9fce2d184bb-4c341d07acf48c8c62a2",
+          "file": "menu-closure.spec.ts",
+          "line": 112,
+          "column": 5
+        },
+        {
+          "title": "closure: complete preview uses a real viewport and same renderer",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "timedOut",
+                  "duration": 90974,
+                  "error": {
+                    "message": "\u001b[31mTest timeout of 90000ms exceeded.\u001b[39m",
+                    "stack": "\u001b[31mTest timeout of 90000ms exceeded.\u001b[39m"
+                  },
+                  "errors": [
+                    {
+                      "message": "\u001b[31mTest timeout of 90000ms exceeded.\u001b[39m"
+                    },
+                    {
+                      "location": {
+                        "file": "C:\\Users\\sebas\\OneDrive\\Escritorio\\tolentino-restaurantes-admin\\tests\\e2e\\audit-fixtures.ts",
+                        "column": 6,
+                        "line": 167
+                      },
+                      "message": "Error: locator.click: Test timeout of 90000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('.sidebar').getByRole('button', { name: 'Apariencia', exact: true })\u001b[22m\n\n\n   at audit-fixtures.ts:167\n\n  165 |     .locator(\".sidebar\")\n  166 |     .getByRole(\"button\", { name: label, exact: true })\n> 167 |     .click();\n      |      ^\n  168 | }\n  169 | export async function fillRestaurant(page: Page) {\n  170 |   await page.goto(\"/admin\");\n    at navigateAudit (C:\\Users\\sebas\\OneDrive\\Escritorio\\tolentino-restaurantes-admin\\tests\\e2e\\audit-fixtures.ts:167:6)\n    at C:\\Users\\sebas\\OneDrive\\Escritorio\\tolentino-restaurantes-admin\\tests\\e2e\\menu-closure.spec.ts:135:3"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-18T05:51:10.728Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "C:\\Users\\sebas\\OneDrive\\Escritorio\\tolentino-restaurantes-admin\\test-results\\e2e\\menu-closure-closure-compl-3692b--viewport-and-same-renderer-desktop\\test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "C:\\Users\\sebas\\OneDrive\\Escritorio\\tolentino-restaurantes-admin\\test-results\\e2e\\menu-closure-closure-compl-3692b--viewport-and-same-renderer-desktop\\error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "C:\\Users\\sebas\\OneDrive\\Escritorio\\tolentino-restaurantes-admin\\test-results\\e2e\\menu-closure-closure-compl-3692b--viewport-and-same-renderer-desktop\\trace.zip"
+                    }
+                  ]
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "e6e105cba9fce2d184bb-2d14529012a072dfdcd6",
+          "file": "menu-closure.spec.ts",
+          "line": 130,
+          "column": 5
+        },
+        {
+          "title": "closure: all seven languages translate interface and available content without changing prices",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 31199,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-18T05:52:45.090Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e6e105cba9fce2d184bb-6e586758c96d04a08879",
+          "file": "menu-closure.spec.ts",
+          "line": 144,
+          "column": 5
+        },
+        {
+          "title": "closure: focus refresh preserves search, language, favorites and scroll",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 8125,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-18T05:53:17.106Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e6e105cba9fce2d184bb-f57e55d22d221e659b07",
+          "file": "menu-closure.spec.ts",
+          "line": 236,
+          "column": 5
+        },
+        {
+          "title": "closure: preview and public share styles and geometry at four real widths",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 14818,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 8\u001b[39m\n\u001b[31m+ Received  + 8\u001b[39m\n\n\u001b[33m@@ -3,38 +3,38 @@\u001b[39m\n\u001b[2m      \"background\": \"rgb(255, 250, 245)\",\u001b[22m\n\u001b[2m      \"color\": \"rgb(37, 37, 37)\",\u001b[22m\n\u001b[2m      \"columns\": \"none\",\u001b[22m\n\u001b[2m      \"font\": \"\\\"DM Sans\\\", Arial, sans-serif\",\u001b[22m\n\u001b[2m      \"fontSize\": \"14px\",\u001b[22m\n\u001b[32m-     \"width\": 140,\u001b[39m\n\u001b[31m+     \"width\": 139,\u001b[39m\n\u001b[2m    },\u001b[22m\n\u001b[2m    \"count\": 6,\u001b[22m\n\u001b[2m    \"grid\": Object {\u001b[22m\n\u001b[2m      \"background\": \"rgba(0, 0, 0, 0)\",\u001b[22m\n\u001b[2m      \"color\": \"rgb(37, 37, 37)\",\u001b[22m\n\u001b[32m-     \"columns\": \"140px 140px\",\u001b[39m\n\u001b[31m+     \"columns\": \"139px 139px\",\u001b[39m\n\u001b[2m      \"font\": \"\\\"DM Sans\\\", Arial, sans-serif\",\u001b[22m\n\u001b[2m      \"fontSize\": \"14px\",\u001b[22m\n\u001b[32m-     \"width\": 292,\u001b[39m\n\u001b[31m+     \"width\": 290,\u001b[39m\n\u001b[2m    },\u001b[22m\n\u001b[2m    \"hero\": Object {\u001b[22m\n\u001b[2m      \"background\": \"rgba(0, 0, 0, 0)\",\u001b[22m\n\u001b[2m      \"color\": \"rgb(37, 37, 37)\",\u001b[22m\n\u001b[2m      \"columns\": \"none\",\u001b[22m\n\u001b[2m      \"font\": \"\\\"DM Sans\\\", Arial, sans-serif\",\u001b[22m\n\u001b[2m      \"fontSize\": \"14px\",\u001b[22m\n\u001b[32m-     \"width\": 320,\u001b[39m\n\u001b[31m+     \"width\": 318,\u001b[39m\n\u001b[2m    },\u001b[22m\n\u001b[2m    \"main\": Object {\u001b[22m\n\u001b[2m      \"background\": \"rgb(255, 240, 223)\",\u001b[22m\n\u001b[2m      \"color\": \"rgb(37, 37, 37)\",\u001b[22m\n\u001b[2m      \"columns\": \"none\",\u001b[22m\n\u001b[2m      \"font\": \"\\\"DM Sans\\\", Arial, sans-serif\",\u001b[22m\n\u001b[2m      \"fontSize\": \"14px\",\u001b[22m\n\u001b[32m-     \"width\": 320,\u001b[39m\n\u001b[31m+     \"width\": 318,\u001b[39m\n\u001b[2m    },\u001b[22m\n\u001b[32m-   \"pageWidth\": 320,\u001b[39m\n\u001b[31m+   \"pageWidth\": 318,\u001b[39m\n\u001b[2m    \"price\": Object {\u001b[22m\n\u001b[2m      \"background\": \"rgba(0, 0, 0, 0)\",\u001b[22m\n\u001b[2m      \"color\": \"rgb(38, 75, 60)\",\u001b[22m\n\u001b[2m      \"columns\": \"none\",\u001b[22m\n\u001b[2m      \"font\": \"\\\"DM Sans\\\", Arial, sans-serif\",\u001b[22m\n\u001b[33m@@ -45,9 +45,9 @@\u001b[39m\n\u001b[2m      \"background\": \"rgba(0, 0, 0, 0)\",\u001b[22m\n\u001b[2m      \"color\": \"rgb(37, 37, 37)\",\u001b[22m\n\u001b[2m      \"columns\": \"none\",\u001b[22m\n\u001b[2m      \"font\": \"Manrope, Arial, sans-serif\",\u001b[22m\n\u001b[2m      \"fontSize\": \"14px\",\u001b[22m\n\u001b[32m-     \"width\": 114,\u001b[39m\n\u001b[31m+     \"width\": 113,\u001b[39m\n\u001b[2m    },\u001b[22m\n\u001b[32m-   \"width\": 320,\u001b[39m\n\u001b[31m+   \"width\": 318,\u001b[39m\n\u001b[2m  }\u001b[22m",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 8\u001b[39m\n\u001b[31m+ Received  + 8\u001b[39m\n\n\u001b[33m@@ -3,38 +3,38 @@\u001b[39m\n\u001b[2m      \"background\": \"rgb(255, 250, 245)\",\u001b[22m\n\u001b[2m      \"color\": \"rgb(37, 37, 37)\",\u001b[22m\n\u001b[2m      \"columns\": \"none\",\u001b[22m\n\u001b[2m      \"font\": \"\\\"DM Sans\\\", Arial, sans-serif\",\u001b[22m\n\u001b[2m      \"fontSize\": \"14px\",\u001b[22m\n\u001b[32m-     \"width\": 140,\u001b[39m\n\u001b[31m+     \"width\": 139,\u001b[39m\n\u001b[2m    },\u001b[22m\n\u001b[2m    \"count\": 6,\u001b[22m\n\u001b[2m    \"grid\": Object {\u001b[22m\n\u001b[2m      \"background\": \"rgba(0, 0, 0, 0)\",\u001b[22m\n\u001b[2m      \"color\": \"rgb(37, 37, 37)\",\u001b[22m\n\u001b[32m-     \"columns\": \"140px 140px\",\u001b[39m\n\u001b[31m+     \"columns\": \"139px 139px\",\u001b[39m\n\u001b[2m      \"font\": \"\\\"DM Sans\\\", Arial, sans-serif\",\u001b[22m\n\u001b[2m      \"fontSize\": \"14px\",\u001b[22m\n\u001b[32m-     \"width\": 292,\u001b[39m\n\u001b[31m+     \"width\": 290,\u001b[39m\n\u001b[2m    },\u001b[22m\n\u001b[2m    \"hero\": Object {\u001b[22m\n\u001b[2m      \"background\": \"rgba(0, 0, 0, 0)\",\u001b[22m\n\u001b[2m      \"color\": \"rgb(37, 37, 37)\",\u001b[22m\n\u001b[2m      \"columns\": \"none\",\u001b[22m\n\u001b[2m      \"font\": \"\\\"DM Sans\\\", Arial, sans-serif\",\u001b[22m\n\u001b[2m      \"fontSize\": \"14px\",\u001b[22m\n\u001b[32m-     \"width\": 320,\u001b[39m\n\u001b[31m+     \"width\": 318,\u001b[39m\n\u001b[2m    },\u001b[22m\n\u001b[2m    \"main\": Object {\u001b[22m\n\u001b[2m      \"background\": \"rgb(255, 240, 223)\",\u001b[22m\n\u001b[2m      \"color\": \"rgb(37, 37, 37)\",\u001b[22m\n\u001b[2m      \"columns\": \"none\",\u001b[22m\n\u001b[2m      \"font\": \"\\\"DM Sans\\\", Arial, sans-serif\",\u001b[22m\n\u001b[2m      \"fontSize\": \"14px\",\u001b[22m\n\u001b[32m-     \"width\": 320,\u001b[39m\n\u001b[31m+     \"width\": 318,\u001b[39m\n\u001b[2m    },\u001b[22m\n\u001b[32m-   \"pageWidth\": 320,\u001b[39m\n\u001b[31m+   \"pageWidth\": 318,\u001b[39m\n\u001b[2m    \"price\": Object {\u001b[22m\n\u001b[2m      \"background\": \"rgba(0, 0, 0, 0)\",\u001b[22m\n\u001b[2m      \"color\": \"rgb(38, 75, 60)\",\u001b[22m\n\u001b[2m      \"columns\": \"none\",\u001b[22m\n\u001b[2m      \"font\": \"\\\"DM Sans\\\", Arial, sans-serif\",\u001b[22m\n\u001b[33m@@ -45,9 +45,9 @@\u001b[39m\n\u001b[2m      \"background\": \"rgba(0, 0, 0, 0)\",\u001b[22m\n\u001b[2m      \"color\": \"rgb(37, 37, 37)\",\u001b[22m\n\u001b[2m      \"columns\": \"none\",\u001b[22m\n\u001b[2m      \"font\": \"Manrope, Arial, sans-serif\",\u001b[22m\n\u001b[2m      \"fontSize\": \"14px\",\u001b[22m\n\u001b[32m-     \"width\": 114,\u001b[39m\n\u001b[31m+     \"width\": 113,\u001b[39m\n\u001b[2m    },\u001b[22m\n\u001b[32m-   \"width\": 320,\u001b[39m\n\u001b[31m+   \"width\": 318,\u001b[39m\n\u001b[2m  }\u001b[22m\n    at C:\\Users\\sebas\\OneDrive\\Escritorio\\tolentino-restaurantes-admin\\tests\\e2e\\menu-closure.spec.ts:313:23",
+                    "location": {
+                      "file": "C:\\Users\\sebas\\OneDrive\\Escritorio\\tolentino-restaurantes-admin\\tests\\e2e\\menu-closure.spec.ts",
+                      "column": 23,
+                      "line": 313
+                    },
+                    "snippet": "  311 |       const preview = await frame.locator(\".public-menu\").evaluate(snapshot),\n  312 |         published = await publicPage.locator(\".public-menu\").evaluate(snapshot);\n> 313 |       expect(preview).toEqual(published);\n      |                       ^\n  314 |       expect(preview.pageWidth).toBe(width);\n  315 |       const bounds = await frame\n  316 |         .locator(\".public-product\")"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "C:\\Users\\sebas\\OneDrive\\Escritorio\\tolentino-restaurantes-admin\\tests\\e2e\\menu-closure.spec.ts",
+                        "column": 23,
+                        "line": 313
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 8\u001b[39m\n\u001b[31m+ Received  + 8\u001b[39m\n\n\u001b[33m@@ -3,38 +3,38 @@\u001b[39m\n\u001b[2m      \"background\": \"rgb(255, 250, 245)\",\u001b[22m\n\u001b[2m      \"color\": \"rgb(37, 37, 37)\",\u001b[22m\n\u001b[2m      \"columns\": \"none\",\u001b[22m\n\u001b[2m      \"font\": \"\\\"DM Sans\\\", Arial, sans-serif\",\u001b[22m\n\u001b[2m      \"fontSize\": \"14px\",\u001b[22m\n\u001b[32m-     \"width\": 140,\u001b[39m\n\u001b[31m+     \"width\": 139,\u001b[39m\n\u001b[2m    },\u001b[22m\n\u001b[2m    \"count\": 6,\u001b[22m\n\u001b[2m    \"grid\": Object {\u001b[22m\n\u001b[2m      \"background\": \"rgba(0, 0, 0, 0)\",\u001b[22m\n\u001b[2m      \"color\": \"rgb(37, 37, 37)\",\u001b[22m\n\u001b[32m-     \"columns\": \"140px 140px\",\u001b[39m\n\u001b[31m+     \"columns\": \"139px 139px\",\u001b[39m\n\u001b[2m      \"font\": \"\\\"DM Sans\\\", Arial, sans-serif\",\u001b[22m\n\u001b[2m      \"fontSize\": \"14px\",\u001b[22m\n\u001b[32m-     \"width\": 292,\u001b[39m\n\u001b[31m+     \"width\": 290,\u001b[39m\n\u001b[2m    },\u001b[22m\n\u001b[2m    \"hero\": Object {\u001b[22m\n\u001b[2m      \"background\": \"rgba(0, 0, 0, 0)\",\u001b[22m\n\u001b[2m      \"color\": \"rgb(37, 37, 37)\",\u001b[22m\n\u001b[2m      \"columns\": \"none\",\u001b[22m\n\u001b[2m      \"font\": \"\\\"DM Sans\\\", Arial, sans-serif\",\u001b[22m\n\u001b[2m      \"fontSize\": \"14px\",\u001b[22m\n\u001b[32m-     \"width\": 320,\u001b[39m\n\u001b[31m+     \"width\": 318,\u001b[39m\n\u001b[2m    },\u001b[22m\n\u001b[2m    \"main\": Object {\u001b[22m\n\u001b[2m      \"background\": \"rgb(255, 240, 223)\",\u001b[22m\n\u001b[2m      \"color\": \"rgb(37, 37, 37)\",\u001b[22m\n\u001b[2m      \"columns\": \"none\",\u001b[22m\n\u001b[2m      \"font\": \"\\\"DM Sans\\\", Arial, sans-serif\",\u001b[22m\n\u001b[2m      \"fontSize\": \"14px\",\u001b[22m\n\u001b[32m-     \"width\": 320,\u001b[39m\n\u001b[31m+     \"width\": 318,\u001b[39m\n\u001b[2m    },\u001b[22m\n\u001b[32m-   \"pageWidth\": 320,\u001b[39m\n\u001b[31m+   \"pageWidth\": 318,\u001b[39m\n\u001b[2m    \"price\": Object {\u001b[22m\n\u001b[2m      \"background\": \"rgba(0, 0, 0, 0)\",\u001b[22m\n\u001b[2m      \"color\": \"rgb(38, 75, 60)\",\u001b[22m\n\u001b[2m      \"columns\": \"none\",\u001b[22m\n\u001b[2m      \"font\": \"\\\"DM Sans\\\", Arial, sans-serif\",\u001b[22m\n\u001b[33m@@ -45,9 +45,9 @@\u001b[39m\n\u001b[2m      \"background\": \"rgba(0, 0, 0, 0)\",\u001b[22m\n\u001b[2m      \"color\": \"rgb(37, 37, 37)\",\u001b[22m\n\u001b[2m      \"columns\": \"none\",\u001b[22m\n\u001b[2m      \"font\": \"Manrope, Arial, sans-serif\",\u001b[22m\n\u001b[2m      \"fontSize\": \"14px\",\u001b[22m\n\u001b[32m-     \"width\": 114,\u001b[39m\n\u001b[31m+     \"width\": 113,\u001b[39m\n\u001b[2m    },\u001b[22m\n\u001b[32m-   \"width\": 320,\u001b[39m\n\u001b[31m+   \"width\": 318,\u001b[39m\n\u001b[2m  }\u001b[22m\n\n  311 |       const preview = await frame.locator(\".public-menu\").evaluate(snapshot),\n  312 |         published = await publicPage.locator(\".public-menu\").evaluate(snapshot);\n> 313 |       expect(preview).toEqual(published);\n      |                       ^\n  314 |       expect(preview.pageWidth).toBe(width);\n  315 |       const bounds = await frame\n  316 |         .locator(\".public-product\")\n    at C:\\Users\\sebas\\OneDrive\\Escritorio\\tolentino-restaurantes-admin\\tests\\e2e\\menu-closure.spec.ts:313:23"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-18T05:53:25.302Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "C:\\Users\\sebas\\OneDrive\\Escritorio\\tolentino-restaurantes-admin\\test-results\\e2e\\menu-closure-closure-previ-0e85a-eometry-at-four-real-widths-desktop\\test-failed-1.png"
+                    },
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "C:\\Users\\sebas\\OneDrive\\Escritorio\\tolentino-restaurantes-admin\\test-results\\e2e\\menu-closure-closure-previ-0e85a-eometry-at-four-real-widths-desktop\\test-failed-2.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "C:\\Users\\sebas\\OneDrive\\Escritorio\\tolentino-restaurantes-admin\\test-results\\e2e\\menu-closure-closure-previ-0e85a-eometry-at-four-real-widths-desktop\\error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "C:\\Users\\sebas\\OneDrive\\Escritorio\\tolentino-restaurantes-admin\\test-results\\e2e\\menu-closure-closure-previ-0e85a-eometry-at-four-real-widths-desktop\\trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "C:\\Users\\sebas\\OneDrive\\Escritorio\\tolentino-restaurantes-admin\\tests\\e2e\\menu-closure.spec.ts",
+                    "column": 23,
+                    "line": 313
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "e6e105cba9fce2d184bb-95a4cff3b10c339fd4ae",
+          "file": "menu-closure.spec.ts",
+          "line": 264,
+          "column": 5
+        },
+        {
+          "title": "closure: draft save is private, publish is one atomic request and conflict preserves local form",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 28142,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByText('Borrador guardado.')\nExpected: visible\nTimeout: 20000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" getByText('Borrador guardado.') with timeout 20000ms\u001b[22m\n\u001b[2m  - waiting for getByText('Borrador guardado.')\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByText('Borrador guardado.')\nExpected: visible\nTimeout: 20000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" getByText('Borrador guardado.') with timeout 20000ms\u001b[22m\n\u001b[2m  - waiting for getByText('Borrador guardado.')\u001b[22m\n\n    at C:\\Users\\sebas\\OneDrive\\Escritorio\\tolentino-restaurantes-admin\\tests\\e2e\\menu-closure.spec.ts:400:5",
+                    "location": {
+                      "file": "C:\\Users\\sebas\\OneDrive\\Escritorio\\tolentino-restaurantes-admin\\tests\\e2e\\menu-closure.spec.ts",
+                      "column": 5,
+                      "line": 400
+                    },
+                    "snippet": "  398 |   await expect(\n  399 |     page.getByText(\"Borrador guardado.\", { exact: false }),\n> 400 |   ).toBeVisible();\n      |     ^\n  401 |   expect(data.restaurant.name).toBe(\"DEMO UI Restaurante\");\n  402 |   expect(data.settings.draft_name).toBe(\"Nombre privado\");\n  403 |   await page.reload();"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "C:\\Users\\sebas\\OneDrive\\Escritorio\\tolentino-restaurantes-admin\\tests\\e2e\\menu-closure.spec.ts",
+                        "column": 5,
+                        "line": 400
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByText('Borrador guardado.')\nExpected: visible\nTimeout: 20000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" getByText('Borrador guardado.') with timeout 20000ms\u001b[22m\n\u001b[2m  - waiting for getByText('Borrador guardado.')\u001b[22m\n\n\n  398 |   await expect(\n  399 |     page.getByText(\"Borrador guardado.\", { exact: false }),\n> 400 |   ).toBeVisible();\n      |     ^\n  401 |   expect(data.restaurant.name).toBe(\"DEMO UI Restaurante\");\n  402 |   expect(data.settings.draft_name).toBe(\"Nombre privado\");\n  403 |   await page.reload();\n    at C:\\Users\\sebas\\OneDrive\\Escritorio\\tolentino-restaurantes-admin\\tests\\e2e\\menu-closure.spec.ts:400:5"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-18T05:53:43.077Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "C:\\Users\\sebas\\OneDrive\\Escritorio\\tolentino-restaurantes-admin\\test-results\\e2e\\menu-closure-closure-draft-5549c-nflict-preserves-local-form-desktop\\test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "C:\\Users\\sebas\\OneDrive\\Escritorio\\tolentino-restaurantes-admin\\test-results\\e2e\\menu-closure-closure-draft-5549c-nflict-preserves-local-form-desktop\\error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "C:\\Users\\sebas\\OneDrive\\Escritorio\\tolentino-restaurantes-admin\\test-results\\e2e\\menu-closure-closure-draft-5549c-nflict-preserves-local-form-desktop\\trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "C:\\Users\\sebas\\OneDrive\\Escritorio\\tolentino-restaurantes-admin\\tests\\e2e\\menu-closure.spec.ts",
+                    "column": 5,
+                    "line": 400
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "e6e105cba9fce2d184bb-0db361a33658fef6e89e",
+          "file": "menu-closure.spec.ts",
+          "line": 343,
+          "column": 5
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-18T05:50:43.228Z",
+    "duration": 210061.469,
+    "expected": 5,
+    "skipped": 0,
+    "unexpected": 3,
+    "flaky": 0
+  }
+}

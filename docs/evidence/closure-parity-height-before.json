@@ -1,0 +1,256 @@
+{
+  "config": {
+    "argv": [
+      "C:\\Users\\sebas\\OneDrive\\Escritorio\\tolentino-restaurantes-admin\\.runtime\\node-v22.23.3-win-x64\\node.exe",
+      "C:\\Users\\sebas\\OneDrive\\Escritorio\\tolentino-restaurantes-admin\\node_modules\\@playwright\\test\\cli.js",
+      "test",
+      "--config=playwright.menu.config.ts",
+      "--project=chromium",
+      "--grep",
+      "preview and public",
+      "--output=test-results/menu-parity-height"
+    ],
+    "configFile": "C:\\Users\\sebas\\OneDrive\\Escritorio\\tolentino-restaurantes-admin\\playwright.menu.config.ts",
+    "rootDir": "C:/Users/sebas/OneDrive/Escritorio/tolentino-restaurantes-admin/tests/e2e",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "C:/Users/sebas/OneDrive/Escritorio/tolentino-restaurantes-admin/test-results/menu-parity-height",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "C:/Users/sebas/OneDrive/Escritorio/tolentino-restaurantes-admin/tests/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "menu-closure.spec.ts",
+          "menu-layout-matrix.spec.ts"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "C:/Users/sebas/OneDrive/Escritorio/tolentino-restaurantes-admin/test-results/menu-parity-height",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "firefox",
+        "name": "firefox",
+        "testDir": "C:/Users/sebas/OneDrive/Escritorio/tolentino-restaurantes-admin/tests/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "menu-closure.spec.ts",
+          "menu-layout-matrix.spec.ts"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "C:/Users/sebas/OneDrive/Escritorio/tolentino-restaurantes-admin/test-results/menu-parity-height",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "webkit",
+        "name": "webkit",
+        "testDir": "C:/Users/sebas/OneDrive/Escritorio/tolentino-restaurantes-admin/tests/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "menu-closure.spec.ts",
+          "menu-layout-matrix.spec.ts"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "C:/Users/sebas/OneDrive/Escritorio/tolentino-restaurantes-admin/test-results/menu-parity-height",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "edge",
+        "name": "edge",
+        "testDir": "C:/Users/sebas/OneDrive/Escritorio/tolentino-restaurantes-admin/tests/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "menu-closure.spec.ts",
+          "menu-layout-matrix.spec.ts"
+        ],
+        "timeout": 90000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "C:\\Users\\sebas\\OneDrive\\Escritorio\\tolentino-restaurantes-admin\\test-results\\menu-parity-height",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "chromium",
+        "testDir": "C:\\Users\\sebas\\OneDrive\\Escritorio\\tolentino-restaurantes-admin\\tests\\e2e",
+        "snapshotDir": "C:\\Users\\sebas\\OneDrive\\Escritorio\\tolentino-restaurantes-admin\\tests\\e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "menu-closure.spec.ts",
+          "menu-layout-matrix.spec.ts"
+        ],
+        "timeout": 90000,
+        "use": {
+          "baseURL": "http://localhost:3002",
+          "viewport": {
+            "width": 1440,
+            "height": 1000
+          },
+          "trace": "retain-on-failure",
+          "screenshot": "only-on-failure",
+          "browserName": "chromium",
+          "channel": "chrome"
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "chromium"
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "docs/evidence/closure-parity-height-before.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "default",
+    "updateSourceMethod": "patch",
+    "version": "1.64.1",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "menu-closure.spec.ts",
+      "file": "menu-closure.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "closure: preview and public share styles and geometry at four real widths",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 13759,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 6\u001b[39m\n\u001b[31m+ Received  + 6\u001b[39m\n\n\u001b[33m@@ -4,23 +4,23 @@\u001b[39m\n\u001b[2m      \"color\": \"rgb(37, 37, 37)\",\u001b[22m\n\u001b[2m      \"columns\": \"none\",\u001b[22m\n\u001b[2m      \"font\": \"\\\"DM Sans\\\", Arial, sans-serif\",\u001b[22m\n\u001b[2m      \"fontSize\": \"14px\",\u001b[22m\n\u001b[2m      \"height\": 306,\u001b[22m\n\u001b[32m-     \"top\": 1233,\u001b[39m\n\u001b[31m+     \"top\": 1221,\u001b[39m\n\u001b[2m      \"width\": 140,\u001b[22m\n\u001b[2m    },\u001b[22m\n\u001b[32m-   \"compatMode\": \"CSS1Compat\",\u001b[39m\n\u001b[31m+   \"compatMode\": \"BackCompat\",\u001b[39m\n\u001b[2m    \"count\": 6,\u001b[22m\n\u001b[2m    \"grid\": Object {\u001b[22m\n\u001b[2m      \"background\": \"rgba(0, 0, 0, 0)\",\u001b[22m\n\u001b[2m      \"color\": \"rgb(37, 37, 37)\",\u001b[22m\n\u001b[2m      \"columns\": \"140px 140px\",\u001b[22m\n\u001b[2m      \"font\": \"\\\"DM Sans\\\", Arial, sans-serif\",\u001b[22m\n\u001b[2m      \"fontSize\": \"14px\",\u001b[22m\n\u001b[2m      \"height\": 606,\u001b[22m\n\u001b[32m-     \"top\": 1233,\u001b[39m\n\u001b[31m+     \"top\": 1221,\u001b[39m\n\u001b[2m      \"width\": 292,\u001b[22m\n\u001b[2m    },\u001b[22m\n\u001b[2m    \"hero\": Object {\u001b[22m\n\u001b[2m      \"background\": \"rgba(0, 0, 0, 0)\",\u001b[22m\n\u001b[2m      \"color\": \"rgb(37, 37, 37)\",\u001b[22m\n\u001b[33m@@ -35,11 +35,11 @@\u001b[39m\n\u001b[2m      \"background\": \"rgb(255, 240, 223)\",\u001b[22m\n\u001b[2m      \"color\": \"rgb(37, 37, 37)\",\u001b[22m\n\u001b[2m      \"columns\": \"none\",\u001b[22m\n\u001b[2m      \"font\": \"\\\"DM Sans\\\", Arial, sans-serif\",\u001b[22m\n\u001b[2m      \"fontSize\": \"14px\",\u001b[22m\n\u001b[32m-     \"height\": 2412,\u001b[39m\n\u001b[31m+     \"height\": 2400,\u001b[39m\n\u001b[2m      \"top\": 0,\u001b[22m\n\u001b[2m      \"width\": 320,\u001b[22m\n\u001b[2m    },\u001b[22m\n\u001b[2m    \"pageWidth\": 320,\u001b[22m\n\u001b[2m    \"price\": Object {\u001b[22m\n\u001b[33m@@ -47,20 +47,20 @@\u001b[39m\n\u001b[2m      \"color\": \"rgb(38, 75, 60)\",\u001b[22m\n\u001b[2m      \"columns\": \"none\",\u001b[22m\n\u001b[2m      \"font\": \"\\\"DM Sans\\\", Arial, sans-serif\",\u001b[22m\n\u001b[2m      \"fontSize\": \"14px\",\u001b[22m\n\u001b[2m      \"height\": 21,\u001b[22m\n\u001b[32m-     \"top\": 1504,\u001b[39m\n\u001b[31m+     \"top\": 1492,\u001b[39m\n\u001b[2m      \"width\": 77,\u001b[22m\n\u001b[2m    },\u001b[22m\n\u001b[2m    \"title\": Object {\u001b[22m\n\u001b[2m      \"background\": \"rgba(0, 0, 0, 0)\",\u001b[22m\n\u001b[2m      \"color\": \"rgb(37, 37, 37)\",\u001b[22m\n\u001b[2m      \"columns\": \"none\",\u001b[22m\n\u001b[2m      \"font\": \"Manrope, Arial, sans-serif\",\u001b[22m\n\u001b[2m      \"fontSize\": \"14px\",\u001b[22m\n\u001b[2m      \"height\": 84,\u001b[22m\n\u001b[32m-     \"top\": 1380,\u001b[39m\n\u001b[31m+     \"top\": 1368,\u001b[39m\n\u001b[2m      \"width\": 114,\u001b[22m\n\u001b[2m    },\u001b[22m\n\u001b[2m    \"width\": 320,\u001b[22m\n\u001b[2m  }\u001b[22m",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 6\u001b[39m\n\u001b[31m+ Received  + 6\u001b[39m\n\n\u001b[33m@@ -4,23 +4,23 @@\u001b[39m\n\u001b[2m      \"color\": \"rgb(37, 37, 37)\",\u001b[22m\n\u001b[2m      \"columns\": \"none\",\u001b[22m\n\u001b[2m      \"font\": \"\\\"DM Sans\\\", Arial, sans-serif\",\u001b[22m\n\u001b[2m      \"fontSize\": \"14px\",\u001b[22m\n\u001b[2m      \"height\": 306,\u001b[22m\n\u001b[32m-     \"top\": 1233,\u001b[39m\n\u001b[31m+     \"top\": 1221,\u001b[39m\n\u001b[2m      \"width\": 140,\u001b[22m\n\u001b[2m    },\u001b[22m\n\u001b[32m-   \"compatMode\": \"CSS1Compat\",\u001b[39m\n\u001b[31m+   \"compatMode\": \"BackCompat\",\u001b[39m\n\u001b[2m    \"count\": 6,\u001b[22m\n\u001b[2m    \"grid\": Object {\u001b[22m\n\u001b[2m      \"background\": \"rgba(0, 0, 0, 0)\",\u001b[22m\n\u001b[2m      \"color\": \"rgb(37, 37, 37)\",\u001b[22m\n\u001b[2m      \"columns\": \"140px 140px\",\u001b[22m\n\u001b[2m      \"font\": \"\\\"DM Sans\\\", Arial, sans-serif\",\u001b[22m\n\u001b[2m      \"fontSize\": \"14px\",\u001b[22m\n\u001b[2m      \"height\": 606,\u001b[22m\n\u001b[32m-     \"top\": 1233,\u001b[39m\n\u001b[31m+     \"top\": 1221,\u001b[39m\n\u001b[2m      \"width\": 292,\u001b[22m\n\u001b[2m    },\u001b[22m\n\u001b[2m    \"hero\": Object {\u001b[22m\n\u001b[2m      \"background\": \"rgba(0, 0, 0, 0)\",\u001b[22m\n\u001b[2m      \"color\": \"rgb(37, 37, 37)\",\u001b[22m\n\u001b[33m@@ -35,11 +35,11 @@\u001b[39m\n\u001b[2m      \"background\": \"rgb(255, 240, 223)\",\u001b[22m\n\u001b[2m      \"color\": \"rgb(37, 37, 37)\",\u001b[22m\n\u001b[2m      \"columns\": \"none\",\u001b[22m\n\u001b[2m      \"font\": \"\\\"DM Sans\\\", Arial, sans-serif\",\u001b[22m\n\u001b[2m      \"fontSize\": \"14px\",\u001b[22m\n\u001b[32m-     \"height\": 2412,\u001b[39m\n\u001b[31m+     \"height\": 2400,\u001b[39m\n\u001b[2m      \"top\": 0,\u001b[22m\n\u001b[2m      \"width\": 320,\u001b[22m\n\u001b[2m    },\u001b[22m\n\u001b[2m    \"pageWidth\": 320,\u001b[22m\n\u001b[2m    \"price\": Object {\u001b[22m\n\u001b[33m@@ -47,20 +47,20 @@\u001b[39m\n\u001b[2m      \"color\": \"rgb(38, 75, 60)\",\u001b[22m\n\u001b[2m      \"columns\": \"none\",\u001b[22m\n\u001b[2m      \"font\": \"\\\"DM Sans\\\", Arial, sans-serif\",\u001b[22m\n\u001b[2m      \"fontSize\": \"14px\",\u001b[22m\n\u001b[2m      \"height\": 21,\u001b[22m\n\u001b[32m-     \"top\": 1504,\u001b[39m\n\u001b[31m+     \"top\": 1492,\u001b[39m\n\u001b[2m      \"width\": 77,\u001b[22m\n\u001b[2m    },\u001b[22m\n\u001b[2m    \"title\": Object {\u001b[22m\n\u001b[2m      \"background\": \"rgba(0, 0, 0, 0)\",\u001b[22m\n\u001b[2m      \"color\": \"rgb(37, 37, 37)\",\u001b[22m\n\u001b[2m      \"columns\": \"none\",\u001b[22m\n\u001b[2m      \"font\": \"Manrope, Arial, sans-serif\",\u001b[22m\n\u001b[2m      \"fontSize\": \"14px\",\u001b[22m\n\u001b[2m      \"height\": 84,\u001b[22m\n\u001b[32m-     \"top\": 1380,\u001b[39m\n\u001b[31m+     \"top\": 1368,\u001b[39m\n\u001b[2m      \"width\": 114,\u001b[22m\n\u001b[2m    },\u001b[22m\n\u001b[2m    \"width\": 320,\u001b[22m\n\u001b[2m  }\u001b[22m\n    at C:\\Users\\sebas\\OneDrive\\Escritorio\\tolentino-restaurantes-admin\\tests\\e2e\\menu-closure.spec.ts:332:23",
+                    "location": {
+                      "file": "C:\\Users\\sebas\\OneDrive\\Escritorio\\tolentino-restaurantes-admin\\tests\\e2e\\menu-closure.spec.ts",
+                      "column": 23,
+                      "line": 332
+                    },
+                    "snippet": "  330 |       const preview = await frame.locator(\".public-menu\").evaluate(snapshot),\n  331 |         published = await publicPage.locator(\".public-menu\").evaluate(snapshot);\n> 332 |       expect(preview).toEqual(published);\n      |                       ^\n  333 |       expect(preview.pageWidth).toBe(width);\n  334 |       const bounds = await frame\n  335 |         .locator(\".public-product\")"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "C:\\Users\\sebas\\OneDrive\\Escritorio\\tolentino-restaurantes-admin\\tests\\e2e\\menu-closure.spec.ts",
+                        "column": 23,
+                        "line": 332
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 6\u001b[39m\n\u001b[31m+ Received  + 6\u001b[39m\n\n\u001b[33m@@ -4,23 +4,23 @@\u001b[39m\n\u001b[2m      \"color\": \"rgb(37, 37, 37)\",\u001b[22m\n\u001b[2m      \"columns\": \"none\",\u001b[22m\n\u001b[2m      \"font\": \"\\\"DM Sans\\\", Arial, sans-serif\",\u001b[22m\n\u001b[2m      \"fontSize\": \"14px\",\u001b[22m\n\u001b[2m      \"height\": 306,\u001b[22m\n\u001b[32m-     \"top\": 1233,\u001b[39m\n\u001b[31m+     \"top\": 1221,\u001b[39m\n\u001b[2m      \"width\": 140,\u001b[22m\n\u001b[2m    },\u001b[22m\n\u001b[32m-   \"compatMode\": \"CSS1Compat\",\u001b[39m\n\u001b[31m+   \"compatMode\": \"BackCompat\",\u001b[39m\n\u001b[2m    \"count\": 6,\u001b[22m\n\u001b[2m    \"grid\": Object {\u001b[22m\n\u001b[2m      \"background\": \"rgba(0, 0, 0, 0)\",\u001b[22m\n\u001b[2m      \"color\": \"rgb(37, 37, 37)\",\u001b[22m\n\u001b[2m      \"columns\": \"140px 140px\",\u001b[22m\n\u001b[2m      \"font\": \"\\\"DM Sans\\\", Arial, sans-serif\",\u001b[22m\n\u001b[2m      \"fontSize\": \"14px\",\u001b[22m\n\u001b[2m      \"height\": 606,\u001b[22m\n\u001b[32m-     \"top\": 1233,\u001b[39m\n\u001b[31m+     \"top\": 1221,\u001b[39m\n\u001b[2m      \"width\": 292,\u001b[22m\n\u001b[2m    },\u001b[22m\n\u001b[2m    \"hero\": Object {\u001b[22m\n\u001b[2m      \"background\": \"rgba(0, 0, 0, 0)\",\u001b[22m\n\u001b[2m      \"color\": \"rgb(37, 37, 37)\",\u001b[22m\n\u001b[33m@@ -35,11 +35,11 @@\u001b[39m\n\u001b[2m      \"background\": \"rgb(255, 240, 223)\",\u001b[22m\n\u001b[2m      \"color\": \"rgb(37, 37, 37)\",\u001b[22m\n\u001b[2m      \"columns\": \"none\",\u001b[22m\n\u001b[2m      \"font\": \"\\\"DM Sans\\\", Arial, sans-serif\",\u001b[22m\n\u001b[2m      \"fontSize\": \"14px\",\u001b[22m\n\u001b[32m-     \"height\": 2412,\u001b[39m\n\u001b[31m+     \"height\": 2400,\u001b[39m\n\u001b[2m      \"top\": 0,\u001b[22m\n\u001b[2m      \"width\": 320,\u001b[22m\n\u001b[2m    },\u001b[22m\n\u001b[2m    \"pageWidth\": 320,\u001b[22m\n\u001b[2m    \"price\": Object {\u001b[22m\n\u001b[33m@@ -47,20 +47,20 @@\u001b[39m\n\u001b[2m      \"color\": \"rgb(38, 75, 60)\",\u001b[22m\n\u001b[2m      \"columns\": \"none\",\u001b[22m\n\u001b[2m      \"font\": \"\\\"DM Sans\\\", Arial, sans-serif\",\u001b[22m\n\u001b[2m      \"fontSize\": \"14px\",\u001b[22m\n\u001b[2m      \"height\": 21,\u001b[22m\n\u001b[32m-     \"top\": 1504,\u001b[39m\n\u001b[31m+     \"top\": 1492,\u001b[39m\n\u001b[2m      \"width\": 77,\u001b[22m\n\u001b[2m    },\u001b[22m\n\u001b[2m    \"title\": Object {\u001b[22m\n\u001b[2m      \"background\": \"rgba(0, 0, 0, 0)\",\u001b[22m\n\u001b[2m      \"color\": \"rgb(37, 37, 37)\",\u001b[22m\n\u001b[2m      \"columns\": \"none\",\u001b[22m\n\u001b[2m      \"font\": \"Manrope, Arial, sans-serif\",\u001b[22m\n\u001b[2m      \"fontSize\": \"14px\",\u001b[22m\n\u001b[2m      \"height\": 84,\u001b[22m\n\u001b[32m-     \"top\": 1380,\u001b[39m\n\u001b[31m+     \"top\": 1368,\u001b[39m\n\u001b[2m      \"width\": 114,\u001b[22m\n\u001b[2m    },\u001b[22m\n\u001b[2m    \"width\": 320,\u001b[22m\n\u001b[2m  }\u001b[22m\n\n  330 |       const preview = await frame.locator(\".public-menu\").evaluate(snapshot),\n  331 |         published = await publicPage.locator(\".public-menu\").evaluate(snapshot);\n> 332 |       expect(preview).toEqual(published);\n      |                       ^\n  333 |       expect(preview.pageWidth).toBe(width);\n  334 |       const bounds = await frame\n  335 |         .locator(\".public-product\")\n    at C:\\Users\\sebas\\OneDrive\\Escritorio\\tolentino-restaurantes-admin\\tests\\e2e\\menu-closure.spec.ts:332:23"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-18T06:13:04.423Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "C:\\Users\\sebas\\OneDrive\\Escritorio\\tolentino-restaurantes-admin\\test-results\\menu-parity-height\\menu-closure-closure-previ-0e85a-eometry-at-four-real-widths-chromium\\test-failed-1.png"
+                    },
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "C:\\Users\\sebas\\OneDrive\\Escritorio\\tolentino-restaurantes-admin\\test-results\\menu-parity-height\\menu-closure-closure-previ-0e85a-eometry-at-four-real-widths-chromium\\test-failed-2.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "C:\\Users\\sebas\\OneDrive\\Escritorio\\tolentino-restaurantes-admin\\test-results\\menu-parity-height\\menu-closure-closure-previ-0e85a-eometry-at-four-real-widths-chromium\\error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "C:\\Users\\sebas\\OneDrive\\Escritorio\\tolentino-restaurantes-admin\\test-results\\menu-parity-height\\menu-closure-closure-previ-0e85a-eometry-at-four-real-widths-chromium\\trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "C:\\Users\\sebas\\OneDrive\\Escritorio\\tolentino-restaurantes-admin\\tests\\e2e\\menu-closure.spec.ts",
+                    "column": 23,
+                    "line": 332
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "e6e105cba9fce2d184bb-89df807a4a758f2db99d",
+          "file": "menu-closure.spec.ts",
+          "line": 267,
+          "column": 5
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-18T06:13:02.766Z",
+    "duration": 17134.388000000003,
+    "expected": 0,
+    "skipped": 0,
+    "unexpected": 1,
+    "flaky": 0
+  }
+}

@@ -1,15 +1,17 @@
 import { PGlite } from "@electric-sql/pglite";
-import { readFileSync, readdirSync } from "node:fs";
+import { readFileSync } from "node:fs";
 import { resolve } from "node:path";
+import { pathToFileURL } from "node:url";
 import {
-  ROOT, TABLES, ensure, failReport, digest, sha256, sortedRows, safeLocalPath,
+  ROOT, LIMITS, ensure, failReport, digest, sha256, sortedRows, safeLocalPath,
   loadBackupKey, decryptArchive, protectBackupDirectory,
 } from "./backup-common.mjs";
-import { TARGET_PROJECT, importApplicationRows, sameRows } from "./migration-data-common.mjs";
-import { decodeLocalArchive } from "./migration-target-final-backup.mjs";
+import { TARGET_PROJECT, sameRows } from "./migration-data-common.mjs";
+import { decodeLocalArchive, applicationCatalog, capturedMigrations } from "./migration-target-final-backup.mjs";
 import { saveTargetEvidence } from "./migration-target-inspect.mjs";
 
-let db, key, stage = "local-archive-validation";
+let db;
+
 const checks = [];
 const check = (name, pass) => {
   ensure(pass, "LOCAL_RESTORE_FAILED", "Falló una comprobación del ensayo de restauración local.");
@@ -20,12 +22,62 @@ const argument = (name) => {
   ensure(index >= 0 && process.argv[index + 1], "USAGE", "Falta un argumento de restauración local.");
   return process.argv[index + 1];
 };
-// Any accidental HTTP use in this isolated restore fails before reaching the network.
-globalThis.fetch = async () => { throw Error("LOCAL_RESTORE_NETWORK_FORBIDDEN"); };
+
 const ordered = (rows) => [...rows].sort((a, b) => digest(a).localeCompare(digest(b)));
 const rowsOf = async (schema, name) => (await db.query(
   'select to_jsonb(t) as row from "' + schema + '"."' + name + '" t',
 )).rows.map((r) => r.row);
+export function catalogOrder(catalog) {
+ const pending=new Map(catalog.map(r=>[r.schema+"."+r.name,r])),ordered=[];
+ ensure(pending.size===catalog.length,"CATALOG_INVALID","Tablas repetidas en catálogo.");
+ while(pending.size){
+  const ready=[...pending].filter(([,row])=>row.dependencies.every(dep=>!pending.has(dep.schema+"."+dep.name)));
+  ensure(ready.length>0,"FOREIGN_KEY_CYCLE","El ensayo requiere un orden explícito para un ciclo de claves externas.");
+  for(const [name,row] of ready){ordered.push(row);pending.delete(name);}
+ }
+ return ordered;
+}
+export async function restoreCapturedRows(connection,payload) {
+ // This helper cannot accept a remote PostgreSQL adapter.
+ ensure(connection instanceof PGlite,"LOCAL_ENGINE_REQUIRED","La restauración de ensayo sólo admite PGlite local.");
+ const catalog=await applicationCatalog(connection);
+ const capturedKeys=[...Object.keys(payload.tables).map(name=>"public."+name),...Object.keys(payload.privateTables).map(name=>"private."+name)].sort();
+ ensure(capturedKeys.join()===catalog.map(row=>row.schema+"."+row.name).sort().join(),
+  "CATALOG_MISMATCH","Las tablas capturadas no coinciden con las migraciones capturadas.");
+ if(payload.catalog)ensure(digest(payload.catalog)===digest(catalog),"CATALOG_MISMATCH","El catálogo restaurado difiere del capturado.");
+ const order=catalogOrder(catalog),quote=row=>'"'+row.schema+'"."'+row.name+'"';
+ let inserted=0;
+ await connection.exec("begin");
+ try{
+  for(const row of order)await connection.exec("alter table "+quote(row)+" disable trigger user");
+  // The caller has just created this isolated database from the verified migration SQL.
+  // Remove only its migration seed rows; FK checks stay enabled throughout.
+  for(const row of [...order].reverse())await connection.exec("delete from "+quote(row));
+  for(const row of order){
+   const values=(row.schema==="public"?payload.tables:payload.privateTables)[row.name];
+   ensure(Array.isArray(values)&&values.length<=LIMITS.rowsPerTable,"TABLE_LIMIT","Tabla inválida o demasiado grande.");
+   const columns=(await connection.query("select column_name from information_schema.columns where table_schema=$1 and table_name=$2 and is_generated='NEVER' order by ordinal_position",[row.schema,row.name])).rows.map(r=>r.column_name);
+   ensure(columns.length&&columns.every(c=>/^[a-z_][a-z0-9_]*$/.test(c)),"SCHEMA_INVALID","Columnas inválidas.");
+   const names=columns.map(c=>'"'+c+'"').join(",");
+   if(values.length)await connection.query("insert into "+quote(row)+"("+names+") select "+names+" from jsonb_populate_recordset(null::"+quote(row)+",$1::jsonb)",[JSON.stringify(values)]);
+   inserted+=values.length;
+  }
+  for(const row of order)await connection.exec("alter table "+quote(row)+" enable trigger user");
+  for(const row of order){
+   const actual=(await connection.query("select to_jsonb(t) as row from "+quote(row)+" t")).rows.map(r=>r.row);
+   const expected=(row.schema==="public"?payload.tables:payload.privateTables)[row.name];
+   ensure(digest(ordered(actual))===digest(ordered(expected)),"RESTORE_HASH_MISMATCH","La restauración no conserva las filas exactas.");
+  }
+  await connection.exec("commit");
+  return {inserted,tables:catalog.length};
+ }catch(error){await connection.exec("rollback");throw error;}
+}
+
+export async function restoreFinalTarget() {
+ let key, stage = "local-archive-validation";
+ checks.length=0;
+ const originalFetch=globalThis.fetch;
+ globalThis.fetch=async()=>{throw Error("LOCAL_RESTORE_NETWORK_FORBIDDEN");};
 try {
   const expectedSha = argument("--sha256");
   ensure(/^[0-9a-f]{64}$/.test(expectedSha), "ARCHIVE_SHA_REQUIRED", "Se requiere el hash cifrado registrado en la captura.");
@@ -48,46 +100,27 @@ try {
   const decoded = decodeLocalArchive(dump);
   check("Complete custom archive decodes locally", decoded.includes(Buffer.from("CREATE TABLE public.restaurants")) &&
     decoded.includes(Buffer.from("CREATE TABLE auth.users")) && decoded.includes(Buffer.from("CREATE TABLE storage.objects")));
-  const migrationDir = resolve(ROOT, "supabase", "migrations");
-  const names = readdirSync(migrationDir).filter((name) => /^\d+_.+[.]sql$/.test(name)).sort();
-  const history = payload.before.sql.migrations;
-  check("Exactly two captured and local migrations", names.length === 2 && history.length === 2);
-  const migrations = names.map((file, index) => {
-    const sql = readFileSync(resolve(migrationDir, file), "utf8"), row = history[index];
-    check("Captured history equals local reviewed SQL: " + file,
-      row.version === file.split("_")[0] && row.name === file.replace(/^\d+_/, "").replace(/[.]sql$/, "") &&
-      row.statements?.length === 1 && sha256(row.statements[0]) === sha256(sql));
-    return sql;
-  });
-  check("All application tables and the two transient tables are present",
-    Object.keys(payload.tables).sort().join() === TABLES.map(([name]) => name).sort().join() &&
-    Object.keys(payload.privateTables).sort().join() === "rate_limits,restaurant_creation_requests");
-  check("Four distinct identity UUIDs captured", payload.authUsers.length === 4 &&
-    new Set(payload.authUsers.map((u) => u.id)).size === 4);
+  const migrations = capturedMigrations(payload.before.sql.migrations);
+  check("Only captured migrations selected; newer local SQL is excluded", migrations.length === payload.before.sql.migrations.length);
+  if(manifest.catalogSha256) check("Captured table catalog hash", digest(payload.catalog)===manifest.catalogSha256);
+  if(manifest.schemaHistorySha256) check("Captured migration history hash", digest(payload.before.sql.migrations)===manifest.schemaHistorySha256);
+  check("Distinct Auth identity UUIDs captured", new Set(payload.authUsers.map(u=>u.id)).size===payload.authUsers.length && payload.authUsers.length===manifest.counts.authUsers);
   stage = "isolated-pglite-restore";
   db = new PGlite();
   await db.exec(
     "create role anon nologin;create role authenticated nologin;create role service_role nologin bypassrls;" +
     "create schema auth;create schema storage;grant usage on schema public,auth,storage to anon,authenticated,service_role;" +
-    "create table auth.users(id uuid primary key);" +
+    "create table auth.users(id uuid primary key,raw_app_meta_data jsonb not null default '{}');create table auth.sessions(id uuid primary key,user_id uuid references auth.users(id),created_at timestamptz not null default now());" +
     "create function auth.uid() returns uuid language sql stable as $$ select nullif(current_setting('request.jwt.claim.sub',true),'')::uuid $$;" +
     "create table storage.buckets(id text primary key,name text,public boolean,file_size_limit bigint,allowed_mime_types text[]);" +
     "create table storage.objects(id uuid primary key default gen_random_uuid(),bucket_id text references storage.buckets(id),name text not null,unique(bucket_id,name));" +
     "alter table storage.objects enable row level security;grant all on storage.objects to authenticated,service_role;set timezone='UTC';",
   );
-  for (const sql of migrations) await db.exec(sql);
-  for (const user of payload.authUsers) await db.query("insert into auth.users(id) values($1)", [user.id]);
-  const bootstrapSettings = await rowsOf("public", "platform_settings");
-  const imported = await importApplicationRows(db, payload.tables, { bootstrapSettings });
-  for (const [table, keys] of TABLES)
-    check("Restored exact rows including generated columns: " + table,
-      sameRows(await rowsOf("public", table), payload.tables[table], keys));
-  for (const name of ["rate_limits", "restaurant_creation_requests"]) {
-    await db.query('insert into private."' + name + '" select * from jsonb_populate_recordset(null::private."' + name + '",$1::jsonb)',
-      [JSON.stringify(payload.privateTables[name])]);
-    check("Restored exact private operational rows: " + name,
-      digest(ordered(await rowsOf("private", name))) === digest(ordered(payload.privateTables[name])));
-  }
+  for (const {sql} of migrations) await db.exec(sql);
+  for (const user of payload.authUsers) await db.query("insert into auth.users(id,raw_app_meta_data) values($1,$2::jsonb)", [user.id,JSON.stringify(user.raw_app_meta_data||{})]);
+  const imported = await restoreCapturedRows(db,payload);
+  const catalog = await applicationCatalog(db);
+  for(const row of catalog) check("Exact restored rows: "+row.schema+"."+row.name, digest(ordered(await rowsOf(row.schema,row.name)))===digest(ordered((row.schema==="public"?payload.tables:payload.privateTables)[row.name])));
   check("Menu transaction values preserved without additional normalization",
     digest(sortedRows((await rowsOf("public", "restaurants")).map(({ id, menu_version, menu_version_transaction }) =>
       ({ id, menu_version, menu_version_transaction })), ["id"])) ===
@@ -112,10 +145,10 @@ try {
       payload.tables.restaurants.map(({ id, public_token }) => ({ id, public_token })), ["id"]));
   const members = payload.tables.restaurant_memberships;
   const restaurantIds = new Set(payload.tables.restaurants.map((row) => row.id));
-  check("Three unique restaurants and owner memberships support all six tenant pairs",
-    payload.tables.restaurants.length === 3 && restaurantIds.size === 3 && members.length === 3 &&
-    new Set(members.map((row) => row.restaurant_id)).size === 3 &&
-    new Set(members.map((row) => row.user_id)).size === 3 &&
+  check("Captured restaurants and one-owner memberships retain their identities",
+    restaurantIds.size === payload.tables.restaurants.length &&
+    new Set(members.map((row) => row.restaurant_id)).size === members.length &&
+    new Set(members.map((row) => row.user_id)).size === members.length &&
     members.every((row) => restaurantIds.has(row.restaurant_id) && payload.authUsers.some((u) => u.id === row.user_id)));
   let tenantPairs = 0;
   for (const owner of members) for (const other of members.filter((m) => m.restaurant_id !== owner.restaurant_id)) {
@@ -128,14 +161,14 @@ try {
       check("Owner RLS isolation pair " + tenantPairs, visible === 0);
     } finally { await db.exec("rollback"); }
   }
-  check("Exactly six owner-to-other-tenant pairs tested", tenantPairs === 6);
+  check("All captured owner-to-other-tenant pairs tested", tenantPairs === members.length*(members.length-1));
   const security = (await db.query(
     "select (select count(*) from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname='public' and c.relkind='r' and c.relrowsecurity)::int as rls," +
     "(select count(*) from pg_trigger t join pg_class c on c.oid=t.tgrelid join pg_namespace n on n.oid=c.relnamespace where n.nspname='public' and not t.tgisinternal and t.tgenabled='D')::int as disabled",
   )).rows[0];
-  check("Fifteen public tables retain RLS and all application triggers enabled", security.rls === 15 && security.disabled === 0);
+  check("All captured public tables retain RLS and application triggers are enabled", security.rls === Object.keys(payload.tables).length && security.disabled === 0);
   const restoredTables = {};
-  for (const [name] of TABLES) restoredTables[name] = ordered(await rowsOf("public", name));
+  for (const name of Object.keys(payload.tables)) restoredTables[name] = ordered(await rowsOf("public", name));
   check("Final application hash equals captured target", digest(restoredTables) === manifest.applicationDataSha256);
   const evidence = {
     at: new Date().toISOString(), result: "PASS", targetProjectRef: TARGET_PROJECT,
@@ -146,7 +179,7 @@ try {
     fullManagedSupabaseRestoreExecuted: false, authLoginTested: false, storageHttpTested: false,
     limitations: [
       "Only the application schema and rows plus captured private rows are restored in isolated PGlite.",
-      "Auth uses UUID-only stubs; captured profile bytes/hashes and full PostgreSQL dump are verified, but GoTrue/password/session restoration is not executed.",
+      "Auth uses identity/metadata and empty session stubs; captured profile bytes/hashes and full PostgreSQL dump are verified, but GoTrue/password/session restoration is not executed.",
       "Storage object bytes and technical IDs are restored in memory/stub table, not through the Storage HTTP service.",
       "Full custom dump decode is validation, not execution of all managed Supabase DDL.",
     ],
@@ -159,4 +192,7 @@ try {
 } finally {
   key?.fill(0);
   await db?.close();
+  globalThis.fetch=originalFetch;
 }
+}
+if (process.argv[1] && import.meta.url === pathToFileURL(resolve(process.argv[1])).href) await restoreFinalTarget();

@@ -1,11 +1,11 @@
 export const languages = [
-  { code: "es", label: "Español" },
-  { code: "en", label: "English" },
-  { code: "fr", label: "Français" },
-  { code: "it", label: "Italiano" },
-  { code: "zh", label: "中文" },
-  { code: "ja", label: "日本語" },
-  { code: "hi", label: "हिन्दी" },
+  { code: "es", label: "Español", flag: "/flags/co.svg" },
+  { code: "en", label: "English", flag: "/flags/gb.svg" },
+  { code: "fr", label: "Français", flag: "/flags/fr.svg" },
+  { code: "it", label: "Italiano", flag: "/flags/it.svg" },
+  { code: "zh", label: "中文", flag: "/flags/cn.svg" },
+  { code: "ja", label: "日本語", flag: "/flags/jp.svg" },
+  { code: "hi", label: "हिन्दी", flag: "/flags/in.svg" },
 ];
 type Copy = {
   menu: string;
@@ -28,9 +28,22 @@ type Copy = {
   favorite: string;
   removeFavorite: string;
   hero: string;
+  photoCredits: string;
+  createdBy: string;
+  language: string;
+  pendingTranslation: string;
+  refreshError: string;
+  updated: string;
 };
 export const copy: Record<string, Copy> = {
   es: {
+    photoCredits: "Créditos de fotografías",
+    createdBy: "Creado por",
+    language: "Idioma",
+    pendingTranslation: "Algunos textos aún se muestran en el idioma original.",
+    refreshError:
+      "No pudimos comprobar si hay cambios. Conservamos el menú disponible.",
+    updated: "Menú actualizado.",
     menu: "Nuestro menú",
     search: "Buscar platos o ingredientes",
     all: "Todo el menú",
@@ -53,6 +66,12 @@ export const copy: Record<string, Copy> = {
     hero: "HECHO CON CUIDADO · SERVIDO CON AMOR",
   },
   en: {
+    photoCredits: "Photo credits",
+    createdBy: "Created by",
+    language: "Language",
+    pendingTranslation: "Some text is still shown in the original language.",
+    refreshError: "We could not check for updates. The available menu is kept.",
+    updated: "Menu updated.",
     menu: "Our menu",
     search: "Search dishes or ingredients",
     all: "Full menu",
@@ -75,6 +94,14 @@ export const copy: Record<string, Copy> = {
     hero: "MADE WITH CARE · SERVED WITH LOVE",
   },
   fr: {
+    photoCredits: "Crédits photographiques",
+    createdBy: "Créé par",
+    language: "Langue",
+    pendingTranslation:
+      "Certains textes sont encore affichés dans la langue originale.",
+    refreshError:
+      "Impossible de vérifier les mises à jour. Le menu disponible est conservé.",
+    updated: "Menu mis à jour.",
     menu: "Notre carte",
     search: "Rechercher des plats ou ingrédients",
     all: "Toute la carte",
@@ -97,6 +124,13 @@ export const copy: Record<string, Copy> = {
     hero: "PRÉPARÉ AVEC SOIN · SERVI AVEC AMOUR",
   },
   it: {
+    photoCredits: "Crediti fotografici",
+    createdBy: "Creato da",
+    language: "Lingua",
+    pendingTranslation: "Alcuni testi sono ancora nella lingua originale.",
+    refreshError:
+      "Non è stato possibile verificare gli aggiornamenti. Il menu disponibile è conservato.",
+    updated: "Menu aggiornato.",
     menu: "Il nostro menu",
     search: "Cerca piatti o ingredienti",
     all: "Tutto il menu",
@@ -119,6 +153,12 @@ export const copy: Record<string, Copy> = {
     hero: "PREPARATO CON CURA · SERVITO CON AMORE",
   },
   zh: {
+    photoCredits: "照片来源与署名",
+    createdBy: "制作方",
+    language: "语言",
+    pendingTranslation: "部分内容仍以原文显示。",
+    refreshError: "暂时无法检查更新，仍显示当前菜单。",
+    updated: "菜单已更新。",
     menu: "我们的菜单",
     search: "搜索菜品或食材",
     all: "全部菜单",
@@ -141,6 +181,13 @@ export const copy: Record<string, Copy> = {
     hero: "用心制作 · 用爱呈现",
   },
   ja: {
+    photoCredits: "写真のクレジット",
+    createdBy: "制作",
+    language: "言語",
+    pendingTranslation: "一部のテキストは元の言語で表示されています。",
+    refreshError:
+      "更新を確認できませんでした。現在のメニューを表示しています。",
+    updated: "メニューを更新しました。",
     menu: "メニュー",
     search: "料理や食材を検索",
     all: "すべて",
@@ -163,6 +210,12 @@ export const copy: Record<string, Copy> = {
     hero: "心を込めて調理 · 愛を込めて提供",
   },
   hi: {
+    photoCredits: "फ़ोटो श्रेय",
+    createdBy: "निर्माता",
+    language: "भाषा",
+    pendingTranslation: "कुछ पाठ अभी भी मूल भाषा में दिखाए गए हैं।",
+    refreshError: "अपडेट की जाँच नहीं हो सकी। उपलब्ध मेन्यू दिखाया जा रहा है।",
+    updated: "मेन्यू अपडेट हो गया।",
     menu: "हमारा मेन्यू",
     search: "व्यंजन या सामग्री खोजें",
     all: "पूरा मेन्यू",

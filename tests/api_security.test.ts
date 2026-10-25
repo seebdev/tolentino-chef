@@ -20,6 +20,7 @@ const fixtures = vi.hoisted(() => {
     } as Row,
     authError: null as unknown,
     rpcAllowed: true,
+    ownerState: { valid: true, requiresPasswordChange: false, generation: null as string | null },
     calls: [] as {
       client: string;
       table: string;
@@ -59,7 +60,7 @@ const fixtures = vi.hoisted(() => {
         };
         return query;
       }),
-      rpc: vi.fn(async () => ({ data: state.rpcAllowed, error: null })),
+      rpc: vi.fn(async (name: string) => ({ data: name === "owner_session_state" ? state.ownerState : state.rpcAllowed, error: null })),
     };
   }
   const session = client("session");
@@ -108,6 +109,7 @@ beforeEach(() => {
   fixtures.state.restaurant = { id: tenantA, status: "active" };
   fixtures.state.authError = null;
   fixtures.state.rpcAllowed = true;
+  fixtures.state.ownerState = { valid: true, requiresPasswordChange: false, generation: null };
   fixtures.state.calls = [];
 });
 
@@ -166,6 +168,16 @@ describe("server authentication and tenant authorization", () => {
     expect(fixtures.serviceDb).not.toHaveBeenCalled();
   });
 
+  it("blocks business access until first change but permits the change screen", async () => {
+    fixtures.state.ownerState.requiresPasswordChange = true;
+    await expect(context(tenantA)).rejects.toMatchObject({ status: 403, code: "PASSWORD_CHANGE_REQUIRED" });
+    expect(fixtures.state.calls.some((call) => call.table === "restaurants")).toBe(false);
+    await expect(actor({ allowPasswordChange: true })).resolves.toMatchObject({ requiresPasswordChange: true, role: "owner" });
+  });
+  it("rejects revoked sessions even for the password-change screen", async () => {
+    fixtures.state.ownerState.valid = false;
+    await expect(actor({ allowPasswordChange: true })).rejects.toMatchObject({ status: 401, code: "OWNER_SESSION_REVOKED" });
+  });
   it("permits a DB-authorized superadmin to support a suspended tenant", async () => {
     fixtures.state.admin = { user_id: "user-owner", is_active: true };
     fixtures.state.restaurant = { id: tenantB, status: "suspended" };

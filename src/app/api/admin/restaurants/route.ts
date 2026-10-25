@@ -84,6 +84,9 @@ export async function POST(request: Request) {
           raw.suspension_message ||
             "Este menú no está disponible temporalmente.",
         );
+      const creator_brand = z.string().trim().min(1).max(80).parse(raw.creator_brand || "Tolentino Chef");
+      const creator_phone = z.string().regex(/^[0-9+() -]{7,24}$/).parse(raw.creator_phone || "3108853158");
+      const creator_whatsapp = z.string().regex(/^https:\/\/wa[.]me\/[0-9]{7,15}([?]text=[^\s]*)?$/).max(1000).parse(raw.creator_whatsapp || "https://wa.me/573108853158?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20un%20men%C3%BA%20digital%20para%20mi%20restaurante");
       const existing = await db
         .from("platform_settings")
         .select("id")
@@ -92,7 +95,7 @@ export async function POST(request: Request) {
       dbError(existing.error);
       const saved = await db
         .from("platform_settings")
-        .update({ contact_url, contact_label, suspension_message })
+        .update({ contact_url, contact_label, suspension_message, creator_brand, creator_phone, creator_whatsapp })
         .eq("id", existing.data!.id);
       dbError(saved.error);
       await audit(user.id, "platform_updated");

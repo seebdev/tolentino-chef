@@ -295,6 +295,9 @@ describe("proxy hostname boundaries", () => {
     "/",
     "/menu/restaurant-a",
     "/api/public/menu/restaurant-a",
+    "/api/public/menu/restaurant-a/version",
+    "/creditos-fotografias?restaurant=tenant-a",
+    ...["co","gb","fr","it","cn","jp","in"].map(flag => `/flags/${flag}.svg`),
     "/q/fixture",
     "/_next/static/chunk.js",
     "/administrator",
@@ -344,6 +347,9 @@ describe("proxy hostname boundaries", () => {
   it.each([
     "/menu/restaurant-a",
     "/api/public/menu/restaurant-a",
+    "/api/public/menu/restaurant-a/version",
+    "/creditos-fotografias?restaurant=tenant-a",
+    ...["co","gb","fr","it","cn","jp","in"].map(flag => `/flags/${flag}.svg`),
     "/api/media/tenant-a/image.webp",
   ])(
     "retains only the verified restaurant's public route: %s",
@@ -364,6 +370,8 @@ describe("proxy hostname boundaries", () => {
     "/api/workspace/tenant-a",
     "/menu/restaurant-b",
     "/api/public/menu/restaurant-b",
+    "/api/public/menu/restaurant-b/version",
+    "/flags/unknown.svg",
     "/api/media/tenant-b/image.webp",
   ])(
     "denies private and other-tenant routes on a custom domain: %s",

@@ -1,7 +1,7 @@
 import type { NextConfig } from "next";
 const config: NextConfig = {
   poweredByHeader: false,
-  serverExternalPackages: ["sharp"],
+  serverExternalPackages: ["sharp", "pdfjs-dist", "@napi-rs/canvas"],
   async headers() {
     return [
       {

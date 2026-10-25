@@ -16,13 +16,13 @@ import {
   promotionInput,
   language,
   uuid,
-  color,
   assertMediaTenant,
   safeHostname,
 } from "@/lib/validation";
 import { dnsInstructions, verifyDomain, registerDomain } from "@/lib/domains";
 import { platformHosts } from "@/lib/config";
 import { allRows } from "@/lib/queries";
+import { parseProductMutation } from "@/lib/workspace-input";
 type Params = { params: Promise<{ restaurantId: string }> };
 function checkMedia(path: string | null | undefined, restaurantId: string) {
   try {
@@ -173,12 +173,8 @@ export async function POST(request: Request, { params }: Params) {
     };
     let result: unknown = { ok: true };
     if (action === "save_product") {
-      const value = productInput.parse({
-        ...data,
-        image_path: data.image_path || null,
-        sku: data.sku || null,
-      });
-      checkMedia(value.image_path, restaurantId);
+      const value = parseProductMutation(data);
+      checkMedia(value.image_path as string | null | undefined, restaurantId);
       result = await save("products", value);
     } else if (action === "delete_product") {
       await remove("products", data.id);
@@ -223,56 +219,28 @@ export async function POST(request: Request, { params }: Params) {
       );
     } else if (action === "delete_promotion") {
       await remove("promotions", data.id);
-    } else if (action === "save_appearance") {
-      const appearance = appearanceInput.parse(
-        Object.fromEntries(
-          Object.entries(
-            (data.appearance || data) as Record<string, unknown>,
-          ).map(([k, v]) => [k, k.endsWith("_path") && !v ? null : v]),
-        ),
-      );
-      for (const path of [
-        appearance.logo_path,
-        appearance.cover_path,
-        appearance.favicon_path,
-      ])
-        checkMedia(path, restaurantId);
-      // Validate every field before the first write, including the optional public details.
-      const info =
-        data.name !== undefined || data.description !== undefined
-          ? z
-              .object({
-                name: z.string().trim().min(2).max(100),
-                description: z.string().max(1200),
-              })
-              .parse({
-                name: data.name ?? c.restaurant.name,
-                description: data.description ?? c.restaurant.description,
-              })
-          : null;
-      const r = await db
-        .from("restaurant_settings")
-        .update({ draft_appearance: appearance })
-        .eq("restaurant_id", restaurantId);
-      dbError(r.error);
-      if (info) {
-        dbError(
-          (await db.from("restaurants").update(info).eq("id", restaurantId))
-            .error,
-        );
-      }
-    } else if (action === "publish_appearance") {
-      const settings = await db
-        .from("restaurant_settings")
-        .select("draft_appearance")
-        .eq("restaurant_id", restaurantId)
-        .single();
-      dbError(settings.error);
-      const r = await db
-        .from("restaurant_settings")
-        .update({ appearance: settings.data!.draft_appearance })
-        .eq("restaurant_id", restaurantId);
-      dbError(r.error);
+    } else if (action === "save_appearance" || action === "publish_appearance") {
+      const appearance = appearanceInput.parse(Object.fromEntries(
+        Object.entries((data.appearance || {}) as Record<string, unknown>)
+          .map(([key, value]) => [key, key.endsWith("_path") && value === "" ? null : value]),
+      ));
+      for (const path of [appearance.logo_path, appearance.cover_path, appearance.favicon_path]) checkMedia(path, restaurantId);
+      const details = z.object({
+        name: z.string().trim().min(2).max(100).optional(),
+        description: z.string().max(1200).optional(),
+        expectedRevision: z.number().int().min(0),
+      }).parse(data);
+      const saved = await db.rpc("save_restaurant_appearance", {
+        p_restaurant_id: restaurantId,
+        p_appearance: appearance,
+        p_name: details.name ?? null,
+        p_description: details.description ?? null,
+        p_expected_revision: details.expectedRevision,
+        p_publish: action === "publish_appearance",
+      });
+      if (saved.error?.code === "PT409") throw new ApiError(409, "Otro editor guardó cambios. Recarga la configuración antes de volver a guardar.", "REVISION_CONFLICT");
+      dbError(saved.error);
+      result = saved.data;
     } else if (action === "save_hours") {
       const time = z
         .string()
@@ -327,25 +295,32 @@ export async function POST(request: Request, { params }: Params) {
     } else if (action === "save_translation") {
       const value = z
         .object({
-          entity_type: z.enum(["product", "category"]),
+          entity_type: z.enum(["product", "category", "promotion", "restaurant"]),
           entity_id: uuid,
           language,
           fields: z.object({
             name: z.string().max(160).optional(),
             description: z.string().max(3000).optional(),
+            title: z.string().max(160).optional(),
+            ingredients: z.string().max(1500).optional(),
+            tags: z.array(z.string().max(40)).max(20).optional(),
+            extras: z.array(z.object({name:z.string().max(100)})).max(30).optional(),
+            variants: z.array(z.object({name:z.string().max(100)})).max(30).optional(),
           }),
         })
         .parse(data);
-      dbError(
-        (
-          await db
-            .from("translations")
-            .upsert(
-              { ...value, restaurant_id: restaurantId },
-              { onConflict: "restaurant_id,entity_type,entity_id,language" },
-            )
-        ).error,
-      );
+      const savedTranslation = await db.rpc("save_manual_translation", {
+        p_restaurant_id: restaurantId,
+        p_entity_type: value.entity_type,
+        p_entity_id: value.entity_id,
+        p_language: value.language,
+        p_fields: value.fields,
+      });
+      if (savedTranslation.error?.code === "22023" &&
+          savedTranslation.error.message.includes("translation_array_incomplete")) {
+        throw new ApiError(400, "Completa todos los nombres de la lista que estás traduciendo, o déjala vacía para la traducción automática.");
+      }
+      dbError(savedTranslation.error);
     } else if (
       [
         "save_qr",
@@ -361,32 +336,8 @@ export async function POST(request: Request, { params }: Params) {
           "Solo Tolentino puede cambiar el QR o el dominio.",
         );
       if (action === "save_qr") {
-        const value = z
-          .object({
-            foreground: color,
-            background: color,
-            frame: z.enum(["none", "simple", "rounded"]),
-            label: z.string().max(80),
-            include_logo: z.boolean(),
-          })
-          .parse(data);
-        const { validateQrColors } = await import("@/lib/qr");
-        try {
-          validateQrColors(value.foreground, value.background);
-        } catch {
-          throw new ApiError(
-            400,
-            "Usa un color oscuro sobre fondo claro, con suficiente contraste para escanear el QR.",
-          );
-        }
-        dbError(
-          (
-            await db
-              .from("restaurant_qr_configs")
-              .update(value)
-              .eq("restaurant_id", restaurantId)
-          ).error,
-        );
+        const { saveQrConfiguration } = await import("@/lib/restaurant-qr");
+        result = await saveQrConfiguration(db, restaurantId, c.restaurant.public_token, data);
       }
       if (action === "save_domain") {
         let hostname: string;

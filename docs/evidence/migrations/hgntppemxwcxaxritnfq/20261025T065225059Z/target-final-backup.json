@@ -1,0 +1,66 @@
+{
+  "at": "2026-10-25T06:54:13.941Z",
+  "result": "PASS",
+  "targetProjectRef": "hgntppemxwcxaxritnfq",
+  "operation": "Read-only final target logical database and storage backup",
+  "archive": ".runtime/backups/target-final-hgntppemxwcxaxritnfq-20261025T065225059Z.json.enc",
+  "encryptedArchiveSha256": "b4b805e7919df65d62ac2b705c5f1313733e1f40fd16ebf39abf1093c970bb3a",
+  "encryptedArchiveBytes": 987588,
+  "counts": {
+    "tables": 16,
+    "privateTables": 7,
+    "rows": 2091,
+    "authUsers": 7,
+    "objects": 31,
+    "objectBytes": 315328
+  },
+  "postgresDump": {
+    "bytes": 690469,
+    "sha256": "a001c99945bbaefc0dd24b18f831252b40d0bf3cbfb2d71d43edbab12688d21c",
+    "format": "custom"
+  },
+  "cipher": "AES-256-GCM",
+  "keyProtection": "windows-dpapi-current-user",
+  "acl": {
+    "inheritedAccessDisabled": true,
+    "allowedPrincipals": "current Windows user and SYSTEM",
+    "ignoredByGit": true
+  },
+  "fullArchiveDecoded": true,
+  "encryptedMemoryAndDiskRoundtrip": true,
+  "allObjectBytesVerified": true,
+  "catalogCaptured": true,
+  "migrationVersions": [
+    "20261017021301",
+    "20261017165549",
+    "20261018053627",
+    "20261018053802",
+    "20261018053943",
+    "20261018054420",
+    "20261018061842",
+    "20261018062727"
+  ],
+  "privateRows": {
+    "import_attempts": 4,
+    "owner_access": 6,
+    "owner_access_requests": 4,
+    "rate_limits": 69,
+    "restaurant_creation_requests": 6,
+    "translation_attempts": 0,
+    "translation_budget": 1
+  },
+  "beforeAfterStable": true,
+  "readOnlyRequests": 100,
+  "remoteMutations": 0,
+  "plaintextFilesWritten": 0,
+  "clientTlsHostnameAndCaVerified": true,
+  "fullManagedSupabaseRestoreExecuted": false,
+  "physicalBackupOrPitr": false,
+  "limitations": [
+    "pg_dump is a consistent database snapshot; comparison of API/Storage before and after detects stability but is not a distributed transaction.",
+    "Complete archive decode validates compressed entries, not a full managed Supabase restoration.",
+    "Includes current Auth tables in the encrypted dump, not Auth/SMTP/provider/JWT settings or signing keys.",
+    "Storage bytes are included separately; role passwords, publications, subscriptions, other databases and physical WAL/PITR are excluded.",
+    "DPAPI CurrentUser requires this Windows profile/machine; independent portable disaster recovery is not established."
+  ]
+}

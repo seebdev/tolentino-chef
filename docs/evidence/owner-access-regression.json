@@ -1,0 +1,817 @@
+{
+  "at": "2026-10-18T06:15:12.311Z",
+  "result": "PASS",
+  "scope": "Local handlers with explicit mocks, PostgreSQL PGlite, intercepted browser UI; no remote Supabase writes or email delivery",
+  "reproductions": {
+    "initialLoginBefore": {
+      "total": 2,
+      "passed": 0,
+      "failed": 2,
+      "cases": [
+        {
+          "file": "tests/owner-login.test.ts",
+          "name": "owner login contract resolves a normalized alias only inside the server login and never returns the email",
+          "result": "failed"
+        },
+        {
+          "file": "tests/owner-login.test.ts",
+          "name": "owner login contract sends a temporary-password session to the enforced first change rather than the dashboard",
+          "result": "failed"
+        }
+      ]
+    },
+    "placeholderSessionBefore": {
+      "total": 9,
+      "passed": 8,
+      "failed": 1,
+      "cases": [
+        {
+          "file": "tests/owner-login.test.ts",
+          "name": "owner login contract resolves a normalized alias only inside the server login and never returns the email",
+          "result": "passed"
+        },
+        {
+          "file": "tests/owner-login.test.ts",
+          "name": "owner login contract sends a temporary-password session to the enforced first change rather than the dashboard",
+          "result": "passed"
+        },
+        {
+          "file": "tests/owner-login.test.ts",
+          "name": "owner login contract clears a successful provider session if an unresolved alias used the timing placeholder",
+          "result": "failed"
+        },
+        {
+          "file": "tests/owner-login.test.ts",
+          "name": "owner password change authorization unlocks only the generation and verified session after Auth accepted the new password",
+          "result": "passed"
+        },
+        {
+          "file": "tests/owner-login.test.ts",
+          "name": "owner password change authorization does not clear a newer reset when the generation changed during the Auth mutation",
+          "result": "passed"
+        },
+        {
+          "file": "tests/owner-login.test.ts",
+          "name": "owner password change authorization rejects mismatched-sub claims before changing Auth or clearing the gate",
+          "result": "passed"
+        },
+        {
+          "file": "tests/owner-login.test.ts",
+          "name": "owner password change authorization rejects provider-error claims before changing Auth or clearing the gate",
+          "result": "passed"
+        },
+        {
+          "file": "tests/owner-login.test.ts",
+          "name": "owner password change authorization keeps the application gate closed when the Auth provider rejects the password",
+          "result": "passed"
+        },
+        {
+          "file": "tests/owner-login.test.ts",
+          "name": "owner password change authorization preserves administrator password changes without applying an owner generation",
+          "result": "passed"
+        }
+      ]
+    },
+    "uiPendingBug": "Initial UI run exposed pending:true collision with the shared HTTP helper; renamed state to operationPending. A separate incorrect button selector was corrected in the test harness."
+  },
+  "final": {
+    "unitAndDatabase": {
+      "total": 133,
+      "passed": 133,
+      "failed": 0,
+      "cases": [
+        {
+          "file": "tests/admin_routes.test.ts",
+          "name": "admin creation, idempotency and commercial-data regressions updates metadata without protected email or an unintended sale overwrite",
+          "result": "passed"
+        },
+        {
+          "file": "tests/admin_routes.test.ts",
+          "name": "admin creation, idempotency and commercial-data regressions maps partial sale aliases while preserving absent fields",
+          "result": "passed"
+        },
+        {
+          "file": "tests/admin_routes.test.ts",
+          "name": "admin creation, idempotency and commercial-data regressions rejects email reassignment and malformed sales before writing",
+          "result": "passed"
+        },
+        {
+          "file": "tests/admin_routes.test.ts",
+          "name": "admin creation, idempotency and commercial-data regressions returns a clear 404 when the requested restaurant does not exist",
+          "result": "passed"
+        },
+        {
+          "file": "tests/admin_routes.test.ts",
+          "name": "admin creation, idempotency and commercial-data regressions requires an attempt UUID before creating Auth accounts",
+          "result": "passed"
+        },
+        {
+          "file": "tests/admin_routes.test.ts",
+          "name": "admin creation, idempotency and commercial-data regressions maps validated aliases and replays the successful request without another Auth user or email",
+          "result": "passed"
+        },
+        {
+          "file": "tests/admin_routes.test.ts",
+          "name": "admin creation, idempotency and commercial-data regressions allows only one creation while a concurrent second submit receives pending",
+          "result": "passed"
+        },
+        {
+          "file": "tests/admin_routes.test.ts",
+          "name": "admin creation, idempotency and commercial-data regressions rejects reusing an attempt key with changed data without creating another account",
+          "result": "passed"
+        },
+        {
+          "file": "tests/admin_routes.test.ts",
+          "name": "admin creation, idempotency and commercial-data regressions maps a genuine email conflict to 409 and never deletes the pre-existing account",
+          "result": "passed"
+        },
+        {
+          "file": "tests/admin_routes.test.ts",
+          "name": "admin creation, idempotency and commercial-data regressions does not mislabel Auth failure {\"code\":\"unexpected_failure\",\"status\":500} as a conflict",
+          "result": "passed"
+        },
+        {
+          "file": "tests/admin_routes.test.ts",
+          "name": "admin creation, idempotency and commercial-data regressions does not mislabel Auth failure {\"code\":\"not_admin\",\"status\":403} as a conflict",
+          "result": "passed"
+        },
+        {
+          "file": "tests/admin_routes.test.ts",
+          "name": "admin creation, idempotency and commercial-data regressions does not mislabel Auth failure {\"code\":\"over_request_rate_limit\",\"status\":429} as a conflict",
+          "result": "passed"
+        },
+        {
+          "file": "tests/admin_routes.test.ts",
+          "name": "admin creation, idempotency and commercial-data regressions does not mislabel Auth failure {\"code\":\"email_address_invalid\",\"status\":422} as a conflict",
+          "result": "passed"
+        },
+        {
+          "file": "tests/admin_routes.test.ts",
+          "name": "admin creation, idempotency and commercial-data regressions does not mislabel Auth failure {\"message\":\"some unclassified internal error\"} as a conflict",
+          "result": "passed"
+        },
+        {
+          "file": "tests/admin_routes.test.ts",
+          "name": "admin creation, idempotency and commercial-data regressions compensates only the reserved newly-created user after a true SQL slug conflict",
+          "result": "passed"
+        },
+        {
+          "file": "tests/admin_routes.test.ts",
+          "name": "admin creation, idempotency and commercial-data regressions recovers an Auth account created before its response was lost",
+          "result": "passed"
+        },
+        {
+          "file": "tests/admin_routes.test.ts",
+          "name": "admin creation, idempotency and commercial-data regressions never adopts or deletes a pre-existing Auth user without the server-owned attempt marker",
+          "result": "passed"
+        },
+        {
+          "file": "tests/admin_routes.test.ts",
+          "name": "admin creation, idempotency and commercial-data regressions recovers a committed SQL result after a lost response without deleting the owner",
+          "result": "passed"
+        },
+        {
+          "file": "tests/admin_routes.test.ts",
+          "name": "admin creation, idempotency and commercial-data regressions resumes a transient SQL failure using the same Auth account and IDs",
+          "result": "passed"
+        },
+        {
+          "file": "tests/admin_routes.test.ts",
+          "name": "admin creation, idempotency and commercial-data regressions records and resumes a failed cleanup, leaving all unrelated accounts untouched",
+          "result": "passed"
+        },
+        {
+          "file": "tests/admin_routes.test.ts",
+          "name": "admin creation, idempotency and commercial-data regressions keeps creation independent of mail and never sends on creation or replay",
+          "result": "passed"
+        },
+        {
+          "file": "tests/admin_routes.test.ts",
+          "name": "admin creation, idempotency and commercial-data regressions creates DEMO .test accounts silently and rejects real email addresses in DEMO mode",
+          "result": "passed"
+        },
+        {
+          "file": "tests/admin_routes.test.ts",
+          "name": "admin creation, idempotency and commercial-data regressions prevents later access-reset emails for DEMO accounts",
+          "result": "passed"
+        },
+        {
+          "file": "tests/api_security.test.ts",
+          "name": "server authentication and tenant authorization denies an absent or rejected Supabase user before any privileged client is used",
+          "result": "passed"
+        },
+        {
+          "file": "tests/api_security.test.ts",
+          "name": "server authentication and tenant authorization ignores self-editable role metadata and denies owner access to the platform admin",
+          "result": "passed"
+        },
+        {
+          "file": "tests/api_security.test.ts",
+          "name": "server authentication and tenant authorization denies an owner addressing another tenant before querying that restaurant",
+          "result": "passed"
+        },
+        {
+          "file": "tests/api_security.test.ts",
+          "name": "server authentication and tenant authorization uses the user-scoped client and exact tenant filter for an allowed owner",
+          "result": "passed"
+        },
+        {
+          "file": "tests/api_security.test.ts",
+          "name": "server authentication and tenant authorization blocks disabled memberships, unassigned users and suspended restaurants",
+          "result": "passed"
+        },
+        {
+          "file": "tests/api_security.test.ts",
+          "name": "server authentication and tenant authorization blocks business access until first change but permits the change screen",
+          "result": "passed"
+        },
+        {
+          "file": "tests/api_security.test.ts",
+          "name": "server authentication and tenant authorization rejects revoked sessions even for the password-change screen",
+          "result": "passed"
+        },
+        {
+          "file": "tests/api_security.test.ts",
+          "name": "server authentication and tenant authorization permits a DB-authorized superadmin to support a suspended tenant",
+          "result": "passed"
+        },
+        {
+          "file": "tests/api_security.test.ts",
+          "name": "server authentication and tenant authorization rejects invalid IDs before performing auth calls and returns 404 for missing tenants",
+          "result": "passed"
+        },
+        {
+          "file": "tests/api_security.test.ts",
+          "name": "request boundary security requires the official origin and rejects explicit cross-site requests",
+          "result": "passed"
+        },
+        {
+          "file": "tests/api_security.test.ts",
+          "name": "request boundary security limits actual streamed bytes even when Content-Length is absent or incorrect",
+          "result": "passed"
+        },
+        {
+          "file": "tests/api_security.test.ts",
+          "name": "request boundary security cancels a real multipart upload stream once actual bytes exceed the limit despite a forged or absent length",
+          "result": "passed"
+        },
+        {
+          "file": "tests/api_security.test.ts",
+          "name": "request boundary security preserves binary upload bytes exactly at the accepted boundary",
+          "result": "passed"
+        },
+        {
+          "file": "tests/api_security.test.ts",
+          "name": "request boundary security rejects malformed JSON, arrays and null payloads",
+          "result": "passed"
+        },
+        {
+          "file": "tests/api_security.test.ts",
+          "name": "request boundary security hashes rate-limit identities and fails closed when the database denies a request",
+          "result": "passed"
+        },
+        {
+          "file": "tests/api_security.test.ts",
+          "name": "request boundary security returns safe errors and no-store responses without leaking database secrets",
+          "result": "passed"
+        },
+        {
+          "file": "tests/auth_routes.test.ts",
+          "name": "password recovery communication policy suppresses reserved .test mail with the same generic response and rate limiting as ordinary recovery",
+          "result": "passed"
+        },
+        {
+          "file": "tests/auth_routes.test.ts",
+          "name": "password recovery communication policy rejects an invalid recovery address without calling the email provider",
+          "result": "passed"
+        },
+        {
+          "file": "tests/auth_routes.test.ts",
+          "name": "password recovery communication policy keeps recovery generic on returned provider failure and logs only fixed fields",
+          "result": "passed"
+        },
+        {
+          "file": "tests/auth_routes.test.ts",
+          "name": "password recovery communication policy keeps recovery generic on thrown provider failure and logs only fixed fields",
+          "result": "passed"
+        },
+        {
+          "file": "tests/auth_routes.test.ts",
+          "name": "session logout scope and local cleanup logs out only the current session and clears local cookies",
+          "result": "passed"
+        },
+        {
+          "file": "tests/auth_routes.test.ts",
+          "name": "session logout scope and local cleanup clears cookies on returned Auth failure without claiming remote revocation",
+          "result": "passed"
+        },
+        {
+          "file": "tests/auth_routes.test.ts",
+          "name": "session logout scope and local cleanup clears cookies on thrown Auth failure without claiming remote revocation",
+          "result": "passed"
+        },
+        {
+          "file": "tests/auth_routes.test.ts",
+          "name": "session logout scope and local cleanup does not claim local cleanup if writing cookies fails",
+          "result": "passed"
+        },
+        {
+          "file": "tests/auth_routes.test.ts",
+          "name": "session logout scope and local cleanup clears a denied login while preserving its authorization error (Auth failure false)",
+          "result": "passed"
+        },
+        {
+          "file": "tests/auth_routes.test.ts",
+          "name": "session logout scope and local cleanup clears a denied login while preserving its authorization error (Auth failure true)",
+          "result": "passed"
+        },
+        {
+          "file": "tests/database.test.ts",
+          "name": "PostgreSQL tenant isolation, constraints and transactional operations enables RLS on every application table and exposes no anonymous read grants",
+          "result": "passed"
+        },
+        {
+          "file": "tests/database.test.ts",
+          "name": "PostgreSQL tenant isolation, constraints and transactional operations anonymous visitors cannot read database tables or call privileged operations",
+          "result": "passed"
+        },
+        {
+          "file": "tests/database.test.ts",
+          "name": "PostgreSQL tenant isolation, constraints and transactional operations owner A sees only A, and owner B sees only B",
+          "result": "passed"
+        },
+        {
+          "file": "tests/database.test.ts",
+          "name": "PostgreSQL tenant isolation, constraints and transactional operations an authenticated platform admin has no global database bypass",
+          "result": "passed"
+        },
+        {
+          "file": "tests/database.test.ts",
+          "name": "PostgreSQL tenant isolation, constraints and transactional operations owners can mutate their own menu but cannot read, update, delete or insert in another tenant",
+          "result": "passed"
+        },
+        {
+          "file": "tests/database.test.ts",
+          "name": "PostgreSQL tenant isolation, constraints and transactional operations composite foreign keys reject cross-tenant products, subcategories and translations",
+          "result": "passed"
+        },
+        {
+          "file": "tests/database.test.ts",
+          "name": "PostgreSQL tenant isolation, constraints and transactional operations owners cannot promote themselves, change membership, reactivate status or forge domain verification",
+          "result": "passed"
+        },
+        {
+          "file": "tests/database.test.ts",
+          "name": "PostgreSQL tenant isolation, constraints and transactional operations public token is immutable even to service role",
+          "result": "passed"
+        },
+        {
+          "file": "tests/database.test.ts",
+          "name": "PostgreSQL tenant isolation, constraints and transactional operations private media enforces tenant paths and rejects movement across restaurants",
+          "result": "passed"
+        },
+        {
+          "file": "tests/database.test.ts",
+          "name": "PostgreSQL tenant isolation, constraints and transactional operations suspension revokes the prior session and denies menu and media",
+          "result": "passed"
+        },
+        {
+          "file": "tests/database.test.ts",
+          "name": "PostgreSQL tenant isolation, constraints and transactional operations disabled membership remains inspectable but revokes all business access immediately",
+          "result": "passed"
+        },
+        {
+          "file": "tests/database.test.ts",
+          "name": "PostgreSQL tenant isolation, constraints and transactional operations imports create, update and skip exact SKU or normalized-name duplicates",
+          "result": "passed"
+        },
+        {
+          "file": "tests/database.test.ts",
+          "name": "PostgreSQL tenant isolation, constraints and transactional operations a bad CSV row rolls back every earlier product and newly created category",
+          "result": "passed"
+        },
+        {
+          "file": "tests/database.test.ts",
+          "name": "PostgreSQL tenant isolation, constraints and transactional operations duplicate identity ambiguity is rejected without mutating either record",
+          "result": "passed"
+        },
+        {
+          "file": "tests/database.test.ts",
+          "name": "PostgreSQL tenant isolation, constraints and transactional operations owner cannot import into B, even with a valid B restaurant ID",
+          "result": "passed"
+        },
+        {
+          "file": "tests/database.test.ts",
+          "name": "PostgreSQL tenant isolation, constraints and transactional operations database constraints reject negative prices, invalid languages, cyclic category trees and unsafe image paths",
+          "result": "passed"
+        },
+        {
+          "file": "tests/database.test.ts",
+          "name": "PostgreSQL tenant isolation, constraints and transactional operations changes to products, settings and translations bump menu version",
+          "result": "passed"
+        },
+        {
+          "file": "tests/database.test.ts",
+          "name": "PostgreSQL tenant isolation, constraints and transactional operations provisioning is atomic when owner assignment conflicts",
+          "result": "passed"
+        },
+        {
+          "file": "tests/database.test.ts",
+          "name": "PostgreSQL tenant isolation, constraints and transactional operations service role rate limiting counts across calls and rejects after the configured limit",
+          "result": "passed"
+        },
+        {
+          "file": "tests/database.test.ts",
+          "name": "PostgreSQL tenant isolation, constraints and transactional operations aggregate visits count QR scans separately and stop for suspended restaurants",
+          "result": "passed"
+        },
+        {
+          "file": "tests/database.test.ts",
+          "name": "PostgreSQL tenant isolation, constraints and transactional operations owners cannot edit platform-controlled slug or QR configuration",
+          "result": "passed"
+        },
+        {
+          "file": "tests/database.test.ts",
+          "name": "PostgreSQL tenant isolation, constraints and transactional operations restaurant and sale edits commit together and reject protected properties",
+          "result": "passed"
+        },
+        {
+          "file": "tests/database.test.ts",
+          "name": "PostgreSQL tenant isolation, constraints and transactional operations language changes validate enabled/default together and roll back invalid settings",
+          "result": "passed"
+        },
+        {
+          "file": "tests/database.test.ts",
+          "name": "PostgreSQL tenant isolation, constraints and transactional operations reactivation requires a fresh session and preserves QR identity",
+          "result": "passed"
+        },
+        {
+          "file": "tests/database.test.ts",
+          "name": "PostgreSQL tenant isolation, constraints and transactional operations imports 1 products atomically within the supported batch size",
+          "result": "passed"
+        },
+        {
+          "file": "tests/database.test.ts",
+          "name": "PostgreSQL tenant isolation, constraints and transactional operations imports 100 products atomically within the supported batch size",
+          "result": "passed"
+        },
+        {
+          "file": "tests/database.test.ts",
+          "name": "PostgreSQL tenant isolation, constraints and transactional operations imports 999 products atomically within the supported batch size",
+          "result": "passed"
+        },
+        {
+          "file": "tests/database.test.ts",
+          "name": "PostgreSQL tenant isolation, constraints and transactional operations imports 1000 products atomically within the supported batch size",
+          "result": "passed"
+        },
+        {
+          "file": "tests/database.test.ts",
+          "name": "PostgreSQL tenant isolation, constraints and transactional operations rejects empty and 1001-row imports before creating any product",
+          "result": "passed"
+        },
+        {
+          "file": "tests/database.test.ts",
+          "name": "PostgreSQL tenant isolation, constraints and transactional operations uses exact case-sensitive SKUs and preserves accents when identifying duplicates",
+          "result": "passed"
+        },
+        {
+          "file": "tests/database.test.ts",
+          "name": "PostgreSQL tenant isolation, constraints and transactional operations rejects cross-tenant appearance images, unsafe colors and unknown appearance fields at the database boundary",
+          "result": "passed"
+        },
+        {
+          "file": "tests/database.test.ts",
+          "name": "PostgreSQL tenant isolation, constraints and transactional operations aggregates all daily statistics beyond the REST row cap without exposing the other tenant",
+          "result": "passed"
+        },
+        {
+          "file": "tests/database.test.ts",
+          "name": "PostgreSQL tenant isolation, constraints and transactional operations keeps different explicit SKUs independent even when product names match",
+          "result": "passed"
+        },
+        {
+          "file": "tests/database.test.ts",
+          "name": "PostgreSQL tenant isolation, constraints and transactional operations supports idempotent hours and translation upserts under owner RLS",
+          "result": "passed"
+        },
+        {
+          "file": "tests/database.test.ts",
+          "name": "PostgreSQL tenant isolation, constraints and transactional operations allows the platform to disable optional contact without publishing a sample address",
+          "result": "passed"
+        },
+        {
+          "file": "tests/database.test.ts",
+          "name": "Durable restaurant-creation transactions denies owner/anonymous access to requests and every creation RPC",
+          "result": "passed"
+        },
+        {
+          "file": "tests/database.test.ts",
+          "name": "Durable restaurant-creation transactions only reserves attempts for an active platform administrator",
+          "result": "passed"
+        },
+        {
+          "file": "tests/database.test.ts",
+          "name": "Durable restaurant-creation transactions reserves once, rejects payload changes, and fences stale workers after retry",
+          "result": "passed"
+        },
+        {
+          "file": "tests/database.test.ts",
+          "name": "Durable restaurant-creation transactions atomically creates the tenant, membership, settings, QR, hours, sale, audit and replay result",
+          "result": "passed"
+        },
+        {
+          "file": "tests/database.test.ts",
+          "name": "Durable restaurant-creation transactions rolls all business rows and audit back on a late sale constraint failure",
+          "result": "passed"
+        },
+        {
+          "file": "tests/database.test.ts",
+          "name": "Durable restaurant-creation transactions keeps cleanup durable after a slug conflict and never allows cleanup to re-enter provisioning",
+          "result": "passed"
+        },
+        {
+          "file": "tests/database.test.ts",
+          "name": "Durable restaurant-creation transactions recovers the committed result instead of allowing a late cleanup decision",
+          "result": "passed"
+        },
+        {
+          "file": "tests/database.test.ts",
+          "name": "Durable restaurant-creation transactions enforces DEMO reserved addresses in SQL and keeps the flag unavailable to owner updates",
+          "result": "passed"
+        },
+        {
+          "file": "tests/final-backup-restore.test.ts",
+          "name": "catalog-based isolated backup restore selects only captured versions even when newer local migrations exist",
+          "result": "passed"
+        },
+        {
+          "file": "tests/final-backup-restore.test.ts",
+          "name": "catalog-based isolated backup restore captures every catalog table including new private state and more than 1000 rows",
+          "result": "passed"
+        },
+        {
+          "file": "tests/final-backup-restore.test.ts",
+          "name": "catalog-based isolated backup restore restores exact current public/private rows, generated columns and identities with FK checks enabled",
+          "result": "passed"
+        },
+        {
+          "file": "tests/final-backup-restore.test.ts",
+          "name": "catalog-based isolated backup restore rolls back every table if any captured row violates its FK",
+          "result": "passed"
+        },
+        {
+          "file": "tests/final-backup-restore.test.ts",
+          "name": "catalog-based isolated backup restore fails closed on omitted tables or a remote-like SQL adapter",
+          "result": "passed"
+        },
+        {
+          "file": "tests/owner-access-database.test.ts",
+          "name": "owner credential policy in PostgreSQL preserves existing credentials and tenant data until an authorized reset",
+          "result": "passed"
+        },
+        {
+          "file": "tests/owner-access-database.test.ts",
+          "name": "owner credential policy in PostgreSQL does not expose alias lookup, journals, password completion or admin RPCs to anon",
+          "result": "passed"
+        },
+        {
+          "file": "tests/owner-access-database.test.ts",
+          "name": "owner credential policy in PostgreSQL does not expose alias lookup, journals, password completion or admin RPCs to authenticated",
+          "result": "passed"
+        },
+        {
+          "file": "tests/owner-access-database.test.ts",
+          "name": "owner credential policy in PostgreSQL requires an active actual platform administrator even through the service RPC",
+          "result": "passed"
+        },
+        {
+          "file": "tests/owner-access-database.test.ts",
+          "name": "owner credential policy in PostgreSQL fences double submission and never authorizes repeating an uncertain Auth write",
+          "result": "passed"
+        },
+        {
+          "file": "tests/owner-access-database.test.ts",
+          "name": "owner credential policy in PostgreSQL reclaims an expired reservation while fencing the previous lease",
+          "result": "passed"
+        },
+        {
+          "file": "tests/owner-access-database.test.ts",
+          "name": "owner credential policy in PostgreSQL keeps the reserved email immutable across a pending retry",
+          "result": "passed"
+        },
+        {
+          "file": "tests/owner-access-database.test.ts",
+          "name": "owner credential policy in PostgreSQL rejects a session created during the reset before Auth completion",
+          "result": "passed"
+        },
+        {
+          "file": "tests/owner-access-database.test.ts",
+          "name": "owner credential policy in PostgreSQL blocks old sessions, direct REST-equivalent table access and Storage until a valid first change",
+          "result": "passed"
+        },
+        {
+          "file": "tests/owner-access-database.test.ts",
+          "name": "owner credential policy in PostgreSQL cannot clear a newer reset with an old password-change generation or foreign session",
+          "result": "passed"
+        },
+        {
+          "file": "tests/owner-access-database.test.ts",
+          "name": "owner credential policy in PostgreSQL suspension and reactivation of restaurant require fresh login",
+          "result": "passed"
+        },
+        {
+          "file": "tests/owner-access-database.test.ts",
+          "name": "owner credential policy in PostgreSQL suspension and reactivation of membership require fresh login",
+          "result": "passed"
+        },
+        {
+          "file": "tests/owner-access-database.test.ts",
+          "name": "owner credential policy in PostgreSQL enforces unique normalized aliases and leaves a conflicting tenant untouched",
+          "result": "passed"
+        },
+        {
+          "file": "tests/owner-access-database.test.ts",
+          "name": "owner credential policy in PostgreSQL creates only the reserved owner identity, atomically assigns it once and preserves one-owner constraints",
+          "result": "passed"
+        },
+        {
+          "file": "tests/owner-access-database.test.ts",
+          "name": "owner credential policy in PostgreSQL rejects mismatched reuse and refuses failed-state changes after completion",
+          "result": "passed"
+        },
+        {
+          "file": "tests/owner-access.test.ts",
+          "name": "owner access workflow boundaries validates the same normalized unique alias contract",
+          "result": "passed"
+        },
+        {
+          "file": "tests/owner-access.test.ts",
+          "name": "owner access workflow boundaries sets a manual credential once and never persists its value or digest in RPC/audit data",
+          "result": "passed"
+        },
+        {
+          "file": "tests/owner-access.test.ts",
+          "name": "owner access workflow boundaries generates a high-entropy temporary secret and only returns it on the committed first response",
+          "result": "passed"
+        },
+        {
+          "file": "tests/owner-access.test.ts",
+          "name": "owner access workflow boundaries recovers an Auth response lost after commit without issuing another credential",
+          "result": "passed"
+        },
+        {
+          "file": "tests/owner-access.test.ts",
+          "name": "owner access workflow boundaries reconciles SQL response failure with the Auth marker and never shows a credential on a later attempt",
+          "result": "passed"
+        },
+        {
+          "file": "tests/owner-access.test.ts",
+          "name": "owner access workflow boundaries does not repeat uncertain Auth mutations even if the caller supplies a different password",
+          "result": "passed"
+        },
+        {
+          "file": "tests/owner-access.test.ts",
+          "name": "owner access workflow boundaries creates only the reserved identity and assigns it through atomic completion",
+          "result": "passed"
+        },
+        {
+          "file": "tests/owner-access.test.ts",
+          "name": "owner access workflow boundaries never adopts an existing account for an unassigned restaurant",
+          "result": "passed"
+        },
+        {
+          "file": "tests/owner-access.test.ts",
+          "name": "owner access workflow boundaries classifies a true email conflict and fails its reservation without deleting anyone",
+          "result": "passed"
+        },
+        {
+          "file": "tests/owner-access.test.ts",
+          "name": "owner access workflow boundaries leaves uncertain provider errors recoverable and never mislabels them as conflicts",
+          "result": "passed"
+        },
+        {
+          "file": "tests/owner-access.test.ts",
+          "name": "owner access workflow boundaries rejects invalid passwords before reserving or changing an account",
+          "result": "passed"
+        },
+        {
+          "file": "tests/owner-access.test.ts",
+          "name": "owner access workflow boundaries does no Auth work on a concurrent pending request",
+          "result": "passed"
+        },
+        {
+          "file": "tests/owner-login.test.ts",
+          "name": "owner login contract resolves a normalized alias only inside the server login and never returns the email",
+          "result": "passed"
+        },
+        {
+          "file": "tests/owner-login.test.ts",
+          "name": "owner login contract sends a temporary-password session to the enforced first change rather than the dashboard",
+          "result": "passed"
+        },
+        {
+          "file": "tests/owner-login.test.ts",
+          "name": "owner login contract clears a successful provider session if an unresolved alias used the timing placeholder",
+          "result": "passed"
+        },
+        {
+          "file": "tests/owner-login.test.ts",
+          "name": "owner password change authorization unlocks only the generation and verified session after Auth accepted the new password",
+          "result": "passed"
+        },
+        {
+          "file": "tests/owner-login.test.ts",
+          "name": "owner password change authorization does not clear a newer reset when the generation changed during the Auth mutation",
+          "result": "passed"
+        },
+        {
+          "file": "tests/owner-login.test.ts",
+          "name": "owner password change authorization rejects mismatched-sub claims before changing Auth or clearing the gate",
+          "result": "passed"
+        },
+        {
+          "file": "tests/owner-login.test.ts",
+          "name": "owner password change authorization rejects provider-error claims before changing Auth or clearing the gate",
+          "result": "passed"
+        },
+        {
+          "file": "tests/owner-login.test.ts",
+          "name": "owner password change authorization keeps the application gate closed when the Auth provider rejects the password",
+          "result": "passed"
+        },
+        {
+          "file": "tests/owner-login.test.ts",
+          "name": "owner password change authorization preserves administrator password changes without applying an owner generation",
+          "result": "passed"
+        }
+      ]
+    },
+    "browserFixtures": {
+      "passed": 6,
+      "failed": 0,
+      "skipped": 0,
+      "flaky": 0,
+      "projects": [
+        "desktop",
+        "mobile"
+      ],
+      "startTime": "2026-10-18T06:01:33.853Z",
+      "durationMs": 151914.446,
+      "source": "test-results/owner-access-e2e-after.json",
+      "tests": "tests/e2e/owner-access.spec.ts",
+      "limitations": [
+        "API intercepted; does not prove Supabase persistence.",
+        "Final backend-only placeholder cleanup followed this UI run and is covered by the final handler suite."
+      ]
+    },
+    "typescript": {
+      "command": "node node_modules/typescript/bin/tsc --noEmit",
+      "exitCode": 0
+    },
+    "eslint": {
+      "scope": "owner access, affected Auth/admin handlers, backup/restore scripts and corresponding tests",
+      "exitCode": 0
+    },
+    "freshBackupRestore": {
+      "result": "PASS",
+      "checks": 71,
+      "publicRows": 617,
+      "publicTables": 15,
+      "privateTables": 2,
+      "privateRows": 50,
+      "authIdentities": 4,
+      "objects": 28,
+      "objectBytes": 315166,
+      "remoteRequests": 0,
+      "evidence": "docs/evidence/migrations/hgntppemxwcxaxritnfq/20261018T060751628Z/target-final-restore-local.json"
+    }
+  },
+  "commands": [
+    "node node_modules/vitest/vitest.mjs run tests/owner-access.test.ts tests/owner-access-database.test.ts tests/owner-login.test.ts tests/api_security.test.ts tests/final-backup-restore.test.ts tests/admin_routes.test.ts tests/auth_routes.test.ts tests/database.test.ts --reporter=json --outputFile=test-results/owner-access-final.json",
+    "E2E_BASE_URL=http://127.0.0.1:3002 E2E_RESULTS_FILE=test-results/owner-access-e2e-after.json node node_modules/@playwright/test/cli.js test tests/e2e/owner-access.spec.ts",
+    "node scripts/migration-target-final-restore-local.mjs --archive <private-encrypted-backup> --sha256 e1fce9f1e9073eede78a23fa3f175d9a332695db1121d7388d51ac5e1c3b177d"
+  ],
+  "sourceHashes": {
+    "supabase/migrations/20261018053627_owner_access.sql": "24511655c61a86af30e7d63aefe8eca10953ce9c26e9d497a237746e5f96e9f6",
+    "src/lib/owner-access.ts": "6f79b12c94a5f7dedded163d6d5d8cf8d59cfe221ad178116dec3ec5a8b22e0a",
+    "src/lib/access.ts": "b1a0a1329280c58c0c3654f3cab437f32f6ca41bf5f518e58931d2af555cc665",
+    "src/lib/create-restaurant.ts": "dd92d049f70a1ebc1c584c77d4da047c7fd467af4509aff8cecc12f639d84651",
+    "src/app/api/admin/owner-access/route.ts": "eaa769668eda4bb0e1f9a8705e75c3cc027faca87b449a0a60a15d29185fd2a5",
+    "src/app/api/auth/route.ts": "59aafc524d8a3e43b6a22cea7e026ef064822a8d55fcde3c7bdc60282351e97a",
+    "src/app/api/session/route.ts": "1dc456f645da239866c54d8a1d74ae593a7c4f8ac90c9d69b5bd4c672d2590dc",
+    "src/components/owner-access-dialog.tsx": "2c89823c1d2e4e529b0430d6f4eb70327c5fd9c13548a5ce12be0a94a415e0e0",
+    "src/components/login.tsx": "088ffcd647f3e7b0dc9e2980e671a932c1d2c74b5675dbb7e754caaa7dfc0749",
+    "src/components/admin-app.tsx": "8ce9b5e06f7be4e1ece20074d596abaef92fe32262b74704ffa9db15ff60b456",
+    "src/app/api/admin/restaurants/route.ts": "3122ea81eac31c78f53c26f031c251fcc06eb367243d25cb65980ab5a4d7659e",
+    "scripts/migration-target-final-backup.mjs": "5d2db43df299222a42ccb1ad361590c60a9c2225935799db4cfa0d5a13cc6225",
+    "scripts/migration-target-final-restore-local.mjs": "0ea0bb3f221f7fdf4b7e5fe8d9dc060ddb81006b62e5683d150df04658f98e48"
+  },
+  "limits": [
+    "The 133 local cases, 6 UI cases and 71 restore checks are separate scopes, not one interchangeable suite.",
+    "Auth in PGlite uses UUID/metadata/session stubs; no GoTrue login/password/session platform restore is claimed.",
+    "No owner credential was changed remotely for this evidence.",
+    "SMTP recovery delivery remains unverified.",
+    "Auth uncertainty after a started write stays pending unless its trusted marker confirms completion."
+  ]
+}

@@ -106,7 +106,7 @@ test("audit UI appearance publication respects required fields", async ({
   expect(mutations).toHaveLength(0);
 });
 
-test("audit UI validates variant prices before submitting and preserves the form", async ({
+test("audit UI validates extra prices before submitting and preserves the form", async ({
   page,
 }) => {
   const { mutations } = await auditFixture(page);
@@ -119,7 +119,7 @@ test("audit UI validates variant prices before submitting and preserves the form
   await page.getByLabel("Categoría", { exact: true }).selectOption("cat-main");
   await page.getByLabel("Precio", { exact: true }).fill("20000");
   await page
-    .getByLabel("Presentaciones y precios")
+    .getByLabel("Extras y precios")
     .fill("Grande | no-es-precio");
   await page
     .getByRole("button", { name: "Guardar producto", exact: true })
@@ -128,14 +128,14 @@ test("audit UI validates variant prices before submitting and preserves the form
     "línea 1",
   );
   expect(mutations).toHaveLength(0);
-  await page.getByLabel("Presentaciones y precios").fill("Grande | 30000");
+  await page.getByLabel("Extras y precios").fill("Grande | 30000");
   await page.getByLabel("Extras y precios").fill("Queso | 5000");
   await page
     .getByRole("button", { name: "Guardar producto", exact: true })
     .click();
   await expect(page.getByRole("dialog")).toHaveCount(0);
+  expect(mutations[0].data).not.toHaveProperty("variants");
   expect(mutations[0].data).toMatchObject({
-    variants: [{ name: "Grande", price: 30000 }],
     extras: [{ name: "Queso", price: 5000 }],
   });
 });

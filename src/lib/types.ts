@@ -1,6 +1,7 @@
 export type Restaurant = {
   id: string;
   public_token: string;
+  menu_version?: number;
   name: string;
   slug: string;
   description: string;
@@ -56,10 +57,21 @@ export type Appearance = {
   logo_path: string;
   cover_path: string;
   favicon_path: string;
+  background?: string;
+  card?: string;
+  text?: string;
+  muted?: string;
+  cover_overlay?: string;
+  cover_overlay_opacity?: number;
+  columns_mobile?: 1 | 2;
+  columns_desktop?: 1 | 2;
 };
 export type Settings = {
   appearance: Appearance;
   draft_appearance: Appearance;
+  appearance_revision?: number;
+  draft_name?: string | null;
+  draft_description?: string | null;
   enabled_languages: string[];
   suspension_message: string;
 };
@@ -73,7 +85,9 @@ export type Translation = {
   entity_type: string;
   entity_id: string;
   language: string;
-  fields: { name?: string; description?: string };
+  fields: { name?: string; title?: string; description?: string; ingredients?: string; tags?: string[]; extras?: { name: string }[]; variants?: { name: string }[] };
+  is_manual?: boolean;
+  source_hash?: string;
 };
 export type QrConfig = {
   foreground: string;
@@ -81,6 +95,11 @@ export type QrConfig = {
   frame: string;
   label: string;
   include_logo: boolean;
+  config_version?: number;
+  logo_size?: number;
+  font_family?: "sans" | "serif" | "mono";
+  export_size?: 256 | 512 | 1024 | 2048;
+  module_style?: "square" | "rounded";
 };
 export type Domain = {
   id: string;
@@ -127,7 +146,7 @@ export type PublicMenuData = {
   promotions: Promotion[];
   hours: Hours[];
   translations: Translation[];
-  contact: { url: string; label: string } | null;
+  contact: { url: string; label: string; brand?: string; phone?: string } | null;
 };
 export const DEFAULT_APPEARANCE: Appearance = {
   primary: "#264b3c",

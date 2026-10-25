@@ -147,6 +147,9 @@ export async function auditFixture(
       await r.fulfill({ json: { ok: true } });
     } else await r.fulfill({ json: data });
   });
+  await page.route("**/api/workspace/" + tenantId + "/preview", (r) =>
+    r.fulfill({ json: { ...data, contact: null } }),
+  );
   await page.route("**/api/public/menu/" + data.restaurant.slug, (r) =>
     r.fulfill({ json: { ...data, contact: null } }),
   );

@@ -10,8 +10,10 @@ const target = readEnv(".env.migration.local");
 if (target.TARGET_SUPABASE_URL !== `https://${targetProjectRef}.supabase.co`)
   throw new Error("MIGRATION_TARGET_MISMATCH");
 const source = readEnv(".env.local");
+const translation = readEnv(".env.translation.local");
 // Never load or reuse the previously exposed source DB/admin password.
 const secrets = [
+  translation.OPENAI_API_KEY,
   source.SUPABASE_SERVICE_ROLE_KEY,
   source.RENDER_API_KEY,
   source.SUPABASE_ACCESS_TOKEN,
@@ -24,13 +26,14 @@ const secrets = [
 ];
 const privateFiles = [
   ".runtime/demo-accounts.json",
+  `.runtime/migrations/${targetProjectRef}/closure-test-accounts.json`,
   `.runtime/migrations/${targetProjectRef}/accounts.json`,
   `.runtime/migrations/${targetProjectRef}/admin-account.json`,
 ];
 function collectPasswords(value) {
   if (!value || typeof value !== "object") return;
   for (const [key, item] of Object.entries(value)) {
-    if (key === "password" && typeof item === "string") secrets.push(item);
+    if (/password/i.test(key) && typeof item === "string") secrets.push(item);
     else if (item && typeof item === "object") collectPasswords(item);
   }
 }
@@ -125,6 +128,7 @@ if (fs.existsSync(".next/static")) scanDirectory(".next/static");
 const ignored = [
   ".env.local",
   ".env.migration.local",
+  ".env.translation.local",
   ".runtime/backups",
   `.runtime/migrations/${targetProjectRef}`,
   ...privateFiles,

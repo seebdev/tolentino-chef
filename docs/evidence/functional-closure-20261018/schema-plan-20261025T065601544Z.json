@@ -1,0 +1,22 @@
+{
+  "at": "2026-10-25T06:56:01.544Z",
+  "projectRef": "hgntppemxwcxaxritnfq",
+  "serviceId": "srv-dba32beq1p3s73a4g6v0",
+  "operation": "incremental-schema-plan",
+  "migrations": [
+    {
+      "file": "20261018063724_translation_manual_fields.sql",
+      "sha256": "3686faa15c159080049c5134da36185c13deb9f9190f650b8b8c7bfecd2d8986"
+    }
+  ],
+  "remoteMutations": 0,
+  "destination": {
+    "repository": "https://github.com/seebdev/tolentino-chef",
+    "branch": "main",
+    "commit": "ae0f7cb74b8dc73fd3f3db90a6958410b78d74ba",
+    "url": "https://tolentino-restaurantes-admin.onrender.com",
+    "workspace": "tea-dba1s4m1egvs7391ve50",
+    "signupDisabled": true
+  },
+  "result": "PASS"
+}

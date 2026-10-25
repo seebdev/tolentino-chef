@@ -1,0 +1,84 @@
+{
+  "projectRef": "hgntppemxwcxaxritnfq",
+  "runId": "closure-appearance-real-after-pt409-20261018",
+  "base": "http://localhost:3002",
+  "startedAt": "2026-10-18T06:32:03.160Z",
+  "traffic": "Real browser and application APIs; no interception",
+  "businessScope": "Only task-owned temporary alpha",
+  "checks": [
+    {
+      "name": "real-owner-session-and-task-ownership",
+      "status": "PASS"
+    },
+    {
+      "name": "task-owned-seed-and-seven-languages",
+      "status": "PASS",
+      "products": 3
+    },
+    {
+      "name": "draft-persists-and-remains-private",
+      "status": "PASS"
+    },
+    {
+      "name": "draft-reopened-after-real-reload",
+      "status": "PASS"
+    },
+    {
+      "name": "published-version-visible-to-anonymous-browser",
+      "status": "PASS"
+    },
+    {
+      "name": "second-editor-conflict-retains-local-input-and-published-version",
+      "status": "PASS",
+      "conflictElapsedMs": 1182,
+      "maximumElapsedMs": 10000
+    },
+    {
+      "name": "seven-real-local-flags-and-language-controls",
+      "status": "PASS"
+    },
+    {
+      "name": "real-preview-public-parity-320",
+      "status": "PASS",
+      "publicScreenshot": "artifacts/migrations/hgntppemxwcxaxritnfq/closure-appearance-real-after-pt409-20261018/screenshots/appearance-real-320-public.png",
+      "previewScreenshot": "artifacts/migrations/hgntppemxwcxaxritnfq/closure-appearance-real-after-pt409-20261018/screenshots/appearance-real-320-preview.png"
+    },
+    {
+      "name": "real-preview-public-parity-390",
+      "status": "PASS",
+      "publicScreenshot": "artifacts/migrations/hgntppemxwcxaxritnfq/closure-appearance-real-after-pt409-20261018/screenshots/appearance-real-390-public.png",
+      "previewScreenshot": "artifacts/migrations/hgntppemxwcxaxritnfq/closure-appearance-real-after-pt409-20261018/screenshots/appearance-real-390-preview.png"
+    },
+    {
+      "name": "real-preview-public-parity-768",
+      "status": "PASS",
+      "publicScreenshot": "artifacts/migrations/hgntppemxwcxaxritnfq/closure-appearance-real-after-pt409-20261018/screenshots/appearance-real-768-public.png",
+      "previewScreenshot": "artifacts/migrations/hgntppemxwcxaxritnfq/closure-appearance-real-after-pt409-20261018/screenshots/appearance-real-768-preview.png"
+    },
+    {
+      "name": "real-preview-public-parity-1440",
+      "status": "PASS",
+      "publicScreenshot": "artifacts/migrations/hgntppemxwcxaxritnfq/closure-appearance-real-after-pt409-20261018/screenshots/appearance-real-1440-public.png",
+      "previewScreenshot": "artifacts/migrations/hgntppemxwcxaxritnfq/closure-appearance-real-after-pt409-20261018/screenshots/appearance-real-1440-preview.png"
+    },
+    {
+      "name": "permanent-token-and-slug-unchanged",
+      "status": "PASS"
+    }
+  ],
+  "cleanup": {
+    "status": "PASS",
+    "productsDeleted": 3,
+    "categoryDeleted": true,
+    "contentRestored": true,
+    "revisionCountersIncreaseNormally": true,
+    "draftNullsMayBeNormalized": true,
+    "appearanceDefaultsNormalized": true,
+    "containerDeletion": "Parent/database owns final deletion of task-owned alpha and Auth"
+  },
+  "physicalDevices": false,
+  "providerCalls": false,
+  "status": "PASS",
+  "finishedAt": "2026-10-18T06:33:41.972Z",
+  "passed": 12
+}

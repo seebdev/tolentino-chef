@@ -1,0 +1,8 @@
+{
+  "at": "2026-10-25T07:01:48.602Z",
+  "translationEnabled": false,
+  "budgetUsd": 0,
+  "userDecision": "User withdrew the US$2 translation authorization and requested continuation of other work.",
+  "providerTest": "401 invalid_api_key; no generated translation",
+  "remainingWork": "Production deployment, public verification, QR, photos, backups; automated translation intentionally pending."
+}

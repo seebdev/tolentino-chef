@@ -172,6 +172,7 @@ async function fixture(page: Page, role: "owner" | "superadmin" = "owner") {
         },
       });
   });
+  await page.route("**/api/workspace/"+restaurant.id+"/preview",r=>r.fulfill({json:{...data,contact:null}}));
   await page.route("**/api/workspace/" + restaurant.id + "*", async (r) => {
     if (
       new URL(r.request().url()).pathname !==
@@ -222,7 +223,7 @@ test("real setup login and recovery have no public signup", async ({
   await expect(
     page.getByRole("heading", { name: "Qué bueno tenerte aquí." }),
   ).toBeVisible();
-  await expect(page.getByLabel("Correo electrónico")).toBeVisible();
+  await expect(page.getByLabel("Correo o usuario de acceso")).toBeVisible();
   await expect(
     page.getByText("Las cuentas se crean por invitación."),
   ).toBeVisible();
@@ -298,7 +299,7 @@ test("owner fixture product form persists to intercepted API and confirms delete
   await page
     .getByLabel("Descripción", { exact: true })
     .fill("Solo datos de prueba");
-  await page.getByLabel("Presentaciones y precios").fill("Grande | 28000");
+  await expect(page.getByLabel("Presentaciones y precios")).toHaveCount(0);
   await page
     .getByRole("button", { name: "Guardar producto", exact: true })
     .click();
@@ -312,7 +313,6 @@ test("owner fixture product form persists to intercepted API and confirms delete
       data: expect.objectContaining({
         name: "Ensalada de prueba",
         price: 22000,
-        variants: [{ name: "Grande", price: 28000 }],
       }),
     }),
   );

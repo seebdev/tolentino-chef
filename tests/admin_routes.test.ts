@@ -172,7 +172,7 @@ describe("admin creation, idempotency and commercial-data regressions", () => {
     expect(replay.status).toBe(201);
     expect(await replay.json()).toMatchObject({ ...payload, replayed: true });
     expect(fixture.createUser).toHaveBeenCalledTimes(1);
-    expect(fixture.resetPasswordForEmail).toHaveBeenCalledTimes(1);
+    expect(fixture.resetPasswordForEmail).not.toHaveBeenCalled();
     expect(fixture.state.provisioned.size).toBe(1);
   });
   it("allows only one creation while a concurrent second submit receives pending", async () => {
@@ -272,7 +272,7 @@ describe("admin creation, idempotency and commercial-data regressions", () => {
     expect(fixture.state.users.has(fixture.existingOwner)).toBe(true);
     expect(fixture.createUser).toHaveBeenCalledTimes(1);
   });
-  it("keeps successful creation when invitation fails and never sends again on replay", async () => {
+  it("keeps creation independent of mail and never sends on creation or replay", async () => {
     fixture.state.emailFailure = true;
     const response = await request("create", createInput());
     expect(response.status).toBe(201);
@@ -283,7 +283,7 @@ describe("admin creation, idempotency and commercial-data regressions", () => {
     expect(JSON.stringify(payload)).not.toContain("SMTP");
     expect(JSON.stringify(payload)).not.toContain(fixture.createUser.mock.calls[0]![0].password);
     expect((await request("create", createInput())).status).toBe(201);
-    expect(fixture.resetPasswordForEmail).toHaveBeenCalledTimes(1);
+    expect(fixture.resetPasswordForEmail).not.toHaveBeenCalled();
   });
   it("creates DEMO .test accounts silently and rejects real email addresses in DEMO mode", async () => {
     expect((await request("create", { ...createInput(), demo: true })).status).toBe(400);
