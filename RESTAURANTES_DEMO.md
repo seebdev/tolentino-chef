@@ -1,5 +1,8 @@
 # Restaurantes DEMO — Tolentino
 
+Actualizacion vigente del 25 de octubre: los tres menus publicos conservan sus slugs y tokens. Se verificaron los nueve QR de la tabla actual. Cada menu publica 24 productos de muestra; Bruma conserva ademas los 123 productos importados, sin publicarlos ni modificarlos en esta fase (147 productos totales en su catalogo). Hay 46 fotografias revisadas y tres logos actualizados. Las credenciales permanecen exclusivamente en archivos privados. [Cierre funcional](docs/CIERRE_FUNCIONAL_TOLENTINO.md).
+
+
 > Actualización del 18 de octubre de 2026 (UTC): los tres DEMO se migraron a `hgntppemxwcxaxritnfq` conservando UUID, catálogo y tokens QR. El servidor local actual usa ese destino. Sus contraseñas nuevas están exclusivamente en `.runtime/migrations/hgntppemxwcxaxritnfq/accounts.json`; el acceso administrador está en `admin-account.json` de la misma carpeta protegida. Las credenciales y evidencias históricas indicadas más abajo corresponden al entorno anterior. Véase [estado vigente](docs/MIGRATION_STATUS.md) y [manifiesto nuevo](artifacts/migrations/hgntppemxwcxaxritnfq/restaurants.json). Los menús y accesos públicos ya están verificados; consultar [entrega pública vigente](docs/PUBLIC_DEPLOYMENT.md).
 
 ## URLs y QR públicos vigentes
@@ -8,9 +11,9 @@
 
 | Restaurante | Menú HTTPS | QR permanentes |
 | --- | --- | --- |
-| Pizzería Aurora | [Abrir](https://tolentino-restaurantes-admin.onrender.com/menu/pizzeria-aurora-demo) | [PNG](artifacts/migrations/hgntppemxwcxaxritnfq/public-acceptance-20261018/qr/aurora.png) · [SVG](artifacts/migrations/hgntppemxwcxaxritnfq/public-acceptance-20261018/qr/aurora.svg) · [PDF](artifacts/migrations/hgntppemxwcxaxritnfq/public-acceptance-20261018/qr/aurora.pdf) |
-| Café Bruma | [Abrir](https://tolentino-restaurantes-admin.onrender.com/menu/cafe-bruma-demo) | [PNG](artifacts/migrations/hgntppemxwcxaxritnfq/public-acceptance-20261018/qr/bruma.png) · [SVG](artifacts/migrations/hgntppemxwcxaxritnfq/public-acceptance-20261018/qr/bruma.svg) · [PDF](artifacts/migrations/hgntppemxwcxaxritnfq/public-acceptance-20261018/qr/bruma.pdf) |
-| Bento Marea | [Abrir](https://tolentino-restaurantes-admin.onrender.com/menu/bento-marea-demo) | [PNG](artifacts/migrations/hgntppemxwcxaxritnfq/public-acceptance-20261018/qr/marea.png) · [SVG](artifacts/migrations/hgntppemxwcxaxritnfq/public-acceptance-20261018/qr/marea.svg) · [PDF](artifacts/migrations/hgntppemxwcxaxritnfq/public-acceptance-20261018/qr/marea.pdf) |
+| Pizzería Aurora | [Abrir](https://tolentino-restaurantes-admin.onrender.com/menu/pizzeria-aurora-demo) | [PNG](artifacts/functional-closure-20261018/qr/aurora.png) · [SVG](artifacts/functional-closure-20261018/qr/aurora.svg) · [PDF](artifacts/functional-closure-20261018/qr/aurora.pdf) |
+| Café Bruma | [Abrir](https://tolentino-restaurantes-admin.onrender.com/menu/cafe-bruma-demo) | [PNG](artifacts/functional-closure-20261018/qr/bruma.png) · [SVG](artifacts/functional-closure-20261018/qr/bruma.svg) · [PDF](artifacts/functional-closure-20261018/qr/bruma.pdf) |
+| Bento Marea | [Abrir](https://tolentino-restaurantes-admin.onrender.com/menu/bento-marea-demo) | [PNG](artifacts/functional-closure-20261018/qr/marea.png) · [SVG](artifacts/functional-closure-20261018/qr/marea.svg) · [PDF](artifacts/functional-closure-20261018/qr/marea.pdf) |
 
 Los nueve QR se decodificaron y sus tres destinos HTTPS funcionan. Falta escaneo físico. Las credenciales vigentes son las de la carpeta protegida del nuevo proyecto indicada arriba; no las históricas.
 
@@ -44,7 +47,7 @@ Las imágenes son ilustraciones originales de demostración, generadas por `scri
 
 ## QR y publicación
 
-**Todavía no existe un despliegue público en Render.** Las direcciones anteriores funcionan en el equipo que ejecuta la aplicación. Los archivos de la tabla son material de validación local y no acreditan QR públicos para teléfonos.
+**Estado historico del 17 de octubre, ya superado: entonces no existia despliegue publico.** Las direcciones anteriores funcionan en el equipo que ejecuta la aplicación. Los archivos de la tabla son material de validación local y no acreditan QR públicos para teléfonos.
 
 | Restaurante | Ruta canónica por token | Archivos de validación local |
 | --- | --- | --- |

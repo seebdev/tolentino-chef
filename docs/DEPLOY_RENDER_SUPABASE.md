@@ -1,5 +1,10 @@
 # Despliegue en Render y Supabase
 
+## Cierre funcional del 25 de octubre de 2026
+
+El servicio existente esta publicado con la version funcional 6d6b83f; no crear otro servicio. APP_URL mantiene https://tolentino-restaurantes-admin.onrender.com. Las doce variables de Render se verificaron sin exponer valores secretos. TRANSLATION_ENABLED=false y TRANSLATION_BUDGET_USD=0 por decision del usuario; no se suministro una clave OpenAI a Render. [Estado actual y limites](CIERRE_FUNCIONAL_TOLENTINO.md). Las cantidades de la migracion inicial indicadas abajo son historicas.
+
+
 ## Destino vigente de la migración
 
 Actualizado el 18 de octubre de 2026 (UTC). Repositorio: [seebdev/tolentino-chef](https://github.com/seebdev/tolentino-chef), rama `main`. Supabase destino: **`hgntppemxwcxaxritnfq`**. Render: **workspace Tolentino Restaurantes (`tea-dba1s4m1egvs7391ve50`), servicio Free `srv-dba32beq1p3s73a4g6v0` creado con autorización y publicado**. URL verificada: https://tolentino-restaurantes-admin.onrender.com. [Estado y aceptación pública](PUBLIC_DEPLOYMENT.md). Las secciones siguientes sirven como procedimiento para cambios futuros; no autorizan crear otro servicio.

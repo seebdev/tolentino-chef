@@ -1,0 +1,111 @@
+{
+  "at": "2026-10-25T07:27:06.360Z",
+  "serviceId": "srv-dba32beq1p3s73a4g6v0",
+  "origin": "https://tolentino-restaurantes-admin.onrender.com",
+  "projectRef": "hgntppemxwcxaxritnfq",
+  "mutations": false,
+  "inventory": {
+    "workspace": "tea-dba1s4m1egvs7391ve50",
+    "services": [
+      {
+        "id": "srv-dba32beq1p3s73a4g6v0",
+        "name": "tolentino-restaurantes-admin"
+      }
+    ],
+    "duplicates": false
+  },
+  "publicAuth": {
+    "status": "verified",
+    "signupDisabled": true,
+    "anonymousEnabled": false,
+    "emailEnabled": true,
+    "emailAutoconfirm": false,
+    "smsAutoconfirm": false
+  },
+  "auth": {
+    "verified": false,
+    "reason": "Supabase Management API access unavailable; public signup settings and real login verified separately",
+    "lastVerifiedEvidence": "docs/evidence/migrations/hgntppemxwcxaxritnfq/20261018T023948321Z/auth-production-urls.json"
+  },
+  "pending": [
+    "Revalidate Supabase Auth URLs and advisors with a current management credential"
+  ],
+  "service": {
+    "plan": "free",
+    "region": "virginia",
+    "autoDeployTrigger": "commit"
+  },
+  "environment": [
+    {
+      "key": "TRANSLATION_MAX_OUTPUT_TOKENS",
+      "verified": true
+    },
+    {
+      "key": "TRANSLATION_BUDGET_USD",
+      "verified": true
+    },
+    {
+      "key": "TRANSLATION_ENABLED",
+      "verified": true
+    },
+    {
+      "key": "OPENAI_TRANSLATION_MODEL",
+      "verified": true
+    },
+    {
+      "key": "NODE_VERSION",
+      "verified": true
+    },
+    {
+      "key": "NODE_ENV",
+      "verified": true
+    },
+    {
+      "key": "NEXT_PUBLIC_SUPABASE_URL",
+      "verified": true
+    },
+    {
+      "key": "NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY",
+      "verified": true
+    },
+    {
+      "key": "SUPABASE_SERVICE_ROLE_KEY",
+      "verified": true
+    },
+    {
+      "key": "APP_URL",
+      "verified": true
+    },
+    {
+      "key": "PLATFORM_HOSTNAMES",
+      "verified": true
+    },
+    {
+      "key": "RENDER_SERVICE_HOSTNAME",
+      "verified": true
+    }
+  ],
+  "release": {
+    "commit": "6d6b83f6269fb6716ab5fa8b6d61c00f3e1aebd4",
+    "deployId": "dep-dbeqso6q1p3s73eh4qd0",
+    "status": "live",
+    "finishedAt": "2026-10-25T07:26:11.422585Z",
+    "githubMatches": true
+  },
+  "pipeline": {
+    "logLines": 207,
+    "typecheck": true,
+    "lint": true,
+    "testsPassed": true,
+    "build": true
+  },
+  "health": {
+    "httpStatus": 200,
+    "status": "ok",
+    "configured": true,
+    "supabaseProjectRef": "hgntppemxwcxaxritnfq",
+    "hsts": "max-age=31536000"
+  },
+  "smtpInputComplete": false,
+  "result": "PASS"
+}

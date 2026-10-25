@@ -10,6 +10,11 @@ const {manifest,accounts}=loadTargetDemos();
 const report={at:new Date().toISOString(),scope:'public-production-read-only-business',origin:base,projectRef:'hgntppemxwcxaxritnfq',checks:[],menus:[],qrArtifacts:[],physicalCameraScan:false,printedPdfScan:false};
 const check=(condition,name)=>{if(!condition)throw Error(name);report.checks.push({name,result:'PASS'})};
 const sha256=bytes=>createHash('sha256').update(bytes).digest('hex');
+const privateOutput=process.env.CLOSURE_REPORT_PRIVATE==='1';
+const reportRoot=privateOutput?'.runtime/closure-final-evidence/'+new Date().toISOString().replace(/[:.]/g,''):'docs/evidence/functional-closure-20261018';
+const artifactRoot=privateOutput?reportRoot+'/qr':'artifacts/functional-closure-20261018/qr';
+const reportFile=reportRoot+'/public-release-smoke.json';
+fs.mkdirSync(reportRoot,{recursive:true});
 const sessions=[];
 try{
  await assertAppTarget(base,{fresh:true});
@@ -19,7 +24,7 @@ try{
  const adminState=await adminSession.request('/api/session');check(adminState.data.role==='superadmin','SUPERADMIN_SERVER_ROLE');
  for(const route of ['/login','/admin']){const response=await fetch(base+route,{redirect:'manual',signal:AbortSignal.timeout(60000)});check(response.status===200||[302,303,307,308].includes(response.status),'PUBLIC_ROUTE_'+route.replaceAll('/','_'))}
  const photos=JSON.parse(fs.readFileSync('public/photo-credits.json','utf8')).items;
- fs.mkdirSync('artifacts/functional-closure-20261018/qr',{recursive:true});
+ fs.mkdirSync(artifactRoot,{recursive:true});
  for(const restaurant of manifest.restaurants){
   const slug=new URL(restaurant.localMenu).pathname.split("/").at(-1);
   const account=accounts[restaurant.key],owner=new Session();sessions.push(owner);const login=await owner.login(account.email,account.password);check(login.role==='owner','OWNER_PUBLIC_LOGIN_'+restaurant.key);
@@ -32,7 +37,7 @@ try{
   const inject=await fetch(destination+'?redirect=https://example.org',{redirect:'manual'});check(inject.headers.get('location')===base+'/menu/'+slug,'QR_EXTERNAL_REDIRECT_IGNORED_'+restaurant.key);
   for(const format of ['png','svg','pdf']){
    const download=await owner.request('/api/workspace/'+restaurant.id+'/qr?format='+format+'&size=1024');check(download.status===200&&download.headers.get('x-qr-validated')==='true'&&download.headers.get('x-qr-permanent-url')===destination,'QR_FINAL_ARTIFACT_'+restaurant.key+'_'+format);
-   const validation=await validateQrArtifact(download.data,format,destination,[1024,768,512]);const file='artifacts/functional-closure-20261018/qr/'+restaurant.key+'.'+format;fs.writeFileSync(file,download.data);report.qrArtifacts.push({restaurant:restaurant.key,format,file,bytes:download.data.length,sha256:sha256(download.data),destination,validation});
+   const validation=await validateQrArtifact(download.data,format,destination,[1024,768,512]);const file=artifactRoot+'/'+restaurant.key+'.'+format;fs.writeFileSync(file,download.data);report.qrArtifacts.push({restaurant:restaurant.key,format,file,bytes:download.data.length,sha256:sha256(download.data),destination,validation});
   }
   const registered=photos.filter(x=>x.restaurantId===restaurant.id&&x.imagePath);
   for(const photo of registered){const file=await fetch(base+'/api/media/'+photo.imagePath,{redirect:'error',signal:AbortSignal.timeout(60000)});check(file.status===200&&file.headers.get('content-type')?.startsWith('image/'),'PHOTO_PUBLIC_'+photo.productId);await file.arrayBuffer()}
@@ -42,4 +47,4 @@ try{
  for(const flag of ['co','gb','fr','it','cn','jp','in']){const response=await fetch(base+'/flags/'+flag+'.svg',{redirect:'error'});check(response.ok&&response.headers.get('content-type')?.includes('svg'),'FLAG_PUBLIC_'+flag)}
  report.result='PASS';
 }catch(error){report.result='FAIL';report.error=/^[A-Z_a-z0-9-]+$/.test(error.message)?error.message:'PUBLIC_CLOSURE_CHECK_FAILED';process.exitCode=1}
-finally{for(const session of sessions)await session.logout().catch(()=>{});fs.writeFileSync('docs/evidence/functional-closure-20261018/public-release-smoke.json',JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify({result:report.result,error:report.error,commit:report.commit,checks:report.checks.length,qrArtifacts:report.qrArtifacts.length,menus:report.menus,evidence:'docs/evidence/functional-closure-20261018/public-release-smoke.json'}));}
+finally{for(const session of sessions)await session.logout().catch(()=>{});fs.writeFileSync(reportFile,JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify({result:report.result,error:report.error,commit:report.commit,checks:report.checks.length,qrArtifacts:report.qrArtifacts.length,menus:report.menus,evidence:reportFile}));}

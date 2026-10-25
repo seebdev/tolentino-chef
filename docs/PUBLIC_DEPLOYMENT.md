@@ -1,5 +1,18 @@
 # Publicación de Tolentino Restaurantes Admin
 
+## Estado vigente: 25 de octubre de 2026
+
+Aplicacion publicada y verificada en el mismo servicio y URL, commit funcional 6d6b83f6269fb6716ab5fa8b6d61c00f3e1aebd4, deploy dep-dbeqso6q1p3s73eh4qd0. Pipeline: typecheck, lint, 411 pruebas y build correctos. Verificados 119 controles publicos, nueve QR y 156 controles en cuatro navegadores; 48 pruebas locales de navegador adicionales. Los tres restaurantes, sus propietarios y los 123 productos importados se conservaron. Se aplicaron 46 fotos con creditos y tres logos; los 26 productos restantes se muestran sin fotografia.
+
+La traduccion automatica esta desactivada por decision del usuario: presupuesto y consumo registrado 0. Pendientes: proveedor SMTP y recuperacion real por correo; escaneo fisico; acceso administrativo vigente para volver a consultar URLs Auth y advisors de Supabase. El login real, registro publico cerrado y aislamiento se verificaron. Respaldo final y restauracion aislada: 126/126 PASS, cuatro usuarios y 77 objetos.
+
+[Informe funcional vigente](CIERRE_FUNCIONAL_TOLENTINO.md) y [QR vigentes](../RESTAURANTES_DEMO.md). El commit posterior de documentacion conserva el codigo de aplicacion; su SHA live se verifica en evidencia local para evitar un ciclo de despliegues por actualizar reportes.
+
+## Historial de la publicacion inicial
+
+Los resultados y cantidades siguientes corresponden al 17/18 de octubre, no sustituyen la evidencia vigente anterior.
+
+
 Verificado el 17 de octubre de 2026 (America/Bogota; evidencias del 18 de octubre UTC). Un único servicio Free, Virginia, workspace Tolentino Restaurantes, creado con autorización expresa. No se modificó el Supabase anterior ni Crepes & Waffles.
 
 | Recurso | Valor verificado |

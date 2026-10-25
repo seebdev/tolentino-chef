@@ -1,0 +1,550 @@
+{
+  "at": "2026-10-25T07:42:15.456Z",
+  "result": "PASS",
+  "targetProjectRef": "hgntppemxwcxaxritnfq",
+  "archiveSha256": "e0a20f407bb854884366407c53fb234f55b9194c284caabafaac1bcac8bc38e7",
+  "operation": "Isolated application restore from populated-target encrypted backup",
+  "engine": "PGlite 0.5.10 in memory",
+  "passed": 126,
+  "failed": 0,
+  "checks": [
+    {
+      "name": "Encrypted archive matches independently supplied capture hash",
+      "pass": true
+    },
+    {
+      "name": "Encrypted payload belongs to the populated new-target backup",
+      "pass": true
+    },
+    {
+      "name": "Inventory was stable at capture",
+      "pass": true
+    },
+    {
+      "name": "Application snapshot hash",
+      "pass": true
+    },
+    {
+      "name": "Private snapshot hash",
+      "pass": true
+    },
+    {
+      "name": "Full captured Auth profile hash",
+      "pass": true
+    },
+    {
+      "name": "PostgreSQL custom dump exact bytes",
+      "pass": true
+    },
+    {
+      "name": "Role dump exact bytes without role passwords",
+      "pass": true
+    },
+    {
+      "name": "Complete custom archive decodes locally",
+      "pass": true
+    },
+    {
+      "name": "Only captured migrations selected; newer local SQL is excluded",
+      "pass": true
+    },
+    {
+      "name": "Captured table catalog hash",
+      "pass": true
+    },
+    {
+      "name": "Captured migration history hash",
+      "pass": true
+    },
+    {
+      "name": "Distinct Auth identity UUIDs captured",
+      "pass": true
+    },
+    {
+      "name": "Exact restored rows: private.import_attempts",
+      "pass": true
+    },
+    {
+      "name": "Exact restored rows: private.owner_access",
+      "pass": true
+    },
+    {
+      "name": "Exact restored rows: private.owner_access_requests",
+      "pass": true
+    },
+    {
+      "name": "Exact restored rows: private.rate_limits",
+      "pass": true
+    },
+    {
+      "name": "Exact restored rows: private.restaurant_creation_requests",
+      "pass": true
+    },
+    {
+      "name": "Exact restored rows: private.translation_attempts",
+      "pass": true
+    },
+    {
+      "name": "Exact restored rows: private.translation_budget",
+      "pass": true
+    },
+    {
+      "name": "Exact restored rows: public.categories",
+      "pass": true
+    },
+    {
+      "name": "Exact restored rows: public.commercial_sales",
+      "pass": true
+    },
+    {
+      "name": "Exact restored rows: public.platform_admins",
+      "pass": true
+    },
+    {
+      "name": "Exact restored rows: public.platform_settings",
+      "pass": true
+    },
+    {
+      "name": "Exact restored rows: public.products",
+      "pass": true
+    },
+    {
+      "name": "Exact restored rows: public.promotions",
+      "pass": true
+    },
+    {
+      "name": "Exact restored rows: public.restaurant_domains",
+      "pass": true
+    },
+    {
+      "name": "Exact restored rows: public.restaurant_hours",
+      "pass": true
+    },
+    {
+      "name": "Exact restored rows: public.restaurant_memberships",
+      "pass": true
+    },
+    {
+      "name": "Exact restored rows: public.restaurant_qr_configs",
+      "pass": true
+    },
+    {
+      "name": "Exact restored rows: public.restaurant_settings",
+      "pass": true
+    },
+    {
+      "name": "Exact restored rows: public.restaurants",
+      "pass": true
+    },
+    {
+      "name": "Exact restored rows: public.security_audit_events",
+      "pass": true
+    },
+    {
+      "name": "Exact restored rows: public.translation_jobs",
+      "pass": true
+    },
+    {
+      "name": "Exact restored rows: public.translations",
+      "pass": true
+    },
+    {
+      "name": "Exact restored rows: public.visit_events",
+      "pass": true
+    },
+    {
+      "name": "Menu transaction values preserved without additional normalization",
+      "pass": true
+    },
+    {
+      "name": "Storage content restored in memory: 9a330d077a76",
+      "pass": true
+    },
+    {
+      "name": "Storage content restored in memory: 479f223b61a1",
+      "pass": true
+    },
+    {
+      "name": "Storage content restored in memory: bb3ad030af20",
+      "pass": true
+    },
+    {
+      "name": "Storage content restored in memory: 0f4b86f5de15",
+      "pass": true
+    },
+    {
+      "name": "Storage content restored in memory: e40d5cd9f478",
+      "pass": true
+    },
+    {
+      "name": "Storage content restored in memory: 0bc4b52dc258",
+      "pass": true
+    },
+    {
+      "name": "Storage content restored in memory: 30badbd98162",
+      "pass": true
+    },
+    {
+      "name": "Storage content restored in memory: 6a426f1e0b8e",
+      "pass": true
+    },
+    {
+      "name": "Storage content restored in memory: 6267af23343b",
+      "pass": true
+    },
+    {
+      "name": "Storage content restored in memory: 52b26bf03c5b",
+      "pass": true
+    },
+    {
+      "name": "Storage content restored in memory: 9cb79721e6ce",
+      "pass": true
+    },
+    {
+      "name": "Storage content restored in memory: 8c978ba4d327",
+      "pass": true
+    },
+    {
+      "name": "Storage content restored in memory: a051acb71f11",
+      "pass": true
+    },
+    {
+      "name": "Storage content restored in memory: 1ea504745ff6",
+      "pass": true
+    },
+    {
+      "name": "Storage content restored in memory: d5c0c6f48ea1",
+      "pass": true
+    },
+    {
+      "name": "Storage content restored in memory: 0beed107bf0a",
+      "pass": true
+    },
+    {
+      "name": "Storage content restored in memory: 01c44bb3d4eb",
+      "pass": true
+    },
+    {
+      "name": "Storage content restored in memory: e26a211a660f",
+      "pass": true
+    },
+    {
+      "name": "Storage content restored in memory: 48c77d0b79be",
+      "pass": true
+    },
+    {
+      "name": "Storage content restored in memory: d593a8bdea4b",
+      "pass": true
+    },
+    {
+      "name": "Storage content restored in memory: 4200a6a8aa30",
+      "pass": true
+    },
+    {
+      "name": "Storage content restored in memory: 75dbf85677b8",
+      "pass": true
+    },
+    {
+      "name": "Storage content restored in memory: d4d0fa222373",
+      "pass": true
+    },
+    {
+      "name": "Storage content restored in memory: 7b3bc4fb8d1a",
+      "pass": true
+    },
+    {
+      "name": "Storage content restored in memory: a55c9cc66a69",
+      "pass": true
+    },
+    {
+      "name": "Storage content restored in memory: 40604c63c448",
+      "pass": true
+    },
+    {
+      "name": "Storage content restored in memory: 023a9560c5a7",
+      "pass": true
+    },
+    {
+      "name": "Storage content restored in memory: d63614beaf84",
+      "pass": true
+    },
+    {
+      "name": "Storage content restored in memory: d930182763e3",
+      "pass": true
+    },
+    {
+      "name": "Storage content restored in memory: 0c6e9ba5f711",
+      "pass": true
+    },
+    {
+      "name": "Storage content restored in memory: 795aba6a2b9f",
+      "pass": true
+    },
+    {
+      "name": "Storage content restored in memory: cef74c454138",
+      "pass": true
+    },
+    {
+      "name": "Storage content restored in memory: e7d35c63e785",
+      "pass": true
+    },
+    {
+      "name": "Storage content restored in memory: d3a865c74f3d",
+      "pass": true
+    },
+    {
+      "name": "Storage content restored in memory: ae903f56f01a",
+      "pass": true
+    },
+    {
+      "name": "Storage content restored in memory: fd0cc0c01c61",
+      "pass": true
+    },
+    {
+      "name": "Storage content restored in memory: 074fa9de2e8b",
+      "pass": true
+    },
+    {
+      "name": "Storage content restored in memory: ede7d514cee5",
+      "pass": true
+    },
+    {
+      "name": "Storage content restored in memory: bc17928d5653",
+      "pass": true
+    },
+    {
+      "name": "Storage content restored in memory: c80434fe829b",
+      "pass": true
+    },
+    {
+      "name": "Storage content restored in memory: 242b2f938efe",
+      "pass": true
+    },
+    {
+      "name": "Storage content restored in memory: f05817749feb",
+      "pass": true
+    },
+    {
+      "name": "Storage content restored in memory: faac818fecbf",
+      "pass": true
+    },
+    {
+      "name": "Storage content restored in memory: 6c2d1d5ebc60",
+      "pass": true
+    },
+    {
+      "name": "Storage content restored in memory: 77baae721f1a",
+      "pass": true
+    },
+    {
+      "name": "Storage content restored in memory: 247679804f36",
+      "pass": true
+    },
+    {
+      "name": "Storage content restored in memory: a49ee8297242",
+      "pass": true
+    },
+    {
+      "name": "Storage content restored in memory: 753b8fcf2bda",
+      "pass": true
+    },
+    {
+      "name": "Storage content restored in memory: 44ef97418e4e",
+      "pass": true
+    },
+    {
+      "name": "Storage content restored in memory: 5b3b71595e93",
+      "pass": true
+    },
+    {
+      "name": "Storage content restored in memory: 9317583a5ff2",
+      "pass": true
+    },
+    {
+      "name": "Storage content restored in memory: 1381de481df5",
+      "pass": true
+    },
+    {
+      "name": "Storage content restored in memory: f3d653db173b",
+      "pass": true
+    },
+    {
+      "name": "Storage content restored in memory: 022e882f6876",
+      "pass": true
+    },
+    {
+      "name": "Storage content restored in memory: 364d8fd72cd0",
+      "pass": true
+    },
+    {
+      "name": "Storage content restored in memory: a6c6c43eb481",
+      "pass": true
+    },
+    {
+      "name": "Storage content restored in memory: df12a747fffb",
+      "pass": true
+    },
+    {
+      "name": "Storage content restored in memory: 9710982fda2e",
+      "pass": true
+    },
+    {
+      "name": "Storage content restored in memory: 7d7a1ada345b",
+      "pass": true
+    },
+    {
+      "name": "Storage content restored in memory: c17dabd8ae53",
+      "pass": true
+    },
+    {
+      "name": "Storage content restored in memory: 52e8b5f1ca67",
+      "pass": true
+    },
+    {
+      "name": "Storage content restored in memory: 335bf0c96b37",
+      "pass": true
+    },
+    {
+      "name": "Storage content restored in memory: ba16a7e4d9c9",
+      "pass": true
+    },
+    {
+      "name": "Storage content restored in memory: d7459aea38af",
+      "pass": true
+    },
+    {
+      "name": "Storage content restored in memory: e28eeb15d843",
+      "pass": true
+    },
+    {
+      "name": "Storage content restored in memory: 6ec6e611200e",
+      "pass": true
+    },
+    {
+      "name": "Storage content restored in memory: 182137093528",
+      "pass": true
+    },
+    {
+      "name": "Storage content restored in memory: b598e30946c4",
+      "pass": true
+    },
+    {
+      "name": "Storage content restored in memory: fe51d476ec8b",
+      "pass": true
+    },
+    {
+      "name": "Storage content restored in memory: b07f0b9d4349",
+      "pass": true
+    },
+    {
+      "name": "Storage content restored in memory: 223472ef9b2b",
+      "pass": true
+    },
+    {
+      "name": "Storage content restored in memory: be6bc51959c9",
+      "pass": true
+    },
+    {
+      "name": "Storage content restored in memory: 285929457d3e",
+      "pass": true
+    },
+    {
+      "name": "Storage content restored in memory: 5fed5d8f2e03",
+      "pass": true
+    },
+    {
+      "name": "Storage content restored in memory: 705a12c23310",
+      "pass": true
+    },
+    {
+      "name": "Storage content restored in memory: e5c8cbb7c633",
+      "pass": true
+    },
+    {
+      "name": "Storage content restored in memory: f5c6eb74e7e7",
+      "pass": true
+    },
+    {
+      "name": "Storage object inventory hash and count exact",
+      "pass": true
+    },
+    {
+      "name": "Original QR UUIDs retained",
+      "pass": true
+    },
+    {
+      "name": "Captured restaurants and one-owner memberships retain their identities",
+      "pass": true
+    },
+    {
+      "name": "Owner RLS isolation pair 1",
+      "pass": true
+    },
+    {
+      "name": "Owner RLS isolation pair 2",
+      "pass": true
+    },
+    {
+      "name": "Owner RLS isolation pair 3",
+      "pass": true
+    },
+    {
+      "name": "Owner RLS isolation pair 4",
+      "pass": true
+    },
+    {
+      "name": "Owner RLS isolation pair 5",
+      "pass": true
+    },
+    {
+      "name": "Owner RLS isolation pair 6",
+      "pass": true
+    },
+    {
+      "name": "All captured owner-to-other-tenant pairs tested",
+      "pass": true
+    },
+    {
+      "name": "All captured public tables retain RLS and application triggers are enabled",
+      "pass": true
+    },
+    {
+      "name": "Final application hash equals captured target",
+      "pass": true
+    }
+  ],
+  "imported": {
+    "inserted": 1371,
+    "tables": 23
+  },
+  "counts": {
+    "tables": 16,
+    "privateTables": 7,
+    "rows": 1275,
+    "authUsers": 4,
+    "objects": 77,
+    "objectBytes": 4777026
+  },
+  "tenantPairs": 6,
+  "privateRows": {
+    "import_attempts": 0,
+    "owner_access": 3,
+    "owner_access_requests": 0,
+    "rate_limits": 89,
+    "restaurant_creation_requests": 3,
+    "translation_attempts": 0,
+    "translation_budget": 1
+  },
+  "remoteRequests": 0,
+  "remoteMutations": 0,
+  "plaintextFilesWritten": 0,
+  "fullManagedSupabaseRestoreExecuted": false,
+  "authLoginTested": false,
+  "storageHttpTested": false,
+  "limitations": [
+    "Only the application schema and rows plus captured private rows are restored in isolated PGlite.",
+    "Auth uses identity/metadata and empty session stubs; captured profile bytes/hashes and full PostgreSQL dump are verified, but GoTrue/password/session restoration is not executed.",
+    "Storage object bytes and technical IDs are restored in memory/stub table, not through the Storage HTTP service.",
+    "Full custom dump decode is validation, not execution of all managed Supabase DDL."
+  ]
+}

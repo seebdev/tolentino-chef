@@ -1,0 +1,1646 @@
+{
+  "at": "2026-10-25T07:26:53.342Z",
+  "projectRef": "hgntppemxwcxaxritnfq",
+  "mode": "apply-reviewed-seed-changes",
+  "changes": [
+    {
+      "table": "restaurants",
+      "id": "1932e721-78ab-4320-9f84-f186a80fba48",
+      "fields": [
+        "name"
+      ]
+    },
+    {
+      "table": "restaurant_qr_configs",
+      "id": "1932e721-78ab-4320-9f84-f186a80fba48",
+      "fields": [
+        "label"
+      ]
+    },
+    {
+      "table": "restaurants",
+      "id": "1932e721-78ab-4320-9f84-f186a80fba48",
+      "fields": [
+        "description"
+      ]
+    },
+    {
+      "table": "promotions",
+      "id": "82aa1862-b71b-4075-b26a-6fdad27d5092",
+      "fields": [
+        "title",
+        "description"
+      ]
+    },
+    {
+      "table": "products",
+      "id": "a64b1b9f-0f69-4142-bb97-8c2f2050dfeb",
+      "fields": [
+        "description"
+      ]
+    },
+    {
+      "table": "products",
+      "id": "ceb05294-7edc-448c-9e8b-8d5d5bed0f36",
+      "fields": [
+        "description"
+      ]
+    },
+    {
+      "table": "products",
+      "id": "d648bda0-411f-4fac-9954-efb5adfdba56",
+      "fields": [
+        "description"
+      ]
+    },
+    {
+      "table": "products",
+      "id": "54723445-0e2b-4820-b6fb-2b2341ff8fcf",
+      "fields": [
+        "description"
+      ]
+    },
+    {
+      "table": "products",
+      "id": "38744cae-e47d-439e-aab2-69a674a4b9a5",
+      "fields": [
+        "description"
+      ]
+    },
+    {
+      "table": "products",
+      "id": "a3800404-ef1a-4c15-a7aa-02a4d924142c",
+      "fields": [
+        "description"
+      ]
+    },
+    {
+      "table": "products",
+      "id": "0a8f78ac-16b8-4264-ac8b-7143805c9444",
+      "fields": [
+        "description"
+      ]
+    },
+    {
+      "table": "products",
+      "id": "6e5f0658-e8d0-406e-9687-4acd7ecf7566",
+      "fields": [
+        "description"
+      ]
+    },
+    {
+      "table": "products",
+      "id": "3900c018-3634-4aed-bb95-0d843cd78caf",
+      "fields": [
+        "description"
+      ]
+    },
+    {
+      "table": "products",
+      "id": "70089739-3054-45e6-82e4-de19b6f08331",
+      "fields": [
+        "description"
+      ]
+    },
+    {
+      "table": "products",
+      "id": "e2a56783-c549-4fbc-8dd0-f33ff2f946df",
+      "fields": [
+        "description"
+      ]
+    },
+    {
+      "table": "products",
+      "id": "3b80d2a6-b51f-424b-bf0b-3a8a1e29ed36",
+      "fields": [
+        "description"
+      ]
+    },
+    {
+      "table": "products",
+      "id": "fe2421be-36c2-45e7-a09b-677f3e7af1bd",
+      "fields": [
+        "description"
+      ]
+    },
+    {
+      "table": "products",
+      "id": "bf1c7bc2-f81c-41c1-a5d2-558f66dce761",
+      "fields": [
+        "description"
+      ]
+    },
+    {
+      "table": "products",
+      "id": "5fb71350-9906-4f8b-b16c-c046dd2e4079",
+      "fields": [
+        "description"
+      ]
+    },
+    {
+      "table": "products",
+      "id": "383d99ad-b757-4f37-9517-ab7534cd81d1",
+      "fields": [
+        "description"
+      ]
+    },
+    {
+      "table": "products",
+      "id": "4ceb8268-cb08-4ed6-b4ac-71b631bbe524",
+      "fields": [
+        "description"
+      ]
+    },
+    {
+      "table": "products",
+      "id": "ba75370d-3aed-469d-ab5b-ae064cc412d1",
+      "fields": [
+        "description"
+      ]
+    },
+    {
+      "table": "products",
+      "id": "a4f46e60-34db-4bd3-82d3-35aa0498823f",
+      "fields": [
+        "description"
+      ]
+    },
+    {
+      "table": "products",
+      "id": "3264b6a9-0ccf-4ecb-b604-9549a5204d8b",
+      "fields": [
+        "description"
+      ]
+    },
+    {
+      "table": "products",
+      "id": "cdb80006-703d-4a46-9080-dcb0a66a6601",
+      "fields": [
+        "description"
+      ]
+    },
+    {
+      "table": "products",
+      "id": "0704a7fb-c0a7-49e6-81cb-47d2ce437d4f",
+      "fields": [
+        "description"
+      ]
+    },
+    {
+      "table": "products",
+      "id": "e898da26-af59-4efe-abe9-37a7ee7689af",
+      "fields": [
+        "description"
+      ]
+    },
+    {
+      "table": "products",
+      "id": "0a241f1f-1dbb-436d-a0d1-8f3f7ffe048e",
+      "fields": [
+        "description"
+      ]
+    },
+    {
+      "table": "restaurants",
+      "id": "eca7481c-fc27-479c-b364-76274b0b4230",
+      "fields": [
+        "name"
+      ]
+    },
+    {
+      "table": "restaurant_qr_configs",
+      "id": "eca7481c-fc27-479c-b364-76274b0b4230",
+      "fields": [
+        "label"
+      ]
+    },
+    {
+      "table": "restaurants",
+      "id": "eca7481c-fc27-479c-b364-76274b0b4230",
+      "fields": [
+        "description"
+      ]
+    },
+    {
+      "table": "promotions",
+      "id": "9e528c96-41c0-4788-a5a6-c36781a476fb",
+      "fields": [
+        "title",
+        "description"
+      ]
+    },
+    {
+      "table": "products",
+      "id": "796856d5-4dc4-428c-9f87-fd15f22bd0d7",
+      "fields": [
+        "description"
+      ]
+    },
+    {
+      "table": "products",
+      "id": "63b6f044-e9d4-4b58-9bd6-dae0b14d7e4f",
+      "fields": [
+        "description"
+      ]
+    },
+    {
+      "table": "products",
+      "id": "54910404-21d1-4cfe-a455-21961510a22d",
+      "fields": [
+        "description"
+      ]
+    },
+    {
+      "table": "products",
+      "id": "0c3c6043-6b37-4c7d-84d9-fc5db9f6aafa",
+      "fields": [
+        "description"
+      ]
+    },
+    {
+      "table": "products",
+      "id": "9040f91b-9b5f-4c78-9108-0d475d5e15aa",
+      "fields": [
+        "description"
+      ]
+    },
+    {
+      "table": "products",
+      "id": "1c7b2aea-2efb-4e3a-aba8-33899e9e6889",
+      "fields": [
+        "description"
+      ]
+    },
+    {
+      "table": "products",
+      "id": "8ac4eb2a-59bb-45a3-8909-0b70c6b9dcad",
+      "fields": [
+        "description"
+      ]
+    },
+    {
+      "table": "products",
+      "id": "04c4dca0-7e62-4878-979e-0000d011a0c9",
+      "fields": [
+        "description"
+      ]
+    },
+    {
+      "table": "products",
+      "id": "c7cae853-5f84-4dd1-930a-963563e4ba96",
+      "fields": [
+        "description"
+      ]
+    },
+    {
+      "table": "products",
+      "id": "bae490de-8cc0-49f3-a9e3-bb6ffba5d6a0",
+      "fields": [
+        "description"
+      ]
+    },
+    {
+      "table": "products",
+      "id": "76055ba8-b470-4861-b4d3-6f269008f0bc",
+      "fields": [
+        "description"
+      ]
+    },
+    {
+      "table": "products",
+      "id": "92757df5-1aaf-47e4-bba1-543408def07c",
+      "fields": [
+        "description"
+      ]
+    },
+    {
+      "table": "products",
+      "id": "a145377d-8ab9-4346-8e00-01643502993f",
+      "fields": [
+        "description"
+      ]
+    },
+    {
+      "table": "products",
+      "id": "a2279c7e-34ec-469e-a238-a0e0b675e8af",
+      "fields": [
+        "description"
+      ]
+    },
+    {
+      "table": "products",
+      "id": "450b72a7-8345-4e28-9111-453b204d6b16",
+      "fields": [
+        "description"
+      ]
+    },
+    {
+      "table": "products",
+      "id": "a3a3d8e0-e85c-4d16-841b-49d3246ebf96",
+      "fields": [
+        "description"
+      ]
+    },
+    {
+      "table": "products",
+      "id": "2ad65ac1-3e9b-4dd4-b38c-46fae5f7c129",
+      "fields": [
+        "description"
+      ]
+    },
+    {
+      "table": "products",
+      "id": "f734b62d-d252-4f12-ac74-11461f741f30",
+      "fields": [
+        "description"
+      ]
+    },
+    {
+      "table": "products",
+      "id": "a6fffc93-c212-4150-8769-40dc7833a5c4",
+      "fields": [
+        "description"
+      ]
+    },
+    {
+      "table": "products",
+      "id": "c816183c-1b4b-4b0f-a743-c66d7df01392",
+      "fields": [
+        "description"
+      ]
+    },
+    {
+      "table": "products",
+      "id": "e005a75a-efc7-4fed-8704-834a6a88ba7f",
+      "fields": [
+        "description"
+      ]
+    },
+    {
+      "table": "products",
+      "id": "c18446e9-2908-4627-a67e-493832f40961",
+      "fields": [
+        "description"
+      ]
+    },
+    {
+      "table": "products",
+      "id": "4bc2bf19-4e01-449d-8755-a9d174e6dc2e",
+      "fields": [
+        "description"
+      ]
+    },
+    {
+      "table": "products",
+      "id": "6bdc260f-6b42-420c-8ea9-7be174ec55d3",
+      "fields": [
+        "description"
+      ]
+    },
+    {
+      "table": "restaurants",
+      "id": "e2cda10d-2771-4056-8cf0-13e00f4b1bd8",
+      "fields": [
+        "name"
+      ]
+    },
+    {
+      "table": "restaurant_qr_configs",
+      "id": "e2cda10d-2771-4056-8cf0-13e00f4b1bd8",
+      "fields": [
+        "label"
+      ]
+    },
+    {
+      "table": "restaurants",
+      "id": "e2cda10d-2771-4056-8cf0-13e00f4b1bd8",
+      "fields": [
+        "description"
+      ]
+    },
+    {
+      "table": "promotions",
+      "id": "973d4cd1-7482-42a0-aee0-a7eec1a66e35",
+      "fields": [
+        "title",
+        "description"
+      ]
+    },
+    {
+      "table": "products",
+      "id": "416b4739-b6eb-43ba-9c51-077e0470b926",
+      "fields": [
+        "description"
+      ]
+    },
+    {
+      "table": "products",
+      "id": "a85a4451-bd0b-4f99-9305-2528f0a73e0a",
+      "fields": [
+        "description"
+      ]
+    },
+    {
+      "table": "products",
+      "id": "d39e5631-f923-4a08-97df-73b652479fd0",
+      "fields": [
+        "description"
+      ]
+    },
+    {
+      "table": "products",
+      "id": "a227f376-d649-464c-b243-a63ee8a5c28d",
+      "fields": [
+        "description"
+      ]
+    },
+    {
+      "table": "products",
+      "id": "3e920e89-3892-43dd-b52a-320a08e8a5ea",
+      "fields": [
+        "description"
+      ]
+    },
+    {
+      "table": "products",
+      "id": "1f5b2589-06c6-4cf1-bb3b-49e9ae754378",
+      "fields": [
+        "description"
+      ]
+    },
+    {
+      "table": "products",
+      "id": "f8043a15-d706-4df3-adc9-dada93cc1dab",
+      "fields": [
+        "description"
+      ]
+    },
+    {
+      "table": "products",
+      "id": "8372a0b4-10d7-4c5e-8f52-41021caaa07e",
+      "fields": [
+        "description"
+      ]
+    },
+    {
+      "table": "products",
+      "id": "1853092c-829c-4e3f-912a-92c3e6c576d3",
+      "fields": [
+        "description"
+      ]
+    },
+    {
+      "table": "products",
+      "id": "d3588887-01e1-49a6-a167-4363d52ebad2",
+      "fields": [
+        "description"
+      ]
+    },
+    {
+      "table": "products",
+      "id": "6d9c3258-3916-43ac-94bd-a26f55965088",
+      "fields": [
+        "description"
+      ]
+    },
+    {
+      "table": "products",
+      "id": "9aeb5c73-899d-4142-a092-bb40856d6ab2",
+      "fields": [
+        "description"
+      ]
+    },
+    {
+      "table": "products",
+      "id": "79810ac3-0257-421f-8fcd-2d04782ba0d1",
+      "fields": [
+        "description"
+      ]
+    },
+    {
+      "table": "products",
+      "id": "c7e322c2-0bbe-47c3-9063-782ed0c74bc4",
+      "fields": [
+        "description"
+      ]
+    },
+    {
+      "table": "products",
+      "id": "c43b4fba-ef83-4f9e-b574-b2e59cd4aecc",
+      "fields": [
+        "description"
+      ]
+    },
+    {
+      "table": "products",
+      "id": "62c78cdd-f690-4840-b0dd-3ea999315d98",
+      "fields": [
+        "description"
+      ]
+    },
+    {
+      "table": "products",
+      "id": "d50e8c2a-a7a0-4485-b336-8e6fa9f3654b",
+      "fields": [
+        "description"
+      ]
+    },
+    {
+      "table": "products",
+      "id": "2dadf14b-7791-4149-85a3-39f36956260b",
+      "fields": [
+        "description"
+      ]
+    },
+    {
+      "table": "products",
+      "id": "1a624a15-8fba-4b16-853b-2e3fb92c0fad",
+      "fields": [
+        "description"
+      ]
+    },
+    {
+      "table": "products",
+      "id": "f7e43c34-e33e-45de-898f-64f8dfeb7444",
+      "fields": [
+        "description"
+      ]
+    },
+    {
+      "table": "products",
+      "id": "dadbbbd4-d0e7-45bb-be6c-07fffe97d3fd",
+      "fields": [
+        "description"
+      ]
+    },
+    {
+      "table": "products",
+      "id": "c355110e-df94-4165-934d-89be04cd7095",
+      "fields": [
+        "description"
+      ]
+    },
+    {
+      "table": "products",
+      "id": "eecf8973-6fe1-49cf-9e32-ffbce9edfd1f",
+      "fields": [
+        "description"
+      ]
+    },
+    {
+      "table": "products",
+      "id": "52e26c33-e13a-4ecc-a03a-cf983436c2a8",
+      "fields": [
+        "description"
+      ]
+    },
+    {
+      "table": "products",
+      "id": "a64b1b9f-0f69-4142-bb97-8c2f2050dfeb",
+      "fields": [
+        "image_path"
+      ]
+    },
+    {
+      "table": "products",
+      "id": "ceb05294-7edc-448c-9e8b-8d5d5bed0f36",
+      "fields": [
+        "image_path"
+      ]
+    },
+    {
+      "table": "products",
+      "id": "d648bda0-411f-4fac-9954-efb5adfdba56",
+      "fields": [
+        "image_path"
+      ]
+    },
+    {
+      "table": "products",
+      "id": "54723445-0e2b-4820-b6fb-2b2341ff8fcf",
+      "fields": [
+        "image_path"
+      ]
+    },
+    {
+      "table": "products",
+      "id": "38744cae-e47d-439e-aab2-69a674a4b9a5",
+      "fields": [
+        "image_path"
+      ]
+    },
+    {
+      "table": "products",
+      "id": "a3800404-ef1a-4c15-a7aa-02a4d924142c",
+      "fields": [
+        "image_path"
+      ]
+    },
+    {
+      "table": "products",
+      "id": "0a8f78ac-16b8-4264-ac8b-7143805c9444",
+      "fields": [
+        "image_path"
+      ]
+    },
+    {
+      "table": "products",
+      "id": "6e5f0658-e8d0-406e-9687-4acd7ecf7566",
+      "fields": [
+        "image_path"
+      ]
+    },
+    {
+      "table": "products",
+      "id": "3900c018-3634-4aed-bb95-0d843cd78caf",
+      "fields": [
+        "image_path"
+      ]
+    },
+    {
+      "table": "products",
+      "id": "70089739-3054-45e6-82e4-de19b6f08331",
+      "fields": [
+        "image_path"
+      ]
+    },
+    {
+      "table": "products",
+      "id": "e2a56783-c549-4fbc-8dd0-f33ff2f946df",
+      "fields": [
+        "image_path"
+      ]
+    },
+    {
+      "table": "products",
+      "id": "3b80d2a6-b51f-424b-bf0b-3a8a1e29ed36",
+      "fields": [
+        "image_path"
+      ]
+    },
+    {
+      "table": "products",
+      "id": "fe2421be-36c2-45e7-a09b-677f3e7af1bd",
+      "fields": [
+        "image_path"
+      ]
+    },
+    {
+      "table": "products",
+      "id": "bf1c7bc2-f81c-41c1-a5d2-558f66dce761",
+      "fields": [
+        "image_path"
+      ]
+    },
+    {
+      "table": "products",
+      "id": "5fb71350-9906-4f8b-b16c-c046dd2e4079",
+      "fields": [
+        "image_path"
+      ]
+    },
+    {
+      "table": "products",
+      "id": "383d99ad-b757-4f37-9517-ab7534cd81d1",
+      "fields": [
+        "image_path"
+      ]
+    },
+    {
+      "table": "products",
+      "id": "4ceb8268-cb08-4ed6-b4ac-71b631bbe524",
+      "fields": [
+        "image_path"
+      ]
+    },
+    {
+      "table": "products",
+      "id": "ba75370d-3aed-469d-ab5b-ae064cc412d1",
+      "fields": [
+        "image_path"
+      ]
+    },
+    {
+      "table": "products",
+      "id": "a4f46e60-34db-4bd3-82d3-35aa0498823f",
+      "fields": [
+        "image_path"
+      ]
+    },
+    {
+      "table": "products",
+      "id": "3264b6a9-0ccf-4ecb-b604-9549a5204d8b",
+      "fields": [
+        "image_path"
+      ]
+    },
+    {
+      "table": "products",
+      "id": "cdb80006-703d-4a46-9080-dcb0a66a6601",
+      "fields": [
+        "image_path"
+      ]
+    },
+    {
+      "table": "products",
+      "id": "0704a7fb-c0a7-49e6-81cb-47d2ce437d4f",
+      "fields": [
+        "image_path"
+      ]
+    },
+    {
+      "table": "products",
+      "id": "e898da26-af59-4efe-abe9-37a7ee7689af",
+      "fields": [
+        "image_path"
+      ]
+    },
+    {
+      "table": "products",
+      "id": "0a241f1f-1dbb-436d-a0d1-8f3f7ffe048e",
+      "fields": [
+        "image_path"
+      ]
+    },
+    {
+      "table": "products",
+      "id": "796856d5-4dc4-428c-9f87-fd15f22bd0d7",
+      "fields": [
+        "image_path"
+      ]
+    },
+    {
+      "table": "products",
+      "id": "63b6f044-e9d4-4b58-9bd6-dae0b14d7e4f",
+      "fields": [
+        "image_path"
+      ]
+    },
+    {
+      "table": "products",
+      "id": "54910404-21d1-4cfe-a455-21961510a22d",
+      "fields": [
+        "image_path"
+      ]
+    },
+    {
+      "table": "products",
+      "id": "0c3c6043-6b37-4c7d-84d9-fc5db9f6aafa",
+      "fields": [
+        "image_path"
+      ]
+    },
+    {
+      "table": "products",
+      "id": "9040f91b-9b5f-4c78-9108-0d475d5e15aa",
+      "fields": [
+        "image_path"
+      ]
+    },
+    {
+      "table": "products",
+      "id": "1c7b2aea-2efb-4e3a-aba8-33899e9e6889",
+      "fields": [
+        "image_path"
+      ]
+    },
+    {
+      "table": "products",
+      "id": "8ac4eb2a-59bb-45a3-8909-0b70c6b9dcad",
+      "fields": [
+        "image_path"
+      ]
+    },
+    {
+      "table": "products",
+      "id": "04c4dca0-7e62-4878-979e-0000d011a0c9",
+      "fields": [
+        "image_path"
+      ]
+    },
+    {
+      "table": "products",
+      "id": "c7cae853-5f84-4dd1-930a-963563e4ba96",
+      "fields": [
+        "image_path"
+      ]
+    },
+    {
+      "table": "products",
+      "id": "bae490de-8cc0-49f3-a9e3-bb6ffba5d6a0",
+      "fields": [
+        "image_path"
+      ]
+    },
+    {
+      "table": "products",
+      "id": "76055ba8-b470-4861-b4d3-6f269008f0bc",
+      "fields": [
+        "image_path"
+      ]
+    },
+    {
+      "table": "products",
+      "id": "92757df5-1aaf-47e4-bba1-543408def07c",
+      "fields": [
+        "image_path"
+      ]
+    },
+    {
+      "table": "products",
+      "id": "a145377d-8ab9-4346-8e00-01643502993f",
+      "fields": [
+        "image_path"
+      ]
+    },
+    {
+      "table": "products",
+      "id": "a2279c7e-34ec-469e-a238-a0e0b675e8af",
+      "fields": [
+        "image_path"
+      ]
+    },
+    {
+      "table": "products",
+      "id": "450b72a7-8345-4e28-9111-453b204d6b16",
+      "fields": [
+        "image_path"
+      ]
+    },
+    {
+      "table": "products",
+      "id": "a3a3d8e0-e85c-4d16-841b-49d3246ebf96",
+      "fields": [
+        "image_path"
+      ]
+    },
+    {
+      "table": "products",
+      "id": "2ad65ac1-3e9b-4dd4-b38c-46fae5f7c129",
+      "fields": [
+        "image_path"
+      ]
+    },
+    {
+      "table": "products",
+      "id": "f734b62d-d252-4f12-ac74-11461f741f30",
+      "fields": [
+        "image_path"
+      ]
+    },
+    {
+      "table": "products",
+      "id": "a6fffc93-c212-4150-8769-40dc7833a5c4",
+      "fields": [
+        "image_path"
+      ]
+    },
+    {
+      "table": "products",
+      "id": "c816183c-1b4b-4b0f-a743-c66d7df01392",
+      "fields": [
+        "image_path"
+      ]
+    },
+    {
+      "table": "products",
+      "id": "e005a75a-efc7-4fed-8704-834a6a88ba7f",
+      "fields": [
+        "image_path"
+      ]
+    },
+    {
+      "table": "products",
+      "id": "c18446e9-2908-4627-a67e-493832f40961",
+      "fields": [
+        "image_path"
+      ]
+    },
+    {
+      "table": "products",
+      "id": "4bc2bf19-4e01-449d-8755-a9d174e6dc2e",
+      "fields": [
+        "image_path"
+      ]
+    },
+    {
+      "table": "products",
+      "id": "6bdc260f-6b42-420c-8ea9-7be174ec55d3",
+      "fields": [
+        "image_path"
+      ]
+    },
+    {
+      "table": "products",
+      "id": "416b4739-b6eb-43ba-9c51-077e0470b926",
+      "fields": [
+        "image_path"
+      ]
+    },
+    {
+      "table": "products",
+      "id": "a85a4451-bd0b-4f99-9305-2528f0a73e0a",
+      "fields": [
+        "image_path"
+      ]
+    },
+    {
+      "table": "products",
+      "id": "d39e5631-f923-4a08-97df-73b652479fd0",
+      "fields": [
+        "image_path"
+      ]
+    },
+    {
+      "table": "products",
+      "id": "a227f376-d649-464c-b243-a63ee8a5c28d",
+      "fields": [
+        "image_path"
+      ]
+    },
+    {
+      "table": "products",
+      "id": "3e920e89-3892-43dd-b52a-320a08e8a5ea",
+      "fields": [
+        "image_path"
+      ]
+    },
+    {
+      "table": "products",
+      "id": "1f5b2589-06c6-4cf1-bb3b-49e9ae754378",
+      "fields": [
+        "image_path"
+      ]
+    },
+    {
+      "table": "products",
+      "id": "f8043a15-d706-4df3-adc9-dada93cc1dab",
+      "fields": [
+        "image_path"
+      ]
+    },
+    {
+      "table": "products",
+      "id": "8372a0b4-10d7-4c5e-8f52-41021caaa07e",
+      "fields": [
+        "image_path"
+      ]
+    },
+    {
+      "table": "products",
+      "id": "1853092c-829c-4e3f-912a-92c3e6c576d3",
+      "fields": [
+        "image_path"
+      ]
+    },
+    {
+      "table": "products",
+      "id": "d3588887-01e1-49a6-a167-4363d52ebad2",
+      "fields": [
+        "image_path"
+      ]
+    },
+    {
+      "table": "products",
+      "id": "6d9c3258-3916-43ac-94bd-a26f55965088",
+      "fields": [
+        "image_path"
+      ]
+    },
+    {
+      "table": "products",
+      "id": "9aeb5c73-899d-4142-a092-bb40856d6ab2",
+      "fields": [
+        "image_path"
+      ]
+    },
+    {
+      "table": "products",
+      "id": "79810ac3-0257-421f-8fcd-2d04782ba0d1",
+      "fields": [
+        "image_path"
+      ]
+    },
+    {
+      "table": "products",
+      "id": "c7e322c2-0bbe-47c3-9063-782ed0c74bc4",
+      "fields": [
+        "image_path"
+      ]
+    },
+    {
+      "table": "products",
+      "id": "c43b4fba-ef83-4f9e-b574-b2e59cd4aecc",
+      "fields": [
+        "image_path"
+      ]
+    },
+    {
+      "table": "products",
+      "id": "62c78cdd-f690-4840-b0dd-3ea999315d98",
+      "fields": [
+        "image_path"
+      ]
+    },
+    {
+      "table": "products",
+      "id": "d50e8c2a-a7a0-4485-b336-8e6fa9f3654b",
+      "fields": [
+        "image_path"
+      ]
+    },
+    {
+      "table": "products",
+      "id": "2dadf14b-7791-4149-85a3-39f36956260b",
+      "fields": [
+        "image_path"
+      ]
+    },
+    {
+      "table": "products",
+      "id": "1a624a15-8fba-4b16-853b-2e3fb92c0fad",
+      "fields": [
+        "image_path"
+      ]
+    },
+    {
+      "table": "products",
+      "id": "f7e43c34-e33e-45de-898f-64f8dfeb7444",
+      "fields": [
+        "image_path"
+      ]
+    },
+    {
+      "table": "products",
+      "id": "dadbbbd4-d0e7-45bb-be6c-07fffe97d3fd",
+      "fields": [
+        "image_path"
+      ]
+    },
+    {
+      "table": "products",
+      "id": "c355110e-df94-4165-934d-89be04cd7095",
+      "fields": [
+        "image_path"
+      ]
+    },
+    {
+      "table": "products",
+      "id": "eecf8973-6fe1-49cf-9e32-ffbce9edfd1f",
+      "fields": [
+        "image_path"
+      ]
+    },
+    {
+      "table": "products",
+      "id": "52e26c33-e13a-4ecc-a03a-cf983436c2a8",
+      "fields": [
+        "image_path"
+      ]
+    },
+    {
+      "table": "translations",
+      "id": "6a8370af-808a-4d7f-b0ed-d88487ab9ee9",
+      "fields": [
+        "fields"
+      ]
+    },
+    {
+      "table": "translations",
+      "id": "f6d92f30-1715-4c3e-ab5b-07d6ac57caec",
+      "fields": [
+        "fields"
+      ]
+    },
+    {
+      "table": "translations",
+      "id": "eafc8361-1c93-4226-9441-75ed79564aa5",
+      "fields": [
+        "fields"
+      ]
+    },
+    {
+      "table": "translations",
+      "id": "19fd4830-8158-4c0e-8f7f-03aae45d3139",
+      "fields": [
+        "fields"
+      ]
+    },
+    {
+      "table": "translations",
+      "id": "0b229873-0011-4ee0-8b98-b66d39e6f4cf",
+      "fields": [
+        "fields"
+      ]
+    },
+    {
+      "table": "translations",
+      "id": "ea5d08f7-9961-401e-b8b3-ec4b5bb81c70",
+      "fields": [
+        "fields"
+      ]
+    },
+    {
+      "table": "translations",
+      "id": "0d6274c7-9f9e-4362-81e3-74529a2b1979",
+      "fields": [
+        "fields"
+      ]
+    },
+    {
+      "table": "translations",
+      "id": "1d77e02b-39ba-4b74-82bf-6a9e33ad0238",
+      "fields": [
+        "fields"
+      ]
+    },
+    {
+      "table": "translations",
+      "id": "e6951878-b832-40f3-9976-79942a726079",
+      "fields": [
+        "fields"
+      ]
+    },
+    {
+      "table": "translations",
+      "id": "2955a20d-a816-4cd2-8c1c-b9e67bd499e9",
+      "fields": [
+        "fields"
+      ]
+    },
+    {
+      "table": "translations",
+      "id": "ede7b260-7a02-458c-a420-0030a274b128",
+      "fields": [
+        "fields"
+      ]
+    },
+    {
+      "table": "translations",
+      "id": "6b090887-29a7-462f-9e7f-087105bd74c8",
+      "fields": [
+        "fields"
+      ]
+    },
+    {
+      "table": "translations",
+      "id": "3b850c60-a13a-4028-9fcb-406d5ffa93eb",
+      "fields": [
+        "fields"
+      ]
+    },
+    {
+      "table": "translations",
+      "id": "0ff939aa-e79e-43e2-b107-819f594fbaa5",
+      "fields": [
+        "fields"
+      ]
+    },
+    {
+      "table": "translations",
+      "id": "c3dd336f-3339-4e63-9a26-9d95cdd628e3",
+      "fields": [
+        "fields"
+      ]
+    },
+    {
+      "table": "translations",
+      "id": "ea656c79-1e79-41ee-8668-ab17a91b6b10",
+      "fields": [
+        "fields"
+      ]
+    },
+    {
+      "table": "translations",
+      "id": "ea6bdf01-d572-444c-95f5-2f73f4a9c115",
+      "fields": [
+        "fields"
+      ]
+    },
+    {
+      "table": "translations",
+      "id": "7333d417-4379-49b0-bc49-028f7621e16a",
+      "fields": [
+        "fields"
+      ]
+    },
+    {
+      "table": "translations",
+      "id": "29c482ef-dc69-4f74-b021-c88a51cfccfd",
+      "fields": [
+        "fields"
+      ]
+    },
+    {
+      "table": "translations",
+      "id": "e441ea90-9c8f-49a2-9299-a6d277959b07",
+      "fields": [
+        "fields"
+      ]
+    },
+    {
+      "table": "translations",
+      "id": "4aa4ee9a-37e0-4def-a0ab-5c85a27a5176",
+      "fields": [
+        "fields"
+      ]
+    },
+    {
+      "table": "translations",
+      "id": "dff32ae8-61a0-4035-9285-66394861390e",
+      "fields": [
+        "fields"
+      ]
+    },
+    {
+      "table": "translations",
+      "id": "6c79a514-c857-4128-a0d7-32b56cadba6b",
+      "fields": [
+        "fields"
+      ]
+    },
+    {
+      "table": "translations",
+      "id": "71195575-e252-4baa-ba68-6b598bac74f0",
+      "fields": [
+        "fields"
+      ]
+    },
+    {
+      "table": "translations",
+      "id": "d8d6815d-a8b8-415e-ab18-e2bd14632cd5",
+      "fields": [
+        "fields"
+      ]
+    },
+    {
+      "table": "translations",
+      "id": "f75bd064-9361-4c8a-9a28-5f85b6e67428",
+      "fields": [
+        "fields"
+      ]
+    },
+    {
+      "table": "translations",
+      "id": "c731161a-2af5-4b54-9b1f-a94877e83024",
+      "fields": [
+        "fields"
+      ]
+    },
+    {
+      "table": "translations",
+      "id": "13faa101-9b24-41eb-b3be-00cbad47ab49",
+      "fields": [
+        "fields"
+      ]
+    },
+    {
+      "table": "translations",
+      "id": "8caba0a0-e347-4a19-9e9a-9e3c3cb6760b",
+      "fields": [
+        "fields"
+      ]
+    },
+    {
+      "table": "translations",
+      "id": "4dfa1662-81d0-4ae7-a572-6bbf37d3c12f",
+      "fields": [
+        "fields"
+      ]
+    },
+    {
+      "table": "translations",
+      "id": "3959bb2b-af58-4c31-bcc2-df5b5260ca11",
+      "fields": [
+        "fields"
+      ]
+    },
+    {
+      "table": "translations",
+      "id": "a2a8c82c-3085-4b7d-9c87-a0ebb9f093d3",
+      "fields": [
+        "fields"
+      ]
+    },
+    {
+      "table": "translations",
+      "id": "d5723f9b-5992-4372-9d21-3125d3c65ee5",
+      "fields": [
+        "fields"
+      ]
+    },
+    {
+      "table": "translations",
+      "id": "93e4ed17-11fe-4bf2-b838-4b61b9adf267",
+      "fields": [
+        "fields"
+      ]
+    },
+    {
+      "table": "translations",
+      "id": "c96c951e-a236-4ddd-9b25-7a7ae4fbe91c",
+      "fields": [
+        "fields"
+      ]
+    },
+    {
+      "table": "translations",
+      "id": "fb42c064-91fc-4044-b959-c427ff9cc991",
+      "fields": [
+        "fields"
+      ]
+    },
+    {
+      "table": "translations",
+      "id": "736fde81-c7f7-4418-9701-d07a21b412ba",
+      "fields": [
+        "fields"
+      ]
+    },
+    {
+      "table": "translations",
+      "id": "758271a4-fbda-4d44-bbd8-ddf09b021075",
+      "fields": [
+        "fields"
+      ]
+    },
+    {
+      "table": "translations",
+      "id": "8df3e4ea-6982-4709-9672-e0e59cc29395",
+      "fields": [
+        "fields"
+      ]
+    },
+    {
+      "table": "translations",
+      "id": "869ac199-47fa-4b00-a636-4fcb7c65c216",
+      "fields": [
+        "fields"
+      ]
+    },
+    {
+      "table": "translations",
+      "id": "523e0cba-429b-4d0b-beb4-f54e2f36c654",
+      "fields": [
+        "fields"
+      ]
+    },
+    {
+      "table": "translations",
+      "id": "9f8fa57b-af36-4220-b121-40f5202180c0",
+      "fields": [
+        "fields"
+      ]
+    },
+    {
+      "table": "translations",
+      "id": "0383eafa-cdd2-4d0f-8255-09fa0f793634",
+      "fields": [
+        "fields"
+      ]
+    },
+    {
+      "table": "translations",
+      "id": "e0532e3e-d09b-40c7-ac86-02877190c0e2",
+      "fields": [
+        "fields"
+      ]
+    },
+    {
+      "table": "translations",
+      "id": "6f8bdd3c-421e-42b5-a22e-59c0be3e6713",
+      "fields": [
+        "fields"
+      ]
+    },
+    {
+      "table": "translations",
+      "id": "8cfbe0f6-a768-4d26-aaaa-545a51de543d",
+      "fields": [
+        "fields"
+      ]
+    },
+    {
+      "table": "translations",
+      "id": "d78917a6-dfd2-4840-9a81-2da41e18a9b2",
+      "fields": [
+        "fields"
+      ]
+    },
+    {
+      "table": "translations",
+      "id": "8f31f48d-981c-4fa3-a138-4f77d594c19f",
+      "fields": [
+        "fields"
+      ]
+    },
+    {
+      "table": "translations",
+      "id": "e4368e64-1781-4b59-bc65-303f8cf4394c",
+      "fields": [
+        "fields"
+      ]
+    },
+    {
+      "table": "translations",
+      "id": "682c1dd9-fd01-467a-ab08-343389e8acbc",
+      "fields": [
+        "fields"
+      ]
+    },
+    {
+      "table": "translations",
+      "id": "bf84bade-fe4d-48aa-ae34-b68952c16cc7",
+      "fields": [
+        "fields"
+      ]
+    },
+    {
+      "table": "translations",
+      "id": "1472587c-e8b9-4ccb-842b-6a6ef7fe88f8",
+      "fields": [
+        "fields"
+      ]
+    },
+    {
+      "table": "translations",
+      "id": "47d057a0-8225-468e-b41b-491dd2bc7c8a",
+      "fields": [
+        "fields"
+      ]
+    },
+    {
+      "table": "translations",
+      "id": "40fb802d-dccb-4432-8972-d8a2c2eb2f43",
+      "fields": [
+        "fields"
+      ]
+    },
+    {
+      "table": "translations",
+      "id": "7587a74f-7a46-4b72-a7a2-5b52efef056d",
+      "fields": [
+        "fields"
+      ]
+    },
+    {
+      "table": "translations",
+      "id": "5c4d2b60-35f8-488f-b473-5a7f50d6d96b",
+      "fields": [
+        "fields"
+      ]
+    },
+    {
+      "table": "translations",
+      "id": "f0f05acb-6ef8-4c9e-9d25-bd904a3aed1f",
+      "fields": [
+        "fields"
+      ]
+    },
+    {
+      "table": "translations",
+      "id": "3b1f969f-fabd-4bc0-9ce9-4bf1b15db6bc",
+      "fields": [
+        "fields"
+      ]
+    },
+    {
+      "table": "translations",
+      "id": "fd603cc8-57f7-41fa-885f-eb3fbfd667f8",
+      "fields": [
+        "fields"
+      ]
+    },
+    {
+      "table": "translations",
+      "id": "3cbde6d2-9d89-40af-ba4e-1eb4da936aa4",
+      "fields": [
+        "fields"
+      ]
+    },
+    {
+      "table": "translations",
+      "id": "204250f9-d1ca-4762-97e6-1806a2ac2fc7",
+      "fields": [
+        "fields"
+      ]
+    },
+    {
+      "table": "translations",
+      "id": "038f08f9-a8cf-4edc-8597-5b72dd2f2115",
+      "fields": [
+        "fields"
+      ]
+    },
+    {
+      "table": "translations",
+      "id": "b4a9ea45-74f1-43f0-9f2c-884f20aaeecf",
+      "fields": [
+        "fields"
+      ]
+    },
+    {
+      "table": "translations",
+      "id": "9f39cabc-057c-4126-83f6-76923b270cc0",
+      "fields": [
+        "fields"
+      ]
+    },
+    {
+      "table": "translations",
+      "id": "233e422f-e84f-4179-b3de-09bb5e0d768e",
+      "fields": [
+        "fields"
+      ]
+    },
+    {
+      "table": "translations",
+      "id": "e1aeb7fd-8387-4087-b502-9cdc4e9fb2c0",
+      "fields": [
+        "fields"
+      ]
+    },
+    {
+      "table": "translations",
+      "id": "de32e81a-66f1-47df-a29f-3ae22c042cc0",
+      "fields": [
+        "fields"
+      ]
+    },
+    {
+      "table": "translations",
+      "id": "e484ba9b-ab35-40c7-9e4b-4f44d8b94ad6",
+      "fields": [
+        "fields"
+      ]
+    },
+    {
+      "table": "translations",
+      "id": "bea9c20e-a107-419f-8039-1ce2e2946d5b",
+      "fields": [
+        "fields"
+      ]
+    },
+    {
+      "table": "translations",
+      "id": "88ff8878-006b-4d99-9cf4-4c6f5df25321",
+      "fields": [
+        "fields"
+      ]
+    },
+    {
+      "table": "translations",
+      "id": "3ca7e2e5-ec62-470c-8d6a-b1e0eed0848d",
+      "fields": [
+        "fields"
+      ]
+    },
+    {
+      "table": "translations",
+      "id": "56273fc8-640a-486c-8f8c-ba6cb179775a",
+      "fields": [
+        "fields"
+      ]
+    },
+    {
+      "table": "restaurant_settings",
+      "id": "1932e721-78ab-4320-9f84-f186a80fba48",
+      "fields": [
+        "appearance",
+        "draft_appearance",
+        "appearance_revision"
+      ]
+    },
+    {
+      "table": "restaurant_settings",
+      "id": "eca7481c-fc27-479c-b364-76274b0b4230",
+      "fields": [
+        "appearance",
+        "draft_appearance",
+        "appearance_revision"
+      ]
+    },
+    {
+      "table": "restaurant_settings",
+      "id": "e2cda10d-2771-4056-8cf0-13e00f4b1bd8",
+      "fields": [
+        "appearance",
+        "draft_appearance",
+        "appearance_revision"
+      ]
+    }
+  ],
+  "originalObjectsDeleted": 0,
+  "destination": {
+    "projectRef": "hgntppemxwcxaxritnfq",
+    "serviceId": "srv-dba32beq1p3s73a4g6v0",
+    "branch": "main",
+    "liveCommit": "6d6b83f6269fb6716ab5fa8b6d61c00f3e1aebd4",
+    "localOrigin": "http://localhost:3002"
+  },
+  "selectedPhotos": 46,
+  "neutralWithoutPhoto": 26,
+  "originalImportedProductsPreserved": 123,
+  "onlyPlannedFieldsChanged": true,
+  "result": "PASS"
+}

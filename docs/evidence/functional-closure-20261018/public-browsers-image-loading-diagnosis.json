@@ -1,0 +1,17 @@
+{
+  "at": "2026-10-25T07:34:20.313Z",
+  "origin": "https://tolentino-restaurantes-admin.onrender.com",
+  "realPublicNetwork": true,
+  "interceptedRoutes": false,
+  "physicalDevices": false,
+  "checks": [
+    "chrome_aurora_name",
+    "chrome_aurora_languages",
+    "chrome_aurora_flag_es"
+  ],
+  "screenshots": [],
+  "result": "FAIL",
+  "error": "chrome_aurora_flag_en",
+  "detail": "chrome_aurora_flag_en",
+  "failedUrl": "https://tolentino-restaurantes-admin.onrender.com/menu/pizzeria-aurora-demo"
+}

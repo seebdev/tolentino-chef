@@ -1,0 +1,783 @@
+{
+  "at": "2026-10-25T07:28:06.754Z",
+  "scope": "public-production-read-only-business",
+  "origin": "https://tolentino-restaurantes-admin.onrender.com",
+  "projectRef": "hgntppemxwcxaxritnfq",
+  "checks": [
+    {
+      "name": "RENDER_READ",
+      "result": "PASS"
+    },
+    {
+      "name": "DEPLOYED_COMMIT_MATCHES",
+      "result": "PASS"
+    },
+    {
+      "name": "SUPERADMIN_PUBLIC_LOGIN",
+      "result": "PASS"
+    },
+    {
+      "name": "SUPERADMIN_SERVER_ROLE",
+      "result": "PASS"
+    },
+    {
+      "name": "PUBLIC_ROUTE__login",
+      "result": "PASS"
+    },
+    {
+      "name": "PUBLIC_ROUTE__admin",
+      "result": "PASS"
+    },
+    {
+      "name": "OWNER_PUBLIC_LOGIN_aurora",
+      "result": "PASS"
+    },
+    {
+      "name": "ISOLATION_aurora_marea_",
+      "result": "PASS"
+    },
+    {
+      "name": "ISOLATION_aurora_marea_preview",
+      "result": "PASS"
+    },
+    {
+      "name": "ISOLATION_aurora_marea_translations",
+      "result": "PASS"
+    },
+    {
+      "name": "ISOLATION_aurora_marea_qrformatpng",
+      "result": "PASS"
+    },
+    {
+      "name": "ISOLATION_aurora_bruma_",
+      "result": "PASS"
+    },
+    {
+      "name": "ISOLATION_aurora_bruma_preview",
+      "result": "PASS"
+    },
+    {
+      "name": "ISOLATION_aurora_bruma_translations",
+      "result": "PASS"
+    },
+    {
+      "name": "ISOLATION_aurora_bruma_qrformatpng",
+      "result": "PASS"
+    },
+    {
+      "name": "OWNER_CONTEXT_aurora",
+      "result": "PASS"
+    },
+    {
+      "name": "PUBLIC_MENU_aurora",
+      "result": "PASS"
+    },
+    {
+      "name": "SAMPLE_NAME_CLEAN_aurora",
+      "result": "PASS"
+    },
+    {
+      "name": "CREATOR_CONTACT_aurora",
+      "result": "PASS"
+    },
+    {
+      "name": "VERSION_ENDPOINT_aurora",
+      "result": "PASS"
+    },
+    {
+      "name": "PERMANENT_QR_REDIRECT_aurora",
+      "result": "PASS"
+    },
+    {
+      "name": "QR_EXTERNAL_REDIRECT_IGNORED_aurora",
+      "result": "PASS"
+    },
+    {
+      "name": "QR_FINAL_ARTIFACT_aurora_png",
+      "result": "PASS"
+    },
+    {
+      "name": "QR_FINAL_ARTIFACT_aurora_svg",
+      "result": "PASS"
+    },
+    {
+      "name": "QR_FINAL_ARTIFACT_aurora_pdf",
+      "result": "PASS"
+    },
+    {
+      "name": "PHOTO_PUBLIC_a64b1b9f-0f69-4142-bb97-8c2f2050dfeb",
+      "result": "PASS"
+    },
+    {
+      "name": "PHOTO_PUBLIC_54723445-0e2b-4820-b6fb-2b2341ff8fcf",
+      "result": "PASS"
+    },
+    {
+      "name": "PHOTO_PUBLIC_38744cae-e47d-439e-aab2-69a674a4b9a5",
+      "result": "PASS"
+    },
+    {
+      "name": "PHOTO_PUBLIC_6e5f0658-e8d0-406e-9687-4acd7ecf7566",
+      "result": "PASS"
+    },
+    {
+      "name": "PHOTO_PUBLIC_3900c018-3634-4aed-bb95-0d843cd78caf",
+      "result": "PASS"
+    },
+    {
+      "name": "PHOTO_PUBLIC_70089739-3054-45e6-82e4-de19b6f08331",
+      "result": "PASS"
+    },
+    {
+      "name": "PHOTO_PUBLIC_3b80d2a6-b51f-424b-bf0b-3a8a1e29ed36",
+      "result": "PASS"
+    },
+    {
+      "name": "PHOTO_PUBLIC_fe2421be-36c2-45e7-a09b-677f3e7af1bd",
+      "result": "PASS"
+    },
+    {
+      "name": "PHOTO_PUBLIC_bf1c7bc2-f81c-41c1-a5d2-558f66dce761",
+      "result": "PASS"
+    },
+    {
+      "name": "PHOTO_PUBLIC_5fb71350-9906-4f8b-b16c-c046dd2e4079",
+      "result": "PASS"
+    },
+    {
+      "name": "PHOTO_PUBLIC_383d99ad-b757-4f37-9517-ab7534cd81d1",
+      "result": "PASS"
+    },
+    {
+      "name": "PHOTO_PUBLIC_4ceb8268-cb08-4ed6-b4ac-71b631bbe524",
+      "result": "PASS"
+    },
+    {
+      "name": "PHOTO_PUBLIC_ba75370d-3aed-469d-ab5b-ae064cc412d1",
+      "result": "PASS"
+    },
+    {
+      "name": "PHOTO_PUBLIC_a4f46e60-34db-4bd3-82d3-35aa0498823f",
+      "result": "PASS"
+    },
+    {
+      "name": "PHOTO_PUBLIC_3264b6a9-0ccf-4ecb-b604-9549a5204d8b",
+      "result": "PASS"
+    },
+    {
+      "name": "PHOTO_CREDITS_aurora",
+      "result": "PASS"
+    },
+    {
+      "name": "OWNER_PUBLIC_LOGIN_marea",
+      "result": "PASS"
+    },
+    {
+      "name": "ISOLATION_marea_aurora_",
+      "result": "PASS"
+    },
+    {
+      "name": "ISOLATION_marea_aurora_preview",
+      "result": "PASS"
+    },
+    {
+      "name": "ISOLATION_marea_aurora_translations",
+      "result": "PASS"
+    },
+    {
+      "name": "ISOLATION_marea_aurora_qrformatpng",
+      "result": "PASS"
+    },
+    {
+      "name": "ISOLATION_marea_bruma_",
+      "result": "PASS"
+    },
+    {
+      "name": "ISOLATION_marea_bruma_preview",
+      "result": "PASS"
+    },
+    {
+      "name": "ISOLATION_marea_bruma_translations",
+      "result": "PASS"
+    },
+    {
+      "name": "ISOLATION_marea_bruma_qrformatpng",
+      "result": "PASS"
+    },
+    {
+      "name": "OWNER_CONTEXT_marea",
+      "result": "PASS"
+    },
+    {
+      "name": "PUBLIC_MENU_marea",
+      "result": "PASS"
+    },
+    {
+      "name": "SAMPLE_NAME_CLEAN_marea",
+      "result": "PASS"
+    },
+    {
+      "name": "CREATOR_CONTACT_marea",
+      "result": "PASS"
+    },
+    {
+      "name": "VERSION_ENDPOINT_marea",
+      "result": "PASS"
+    },
+    {
+      "name": "PERMANENT_QR_REDIRECT_marea",
+      "result": "PASS"
+    },
+    {
+      "name": "QR_EXTERNAL_REDIRECT_IGNORED_marea",
+      "result": "PASS"
+    },
+    {
+      "name": "QR_FINAL_ARTIFACT_marea_png",
+      "result": "PASS"
+    },
+    {
+      "name": "QR_FINAL_ARTIFACT_marea_svg",
+      "result": "PASS"
+    },
+    {
+      "name": "QR_FINAL_ARTIFACT_marea_pdf",
+      "result": "PASS"
+    },
+    {
+      "name": "PHOTO_PUBLIC_a85a4451-bd0b-4f99-9305-2528f0a73e0a",
+      "result": "PASS"
+    },
+    {
+      "name": "PHOTO_PUBLIC_f8043a15-d706-4df3-adc9-dada93cc1dab",
+      "result": "PASS"
+    },
+    {
+      "name": "PHOTO_PUBLIC_1853092c-829c-4e3f-912a-92c3e6c576d3",
+      "result": "PASS"
+    },
+    {
+      "name": "PHOTO_PUBLIC_6d9c3258-3916-43ac-94bd-a26f55965088",
+      "result": "PASS"
+    },
+    {
+      "name": "PHOTO_PUBLIC_79810ac3-0257-421f-8fcd-2d04782ba0d1",
+      "result": "PASS"
+    },
+    {
+      "name": "PHOTO_PUBLIC_c7e322c2-0bbe-47c3-9063-782ed0c74bc4",
+      "result": "PASS"
+    },
+    {
+      "name": "PHOTO_PUBLIC_62c78cdd-f690-4840-b0dd-3ea999315d98",
+      "result": "PASS"
+    },
+    {
+      "name": "PHOTO_PUBLIC_d50e8c2a-a7a0-4485-b336-8e6fa9f3654b",
+      "result": "PASS"
+    },
+    {
+      "name": "PHOTO_PUBLIC_dadbbbd4-d0e7-45bb-be6c-07fffe97d3fd",
+      "result": "PASS"
+    },
+    {
+      "name": "PHOTO_PUBLIC_c355110e-df94-4165-934d-89be04cd7095",
+      "result": "PASS"
+    },
+    {
+      "name": "PHOTO_PUBLIC_eecf8973-6fe1-49cf-9e32-ffbce9edfd1f",
+      "result": "PASS"
+    },
+    {
+      "name": "PHOTO_CREDITS_marea",
+      "result": "PASS"
+    },
+    {
+      "name": "OWNER_PUBLIC_LOGIN_bruma",
+      "result": "PASS"
+    },
+    {
+      "name": "ISOLATION_bruma_aurora_",
+      "result": "PASS"
+    },
+    {
+      "name": "ISOLATION_bruma_aurora_preview",
+      "result": "PASS"
+    },
+    {
+      "name": "ISOLATION_bruma_aurora_translations",
+      "result": "PASS"
+    },
+    {
+      "name": "ISOLATION_bruma_aurora_qrformatpng",
+      "result": "PASS"
+    },
+    {
+      "name": "ISOLATION_bruma_marea_",
+      "result": "PASS"
+    },
+    {
+      "name": "ISOLATION_bruma_marea_preview",
+      "result": "PASS"
+    },
+    {
+      "name": "ISOLATION_bruma_marea_translations",
+      "result": "PASS"
+    },
+    {
+      "name": "ISOLATION_bruma_marea_qrformatpng",
+      "result": "PASS"
+    },
+    {
+      "name": "OWNER_CONTEXT_bruma",
+      "result": "PASS"
+    },
+    {
+      "name": "PUBLIC_MENU_bruma",
+      "result": "PASS"
+    },
+    {
+      "name": "SAMPLE_NAME_CLEAN_bruma",
+      "result": "PASS"
+    },
+    {
+      "name": "CREATOR_CONTACT_bruma",
+      "result": "PASS"
+    },
+    {
+      "name": "VERSION_ENDPOINT_bruma",
+      "result": "PASS"
+    },
+    {
+      "name": "PERMANENT_QR_REDIRECT_bruma",
+      "result": "PASS"
+    },
+    {
+      "name": "QR_EXTERNAL_REDIRECT_IGNORED_bruma",
+      "result": "PASS"
+    },
+    {
+      "name": "QR_FINAL_ARTIFACT_bruma_png",
+      "result": "PASS"
+    },
+    {
+      "name": "QR_FINAL_ARTIFACT_bruma_svg",
+      "result": "PASS"
+    },
+    {
+      "name": "QR_FINAL_ARTIFACT_bruma_pdf",
+      "result": "PASS"
+    },
+    {
+      "name": "PHOTO_PUBLIC_796856d5-4dc4-428c-9f87-fd15f22bd0d7",
+      "result": "PASS"
+    },
+    {
+      "name": "PHOTO_PUBLIC_63b6f044-e9d4-4b58-9bd6-dae0b14d7e4f",
+      "result": "PASS"
+    },
+    {
+      "name": "PHOTO_PUBLIC_54910404-21d1-4cfe-a455-21961510a22d",
+      "result": "PASS"
+    },
+    {
+      "name": "PHOTO_PUBLIC_0c3c6043-6b37-4c7d-84d9-fc5db9f6aafa",
+      "result": "PASS"
+    },
+    {
+      "name": "PHOTO_PUBLIC_9040f91b-9b5f-4c78-9108-0d475d5e15aa",
+      "result": "PASS"
+    },
+    {
+      "name": "PHOTO_PUBLIC_1c7b2aea-2efb-4e3a-aba8-33899e9e6889",
+      "result": "PASS"
+    },
+    {
+      "name": "PHOTO_PUBLIC_8ac4eb2a-59bb-45a3-8909-0b70c6b9dcad",
+      "result": "PASS"
+    },
+    {
+      "name": "PHOTO_PUBLIC_04c4dca0-7e62-4878-979e-0000d011a0c9",
+      "result": "PASS"
+    },
+    {
+      "name": "PHOTO_PUBLIC_c7cae853-5f84-4dd1-930a-963563e4ba96",
+      "result": "PASS"
+    },
+    {
+      "name": "PHOTO_PUBLIC_bae490de-8cc0-49f3-a9e3-bb6ffba5d6a0",
+      "result": "PASS"
+    },
+    {
+      "name": "PHOTO_PUBLIC_76055ba8-b470-4861-b4d3-6f269008f0bc",
+      "result": "PASS"
+    },
+    {
+      "name": "PHOTO_PUBLIC_92757df5-1aaf-47e4-bba1-543408def07c",
+      "result": "PASS"
+    },
+    {
+      "name": "PHOTO_PUBLIC_2ad65ac1-3e9b-4dd4-b38c-46fae5f7c129",
+      "result": "PASS"
+    },
+    {
+      "name": "PHOTO_PUBLIC_f734b62d-d252-4f12-ac74-11461f741f30",
+      "result": "PASS"
+    },
+    {
+      "name": "PHOTO_PUBLIC_a6fffc93-c212-4150-8769-40dc7833a5c4",
+      "result": "PASS"
+    },
+    {
+      "name": "PHOTO_PUBLIC_c816183c-1b4b-4b0f-a743-c66d7df01392",
+      "result": "PASS"
+    },
+    {
+      "name": "PHOTO_PUBLIC_e005a75a-efc7-4fed-8704-834a6a88ba7f",
+      "result": "PASS"
+    },
+    {
+      "name": "PHOTO_PUBLIC_c18446e9-2908-4627-a67e-493832f40961",
+      "result": "PASS"
+    },
+    {
+      "name": "PHOTO_PUBLIC_4bc2bf19-4e01-449d-8755-a9d174e6dc2e",
+      "result": "PASS"
+    },
+    {
+      "name": "PHOTO_PUBLIC_6bdc260f-6b42-420c-8ea9-7be174ec55d3",
+      "result": "PASS"
+    },
+    {
+      "name": "PHOTO_CREDITS_bruma",
+      "result": "PASS"
+    },
+    {
+      "name": "FLAG_PUBLIC_co",
+      "result": "PASS"
+    },
+    {
+      "name": "FLAG_PUBLIC_gb",
+      "result": "PASS"
+    },
+    {
+      "name": "FLAG_PUBLIC_fr",
+      "result": "PASS"
+    },
+    {
+      "name": "FLAG_PUBLIC_it",
+      "result": "PASS"
+    },
+    {
+      "name": "FLAG_PUBLIC_cn",
+      "result": "PASS"
+    },
+    {
+      "name": "FLAG_PUBLIC_jp",
+      "result": "PASS"
+    },
+    {
+      "name": "FLAG_PUBLIC_in",
+      "result": "PASS"
+    }
+  ],
+  "menus": [
+    {
+      "id": "1932e721-78ab-4320-9f84-f186a80fba48",
+      "url": "https://tolentino-restaurantes-admin.onrender.com/menu/pizzeria-aurora-demo",
+      "qrUrl": "https://tolentino-restaurantes-admin.onrender.com/q/5820b231-3a31-43aa-a1ec-4f6f79ef2bb6",
+      "name": "Pizzería Aurora",
+      "products": 24,
+      "categories": 8,
+      "languages": [
+        "es",
+        "en",
+        "fr",
+        "hi",
+        "zh",
+        "ja",
+        "it"
+      ],
+      "photos": 15,
+      "version": 167
+    },
+    {
+      "id": "e2cda10d-2771-4056-8cf0-13e00f4b1bd8",
+      "url": "https://tolentino-restaurantes-admin.onrender.com/menu/bento-marea-demo",
+      "qrUrl": "https://tolentino-restaurantes-admin.onrender.com/q/199258db-b193-4055-9f26-b1f3ea9ee1eb",
+      "name": "Bento Marea",
+      "products": 24,
+      "categories": 8,
+      "languages": [
+        "es",
+        "en"
+      ],
+      "photos": 11,
+      "version": 136
+    },
+    {
+      "id": "eca7481c-fc27-479c-b364-76274b0b4230",
+      "url": "https://tolentino-restaurantes-admin.onrender.com/menu/cafe-bruma-demo",
+      "qrUrl": "https://tolentino-restaurantes-admin.onrender.com/q/5d236a67-793a-4a72-92f4-63abe20e8d95",
+      "name": "Café Bruma",
+      "products": 24,
+      "categories": 8,
+      "languages": [
+        "es",
+        "en"
+      ],
+      "photos": 20,
+      "version": 143
+    }
+  ],
+  "qrArtifacts": [
+    {
+      "restaurant": "aurora",
+      "format": "png",
+      "file": "artifacts/functional-closure-20261018/qr/aurora.png",
+      "bytes": 43910,
+      "sha256": "e56aad93aaedf0b6137c4ebe4a073f2f0d3822ca2e3b09d1e3243fefde9dd436",
+      "destination": "https://tolentino-restaurantes-admin.onrender.com/q/5820b231-3a31-43aa-a1ec-4f6f79ef2bb6",
+      "validation": {
+        "valid": true,
+        "source": "final-png",
+        "sizes": [
+          {
+            "width": 1024,
+            "height": 1024
+          },
+          {
+            "width": 768,
+            "height": 768
+          },
+          {
+            "width": 512,
+            "height": 512
+          }
+        ],
+        "physicalScan": false
+      }
+    },
+    {
+      "restaurant": "aurora",
+      "format": "svg",
+      "file": "artifacts/functional-closure-20261018/qr/aurora.svg",
+      "bytes": 61827,
+      "sha256": "300e63f8f75239e4a6bc97785e41b8ece50250ab398e1d23cf3d20245133bb7b",
+      "destination": "https://tolentino-restaurantes-admin.onrender.com/q/5820b231-3a31-43aa-a1ec-4f6f79ef2bb6",
+      "validation": {
+        "valid": true,
+        "source": "rasterized-svg",
+        "sizes": [
+          {
+            "width": 1024,
+            "height": 1024
+          },
+          {
+            "width": 768,
+            "height": 768
+          },
+          {
+            "width": 512,
+            "height": 512
+          }
+        ],
+        "physicalScan": false
+      }
+    },
+    {
+      "restaurant": "aurora",
+      "format": "pdf",
+      "file": "artifacts/functional-closure-20261018/qr/aurora.pdf",
+      "bytes": 40151,
+      "sha256": "0601446f3a623c2370b21ad47a655c5ccba299835048c81f50658be544b9d8e5",
+      "destination": "https://tolentino-restaurantes-admin.onrender.com/q/5820b231-3a31-43aa-a1ec-4f6f79ef2bb6",
+      "validation": {
+        "valid": true,
+        "source": "rendered-pdf-page",
+        "sizes": [
+          {
+            "width": 1024,
+            "height": 1024
+          },
+          {
+            "width": 768,
+            "height": 768
+          },
+          {
+            "width": 512,
+            "height": 512
+          }
+        ],
+        "physicalScan": false
+      }
+    },
+    {
+      "restaurant": "marea",
+      "format": "png",
+      "file": "artifacts/functional-closure-20261018/qr/marea.png",
+      "bytes": 43896,
+      "sha256": "581ec46c8c5d515e796beb652473698178fd0b0373f012c54ba3b13efd303ae8",
+      "destination": "https://tolentino-restaurantes-admin.onrender.com/q/199258db-b193-4055-9f26-b1f3ea9ee1eb",
+      "validation": {
+        "valid": true,
+        "source": "final-png",
+        "sizes": [
+          {
+            "width": 1024,
+            "height": 1024
+          },
+          {
+            "width": 768,
+            "height": 768
+          },
+          {
+            "width": 512,
+            "height": 512
+          }
+        ],
+        "physicalScan": false
+      }
+    },
+    {
+      "restaurant": "marea",
+      "format": "svg",
+      "file": "artifacts/functional-closure-20261018/qr/marea.svg",
+      "bytes": 59072,
+      "sha256": "1a9b16287c4c7ec1466f9346eaea761f0d3c470e5e9370b5a8c9c38a8f6af0c6",
+      "destination": "https://tolentino-restaurantes-admin.onrender.com/q/199258db-b193-4055-9f26-b1f3ea9ee1eb",
+      "validation": {
+        "valid": true,
+        "source": "rasterized-svg",
+        "sizes": [
+          {
+            "width": 1024,
+            "height": 1024
+          },
+          {
+            "width": 768,
+            "height": 768
+          },
+          {
+            "width": 512,
+            "height": 512
+          }
+        ],
+        "physicalScan": false
+      }
+    },
+    {
+      "restaurant": "marea",
+      "format": "pdf",
+      "file": "artifacts/functional-closure-20261018/qr/marea.pdf",
+      "bytes": 39778,
+      "sha256": "ab571e3ba0e7c37737af2fd2896e45421d61a7851009b725561422d028b7a942",
+      "destination": "https://tolentino-restaurantes-admin.onrender.com/q/199258db-b193-4055-9f26-b1f3ea9ee1eb",
+      "validation": {
+        "valid": true,
+        "source": "rendered-pdf-page",
+        "sizes": [
+          {
+            "width": 1024,
+            "height": 1024
+          },
+          {
+            "width": 768,
+            "height": 768
+          },
+          {
+            "width": 512,
+            "height": 512
+          }
+        ],
+        "physicalScan": false
+      }
+    },
+    {
+      "restaurant": "bruma",
+      "format": "png",
+      "file": "artifacts/functional-closure-20261018/qr/bruma.png",
+      "bytes": 42754,
+      "sha256": "67b4a83dbacd8ff2bd20c8d5c5cdda2b96975c49553ff5e014b245a116058f55",
+      "destination": "https://tolentino-restaurantes-admin.onrender.com/q/5d236a67-793a-4a72-92f4-63abe20e8d95",
+      "validation": {
+        "valid": true,
+        "source": "final-png",
+        "sizes": [
+          {
+            "width": 1024,
+            "height": 1024
+          },
+          {
+            "width": 768,
+            "height": 768
+          },
+          {
+            "width": 512,
+            "height": 512
+          }
+        ],
+        "physicalScan": false
+      }
+    },
+    {
+      "restaurant": "bruma",
+      "format": "svg",
+      "file": "artifacts/functional-closure-20261018/qr/bruma.svg",
+      "bytes": 56393,
+      "sha256": "62a30f6c9e15710d6a729a2b76c4b92e26b5649545390b7ce7186ef168e32d5f",
+      "destination": "https://tolentino-restaurantes-admin.onrender.com/q/5d236a67-793a-4a72-92f4-63abe20e8d95",
+      "validation": {
+        "valid": true,
+        "source": "rasterized-svg",
+        "sizes": [
+          {
+            "width": 1024,
+            "height": 1024
+          },
+          {
+            "width": 768,
+            "height": 768
+          },
+          {
+            "width": 512,
+            "height": 512
+          }
+        ],
+        "physicalScan": false
+      }
+    },
+    {
+      "restaurant": "bruma",
+      "format": "pdf",
+      "file": "artifacts/functional-closure-20261018/qr/bruma.pdf",
+      "bytes": 38787,
+      "sha256": "d1e39aad7ba7a4d26aa860ef131c26ae2d890ff9ce401466ca44936df8b1e0e3",
+      "destination": "https://tolentino-restaurantes-admin.onrender.com/q/5d236a67-793a-4a72-92f4-63abe20e8d95",
+      "validation": {
+        "valid": true,
+        "source": "rendered-pdf-page",
+        "sizes": [
+          {
+            "width": 1024,
+            "height": 1024
+          },
+          {
+            "width": 768,
+            "height": 768
+          },
+          {
+            "width": 512,
+            "height": 512
+          }
+        ],
+        "physicalScan": false
+      }
+    }
+  ],
+  "physicalCameraScan": false,
+  "printedPdfScan": false,
+  "commit": "6d6b83f6269fb6716ab5fa8b6d61c00f3e1aebd4",
+  "deployId": "dep-dbeqso6q1p3s73eh4qd0",
+  "result": "PASS"
+}

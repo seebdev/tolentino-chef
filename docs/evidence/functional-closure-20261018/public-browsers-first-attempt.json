@@ -1,0 +1,31 @@
+{
+  "at": "2026-10-25T07:28:04.585Z",
+  "origin": "https://tolentino-restaurantes-admin.onrender.com",
+  "realPublicNetwork": true,
+  "interceptedRoutes": false,
+  "physicalDevices": false,
+  "checks": [
+    "chrome_aurora_name",
+    "chrome_aurora_languages",
+    "chrome_aurora_flag_es",
+    "chrome_aurora_flag_en",
+    "chrome_aurora_flag_fr",
+    "chrome_aurora_flag_it",
+    "chrome_aurora_flag_zh",
+    "chrome_aurora_flag_ja",
+    "chrome_aurora_flag_hi",
+    "chrome_aurora_no_overflow_320",
+    "chrome_aurora_no_overflow_390",
+    "chrome_aurora_no_overflow_768",
+    "chrome_aurora_no_overflow_1440",
+    "chrome_aurora_creator"
+  ],
+  "screenshots": [
+    "docs/evidence/functional-closure-20261018/public-browser/chrome-aurora-320.png",
+    "docs/evidence/functional-closure-20261018/public-browser/chrome-aurora-390.png",
+    "docs/evidence/functional-closure-20261018/public-browser/chrome-aurora-768.png",
+    "docs/evidence/functional-closure-20261018/public-browser/chrome-aurora-1440.png"
+  ],
+  "result": "FAIL",
+  "error": "PUBLIC_BROWSER_ASSERTION_FAILED"
+}

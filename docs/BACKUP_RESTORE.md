@@ -1,5 +1,12 @@
 # Respaldo y restauración de Tolentino
 
+## Ultimo ensayo: 25 de octubre de 2026
+
+Captura final posterior a cambios: target-final-hgntppemxwcxaxritnfq-20261025T073720048Z.json.enc, SHA256 e0a20f407bb854884366407c53fb234f55b9194c284caabafaac1bcac8bc38e7. Incluye 16 tablas publicas, siete privadas, 1275 filas, cuatro usuarios y 77 objetos (4777026 bytes). Nueve migraciones incluidas. [Captura PASS](evidence/migrations/hgntppemxwcxaxritnfq/20261025T073720048Z/target-final-backup.json) y [restauracion aislada 126/126 PASS](evidence/migrations/hgntppemxwcxaxritnfq/20261025T074215457Z/target-final-restore-local.json), sin peticiones remotas ni restauracion sobre produccion.
+
+Una captura anterior se aborto correctamente por cambios en contadores de visitas durante las pruebas publicas. Para la captura final se terminaron las pruebas y se detuvo el servidor local; la comparacion antes/despues fue estable. Una ventana sin ediciones ni pruebas evita respaldos rechazados; no requiere suspender produccion. El ensayo PGlite no prueba GoTrue/Storage administrados ni recuperacion portatil de la clave DPAPI. Mantener las limitaciones detalladas abajo.
+
+
 ## Procedimiento vigente para el proyecto nuevo
 
 Destino exclusivo: `hgntppemxwcxaxritnfq`. Los scripts de captura del ensayo histórico inferior están fijados al proyecto anterior; no deben ejecutarse con la configuración local ya migrada. El origen anterior se conserva.
@@ -10,7 +17,7 @@ Antes de capturar, detener las pruebas y el servidor local para evitar sesiones,
 node scripts/migration-target-final-backup.mjs --capture --confirm-target hgntppemxwcxaxritnfq
 ```
 
-El archivo cifrado incluye dump lógico PostgreSQL17.11, roles sin sus contraseñas, datos de las quince tablas, dos tablas privadas, tablas Auth en el dump y los bytes de todos los objetos Storage. Se comparan lecturas antes/después; cambios durante la ventana abortan la captura. La evidencia pública registra la ruta y SHA256 del archivo, nunca credenciales ni filas privadas.
+El archivo cifrado incluye dump lógico PostgreSQL17.11, roles sin sus contraseñas, datos de las tablas inventariadas (actualmente 16 publicas y siete privadas), tablas Auth en el dump y los bytes de todos los objetos Storage. Se comparan lecturas antes/después; cambios durante la ventana abortan la captura. La evidencia pública registra la ruta y SHA256 del archivo, nunca credenciales ni filas privadas.
 
 Para ensayar la restauración, usar exactamente el archivo y SHA256 registrados en esa captura:
 
@@ -18,7 +25,7 @@ Para ensayar la restauración, usar exactamente el archivo y SHA256 registrados 
 node scripts/migration-target-final-restore-local.mjs --archive .runtime/backups/ARCHIVO.json.enc --sha256 HASH_DE_LA_CAPTURA
 ```
 
-El ensayo crea exclusivamente una instancia PGlite en memoria, sin URL de destino ni conexión remota. Verifica el cifrado, hashes del dump, historial SQL y migraciones locales; restaura las quince tablas y las dos privadas, y compara UUID, QR y bytes Storage. Comprueba los seis pares de aislamiento. No ejecuta GoTrue ni el servicio HTTP de Storage: Auth usa stubs de UUID y el dump completo se decodifica, no se restaura como plataforma administrada.
+El ensayo crea exclusivamente una instancia PGlite en memoria, sin URL de destino ni conexión remota. Verifica el cifrado, hashes del dump, historial SQL y migraciones locales; restaura las tablas publicas y privadas inventariadas, y compara UUID, QR y bytes Storage. Comprueba los seis pares de aislamiento. No ejecuta GoTrue ni el servicio HTTP de Storage: Auth usa stubs de UUID y el dump completo se decodifica, no se restaura como plataforma administrada.
 
 Los archivos permanecen cifrados bajo `.runtime/backups`, con ACL del usuario Windows y SYSTEM y clave DPAPI. El respaldo de la configuración anterior también está cifrado allí. Recuperarse en otro equipo sigue requiriendo custodia separada de una clave de recuperación y un ensayo independiente; no se ha acreditado recuperación portátil o PITR. La configuración externa SMTP/Auth/JWT necesita su respaldo propio. Ninguna restauración se ensaya sobre los DEMO existentes.
 

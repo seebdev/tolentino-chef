@@ -1,6 +1,6 @@
 # Cierre funcional — Tolentino Chef
 
-Actualización: 25 de octubre de 2026. Estado: VALIDACIÓN LOCAL COMPLETADA / PUBLICACIÓN Y SMOKE PENDIENTES.
+Actualización: 25 de octubre de 2026. Estado: DESPLIEGUE VERIFICADO; límites externos indicados abajo.
 
 ## Destinos y preservación
 
@@ -19,12 +19,12 @@ Respaldo cifrado del 25 de octubre: target-final-hgntppemxwcxaxritnfq-20261025T0
 | QR | Faltaba validar la composición final. Generador compartido, contraste, zona silenciosa y validación PNG/SVG/PDF mediante lector independiente; PDF se rasteriza. | 106 pruebas unitarias de importación/QR y 10 de navegador en la evidencia especializada; smoke público final separado. |
 | Acceso propietario | Faltaban alias, contraseña temporal y revocación. Creación administrativa idempotente, cambio inicial obligatorio y soporte identificado. | 160 comprobaciones reales de seguridad PASS; seis direcciones de aislamiento API/RLS/Storage/QR/trabajos. |
 | Variantes | Omitirlas podía enviar lista vacía. Se retiró el formulario y se preservan columnas omitidas. | Integración real conserva variantes, extras, ingredientes, precio y categoría. |
-| Muestras | Textos DEMO e ilustraciones de semilla. Cambios limitados a IDs/SKU/textos/hashes esperados; sin restaurar a 24 productos. | 46/72 productos con foto revisada; 26 sin foto adecuada. 123 importados excluidos. Aplicación: pendiente tras publicar créditos. |
+| Muestras | Textos DEMO e ilustraciones de semilla. Cambios limitados a IDs/SKU/textos/hashes esperados; sin restaurar a 24 productos. | 46/72 productos con foto revisada; 26 sin foto adecuada. 123 importados excluidos. Aplicación: verificada. |
 | Footer | Faltaba identidad global consistente. Tolentino Chef, 3108853158 y enlace wa.me/573108853158 con introducción traducida; propietario no modifica configuración global. | Renderer público y preview compartidos; ningún mensaje enviado. |
 | Traducción automática | No había ejecutor persistente. Cola, hash fuente, presupuesto acumulado, proveedor estructurado y procedencia manual por campo. | Fixtures PASS; proveedor rechazó clave. Usuario retiró gasto: desactivada, presupuesto 0, traducción real pendiente por decisión explícita. |
 | Dominios personalizados | Middleware bloqueaba banderas, versión y créditos. Permisos limitados al menú propio y recursos exactos. | 63 regresiones de proxy PASS. |
 | Regresión | Resultados históricos no acreditan esta versión. | 411/411 pruebas automáticas PASS; typecheck/lint/build y smoke con evidencia separada. |
-| Despliegue | Producción anterior ae0f7cb. | Pendiente: no se declara publicado hasta comprobar SHA y rutas públicas. |
+| Despliegue | Producción anterior ae0f7cb. | Verificado sobre 6d6b83f6269fb6716ab5fa8b6d61c00f3e1aebd4 |
 
 ## Informes y pruebas
 
@@ -56,3 +56,11 @@ Prueba física: abrir cada menú con datos móviles; escanear PNG y PDF impreso 
 Conservar el respaldo cifrado y su clave DPAPI fuera de Git. Probar restauración sólo con scripts/migration-target-final-restore-local.mjs y el hash exacto; nunca apuntar una restauración de ensayo a producción. DPAPI depende del usuario/equipo Windows: una custodia externa exige exportación segura de la clave, no copiar sólo el archivo cifrado.
 
 Para un fallo de aplicación, volver al último deploy conocido en el mismo servicio Render, manteniendo APP_URL y variables. Las migraciones son incrementales: no ejecutar rollback destructivo de tablas ni restaurar catálogos antiguos. Para las fotos, el diario local conserva rutas anteriores en el plan y las nuevas; los objetos históricos no se borraron. Revertir únicamente los campos afectados tras verificar que no hubo una edición posterior. Una restauración completa de Auth/Storage/DB requiere revisión coordinada, no un reemplazo automático del destino.
+
+## Verificacion final del 25 de octubre
+
+La version funcional 6d6b83f6269fb6716ab5fa8b6d61c00f3e1aebd4 esta publicada y verificada: 119 comprobaciones publicas, nueve QR finales PNG/SVG/PDF decodificados y 156 comprobaciones en Chrome, Firefox, WebKit y Edge, con 60 capturas. Son pruebas de red real, sin interceptar APIs; no sustituyen dispositivos fisicos. [Smoke publico](evidence/functional-closure-20261018/public-release-smoke.json), [navegadores](evidence/functional-closure-20261018/public-browsers-final.json).
+
+Respaldo final posterior a fotos y limpieza: target-final-hgntppemxwcxaxritnfq-20261025T073720048Z.json.enc; SHA256 e0a20f407bb854884366407c53fb234f55b9194c284caabafaac1bcac8bc38e7. Incluye 16 tablas publicas, siete privadas, 1275 filas, cuatro usuarios Auth y 77 archivos. Restauracion aislada: 126/126 PASS, cero peticiones remotas. [Captura](evidence/migrations/hgntppemxwcxaxritnfq/20261025T073720048Z/target-final-backup.json), [restauracion](evidence/migrations/hgntppemxwcxaxritnfq/20261025T074215457Z/target-final-restore-local.json). No acredita una recuperacion completa de Supabase administrado ni PITR.
+
+Seguridad avanzada pendiente: la API administrativa de Supabase devuelve 401 y el conector no permite advisors. Las URLs Auth y advisors necesitan una credencial administrativa vigente para volver a verificarse. El registro publico y anonimo estan deshabilitados; los inicios de sesion reales y el aislamiento de propietarios pasaron. [Detalle y limites](CIERRE_SEGURIDAD_ACTUAL.md).

@@ -1,6 +1,6 @@
 # Fotografías y contenido de las muestras
 
-Actualización: 25 de octubre de 2026. Estado: 49 archivos subidos, aún sin vincular al catálogo público.
+Actualización: 25 de octubre de 2026. Estado: APLICADO Y VERIFICADO.
 
 Hay 46 productos de muestra con fotografías revisadas y 26 sin correspondencia adecuada, que se mostrarán sin fotografía. Los 123 productos importados quedan excluidos. No se usaron fotos de Crepes ni imágenes generadas. Los tres logos propios se limpiaron retirando sólo DEMO. Se conservaron portadas, colores elegidos, precios, extras, variantes, identificadores, slugs y tokens QR.
 

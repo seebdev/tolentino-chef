@@ -1,0 +1,21 @@
+{
+  "at": "2026-10-25T07:43:30.963Z",
+  "method": "Manual visual inspection of generated public screenshots after image loading",
+  "result": "PASS",
+  "screenshots": [
+    "firefox-bruma-products.png",
+    "webkit-marea-1440.png",
+    "aurora-brand-loaded.png",
+    "aurora-products-loaded.png"
+  ],
+  "observations": [
+    "Product photos, names and COP prices readable",
+    "Desktop layout and flags loaded",
+    "Mobile cards preserve their viewport; recommendation carousel intentionally horizontal",
+    "Original colors and covers preserved"
+  ],
+  "limitations": [
+    "Not physical devices",
+    "Not an exhaustive visual inspection of all 60 captures"
+  ]
+}
